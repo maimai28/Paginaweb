@@ -1,0 +1,18 @@
+{
+  "name": "el-lab-del-desierto-cursos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plataforma privada de cursos de matemáticas y física con acceso por contraseña autorizada.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env server.js",
+    "dev": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env --watch server.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.0.0"
+  }
+}
