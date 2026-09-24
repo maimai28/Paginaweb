@@ -1,0 +1,168 @@
+<!-- guia
+titulo: Gravitación universal
+nivel: Preparatoria
+materia: Física
+rama: Mecánica
+numero: 08
+descripcion: Ley de gravitación de Newton, de dónde sale g y cómo cambia con la altura, órbitas circulares de satélites, periodo orbital y tercera ley de Kepler, órbita geoestacionaria, velocidad de escape y por qué los astronautas «flotan».
+entrada: La misma fuerza que hace caer una manzana mantiene a la Luna en órbita y a la Tierra girando alrededor del Sol. Newton lo resumió en una sola ecuación, y con ella puedes calcular la gravedad de Marte, la rapidez de la Estación Espacial o la masa del Sol.
+objetivo: Aplicar la ley de gravitación universal.
+objetivo: Calcular $g$ en la superficie y a cierta altura.
+objetivo: Calcular rapidez y periodo de órbitas circulares.
+objetivo: Usar la tercera ley de Kepler.
+objetivo: Calcular la velocidad de escape.
+autoeval: Usar la ley del inverso del cuadrado para comparar fuerzas. | 01
+autoeval: Calcular $g$ de un planeta con su masa y radio. | 02
+autoeval: Medir $r$ desde el centro del planeta, no desde la superficie. | 03
+autoeval: Calcular un periodo con Kepler. | 04
+autoeval: Explicar la ingravidez en órbita. | 03
+-->
+<section>
+  <h2>La ley de gravitación</h2>
+  <div class="definicion">
+    <span class="etq">Ley de gravitación universal</span>
+    $$F = G\,\frac{m_1 m_2}{r^2} \qquad G = 6.674\times 10^{-11} \ \text{N·m}^2/\text{kg}^2$$
+    <p>Dos masas cualesquiera se atraen con una fuerza proporcional al producto de sus masas e inversamente proporcional al cuadrado de la distancia entre sus centros.</p>
+  </div>
+  <p>$G$ es tan pequeña que la atracción entre objetos cotidianos es imperceptible: dos personas de 70 kg a 1 m se atraen con $3.3\times 10^{-7}$ N. Solo se nota cuando una de las masas es enorme, como un planeta.</p>
+  <div class="nota">
+    <span class="etq">Inverso del cuadrado</span>
+    <p>Si la distancia se duplica, la fuerza baja a la cuarta parte; si se triplica, a la novena. Para comparar no necesitas $G$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>De dónde sale $g$</h2>
+  <p>El peso de un objeto en la superficie es la atracción del planeta: $mg = \dfrac{GMm}{R^2}$. La $m$ se cancela:</p>
+  $$g = \frac{GM}{R^2}$$
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Con $M_T = 5.97\times 10^{24}$ kg y $R_T = 6371$ km, calcula $g$ en la superficie y a 400 km de altura (donde orbita la Estación Espacial).</p>
+      $$g_0 = \frac{(6.674\times 10^{-11})(5.97\times 10^{24})}{(6.371\times 10^6)^2} \approx 9.82 \text{ m/s}^2$$
+      $$g_{400} = \frac{GM}{(6.771\times 10^6)^2} \approx 8.69 \text{ m/s}^2$$
+      <p class="paso">A esa altura la gravedad todavía es el 89 % de la de la superficie.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Órbitas circulares</h2>
+  <p>Un satélite en órbita circular está en caída libre permanente: la gravedad hace de fuerza centrípeta.</p>
+  $$\frac{GMm}{r^2} = \frac{mv^2}{r} \;\Rightarrow\; v = \sqrt{\frac{GM}{r}} \qquad T = \frac{2\pi r}{v}$$
+  <p>Aquí $r$ se mide <strong>desde el centro del planeta</strong>: $r = R + h$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿A qué rapidez orbita la Estación Espacial ($h = 400$ km) y cuánto tarda una vuelta?</p>
+      $$v = \sqrt{\frac{3.98\times 10^{14}}{6.771\times 10^6}} \approx 7670 \text{ m/s} \qquad T = \frac{2\pi(6.771\times 10^6)}{7670} \approx 92 \text{ min}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">¿Por qué flotan los astronautas?</span>
+    <p>No es que no haya gravedad (arriba hay 89 %). Es que la estación y los astronautas caen juntos alrededor de la Tierra: nada los empuja contra el piso, igual que en un elevador que cae libremente.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Kepler y el satélite geoestacionario</h2>
+  <div class="definicion">
+    <span class="etq">Tercera ley de Kepler</span>
+    $$T^2 = \frac{4\pi^2}{GM}\,r^3$$
+    <p>El cuadrado del periodo es proporcional al cubo del radio de la órbita. Para planetas alrededor del Sol, con $T$ en años y $r$ en unidades astronómicas, queda simplemente $T^2 = r^3$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un satélite geoestacionario gira con la Tierra (un día sideral, 86 164 s). ¿A qué altura está?</p>
+      $$r = \left(\frac{GM\,T^2}{4\pi^2}\right)^{1/3} \approx 4.22\times 10^7 \text{ m} \qquad h = r - R \approx 35\,800 \text{ km}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Velocidad de escape</h2>
+  <p>La energía potencial gravitatoria, lejos de la superficie, es $U = -\dfrac{GMm}{r}$ (cero en el infinito). Para escapar, la energía cinética debe compensarla:</p>
+  $$\tfrac{1}{2}mv_e^2 = \frac{GMm}{R} \;\Rightarrow\; v_e = \sqrt{\frac{2GM}{R}}$$
+  <p>Para la Tierra, $v_e \approx 11.2$ km/s: $\sqrt{2}$ veces la rapidez de una órbita rasante.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$r = h$ (la altura)</td><td class="bien">$r = R + h$</td><td>Se mide entre centros.</td></tr>
+        <tr><td class="mal">$F \propto \dfrac{1}{r}$</td><td class="bien">$\dfrac{1}{r^2}$</td><td>Es inverso del cuadrado.</td></tr>
+        <tr><td class="mal">Kilómetros en la fórmula</td><td class="bien">Metros</td><td>$G$ está en unidades SI.</td></tr>
+        <tr><td class="mal">En órbita no hay gravedad</td><td class="bien">Están en caída libre</td><td>La gravedad los mantiene en órbita.</td></tr>
+        <tr><td class="mal">La rapidez orbital depende de la masa del satélite</td><td class="bien">Solo de $M$ y $r$</td><td>La $m$ se cancela.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$F = G\dfrac{m_1m_2}{r^2}$</div><div>$G = 6.674\times 10^{-11}$</div><div>$g = \dfrac{GM}{R^2}$</div>
+      <div>$v_{\text{orb}} = \sqrt{\dfrac{GM}{r}}$</div><div>$T = \dfrac{2\pi r}{v}$</div><div>$T^2 \propto r^3$</div>
+      <div>$v_e = \sqrt{\dfrac{2GM}{R}}$</div><div>$r = R + h$</div><div>$M_T = 5.97\times 10^{24}$ kg</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Datos: $M_T = 5.97\times 10^{24}$ kg, $R_T = 6371$ km, $M_L = 7.35\times 10^{22}$ kg, $R_L = 1737$ km, distancia Tierra-Luna $3.84\times 10^8$ m. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Ley de gravitación y $g$</h3>
+    <ol class="largo">
+      <li>¿Con qué fuerza se atraen la Tierra y la Luna?</li>
+      <li>Si la distancia entre dos masas se triplica, ¿qué fracción de la fuerza original queda?</li>
+      <li>Marte tiene $6.42\times 10^{23}$ kg y $3.39\times 10^6$ m de radio. ¿Cuánto vale $g$ allá?</li>
+      <li>¿A qué altura sobre la Tierra la gravedad vale la mitad que en la superficie?</li>
+      <li>En la Luna $g = 1.62$ m/s². ¿Cuánto pesa ahí una persona de 60 kg?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Órbitas</h3>
+    <ol class="largo">
+      <li>¿Qué rapidez y periodo tiene un satélite en órbita circular a 1000 km de altura?</li>
+      <li>Marte orbita el Sol a 1.524 UA. ¿Cuánto dura su año?</li>
+      <li>La Tierra orbita el Sol a $1.496\times 10^{11}$ m en $3.156\times 10^7$ s. Estima la masa del Sol.</li>
+      <li>¿Cuál es la velocidad de escape de la Luna?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\approx 1.99\times 10^{20}$ N</span></li>
+    <li><span>$\tfrac{1}{9}$</span></li>
+    <li><span>$\approx 3.73$ m/s²</span></li>
+    <li><span>$\approx 2640$ km</span></li>
+    <li><span>97.2 N</span></li>
+    <li><span>$\approx 7350$ m/s; $\approx 105$ min</span></li>
+    <li><span>$\approx 1.88$ años</span></li>
+    <li><span>$\approx 1.99\times 10^{30}$ kg</span></li>
+    <li><span>$\approx 2.38$ km/s</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\dfrac{6.674\times 10^{-11}(5.97\times 10^{24})(7.35\times 10^{22})}{(3.84\times 10^8)^2}$.</div></div>
+    <div class="sol"><span>2</span><div>$\dfrac{1}{3^2}$.</div></div>
+    <div class="sol"><span>3</span><div>$\dfrac{6.674\times 10^{-11}(6.42\times 10^{23})}{(3.39\times 10^6)^2}$: más o menos un 38 % de la de la Tierra.</div></div>
+    <div class="sol"><span>4</span><div>$\dfrac{GM}{r^2} = \dfrac{1}{2}\cdot\dfrac{GM}{R^2} \Rightarrow r = \sqrt{2}R$. $h = (\sqrt{2} - 1)(6371)$.</div></div>
+    <div class="sol"><span>5</span><div>$60(1.62)$: la masa sigue siendo 60 kg.</div></div>
+    <div class="sol"><span>6</span><div>$r = 7.371\times 10^6$ m; $v = \sqrt{\tfrac{3.98\times 10^{14}}{7.371\times 10^6}}$; $T = \tfrac{2\pi r}{v} \approx 6300$ s.</div></div>
+    <div class="sol"><span>7</span><div>$T = 1.524^{3/2}$.</div></div>
+    <div class="sol"><span>8</span><div>De Kepler: $M = \dfrac{4\pi^2r^3}{GT^2}$.</div></div>
+    <div class="sol"><span>9</span><div>$\sqrt{\tfrac{2(6.674\times 10^{-11})(7.35\times 10^{22})}{1.737\times 10^6}} \approx 2377$ m/s.</div></div>
+  </div>
+</section>

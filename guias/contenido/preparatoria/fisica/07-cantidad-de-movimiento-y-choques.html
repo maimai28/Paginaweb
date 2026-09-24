@@ -1,0 +1,182 @@
+<!-- guia
+titulo: Cantidad de movimiento y choques
+nivel: Preparatoria
+materia: Física
+rama: Mecánica
+numero: 07
+descripcion: Cantidad de movimiento, impulso y fuerza media en golpes, conservación en sistemas aislados, retroceso, choques elásticos, inelásticos y perfectamente inelásticos, péndulo balístico y choques en dos dimensiones.
+entrada: ¿Por qué las bolsas de aire salvan vidas? ¿Por qué un rifle patea hacia atrás? ¿Qué pasa con la energía en un choque de autos? La cantidad de movimiento y su conservación responden todo eso, y funcionan aun cuando las fuerzas del choque son demasiado complicadas para calcularlas.
+objetivo: Calcular la cantidad de movimiento y el impulso.
+objetivo: Relacionar impulso, fuerza media y tiempo de contacto.
+objetivo: Aplicar la conservación de la cantidad de movimiento.
+objetivo: Distinguir choques elásticos e inelásticos.
+objetivo: Resolver péndulos balísticos y choques en dos dimensiones.
+autoeval: Calcular un impulso con signos cuando el objeto rebota. | 01
+autoeval: Explicar por qué alargar el tiempo de un golpe reduce la fuerza. | 01
+autoeval: Plantear la conservación en un retroceso. | 02
+autoeval: Calcular la energía perdida en un choque. | 03
+autoeval: Combinar conservación de momento y de energía en el péndulo balístico. | 04
+-->
+<section>
+  <h2>Cantidad de movimiento e impulso</h2>
+  <div class="definicion">
+    <span class="etq">Cantidad de movimiento e impulso</span>
+    $$\vec{p} = m\vec{v} \qquad\qquad \vec{J} = \vec{F}\,\Delta t = \Delta\vec{p}$$
+    <p>La cantidad de movimiento (o momento lineal) es un vector, en kg·m/s. El impulso, fuerza por tiempo, es igual al cambio de cantidad de movimiento: es la segunda ley de Newton escrita de otra forma.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una pelota de 0.15 kg llega a un bate a 20 m/s y sale en sentido contrario a 30 m/s. El contacto dura 0.01 s. ¿Qué fuerza media hizo el bate?</p>
+      <p class="paso">Positivo hacia donde sale la pelota: $v_i = -20$, $v_f = 30$.</p>
+      $$\Delta p = 0.15(30 - (-20)) = 7.5 \text{ kg·m/s} \qquad F = \frac{7.5}{0.01} = 750 \text{ N}$$
+      <p class="paso">Si hubieras olvidado el signo, habrías obtenido una fuerza cinco veces menor.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Bolsas de aire, cascos, colchonetas</span>
+    <p>Para detenerte, el cambio de cantidad de movimiento es el mismo. Si el tiempo de frenado se alarga, la fuerza baja en la misma proporción: $F = \dfrac{\Delta p}{\Delta t}$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Conservación</h2>
+  <div class="definicion">
+    <span class="etq">Conservación de la cantidad de movimiento</span>
+    <p>Si la fuerza externa neta sobre un sistema es cero, su cantidad de movimiento total no cambia:</p>
+    $$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$$
+  </div>
+  <p>En choques y explosiones las fuerzas internas son enormes y breves, así que las externas (peso, fricción) casi no alcanzan a actuar: la conservación vale justo antes y justo después.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un rifle de 4 kg dispara una bala de 10 g a 400 m/s. ¿Con qué velocidad retrocede?</p>
+      $$0 = 0.01(400) + 4v \;\Rightarrow\; v = -1 \text{ m/s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tipos de choques</h2>
+  <table class="leyes">
+    <thead><tr><th>Choque</th><th>¿Se conserva $p$?</th><th>¿Se conserva $K$?</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Elástico</td><td>Sí</td><td>Sí</td><td>Bolas de billar (casi)</td></tr>
+      <tr><td>Inelástico</td><td>Sí</td><td>No</td><td>Pelota que rebota más bajo</td></tr>
+      <tr><td>Perfectamente inelástico</td><td>Sí</td><td>No (máxima pérdida)</td><td>Quedan pegados</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un auto de 1200 kg a 20 m/s choca con uno de 800 kg detenido y quedan enganchados. ¿A qué velocidad se mueven? ¿Cuánta energía cinética se pierde?</p>
+      $$1200(20) = 2000v \;\Rightarrow\; v = 12 \text{ m/s}$$
+      $$K_i = \tfrac{1}{2}(1200)(400) = 240\,000 \text{ J} \qquad K_f = \tfrac{1}{2}(2000)(144) = 144\,000 \text{ J}$$
+      <p class="paso">Se pierden 96 000 J (el 40 %), que se van en deformar la lámina, calor y ruido.</p>
+    </div>
+  </div>
+  <p>En un choque <strong>elástico</strong> de frente con el segundo cuerpo en reposo, resolviendo las dos conservaciones juntas se obtiene:</p>
+  $$v_{1f} = \frac{m_1 - m_2}{m_1 + m_2}\,v_{1i} \qquad v_{2f} = \frac{2m_1}{m_1 + m_2}\,v_{1i}$$
+  <p>Con masas iguales, intercambian velocidades: el primero se detiene y el segundo sale con la velocidad del primero.</p>
+</section>
+
+<section>
+  <h2>Péndulo balístico y dos dimensiones</h2>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una bala de 20 g se incrusta en un bloque de 2 kg colgado, y el conjunto sube 20 cm. ¿Qué rapidez llevaba la bala?</p>
+      <p class="paso">Dos etapas. Después del choque se conserva la energía: $V = \sqrt{2gh} = \sqrt{2(9.8)(0.2)} \approx 1.98$ m/s.</p>
+      <p class="paso">En el choque se conserva la cantidad de movimiento:</p>
+      $$0.02\,v = 2.02(1.98) \;\Rightarrow\; v \approx 200 \text{ m/s}$$
+      <p class="paso">No se puede usar energía en el choque: es perfectamente inelástico.</p>
+    </div>
+  </div>
+  <p>En dos dimensiones la conservación vale <strong>por componentes</strong>: $\sum p_x$ y $\sum p_y$ se conservan por separado.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Rebote: $\Delta v = 30 - 20$</td><td class="bien">$30 - (-20) = 50$</td><td>La velocidad cambia de signo.</td></tr>
+        <tr><td class="mal">Conservar la energía en un choque que pega</td><td class="bien">Solo la cantidad de movimiento</td><td>Se pierde energía cinética.</td></tr>
+        <tr><td class="mal">Sumar magnitudes en 2D</td><td class="bien">Por componentes</td><td>$\vec{p}$ es un vector.</td></tr>
+        <tr><td class="mal">El objeto más pesado recibe más fuerza</td><td class="bien">Fuerzas iguales y opuestas</td><td>Tercera ley; cambia la aceleración.</td></tr>
+        <tr><td class="mal">$p$ en km/h</td><td class="bien">Pasar a m/s</td><td>Unidades del SI.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\vec{p} = m\vec{v}$</div><div>$J = F\Delta t = \Delta p$</div><div>Más tiempo, menos fuerza</div>
+      <div>$\sum p_i = \sum p_f$</div><div>Elástico: $p$ y $K$</div><div>Inelástico: solo $p$</div>
+      <div>Pegados: $v = \dfrac{m_1v_1 + m_2v_2}{m_1 + m_2}$</div><div>Péndulo: momento, luego energía</div><div>2D: por componentes</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s² y define un sentido positivo. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Impulso</h3>
+    <ol class="largo">
+      <li>¿Qué cantidad de movimiento tiene un camión de 5000 kg a 15 m/s?</li>
+      <li>¿Qué impulso da una fuerza de 200 N durante 0.05 s?</li>
+      <li>Un balón de 0.4 kg en reposo sale a 25 m/s después de una patada de 0.008 s. ¿Qué fuerza media recibió?</li>
+      <li>Un huevo de 60 g cae a 5 m/s. ¿Qué fuerza media recibe si se detiene en 0.002 s sobre el piso? ¿Y si se detiene en 0.1 s sobre una almohada?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Conservación y choques</h3>
+    <ol class="largo">
+      <li>Dos patinadores de 50 y 70 kg, en reposo, se empujan. El de 50 kg sale a 2.1 m/s. ¿Qué velocidad tiene el otro?</li>
+      <li>Un vagón de 10 000 kg a 3 m/s se acopla con otro de 5000 kg en reposo. ¿A qué velocidad siguen y cuánta energía se pierde?</li>
+      <li>Choque elástico de frente: una bola a 5 m/s golpea a otra igual en reposo. ¿Qué velocidades tienen después?</li>
+      <li>Choque elástico: una masa de 1 kg a 6 m/s golpea a una de 2 kg en reposo. Encuentra las velocidades finales.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Péndulo balístico y 2D</h3>
+    <ol class="largo">
+      <li>Una bala de 10 g a 300 m/s se incrusta en un bloque colgado de 1.49 kg. ¿Qué velocidad adquiere el bloque y qué altura sube?</li>
+      <li>Un auto de 1000 kg a 20 m/s hacia el este choca con una camioneta de 2000 kg a 10 m/s hacia el norte y quedan unidos. ¿Con qué velocidad y en qué dirección se mueven?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>75 000 kg·m/s</span></li>
+    <li><span>10 N·s</span></li>
+    <li><span>1250 N</span></li>
+    <li><span>150 N y 3 N</span></li>
+    <li><span>1.5 m/s en sentido opuesto</span></li>
+    <li><span>2 m/s; 15 000 J</span></li>
+    <li><span>0 y 5 m/s</span></li>
+    <li><span>$-2$ m/s y 4 m/s</span></li>
+    <li><span>2 m/s; $\approx 0.20$ m</span></li>
+    <li><span>$\approx 9.43$ m/s a $45^\circ$ al norte del este</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>$F = \tfrac{0.4(25)}{0.008}$.</div></div>
+    <div class="sol"><span>4</span><div>$\Delta p = 0.06(5) = 0.3$ kg·m/s. $\tfrac{0.3}{0.002}$ contra $\tfrac{0.3}{0.1}$: 50 veces menos fuerza.</div></div>
+    <div class="sol"><span>5</span><div>$0 = 50(2.1) + 70v \Rightarrow v = -1.5$.</div></div>
+    <div class="sol"><span>6</span><div>$30\,000 = 15\,000v$. $K_i = \tfrac{1}{2}(10\,000)(9) = 45\,000$ J y $K_f = \tfrac{1}{2}(15\,000)(4) = 30\,000$ J.</div></div>
+    <div class="sol"><span>8</span><div>$v_{1f} = \tfrac{1 - 2}{3}(6)$, $v_{2f} = \tfrac{2}{3}(6)$. Comprueba: $p$: $6 = -2 + 8$; $K$: $18 = 2 + 16$.</div></div>
+    <div class="sol"><span>9</span><div>$0.01(300) = 1.5V$; $h = \tfrac{V^2}{2g} = \tfrac{4}{19.6}$.</div></div>
+    <div class="sol"><span>10</span><div>$p_x = 20\,000$ y $p_y = 20\,000$ kg·m/s; $v = \tfrac{\sqrt{2}(20\,000)}{3000}$, y como $p_x = p_y$, el ángulo es $45^\circ$.</div></div>
+  </div>
+</section>

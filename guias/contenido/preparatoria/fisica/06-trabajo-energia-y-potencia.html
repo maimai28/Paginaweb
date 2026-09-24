@@ -1,0 +1,219 @@
+<!-- guia
+titulo: Trabajo, energía y potencia
+nivel: Preparatoria
+materia: Física
+rama: Mecánica
+numero: 06
+descripcion: Trabajo de una fuerza con ángulo, energía cinética y teorema trabajo-energía, energía potencial gravitatoria y elástica (ley de Hooke), conservación de la energía mecánica, energía perdida por fricción, potencia, eficiencia y kilowatts-hora.
+entrada: Muchos problemas que con fuerzas y aceleraciones serían largos se resuelven en dos renglones con energía: una montaña rusa, un resorte que lanza un bloque, un coche que frena. La idea central es que la energía no aparece ni desaparece, solo cambia de forma.
+objetivo: Calcular el trabajo de una fuerza constante.
+objetivo: Usar el teorema trabajo-energía.
+objetivo: Calcular energías potenciales gravitatoria y elástica.
+objetivo: Aplicar la conservación de la energía mecánica.
+objetivo: Incluir la energía disipada por fricción.
+objetivo: Calcular potencia y eficiencia.
+autoeval: Calcular el trabajo cuando la fuerza forma un ángulo. | 01
+autoeval: Relacionar el trabajo neto con el cambio de energía cinética. | 02
+autoeval: Usar conservación de energía sin calcular aceleraciones. | 04
+autoeval: Descontar el trabajo de la fricción. | 05
+autoeval: Calcular potencia, eficiencia y consumo en kWh. | 06
+-->
+<section>
+  <h2>Trabajo</h2>
+  <div class="definicion">
+    <span class="etq">Trabajo de una fuerza constante</span>
+    $$W = F\,d\cos\theta$$
+    <p>donde $\theta$ es el ángulo entre la fuerza y el desplazamiento. Se mide en joules: $1 \text{ J} = 1 \text{ N}\cdot\text{m}$.</p>
+  </div>
+  <ul>
+    <li>Si la fuerza ayuda al movimiento ($\theta \lt 90^\circ$), el trabajo es positivo.</li>
+    <li>Si es perpendicular ($\theta = 90^\circ$), no hace trabajo: la normal sobre un piso horizontal o la tensión en un movimiento circular.</li>
+    <li>Si se opone ($\theta \gt 90^\circ$), es negativo: la fricción.</li>
+  </ul>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Jalas una caja 10 m con una cuerda que forma $30^\circ$ con el piso y una fuerza de 50 N. ¿Cuánto trabajo haces?</p>
+      $$W = 50(10)\cos 30^\circ \approx 433 \text{ J}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Energía cinética y teorema trabajo-energía</h2>
+  <div class="definicion">
+    <span class="etq">Teorema trabajo-energía</span>
+    $$K = \tfrac{1}{2}mv^2 \qquad\qquad W_{\text{neto}} = \Delta K = \tfrac{1}{2}mv_f^2 - \tfrac{1}{2}mv_i^2$$
+    <p>El trabajo total de todas las fuerzas es igual al cambio de energía cinética.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Qué trabajo neto se necesita para llevar un auto de 1000 kg de 10 a 20 m/s?</p>
+      $$W = \tfrac{1}{2}(1000)(20^2 - 10^2) = 150\,000 \text{ J}$$
+      <p class="paso">Duplicar la rapidez cuadruplica la energía: por eso frenar a 100 km/h cuesta mucho más que a 50 km/h.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Energía potencial</h2>
+  <table class="leyes">
+    <thead><tr><th>Tipo</th><th>Fórmula</th><th>Notas</th></tr></thead>
+    <tbody>
+      <tr><td>Gravitatoria</td><td>$U_g = mgh$</td><td>$h$ se mide desde un nivel que tú eliges</td></tr>
+      <tr><td>Elástica</td><td>$U_e = \tfrac{1}{2}kx^2$</td><td>$x$: cuánto se estira o comprime el resorte</td></tr>
+    </tbody>
+  </table>
+  <p>La <strong>ley de Hooke</strong> dice que un resorte hace una fuerza proporcional a su deformación: $F = kx$, con $k$ la constante del resorte (N/m).</p>
+</section>
+
+<section>
+  <h2>Conservación de la energía mecánica</h2>
+  <div class="definicion">
+    <span class="etq">Conservación</span>
+    <p>Si solo trabajan el peso y los resortes (sin fricción), la energía mecánica $E = K + U$ no cambia:</p>
+    $$\tfrac{1}{2}mv_i^2 + mgh_i + \tfrac{1}{2}kx_i^2 = \tfrac{1}{2}mv_f^2 + mgh_f + \tfrac{1}{2}kx_f^2$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un carrito de montaña rusa parte del reposo a 20 m de altura. ¿Qué rapidez tiene al pasar por un punto a 5 m?</p>
+      $$mg(20) = \tfrac{1}{2}mv^2 + mg(5) \;\Rightarrow\; v = \sqrt{2(9.8)(15)} \approx 17.1 \text{ m/s}$$
+      <p class="paso">No importa la forma de la vía ni la masa del carrito: solo la diferencia de alturas.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un resorte de $k = 200$ N/m, comprimido 10 cm, lanza horizontalmente un bloque de 50 g. ¿Con qué rapidez sale?</p>
+      $$\tfrac{1}{2}(200)(0.1)^2 = \tfrac{1}{2}(0.05)v^2 \;\Rightarrow\; 1 = 0.025v^2 \;\Rightarrow\; v \approx 6.32 \text{ m/s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Con fricción</h2>
+  <p>La fricción convierte energía mecánica en calor. Se incluye como una pérdida:</p>
+  $$E_i - f_k\,d = E_f$$
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un bloque de 2 kg desliza a 6 m/s sobre un piso con $\mu_k = 0.2$. ¿Qué rapidez tiene después de 5 m?</p>
+      $$\tfrac{1}{2}(2)(36) - 0.2(2)(9.8)(5) = \tfrac{1}{2}(2)v^2 \;\Rightarrow\; 36 - 19.6 = v^2 \;\Rightarrow\; v \approx 4.05 \text{ m/s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Potencia y eficiencia</h2>
+  <div class="definicion">
+    <span class="etq">Potencia</span>
+    $$P = \frac{W}{t} = F\,v$$
+    <p>Es la rapidez con la que se hace trabajo. Se mide en watts ($1 \text{ W} = 1 \text{ J/s}$); 1 hp $\approx 746$ W.</p>
+  </div>
+  <p>La <strong>eficiencia</strong> de una máquina es $\eta = \dfrac{P_{\text{útil}}}{P_{\text{consumida}}}$. Y el <strong>kilowatt-hora</strong> (kWh), que cobra la compañía de luz, es energía: $1 \text{ kWh} = 3.6\times 10^6$ J.</p>
+  <div class="ejemplo">
+    <div class="n">6</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una persona de 60 kg sube corriendo una escalera de 3 m de altura en 4 s. ¿Qué potencia desarrolla?</p>
+      $$P = \frac{mgh}{t} = \frac{60(9.8)(3)}{4} = 441 \text{ W}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$W = Fd$ siempre</td><td class="bien">$Fd\cos\theta$</td><td>Solo cuenta la componente a lo largo del movimiento.</td></tr>
+        <tr><td class="mal">$K = mv^2$</td><td class="bien">$\tfrac{1}{2}mv^2$</td><td>Falta el un medio.</td></tr>
+        <tr><td class="mal">$U_e = kx$</td><td class="bien">$\tfrac{1}{2}kx^2$</td><td>$kx$ es la fuerza, no la energía.</td></tr>
+        <tr><td class="mal">Conservar energía con fricción</td><td class="bien">Restar $f_k d$</td><td>La fricción disipa energía.</td></tr>
+        <tr><td class="mal">kWh es potencia</td><td class="bien">Es energía</td><td>Potencia por tiempo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$W = Fd\cos\theta$</div><div>$K = \tfrac{1}{2}mv^2$</div><div>$W_{\text{neto}} = \Delta K$</div>
+      <div>$U_g = mgh$</div><div>$U_e = \tfrac{1}{2}kx^2$</div><div>$K_i + U_i = K_f + U_f$</div>
+      <div>Fricción: $E_i - f_kd = E_f$</div><div>$P = \dfrac{W}{t} = Fv$</div><div>1 kWh $= 3.6$ MJ</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s². Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Trabajo y energía cinética</h3>
+    <ol class="largo">
+      <li>Empujas un carrito 15 m con una fuerza horizontal de 200 N. ¿Cuánto trabajo haces?</li>
+      <li>Levantas una maleta de 20 kg a 1.5 m, con rapidez constante. ¿Cuánto trabajo haces?</li>
+      <li>Una fuerza de 80 N forma $60^\circ$ con el desplazamiento de 5 m. ¿Qué trabajo hace?</li>
+      <li>¿Cuánta energía cinética tiene una pelota de béisbol de 145 g a 40 m/s?</li>
+      <li>¿Qué fuerza media se necesita para detener en 50 m un auto de 1500 kg que va a 25 m/s?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Conservación</h3>
+    <ol class="largo">
+      <li>Se suelta una piedra desde 30 m. ¿Con qué rapidez llega al suelo?</li>
+      <li>Un péndulo se suelta desde 0.8 m por encima de su punto más bajo. ¿Qué rapidez tiene abajo?</li>
+      <li>Un resorte de $k = 500$ N/m se comprime 20 cm y lanza hacia arriba un bloque de 0.5 kg. ¿Qué energía almacena y qué altura alcanza el bloque?</li>
+      <li>Un esquiador de 70 kg baja desde 40 m de altura partiendo del reposo y llega abajo a 20 m/s. ¿Cuánta energía perdió por fricción?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Potencia</h3>
+    <ol class="largo">
+      <li>Un motor sube 500 kg a 12 m en 20 s. ¿Qué potencia útil desarrolla? Si su eficiencia es del 70 %, ¿cuánta consume?</li>
+      <li>Un auto avanza a 25 m/s constantes con su motor entregando 30 kW. ¿Qué fuerza de resistencia vence?</li>
+      <li>Un foco de 60 W está encendido 5 horas diarias durante 30 días. ¿Cuántos kWh consume?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>3000 J</span></li>
+    <li><span>294 J</span></li>
+    <li><span>200 J</span></li>
+    <li><span>116 J</span></li>
+    <li><span>9375 N</span></li>
+    <li><span>$\approx 24.2$ m/s</span></li>
+    <li><span>$\approx 3.96$ m/s</span></li>
+    <li><span>10 J; $\approx 2.04$ m</span></li>
+    <li><span>13 440 J</span></li>
+    <li><span>2940 W; 4200 W</span></li>
+    <li><span>1200 N</span></li>
+    <li><span>9 kWh</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>A rapidez constante tu fuerza iguala al peso: $W = mgh = 20(9.8)(1.5)$.</div></div>
+    <div class="sol"><span>3</span><div>$80(5)\cos 60^\circ = 400(0.5)$.</div></div>
+    <div class="sol"><span>4</span><div>$\tfrac{1}{2}(0.145)(1600)$.</div></div>
+    <div class="sol"><span>5</span><div>$\Delta K = -\tfrac{1}{2}(1500)(625) = -468\,750$ J $= -F(50)$.</div></div>
+    <div class="sol"><span>6</span><div>$v = \sqrt{2gh} = \sqrt{588}$.</div></div>
+    <div class="sol"><span>7</span><div>$v = \sqrt{2(9.8)(0.8)}$.</div></div>
+    <div class="sol"><span>8</span><div>$\tfrac{1}{2}(500)(0.2)^2 = 10$ J $= 0.5(9.8)h$.</div></div>
+    <div class="sol"><span>9</span><div>$mgh - \tfrac{1}{2}mv^2 = 27\,440 - 14\,000$.</div></div>
+    <div class="sol"><span>10</span><div>$\tfrac{500(9.8)(12)}{20} = 2940$ W; $\tfrac{2940}{0.7}$.</div></div>
+    <div class="sol"><span>11</span><div>$F = \tfrac{P}{v} = \tfrac{30\,000}{25}$.</div></div>
+    <div class="sol"><span>12</span><div>$60(5)(30) = 9000$ Wh.</div></div>
+  </div>
+</section>

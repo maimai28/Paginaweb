@@ -30,6 +30,24 @@
     "pdf": "preparatoria-fisica-05-leyes-de-newton-y-diagramas-de-cuerpo-libre.pdf"
   },
   {
+    "tema": "preparatoria-fisica-trabajo-energia-y-potencia",
+    "titulo": "Trabajo, energía y potencia",
+    "descripcion": "Trabajo de una fuerza con ángulo, energía cinética y teorema trabajo-energía, energía potencial gravitatoria y elástica (ley de Hooke), conservación de la energía mecánica, energía perdida por fricción, potencia, eficiencia y kilowatts-hora.",
+    "pdf": "preparatoria-fisica-06-trabajo-energia-y-potencia.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-cantidad-de-movimiento-y-choques",
+    "titulo": "Cantidad de movimiento y choques",
+    "descripcion": "Cantidad de movimiento, impulso y fuerza media en golpes, conservación en sistemas aislados, retroceso, choques elásticos, inelásticos y perfectamente inelásticos, péndulo balístico y choques en dos dimensiones.",
+    "pdf": "preparatoria-fisica-07-cantidad-de-movimiento-y-choques.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-gravitacion-universal",
+    "titulo": "Gravitación universal",
+    "descripcion": "Ley de gravitación de Newton, de dónde sale g y cómo cambia con la altura, órbitas circulares de satélites, periodo orbital y tercera ley de Kepler, órbita geoestacionaria, velocidad de escape y por qué los astronautas «flotan».",
+    "pdf": "preparatoria-fisica-08-gravitacion-universal.pdf"
+  },
+  {
     "tema": "preparatoria-matematicas-funciones-y-sus-graficas",
     "titulo": "Funciones y sus gráficas",
     "descripcion": "Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.",
