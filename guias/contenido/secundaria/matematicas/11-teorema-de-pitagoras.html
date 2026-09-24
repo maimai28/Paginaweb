@@ -1,0 +1,201 @@
+<!-- guia
+titulo: Teorema de Pitágoras
+nivel: Secundaria
+materia: Matemáticas
+rama: Geometría
+numero: 11
+entrada: En un triángulo rectángulo, si conoces dos lados puedes calcular el tercero. Esta idea, de hace más de 2500 años, se usa hoy para medir distancias, diagonales de pantallas, rampas y escaleras.
+objetivo: Identificar catetos e hipotenusa.
+objetivo: Calcular la hipotenusa conociendo los catetos.
+objetivo: Calcular un cateto conociendo la hipotenusa y el otro cateto.
+objetivo: Saber si un triángulo es rectángulo a partir de sus lados.
+objetivo: Calcular la distancia entre dos puntos del plano.
+objetivo: Resolver problemas de escaleras, diagonales y alturas.
+autoeval: Identificar la hipotenusa en cualquier posición. | 01
+autoeval: Calcular la hipotenusa. | 02
+autoeval: Calcular un cateto. | 02
+autoeval: Decidir si un triángulo es rectángulo. | 03
+autoeval: Calcular distancias y diagonales. | 04
+autoeval: Dibujar y resolver problemas de aplicación. | 04
+-->
+<section>
+  <h2>El teorema</h2>
+  <p>Un <strong>triángulo rectángulo</strong> tiene un ángulo de $90^\circ$. Los dos lados que forman ese ángulo son los <strong>catetos</strong>; el lado de enfrente, el más largo, es la <strong>hipotenusa</strong>.</p>
+  <div class="figura-lado">
+    <div class="definicion">
+      <span class="etq">Teorema de Pitágoras</span>
+      <p>En todo triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos:</p>
+      $$a^2 + b^2 = c^2$$
+      <p>donde $a$ y $b$ son los catetos y $c$ la hipotenusa.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 150" width="55mm">
+        <polygon points="30,130 170,130 30,30" fill="#efe3cf" stroke="#2b241e" stroke-width="2"/>
+        <polyline points="30,114 46,114 46,130" fill="none" stroke="#2b241e" stroke-width="1.2"/>
+        <g font-family="Nunito" font-weight="800" font-size="15" fill="#2b241e">
+          <text x="14" y="85">a</text><text x="96" y="147">b</text><text x="106" y="72" fill="#a8492a">c</text>
+        </g>
+      </svg>
+      <figcaption>$c$ siempre está enfrente del ángulo recto.</figcaption>
+    </figure>
+  </div>
+  <p>Algunos tríos de números enteros cumplen el teorema. Se llaman <strong>ternas pitagóricas</strong> y conviene reconocerlas: $3, 4, 5$ · $5, 12, 13$ · $8, 15, 17$ · $7, 24, 25$. Sus múltiplos también funcionan: $6, 8, 10$ o $9, 12, 15$.</p>
+</section>
+
+<section>
+  <h2>Calcular un lado</h2>
+  <h3>La hipotenusa</h3>
+  <p>Suma los cuadrados de los catetos y saca raíz:</p>
+  $$c = \sqrt{a^2 + b^2}$$
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Los catetos miden 6 cm y 8 cm. ¿Cuánto mide la hipotenusa? ¿Y si midieran 3 cm y 5 cm?</p>
+      $$c = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10 \text{ cm}$$
+      $$c = \sqrt{3^2 + 5^2} = \sqrt{34} \approx 5.83 \text{ cm}$$
+    </div>
+  </div>
+  <h3>Un cateto</h3>
+  <p>Al cuadrado de la hipotenusa le <strong>restas</strong> el cuadrado del cateto conocido y sacas raíz:</p>
+  $$b = \sqrt{c^2 - a^2}$$
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>La hipotenusa mide 13 m y un cateto 5 m. ¿Cuánto mide el otro cateto?</p>
+      $$b = \sqrt{13^2 - 5^2} = \sqrt{169 - 25} = \sqrt{144} = 12 \text{ m}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Revisa si tiene sentido</span>
+    <p>La hipotenusa siempre es el lado más largo, pero es más corta que la suma de los catetos. Si te sale una hipotenusa menor que un cateto, sumaste donde debías restar (o al revés).</p>
+  </div>
+</section>
+
+<section>
+  <h2>¿Es un triángulo rectángulo?</h2>
+  <p>El teorema también funciona al revés: si los tres lados cumplen $a^2 + b^2 = c^2$ (con $c$ el mayor), el triángulo es rectángulo. Si no lo cumplen, no lo es.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Son rectángulos los triángulos de lados 9, 12, 15 y de lados 7, 8, 11?</p>
+      $$9^2 + 12^2 = 81 + 144 = 225 = 15^2 \ \checkmark \qquad\qquad 7^2 + 8^2 = 113 \neq 121 = 11^2$$
+      <p class="paso">El primero sí es rectángulo; el segundo no.</p>
+    </div>
+  </div>
+  <p class="leyenda">Dato extra: si $a^2 + b^2$ es menor que $c^2$, el ángulo mayor es obtuso; si es mayor, todos los ángulos son agudos.</p>
+</section>
+
+<section>
+  <h2>Aplicaciones</h2>
+  <p>Casi siempre hay un triángulo rectángulo escondido. Haz un dibujo, marca el ángulo recto y pregúntate cuál lado es la hipotenusa.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una escalera de 5 m se apoya en una pared, con el pie a 1.4 m de la pared. ¿A qué altura llega?</p>
+      <p class="paso">La escalera es la hipotenusa; el suelo y la pared son los catetos:</p>
+      $$h = \sqrt{5^2 - 1.4^2} = \sqrt{25 - 1.96} = \sqrt{23.04} = 4.8 \text{ m}$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Cuál es la distancia entre los puntos $A(1, 2)$ y $B(7, 10)$?</p>
+      <p class="paso">Forma un triángulo rectángulo con catetos horizontal ($7 - 1 = 6$) y vertical ($10 - 2 = 8$):</p>
+      $$d = \sqrt{6^2 + 8^2} = 10$$
+      <p class="paso">En general: $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\sqrt{3^2 + 4^2} = 3 + 4 = 7$</td><td class="bien">$\sqrt{25} = 5$</td><td>La raíz de una suma no se reparte.</td></tr>
+        <tr><td class="mal">$c = 13,\ a = 5 \Rightarrow b = \sqrt{13^2 + 5^2}$</td><td class="bien">$b = \sqrt{13^2 - 5^2} = 12$</td><td>Para un cateto se resta.</td></tr>
+        <tr><td class="mal">Usar el lado más corto como $c$</td><td class="bien">$c$ = lado mayor</td><td>La hipotenusa es el lado más largo.</td></tr>
+        <tr><td class="mal">$6^2 = 12$</td><td class="bien">$6^2 = 36$</td><td>Elevar al cuadrado no es multiplicar por 2.</td></tr>
+        <tr><td class="mal">Aplicarlo en cualquier triángulo</td><td class="bien">Solo en rectángulos</td><td>El teorema necesita un ángulo de $90^\circ$.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$a^2 + b^2 = c^2$</div><div>$c = \sqrt{a^2 + b^2}$</div><div>$b = \sqrt{c^2 - a^2}$</div>
+      <div>$c$: enfrente del ángulo recto</div><div>3, 4, 5 · 5, 12, 13</div><div>8, 15, 17 · 7, 24, 25</div>
+      <div>¿Rectángulo? Revisa $a^2 + b^2 = c^2$</div><div>$d = \sqrt{\Delta x^2 + \Delta y^2}$</div><div>Diagonal del cuadrado: $\ell\sqrt{2}$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Haz un dibujo en cada problema. Redondea a dos decimales cuando la raíz no sea exacta. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Calcula el lado que falta</h3>
+    <ol>
+      <li>Catetos 9 y 12</li><li>Catetos 8 y 15</li><li>Catetos 4 y 7</li>
+      <li>Hipotenusa 25, cateto 7</li><li>Hipotenusa 12, cateto 6</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. ¿Es rectángulo?</h3>
+    <ol>
+      <li>Lados 10, 24 y 26</li><li>Lados 6, 7 y 9</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Problemas</h3>
+    <ol class="largo">
+      <li>Una escalera de 6.5 m está apoyada en una pared con el pie a 2.5 m. ¿A qué altura llega?</li>
+      <li>Una cancha rectangular mide 40 m por 30 m. ¿Cuánto mide su diagonal?</li>
+      <li>¿Cuánto mide la diagonal de un cuadrado de 10 cm de lado?</li>
+      <li>Calcula la distancia entre los puntos $(-2, 1)$ y $(4, 9)$.</li>
+      <li>Una antena de 12 m se sujeta con un cable que va de la punta a un punto del suelo a 5 m de la base. ¿Cuánto mide el cable?</li>
+      <li>Un triángulo isósceles tiene lados iguales de 10 cm y base de 12 cm. Calcula su altura y su área.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$15$</span></li>
+    <li><span>$17$</span></li>
+    <li><span>$\sqrt{65} \approx 8.06$</span></li>
+    <li><span>$24$</span></li>
+    <li><span>$\sqrt{108} = 6\sqrt{3} \approx 10.39$</span></li>
+    <li><span>Sí</span></li>
+    <li><span>No</span></li>
+    <li><span>6 m</span></li>
+    <li><span>50 m</span></li>
+    <li><span>$10\sqrt{2} \approx 14.14$ cm</span></li>
+    <li><span>$10$</span></li>
+    <li><span>13 m</span></li>
+    <li><span>Altura 8 cm; área 48 cm²</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>$\sqrt{16 + 49} = \sqrt{65} \approx 8.06$.</div></div>
+    <div class="sol"><span>4</span><div>$\sqrt{625 - 49} = \sqrt{576} = 24$.</div></div>
+    <div class="sol"><span>5</span><div>$\sqrt{144 - 36} = \sqrt{108} = \sqrt{36\cdot 3} = 6\sqrt{3} \approx 10.39$.</div></div>
+    <div class="sol"><span>6</span><div>$100 + 576 = 676 = 26^2$. Sí (es la terna 5, 12, 13 multiplicada por 2).</div></div>
+    <div class="sol"><span>7</span><div>$36 + 49 = 85 \neq 81$. No es rectángulo.</div></div>
+    <div class="sol"><span>8</span><div>$\sqrt{6.5^2 - 2.5^2} = \sqrt{42.25 - 6.25} = \sqrt{36} = 6$ m.</div></div>
+    <div class="sol"><span>9</span><div>$\sqrt{1600 + 900} = \sqrt{2500} = 50$ m.</div></div>
+    <div class="sol"><span>10</span><div>$\sqrt{10^2 + 10^2} = \sqrt{200} = 10\sqrt{2} \approx 14.14$ cm.</div></div>
+    <div class="sol"><span>11</span><div>$\Delta x = 4 - (-2) = 6$, $\Delta y = 9 - 1 = 8$. $d = \sqrt{36 + 64} = 10$.</div></div>
+    <div class="sol"><span>12</span><div>El cable es la hipotenusa: $\sqrt{144 + 25} = \sqrt{169} = 13$ m.</div></div>
+    <div class="sol"><span>13</span><div>La altura parte la base en dos mitades de 6: $h = \sqrt{100 - 36} = 8$. Área: $\dfrac{12\cdot 8}{2} = 48$ cm².</div></div>
+  </div>
+</section>

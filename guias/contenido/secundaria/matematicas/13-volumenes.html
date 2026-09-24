@@ -1,0 +1,161 @@
+<!-- guia
+titulo: Volúmenes de cuerpos geométricos
+nivel: Secundaria
+materia: Matemáticas
+rama: Geometría
+numero: 13
+entrada: ¿Cuántos litros le caben a un tinaco? ¿Cuánto concreto lleva una columna? El volumen mide el espacio que ocupa un cuerpo. En esta guía vas a calcularlo para prismas, cilindros, pirámides, conos y esferas, y a pasarlo a litros.
+objetivo: Entender el volumen como cantidad de cubos unitarios.
+objetivo: Calcular volúmenes de prismas y cilindros.
+objetivo: Calcular volúmenes de pirámides y conos.
+objetivo: Calcular el volumen de una esfera.
+objetivo: Convertir entre unidades de volumen y de capacidad.
+objetivo: Resolver problemas de recipientes.
+autoeval: Calcular volúmenes de prismas y cilindros. | 01
+autoeval: Calcular volúmenes de pirámides y conos. | 02
+autoeval: Calcular el volumen de una esfera. | 02
+autoeval: Convertir m³, dm³ y cm³ a litros y mililitros. | 03
+autoeval: Resolver problemas de capacidad. | 03
+-->
+<section>
+  <h2>Prismas y cilindros</h2>
+  <p>El volumen es el espacio que ocupa un cuerpo: cuántos cubitos de $1 \times 1 \times 1$ caben dentro. Se mide en unidades cúbicas (cm³, m³).</p>
+  <p>Un prisma o un cilindro es una base que se “apila” a lo largo de una altura. Por eso, para todos ellos:</p>
+  <div class="definicion">
+    <span class="etq">Regla general</span>
+    $$V = (\text{área de la base}) \times (\text{altura})$$
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Cuerpo</th><th>Base</th><th>Volumen</th></tr></thead>
+    <tbody>
+      <tr><td>Cubo de arista $a$</td><td>$a^2$</td><td>$V = a^3$</td></tr>
+      <tr><td>Prisma rectangular</td><td>$\ell\cdot w$</td><td>$V = \ell\, w\, h$</td></tr>
+      <tr><td>Prisma cualquiera</td><td>$A_b$</td><td>$V = A_b\, h$</td></tr>
+      <tr><td>Cilindro de radio $r$</td><td>$\pi r^2$</td><td>$V = \pi r^2 h$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un prisma tiene como base un triángulo de base 6 cm y altura 4 cm. El prisma mide 10 cm de alto. ¿Cuál es su volumen?</p>
+      $$A_b = \frac{6\cdot 4}{2} = 12 \text{ cm}^2 \qquad\Rightarrow\qquad V = 12\cdot 10 = 120 \text{ cm}^3$$
+      <p class="paso">Ojo: aparecen dos “alturas”, la del triángulo (4 cm) y la del prisma (10 cm). Cada una va en su lugar.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Pirámides, conos y esferas</h2>
+  <p>Una pirámide cabe exactamente <strong>tres veces</strong> en el prisma de la misma base y la misma altura; lo mismo pasa con un cono y su cilindro. Por eso se divide entre 3:</p>
+  <table class="leyes">
+    <thead><tr><th>Cuerpo</th><th>Volumen</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Pirámide</td><td>$V = \dfrac{A_b\, h}{3}$</td><td>Base cuadrada de 6, $h = 10$: $V = \dfrac{36\cdot 10}{3} = 120$</td></tr>
+      <tr><td>Cono</td><td>$V = \dfrac{\pi r^2 h}{3}$</td><td>$r = 3$, $h = 4$: $V = 12\pi \approx 37.70$</td></tr>
+      <tr><td>Esfera</td><td>$V = \dfrac{4}{3}\pi r^3$</td><td>$r = 6$: $V = 288\pi \approx 904.78$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un barquillo de helado tiene forma de cono con radio de 2.5 cm y altura de 10 cm. ¿Cuánto helado le cabe (sin copete)?</p>
+      $$V = \frac{\pi (2.5)^2 (10)}{3} = \frac{62.5\pi}{3} \approx 65.45 \text{ cm}^3$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Si el radio se duplica…</span>
+    <p>En un cilindro el radio va al cuadrado: si duplicas el radio, el volumen se multiplica por $2^2 = 4$. En una esfera va al cubo: el volumen se multiplica por $2^3 = 8$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Volumen y capacidad</h2>
+  <p>La <strong>capacidad</strong> es cuánto líquido cabe, y se mide en litros. Se relaciona con el volumen así:</p>
+  $$1 \text{ dm}^3 = 1 \text{ L} \qquad\quad 1 \text{ m}^3 = 1000 \text{ L} \qquad\quad 1 \text{ cm}^3 = 1 \text{ mL}$$
+  <p>Como en el área, al convertir unidades cúbicas se multiplica tres veces: $1 \text{ m}^3 = 100\times 100\times 100 = 1\,000\,000$ cm³.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un tinaco cilíndrico mide 1.10 m de diámetro y 1.20 m de altura. ¿Cuántos litros le caben aproximadamente?</p>
+      <p class="paso">El radio es 0.55 m:</p>
+      $$V = \pi (0.55)^2 (1.20) \approx 1.140 \text{ m}^3 \approx 1140 \text{ L}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Cono: $V = \pi r^2 h$</td><td class="bien">$V = \dfrac{\pi r^2 h}{3}$</td><td>Es un tercio del cilindro.</td></tr>
+        <tr><td class="mal">$1 \text{ m}^3 = 100 \text{ L}$</td><td class="bien">$1000 \text{ L}$</td><td>Un m³ son 1000 dm³.</td></tr>
+        <tr><td class="mal">Usar el diámetro como radio</td><td class="bien">$r = \dfrac{d}{2}$</td><td>El error se multiplica por 4 en el volumen.</td></tr>
+        <tr><td class="mal">Esfera: $\dfrac{4}{3}\pi r^2$</td><td class="bien">$\dfrac{4}{3}\pi r^3$</td><td>El volumen lleva el radio al cubo.</td></tr>
+        <tr><td class="mal">Volumen en cm²</td><td class="bien">cm³</td><td>El volumen siempre es cúbico.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Prisma: $V = A_b\,h$</div><div>Cilindro: $V = \pi r^2 h$</div><div>Cubo: $V = a^3$</div>
+      <div>Pirámide: $V = \dfrac{A_b\,h}{3}$</div><div>Cono: $V = \dfrac{\pi r^2 h}{3}$</div><div>Esfera: $V = \dfrac{4}{3}\pi r^3$</div>
+      <div>$1 \text{ dm}^3 = 1$ L</div><div>$1 \text{ m}^3 = 1000$ L</div><div>$1 \text{ cm}^3 = 1$ mL</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $\pi \approx 3.1416$, redondea a dos decimales y escribe unidades. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Calcula el volumen</h3>
+    <ol>
+      <li>Cubo de 5 cm de arista</li><li>Prisma de 8 × 5 × 3 cm</li><li>Cilindro: $r = 3$ cm, $h = 10$ cm</li>
+      <li>Pirámide de base rectangular 4 × 6 m y altura 9 m</li><li>Cono: $r = 5$ cm, $h = 12$ cm</li><li>Esfera de 3 cm de radio</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Problemas</h3>
+    <ol class="largo">
+      <li>Una alberca mide 10 m de largo, 5 m de ancho y 1.5 m de profundidad. ¿Cuántos litros de agua le caben?</li>
+      <li>Una lata de refresco es un cilindro de 3.3 cm de radio y 12 cm de altura. ¿Cuántos mililitros le caben, aproximadamente?</li>
+      <li>Un recipiente cúbico tiene una capacidad de 27 litros. ¿Cuánto mide su arista en centímetros?</li>
+      <li>Si duplicas el radio de un cilindro sin cambiar su altura, ¿por cuánto se multiplica su volumen?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>125 cm³</span></li>
+    <li><span>120 cm³</span></li>
+    <li><span>$90\pi \approx 282.74$ cm³</span></li>
+    <li><span>72 m³</span></li>
+    <li><span>$100\pi \approx 314.16$ cm³</span></li>
+    <li><span>$36\pi \approx 113.10$ cm³</span></li>
+    <li><span>75 000 L</span></li>
+    <li><span>≈ 410.5 mL</span></li>
+    <li><span>30 cm</span></li>
+    <li><span>Por 4</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>$V = \pi(3)^2(10) = 90\pi \approx 282.74$ cm³.</div></div>
+    <div class="sol"><span>4</span><div>$A_b = 4\cdot 6 = 24$. $V = \dfrac{24\cdot 9}{3} = 72$ m³.</div></div>
+    <div class="sol"><span>5</span><div>$V = \dfrac{\pi(25)(12)}{3} = 100\pi \approx 314.16$ cm³.</div></div>
+    <div class="sol"><span>6</span><div>$V = \dfrac{4}{3}\pi(27) = 36\pi \approx 113.10$ cm³.</div></div>
+    <div class="sol"><span>7</span><div>$V = 10\cdot 5\cdot 1.5 = 75$ m³ $= 75\cdot 1000 = 75\,000$ L.</div></div>
+    <div class="sol"><span>8</span><div>$V = \pi(3.3)^2(12) = 130.68\pi \approx 410.5$ cm³, es decir, unos 410 mL.</div></div>
+    <div class="sol"><span>9</span><div>27 L $= 27$ dm³. La arista es $\sqrt[3]{27} = 3$ dm $= 30$ cm.</div></div>
+    <div class="sol"><span>10</span><div>$\pi(2r)^2h = 4\pi r^2 h$: el volumen se multiplica por 4.</div></div>
+  </div>
+</section>

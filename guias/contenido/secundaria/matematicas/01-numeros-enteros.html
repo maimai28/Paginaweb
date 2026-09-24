@@ -1,0 +1,238 @@
+<!-- guia
+titulo: Números enteros y operaciones
+nivel: Secundaria
+materia: Matemáticas
+rama: Aritmética
+numero: 01
+entrada: Temperaturas bajo cero, deudas, pisos de estacionamiento subterráneo: los números negativos aparecen en todos lados. En esta guía vas a aprender a ubicarlos, compararlos y operar con ellos sin confundirte con los signos.
+objetivo: Ubicar y comparar enteros en la recta numérica.
+objetivo: Calcular el valor absoluto de un número.
+objetivo: Sumar y restar enteros con cualquier signo.
+objetivo: Multiplicar y dividir usando la ley de los signos.
+objetivo: Respetar la jerarquía de operaciones.
+objetivo: Resolver problemas con cantidades positivas y negativas.
+autoeval: Ubicar, comparar y ordenar enteros. | 01
+autoeval: Calcular el valor absoluto. | 01
+autoeval: Sumar y restar enteros de cualquier signo. | 02
+autoeval: Multiplicar y dividir con la ley de los signos. | 03
+autoeval: Resolver operaciones combinadas en el orden correcto. | 04
+autoeval: Traducir un problema a una operación con enteros. | 02 y 04
+-->
+<section>
+  <h2>Los enteros y la recta numérica</h2>
+  <p>Los números enteros son los naturales, el cero y los negativos de los naturales:</p>
+  $$\mathbb{Z} = \{\ldots,\,-3,\,-2,\,-1,\,0,\,1,\,2,\,3,\,\ldots\}$$
+  <p>Se acomodan en una recta: el cero en medio, los positivos a la derecha y los negativos a la izquierda. <strong>Un número es mayor mientras más a la derecha esté.</strong></p>
+  <figure class="figura">
+    <svg viewBox="0 -16 560 86" width="150mm">
+      <line x1="10" y1="35" x2="550" y2="35" stroke="#2b241e" stroke-width="1.5"/>
+      <path d="M550 35 l-8 -4 v8 z M10 35 l8 -4 v8 z" fill="#2b241e"/>
+      <g font-family="Nunito" font-size="13" text-anchor="middle" fill="#2b241e">
+        <line x1="30" y1="29" x2="30" y2="41" stroke="#2b241e"/><text x="30" y="60">−5</text>
+        <line x1="80" y1="29" x2="80" y2="41" stroke="#2b241e"/><text x="80" y="60">−4</text>
+        <line x1="130" y1="29" x2="130" y2="41" stroke="#2b241e"/><text x="130" y="60">−3</text>
+        <line x1="180" y1="29" x2="180" y2="41" stroke="#2b241e"/><text x="180" y="60">−2</text>
+        <line x1="230" y1="29" x2="230" y2="41" stroke="#2b241e"/><text x="230" y="60">−1</text>
+        <line x1="280" y1="26" x2="280" y2="44" stroke="#2b241e" stroke-width="2"/><text x="280" y="60" font-weight="800">0</text>
+        <line x1="330" y1="29" x2="330" y2="41" stroke="#2b241e"/><text x="330" y="60">1</text>
+        <line x1="380" y1="29" x2="380" y2="41" stroke="#2b241e"/><text x="380" y="60">2</text>
+        <line x1="430" y1="29" x2="430" y2="41" stroke="#2b241e"/><text x="430" y="60">3</text>
+        <line x1="480" y1="29" x2="480" y2="41" stroke="#2b241e"/><text x="480" y="60">4</text>
+        <line x1="530" y1="29" x2="530" y2="41" stroke="#2b241e"/><text x="530" y="60">5</text>
+      </g>
+      <circle cx="130" cy="35" r="6" fill="#a8492a"/><circle cx="430" cy="35" r="6" fill="#4b5d6b"/>
+      <path d="M136 24 Q280 8 424 24" fill="none" stroke="#c08a2e" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="280" y="-4" font-family="Nunito" font-size="11" text-anchor="middle" fill="#5f5448">−3 y 3 están a la misma distancia del 0</text>
+    </svg>
+    <figcaption>En la recta, $-3 \lt 3$ y también $-5 \lt -2$: el que está más a la izquierda es el menor.</figcaption>
+  </figure>
+  <p>Cuidado con los negativos: $-8$ es <em>menor</em> que $-3$, aunque 8 sea mayor que 3. Piensa en temperaturas: $-8\,^\circ\text{C}$ es más frío que $-3\,^\circ\text{C}$.</p>
+  <div class="definicion">
+    <span class="etq">Valor absoluto</span>
+    <p>El valor absoluto de un número es su distancia al cero. Se escribe entre barras y nunca es negativo:</p>
+    $$|-7| = 7 \qquad |7| = 7 \qquad |0| = 0$$
+  </div>
+  <p>Dos números con el mismo valor absoluto y signo contrario, como $-3$ y $3$, se llaman <strong>opuestos</strong>. Sumados siempre dan cero.</p>
+</section>
+
+<section>
+  <h2>Suma y resta</h2>
+  <p>Para sumar enteros solo hay dos casos:</p>
+  <div class="definicion">
+    <span class="etq">Regla de la suma</span>
+    <p><strong>Mismo signo:</strong> suma los valores absolutos y conserva el signo. $\;-7 + (-5) = -12$</p>
+    <p><strong>Signos distintos:</strong> resta los valores absolutos (el mayor menos el menor) y pon el signo del que tiene mayor valor absoluto. $\;-9 + 4 = -5$</p>
+  </div>
+  <p>Restar es sumar el opuesto. Así la resta se convierte en una suma y aplicas la misma regla:</p>
+  $$a - b = a + (-b)$$
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $6 - (-3)$ y $-4 - 8$.</p>
+      <p class="paso">Cambia cada resta por la suma del opuesto:</p>
+      $$6 - (-3) = 6 + 3 = 9 \qquad\qquad -4 - 8 = -4 + (-8) = -12$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Truco para cadenas largas</span>
+    <p>En $12 - 20 + 5 - 9$ junta primero los positivos ($12 + 5 = 17$) y luego los negativos ($-20 - 9 = -29$). Al final: $17 - 29 = -12$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Multiplicación y división</h2>
+  <p>Primero multiplicas o divides los valores absolutos. El signo del resultado lo decide la <strong>ley de los signos</strong>, que es igual para multiplicar y para dividir:</p>
+  <table class="leyes">
+    <thead><tr><th>Signos</th><th>Resultado</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>$(+)\cdot(+)$</td><td>positivo</td><td>$6\cdot 4 = 24$</td></tr>
+      <tr><td>$(-)\cdot(-)$</td><td>positivo</td><td>$(-6)(-4) = 24$</td></tr>
+      <tr><td>$(+)\cdot(-)$ o $(-)\cdot(+)$</td><td>negativo</td><td>$(-6)(4) = -24$</td></tr>
+      <tr><td>$(-)\div(-)$</td><td>positivo</td><td>$(-36)\div(-9) = 4$</td></tr>
+      <tr><td>$(-)\div(+)$</td><td>negativo</td><td>$(-36)\div 9 = -4$</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Signos iguales dan positivo; signos distintos dan negativo.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $(-2)(3)(-5)$.</p>
+      <p class="paso">Cuenta los factores negativos: hay dos (un número par), así que el resultado es positivo.</p>
+      $$(-2)(3)(-5) = +(2\cdot 3\cdot 5) = 30$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Regla rápida</span>
+    <p>Con varios factores, si la cantidad de negativos es par el resultado es positivo; si es impar, negativo. Y cualquier número multiplicado por 0 da 0. Dividir entre 0 no está definido.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Jerarquía de operaciones</h2>
+  <p>Cuando hay varias operaciones juntas, el orden importa. Siempre se hacen en este orden:</p>
+  <ol>
+    <li>Lo que está dentro de paréntesis.</li>
+    <li>Potencias y raíces.</li>
+    <li>Multiplicaciones y divisiones, de izquierda a derecha.</li>
+    <li>Sumas y restas, de izquierda a derecha.</li>
+  </ol>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $-3 + 4\cdot(-2) - (-10)\div 5$.</p>
+      <p class="paso">Primero la multiplicación y la división; al final, sumas y restas:</p>
+      $$-3 + \underbrace{4\cdot(-2)}_{-8} - \underbrace{(-10)\div 5}_{-2} = -3 - 8 + 2 = -9$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $2 - 3\,(4 - 6)^2$.</p>
+      <p class="paso">Paréntesis, luego la potencia, luego la multiplicación y al final la resta:</p>
+      $$2 - 3\,(-2)^2 = 2 - 3\cdot 4 = 2 - 12 = -10$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$-3 - 5 = -2$</td><td class="bien">$-3 - 5 = -8$</td><td>Es $-3 + (-5)$: mismo signo, se suman.</td></tr>
+        <tr><td class="mal">$(-2)(-3) = -6$</td><td class="bien">$(-2)(-3) = 6$</td><td>Signos iguales dan positivo.</td></tr>
+        <tr><td class="mal">$6 - (-2) = 4$</td><td class="bien">$6 - (-2) = 8$</td><td>Restar un negativo es sumar.</td></tr>
+        <tr><td class="mal">$2 + 3\cdot 4 = 20$</td><td class="bien">$2 + 3\cdot 4 = 14$</td><td>La multiplicación va antes que la suma.</td></tr>
+        <tr><td class="mal">$-8 \gt -3$</td><td class="bien">$-8 \lt -3$</td><td>El que está más a la izquierda es menor.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$|-a| = |a|$</div><div>$a + (-a) = 0$</div><div>$a - b = a + (-b)$</div>
+      <div>$(-)(-) = (+)$</div><div>$(+)(-) = (-)$</div><div>$(-)\div(-) = (+)$</div>
+      <div>Mismo signo: suma y conserva</div><div>Distinto signo: resta, signo del mayor</div><div>( ) → potencias → × ÷ → + −</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden: van de lo directo a lo que requiere pensar. Al final encontrarás las respuestas y, para los que tienen truco, la solución paso a paso. Termina cada bloque antes de revisar.</p>
+  <div class="bloque-ej">
+    <h3>A. Suma y resta</h3>
+    <ol>
+      <li>$-8 + 13$</li><li>$-6 - 9$</li><li>$7 - (-4)$</li>
+      <li>$-15 + (-6)$</li><li>$-3 - (-3)$</li><li>$12 - 20 + 5$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Multiplicación y división</h3>
+    <ol>
+      <li>$(-7)(8)$</li><li>$(-9)(-6)$</li><li>$-48 \div 6$</li>
+      <li>$(-2)(-3)(-4)$</li><li>$(-81)\div(-9)$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Operaciones combinadas</h3>
+    <ol>
+      <li>$5 - 3\cdot(-4)$</li><li>$(-2)^3 + 10$</li><li>$-20\div(-4) - 7\cdot 2$</li>
+      <li>$3\,(-2 + 7) - (-1)^4$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Problemas</h3>
+    <ol class="largo">
+      <li>Una madrugada de enero en Ciudad Juárez el termómetro marcó $-4\,^\circ\text{C}$ y al mediodía $13\,^\circ\text{C}$. ¿Cuántos grados subió la temperatura?</li>
+      <li>Un buzo está a 18 m bajo el nivel del mar ($-18$ m). Sube 7 m y después baja 12 m. ¿A qué profundidad queda?</li>
+      <li>Tienes \$350 en una cuenta y te cobran 4 cargos de \$95 cada uno. ¿Cuál es tu saldo? ¿Quedas debiendo?</li>
+      <li>Ordena de menor a mayor: $3,\ -7,\ 0,\ -2,\ 5,\ -10$.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$5$</span></li>
+    <li><span>$-15$</span></li>
+    <li><span>$11$</span></li>
+    <li><span>$-21$</span></li>
+    <li><span>$0$</span></li>
+    <li><span>$-3$</span></li>
+    <li><span>$-56$</span></li>
+    <li><span>$54$</span></li>
+    <li><span>$-8$</span></li>
+    <li><span>$-24$</span></li>
+    <li><span>$9$</span></li>
+    <li><span>$17$</span></li>
+    <li><span>$2$</span></li>
+    <li><span>$-9$</span></li>
+    <li><span>$14$</span></li>
+    <li><span>Subió $17\,^\circ\text{C}$</span></li>
+    <li><span>$-23$ m</span></li>
+    <li><span>Saldo de $-30$: debes \$30</span></li>
+    <li><span>$-10,\,-7,\,-2,\,0,\,3,\,5$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>5</span><div>Restar un número a sí mismo siempre da cero: $-3 - (-3) = -3 + 3 = 0$.</div></div>
+    <div class="sol"><span>6</span><div>De izquierda a derecha: $12 - 20 = -8$, y luego $-8 + 5 = -3$.</div></div>
+    <div class="sol"><span>10</span><div>Hay tres factores negativos (impar), el resultado es negativo: $2\cdot 3\cdot 4 = 24$, así que $-24$.</div></div>
+    <div class="sol"><span>12</span><div>Primero la multiplicación: $3\cdot(-4) = -12$. Luego $5 - (-12) = 5 + 12 = 17$.</div></div>
+    <div class="sol"><span>13</span><div>$(-2)^3 = (-2)(-2)(-2) = -8$. Luego $-8 + 10 = 2$.</div></div>
+    <div class="sol"><span>14</span><div>$-20\div(-4) = 5$ y $7\cdot 2 = 14$. Al final: $5 - 14 = -9$.</div></div>
+    <div class="sol"><span>15</span><div>Paréntesis: $-2 + 7 = 5$. Potencia: $(-1)^4 = 1$. Queda $3\cdot 5 - 1 = 14$.</div></div>
+    <div class="sol"><span>16</span><div>El cambio es final menos inicial: $13 - (-4) = 13 + 4 = 17$.</div></div>
+    <div class="sol"><span>17</span><div>$-18 + 7 - 12 = -11 - 12 = -23$. Queda a 23 m bajo el nivel del mar.</div></div>
+    <div class="sol"><span>18</span><div>Los cargos suman $4\cdot 95 = 380$. Saldo: $350 - 380 = -30$. Quedas debiendo \$30.</div></div>
+  </div>
+</section>

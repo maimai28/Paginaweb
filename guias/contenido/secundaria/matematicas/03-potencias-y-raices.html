@@ -1,0 +1,251 @@
+<!-- guia
+titulo: Potencias y raíces
+nivel: Secundaria
+materia: Matemáticas
+rama: Aritmética
+numero: 03
+entrada: Multiplicar un número por sí mismo muchas veces es tan común que tiene su propia notación. En esta guía vas a aprender a leerla, a manejarla con unas pocas reglas y a hacer el camino de regreso con las raíces.
+objetivo: Calcular potencias con exponente positivo, cero y negativo.
+objetivo: Distinguir entre $(-3)^2$ y $-3^2$.
+objetivo: Simplificar con las leyes de los exponentes.
+objetivo: Sacar raíces exactas y simplificar radicales.
+objetivo: Estimar una raíz que no es exacta.
+objetivo: Resolver problemas de áreas y volúmenes.
+autoeval: Calcular potencias con exponente positivo, cero y negativo. | 01 y 02
+autoeval: Explicar la diferencia entre $(-3)^2$ y $-3^2$. | 01
+autoeval: Simplificar usando las leyes de los exponentes. | 02
+autoeval: Sacar raíces exactas y simplificar radicales. | 03
+autoeval: Estimar una raíz que no es exacta. | 03
+autoeval: Plantear problemas de áreas y volúmenes con raíces. | 03
+-->
+<section>
+  <h2>Qué es una potencia</h2>
+  <p>Cuando escribimos $2^5$ estamos diciendo “multiplica el 2 por sí mismo cinco veces”:</p>
+  $$2^5 = 2\cdot 2\cdot 2\cdot 2\cdot 2 = 32$$
+  <div class="definicion">
+    <span class="etq">Definición</span>
+    <p>Para un número $a$ y un entero positivo $n$, la potencia $a^n$ es el producto de $n$ factores iguales a $a$. Al número $a$ se le llama <strong>base</strong> y a $n$, <strong>exponente</strong>.</p>
+    $$a^n = \underbrace{a\cdot a\cdots a}_{n\ \text{veces}}$$
+  </div>
+  <p>El exponente <em>no</em> multiplica a la base: $2^5$ no es $2\cdot 5 = 10$. Es el error más frecuente al empezar, así que vale la pena escribir los factores las primeras veces.</p>
+
+  <h3>El signo importa, y los paréntesis también</h3>
+  <p>Una base negativa con exponente par da resultado positivo; con exponente impar, negativo. Pero fíjate en qué afecta el exponente:</p>
+  $$(-3)^2 = (-3)(-3) = 9 \qquad\qquad -3^2 = -(3\cdot 3) = -9$$
+  <p>Sin paréntesis, el exponente solo afecta al 3, y el signo menos se aplica al final.</p>
+</section>
+
+<section>
+  <h2>Leyes de los exponentes</h2>
+  <p>Todas salen de contar factores. Si alguna se te olvida, escribe los factores y la vuelves a encontrar.</p>
+  <table class="leyes">
+    <thead><tr><th>Ley</th><th>En símbolos</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Producto, misma base</td><td>$a^m\cdot a^n = a^{m+n}$</td><td>$2^3\cdot 2^2 = 2^5 = 32$</td></tr>
+      <tr><td>Cociente, misma base</td><td>$\dfrac{a^m}{a^n} = a^{m-n}$</td><td>$\dfrac{5^6}{5^4} = 5^2 = 25$</td></tr>
+      <tr><td>Potencia de una potencia</td><td>$(a^m)^n = a^{m\cdot n}$</td><td>$(3^2)^3 = 3^6 = 729$</td></tr>
+      <tr><td>Potencia de un producto</td><td>$(ab)^n = a^n b^n$</td><td>$(2\cdot 5)^3 = 2^3\cdot 5^3 = 1000$</td></tr>
+      <tr><td>Potencia de un cociente</td><td>$\left(\dfrac{a}{b}\right)^{n} = \dfrac{a^n}{b^n}$</td><td>$\left(\dfrac{2}{3}\right)^{2} = \dfrac{4}{9}$</td></tr>
+      <tr><td>Exponente cero</td><td>$a^0 = 1$</td><td>$7^0 = 1$</td></tr>
+      <tr><td>Exponente negativo</td><td>$a^{-n} = \dfrac{1}{a^n}$</td><td>$4^{-2} = \dfrac{1}{16}$</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">En las leyes de cociente, exponente cero y exponente negativo, la base no puede ser cero.</p>
+
+  <div class="nota">
+    <span class="etq">¿Por qué $a^0 = 1$?</span>
+    <p>No es una regla inventada. Divide un número entre sí mismo: $5^3 \div 5^3 = 1$. Pero con la ley del cociente, $5^3 \div 5^3 = 5^{3-3} = 5^0$. Para que las dos cuentas coincidan, $5^0$ tiene que valer 1. El mismo razonamiento con $5^2 \div 5^5 = 5^{-3}$ explica por qué un exponente negativo significa “uno entre”.</p>
+  </div>
+
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Simplifica $\dfrac{2^3\cdot 2^4}{2^5}$.</p>
+      <p class="paso">Arriba se suman los exponentes y luego se resta el de abajo:</p>
+      $$\frac{2^3\cdot 2^4}{2^5} = \frac{2^{7}}{2^5} = 2^{2} = 4$$
+    </div>
+  </div>
+
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Simplifica $\dfrac{(a^3b^2)^2}{a^4 b}$ con $a, b \neq 0$.</p>
+      <p class="paso">Primero la potencia de un producto; después, cociente de misma base, letra por letra:</p>
+      $$\frac{(a^3b^2)^2}{a^4 b} = \frac{a^6 b^4}{a^4 b} = a^{6-4}\, b^{4-1} = a^2 b^3$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Raíces: el camino de regreso</h2>
+  <p>Si sabes que un cuadrado tiene 49 cm² de área, ¿cuánto mide su lado? Buscas un número que, elevado al cuadrado, dé 49. Eso es sacar raíz cuadrada.</p>
+  <div class="definicion">
+    <span class="etq">Definición</span>
+    <p>La raíz cuadrada de un número $a \ge 0$ es el número $b \ge 0$ tal que $b^2 = a$. Se escribe $\sqrt{a} = b$. En general, $\sqrt[n]{a} = b$ significa que $b^n = a$.</p>
+  </div>
+  <p>Dos detalles que conviene tener claros desde ahora:</p>
+  <p><strong>$\sqrt{9} = 3$, no $\pm 3$.</strong> El símbolo $\sqrt{\ }$ siempre da el valor no negativo. Otra cosa es la ecuación $x^2 = 9$, que sí tiene dos soluciones: $x = 3$ y $x = -3$.</p>
+  <p><strong>Raíces de números negativos.</strong> $\sqrt[3]{-8} = -2$ porque $(-2)^3 = -8$. En cambio, $\sqrt{-4}$ no es un número real: ningún número real al cuadrado da negativo.</p>
+
+  <h3>Cuadrados y cubos que conviene saberse</h3>
+  <div class="dos-col">
+    <div>
+      <p class="subtitulo-tabla">Cuadrados $n^2$</p>
+      <div class="tablita">
+        <div><b>1²</b> 1</div><div><b>2²</b> 4</div><div><b>3²</b> 9</div><div><b>4²</b> 16</div><div><b>5²</b> 25</div>
+        <div><b>6²</b> 36</div><div><b>7²</b> 49</div><div><b>8²</b> 64</div><div><b>9²</b> 81</div><div><b>10²</b> 100</div>
+        <div><b>11²</b> 121</div><div><b>12²</b> 144</div><div><b>13²</b> 169</div><div><b>14²</b> 196</div><div><b>15²</b> 225</div>
+      </div>
+    </div>
+    <div>
+      <p class="subtitulo-tabla">Cubos $n^3$</p>
+      <div class="tablita">
+        <div><b>1³</b> 1</div><div><b>2³</b> 8</div><div><b>3³</b> 27</div><div><b>4³</b> 64</div><div><b>5³</b> 125</div>
+        <div><b>6³</b> 216</div><div><b>7³</b> 343</div><div><b>8³</b> 512</div><div><b>9³</b> 729</div><div><b>10³</b> 1000</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Propiedades y simplificación de radicales</h3>
+  <p>Para $a, b \ge 0$ (y $b \neq 0$ cuando está en un denominador):</p>
+  $$\sqrt{ab} = \sqrt{a}\,\sqrt{b} \qquad\quad \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}} \qquad\quad \left(\sqrt{a}\right)^2 = a$$
+  <p>La primera sirve para simplificar: se busca el cuadrado perfecto más grande que divida al número.</p>
+
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Simplifica $\sqrt{48}$.</p>
+      <p class="paso">El cuadrado perfecto más grande que divide a 48 es 16:</p>
+      $$\sqrt{48} = \sqrt{16\cdot 3} = \sqrt{16}\,\sqrt{3} = 4\sqrt{3}$$
+    </div>
+  </div>
+
+  <h3>Estimar una raíz que no es exacta</h3>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Cuánto vale aproximadamente $\sqrt{50}$?</p>
+      <p class="paso">Busca los cuadrados perfectos que lo encierran: $7^2 = 49$ y $8^2 = 64$. Entonces $\sqrt{50}$ está entre 7 y 8, muy cerca de 7. Prueba decimales:</p>
+      $$7.1^2 = 50.41 \qquad 7.07^2 = 49.9849$$
+      <p class="paso">Así que $\sqrt{50} \approx 7.07$. Con calculadora: $7.0710\ldots$</p>
+    </div>
+  </div>
+
+  <div class="nota">
+    <span class="etq">Para ir más lejos (prepa)</span>
+    <p>Una raíz también se puede escribir como potencia con exponente fraccionario: $\sqrt[n]{a} = a^{1/n}$. Por ejemplo, $8^{1/3} = \sqrt[3]{8} = 2$ y $8^{2/3} = \left(\sqrt[3]{8}\right)^2 = 4$. Las leyes de los exponentes siguen funcionando igual.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$2^3\cdot 2^4 = 4^7$</td><td class="bien">$2^3\cdot 2^4 = 2^7$</td><td>La base se conserva; solo se suman los exponentes.</td></tr>
+        <tr><td class="mal">$(a^2)^3 = a^5$</td><td class="bien">$(a^2)^3 = a^6$</td><td>Potencia de potencia: los exponentes se multiplican.</td></tr>
+        <tr><td class="mal">$-4^2 = 16$</td><td class="bien">$-4^2 = -16$</td><td>Sin paréntesis, el exponente no afecta al signo.</td></tr>
+        <tr><td class="mal">$2^{-3} = -8$</td><td class="bien">$2^{-3} = \dfrac{1}{8}$</td><td>El exponente negativo no hace negativo al resultado.</td></tr>
+        <tr><td class="mal">$3\cdot 2^2 = 6^2$</td><td class="bien">$3\cdot 2^2 = 12$</td><td>Primero la potencia, después la multiplicación.</td></tr>
+        <tr><td class="mal">$\sqrt{9+16} = 3+4$</td><td class="bien">$\sqrt{9+16} = \sqrt{25} = 5$</td><td>La raíz de una suma no se reparte.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$a^m\cdot a^n = a^{m+n}$</div><div>$a^m \div a^n = a^{m-n}$</div><div>$(a^m)^n = a^{mn}$</div>
+      <div>$(ab)^n = a^n b^n$</div><div>$a^0 = 1$</div><div>$a^{-n} = \dfrac{1}{a^n}$</div>
+      <div>$\sqrt{a} = b \iff b^2 = a,\ b \ge 0$</div><div>$\sqrt{ab} = \sqrt{a}\,\sqrt{b}$</div><div>$\sqrt[n]{a} = a^{1/n}$</div>
+      <div>$(-3)^2 = 9$</div><div>$-3^2 = -9$</div><div>$\sqrt{a+b} \neq \sqrt{a} + \sqrt{b}$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden: van de lo directo a lo que requiere pensar. Al final encontrarás las respuestas y, para los que tienen truco, la solución paso a paso. Termina cada bloque antes de revisar.</p>
+
+  <div class="bloque-ej">
+    <h3>A. Calcula</h3>
+    <ol>
+      <li>$3^4$</li><li>$(-2)^5$</li><li>$-3^2$</li>
+      <li>$\left(\dfrac{2}{3}\right)^{3}$</li><li>$5^0$</li><li>$10^{-3}$</li>
+    </ol>
+  </div>
+
+  <div class="bloque-ej">
+    <h3>B. Escribe como una sola potencia o simplifica ($x, a \neq 0$)</h3>
+    <ol>
+      <li>$2^3\cdot 2^5$</li><li>$\dfrac{7^9}{7^6}$</li><li>$(x^4)^3$</li>
+      <li>$(3a^2)^3$</li><li>$\dfrac{x^5\cdot x^{-2}}{x}$</li>
+    </ol>
+  </div>
+
+  <div class="bloque-ej">
+    <h3>C. Raíces</h3>
+    <ol>
+      <li>$\sqrt{196}$</li><li>$\sqrt[3]{-125}$</li><li>Simplifica $\sqrt{72}$</li>
+      <li>$\sqrt{\dfrac{4}{81}}$</li><li>¿Entre qué enteros está $\sqrt{50}$? Estímala con dos decimales.</li>
+    </ol>
+  </div>
+
+  <div class="bloque-ej">
+    <h3>D. Problemas</h3>
+    <ol class="largo">
+      <li>Un terreno cuadrado cerca de los Médanos de Samalayuca tiene un área de 2&#8239;025&nbsp;m². ¿Cuánto mide cada lado?</li>
+      <li>Un tinaco en forma de cubo tiene un volumen de 1.728&nbsp;m³. ¿Cuánto mide su arista?</li>
+      <li>Una bacteria se divide en dos cada hora. Si empiezas con una, ¿cuántas hay después de 10 horas? Escribe el resultado como potencia y como número.</li>
+      <li>La distancia media de la Tierra al Sol es de unos 149&#8239;600&#8239;000&nbsp;km. Escríbela en notación científica.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$81$</span></li>
+    <li><span>$-32$</span></li>
+    <li><span>$-9$</span></li>
+    <li><span>$\dfrac{8}{27}$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$\dfrac{1}{1000} = 0.001$</span></li>
+    <li><span>$2^8 = 256$</span></li>
+    <li><span>$7^3 = 343$</span></li>
+    <li><span>$x^{12}$</span></li>
+    <li><span>$27a^6$</span></li>
+    <li><span>$x^2$</span></li>
+    <li><span>$14$</span></li>
+    <li><span>$-5$</span></li>
+    <li><span>$\sqrt{36\cdot 2} = 6\sqrt{2}$</span></li>
+    <li><span>$\dfrac{2}{9}$</span></li>
+    <li><span>Entre 7 y 8; $\sqrt{50} \approx 7.07$</span></li>
+    <li><span>$\sqrt{2025} = 45$ m</span></li>
+    <li><span>$\sqrt[3]{1.728} = 1.2$ m</span></li>
+    <li><span>$2^{10} = 1024$ bacterias</span></li>
+    <li><span>$1.496\times 10^{8}$ km</span></li>
+  </ol>
+
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>Sin paréntesis el exponente solo afecta al 3: $-3^2 = -(3\cdot 3) = -9$.</div></div>
+    <div class="sol"><span>4</span><div>Potencia de un cociente: $\left(\dfrac{2}{3}\right)^3 = \dfrac{2^3}{3^3} = \dfrac{8}{27}$.</div></div>
+    <div class="sol"><span>6</span><div>Exponente negativo significa “uno entre”: $10^{-3} = \dfrac{1}{10^3} = \dfrac{1}{1000} = 0.001$.</div></div>
+    <div class="sol"><span>10</span><div>Cada factor se eleva al cubo: $(3a^2)^3 = 3^3\,(a^2)^3 = 27a^6$.</div></div>
+    <div class="sol"><span>11</span><div>Arriba, $x^5\cdot x^{-2} = x^{5+(-2)} = x^3$. Luego $\dfrac{x^3}{x^1} = x^{3-1} = x^2$.</div></div>
+    <div class="sol"><span>14</span><div>El cuadrado perfecto más grande que divide a 72 es 36: $\sqrt{72} = \sqrt{36}\,\sqrt{2} = 6\sqrt{2}$.</div></div>
+    <div class="sol"><span>16</span><div>$7^2 = 49 \lt 50 \lt 64 = 8^2$, así que está entre 7 y 8. Como $7.07^2 = 49.98$, queda $\sqrt{50} \approx 7.07$.</div></div>
+    <div class="sol"><span>17</span><div>El área de un cuadrado es lado², así que el lado es $\sqrt{2025} = 45$ m. Comprueba: $45^2 = 2025$.</div></div>
+    <div class="sol"><span>18</span><div>El volumen de un cubo es arista³, así que la arista es $\sqrt[3]{1.728} = 1.2$ m. Comprueba: $1.2^3 = 1.728$.</div></div>
+    <div class="sol"><span>19</span><div>Cada hora se multiplican por 2: después de 10 horas hay $2^{10} = 1024$ bacterias.</div></div>
+    <div class="sol"><span>20</span><div>Mueve el punto decimal 8 lugares a la izquierda: $149\,600\,000 = 1.496\times 10^{8}$ km.</div></div>
+  </div>
+</section>

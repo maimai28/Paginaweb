@@ -1,0 +1,215 @@
+<!-- guia
+titulo: Ángulos y triángulos
+nivel: Secundaria
+materia: Matemáticas
+rama: Geometría
+numero: 10
+entrada: Los ángulos y los triángulos están detrás de todo lo que se construye: techos, puentes, rampas. En esta guía vas a aprender las relaciones entre ángulos que se usan para calcular medidas sin transportador.
+objetivo: Clasificar ángulos y usar complementarios y suplementarios.
+objetivo: Encontrar ángulos entre rectas paralelas cortadas por una transversal.
+objetivo: Clasificar triángulos por sus lados y por sus ángulos.
+objetivo: Usar que los ángulos de un triángulo suman 180°.
+objetivo: Saber si tres medidas pueden formar un triángulo.
+objetivo: Resolver problemas con triángulos semejantes.
+autoeval: Calcular complementarios y suplementarios. | 01
+autoeval: Encontrar ángulos entre paralelas y una transversal. | 02
+autoeval: Clasificar triángulos por lados y por ángulos. | 03
+autoeval: Encontrar el ángulo que falta en un triángulo. | 03
+autoeval: Usar la desigualdad del triángulo. | 03
+autoeval: Resolver problemas con triángulos semejantes. | 04
+-->
+<section>
+  <h2>Ángulos</h2>
+  <p>Un ángulo es la abertura entre dos rayos que salen del mismo punto (el vértice). Se mide en grados; una vuelta completa son $360^\circ$.</p>
+  <table class="leyes">
+    <thead><tr><th>Tipo</th><th>Medida</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Agudo</td><td>Menos de $90^\circ$</td><td>$35^\circ$</td></tr>
+      <tr><td>Recto</td><td>Exactamente $90^\circ$</td><td>La esquina de una hoja</td></tr>
+      <tr><td>Obtuso</td><td>Entre $90^\circ$ y $180^\circ$</td><td>$128^\circ$</td></tr>
+      <tr><td>Llano</td><td>$180^\circ$</td><td>Una línea recta</td></tr>
+    </tbody>
+  </table>
+  <div class="definicion">
+    <span class="etq">Complementarios y suplementarios</span>
+    <p>Dos ángulos son <strong>complementarios</strong> si suman $90^\circ$ y <strong>suplementarios</strong> si suman $180^\circ$. El complemento de $35^\circ$ es $55^\circ$; el suplemento de $128^\circ$ es $52^\circ$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Dos ángulos son suplementarios y uno mide el triple del otro. ¿Cuánto mide cada uno?</p>
+      $$x + 3x = 180^\circ \;\Rightarrow\; 4x = 180^\circ \;\Rightarrow\; x = 45^\circ$$
+      <p class="paso">Los ángulos miden $45^\circ$ y $135^\circ$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Paralelas cortadas por una transversal</h2>
+  <p>Cuando dos rectas se cruzan, los ángulos <strong>opuestos por el vértice</strong> son iguales y los <strong>adyacentes</strong> suman $180^\circ$. Si una recta (la transversal) corta a dos paralelas, se forman ocho ángulos con relaciones fijas:</p>
+  <div class="figura-lado">
+    <table>
+      <thead><tr><th>Pareja</th><th>Ejemplo</th><th>Relación</th></tr></thead>
+      <tbody>
+        <tr><td>Opuestos por el vértice</td><td>1 y 3</td><td>Iguales</td></tr>
+        <tr><td>Correspondientes</td><td>1 y 5</td><td>Iguales</td></tr>
+        <tr><td>Alternos internos</td><td>3 y 5</td><td>Iguales</td></tr>
+        <tr><td>Alternos externos</td><td>1 y 7</td><td>Iguales</td></tr>
+        <tr><td>Colaterales internos</td><td>4 y 5</td><td>Suman $180^\circ$</td></tr>
+      </tbody>
+    </table>
+    <figure class="figura">
+      <svg viewBox="0 0 300 160" width="62mm">
+        <line x1="20" y1="40" x2="290" y2="40" stroke="#4b5d6b" stroke-width="2"/>
+        <line x1="20" y1="110" x2="290" y2="110" stroke="#4b5d6b" stroke-width="2"/>
+        <line x1="80" y1="150" x2="240" y2="0" stroke="#a8492a" stroke-width="2"/>
+        <g font-family="Nunito" font-size="12" font-weight="800" text-anchor="middle" fill="#2b241e">
+          <text x="219" y="39">1</text><text x="188" y="26">2</text><text x="175" y="57">3</text><text x="206" y="70">4</text>
+          <text x="145" y="109">5</text><text x="114" y="96">6</text><text x="100" y="127">7</text><text x="131" y="140">8</text>
+        </g>
+      </svg>
+      <figcaption>Las dos rectas azules son paralelas.</figcaption>
+    </figure>
+  </div>
+  <p>En la práctica: todos los ángulos agudos de la figura son iguales entre sí, todos los obtusos son iguales entre sí, y un agudo más un obtuso siempre suman $180^\circ$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Dos ángulos opuestos por el vértice miden $2x + 10$ y $3x - 20$ grados. ¿Cuánto miden?</p>
+      $$2x + 10 = 3x - 20 \;\Rightarrow\; x = 30 \;\Rightarrow\; 2(30) + 10 = 70^\circ$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Triángulos</h2>
+  <table class="leyes">
+    <thead><tr><th>Por sus lados</th><th>Por sus ángulos</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Equilátero:</strong> tres lados iguales</td><td><strong>Acutángulo:</strong> tres ángulos agudos</td></tr>
+      <tr><td><strong>Isósceles:</strong> dos lados iguales</td><td><strong>Rectángulo:</strong> un ángulo recto</td></tr>
+      <tr><td><strong>Escaleno:</strong> tres lados distintos</td><td><strong>Obtusángulo:</strong> un ángulo obtuso</td></tr>
+    </tbody>
+  </table>
+  <div class="definicion">
+    <span class="etq">Suma de ángulos interiores</span>
+    <p>En cualquier triángulo, los tres ángulos interiores suman $180^\circ$. Además, un <strong>ángulo exterior</strong> mide lo mismo que la suma de los dos interiores que no están junto a él.</p>
+  </div>
+  <p>En un triángulo isósceles, los dos ángulos opuestos a los lados iguales (los de la base) son iguales. En un equilátero, los tres miden $60^\circ$.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un triángulo isósceles tiene un ángulo de $40^\circ$ entre sus lados iguales. ¿Cuánto miden los otros dos?</p>
+      $$40^\circ + 2x = 180^\circ \;\Rightarrow\; 2x = 140^\circ \;\Rightarrow\; x = 70^\circ$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Desigualdad del triángulo</span>
+    <p>No cualquier trío de medidas forma un triángulo: cada lado debe ser <strong>menor que la suma de los otros dos</strong>. Con 3, 4 y 8 cm no se puede, porque $3 + 4 = 7 \lt 8$. Basta revisar que los dos lados más cortos sumen más que el más largo.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Triángulos semejantes</h2>
+  <p>Dos triángulos son <strong>semejantes</strong> si tienen los mismos ángulos. Entonces tienen la misma forma aunque distinto tamaño, y sus lados son proporcionales: todos se multiplican por el mismo número (la razón de semejanza).</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>A la misma hora, una persona de 1.6 m proyecta una sombra de 2 m y un árbol una sombra de 15 m. ¿Cuánto mide el árbol?</p>
+      <p class="paso">Los rayos del sol llegan con el mismo ángulo, así que los triángulos persona–sombra y árbol–sombra son semejantes:</p>
+      $$\frac{h}{15} = \frac{1.6}{2} \;\Rightarrow\; h = 15\cdot 0.8 = 12 \text{ m}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Congruencia</span>
+    <p>Si además de los ángulos coinciden las medidas de los lados, los triángulos son <strong>congruentes</strong> (iguales). Basta con que coincidan los tres lados (LLL), dos lados y el ángulo entre ellos (LAL), o dos ángulos y el lado entre ellos (ALA).</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Complemento de $35^\circ$ = $145^\circ$</td><td class="bien">$55^\circ$</td><td>Complementarios suman 90, no 180.</td></tr>
+        <tr><td class="mal">Colaterales internos iguales</td><td class="bien">Suman $180^\circ$</td><td>Uno es agudo y el otro obtuso.</td></tr>
+        <tr><td class="mal">3, 4 y 8 cm forman un triángulo</td><td class="bien">No se puede</td><td>$3 + 4 \lt 8$.</td></tr>
+        <tr><td class="mal">Isósceles con ángulos $40^\circ$, $40^\circ$ y $70^\circ$</td><td class="bien">$40^\circ$, $70^\circ$, $70^\circ$</td><td>Deben sumar 180; revisa cuál es el ángulo distinto.</td></tr>
+        <tr><td class="mal">Semejantes: sumar la diferencia</td><td class="bien">Multiplicar por la razón</td><td>Los lados son proporcionales, no “más tanto”.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Complementarios: $90^\circ$</div><div>Suplementarios: $180^\circ$</div><div>Opuestos por el vértice: iguales</div>
+      <div>Correspondientes y alternos: iguales</div><div>Colaterales: suman $180^\circ$</div><div>Triángulo: $A + B + C = 180^\circ$</div>
+      <div>Exterior = suma de 2 interiores lejanos</div><div>Lado mayor $\lt$ suma de los otros</div><div>Semejantes: lados proporcionales</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden; haz un dibujo aunque sea a mano alzada. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Ángulos</h3>
+    <ol>
+      <li>Complemento de $35^\circ$</li><li>Suplemento de $128^\circ$</li><li>Dos complementarios, uno mide $20^\circ$ más que el otro</li>
+      <li>En la figura de la sección 02, el ángulo 1 mide $65^\circ$. ¿Cuánto miden 5, 3 y 4?</li><li>Opuestos por el vértice: $4x - 15$ y $2x + 25$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Triángulos</h3>
+    <ol>
+      <li>Dos ángulos miden $48^\circ$ y $67^\circ$. ¿El tercero?</li><li>Isósceles con ángulos de la base de $52^\circ$. ¿El otro?</li><li>Los ángulos miden $x$, $2x$ y $3x$. ¿Cuánto vale cada uno? ¿Qué tipo de triángulo es?</li>
+      <li>Un ángulo exterior mide $120^\circ$ y un interior lejano $50^\circ$. ¿El otro interior lejano?</li><li>¿Se puede formar un triángulo con 5, 7 y 10 cm? ¿Y con 2, 3 y 6 cm?</li><li>Clasifica por lados y por ángulos un triángulo de lados 7, 7 y 7 cm.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Semejanza</h3>
+    <ol class="largo">
+      <li>Un edificio proyecta una sombra de 18 m al mismo tiempo que una varilla de 1.5 m proyecta una de 2.25 m. ¿Cuánto mide el edificio?</li>
+      <li>Un triángulo tiene lados de 4, 6 y 8 cm. Uno semejante tiene su lado mayor de 12 cm. ¿Cuánto miden sus otros lados?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$55^\circ$</span></li>
+    <li><span>$52^\circ$</span></li>
+    <li><span>$35^\circ$ y $55^\circ$</span></li>
+    <li><span>$5 = 65^\circ$, $3 = 65^\circ$, $4 = 115^\circ$</span></li>
+    <li><span>$65^\circ$</span></li>
+    <li><span>$65^\circ$</span></li>
+    <li><span>$76^\circ$</span></li>
+    <li><span>$30^\circ, 60^\circ, 90^\circ$; rectángulo</span></li>
+    <li><span>$70^\circ$</span></li>
+    <li><span>Sí; no</span></li>
+    <li><span>Equilátero y acutángulo</span></li>
+    <li><span>12 m</span></li>
+    <li><span>6 cm y 9 cm</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>$x + (x + 20) = 90 \Rightarrow 2x = 70 \Rightarrow x = 35^\circ$; el otro, $55^\circ$.</div></div>
+    <div class="sol"><span>4</span><div>5 es correspondiente de 1: $65^\circ$. 3 es opuesto por el vértice de 1: $65^\circ$. 4 es adyacente a 3: $180 - 65 = 115^\circ$.</div></div>
+    <div class="sol"><span>5</span><div>$4x - 15 = 2x + 25 \Rightarrow 2x = 40 \Rightarrow x = 20$. Cada ángulo: $4(20) - 15 = 65^\circ$.</div></div>
+    <div class="sol"><span>6</span><div>$180 - 48 - 67 = 65^\circ$.</div></div>
+    <div class="sol"><span>7</span><div>$180 - 2(52) = 76^\circ$.</div></div>
+    <div class="sol"><span>8</span><div>$x + 2x + 3x = 180 \Rightarrow x = 30$. Uno mide $90^\circ$: es rectángulo.</div></div>
+    <div class="sol"><span>9</span><div>El exterior es la suma de los dos interiores lejanos: $120 - 50 = 70^\circ$.</div></div>
+    <div class="sol"><span>10</span><div>$5 + 7 = 12 \gt 10$: sí. $2 + 3 = 5 \lt 6$: no.</div></div>
+    <div class="sol"><span>12</span><div>$\dfrac{h}{18} = \dfrac{1.5}{2.25} \Rightarrow h = 18\cdot\dfrac{1.5}{2.25} = 12$ m.</div></div>
+    <div class="sol"><span>13</span><div>Razón: $\tfrac{12}{8} = 1.5$. Los otros lados: $4(1.5) = 6$ y $6(1.5) = 9$ cm.</div></div>
+  </div>
+</section>

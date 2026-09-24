@@ -1,0 +1,187 @@
+<!-- guia
+titulo: Probabilidad básica
+nivel: Secundaria
+materia: Matemáticas
+rama: Probabilidad y estadística
+numero: 16
+entrada: No se puede saber qué número va a caer en un dado, pero sí qué tan probable es cada resultado. La probabilidad convierte la incertidumbre en números. En esta guía vas a calcularla contando casos con cuidado.
+objetivo: Identificar el espacio muestral de un experimento.
+objetivo: Calcular probabilidades con la regla de Laplace.
+objetivo: Usar el complemento de un evento.
+objetivo: Contar casos con diagramas de árbol y tablas.
+objetivo: Distinguir probabilidad teórica de frecuencia relativa.
+objetivo: Evitar los errores de intuición más comunes.
+autoeval: Escribir el espacio muestral completo. | 01
+autoeval: Calcular probabilidades como casos favorables entre posibles. | 02
+autoeval: Usar $P(\text{no } A) = 1 - P(A)$. | 02
+autoeval: Contar resultados con árbol o tabla de doble entrada. | 03
+autoeval: Calcular y comparar la frecuencia relativa. | 04
+-->
+<section>
+  <h2>Experimentos y espacio muestral</h2>
+  <p>Un <strong>experimento aleatorio</strong> es uno cuyo resultado no se puede predecir aunque se repita en las mismas condiciones: lanzar un dado, sacar una canica de una bolsa, lanzar una moneda.</p>
+  <div class="definicion">
+    <span class="etq">Espacio muestral y eventos</span>
+    <p>El <strong>espacio muestral</strong> $S$ es el conjunto de todos los resultados posibles. Un <strong>evento</strong> es cualquier grupo de esos resultados.</p>
+    $$\text{Dado: } S = \{1, 2, 3, 4, 5, 6\} \qquad\qquad \text{“sale par”} = \{2, 4, 6\}$$
+  </div>
+  <p>Al lanzar una moneda mexicana, $S = \{\text{águila},\ \text{sol}\}$.</p>
+</section>
+
+<section>
+  <h2>Probabilidad clásica</h2>
+  <p>Si todos los resultados son <strong>igual de probables</strong> (dado sin trucos, canicas del mismo tamaño), la probabilidad de un evento $A$ es:</p>
+  $$P(A) = \frac{\text{casos favorables}}{\text{casos posibles}}$$
+  <p>Siempre da un número entre 0 y 1. $P = 0$ es un evento <strong>imposible</strong>; $P = 1$, uno <strong>seguro</strong>. También se puede expresar en porcentaje: $P = 0.25$ es $25\,\%$.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En una bolsa hay 5 canicas rojas, 3 azules y 2 verdes. Se saca una sin ver. Calcula $P(\text{azul})$, $P(\text{roja o azul})$ y $P(\text{amarilla})$.</p>
+      $$P(\text{azul}) = \frac{3}{10} \qquad P(\text{roja o azul}) = \frac{5 + 3}{10} = \frac{4}{5} \qquad P(\text{amarilla}) = \frac{0}{10} = 0$$
+    </div>
+  </div>
+  <div class="definicion">
+    <span class="etq">Complemento</span>
+    <p>La probabilidad de que <em>no</em> ocurra un evento es 1 menos la probabilidad de que ocurra:</p>
+    $$P(\text{no } A) = 1 - P(A)$$
+    <p>Por ejemplo, $P(\text{no sale } 6) = 1 - \tfrac{1}{6} = \tfrac{5}{6}$. Es muy útil cuando contar lo que <em>no</em> quieres es más fácil.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Contar con árboles y tablas</h2>
+  <p>Cuando el experimento tiene varias etapas, el error más común es contar mal los casos posibles. Un diagrama de árbol o una tabla evitan que se te escape alguno.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se lanzan dos monedas. ¿Cuál es la probabilidad de que salga un águila y un sol?</p>
+      <p class="paso">Primera moneda A o S; para cada una, la segunda A o S. El espacio muestral tiene 4 resultados: AA, AS, SA, SS. Hay dos favorables (AS y SA):</p>
+      $$P = \frac{2}{4} = \frac{1}{2}$$
+      <p class="paso">No es $\tfrac{1}{3}$: “un águila y un sol” puede salir de dos maneras distintas.</p>
+    </div>
+  </div>
+  <div class="figura-lado">
+    <div>
+      <p>Con <strong>dos dados</strong> hay $6\times 6 = 36$ resultados igual de probables. La tabla muestra la suma de cada pareja. Por ejemplo, la suma 7 aparece 6 veces:</p>
+      $$P(\text{suma } 7) = \frac{6}{36} = \frac{1}{6}$$
+      <p>La suma 2 solo aparece una vez ($1 + 1$), así que $P(\text{suma } 2) = \tfrac{1}{36}$. Las sumas <em>no</em> son igual de probables aunque los dados sí lo sean.</p>
+    </div>
+    <table class="tabla-dados">
+      <thead><tr><th>+</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+      <tbody>
+        <tr><th>1</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="d">7</td></tr>
+        <tr><th>2</th><td>3</td><td>4</td><td>5</td><td>6</td><td class="d">7</td><td>8</td></tr>
+        <tr><th>3</th><td>4</td><td>5</td><td>6</td><td class="d">7</td><td>8</td><td>9</td></tr>
+        <tr><th>4</th><td>5</td><td>6</td><td class="d">7</td><td>8</td><td>9</td><td>10</td></tr>
+        <tr><th>5</th><td>6</td><td class="d">7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+        <tr><th>6</th><td class="d">7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="nota">
+    <span class="etq">Regla del producto</span>
+    <p>Si dos eventos no se afectan entre sí (son independientes), la probabilidad de que ocurran los dos es el producto: $P(\text{águila y águila}) = \tfrac{1}{2}\cdot\tfrac{1}{2} = \tfrac{1}{4}$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Probabilidad y experimentos reales</h2>
+  <p>Si lanzas una moneda 50 veces y salen 28 águilas, la <strong>frecuencia relativa</strong> de águila fue $\tfrac{28}{50} = 0.56$, no exactamente 0.5. Eso es normal.</p>
+  <div class="definicion">
+    <span class="etq">Frecuencia relativa</span>
+    $$f_r = \frac{\text{veces que ocurrió}}{\text{veces que se repitió el experimento}}$$
+    <p>Mientras más veces repites el experimento, más se acerca la frecuencia relativa a la probabilidad teórica. Esto se conoce como <strong>ley de los grandes números</strong>.</p>
+  </div>
+  <div class="nota">
+    <span class="etq">Las monedas no tienen memoria</span>
+    <p>Si salió sol cinco veces seguidas, la probabilidad de águila en el siguiente lanzamiento sigue siendo $\tfrac{1}{2}$. Pensar que “ya le toca” a águila es un error muy común (se llama falacia del apostador).</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$P = \dfrac{7}{5}$</td><td class="bien">$0 \le P \le 1$</td><td>Nunca hay más favorables que posibles.</td></tr>
+        <tr><td class="mal">“O pasa o no pasa: 50 %”</td><td class="bien">Contar casos</td><td>Solo vale si ambos resultados son igual de probables.</td></tr>
+        <tr><td class="mal">Dos monedas: $P(\text{AS}) = \dfrac{1}{3}$</td><td class="bien">$\dfrac{2}{4} = \dfrac{1}{2}$</td><td>AS y SA son resultados distintos.</td></tr>
+        <tr><td class="mal">$P(\text{suma } 7) = \dfrac{1}{11}$</td><td class="bien">$\dfrac{6}{36} = \dfrac{1}{6}$</td><td>Las 11 sumas posibles no son igual de probables.</td></tr>
+        <tr><td class="mal">“Ya le toca a águila”</td><td class="bien">Sigue siendo $\dfrac{1}{2}$</td><td>Cada lanzamiento es independiente.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$P(A) = \dfrac{\text{favorables}}{\text{posibles}}$</div><div>$0 \le P(A) \le 1$</div><div>$P(\text{no } A) = 1 - P(A)$</div>
+      <div>Dos monedas: 4 resultados</div><div>Dos dados: 36 resultados</div><div>Independientes: $P(A)\cdot P(B)$</div>
+      <div>$f_r = \dfrac{\text{ocurrió}}{\text{intentos}}$</div><div>Muchos intentos: $f_r \to P$</div><div>El azar no tiene memoria</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Da tus resultados como fracción simplificada. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Un dado</h3>
+    <ol>
+      <li>$P(\text{sale } 3)$</li><li>$P(\text{múltiplo de } 3)$</li><li>$P(\text{no sale } 6)$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Bolsas y letras</h3>
+    <ol class="largo">
+      <li>Una bolsa tiene 4 canicas rojas, 6 blancas y 2 negras. Calcula $P(\text{blanca})$, $P(\text{no roja})$ y $P(\text{roja o negra})$.</li>
+      <li>Se escribe cada letra de la palabra DESIERTO en una tarjeta y se saca una al azar. ¿Cuál es la probabilidad de que sea vocal?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Varias etapas</h3>
+    <ol class="largo">
+      <li>Se lanzan tres monedas. ¿Cuántos resultados tiene el espacio muestral? Calcula $P(\text{exactamente dos águilas})$ y $P(\text{al menos un águila})$.</li>
+      <li>Se lanzan dos dados. Calcula $P(\text{suma } 10)$ y $P(\text{los dos iguales})$.</li>
+      <li>Se lanza un dado y una moneda. ¿Cuál es la probabilidad de obtener 6 y águila?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Frecuencia relativa</h3>
+    <ol class="largo">
+      <li>Se lanzó un dado 60 veces y el 6 salió 13 veces. ¿Cuál fue la frecuencia relativa? Compárala con la probabilidad teórica.</li>
+      <li>Una moneda cayó sol 5 veces seguidas. ¿Cuál es la probabilidad de que el siguiente lanzamiento sea águila?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\dfrac{1}{6}$</span></li>
+    <li><span>$\dfrac{1}{3}$</span></li>
+    <li><span>$\dfrac{5}{6}$</span></li>
+    <li><span>$\dfrac{1}{2}$, $\dfrac{2}{3}$, $\dfrac{1}{2}$</span></li>
+    <li><span>$\dfrac{1}{2}$</span></li>
+    <li><span>8; $\dfrac{3}{8}$; $\dfrac{7}{8}$</span></li>
+    <li><span>$\dfrac{1}{12}$; $\dfrac{1}{6}$</span></li>
+    <li><span>$\dfrac{1}{12}$</span></li>
+    <li><span>$\dfrac{13}{60} \approx 0.22$; teórica $\dfrac{1}{6} \approx 0.17$</span></li>
+    <li><span>$\dfrac{1}{2}$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>Los múltiplos de 3 del dado son 3 y 6: $\dfrac{2}{6} = \dfrac{1}{3}$.</div></div>
+    <div class="sol"><span>4</span><div>Hay 12 canicas. Blanca: $\dfrac{6}{12} = \dfrac{1}{2}$. No roja: $1 - \dfrac{4}{12} = \dfrac{2}{3}$. Roja o negra: $\dfrac{4 + 2}{12} = \dfrac{1}{2}$.</div></div>
+    <div class="sol"><span>5</span><div>D-E-S-I-E-R-T-O tiene 8 letras; las vocales son E, I, E, O (la E cuenta dos veces porque hay dos tarjetas): $\dfrac{4}{8} = \dfrac{1}{2}$.</div></div>
+    <div class="sol"><span>6</span><div>$2\cdot 2\cdot 2 = 8$ resultados. Exactamente dos águilas: AAS, ASA, SAA, así que $\dfrac{3}{8}$. Al menos un águila: todo menos SSS, $1 - \dfrac{1}{8} = \dfrac{7}{8}$.</div></div>
+    <div class="sol"><span>7</span><div>Suma 10: (4,6), (5,5), (6,4), así que $\dfrac{3}{36} = \dfrac{1}{12}$. Iguales: (1,1) … (6,6), $\dfrac{6}{36} = \dfrac{1}{6}$.</div></div>
+    <div class="sol"><span>8</span><div>Son independientes: $\dfrac{1}{6}\cdot\dfrac{1}{2} = \dfrac{1}{12}$. También: 12 resultados posibles y uno favorable.</div></div>
+    <div class="sol"><span>9</span><div>$\dfrac{13}{60} \approx 0.217$, un poco más que $\dfrac{1}{6} \approx 0.167$. Con más lanzamientos, se esperaría que se acercara a $\dfrac{1}{6}$.</div></div>
+    <div class="sol"><span>10</span><div>Sigue siendo $\dfrac{1}{2}$: la moneda no recuerda los lanzamientos anteriores.</div></div>
+  </div>
+</section>

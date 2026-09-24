@@ -1,0 +1,174 @@
+<!-- guia
+titulo: Medidas de tendencia central
+nivel: Secundaria
+materia: Matemáticas
+rama: Probabilidad y estadística
+numero: 14
+entrada: Cuando tienes muchos datos, conviene resumirlos en un solo número que los represente. En esta guía vas a calcular la media, la mediana y la moda, y a decidir cuál de las tres describe mejor una situación.
+objetivo: Calcular la media aritmética.
+objetivo: Encontrar la mediana con cantidad par e impar de datos.
+objetivo: Identificar la moda.
+objetivo: Calcular el rango como medida de dispersión.
+objetivo: Trabajar con tablas de frecuencias.
+objetivo: Elegir la medida más representativa.
+autoeval: Calcular media, mediana y moda de una lista. | 01
+autoeval: Encontrar la mediana cuando hay cantidad par de datos. | 01
+autoeval: Calcular media y mediana desde una tabla de frecuencias. | 02
+autoeval: Encontrar un dato faltante a partir de la media. | 03
+autoeval: Elegir la medida adecuada cuando hay datos extremos. | 03
+-->
+<section>
+  <h2>Media, mediana y moda</h2>
+  <p>Tomemos las calificaciones de un alumno: $7,\ 8,\ 6,\ 9,\ 8,\ 10,\ 7,\ 8$.</p>
+  <table class="leyes">
+    <thead><tr><th>Medida</th><th>Cómo se obtiene</th><th>En el ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Media</strong> (promedio)</td><td>Suma todos los datos y divide entre cuántos son: $\bar{x} = \dfrac{\sum x}{n}$</td><td>$\dfrac{63}{8} = 7.875$</td></tr>
+      <tr><td><strong>Mediana</strong></td><td>Ordena los datos y toma el de en medio. Si hay dos en medio, promédialos.</td><td>$6, 7, 7, \mathbf{8}, \mathbf{8}, 8, 9, 10$: $\dfrac{8 + 8}{2} = 8$</td></tr>
+      <tr><td><strong>Moda</strong></td><td>El dato que más se repite. Puede haber más de una o ninguna.</td><td>8 (aparece 3 veces)</td></tr>
+      <tr><td><strong>Rango</strong></td><td>Mayor menos menor. Mide qué tan dispersos están.</td><td>$10 - 6 = 4$</td></tr>
+    </tbody>
+  </table>
+  <div class="nota">
+    <span class="etq">La mediana necesita orden</span>
+    <p>El error más común con la mediana es tomar el dato de en medio <em>sin ordenar</em>. Con $n$ datos ordenados, la mediana está en la posición $\tfrac{n + 1}{2}$. Si $n$ es impar es un solo dato; si es par, cae entre dos y se promedian.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula media, mediana y moda de $4,\ 9,\ 7,\ 4,\ 6$.</p>
+      <p class="paso">Media: $\dfrac{4 + 9 + 7 + 4 + 6}{5} = \dfrac{30}{5} = 6$. Ordenados: $4, 4, \mathbf{6}, 7, 9$, así que la mediana es 6. La moda es 4.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tablas de frecuencias</h2>
+  <p>Cuando los datos se repiten mucho, se organizan en una tabla: cada valor $x$ con su <strong>frecuencia</strong> $f$ (cuántas veces aparece). Para la media, cada valor cuenta tantas veces como su frecuencia:</p>
+  $$\bar{x} = \frac{\sum x\cdot f}{n} \qquad \text{donde } n = \sum f$$
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se preguntó a 20 alumnos cuántos hermanos tienen. Calcula media, mediana y moda.</p>
+      <table>
+        <thead><tr><th>Hermanos $x$</th><th>Alumnos $f$</th><th>$x\cdot f$</th><th>Acumulada</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>3</td><td>0</td><td>3</td></tr>
+          <tr><td>1</td><td>8</td><td>8</td><td>11</td></tr>
+          <tr><td>2</td><td>6</td><td>12</td><td>17</td></tr>
+          <tr><td>3</td><td>2</td><td>6</td><td>19</td></tr>
+          <tr><td>4</td><td>1</td><td>4</td><td>20</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>30</strong></td><td></td></tr>
+        </tbody>
+      </table>
+      <p class="paso">Media: $\dfrac{30}{20} = 1.5$ hermanos. Mediana: con 20 datos, está entre el 10.° y el 11.°; la acumulada muestra que los lugares 4 al 11 tienen valor 1, así que la mediana es 1. Moda: 1 (la frecuencia más alta, 8).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>¿Cuál medida usar?</h2>
+  <p>La media usa todos los datos, pero se deja jalar por los <strong>valores extremos</strong>. La mediana no.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En un negocio, los sueldos mensuales son \$8000, \$9000, \$9500, \$10 000 y \$60 000 (el del dueño). ¿Qué representa mejor el sueldo típico?</p>
+      $$\bar{x} = \frac{96\,500}{5} = 19\,300 \qquad\qquad \text{mediana} = 9500$$
+      <p class="paso">Cuatro de cinco personas ganan menos de \$10 000, así que la mediana (\$9500) describe mejor lo que gana un trabajador típico. La media está inflada por un solo sueldo.</p>
+    </div>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Medida</th><th>Conviene cuando…</th></tr></thead>
+    <tbody>
+      <tr><td>Media</td><td>Los datos no tienen valores muy extremos.</td></tr>
+      <tr><td>Mediana</td><td>Hay datos extremos (sueldos, precios de casas).</td></tr>
+      <tr><td>Moda</td><td>Los datos son categorías (color favorito, talla más vendida).</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Llevas 4 exámenes con promedio de 8.5. ¿Cuánto necesitas en el quinto para terminar con 8.8?</p>
+      <p class="paso">La media por la cantidad da la suma: llevas $4\cdot 8.5 = 34$ puntos y necesitas $5\cdot 8.8 = 44$. Te faltan $44 - 34 = 10$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Mediana sin ordenar</td><td class="bien">Ordenar primero</td><td>La mediana es el centro de los datos <em>ordenados</em>.</td></tr>
+        <tr><td class="mal">Media de tabla: $\dfrac{\sum x}{\text{número de filas}}$</td><td class="bien">$\dfrac{\sum x\cdot f}{\sum f}$</td><td>Cada valor pesa según su frecuencia.</td></tr>
+        <tr><td class="mal">Moda = la frecuencia más alta</td><td class="bien">Moda = el <em>valor</em> con esa frecuencia</td><td>En el ejemplo, la moda es 1 hermano, no 8.</td></tr>
+        <tr><td class="mal">Promediar promedios de grupos distintos</td><td class="bien">Sumar todo y dividir</td><td>Si los grupos son de distinto tamaño, pesan distinto.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Media: $\bar{x} = \dfrac{\sum x}{n}$</div><div>Con tabla: $\bar{x} = \dfrac{\sum xf}{\sum f}$</div><div>Suma $= \bar{x}\cdot n$</div>
+      <div>Mediana: ordena, toma el centro</div><div>Posición: $\dfrac{n + 1}{2}$</div><div>Moda: el valor más repetido</div>
+      <div>Rango: mayor − menor</div><div>Datos extremos: usa la mediana</div><div>Categorías: usa la moda</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Redondea a dos decimales cuando haga falta. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Calcula media, mediana, moda y rango</h3>
+    <ol class="largo">
+      <li>$12,\ 15,\ 11,\ 18,\ 15,\ 13$</li>
+      <li>Temperaturas máximas de una semana de junio: $31,\ 33,\ 35,\ 34,\ 36,\ 38,\ 37$ °C</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Tabla de frecuencias</h3>
+    <ol class="largo">
+      <li>Goles por partido de un equipo en 20 partidos: 0 goles (4 partidos), 1 gol (6), 2 goles (5), 3 goles (3), 4 goles (2). Calcula media, mediana y moda.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Problemas</h3>
+    <ol class="largo">
+      <li>La media de cinco números es 12. Cuatro de ellos son 10, 14, 9 y 15. ¿Cuál es el quinto?</li>
+      <li>Los datos 5, 7 y 8 tienen cierta media. Si agregas el dato 20, ¿cuáles son la nueva media y la nueva mediana?</li>
+      <li>En una colonia, la mayoría de las casas cuestan entre \$900 000 y \$1 200 000, pero hay una de \$9 000 000. Para describir el precio típico, ¿usarías la media o la mediana? ¿Por qué?</li>
+      <li>En una tienda se vendieron camisas de tallas CH, M, M, G, M, CH, G, M. ¿Qué medida tiene sentido aquí y cuál es su valor?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>Media 14, mediana 14, moda 15, rango 7</span></li>
+    <li><span>Media ≈ 34.86, mediana 35, sin moda, rango 7</span></li>
+    <li><span>Media 1.65, mediana 1.5, moda 1</span></li>
+    <li><span>$12$</span></li>
+    <li><span>Media 10, mediana 7.5</span></li>
+    <li><span>La mediana</span></li>
+    <li><span>La moda: talla M</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>Suma: 84; $84\div 6 = 14$. Ordenados: $11, 12, \mathbf{13}, \mathbf{15}, 15, 18$; mediana $\tfrac{13 + 15}{2} = 14$. Moda 15. Rango $18 - 11 = 7$.</div></div>
+    <div class="sol"><span>2</span><div>Suma: 244; $244\div 7 \approx 34.86$. Ordenados: $31, 33, 34, \mathbf{35}, 36, 37, 38$; mediana 35. Ningún dato se repite. Rango $38 - 31 = 7$.</div></div>
+    <div class="sol"><span>3</span><div>$\sum xf = 0 + 6 + 10 + 9 + 8 = 33$; media $33\div 20 = 1.65$. Acumuladas: 4, 10, 15, 18, 20. El 10.° dato vale 1 y el 11.° vale 2: mediana 1.5. Moda: 1 gol (6 partidos).</div></div>
+    <div class="sol"><span>4</span><div>Los cinco suman $5\cdot 12 = 60$. Los cuatro conocidos suman 48. El quinto es $60 - 48 = 12$.</div></div>
+    <div class="sol"><span>5</span><div>$\dfrac{5 + 7 + 8 + 20}{4} = \dfrac{40}{4} = 10$. Ordenados: $5, \mathbf{7}, \mathbf{8}, 20$; mediana 7.5. Un solo dato grande subió mucho la media.</div></div>
+    <div class="sol"><span>6</span><div>La casa de \$9 000 000 es un valor extremo que infla la media; la mediana no se deja jalar por él.</div></div>
+    <div class="sol"><span>7</span><div>Las tallas son categorías: no se pueden sumar ni promediar. La moda es M (4 de 8).</div></div>
+  </div>
+</section>

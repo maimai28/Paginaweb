@@ -1,0 +1,220 @@
+<!-- guia
+titulo: Ecuaciones cuadráticas
+nivel: Secundaria
+materia: Matemáticas
+rama: Álgebra
+numero: 09
+entrada: Cuando la incógnita aparece al cuadrado, la ecuación puede tener dos soluciones, una o ninguna. En esta guía vas a aprender a resolverlas por tres caminos y a saber de antemano cuántas soluciones esperar.
+objetivo: Reconocer una ecuación cuadrática y escribirla en forma general.
+objetivo: Resolver ecuaciones incompletas sin fórmula.
+objetivo: Resolver por factorización.
+objetivo: Usar la fórmula general.
+objetivo: Interpretar el discriminante.
+objetivo: Resolver problemas y descartar soluciones que no tienen sentido.
+autoeval: Escribir la ecuación en la forma $ax^2 + bx + c = 0$. | 01
+autoeval: Resolver ecuaciones incompletas. | 02
+autoeval: Resolver por factorización. | 03
+autoeval: Usar la fórmula general sin errores de signo. | 04
+autoeval: Saber cuántas soluciones hay usando el discriminante. | 04
+autoeval: Plantear un problema y elegir la solución con sentido. | 05
+-->
+<section>
+  <h2>Qué es una ecuación cuadrática</h2>
+  <p>Es una ecuación en la que la incógnita aparece elevada al cuadrado (y no a potencias mayores). Siempre se puede escribir en la <strong>forma general</strong>:</p>
+  $$ax^2 + bx + c = 0 \qquad (a \neq 0)$$
+  <p>Antes de resolver, pasa todo a un lado para que el otro quede en cero. Por ejemplo, $x^2 = 2x + 15$ se escribe $x^2 - 2x - 15 = 0$, con $a = 1$, $b = -2$ y $c = -15$.</p>
+  <div class="nota">
+    <span class="etq">¿Por qué puede haber dos soluciones?</span>
+    <p>Porque un número y su opuesto tienen el mismo cuadrado: $5^2 = 25$ y $(-5)^2 = 25$. Por eso $x^2 = 25$ tiene dos soluciones, $x = 5$ y $x = -5$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ecuaciones incompletas</h2>
+  <p>Si falta el término $b$ o el término $c$, no necesitas fórmula.</p>
+  <h3>Sin término en $x$: $ax^2 + c = 0$</h3>
+  <p>Despeja $x^2$ y saca raíz. <strong>No olvides el $\pm$.</strong></p>
+  $$2x^2 - 50 = 0 \;\Rightarrow\; x^2 = 25 \;\Rightarrow\; x = \pm 5$$
+  <p>Si te queda $x^2$ igual a un número negativo (como $x^2 = -4$), no hay solución real.</p>
+  <h3>Sin término independiente: $ax^2 + bx = 0$</h3>
+  <p>Saca factor común $x$. Una de las soluciones siempre es $x = 0$:</p>
+  $$3x^2 - 12x = 0 \;\Rightarrow\; 3x(x - 4) = 0 \;\Rightarrow\; x = 0 \ \text{ o } \ x = 4$$
+</section>
+
+<section>
+  <h2>Resolver por factorización</h2>
+  <div class="definicion">
+    <span class="etq">Propiedad del producto cero</span>
+    <p>Si un producto vale cero, al menos uno de los factores vale cero: si $A\cdot B = 0$, entonces $A = 0$ o $B = 0$.</p>
+  </div>
+  <p>Por eso, si factorizas el lado izquierdo (con el derecho en cero), cada factor te da una solución.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $x^2 - 5x + 6 = 0$.</p>
+      <p class="paso">Dos números que multiplicados den 6 y sumados $-5$: son $-2$ y $-3$.</p>
+      $$(x - 2)(x - 3) = 0 \;\Rightarrow\; x = 2 \ \text{ o } \ x = 3$$
+      <p class="paso">Comprueba: $2^2 - 5(2) + 6 = 0$ ✔ y $3^2 - 5(3) + 6 = 0$ ✔.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Solo funciona con cero</span>
+    <p>La propiedad solo sirve si el otro lado es <strong>cero</strong>. Si tienes $(x - 2)(x - 3) = 2$, no puedes decir que $x - 2 = 2$: primero desarrolla, pasa el 2 al otro lado y vuelve a factorizar.</p>
+  </div>
+</section>
+
+<section>
+  <h2>La fórmula general</h2>
+  <p>Funciona para <em>cualquier</em> ecuación cuadrática, aunque no se pueda factorizar fácilmente:</p>
+  $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+  <p>La expresión dentro de la raíz, $\Delta = b^2 - 4ac$, se llama <strong>discriminante</strong> y te dice cuántas soluciones hay antes de terminar la cuenta:</p>
+  <table class="leyes">
+    <thead><tr><th>Discriminante</th><th>Soluciones reales</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>$\Delta \gt 0$</td><td>Dos distintas</td><td>$x^2 - 5x + 6 = 0$: $\Delta = 1$</td></tr>
+      <tr><td>$\Delta = 0$</td><td>Una (repetida)</td><td>$x^2 - 6x + 9 = 0$: $\Delta = 0$</td></tr>
+      <tr><td>$\Delta \lt 0$</td><td>Ninguna</td><td>$x^2 + 2x + 5 = 0$: $\Delta = -16$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $2x^2 + 3x - 2 = 0$.</p>
+      <p class="paso">Identifica $a = 2$, $b = 3$, $c = -2$. Discriminante: $\Delta = 3^2 - 4(2)(-2) = 9 + 16 = 25$.</p>
+      $$x = \frac{-3 \pm \sqrt{25}}{2(2)} = \frac{-3 \pm 5}{4} \;\Rightarrow\; x = \frac{2}{4} = \frac{1}{2} \ \text{ o } \ x = \frac{-8}{4} = -2$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $x^2 + 4x - 1 = 0$.</p>
+      <p class="paso">$\Delta = 16 + 4 = 20$ y $\sqrt{20} = 2\sqrt{5}$:</p>
+      $$x = \frac{-4 \pm 2\sqrt{5}}{2} = -2 \pm \sqrt{5} \;\approx\; 0.24 \ \text{ o } \ -4.24$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Problemas</h2>
+  <p>En los problemas, revisa que la solución tenga sentido: una longitud o un tiempo no pueden ser negativos.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un terreno rectangular mide 3 m más de largo que de ancho y tiene 40 m² de área. ¿Cuánto mide?</p>
+      $$x(x + 3) = 40 \;\Rightarrow\; x^2 + 3x - 40 = 0 \;\Rightarrow\; (x + 8)(x - 5) = 0$$
+      <p class="paso">Las soluciones son $x = 5$ y $x = -8$, pero un ancho no puede ser negativo. El terreno mide 5 m por 8 m.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se lanza una pelota hacia arriba y su altura en metros es $h = 20t - 5t^2$ ($t$ en segundos). ¿Cuándo vuelve al suelo?</p>
+      $$20t - 5t^2 = 0 \;\Rightarrow\; 5t(4 - t) = 0 \;\Rightarrow\; t = 0 \ \text{ o } \ t = 4$$
+      <p class="paso">$t = 0$ es el momento del lanzamiento; vuelve al suelo a los 4 segundos.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$x^2 = 25 \Rightarrow x = 5$</td><td class="bien">$x = \pm 5$</td><td>$(-5)^2$ también es 25.</td></tr>
+        <tr><td class="mal">$x^2 = 3x \Rightarrow x = 3$</td><td class="bien">$x = 0$ o $x = 3$</td><td>Dividir entre $x$ pierde la solución $x = 0$.</td></tr>
+        <tr><td class="mal">$b = -7 \Rightarrow -b = -7$</td><td class="bien">$-b = 7$</td><td>Menos por menos es más.</td></tr>
+        <tr><td class="mal">$\dfrac{-b \pm\sqrt{\Delta}}{2}\,a$</td><td class="bien">$\dfrac{-b \pm \sqrt{\Delta}}{2a}$</td><td>El $2a$ divide a <em>todo</em> el numerador.</td></tr>
+        <tr><td class="mal">$(x - 2)(x - 3) = 2 \Rightarrow x = 4$</td><td class="bien">Igualar a cero primero</td><td>El producto cero solo funciona con cero.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$ax^2 + bx + c = 0$</div><div>$ax^2 + c = 0$: despeja y $\pm\sqrt{\ }$</div><div>$ax^2 + bx = 0$: factor $x$</div>
+      <div>$AB = 0 \Rightarrow A = 0$ o $B = 0$</div><div>$x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</div><div>$\Delta = b^2 - 4ac$</div>
+      <div>$\Delta \gt 0$: dos</div><div>$\Delta = 0$: una</div><div>$\Delta \lt 0$: ninguna real</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden y comprueba sustituyendo. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Incompletas</h3>
+    <ol>
+      <li>$x^2 - 49 = 0$</li><li>$3x^2 = 48$</li><li>$x^2 - 6x = 0$</li>
+      <li>$5x^2 + 20x = 0$</li><li>$x^2 + 16 = 0$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Por factorización</h3>
+    <ol>
+      <li>$x^2 + 5x + 6 = 0$</li><li>$x^2 - 3x - 10 = 0$</li><li>$x^2 - 8x + 16 = 0$</li>
+      <li>$x^2 = 2x + 15$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Con fórmula general</h3>
+    <ol>
+      <li>$2x^2 - 7x + 3 = 0$</li><li>$x^2 - 2x - 2 = 0$</li><li>$3x^2 + 2x + 1 = 0$</li>
+      <li>Sin resolver, ¿cuántas soluciones tiene $4x^2 - 12x + 9 = 0$?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Problemas</h3>
+    <ol class="largo">
+      <li>El cuadrado de un número más el doble del mismo número es 48. ¿Qué número puede ser?</li>
+      <li>El largo de un rectángulo es el doble de su ancho y su área es 72 cm². ¿Cuánto mide cada lado?</li>
+      <li>El producto de dos números enteros consecutivos es 132. ¿Cuáles son?</li>
+      <li>La altura de una pelota es $h = 20t - 5t^2$ metros. ¿En qué momentos está a 15 m de altura?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$x = \pm 7$</span></li>
+    <li><span>$x = \pm 4$</span></li>
+    <li><span>$x = 0,\ x = 6$</span></li>
+    <li><span>$x = 0,\ x = -4$</span></li>
+    <li><span>Sin solución real</span></li>
+    <li><span>$x = -2,\ x = -3$</span></li>
+    <li><span>$x = 5,\ x = -2$</span></li>
+    <li><span>$x = 4$ (doble)</span></li>
+    <li><span>$x = 5,\ x = -3$</span></li>
+    <li><span>$x = 3,\ x = \tfrac{1}{2}$</span></li>
+    <li><span>$x = 1 \pm \sqrt{3}$</span></li>
+    <li><span>Sin solución real</span></li>
+    <li><span>Una ($\Delta = 0$)</span></li>
+    <li><span>$6$ o $-8$</span></li>
+    <li><span>Ancho 6 cm, largo 12 cm</span></li>
+    <li><span>11 y 12, o $-12$ y $-11$</span></li>
+    <li><span>En $t = 1$ s y en $t = 3$ s</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>4</span><div>$5x(x + 4) = 0$, así que $x = 0$ o $x = -4$.</div></div>
+    <div class="sol"><span>5</span><div>$x^2 = -16$: ningún número real al cuadrado da negativo.</div></div>
+    <div class="sol"><span>8</span><div>Es cuadrado perfecto: $(x - 4)^2 = 0$, solo $x = 4$.</div></div>
+    <div class="sol"><span>9</span><div>Iguala a cero: $x^2 - 2x - 15 = 0 \Rightarrow (x - 5)(x + 3) = 0$.</div></div>
+    <div class="sol"><span>10</span><div>$\Delta = 49 - 24 = 25$. $x = \dfrac{7 \pm 5}{4}$: $x = 3$ o $x = \tfrac{1}{2}$.</div></div>
+    <div class="sol"><span>11</span><div>$\Delta = 4 + 8 = 12$ y $\sqrt{12} = 2\sqrt{3}$. $x = \dfrac{2 \pm 2\sqrt{3}}{2} = 1 \pm \sqrt{3}$, es decir, $2.73$ o $-0.73$ aproximadamente.</div></div>
+    <div class="sol"><span>12</span><div>$\Delta = 4 - 12 = -8 \lt 0$: sin solución real.</div></div>
+    <div class="sol"><span>13</span><div>$\Delta = 144 - 4(4)(9) = 144 - 144 = 0$: una solución, $x = \tfrac{3}{2}$.</div></div>
+    <div class="sol"><span>14</span><div>$x^2 + 2x - 48 = 0 \Rightarrow (x + 8)(x - 6) = 0$. Ambas funcionan: $36 + 12 = 48$ y $64 - 16 = 48$.</div></div>
+    <div class="sol"><span>15</span><div>$x\cdot 2x = 72 \Rightarrow x^2 = 36 \Rightarrow x = 6$ (el $-6$ no sirve para una longitud). Largo 12 cm.</div></div>
+    <div class="sol"><span>16</span><div>$n(n + 1) = 132 \Rightarrow n^2 + n - 132 = 0 \Rightarrow (n + 12)(n - 11) = 0$.</div></div>
+    <div class="sol"><span>17</span><div>$20t - 5t^2 = 15 \Rightarrow t^2 - 4t + 3 = 0 \Rightarrow (t - 1)(t - 3) = 0$. Pasa por 15 m al subir y otra vez al bajar.</div></div>
+  </div>
+</section>

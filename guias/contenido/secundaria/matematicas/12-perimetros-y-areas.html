@@ -1,0 +1,195 @@
+<!-- guia
+titulo: Perímetros y áreas
+nivel: Secundaria
+materia: Matemáticas
+rama: Geometría
+numero: 12
+entrada: ¿Cuánta malla se necesita para cercar un terreno? ¿Cuánta pintura para una pared? La primera pregunta es de perímetro y la segunda de área. Aquí vas a aprender a distinguirlas y a calcular ambas para las figuras más comunes.
+objetivo: Distinguir entre perímetro y área.
+objetivo: Usar las fórmulas de las figuras básicas.
+objetivo: Calcular perímetro y área del círculo.
+objetivo: Descomponer figuras compuestas.
+objetivo: Calcular áreas sombreadas restando.
+objetivo: Convertir unidades de área.
+autoeval: Distinguir cuándo se pide perímetro y cuándo área. | 01
+autoeval: Usar las fórmulas de polígonos. | 02
+autoeval: Calcular longitud y área del círculo. | 03
+autoeval: Resolver figuras compuestas y áreas sombreadas. | 04
+autoeval: Convertir entre m², cm² y otras unidades de área. | 01
+-->
+<section>
+  <h2>Perímetro y área</h2>
+  <p>El <strong>perímetro</strong> es la longitud del contorno de una figura: lo que medirías con una cinta al darle la vuelta. Se mide en unidades de longitud (cm, m, km).</p>
+  <p>El <strong>área</strong> es la cantidad de superficie que cubre la figura: cuántos cuadritos de 1×1 caben adentro. Se mide en unidades cuadradas (cm², m², km²).</p>
+  <div class="nota">
+    <span class="etq">Cuidado al convertir unidades de área</span>
+    <p>1 m = 100 cm, pero 1 m² = 100 × 100 = 10 000 cm², porque un metro cuadrado es un cuadrado de 100 cm por lado. Por eso 3.5 m² son 35 000 cm², no 350.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Fórmulas de polígonos</h2>
+  <table class="leyes">
+    <thead><tr><th>Figura</th><th>Perímetro</th><th>Área</th></tr></thead>
+    <tbody>
+      <tr><td>Cuadrado de lado $\ell$</td><td>$P = 4\ell$</td><td>$A = \ell^2$</td></tr>
+      <tr><td>Rectángulo de base $b$ y altura $h$</td><td>$P = 2b + 2h$</td><td>$A = b\,h$</td></tr>
+      <tr><td>Triángulo</td><td>Suma de lados</td><td>$A = \dfrac{b\,h}{2}$</td></tr>
+      <tr><td>Paralelogramo</td><td>Suma de lados</td><td>$A = b\,h$</td></tr>
+      <tr><td>Rombo de diagonales $D$ y $d$</td><td>$P = 4\ell$</td><td>$A = \dfrac{D\,d}{2}$</td></tr>
+      <tr><td>Trapecio de bases $B$, $b$</td><td>Suma de lados</td><td>$A = \dfrac{(B + b)\,h}{2}$</td></tr>
+      <tr><td>Polígono regular de apotema $a$</td><td>$P = n\ell$</td><td>$A = \dfrac{P\,a}{2}$</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">La altura siempre es perpendicular a la base, no el lado inclinado. La apotema es la distancia del centro al punto medio de un lado.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula el área de un trapecio con bases de 10 cm y 6 cm y altura de 4 cm.</p>
+      $$A = \frac{(10 + 6)\cdot 4}{2} = \frac{64}{2} = 32 \text{ cm}^2$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un hexágono regular tiene lados de 6 cm y apotema de 5.2 cm. Calcula su perímetro y su área.</p>
+      $$P = 6\cdot 6 = 36 \text{ cm} \qquad\qquad A = \frac{36\cdot 5.2}{2} = 93.6 \text{ cm}^2$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>El círculo</h2>
+  <p>El número $\pi \approx 3.1416$ es la razón entre la longitud de cualquier circunferencia y su diámetro. Con el radio $r$ (la mitad del diámetro):</p>
+  $$P = 2\pi r \qquad\qquad A = \pi r^2$$
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula el perímetro y el área de un círculo de 3 m de radio.</p>
+      $$P = 2\pi(3) = 6\pi \approx 18.85 \text{ m} \qquad\qquad A = \pi(3)^2 = 9\pi \approx 28.27 \text{ m}^2$$
+      <p class="paso">Puedes dejar el resultado “en términos de $\pi$” ($9\pi$) o dar la aproximación. Si te dan el diámetro, divídelo entre 2 antes de usar las fórmulas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Figuras compuestas y áreas sombreadas</h2>
+  <p>Una figura complicada casi siempre se puede <strong>partir</strong> en figuras conocidas (y se suman sus áreas) o ver como una figura grande a la que le <strong>falta</strong> un pedazo (y se restan).</p>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">4</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>Un cuadrado de 10 cm de lado tiene dibujado adentro el círculo más grande que cabe. ¿Cuánto mide el área sombreada?</p>
+        <p class="paso">El círculo tiene diámetro 10, así que $r = 5$. Al cuadrado le restas el círculo:</p>
+        $$A = 10^2 - \pi(5)^2 = 100 - 25\pi \approx 21.46 \text{ cm}^2$$
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 140 140" width="40mm">
+        <rect x="10" y="10" width="120" height="120" fill="#c08a2e" stroke="#2b241e" stroke-width="1.5"/>
+        <circle cx="70" cy="70" r="60" fill="#fff" stroke="#2b241e" stroke-width="1.5"/>
+        <line x1="70" y1="70" x2="130" y2="70" stroke="#2b241e" stroke-dasharray="3 3"/>
+        <text x="96" y="64" font-family="Nunito" font-size="12" fill="#2b241e">5</text>
+      </svg>
+      <figcaption>Sombreado: las cuatro esquinas.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una pared de 4 m por 2.6 m tiene una ventana de 1.2 m por 1 m. Si un litro de pintura cubre 8 m², ¿cuánta pintura necesitas?</p>
+      $$A = 4\cdot 2.6 - 1.2\cdot 1 = 10.4 - 1.2 = 9.2 \text{ m}^2 \qquad\Rightarrow\qquad \frac{9.2}{8} = 1.15 \text{ litros}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Área del triángulo $= b\,h$</td><td class="bien">$\dfrac{b\,h}{2}$</td><td>Un triángulo es la mitad de un rectángulo.</td></tr>
+        <tr><td class="mal">Usar el diámetro como radio</td><td class="bien">$r = \dfrac{d}{2}$</td><td>Con $d = 10$, el área es $25\pi$, no $100\pi$.</td></tr>
+        <tr><td class="mal">$1 \text{ m}^2 = 100 \text{ cm}^2$</td><td class="bien">$10\,000 \text{ cm}^2$</td><td>Se convierte en las dos dimensiones.</td></tr>
+        <tr><td class="mal">Usar el lado inclinado como altura</td><td class="bien">Altura perpendicular</td><td>La altura forma $90^\circ$ con la base.</td></tr>
+        <tr><td class="mal">Área en cm (sin cuadrado)</td><td class="bien">cm²</td><td>El área siempre lleva unidades cuadradas.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Rectángulo: $A = bh$</div><div>Triángulo: $A = \dfrac{bh}{2}$</div><div>Rombo: $A = \dfrac{Dd}{2}$</div>
+      <div>Trapecio: $A = \dfrac{(B + b)h}{2}$</div><div>Polígono regular: $A = \dfrac{Pa}{2}$</div><div>Círculo: $P = 2\pi r$, $A = \pi r^2$</div>
+      <div>Compuesta: parte y suma</div><div>Sombreada: grande menos hueco</div><div>$1 \text{ m}^2 = 10\,000 \text{ cm}^2$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $\pi \approx 3.1416$ y redondea a dos decimales. Escribe siempre las unidades. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Figuras básicas</h3>
+    <ol>
+      <li>Rectángulo de 12 × 7 cm: perímetro y área</li><li>Triángulo de base 9 m y altura 6 m</li><li>Rombo de diagonales 10 y 16 cm</li>
+      <li>Trapecio: $B = 14$, $b = 8$, $h = 5$ cm</li><li>Pentágono regular de lado 8 cm y apotema 5.5 cm</li><li>Un cuadrado de área 64 m²: ¿su perímetro?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Círculos</h3>
+    <ol>
+      <li>Círculo de radio 4 cm: perímetro y área</li><li>Círculo de 10 m de diámetro: área</li><li>Un corral circular de 7 m de radio: ¿cuánta cerca lleva?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Problemas</h3>
+    <ol class="largo">
+      <li>Un rectángulo tiene 30 cm de perímetro y 9 cm de largo. ¿Cuál es su área?</li>
+      <li>A un terreno rectangular de 20 m por 15 m le quitan un cuadrado de 5 m por lado en una esquina para una bodega. ¿Cuánta área queda libre?</li>
+      <li>Un jardín de 10 m por 8 m tiene una fuente circular de 2 m de radio. ¿Cuántos m² de pasto se necesitan para el resto?</li>
+      <li>Convierte 3.5 m² a cm².</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>38 cm y 84 cm²</span></li>
+    <li><span>27 m²</span></li>
+    <li><span>80 cm²</span></li>
+    <li><span>55 cm²</span></li>
+    <li><span>110 cm²</span></li>
+    <li><span>32 m</span></li>
+    <li><span>25.13 cm y 50.27 cm²</span></li>
+    <li><span>78.54 m²</span></li>
+    <li><span>43.98 m</span></li>
+    <li><span>54 cm²</span></li>
+    <li><span>275 m²</span></li>
+    <li><span>67.43 m²</span></li>
+    <li><span>35 000 cm²</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$P = 2(12) + 2(7) = 38$ cm. $A = 12\cdot 7 = 84$ cm².</div></div>
+    <div class="sol"><span>4</span><div>$A = \dfrac{(14 + 8)\cdot 5}{2} = \dfrac{110}{2} = 55$ cm².</div></div>
+    <div class="sol"><span>5</span><div>$P = 5\cdot 8 = 40$ cm. $A = \dfrac{40\cdot 5.5}{2} = 110$ cm².</div></div>
+    <div class="sol"><span>6</span><div>El lado es $\sqrt{64} = 8$ m, así que $P = 4\cdot 8 = 32$ m.</div></div>
+    <div class="sol"><span>7</span><div>$P = 2\pi(4) = 8\pi \approx 25.13$ cm. $A = \pi(4)^2 = 16\pi \approx 50.27$ cm².</div></div>
+    <div class="sol"><span>8</span><div>El radio es 5 m: $A = 25\pi \approx 78.54$ m².</div></div>
+    <div class="sol"><span>9</span><div>Es perímetro: $2\pi(7) = 14\pi \approx 43.98$ m.</div></div>
+    <div class="sol"><span>10</span><div>$2(9) + 2w = 30 \Rightarrow w = 6$ cm. Área: $9\cdot 6 = 54$ cm².</div></div>
+    <div class="sol"><span>11</span><div>$20\cdot 15 - 5\cdot 5 = 300 - 25 = 275$ m².</div></div>
+    <div class="sol"><span>12</span><div>$10\cdot 8 - \pi(2)^2 = 80 - 4\pi \approx 80 - 12.57 = 67.43$ m².</div></div>
+    <div class="sol"><span>13</span><div>$3.5\cdot 10\,000 = 35\,000$ cm².</div></div>
+  </div>
+</section>

@@ -1,0 +1,224 @@
+<!-- guia
+titulo: Sistemas de ecuaciones 2×2
+nivel: Secundaria
+materia: Matemáticas
+rama: Álgebra
+numero: 07
+entrada: Cuando un problema tiene dos cantidades desconocidas, necesitas dos ecuaciones que se cumplan al mismo tiempo. En esta guía vas a aprender tres formas de resolverlas y a saber cuándo no tienen solución.
+objetivo: Entender qué es la solución de un sistema de dos ecuaciones.
+objetivo: Interpretar la solución como el cruce de dos rectas.
+objetivo: Resolver por sustitución.
+objetivo: Resolver por suma y resta (reducción).
+objetivo: Reconocer sistemas sin solución o con infinitas soluciones.
+objetivo: Plantear problemas con dos incógnitas.
+autoeval: Comprobar si un par de valores es solución de un sistema. | 01
+autoeval: Resolver por sustitución. | 02
+autoeval: Resolver por suma y resta, multiplicando si hace falta. | 03
+autoeval: Reconocer sistemas sin solución o con infinitas soluciones. | 04
+autoeval: Plantear un sistema a partir de un problema. | 05
+-->
+<section>
+  <h2>Qué es un sistema</h2>
+  <p>Un sistema de ecuaciones lineales 2×2 son dos ecuaciones con dos incógnitas, $x$ y $y$. La <strong>solución</strong> es la pareja de valores que cumple <em>las dos</em> ecuaciones a la vez.</p>
+  $$\begin{cases} x + y = 10 \\ x - y = 4 \end{cases}$$
+  <p>La pareja $x = 7$, $y = 3$ es solución porque $7 + 3 = 10$ y $7 - 3 = 4$. La pareja $x = 6$, $y = 4$ cumple la primera pero no la segunda, así que no es solución.</p>
+  <div class="figura-lado">
+    <div>
+      <div class="definicion">
+        <span class="etq">Interpretación gráfica</span>
+        <p>Cada ecuación lineal es una recta. La solución del sistema es el punto donde las dos rectas se cruzan.</p>
+      </div>
+      <p>El método gráfico sirve para entender, pero es poco preciso si el cruce no cae en números enteros. Por eso se usan métodos algebraicos.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 190" width="58mm">
+        <g stroke="#e4d2b4" stroke-width="0.8">
+          <line x1="45" y1="20" x2="45" y2="170"/><line x1="60" y1="20" x2="60" y2="170"/><line x1="75" y1="20" x2="75" y2="170"/><line x1="90" y1="20" x2="90" y2="170"/><line x1="105" y1="20" x2="105" y2="170"/><line x1="120" y1="20" x2="120" y2="170"/><line x1="135" y1="20" x2="135" y2="170"/><line x1="150" y1="20" x2="150" y2="170"/><line x1="165" y1="20" x2="165" y2="170"/><line x1="180" y1="20" x2="180" y2="170"/>
+          <line x1="30" y1="155" x2="180" y2="155"/><line x1="30" y1="140" x2="180" y2="140"/><line x1="30" y1="125" x2="180" y2="125"/><line x1="30" y1="110" x2="180" y2="110"/><line x1="30" y1="95" x2="180" y2="95"/><line x1="30" y1="80" x2="180" y2="80"/><line x1="30" y1="65" x2="180" y2="65"/><line x1="30" y1="50" x2="180" y2="50"/><line x1="30" y1="35" x2="180" y2="35"/><line x1="30" y1="20" x2="180" y2="20"/>
+        </g>
+        <line x1="30" y1="170" x2="190" y2="170" stroke="#2b241e"/><line x1="30" y1="170" x2="30" y2="10" stroke="#2b241e"/>
+        <line x1="30" y1="20" x2="180" y2="170" stroke="#a8492a" stroke-width="2.2"/>
+        <line x1="90" y1="170" x2="180" y2="80" stroke="#4b5d6b" stroke-width="2.2"/>
+        <circle cx="135" cy="125" r="4.5" fill="#c08a2e" stroke="#2b241e"/>
+        <g font-family="Nunito" font-size="10" fill="#5f5448">
+          <text x="26" y="182">0</text><text x="101" y="182">5</text><text x="174" y="182">10</text><text x="14" y="98">5</text><text x="10" y="24">10</text>
+        </g>
+        <text x="142" y="122" font-family="Nunito" font-size="11" font-weight="800" fill="#2b241e">(7, 3)</text>
+        <text x="48" y="44" font-family="Nunito" font-size="10" fill="#a8492a">x + y = 10</text>
+        <text x="138" y="92" font-family="Nunito" font-size="10" fill="#4b5d6b">x − y = 4</text>
+      </svg>
+      <figcaption>Las rectas se cruzan en $(7, 3)$.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Método de sustitución</h2>
+  <p>Despeja una incógnita en una ecuación y <strong>sustitúyela</strong> en la otra. Te queda una ecuación con una sola incógnita, que ya sabes resolver.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $\;y = 2x - 1,\;\; 3x + 2y = 12$.</p>
+      <p class="paso">La $y$ ya está despejada. Sustitúyela en la segunda ecuación (con paréntesis):</p>
+      $$3x + 2(2x - 1) = 12 \;\Rightarrow\; 3x + 4x - 2 = 12 \;\Rightarrow\; 7x = 14 \;\Rightarrow\; x = 2$$
+      <p class="paso">Regresa a la ecuación despejada: $y = 2(2) - 1 = 3$. Solución: $(2, 3)$.</p>
+      <p class="paso">Comprueba en la otra: $3(2) + 2(3) = 6 + 6 = 12$. ✔</p>
+    </div>
+  </div>
+  <p class="leyenda">Conviene usar sustitución cuando alguna incógnita tiene coeficiente 1 o −1, porque se despeja sin fracciones.</p>
+</section>
+
+<section>
+  <h2>Método de suma y resta</h2>
+  <p>También se llama <strong>reducción</strong>. La idea: si una incógnita tiene coeficientes opuestos en las dos ecuaciones (como $+3y$ y $-3y$), al sumar las ecuaciones esa incógnita desaparece.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $\;2x + 3y = 12,\;\; 4x - 3y = 6$.</p>
+      <p class="paso">Los términos $+3y$ y $-3y$ se cancelan al sumar:</p>
+      $$(2x + 3y) + (4x - 3y) = 12 + 6 \;\Rightarrow\; 6x = 18 \;\Rightarrow\; x = 3$$
+      <p class="paso">Sustituye en la primera: $2(3) + 3y = 12 \Rightarrow 3y = 6 \Rightarrow y = 2$. Solución: $(3, 2)$.</p>
+    </div>
+  </div>
+  <p>Si los coeficientes no son opuestos, multiplica una (o las dos) ecuaciones por un número para que lo sean.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $\;3x + 2y = 18,\;\; 5x - 4y = 8$.</p>
+      <p class="paso">Multiplica la primera por 2 para tener $+4y$ y $-4y$:</p>
+      $$\begin{aligned} 6x + 4y &= 36 \\ 5x - 4y &= 8 \end{aligned} \qquad\Rightarrow\qquad 11x = 44 \;\Rightarrow\; x = 4$$
+      <p class="paso">En la primera original: $3(4) + 2y = 18 \Rightarrow 2y = 6 \Rightarrow y = 3$. Solución: $(4, 3)$.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Método de igualación</span>
+    <p>Hay un tercer método: despejar la misma incógnita en las dos ecuaciones e igualar los resultados. Es útil cuando las dos ecuaciones ya vienen como “$y = \ldots$”. Por ejemplo, $y = 2x + 1$ y $y = -x + 7$ dan $2x + 1 = -x + 7$, así que $x = 2$ y $y = 5$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Sistemas sin solución o con infinitas</h2>
+  <p>Dos rectas en el plano pueden cruzarse en un punto, ser paralelas o ser la misma recta. Al resolver lo notas así:</p>
+  <table class="leyes">
+    <thead><tr><th>Al resolver te queda…</th><th>Las rectas son…</th><th>Soluciones</th></tr></thead>
+    <tbody>
+      <tr><td>Un valor para $x$ y otro para $y$</td><td>Se cruzan</td><td>Una</td></tr>
+      <tr><td>Algo falso, como $0 = 3$</td><td>Paralelas</td><td>Ninguna</td></tr>
+      <tr><td>Algo siempre cierto, como $0 = 0$</td><td>La misma recta</td><td>Infinitas</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $\;x + 2y = 4,\;\; 2x + 4y = 5$.</p>
+      <p class="paso">Multiplica la primera por $-2$ y suma: $-2x - 4y = -8$ con $2x + 4y = 5$ da $0 = -3$. Es falso: el sistema no tiene solución (las rectas son paralelas).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Problemas con dos incógnitas</h2>
+  <p>Define qué representa cada letra, busca <em>dos</em> datos que se puedan escribir como igualdades y resuelve con el método que te convenga.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En un cine la entrada de adulto cuesta \$85 y la de niño \$60. Se vendieron 120 entradas y se juntaron \$9050. ¿Cuántas de cada tipo?</p>
+      <p class="paso">Sea $a$ el número de adultos y $n$ el de niños:</p>
+      $$\begin{cases} a + n = 120 \\ 85a + 60n = 9050 \end{cases}$$
+      <p class="paso">De la primera, $n = 120 - a$. Sustituye: $85a + 60(120 - a) = 9050 \Rightarrow 25a + 7200 = 9050 \Rightarrow a = 74$. Entonces $n = 46$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Encontrar $x$ y olvidar $y$</td><td class="bien">Dar la pareja $(x, y)$</td><td>La solución son los dos valores.</td></tr>
+        <tr><td class="mal">$3x + 2(2x - 1) = 3x + 4x - 1$</td><td class="bien">$3x + 4x - 2$</td><td>El 2 multiplica a los dos términos del paréntesis.</td></tr>
+        <tr><td class="mal">Multiplicar solo un lado de la ecuación</td><td class="bien">Multiplicar todos los términos</td><td>Si no, la ecuación cambia.</td></tr>
+        <tr><td class="mal">Sumar ecuaciones con $+3y$ y $+3y$</td><td class="bien">Restarlas, o multiplicar una por $-1$</td><td>Solo se cancelan coeficientes opuestos.</td></tr>
+        <tr><td class="mal">No comprobar</td><td class="bien">Sustituir en <em>ambas</em> ecuaciones</td><td>Si solo cumple una, no es solución.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Solución: pareja $(x, y)$</div><div>Gráficamente: cruce de rectas</div><div>Comprueba en las dos</div>
+      <div>Sustitución: despeja y sustituye</div><div>Suma y resta: coeficientes opuestos</div><div>Igualación: $y = \ldots = \ldots$</div>
+      <div>$0 = 3$: ninguna solución</div><div>$0 = 0$: infinitas</div><div>Problema: 2 datos → 2 ecuaciones</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuelve cada sistema con el método que prefieras y comprueba en las dos ecuaciones. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Sistemas directos</h3>
+    <ol>
+      <li>$x + y = 12,\ \ x - y = 2$</li><li>$y = 3x,\ \ x + y = 20$</li><li>$x = 2y + 1,\ \ 3x - y = 13$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Suma y resta</h3>
+    <ol>
+      <li>$3x + 2y = 7,\ \ 5x - 2y = 9$</li><li>$2x + 5y = 1,\ \ 3x - 2y = 11$</li><li>$4x - 3y = -2,\ \ 2x + y = 9$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. ¿Cuántas soluciones tiene?</h3>
+    <ol>
+      <li>$2x + y = 5,\ \ 4x + 2y = 7$</li><li>$x - 2y = 3,\ \ 3x - 6y = 9$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Problemas</h3>
+    <ol class="largo">
+      <li>Dos números suman 45 y su diferencia es 9. ¿Cuáles son?</li>
+      <li>En una alcancía hay 18 monedas, unas de \$5 y otras de \$10. En total hay \$130. ¿Cuántas monedas hay de cada tipo?</li>
+      <li>Dos tortas y tres aguas cuestan \$190. Una torta y dos aguas cuestan \$110. ¿Cuánto cuesta cada cosa?</li>
+      <li>El perímetro de un rectángulo es 40 cm y el largo es el triple del ancho. ¿Cuánto mide cada lado?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$(7, 5)$</span></li>
+    <li><span>$(5, 15)$</span></li>
+    <li><span>$(5, 2)$</span></li>
+    <li><span>$(2,\ 0.5)$</span></li>
+    <li><span>$(3, -1)$</span></li>
+    <li><span>$(2.5,\ 4)$</span></li>
+    <li><span>Ninguna</span></li>
+    <li><span>Infinitas</span></li>
+    <li><span>27 y 18</span></li>
+    <li><span>10 de \$5 y 8 de \$10</span></li>
+    <li><span>Torta \$50, agua \$30</span></li>
+    <li><span>Ancho 5 cm, largo 15 cm</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>Sustituye $x$: $3(2y + 1) - y = 13 \Rightarrow 5y + 3 = 13 \Rightarrow y = 2$. Luego $x = 2(2) + 1 = 5$.</div></div>
+    <div class="sol"><span>4</span><div>Suma: $8x = 16 \Rightarrow x = 2$. En la primera: $6 + 2y = 7 \Rightarrow y = \tfrac{1}{2}$.</div></div>
+    <div class="sol"><span>5</span><div>Primera por 2 y segunda por 5: $4x + 10y = 2$ y $15x - 10y = 55$. Suma: $19x = 57 \Rightarrow x = 3$. Luego $6 + 5y = 1 \Rightarrow y = -1$.</div></div>
+    <div class="sol"><span>6</span><div>De la segunda, $y = 9 - 2x$. Sustituye: $4x - 3(9 - 2x) = -2 \Rightarrow 10x - 27 = -2 \Rightarrow x = 2.5$. Luego $y = 9 - 5 = 4$.</div></div>
+    <div class="sol"><span>7</span><div>La primera por $-2$: $-4x - 2y = -10$. Suma con la segunda: $0 = -3$. Falso: son rectas paralelas.</div></div>
+    <div class="sol"><span>8</span><div>La segunda es la primera multiplicada por 3. Al restar queda $0 = 0$: es la misma recta.</div></div>
+    <div class="sol"><span>10</span><div>$c + d = 18$ y $5c + 10d = 130$. Con $d = 18 - c$: $5c + 180 - 10c = 130 \Rightarrow c = 10$, $d = 8$.</div></div>
+    <div class="sol"><span>11</span><div>$2t + 3a = 190$ y $t + 2a = 110$. Con $t = 110 - 2a$: $220 - 4a + 3a = 190 \Rightarrow a = 30$, $t = 50$.</div></div>
+    <div class="sol"><span>12</span><div>$\ell = 3w$ y $2\ell + 2w = 40$. Sustituye: $6w + 2w = 40 \Rightarrow w = 5$, $\ell = 15$.</div></div>
+  </div>
+</section>

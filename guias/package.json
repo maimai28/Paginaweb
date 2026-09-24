@@ -1,0 +1,13 @@
+{
+  "name": "guias-lab-del-desierto",
+  "private": true,
+  "description": "Generador de guías PDF con el diseño de El Lab del Desierto.",
+  "scripts": {
+    "construir": "node construir.js"
+  },
+  "dependencies": {
+    "@fontsource/nunito": "^5.2.5",
+    "katex": "^0.16.22",
+    "playwright-core": "^1.55.0"
+  }
+}

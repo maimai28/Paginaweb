@@ -1,0 +1,321 @@
+<!-- guia
+titulo: Gráficas e interpretación de datos
+nivel: Secundaria
+materia: Matemáticas
+rama: Probabilidad y estadística
+numero: 15
+entrada: Una buena gráfica cuenta en segundos lo que una tabla tarda en decir. En esta guía vas a aprender qué tipo de gráfica usar para cada situación, a leerlas con cuidado y a detectar cuando una gráfica intenta engañarte.
+objetivo: Elegir entre gráfica de barras, circular, de líneas e histograma.
+objetivo: Leer valores y comparar categorías en una gráfica de barras.
+objetivo: Calcular porcentajes y ángulos de una gráfica circular.
+objetivo: Describir tendencias en una gráfica de líneas.
+objetivo: Construir una tabla a partir de una gráfica y al revés.
+objetivo: Detectar gráficas engañosas.
+autoeval: Elegir el tipo de gráfica adecuado. | 01
+autoeval: Leer y comparar datos en una gráfica de barras. | 02
+autoeval: Calcular porcentajes y ángulos de una gráfica circular. | 03
+autoeval: Describir aumentos y disminuciones en una gráfica de líneas. | 04
+autoeval: Detectar un eje que no empieza en cero. | 05
+-->
+<section>
+  <h2>¿Qué gráfica usar?</h2>
+  <table class="leyes">
+    <thead><tr><th>Gráfica</th><th>Sirve para…</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>De barras</td><td>Comparar cantidades entre categorías.</td><td>Deporte favorito de un grupo</td></tr>
+      <tr><td>Circular (de pastel)</td><td>Mostrar cómo se reparte un total.</td><td>En qué se gasta el dinero de la semana</td></tr>
+      <tr><td>De líneas</td><td>Ver cómo cambia algo con el tiempo.</td><td>Temperatura a lo largo del día</td></tr>
+      <tr><td>Histograma</td><td>Datos numéricos agrupados en intervalos.</td><td>Estaturas de 150 a 155 cm, de 155 a 160…</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Antes de leer cualquier gráfica revisa tres cosas: el título, qué representa cada eje y en qué unidades está.</p>
+</section>
+
+<section>
+  <h2>Gráficas de barras</h2>
+  <p>Se preguntó a 40 alumnos cuál es su deporte favorito. La altura de cada barra es el número de alumnos.</p>
+  <div class="figura-lado">
+    <div>
+      <p>De la gráfica se lee:</p>
+      <ul>
+        <li>El favorito es el fútbol, con 14 alumnos.</li>
+        <li>Al básquet lo prefieren 4 alumnos más que al voleibol ($10 - 6$).</li>
+        <li>Voleibol y “otro” empatan con 6.</li>
+        <li>La suma de todas las barras es $14 + 10 + 6 + 4 + 6 = 40$: el total de encuestados.</li>
+      </ul>
+    </div>
+    <figure class="figura">
+<svg viewBox="0 0 300 170" width="78mm">
+<line x1="36" y1="145.0" x2="294" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">0</text>
+<line x1="36" y1="114.2" x2="294" y2="114.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="117.8" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">4</text>
+<line x1="36" y1="83.5" x2="294" y2="83.5" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="87.0" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">8</text>
+<line x1="36" y1="52.8" x2="294" y2="52.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="56.2" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">12</text>
+<line x1="36" y1="22.0" x2="294" y2="22.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="25.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">16</text>
+<rect x="45.7" y="37.4" width="31.5" height="107.6" fill="#a8492a"/>
+<text x="61.4" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Fútbol</text>
+<rect x="96.5" y="68.1" width="31.5" height="76.9" fill="#a8492a"/>
+<text x="112.2" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Básquet</text>
+<rect x="147.3" y="98.9" width="31.5" height="46.1" fill="#a8492a"/>
+<text x="163.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Voleibol</text>
+<rect x="198.1" y="114.2" width="31.5" height="30.8" fill="#a8492a"/>
+<text x="213.8" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Béisbol</text>
+<rect x="248.9" y="98.9" width="31.5" height="46.1" fill="#a8492a"/>
+<text x="264.6" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Otro</text>
+<line x1="36" y1="145" x2="294" y2="145" stroke="#2b241e"/>
+<text x="4" y="8" font-family="Nunito" font-size="9" fill="#5f5448">Alumnos</text>
+</svg>
+      <figcaption>Deporte favorito de 40 alumnos.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Gráficas circulares</h2>
+  <p>Una gráfica circular representa el total como el círculo completo ($360^\circ$ o $100\,\%$). Cada categoría ocupa un sector proporcional a su frecuencia:</p>
+  $$\text{porcentaje} = \frac{f}{n}\cdot 100 \qquad\qquad \text{ángulo} = \frac{f}{n}\cdot 360^\circ$$
+  <div class="figura-lado">
+    <table>
+      <thead><tr><th>Deporte</th><th>$f$</th><th>%</th><th>Ángulo</th></tr></thead>
+      <tbody>
+        <tr><td>Fútbol</td><td>14</td><td>35</td><td>$126^\circ$</td></tr>
+        <tr><td>Básquet</td><td>10</td><td>25</td><td>$90^\circ$</td></tr>
+        <tr><td>Voleibol</td><td>6</td><td>15</td><td>$54^\circ$</td></tr>
+        <tr><td>Béisbol</td><td>4</td><td>10</td><td>$36^\circ$</td></tr>
+        <tr><td>Otro</td><td>6</td><td>15</td><td>$54^\circ$</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>40</strong></td><td><strong>100</strong></td><td>$\mathbf{360^\circ}$</td></tr>
+      </tbody>
+    </table>
+    <figure class="figura">
+<svg viewBox="0 0 290 150" width="78mm">
+<path d="M75 75 L75.00 13.00 A62 62 0 0 1 125.16 111.44 Z" fill="#a8492a" stroke="#fff" stroke-width="1.5"/>
+<rect x="160" y="13" width="11" height="11" fill="#a8492a"/>
+<text x="177" y="22" font-family="Nunito" font-size="11" fill="#2b241e">Fútbol 35 %</text>
+<path d="M75 75 L125.16 111.44 A62 62 0 0 1 38.56 125.16 Z" fill="#c08a2e" stroke="#fff" stroke-width="1.5"/>
+<rect x="160" y="35" width="11" height="11" fill="#c08a2e"/>
+<text x="177" y="44" font-family="Nunito" font-size="11" fill="#2b241e">Básquet 25 %</text>
+<path d="M75 75 L38.56 125.16 A62 62 0 0 1 13.00 75.00 Z" fill="#6e7f62" stroke="#fff" stroke-width="1.5"/>
+<rect x="160" y="57" width="11" height="11" fill="#6e7f62"/>
+<text x="177" y="66" font-family="Nunito" font-size="11" fill="#2b241e">Voleibol 15 %</text>
+<path d="M75 75 L13.00 75.00 A62 62 0 0 1 24.84 38.56 Z" fill="#4b5d6b" stroke="#fff" stroke-width="1.5"/>
+<rect x="160" y="79" width="11" height="11" fill="#4b5d6b"/>
+<text x="177" y="88" font-family="Nunito" font-size="11" fill="#2b241e">Béisbol 10 %</text>
+<path d="M75 75 L24.84 38.56 A62 62 0 0 1 75.00 13.00 Z" fill="#d9b98c" stroke="#fff" stroke-width="1.5"/>
+<rect x="160" y="101" width="11" height="11" fill="#d9b98c"/>
+<text x="177" y="110" font-family="Nunito" font-size="11" fill="#2b241e">Otro 15 %</text>
+</svg>
+    </figure>
+  </div>
+  <p>Comprueba siempre que los porcentajes sumen 100 y los ángulos $360^\circ$. Si no, hay un error en alguna cuenta.</p>
+</section>
+
+<section>
+  <h2>Gráficas de líneas</h2>
+  <p>La gráfica muestra la temperatura (en °C) medida cada tres horas en un día de primavera. Los puntos son las mediciones; la línea ayuda a ver la tendencia.</p>
+  <div class="figura-lado">
+    <div>
+      <ul>
+        <li>La temperatura máxima fue de $30\,^\circ$C, a las 15 h.</li>
+        <li>Entre las 9 y las 12 h subió $26 - 18 = 8\,^\circ$C: fue el aumento más rápido (la línea está más inclinada).</li>
+        <li>Desde las 15 h la temperatura baja.</li>
+        <li>La diferencia entre la máxima y la mínima registradas es $30 - 12 = 18\,^\circ$C.</li>
+      </ul>
+    </div>
+    <figure class="figura">
+<svg viewBox="0 0 300 170" width="78mm">
+<line x1="36" y1="145.0" x2="288" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">10</text>
+<line x1="36" y1="111.8" x2="288" y2="111.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="115.2" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">15</text>
+<line x1="36" y1="78.5" x2="288" y2="78.5" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="82.0" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">20</text>
+<line x1="36" y1="45.2" x2="288" y2="45.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="48.8" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">25</text>
+<line x1="36" y1="12.0" x2="288" y2="12.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="15.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">30</text>
+<text x="36.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">6 h</text>
+<text x="86.4" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">9 h</text>
+<text x="136.8" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">12 h</text>
+<text x="187.2" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">15 h</text>
+<text x="237.6" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">18 h</text>
+<text x="288.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">21 h</text>
+<line x1="36" y1="145" x2="288" y2="145" stroke="#2b241e"/>
+<polyline points="36.0,131.7 86.4,91.8 136.8,38.6 187.2,12.0 237.6,32.0 288.0,78.5" fill="none" stroke="#a8492a" stroke-width="2.2"/>
+<circle cx="36.0" cy="131.7" r="3.2" fill="#a8492a"/>
+<circle cx="86.4" cy="91.8" r="3.2" fill="#a8492a"/>
+<circle cx="136.8" cy="38.6" r="3.2" fill="#a8492a"/>
+<circle cx="187.2" cy="12.0" r="3.2" fill="#a8492a"/>
+<circle cx="237.6" cy="32.0" r="3.2" fill="#a8492a"/>
+<circle cx="288.0" cy="78.5" r="3.2" fill="#a8492a"/>
+</svg>
+      <figcaption>Temperatura (°C) según la hora.</figcaption>
+    </figure>
+  </div>
+  <div class="nota">
+    <span class="etq">Pendiente = rapidez de cambio</span>
+    <p>Mientras más inclinado esté un tramo, más rápido cambia la cantidad. Un tramo que sube indica aumento; uno que baja, disminución; uno horizontal, que no cambió.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Gráficas engañosas</h2>
+  <p>Las dos gráficas muestran los mismos datos: la marca A tiene 98 % de clientes satisfechos y la marca B, 100 %.</p>
+  <div class="figura-lado">
+    <div>
+      <p>En la de la izquierda el eje vertical empieza en 96, no en cero. Por eso la barra de B se ve del <strong>doble</strong> de alta que la de A, aunque la diferencia real es de solo 2 puntos porcentuales. En la de la derecha, con el eje desde cero, se ve la verdad: son casi iguales.</p>
+      <p><strong>Revisa siempre dónde empieza el eje vertical</strong> antes de sacar conclusiones, sobre todo en anuncios y noticias.</p>
+    </div>
+    <figure class="figura">
+      <div class="dos-figuras">
+<svg viewBox="0 0 150 170" width="39mm">
+<line x1="36" y1="145.0" x2="144" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">96</text>
+<line x1="36" y1="114.2" x2="144" y2="114.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="117.8" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">97</text>
+<line x1="36" y1="83.5" x2="144" y2="83.5" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="87.0" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">98</text>
+<line x1="36" y1="52.8" x2="144" y2="52.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="56.2" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">99</text>
+<line x1="36" y1="22.0" x2="144" y2="22.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="25.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">100</text>
+<rect x="45.9" y="83.5" width="32.2" height="61.5" fill="#a8492a"/>
+<text x="62.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Marca A</text>
+<rect x="97.9" y="22.0" width="32.2" height="123.0" fill="#a8492a"/>
+<text x="114.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Marca B</text>
+<line x1="36" y1="145" x2="144" y2="145" stroke="#2b241e"/>
+<text x="4" y="8" font-family="Nunito" font-size="9" fill="#5f5448">%</text>
+</svg>
+<svg viewBox="0 0 150 170" width="39mm">
+<line x1="36" y1="145.0" x2="144" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">0</text>
+<line x1="36" y1="120.4" x2="144" y2="120.4" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="123.9" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">20</text>
+<line x1="36" y1="95.8" x2="144" y2="95.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="99.3" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">40</text>
+<line x1="36" y1="71.2" x2="144" y2="71.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="74.7" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">60</text>
+<line x1="36" y1="46.6" x2="144" y2="46.6" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="50.1" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">80</text>
+<line x1="36" y1="22.0" x2="144" y2="22.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="25.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">100</text>
+<rect x="45.9" y="24.5" width="32.2" height="120.5" fill="#a8492a"/>
+<text x="62.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Marca A</text>
+<rect x="97.9" y="22.0" width="32.2" height="123.0" fill="#a8492a"/>
+<text x="114.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Marca B</text>
+<line x1="36" y1="145" x2="144" y2="145" stroke="#2b241e"/>
+<text x="4" y="8" font-family="Nunito" font-size="9" fill="#5f5448">%</text>
+</svg>
+      </div>
+      <figcaption>Izquierda: eje desde 96. Derecha: eje desde 0.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Leer la gráfica sin ver las unidades</td><td class="bien">Revisar título y ejes</td><td>“90” puede ser piezas, docenas o miles.</td></tr>
+        <tr><td class="mal">Ángulo = porcentaje</td><td class="bien">Ángulo $= \dfrac{f}{n}\cdot 360^\circ$</td><td>El círculo tiene 360°, no 100.</td></tr>
+        <tr><td class="mal">Gráfica circular para datos en el tiempo</td><td class="bien">Usar gráfica de líneas</td><td>La circular es para partes de un total.</td></tr>
+        <tr><td class="mal">“B es el doble que A” por la altura de la barra</td><td class="bien">Comparar los valores</td><td>El eje puede no empezar en cero.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Barras: comparar categorías</div><div>Circular: partes de un total</div><div>Líneas: cambio en el tiempo</div>
+      <div>$\% = \dfrac{f}{n}\cdot 100$</div><div>Ángulo $= \dfrac{f}{n}\cdot 360^\circ$</div><div>Suma: 100 % y 360°</div>
+      <div>Más inclinado = cambio más rápido</div><div>Revisa título, ejes y unidades</div><div>¿El eje empieza en 0?</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Los ejercicios 1 a 5 usan la gráfica de ventas de una tamalería durante una semana. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Lee la gráfica</h3>
+    <div class="figura-lado">
+      <ol class="largo">
+        <li>¿Qué día se vendió más y cuántas docenas?</li>
+        <li>¿Cuántas docenas se vendieron en toda la semana?</li>
+        <li>¿Cuál fue el promedio diario de ventas? ¿Cuántos días se vendió más que el promedio?</li>
+        <li>¿Qué porcentaje de las ventas de la semana fue el sábado?</li>
+        <li>Si hicieras una gráfica circular, ¿qué ángulo le tocaría al sábado?</li>
+      </ol>
+      <figure class="figura">
+<svg viewBox="0 0 300 170" width="78mm">
+<line x1="36" y1="145.0" x2="294" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">0</text>
+<line x1="36" y1="120.4" x2="294" y2="120.4" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="123.9" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">20</text>
+<line x1="36" y1="95.8" x2="294" y2="95.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="99.3" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">40</text>
+<line x1="36" y1="71.2" x2="294" y2="71.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="74.7" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">60</text>
+<line x1="36" y1="46.6" x2="294" y2="46.6" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="50.1" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">80</text>
+<line x1="36" y1="22.0" x2="294" y2="22.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="25.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">100</text>
+<rect x="44.0" y="89.7" width="26.2" height="55.4" fill="#4b5d6b"/>
+<text x="57.2" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Lun</text>
+<rect x="86.4" y="108.1" width="26.2" height="36.9" fill="#4b5d6b"/>
+<text x="99.5" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Mar</text>
+<rect x="128.7" y="102.0" width="26.2" height="43.0" fill="#4b5d6b"/>
+<text x="141.8" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Mié</text>
+<rect x="171.0" y="95.8" width="26.2" height="49.2" fill="#4b5d6b"/>
+<text x="184.2" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Jue</text>
+<rect x="213.4" y="71.2" width="26.2" height="73.8" fill="#4b5d6b"/>
+<text x="226.5" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Vie</text>
+<rect x="255.7" y="34.3" width="26.2" height="110.7" fill="#4b5d6b"/>
+<text x="268.8" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">Sáb</text>
+<line x1="36" y1="145" x2="294" y2="145" stroke="#2b241e"/>
+<text x="4" y="8" font-family="Nunito" font-size="9" fill="#5f5448">Docenas</text>
+</svg>
+        <figcaption>Docenas de tamales vendidas por día.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Construye e interpreta</h3>
+    <ol class="largo">
+      <li>En un grupo de 30 alumnos, 12 llegan en camión, 9 en auto, 6 caminando y 3 en bicicleta. Calcula el porcentaje y el ángulo de cada categoría para una gráfica circular.</li>
+      <li>¿Qué gráfica usarías para cada caso? a) El peso de un bebé mes con mes. b) Cómo se reparte el presupuesto de una familia. c) Cuántos alumnos de cada grupo aprobaron.</li>
+      <li>Un anuncio dice: “Nuestro producto dura el doble”, y muestra barras de 50 y 52 horas con el eje empezando en 48. ¿Es cierto lo que sugiere la gráfica?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>Sábado, 90 docenas</span></li>
+    <li><span>300 docenas</span></li>
+    <li><span>50 docenas; 2 días</span></li>
+    <li><span>$30\,\%$</span></li>
+    <li><span>$108^\circ$</span></li>
+    <li><span>Camión 40 % (144°), auto 30 % (108°), caminando 20 % (72°), bici 10 % (36°)</span></li>
+    <li><span>a) líneas, b) circular, c) barras</span></li>
+    <li><span>No: dura 4 % más</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$45 + 30 + 35 + 40 + 60 + 90 = 300$ docenas.</div></div>
+    <div class="sol"><span>3</span><div>$300\div 6 = 50$. Solo el viernes (60) y el sábado (90) superan 50.</div></div>
+    <div class="sol"><span>4</span><div>$\dfrac{90}{300}\cdot 100 = 30\,\%$.</div></div>
+    <div class="sol"><span>5</span><div>$\dfrac{90}{300}\cdot 360^\circ = 0.3\cdot 360^\circ = 108^\circ$.</div></div>
+    <div class="sol"><span>6</span><div>Camión: $\tfrac{12}{30} = 0.4$, es decir 40 % y $0.4\cdot 360 = 144^\circ$. Igual con los demás. Revisa: $144 + 108 + 72 + 36 = 360$.</div></div>
+    <div class="sol"><span>7</span><div>El peso cambia con el tiempo (líneas); el presupuesto es un total que se reparte (circular); los grupos son categorías a comparar (barras).</div></div>
+    <div class="sol"><span>8</span><div>Si el eje empieza en 48, las barras miden 2 y 4 unidades y una parece el doble. En realidad, $\tfrac{52 - 50}{50}\cdot 100 = 4\,\%$ más.</div></div>
+  </div>
+</section>

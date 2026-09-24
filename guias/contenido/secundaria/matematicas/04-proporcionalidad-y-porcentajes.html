@@ -1,0 +1,217 @@
+<!-- guia
+titulo: Proporcionalidad y porcentajes
+nivel: Secundaria
+materia: Matemáticas
+rama: Aritmética
+numero: 04
+entrada: Si 3 kilos cuestan tanto, ¿cuánto cuestan 5? Si hay 20 % de descuento, ¿cuánto pago? Estas preguntas se resuelven con la misma idea: cantidades que cambian juntas siguiendo una regla fija.
+objetivo: Plantear y resolver proporciones con la regla de tres.
+objetivo: Distinguir proporcionalidad directa de inversa.
+objetivo: Encontrar la constante de proporcionalidad.
+objetivo: Calcular porcentajes, aumentos y descuentos.
+objetivo: Encontrar el valor original antes de un descuento.
+objetivo: Usar escalas en mapas y planos.
+autoeval: Resolver una proporción con la regla de tres. | 01
+autoeval: Reconocer si una relación es directa, inversa o ninguna. | 02 y 03
+autoeval: Encontrar la constante de proporcionalidad. | 02 y 03
+autoeval: Calcular un porcentaje y qué porcentaje es una cantidad de otra. | 04
+autoeval: Aplicar aumentos y descuentos, incluso sucesivos. | 04
+autoeval: Encontrar el precio original a partir del precio final. | 04
+-->
+<section>
+  <h2>Razones y proporciones</h2>
+  <p>Una <strong>razón</strong> compara dos cantidades dividiéndolas: si en un grupo hay 12 mujeres y 18 hombres, la razón de mujeres a hombres es $\tfrac{12}{18} = \tfrac{2}{3}$ (se lee “2 a 3”).</p>
+  <div class="definicion">
+    <span class="etq">Proporción</span>
+    <p>Una proporción es una igualdad entre dos razones. En una proporción, los <strong>productos cruzados</strong> son iguales:</p>
+    $$\frac{a}{b} = \frac{c}{d} \quad\Longleftrightarrow\quad a\cdot d = b\cdot c$$
+  </div>
+  <p>Esa propiedad sirve para encontrar un valor que falta. A este procedimiento se le llama <strong>regla de tres</strong>.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Si 3 kg de manzana cuestan \$105, ¿cuánto cuestan 5 kg?</p>
+      <p class="paso">Acomoda las cantidades que se corresponden y multiplica en cruz:</p>
+      $$\frac{3}{105} = \frac{5}{x} \;\Rightarrow\; 3x = 5\cdot 105 \;\Rightarrow\; x = \frac{525}{3} = 175$$
+      <p class="paso">Cuestan \$175. Revisa que tenga sentido: más kilos, más dinero.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Proporcionalidad directa</h2>
+  <p>Dos cantidades son <strong>directamente proporcionales</strong> si al multiplicar una por un número, la otra se multiplica por el mismo número. Su cociente siempre es el mismo número $k$, la <strong>constante de proporcionalidad</strong>:</p>
+  $$\frac{y}{x} = k \qquad\Longleftrightarrow\qquad y = k\,x$$
+  <div class="figura-lado">
+    <div>
+      <table>
+        <thead><tr><th>Kilos $x$</th><th>Precio $y$</th><th>$y \div x$</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>\$35</td><td>35</td></tr>
+          <tr><td>3</td><td>\$105</td><td>35</td></tr>
+          <tr><td>5</td><td>\$175</td><td>35</td></tr>
+          <tr><td>8</td><td>\$280</td><td>35</td></tr>
+        </tbody>
+      </table>
+      <p class="leyenda">Aquí $k = 35$: el precio de un kilo.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 220 170" width="58mm">
+        <line x1="30" y1="150" x2="210" y2="150" stroke="#2b241e"/><line x1="30" y1="150" x2="30" y2="10" stroke="#2b241e"/>
+        <line x1="30" y1="150" x2="200" y2="22" stroke="#a8492a" stroke-width="2.5"/>
+        <g fill="#a8492a"><circle cx="51" cy="134" r="3.5"/><circle cx="94" cy="102" r="3.5"/><circle cx="136" cy="70" r="3.5"/><circle cx="200" cy="22" r="3.5"/></g>
+        <text x="205" y="165" font-family="Nunito" font-size="12" fill="#5f5448">x</text>
+        <text x="16" y="18" font-family="Nunito" font-size="12" fill="#5f5448">y</text>
+        <text x="22" y="164" font-family="Nunito" font-size="11" fill="#5f5448">0</text>
+      </svg>
+      <figcaption>La gráfica es una recta que pasa por el origen.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Proporcionalidad inversa</h2>
+  <p>Dos cantidades son <strong>inversamente proporcionales</strong> si cuando una se multiplica por un número, la otra se <em>divide</em> entre ese número. Lo que se mantiene fijo es su producto:</p>
+  $$x\cdot y = k \qquad\Longleftrightarrow\qquad y = \frac{k}{x}$$
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>4 personas pintan una barda en 15 días. ¿Cuánto tardan 6 personas trabajando al mismo ritmo?</p>
+      <p class="paso">Más personas, menos días: es inversa. El producto se conserva:</p>
+      $$4\cdot 15 = 6\cdot x \;\Rightarrow\; 60 = 6x \;\Rightarrow\; x = 10 \text{ días}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">No todo es proporcional</span>
+    <p>Antes de aplicar la regla de tres, pregúntate si la relación realmente es proporcional. Si un taxi cobra \$30 de banderazo más \$10 por kilómetro, 2 km cuestan \$50 y 4 km cuestan \$70, no el doble. Ahí no hay proporcionalidad directa porque la gráfica no pasa por el origen.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Porcentajes</h2>
+  <p>“Por ciento” significa “de cada cien”. Un porcentaje es una fracción con denominador 100:</p>
+  $$p\,\% = \frac{p}{100} \qquad\qquad 25\,\% = 0.25 \qquad 8\,\% = 0.08 \qquad 150\,\% = 1.5$$
+  <table class="leyes">
+    <thead><tr><th>Pregunta</th><th>Cómo se calcula</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>¿Cuánto es el $p\,\%$ de $N$?</td><td>$\dfrac{p}{100}\cdot N$</td><td>$15\,\%$ de 240: $0.15\cdot 240 = 36$</td></tr>
+      <tr><td>¿Qué porcentaje es $A$ de $N$?</td><td>$\dfrac{A}{N}\cdot 100$</td><td>18 de 72: $\dfrac{18}{72}\cdot 100 = 25\,\%$</td></tr>
+      <tr><td>$A$ es el $p\,\%$ de ¿qué número?</td><td>$A \div \dfrac{p}{100}$</td><td>30 es el $40\,\%$ de $30\div 0.4 = 75$</td></tr>
+    </tbody>
+  </table>
+  <h3>Aumentos y descuentos</h3>
+  <p>Un descuento del $20\,\%$ significa que pagas el $80\,\%$. Un aumento del $16\,\%$ significa que pagas el $116\,\%$. Multiplica directamente por ese factor:</p>
+  $$\text{descuento de } 20\,\%:\ \ 850\cdot 0.80 = 680 \qquad\quad \text{aumento de } 16\,\%:\ \ 500\cdot 1.16 = 580$$
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Después de un descuento del $25\,\%$ pagaste \$600. ¿Cuál era el precio original?</p>
+      <p class="paso">Pagaste el $75\,\%$ del original. Entonces $0.75\cdot P = 600$:</p>
+      $$P = \frac{600}{0.75} = 800$$
+      <p class="paso">El precio original era \$800. Comprueba: el $25\,\%$ de 800 es 200, y $800 - 200 = 600$.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Los porcentajes sucesivos no se suman</span>
+    <p>Si un precio de \$100 sube $10\,\%$ y luego baja $10\,\%$, no regresa a \$100: primero queda en $100\cdot 1.10 = 110$ y luego en $110\cdot 0.90 = 99$. El segundo porcentaje se calcula sobre una cantidad distinta.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$5\,\% = 0.5$</td><td class="bien">$5\,\% = 0.05$</td><td>Es 5 entre 100.</td></tr>
+        <tr><td class="mal">$+10\,\%$ y $-10\,\% = 0\,\%$</td><td class="bien">Queda $-1\,\%$</td><td>El segundo porcentaje se aplica sobre otra cantidad.</td></tr>
+        <tr><td class="mal">4 personas, 15 días → 6 personas, 22.5 días</td><td class="bien">6 personas, 10 días</td><td>Es inversa: más personas, menos días.</td></tr>
+        <tr><td class="mal">Original $= 600 + 25\,\%$ de 600</td><td class="bien">Original $= 600\div 0.75$</td><td>El 25 % se quitó del original, no del precio final.</td></tr>
+        <tr><td class="mal">Taxi: 4 km = el doble de 2 km</td><td class="bien">Revisar si es proporcional</td><td>Con cuota fija, la gráfica no pasa por el origen.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\dfrac{a}{b} = \dfrac{c}{d} \Leftrightarrow ad = bc$</div><div>Directa: $y = kx$</div><div>Inversa: $xy = k$</div>
+      <div>$p\,\% = \dfrac{p}{100}$</div><div>$p\,\%$ de $N$: $\dfrac{p}{100}\cdot N$</div><div>Qué %: $\dfrac{A}{N}\cdot 100$</div>
+      <div>Descuento $d\,\%$: $\times\left(1 - \dfrac{d}{100}\right)$</div><div>Aumento $a\,\%$: $\times\left(1 + \dfrac{a}{100}\right)$</div><div>Original $=$ final $\div$ factor</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden: van de lo directo a lo que requiere pensar. Al final encontrarás las respuestas y, para los que tienen truco, la solución paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Proporciones</h3>
+    <ol>
+      <li>Resuelve $\dfrac{x}{12} = \dfrac{5}{8}$</li><li>Resuelve $\dfrac{3}{x} = \dfrac{9}{21}$</li><li>Si 4 cuadernos cuestan \$86, ¿cuánto cuestan 7?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. ¿Directa o inversa?</h3>
+    <ol class="largo">
+      <li>En la tabla $x = 2,\ 5,\ 8$ y $y = 7,\ 17.5,\ 28$. ¿Es proporcionalidad directa? Si sí, ¿cuál es $k$?</li>
+      <li>6 llaves iguales llenan un tanque en 10 horas. ¿Cuánto tardan 4 llaves?</li>
+      <li>Un auto a 80 km/h tarda 3 horas en un trayecto. ¿Cuánto tarda a 120 km/h?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Porcentajes</h3>
+    <ol>
+      <li>El $15\,\%$ de 240</li><li>¿Qué porcentaje es 18 de 72?</li><li>30 es el $40\,\%$ de ¿qué número?</li>
+      <li>Una chamarra de \$850 con $20\,\%$ de descuento</li><li>Un precio de \$500 sube $10\,\%$ y luego baja $10\,\%$. ¿Precio final?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Problemas</h3>
+    <ol class="largo">
+      <li>En un grupo de 40 alumnos, 14 usan lentes. ¿Qué porcentaje del grupo usa lentes?</li>
+      <li>Con un descuento del $25\,\%$ pagaste \$600 por unos tenis. ¿Cuál era su precio original?</li>
+      <li>En un mapa con escala $1:50\,000$, dos puntos están a 6 cm. ¿Cuál es la distancia real en kilómetros?</li>
+      <li>Una receta para 4 personas usa 300 g de harina. ¿Cuánta harina necesitas para 10 personas?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$x = 7.5$</span></li>
+    <li><span>$x = 7$</span></li>
+    <li><span>\$150.50</span></li>
+    <li><span>Sí, $k = 3.5$</span></li>
+    <li><span>15 horas</span></li>
+    <li><span>2 horas</span></li>
+    <li><span>$36$</span></li>
+    <li><span>$25\,\%$</span></li>
+    <li><span>$75$</span></li>
+    <li><span>\$680</span></li>
+    <li><span>\$495</span></li>
+    <li><span>$35\,\%$</span></li>
+    <li><span>\$800</span></li>
+    <li><span>3 km</span></li>
+    <li><span>750 g</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>Productos cruzados: $8x = 12\cdot 5 = 60$, así que $x = \dfrac{60}{8} = 7.5$.</div></div>
+    <div class="sol"><span>2</span><div>$9x = 3\cdot 21 = 63$, así que $x = 7$.</div></div>
+    <div class="sol"><span>3</span><div>Un cuaderno cuesta $86\div 4 = 21.50$. Siete cuestan $7\cdot 21.50 = 150.50$.</div></div>
+    <div class="sol"><span>4</span><div>$\dfrac{7}{2} = \dfrac{17.5}{5} = \dfrac{28}{8} = 3.5$. El cociente es constante: sí es directa.</div></div>
+    <div class="sol"><span>5</span><div>Menos llaves, más tiempo (inversa): $6\cdot 10 = 4\cdot x$, así que $x = 15$ h.</div></div>
+    <div class="sol"><span>6</span><div>La distancia es fija: $80\cdot 3 = 240$ km. A 120 km/h: $240\div 120 = 2$ h.</div></div>
+    <div class="sol"><span>11</span><div>$500\cdot 1.10 = 550$ y luego $550\cdot 0.90 = 495$. Bajó \$5 en total.</div></div>
+    <div class="sol"><span>12</span><div>$\dfrac{14}{40}\cdot 100 = 35\,\%$.</div></div>
+    <div class="sol"><span>13</span><div>Pagaste el $75\,\%$: $P = 600\div 0.75 = 800$.</div></div>
+    <div class="sol"><span>14</span><div>Cada cm del mapa son $50\,000$ cm reales. $6\cdot 50\,000 = 300\,000$ cm $= 3000$ m $= 3$ km.</div></div>
+    <div class="sol"><span>15</span><div>Directa: $\dfrac{300}{4} = 75$ g por persona; $75\cdot 10 = 750$ g.</div></div>
+  </div>
+</section>

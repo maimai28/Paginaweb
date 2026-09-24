@@ -1,0 +1,207 @@
+<!-- guia
+titulo: Expresiones algebraicas
+nivel: Secundaria
+materia: Matemáticas
+rama: Álgebra
+numero: 05
+entrada: El álgebra usa letras para hablar de números que todavía no conoces o que pueden cambiar. En esta guía vas a aprender a escribir expresiones, simplificarlas, multiplicarlas y calcular su valor.
+objetivo: Traducir frases del lenguaje común al algebraico.
+objetivo: Identificar términos, coeficientes y grado.
+objetivo: Reducir términos semejantes y quitar paréntesis.
+objetivo: Multiplicar monomios y polinomios.
+objetivo: Evaluar una expresión para un valor dado.
+objetivo: Escribir perímetros y áreas con expresiones.
+autoeval: Traducir frases a lenguaje algebraico. | 01
+autoeval: Reconocer términos semejantes y reducirlos. | 02
+autoeval: Quitar paréntesis precedidos de un signo menos. | 02
+autoeval: Multiplicar monomio por polinomio y polinomio por polinomio. | 03
+autoeval: Evaluar expresiones con números negativos. | 04
+autoeval: Plantear perímetros y áreas con expresiones. | 04
+-->
+<section>
+  <h2>El lenguaje algebraico</h2>
+  <p>Una <strong>variable</strong> es una letra que representa un número. Con variables, números y operaciones se forman <strong>expresiones algebraicas</strong>, como $3x^2 - 5x + 2$.</p>
+  <div class="definicion">
+    <span class="etq">Partes de una expresión</span>
+    <p>Cada parte separada por $+$ o $-$ es un <strong>término</strong>. En el término $-5x^2$, el número $-5$ es el <strong>coeficiente</strong>, $x$ es la parte literal y el exponente 2 es su <strong>grado</strong>. Un término sin letra, como el $+2$, es el término independiente.</p>
+  </div>
+  <p>Una expresión con un solo término es un <strong>monomio</strong>; con dos, un <strong>binomio</strong>; con tres, un <strong>trinomio</strong>; en general, un <strong>polinomio</strong>.</p>
+  <h3>Traducir al álgebra</h3>
+  <table class="leyes">
+    <thead><tr><th>En palabras</th><th>En álgebra</th></tr></thead>
+    <tbody>
+      <tr><td>El doble de un número más 5</td><td>$2x + 5$</td></tr>
+      <tr><td>La mitad de un número</td><td>$\dfrac{x}{2}$</td></tr>
+      <tr><td>Un número disminuido en 8</td><td>$x - 8$</td></tr>
+      <tr><td>El cuadrado de la suma de dos números</td><td>$(a + b)^2$</td></tr>
+      <tr><td>La suma de los cuadrados de dos números</td><td>$a^2 + b^2$</td></tr>
+      <tr><td>Dos números consecutivos</td><td>$n$ y $n + 1$</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Fíjate en las dos filas del cuadrado: el orden de las palabras cambia la expresión.</p>
+</section>
+
+<section>
+  <h2>Términos semejantes</h2>
+  <p>Dos términos son <strong>semejantes</strong> si tienen exactamente la misma parte literal (mismas letras con los mismos exponentes). Solo los términos semejantes se pueden sumar o restar: se suman los coeficientes y la parte literal se queda igual.</p>
+  $$3x + 5x - 2x = (3 + 5 - 2)\,x = 6x$$
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Reduce $4a^2 - 3a + 2a^2 + 7a$.</p>
+      <p class="paso">Junta los $a^2$ por un lado y los $a$ por otro. $a^2$ y $a$ <em>no</em> son semejantes:</p>
+      $$(4a^2 + 2a^2) + (-3a + 7a) = 6a^2 + 4a$$
+    </div>
+  </div>
+  <h3>Quitar paréntesis</h3>
+  <p>Un signo $+$ antes de un paréntesis lo deja igual. Un signo $-$ antes del paréntesis <strong>cambia el signo de todos</strong> los términos de adentro:</p>
+  $$-(2x - 3) = -2x + 3 \qquad\qquad 5 - (x + 4) = 5 - x - 4 = 1 - x$$
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Simplifica $4(x - 2) - (3x - 5)$.</p>
+      <p class="paso">Distribuye el 4, cambia los signos del segundo paréntesis y reduce:</p>
+      $$4x - 8 - 3x + 5 = x - 3$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Multiplicación</h2>
+  <h3>Monomio por monomio</h3>
+  <p>Multiplica los coeficientes y, para las letras iguales, suma los exponentes:</p>
+  $$(3x^2)(4x^3) = 12x^{5} \qquad\qquad (-2ab)(5a^2) = -10a^3b$$
+  <h3>Monomio por polinomio</h3>
+  <p>Multiplica el monomio por <em>cada</em> término del polinomio (propiedad distributiva):</p>
+  $$2x\,(3x - 5) = 6x^2 - 10x$$
+  <h3>Polinomio por polinomio</h3>
+  <p>Cada término del primero multiplica a cada término del segundo. Después reduces términos semejantes.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Multiplica $(x + 3)(x - 2)$.</p>
+      <p class="paso">Cuatro productos: $x\cdot x$, $x\cdot(-2)$, $3\cdot x$ y $3\cdot(-2)$:</p>
+      $$(x + 3)(x - 2) = x^2 - 2x + 3x - 6 = x^2 + x - 6$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Evaluar expresiones</h2>
+  <p>Evaluar es sustituir la letra por un número y hacer las operaciones. Cuando el número es negativo, <strong>ponlo entre paréntesis</strong> al sustituir; así no te equivocas con los signos.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Evalúa $3x^2 - 2x + 1$ para $x = -2$.</p>
+      $$3(-2)^2 - 2(-2) + 1 = 3\cdot 4 + 4 + 1 = 17$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un rectángulo mide $x + 4$ de base y $x$ de altura. Escribe su perímetro y su área.</p>
+      $$P = 2(x + 4) + 2x = 4x + 8 \qquad\qquad A = x\,(x + 4) = x^2 + 4x$$
+      <p class="paso">Si $x = 3$: $P = 20$ y $A = 21$. Comprueba con las medidas reales: base 7, altura 3.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$3x + 2y = 5xy$</td><td class="bien">$3x + 2y$</td><td>No son semejantes; no se pueden juntar.</td></tr>
+        <tr><td class="mal">$x^2 + x^2 = x^4$</td><td class="bien">$x^2 + x^2 = 2x^2$</td><td>Al sumar se suman coeficientes, no exponentes.</td></tr>
+        <tr><td class="mal">$-(x - 3) = -x - 3$</td><td class="bien">$-(x - 3) = -x + 3$</td><td>El menos cambia el signo de <em>todos</em> los términos.</td></tr>
+        <tr><td class="mal">$(2x)^2 = 2x^2$</td><td class="bien">$(2x)^2 = 4x^2$</td><td>El exponente afecta al 2 y a la $x$.</td></tr>
+        <tr><td class="mal">$-x^2$ con $x = -3$ da $9$</td><td class="bien">$-(-3)^2 = -9$</td><td>Primero la potencia, luego el signo de afuera.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Semejantes: misma parte literal</div><div>$ax + bx = (a + b)x$</div><div>$-(a - b) = -a + b$</div>
+      <div>$x^m\cdot x^n = x^{m+n}$</div><div>$a(b + c) = ab + ac$</div><div>$(a + b)(c + d) = ac + ad + bc + bd$</div>
+      <div>Sustituye negativos con paréntesis</div><div>$(2x)^2 = 4x^2$</div><div>Doble: $2x$ · mitad: $\frac{x}{2}$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden: van de lo directo a lo que requiere pensar. Al final encontrarás las respuestas y, para los que tienen truco, la solución paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Traduce al álgebra (usa $x$ para “un número”)</h3>
+    <ol>
+      <li>El triple de un número menos 7</li><li>La mitad de la suma de $a$ y $b$</li><li>La suma de un número y su cuadrado</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Reduce</h3>
+    <ol>
+      <li>$7x - 3x + x$</li><li>$5a - 2b + 3a + 6b$</li><li>$2x^2 - 5x + 3 - x^2 + 8x - 1$</li>
+      <li>$4(x - 2) - (3x - 5)$</li><li>$6 - (2y - 9) + 4y$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Multiplica</h3>
+    <ol>
+      <li>$(-2a^3)(5a^2)$</li><li>$3x\,(2x^2 - x + 4)$</li><li>$(x + 5)(x - 3)$</li>
+      <li>$(2x - 1)(x + 4)$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Evalúa y aplica</h3>
+    <ol class="largo">
+      <li>Evalúa $2x^2 - 3x + 5$ para $x = -1$.</li>
+      <li>Evalúa $a^2 - b^2$ para $a = 5$ y $b = -3$.</li>
+      <li>Un rectángulo mide $2x + 3$ de base y $x - 1$ de altura. Escribe su perímetro y su área simplificados.</li>
+      <li>Con el rectángulo anterior y $x = 4$, calcula el perímetro y el área. Compruébalo con las medidas de la base y la altura.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$3x - 7$</span></li>
+    <li><span>$\dfrac{a + b}{2}$</span></li>
+    <li><span>$x + x^2$</span></li>
+    <li><span>$5x$</span></li>
+    <li><span>$8a + 4b$</span></li>
+    <li><span>$x^2 + 3x + 2$</span></li>
+    <li><span>$x - 3$</span></li>
+    <li><span>$2y + 15$</span></li>
+    <li><span>$-10a^5$</span></li>
+    <li><span>$6x^3 - 3x^2 + 12x$</span></li>
+    <li><span>$x^2 + 2x - 15$</span></li>
+    <li><span>$2x^2 + 7x - 4$</span></li>
+    <li><span>$10$</span></li>
+    <li><span>$16$</span></li>
+    <li><span>$P = 6x + 4$; $A = 2x^2 + x - 3$</span></li>
+    <li><span>$P = 28$; $A = 33$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>Primero la suma, luego la mitad; por eso la suma va completa arriba: $\dfrac{a + b}{2}$. No es lo mismo que $a + \dfrac{b}{2}$.</div></div>
+    <div class="sol"><span>6</span><div>$x^2$: $2 - 1 = 1$. $x$: $-5 + 8 = 3$. Números: $3 - 1 = 2$. Queda $x^2 + 3x + 2$.</div></div>
+    <div class="sol"><span>8</span><div>El menos cambia ambos signos: $6 - 2y + 9 + 4y = 2y + 15$.</div></div>
+    <div class="sol"><span>9</span><div>Coeficientes: $(-2)(5) = -10$. Exponentes: $3 + 2 = 5$.</div></div>
+    <div class="sol"><span>11</span><div>$x^2 - 3x + 5x - 15 = x^2 + 2x - 15$.</div></div>
+    <div class="sol"><span>12</span><div>$2x^2 + 8x - x - 4 = 2x^2 + 7x - 4$.</div></div>
+    <div class="sol"><span>13</span><div>$2(-1)^2 - 3(-1) + 5 = 2 + 3 + 5 = 10$.</div></div>
+    <div class="sol"><span>14</span><div>$5^2 - (-3)^2 = 25 - 9 = 16$. Ojo: $(-3)^2 = 9$, positivo.</div></div>
+    <div class="sol"><span>15</span><div>$P = 2(2x + 3) + 2(x - 1) = 4x + 6 + 2x - 2 = 6x + 4$. $A = (2x + 3)(x - 1) = 2x^2 - 2x + 3x - 3 = 2x^2 + x - 3$.</div></div>
+    <div class="sol"><span>16</span><div>Con $x = 4$: base $= 11$, altura $= 3$. $P = 2(11) + 2(3) = 28$ y $A = 11\cdot 3 = 33$. Coincide con las fórmulas: $6(4) + 4 = 28$ y $2(16) + 4 - 3 = 33$.</div></div>
+  </div>
+</section>

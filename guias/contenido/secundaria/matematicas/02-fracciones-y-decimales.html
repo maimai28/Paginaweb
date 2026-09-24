@@ -1,0 +1,221 @@
+<!-- guia
+titulo: Fracciones y decimales
+nivel: Secundaria
+materia: Matemáticas
+rama: Aritmética
+numero: 02
+entrada: Media taza, tres cuartos de tanque, 0.75 litros: las fracciones y los decimales son dos formas de escribir partes de un entero. Aquí vas a aprender a operarlas y a pasar de una forma a la otra.
+objetivo: Simplificar fracciones y reconocer fracciones equivalentes.
+objetivo: Sumar y restar fracciones con distinto denominador.
+objetivo: Multiplicar y dividir fracciones.
+objetivo: Convertir fracciones a decimales y decimales a fracciones.
+objetivo: Operar con decimales sin perder el punto.
+objetivo: Resolver problemas con cantidades fraccionarias.
+autoeval: Simplificar y encontrar fracciones equivalentes. | 01
+autoeval: Pasar de número mixto a fracción impropia y al revés. | 01
+autoeval: Sumar y restar fracciones con distinto denominador. | 02
+autoeval: Multiplicar y dividir fracciones. | 03
+autoeval: Convertir entre fracción y decimal. | 04
+autoeval: Multiplicar y dividir decimales. | 04
+-->
+<section>
+  <h2>Qué es una fracción</h2>
+  <p>Una fracción $\dfrac{a}{b}$ indica que un entero se partió en $b$ partes iguales y se tomaron $a$ de ellas. El número de arriba es el <strong>numerador</strong> y el de abajo, el <strong>denominador</strong> (que nunca puede ser 0).</p>
+  <figure class="figura">
+    <svg viewBox="0 0 520 96" width="130mm">
+      <g stroke="#2b241e" stroke-width="1.5">
+        <rect x="20" y="10" width="120" height="30" fill="#a8492a"/><rect x="140" y="10" width="120" height="30" fill="#a8492a"/>
+        <rect x="260" y="10" width="120" height="30" fill="#a8492a"/><rect x="380" y="10" width="120" height="30" fill="#fbf6ee"/>
+      </g>
+      <g stroke="#2b241e" stroke-width="1.5">
+        <rect x="20" y="54" width="60" height="30" fill="#c08a2e"/><rect x="80" y="54" width="60" height="30" fill="#c08a2e"/>
+        <rect x="140" y="54" width="60" height="30" fill="#c08a2e"/><rect x="200" y="54" width="60" height="30" fill="#c08a2e"/>
+        <rect x="260" y="54" width="60" height="30" fill="#c08a2e"/><rect x="320" y="54" width="60" height="30" fill="#c08a2e"/>
+        <rect x="380" y="54" width="60" height="30" fill="#fbf6ee"/><rect x="440" y="54" width="60" height="30" fill="#fbf6ee"/>
+      </g>
+    </svg>
+    <figcaption>$\tfrac{3}{4}$ y $\tfrac{6}{8}$ cubren exactamente la misma parte del entero: son fracciones equivalentes.</figcaption>
+  </figure>
+  <div class="definicion">
+    <span class="etq">Fracciones equivalentes</span>
+    <p>Si multiplicas o divides el numerador y el denominador por el mismo número (distinto de cero), obtienes una fracción equivalente:</p>
+    $$\frac{3}{4} = \frac{3\cdot 2}{4\cdot 2} = \frac{6}{8}$$
+  </div>
+  <p><strong>Simplificar</strong> es dividir arriba y abajo entre el mayor número que divida a ambos (el máximo común divisor):</p>
+  $$\frac{18}{24} = \frac{18\div 6}{24\div 6} = \frac{3}{4}$$
+  <h3>Números mixtos</h3>
+  <p>Una fracción con numerador mayor que el denominador se puede escribir como entero más fracción. Para pasar de mixto a fracción: multiplica el entero por el denominador y suma el numerador.</p>
+  $$2\tfrac{1}{3} = \frac{2\cdot 3 + 1}{3} = \frac{7}{3} \qquad\qquad \frac{17}{5} = 3\tfrac{2}{5}\ \ \text{porque } 17 = 3\cdot 5 + 2$$
+</section>
+
+<section>
+  <h2>Suma y resta</h2>
+  <p>Solo se pueden sumar fracciones que tengan el <strong>mismo denominador</strong>. En ese caso se suman los numeradores y el denominador se queda igual:</p>
+  $$\frac{3}{8} + \frac{1}{8} = \frac{4}{8} = \frac{1}{2}$$
+  <p>Si los denominadores son distintos, primero conviertes las dos fracciones a un denominador común. El más cómodo es el mínimo común múltiplo (mcm).</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\dfrac{2}{3} + \dfrac{3}{4}$.</p>
+      <p class="paso">El mcm de 3 y 4 es 12. Convierte cada fracción y suma:</p>
+      $$\frac{2}{3} + \frac{3}{4} = \frac{8}{12} + \frac{9}{12} = \frac{17}{12} = 1\tfrac{5}{12}$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\dfrac{5}{6} - \dfrac{1}{4}$.</p>
+      <p class="paso">El mcm de 6 y 4 es 12:</p>
+      $$\frac{5}{6} - \frac{1}{4} = \frac{10}{12} - \frac{3}{12} = \frac{7}{12}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Multiplicación y división</h2>
+  <p>Multiplicar es más fácil que sumar: numerador por numerador y denominador por denominador. No necesitas denominador común.</p>
+  $$\frac{a}{b}\cdot\frac{c}{d} = \frac{a\cdot c}{b\cdot d}$$
+  <p>Para dividir, multiplica la primera fracción por el <strong>recíproco</strong> de la segunda (la segunda volteada):</p>
+  $$\frac{a}{b}\div\frac{c}{d} = \frac{a}{b}\cdot\frac{d}{c}$$
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\dfrac{2}{3}\cdot\dfrac{9}{10}$ y $\dfrac{3}{4}\div\dfrac{9}{8}$.</p>
+      <p class="paso">Simplifica antes de multiplicar para trabajar con números chicos:</p>
+      $$\frac{2}{3}\cdot\frac{9}{10} = \frac{18}{30} = \frac{3}{5} \qquad\qquad \frac{3}{4}\div\frac{9}{8} = \frac{3}{4}\cdot\frac{8}{9} = \frac{24}{36} = \frac{2}{3}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Con números mixtos</span>
+    <p>Antes de multiplicar o dividir, conviértelos a fracción. Un error típico es multiplicar enteros con enteros y fracciones con fracciones: $2\tfrac{1}{2}\cdot 1\tfrac{1}{3}$ <em>no</em> es $2\tfrac{1}{6}$. Lo correcto es $\tfrac{5}{2}\cdot\tfrac{4}{3} = \tfrac{20}{6} = 3\tfrac{1}{3}$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Decimales</h2>
+  <h3>De fracción a decimal</h3>
+  <p>Divide el numerador entre el denominador. A veces la división termina y a veces una parte se repite para siempre (decimal periódico, se marca con una raya encima):</p>
+  $$\frac{3}{8} = 0.375 \qquad\qquad \frac{2}{3} = 0.666\ldots = 0.\overline{6}$$
+  <h3>De decimal a fracción</h3>
+  <p>Escribe el número sin punto sobre 10, 100, 1000… (tantos ceros como cifras decimales) y simplifica:</p>
+  $$0.45 = \frac{45}{100} = \frac{9}{20} \qquad\qquad 1.25 = \frac{125}{100} = \frac{5}{4}$$
+  <h3>Operar con decimales</h3>
+  <p><strong>Multiplicar:</strong> multiplica como si no hubiera punto y, al final, el resultado lleva tantas cifras decimales como los dos factores juntos.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $1.2\times 0.35$ y $4.5\div 0.15$.</p>
+      <p class="paso">Multiplicación: $12\times 35 = 420$. Los factores tienen $1 + 2 = 3$ decimales, así que el resultado es $0.420 = 0.42$.</p>
+      <p class="paso">División: recorre el punto del divisor hasta que sea entero y recorre el del dividendo los mismos lugares:</p>
+      $$4.5\div 0.15 = 450\div 15 = 30$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Para comparar</span>
+    <p>Si tienes que comparar fracciones con decimales, pasa todo a decimal. ¿Qué es mayor, $\tfrac{3}{5}$ o $0.58$? Como $\tfrac{3}{5} = 0.60$, la fracción es mayor.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\dfrac{1}{2} + \dfrac{1}{3} = \dfrac{2}{5}$</td><td class="bien">$\dfrac{1}{2} + \dfrac{1}{3} = \dfrac{5}{6}$</td><td>Los denominadores no se suman; primero se igualan.</td></tr>
+        <tr><td class="mal">$\dfrac{2}{3}\div\dfrac{4}{5} = \dfrac{3}{2}\cdot\dfrac{4}{5}$</td><td class="bien">$\dfrac{2}{3}\cdot\dfrac{5}{4} = \dfrac{5}{6}$</td><td>Se voltea la <em>segunda</em> fracción, no la primera.</td></tr>
+        <tr><td class="mal">$0.3\times 0.2 = 0.6$</td><td class="bien">$0.3\times 0.2 = 0.06$</td><td>Una cifra decimal más otra: dos cifras decimales.</td></tr>
+        <tr><td class="mal">$\dfrac{3}{4} = 0.34$</td><td class="bien">$\dfrac{3}{4} = 0.75$</td><td>La barra significa dividir: $3\div 4$.</td></tr>
+        <tr><td class="mal">$\dfrac{2 + 3}{2 + 5} = \dfrac{3}{5}$</td><td class="bien">$\dfrac{2 + 3}{2 + 5} = \dfrac{5}{7}$</td><td>Solo se cancelan factores, nunca sumandos.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\dfrac{a}{b} = \dfrac{a\cdot k}{b\cdot k}$</div><div>$\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a + c}{b}$</div><div>Distinto denominador: usa el mcm</div>
+      <div>$\dfrac{a}{b}\cdot\dfrac{c}{d} = \dfrac{ac}{bd}$</div><div>$\dfrac{a}{b}\div\dfrac{c}{d} = \dfrac{a}{b}\cdot\dfrac{d}{c}$</div><div>$n\tfrac{p}{q} = \dfrac{nq + p}{q}$</div>
+      <div>$0.45 = \dfrac{45}{100}$</div><div>$\dfrac{2}{3} = 0.\overline{6}$</div><div>Decimales del producto = suma de decimales</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden: van de lo directo a lo que requiere pensar. Da los resultados simplificados. Al final encontrarás las respuestas y, para los que tienen truco, la solución paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Simplifica y convierte</h3>
+    <ol>
+      <li>$\dfrac{12}{18}$</li><li>$\dfrac{45}{60}$</li><li>$\dfrac{17}{5}$ como número mixto</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Opera</h3>
+    <ol>
+      <li>$\dfrac{3}{8} + \dfrac{1}{8}$</li><li>$\dfrac{2}{5} + \dfrac{1}{3}$</li><li>$\dfrac{7}{6} - \dfrac{3}{4}$</li>
+      <li>$\dfrac{4}{9}\cdot\dfrac{3}{8}$</li><li>$\dfrac{5}{6}\div\dfrac{10}{9}$</li><li>$2\tfrac{1}{2} + 1\tfrac{3}{4}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Decimales</h3>
+    <ol>
+      <li>$\dfrac{7}{20}$ a decimal</li><li>$\dfrac{5}{11}$ a decimal</li><li>$0.625$ a fracción</li>
+      <li>$1.2\times 0.35$</li><li>$4.5\div 0.15$</li><li>Ordena de menor a mayor: $0.7,\ \tfrac{2}{3},\ \tfrac{3}{4},\ 0.65$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Problemas</h3>
+    <ol class="largo">
+      <li>Una receta de empanadas lleva $\tfrac{3}{4}$ de taza de azúcar. Si quieres preparar $2\tfrac{1}{2}$ recetas, ¿cuánta azúcar necesitas?</li>
+      <li>Un tinaco de 1100 litros está a $\tfrac{2}{5}$ de su capacidad. ¿Cuántos litros tiene? ¿Cuántos le faltan para llenarse?</li>
+      <li>Un listón de 3.6 m se corta en trozos de 0.45 m. ¿Cuántos trozos salen?</li>
+      <li>Cargas 38.5 litros de gasolina a \$23.90 el litro. ¿Cuánto pagas?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\dfrac{2}{3}$</span></li>
+    <li><span>$\dfrac{3}{4}$</span></li>
+    <li><span>$3\tfrac{2}{5}$</span></li>
+    <li><span>$\dfrac{1}{2}$</span></li>
+    <li><span>$\dfrac{11}{15}$</span></li>
+    <li><span>$\dfrac{5}{12}$</span></li>
+    <li><span>$\dfrac{1}{6}$</span></li>
+    <li><span>$\dfrac{3}{4}$</span></li>
+    <li><span>$4\tfrac{1}{4} = \dfrac{17}{4}$</span></li>
+    <li><span>$0.35$</span></li>
+    <li><span>$0.\overline{45}$</span></li>
+    <li><span>$\dfrac{5}{8}$</span></li>
+    <li><span>$0.42$</span></li>
+    <li><span>$30$</span></li>
+    <li><span>$0.65,\ \tfrac{2}{3},\ 0.7,\ \tfrac{3}{4}$</span></li>
+    <li><span>$1\tfrac{7}{8}$ tazas</span></li>
+    <li><span>440 L; faltan 660 L</span></li>
+    <li><span>8 trozos</span></li>
+    <li><span>\$920.15</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>5</span><div>El mcm de 5 y 3 es 15: $\dfrac{6}{15} + \dfrac{5}{15} = \dfrac{11}{15}$.</div></div>
+    <div class="sol"><span>6</span><div>El mcm de 6 y 4 es 12: $\dfrac{14}{12} - \dfrac{9}{12} = \dfrac{5}{12}$.</div></div>
+    <div class="sol"><span>7</span><div>$\dfrac{4\cdot 3}{9\cdot 8} = \dfrac{12}{72} = \dfrac{1}{6}$.</div></div>
+    <div class="sol"><span>8</span><div>Voltea la segunda: $\dfrac{5}{6}\cdot\dfrac{9}{10} = \dfrac{45}{60} = \dfrac{3}{4}$.</div></div>
+    <div class="sol"><span>9</span><div>A fracciones: $\dfrac{5}{2} + \dfrac{7}{4} = \dfrac{10}{4} + \dfrac{7}{4} = \dfrac{17}{4} = 4\tfrac{1}{4}$.</div></div>
+    <div class="sol"><span>11</span><div>$5\div 11 = 0.454545\ldots$: el bloque “45” se repite siempre.</div></div>
+    <div class="sol"><span>12</span><div>$0.625 = \dfrac{625}{1000}$; dividiendo entre 125 queda $\dfrac{5}{8}$.</div></div>
+    <div class="sol"><span>15</span><div>En decimal: $\tfrac{2}{3} = 0.666\ldots$ y $\tfrac{3}{4} = 0.75$. Orden: $0.65 \lt 0.666\ldots \lt 0.7 \lt 0.75$.</div></div>
+    <div class="sol"><span>16</span><div>$\dfrac{3}{4}\cdot\dfrac{5}{2} = \dfrac{15}{8} = 1\tfrac{7}{8}$ tazas.</div></div>
+    <div class="sol"><span>17</span><div>$\dfrac{2}{5}\cdot 1100 = 440$ L. Faltan $1100 - 440 = 660$ L.</div></div>
+    <div class="sol"><span>18</span><div>$3.6\div 0.45 = 360\div 45 = 8$ trozos.</div></div>
+    <div class="sol"><span>19</span><div>$38.5\times 23.90 = 920.15$. Pagas \$920.15.</div></div>
+  </div>
+</section>
