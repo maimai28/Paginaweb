@@ -1,0 +1,207 @@
+<!-- guia
+titulo: Antiderivadas
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo integral
+numero: 22
+descripcion: La operación inversa de derivar: integral indefinida y constante de integración, tabla de integrales básicas, cómo reescribir antes de integrar, problemas con condiciones iniciales y cómo pasar de la aceleración a la posición.
+entrada: Si conoces la velocidad de un coche en cada instante, ¿puedes saber dónde está? Sí: necesitas la función cuya derivada es la velocidad. Encontrar esa función es antiderivar, el primer paso del cálculo integral.
+objetivo: Entender la antiderivada y la constante de integración.
+objetivo: Usar la tabla de integrales básicas.
+objetivo: Reescribir raíces, fracciones y productos antes de integrar.
+objetivo: Encontrar la constante con una condición inicial.
+objetivo: Obtener velocidad y posición a partir de la aceleración.
+autoeval: Explicar por qué se escribe $+C$. | 01
+autoeval: Integrar potencias, incluyendo $x^{-1}$. | 02
+autoeval: Reescribir antes de integrar. | 03
+autoeval: Usar una condición inicial para encontrar $C$. | 04
+autoeval: Pasar de aceleración a posición. | 05
+-->
+<section>
+  <h2>Qué es una antiderivada</h2>
+  <div class="definicion">
+    <span class="etq">Antiderivada</span>
+    <p>$F$ es una antiderivada de $f$ si $F'(x) = f(x)$. La <strong>integral indefinida</strong> reúne a todas:</p>
+    $$\int f(x)\,dx = F(x) + C$$
+  </div>
+  <p>¿Por qué el $+C$? Porque la derivada de una constante es cero: $x^2$, $x^2 + 5$ y $x^2 - 7$ tienen todas derivada $2x$. Sus gráficas son la misma curva movida verticalmente.</p>
+  <div class="nota">
+    <span class="etq">Siempre puedes comprobar</span>
+    <p>Deriva tu resultado: si obtienes la función que integraste, está bien. Es la forma más rápida de detectar errores.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Tabla básica</h2>
+  <table class="leyes">
+    <thead><tr><th>Integral</th><th>Resultado</th><th>Integral</th><th>Resultado</th></tr></thead>
+    <tbody>
+      <tr><td>$\displaystyle\int x^n\,dx$ ($n \neq -1$)</td><td>$\dfrac{x^{n + 1}}{n + 1} + C$</td><td>$\displaystyle\int \dfrac{1}{x}\,dx$</td><td>$\ln|x| + C$</td></tr>
+      <tr><td>$\displaystyle\int e^x\,dx$</td><td>$e^x + C$</td><td>$\displaystyle\int a^x\,dx$</td><td>$\dfrac{a^x}{\ln a} + C$</td></tr>
+      <tr><td>$\displaystyle\int \cos x\,dx$</td><td>$\sin x + C$</td><td>$\displaystyle\int \sin x\,dx$</td><td>$-\cos x + C$</td></tr>
+      <tr><td>$\displaystyle\int \sec^2 x\,dx$</td><td>$\tan x + C$</td><td>$\displaystyle\int \sec x\tan x\,dx$</td><td>$\sec x + C$</td></tr>
+      <tr><td>$\displaystyle\int \dfrac{dx}{1 + x^2}$</td><td>$\arctan x + C$</td><td>$\displaystyle\int \dfrac{dx}{\sqrt{1 - x^2}}$</td><td>$\arcsin x + C$</td></tr>
+    </tbody>
+  </table>
+  <p>Además, la integral <strong>respeta sumas y constantes</strong>: $\int (af + bg)\,dx = a\int f\,dx + b\int g\,dx$. Pero <strong>no</strong> hay regla para productos ni cocientes.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int (6x^2 - 4x + 5)\,dx$ y $\displaystyle\int (3\cos x - 2e^x + \tfrac{4}{x})\,dx$.</p>
+      $$\int (6x^2 - 4x + 5)\,dx = 2x^3 - 2x^2 + 5x + C$$
+      $$\int \left(3\cos x - 2e^x + \frac{4}{x}\right)dx = 3\sin x - 2e^x + 4\ln|x| + C$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Reescribir antes de integrar</h2>
+  <p>Igual que al derivar, convierte raíces y $x$ del denominador en potencias. Si hay un producto o un cociente, <strong>desarrolla o divide</strong> término a término.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int \left(\sqrt{x} + \frac{1}{x^2}\right)dx$.</p>
+      $$\int \left(x^{1/2} + x^{-2}\right)dx = \frac{x^{3/2}}{3/2} + \frac{x^{-1}}{-1} + C = \frac{2}{3}x^{3/2} - \frac{1}{x} + C$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int \frac{x^2 + 1}{x}\,dx$.</p>
+      $$\int \left(x + \frac{1}{x}\right)dx = \frac{x^2}{2} + \ln|x| + C$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Condiciones iniciales</h2>
+  <p>Si además te dan un punto por donde pasa la función (una <strong>condición inicial</strong>), puedes encontrar el valor exacto de $C$.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra $f$ si $f'(x) = 3x^2 - 2$ y $f(1) = 4$.</p>
+      <p class="paso">$f(x) = x^3 - 2x + C$. Con $x = 1$: $1 - 2 + C = 4$, así que $C = 5$.</p>
+      $$f(x) = x^3 - 2x + 5$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>De la aceleración a la posición</h2>
+  <p>Como $v = s'$ y $a = v'$, integrar la aceleración da la velocidad y volver a integrar da la posición. Cada integral trae una constante: se fijan con la velocidad y la posición iniciales.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se lanza una pelota hacia arriba a 20 m/s desde el suelo. Con $a = -9.8$ m/s², encuentra $v(t)$ y $s(t)$.</p>
+      $$v(t) = \int -9.8\,dt = -9.8t + C_1, \quad v(0) = 20 \Rightarrow v(t) = 20 - 9.8t$$
+      $$s(t) = \int (20 - 9.8t)\,dt = 20t - 4.9t^2 + C_2, \quad s(0) = 0 \Rightarrow s(t) = 20t - 4.9t^2$$
+      <p class="paso">Son las fórmulas de tiro vertical que usabas en física, ahora deducidas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Olvidar el $+C$</td><td class="bien">$F(x) + C$</td><td>Hay infinitas antiderivadas.</td></tr>
+        <tr><td class="mal">$\displaystyle\int \frac{1}{x}\,dx = \frac{x^0}{0}$</td><td class="bien">$\ln|x| + C$</td><td>La regla de la potencia excluye $n = -1$.</td></tr>
+        <tr><td class="mal">$\displaystyle\int x\cdot x^2\,dx = \frac{x^2}{2}\cdot\frac{x^3}{3}$</td><td class="bien">$\displaystyle\int x^3\,dx = \frac{x^4}{4}$</td><td>No hay regla del producto: simplifica primero.</td></tr>
+        <tr><td class="mal">$\displaystyle\int \sin x\,dx = \cos x$</td><td class="bien">$-\cos x + C$</td><td>Comprueba derivando.</td></tr>
+        <tr><td class="mal">$\displaystyle\int x^{-3}dx = \frac{x^{-2}}{2}$</td><td class="bien">$\dfrac{x^{-2}}{-2}$</td><td>Se divide entre $n + 1 = -2$.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\displaystyle\int x^n dx = \frac{x^{n + 1}}{n + 1} + C$</div><div>$\displaystyle\int \frac{dx}{x} = \ln|x| + C$</div><div>$\displaystyle\int e^x dx = e^x + C$</div>
+      <div>$\displaystyle\int \cos x\,dx = \sin x + C$</div><div>$\displaystyle\int \sin x\,dx = -\cos x + C$</div><div>$\displaystyle\int \sec^2 x\,dx = \tan x + C$</div>
+      <div>Reescribe antes</div><div>Condición inicial: halla $C$</div><div>$a \to v \to s$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Comprueba cada resultado derivando. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Potencias</h3>
+    <ol>
+      <li>$\displaystyle\int (4x^3 - 6x + 1)\,dx$</li><li>$\displaystyle\int x^{-3}\,dx$</li><li>$\displaystyle\int 5\sqrt{x}\,dx$</li>
+      <li>$\displaystyle\int \left(\frac{2}{x^3} + 3\sqrt[3]{x}\right)dx$</li><li>$\displaystyle\int (x + 2)^2\,dx$</li><li>$\displaystyle\int \frac{x^3 - 4x}{x}\,dx$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Trascendentes</h3>
+    <ol>
+      <li>$\displaystyle\int (\sin x + 2\cos x)\,dx$</li><li>$\displaystyle\int \sec^2 x\,dx$</li><li>$\displaystyle\int \left(e^x - \frac{3}{x}\right)dx$</li>
+      <li>$\displaystyle\int \frac{dx}{1 + x^2}$</li><li>$\displaystyle\int 2^x\,dx$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Condiciones iniciales</h3>
+    <ol class="largo">
+      <li>$f'(x) = 2x + 3$ y $f(0) = -1$.</li>
+      <li>$f'(x) = 6x^2 - 4x$ y $f(1) = 5$.</li>
+      <li>$f''(x) = 12x$, $f'(0) = 2$ y $f(0) = 1$.</li>
+      <li>$f'(x) = \cos x$ y $f\!\left(\tfrac{\pi}{2}\right) = 3$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Movimiento</h3>
+    <ol class="largo">
+      <li>Un móvil tiene $v(t) = 3t^2 - 2t$ m/s y $s(0) = 4$ m. Encuentra $s(t)$ y $s(2)$.</li>
+      <li>Se lanza una piedra hacia arriba a 14.7 m/s desde el suelo ($a = -9.8$ m/s²). ¿Qué altura máxima alcanza?</li>
+      <li>Un coche a 25 m/s frena con $a = -5$ m/s². ¿Cuánto tarda en detenerse y qué distancia recorre?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$x^4 - 3x^2 + x + C$</span></li>
+    <li><span>$-\dfrac{1}{2x^2} + C$</span></li>
+    <li><span>$\tfrac{10}{3}x^{3/2} + C$</span></li>
+    <li><span>$-\dfrac{1}{x^2} + \tfrac{9}{4}x^{4/3} + C$</span></li>
+    <li><span>$\tfrac{x^3}{3} + 2x^2 + 4x + C$</span></li>
+    <li><span>$\tfrac{x^3}{3} - 4x + C$</span></li>
+    <li><span>$-\cos x + 2\sin x + C$</span></li>
+    <li><span>$\tan x + C$</span></li>
+    <li><span>$e^x - 3\ln|x| + C$</span></li>
+    <li><span>$\arctan x + C$</span></li>
+    <li><span>$\dfrac{2^x}{\ln 2} + C$</span></li>
+    <li><span>$x^2 + 3x - 1$</span></li>
+    <li><span>$2x^3 - 2x^2 + 5$</span></li>
+    <li><span>$2x^3 + 2x + 1$</span></li>
+    <li><span>$\sin x + 2$</span></li>
+    <li><span>$t^3 - t^2 + 4$; $s(2) = 8$ m</span></li>
+    <li><span>$11.025$ m</span></li>
+    <li><span>5 s y 62.5 m</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$\dfrac{x^{-2}}{-2} = -\dfrac{1}{2x^2}$.</div></div>
+    <div class="sol"><span>3</span><div>$5\cdot\dfrac{x^{3/2}}{3/2} = \tfrac{10}{3}x^{3/2}$.</div></div>
+    <div class="sol"><span>4</span><div>$2x^{-3} + 3x^{1/3}$: $2\cdot\dfrac{x^{-2}}{-2} + 3\cdot\dfrac{x^{4/3}}{4/3}$.</div></div>
+    <div class="sol"><span>5</span><div>Desarrolla: $x^2 + 4x + 4$.</div></div>
+    <div class="sol"><span>6</span><div>Divide: $x^2 - 4$.</div></div>
+    <div class="sol"><span>11</span><div>Comprueba: $\left(\dfrac{2^x}{\ln 2}\right)' = \dfrac{2^x\ln 2}{\ln 2}$.</div></div>
+    <div class="sol"><span>13</span><div>$2x^3 - 2x^2 + C$ con $2 - 2 + C = 5$.</div></div>
+    <div class="sol"><span>14</span><div>$f' = 6x^2 + C_1$, $C_1 = 2$. $f = 2x^3 + 2x + C_2$, $C_2 = 1$.</div></div>
+    <div class="sol"><span>15</span><div>$\sin\tfrac{\pi}{2} + C = 3 \Rightarrow C = 2$.</div></div>
+    <div class="sol"><span>16</span><div>$s = t^3 - t^2 + C$ con $C = 4$. $s(2) = 8 - 4 + 4$.</div></div>
+    <div class="sol"><span>17</span><div>$v = 14.7 - 9.8t = 0$ en $t = 1.5$ s. $s(1.5) = 14.7(1.5) - 4.9(1.5)^2 = 22.05 - 11.025 = 11.025$.</div></div>
+    <div class="sol"><span>18</span><div>$v = 25 - 5t = 0$ en $t = 5$. $s = 25t - 2.5t^2$; $s(5) = 125 - 62.5$.</div></div>
+  </div>
+</section>

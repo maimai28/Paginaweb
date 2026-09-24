@@ -126,6 +126,48 @@
     "pdf": "preparatoria-matematicas-21-razones-de-cambio-relacionadas.pdf"
   },
   {
+    "tema": "preparatoria-matematicas-antiderivadas",
+    "titulo": "Antiderivadas",
+    "descripcion": "La operación inversa de derivar: integral indefinida y constante de integración, tabla de integrales básicas, cómo reescribir antes de integrar, problemas con condiciones iniciales y cómo pasar de la aceleración a la posición.",
+    "pdf": "preparatoria-matematicas-22-antiderivadas.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-integral-definida-y-teorema-fundamental-del-calculo",
+    "titulo": "Integral definida y Teorema Fundamental del Cálculo",
+    "descripcion": "Sumas de Riemann, la integral definida como área con signo, sus propiedades, las dos partes del Teorema Fundamental del Cálculo, valor promedio de una función y la diferencia entre desplazamiento y distancia recorrida.",
+    "pdf": "preparatoria-matematicas-23-integral-definida-y-teorema-fundamental.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-integracion-por-sustitucion",
+    "titulo": "Integración por sustitución",
+    "descripcion": "La regla de la cadena al revés: cómo elegir u, ajustar constantes, integrales con potencias, raíces, exponenciales, trigonométricas y logaritmos, cambio de límites en integrales definidas y sustituciones con despeje de x.",
+    "pdf": "preparatoria-matematicas-24-integracion-por-sustitucion.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-integracion-por-partes",
+    "titulo": "Integración por partes",
+    "descripcion": "La regla del producto al revés: fórmula de integración por partes, cómo elegir u con la regla LIATE, integrales como x·eˣ, ln x y arctan x, partes repetidas con el método tabular, integrales cíclicas y definidas.",
+    "pdf": "preparatoria-matematicas-25-integracion-por-partes.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-fracciones-parciales",
+    "titulo": "Fracciones parciales",
+    "descripcion": "Cómo integrar cocientes de polinomios separándolos en fracciones simples: factores lineales distintos y repetidos, factores cuadráticos que no se factorizan, fracciones impropias que requieren dividir primero y el atajo de sustituir raíces.",
+    "pdf": "preparatoria-matematicas-26-fracciones-parciales.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-areas-entre-curvas",
+    "titulo": "Áreas entre curvas",
+    "descripcion": "Cómo calcular el área de la región entre dos curvas: encontrar los puntos de corte, decidir cuál va arriba, partir la integral cuando las curvas se cruzan, integrar respecto a y cuando conviene, y aplicaciones como la ventaja entre dos móviles.",
+    "pdf": "preparatoria-matematicas-27-areas-entre-curvas.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-volumenes-de-revolucion",
+    "titulo": "Volúmenes de revolución",
+    "descripcion": "Volumen de sólidos que se forman al girar una región: método de discos, de arandelas y de capas cilíndricas, giros alrededor del eje x y del eje y, y la deducción de los volúmenes del cono y la esfera.",
+    "pdf": "preparatoria-matematicas-28-volumenes-de-revolucion.pdf"
+  },
+  {
     "tema": "secundaria-fisica-posicion-distancia-y-desplazamiento",
     "titulo": "Posición, distancia y desplazamiento",
     "descripcion": "Sistema de referencia, escalares y vectores, distancia recorrida contra desplazamiento, y desplazamientos en dos direcciones con Pitágoras.",

@@ -1,0 +1,198 @@
+<!-- guia
+titulo: Volúmenes de revolución
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo integral
+numero: 28
+descripcion: Volumen de sólidos que se forman al girar una región: método de discos, de arandelas y de capas cilíndricas, giros alrededor del eje x y del eje y, y la deducción de los volúmenes del cono y la esfera.
+entrada: Si giras una región plana alrededor de un eje, se forma un sólido: un jarrón, una bala, un tazón. Rebanándolo en discos delgados y sumándolos con una integral puedes calcular su volumen exacto, y de paso demostrar las fórmulas del cono y la esfera que usas desde secundaria.
+objetivo: Calcular volúmenes con el método de discos.
+objetivo: Calcular volúmenes con arandelas cuando hay un hueco.
+objetivo: Calcular volúmenes con capas cilíndricas.
+objetivo: Elegir el método según el eje de giro.
+objetivo: Deducir los volúmenes del cono y la esfera.
+autoeval: Plantear un disco: $\pi\,(\text{radio})^2$ por el grosor. | 01
+autoeval: Restar radios al cuadrado en arandelas (no restar y luego elevar). | 02
+autoeval: Plantear una capa: $2\pi\,(\text{radio})(\text{altura})$. | 03
+autoeval: Decidir entre discos y capas para giros en el eje $y$. | 04
+-->
+<section>
+  <h2>Método de discos</h2>
+  <p>Gira la región bajo $y = f(x)$, entre $a$ y $b$, alrededor del eje $x$. Cada rebanada vertical de grosor $dx$ se convierte en un disco de radio $f(x)$, con volumen $\pi[f(x)]^2\,dx$. Sumando:</p>
+  <div class="definicion">
+    <span class="etq">Discos (giro en el eje $x$)</span>
+    $$V = \pi\int_a^b \big[f(x)\big]^2\,dx$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Gira la región bajo $y = \sqrt{x}$ entre 0 y 4 alrededor del eje $x$.</p>
+      $$V = \pi\int_0^4 (\sqrt{x})^2\,dx = \pi\int_0^4 x\,dx = \pi\left[\frac{x^2}{2}\right]_0^4 = 8\pi$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deduce el volumen de un cono de radio $r$ y altura $h$.</p>
+      <p class="paso">Es el giro de la recta $y = \tfrac{r}{h}x$ entre 0 y $h$:</p>
+      $$V = \pi\int_0^h \frac{r^2}{h^2}x^2\,dx = \pi\frac{r^2}{h^2}\cdot\frac{h^3}{3} = \frac{1}{3}\pi r^2h$$
+      <p class="paso">Del mismo modo, girando $y = \sqrt{r^2 - x^2}$ entre $-r$ y $r$ sale la esfera: $\tfrac{4}{3}\pi r^3$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Método de arandelas</h2>
+  <p>Si la región está entre dos curvas, $f(x) \geq g(x) \geq 0$, cada rebanada es un disco con un hueco (una arandela). Radio exterior $R = f(x)$, interior $r = g(x)$:</p>
+  <div class="definicion">
+    <span class="etq">Arandelas</span>
+    $$V = \pi\int_a^b \Big(\big[f(x)\big]^2 - \big[g(x)\big]^2\Big)\,dx$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Gira la región entre $y = x$ y $y = x^2$ alrededor del eje $x$.</p>
+      <p class="paso">Cortes en 0 y 1; en ese intervalo $x \geq x^2$, así que $R = x$ y $r = x^2$:</p>
+      $$V = \pi\int_0^1 (x^2 - x^4)\,dx = \pi\left(\frac{1}{3} - \frac{1}{5}\right) = \frac{2\pi}{15}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">$R^2 - r^2$, no $(R - r)^2$</span>
+    <p>El área de una arandela es el círculo grande menos el chico: $\pi R^2 - \pi r^2$. Elevar la resta al cuadrado da otra cosa.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Método de capas cilíndricas</h2>
+  <p>Para girar alrededor del eje $y$ una región descrita como $y = f(x)$, es más cómodo usar rebanadas verticales que al girar forman <strong>cilindros huecos</strong> (capas). Una capa a distancia $x$ del eje, de altura $f(x)$ y grosor $dx$, desenrollada, es casi una lámina de $2\pi x$ por $f(x)$ por $dx$:</p>
+  <div class="definicion">
+    <span class="etq">Capas (giro en el eje $y$)</span>
+    $$V = 2\pi\int_a^b x\,f(x)\,dx \qquad (0 \leq a \lt b)$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Gira la región bajo $y = x - x^2$ (entre 0 y 1) alrededor del eje $y$.</p>
+      $$V = 2\pi\int_0^1 x(x - x^2)\,dx = 2\pi\left(\frac{1}{3} - \frac{1}{4}\right) = \frac{\pi}{6}$$
+      <p class="paso">Con discos habría que despejar $x$ de $y = x - x^2$, que da dos ramas: mucho más trabajo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cómo elegir el método</h2>
+  <table class="leyes">
+    <thead><tr><th>Eje de giro</th><th>Rebanadas perpendiculares al eje</th><th>Rebanadas paralelas al eje</th></tr></thead>
+    <tbody>
+      <tr><td>Eje $x$</td><td>Discos/arandelas en $x$: $\pi\int f^2\,dx$</td><td>Capas en $y$: $2\pi\int y\,g(y)\,dy$</td></tr>
+      <tr><td>Eje $y$</td><td>Discos/arandelas en $y$: $\pi\int g^2\,dy$</td><td>Capas en $x$: $2\pi\int x\,f(x)\,dx$</td></tr>
+    </tbody>
+  </table>
+  <p>Regla práctica: usa la que <strong>no</strong> te obligue a despejar. Si la función está como $y = f(x)$ y giras en el eje $y$, casi siempre conviene capas.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Gira la región entre $y = x^2$, el eje $y$ y la recta $y = 4$ alrededor del eje $y$.</p>
+      <p class="paso">Con discos en $y$: el radio es $x = \sqrt{y}$, de $y = 0$ a $y = 4$.</p>
+      $$V = \pi\int_0^4 (\sqrt{y})^2\,dy = \pi\left[\frac{y^2}{2}\right]_0^4 = 8\pi$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\pi\int f(x)\,dx$</td><td class="bien">$\pi\int [f(x)]^2\,dx$</td><td>El área del disco es $\pi r^2$.</td></tr>
+        <tr><td class="mal">$\pi\int (R - r)^2\,dx$</td><td class="bien">$\pi\int (R^2 - r^2)\,dx$</td><td>Círculo grande menos chico.</td></tr>
+        <tr><td class="mal">Capas sin el factor $x$</td><td class="bien">$2\pi\int x\,f(x)\,dx$</td><td>$x$ es el radio de la capa.</td></tr>
+        <tr><td class="mal">Discos en eje $y$ con límites en $x$</td><td class="bien">Límites en $y$</td><td>Integras respecto a $y$.</td></tr>
+        <tr><td class="mal">Olvidar el $\pi$</td><td class="bien">Revisa el factor al final</td><td>Error más frecuente de todos.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Discos: $\pi\int f^2\,dx$</div><div>Arandelas: $\pi\int (R^2 - r^2)\,dx$</div><div>Capas: $2\pi\int x f\,dx$</div>
+      <div>Rebanada $\perp$ eje: discos</div><div>Rebanada $\parallel$ eje: capas</div><div>No despejes si no hace falta</div>
+      <div>Cono: $\tfrac{1}{3}\pi r^2h$</div><div>Esfera: $\tfrac{4}{3}\pi r^3$</div><div>Dibuja la rebanada</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Deja los resultados en términos de $\pi$ salvo que se pida decimal. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Discos, giro en el eje $x$</h3>
+    <ol class="largo">
+      <li>Bajo $y = x$, de 0 a 3.</li>
+      <li>Bajo $y = x^2$, de 0 a 2.</li>
+      <li>Bajo $y = e^x$, de 0 a 1 (da también el decimal).</li>
+      <li>Bajo $y = \dfrac{1}{x}$, de 1 a 3.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Arandelas, giro en el eje $x$</h3>
+    <ol class="largo">
+      <li>Región entre $y = \sqrt{x}$ y $y = x$.</li>
+      <li>Región entre $y = x^2$ y $y = 4$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Giro en el eje $y$</h3>
+    <ol class="largo">
+      <li>Bajo $y = x^2$, de $x = 0$ a $x = 2$ (región entre la curva y el eje $x$).</li>
+      <li>Bajo $y = 4 - x^2$ con $x \geq 0$.</li>
+      <li>Región entre $y = x$ y $y = x^2$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Aplicaciones</h3>
+    <ol class="largo">
+      <li>Calcula con integral el volumen de una esfera de radio 3.</li>
+      <li>Un tazón tiene la forma de girar $y = \tfrac{x^2}{4}$ alrededor del eje $y$ (medidas en cm). ¿Cuánta agua cabe si se llena hasta 4 cm de altura?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$9\pi$</span></li>
+    <li><span>$\tfrac{32\pi}{5}$</span></li>
+    <li><span>$\tfrac{\pi}{2}(e^2 - 1) \approx 10.04$</span></li>
+    <li><span>$\tfrac{2\pi}{3}$</span></li>
+    <li><span>$\tfrac{\pi}{6}$</span></li>
+    <li><span>$\tfrac{256\pi}{5}$</span></li>
+    <li><span>$8\pi$</span></li>
+    <li><span>$8\pi$</span></li>
+    <li><span>$\tfrac{\pi}{6}$</span></li>
+    <li><span>$36\pi$</span></li>
+    <li><span>$32\pi \approx 100.5$ cm³</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\pi\int_0^3 x^2dx = \pi\cdot 9$. Es un cono de radio 3 y altura 3: $\tfrac{1}{3}\pi(9)(3)$ ✔.</div></div>
+    <div class="sol"><span>2</span><div>$\pi\int_0^2 x^4dx = \pi\cdot\tfrac{32}{5}$.</div></div>
+    <div class="sol"><span>3</span><div>$\pi\int_0^1 e^{2x}dx = \pi\left[\tfrac{e^{2x}}{2}\right]_0^1$.</div></div>
+    <div class="sol"><span>4</span><div>$\pi\int_1^3 x^{-2}dx = \pi\left[-\tfrac{1}{x}\right]_1^3 = \pi\left(1 - \tfrac{1}{3}\right)$.</div></div>
+    <div class="sol"><span>5</span><div>En $[0, 1]$, $\sqrt{x} \geq x$: $\pi\int_0^1 (x - x^2)\,dx = \pi\left(\tfrac{1}{2} - \tfrac{1}{3}\right)$.</div></div>
+    <div class="sol"><span>6</span><div>$R = 4$, $r = x^2$, de $-2$ a 2: $\pi\left[16x - \tfrac{x^5}{5}\right]_{-2}^2 = 2\pi\left(32 - \tfrac{32}{5}\right)$.</div></div>
+    <div class="sol"><span>7</span><div>Capas: $2\pi\int_0^2 x\cdot x^2dx = 2\pi\cdot 4$.</div></div>
+    <div class="sol"><span>8</span><div>Capas: $2\pi\int_0^2 x(4 - x^2)\,dx = 2\pi(8 - 4)$.</div></div>
+    <div class="sol"><span>9</span><div>Capas con altura $x - x^2$: $2\pi\int_0^1 (x^2 - x^3)\,dx = 2\pi\cdot\tfrac{1}{12}$.</div></div>
+    <div class="sol"><span>10</span><div>$\pi\int_{-3}^3 (9 - x^2)\,dx = \pi(54 - 18)$. Coincide con $\tfrac{4}{3}\pi(27)$.</div></div>
+    <div class="sol"><span>11</span><div>Discos en $y$: $x^2 = 4y$. $\pi\int_0^4 4y\,dy = \pi\cdot 32$.</div></div>
+  </div>
+</section>

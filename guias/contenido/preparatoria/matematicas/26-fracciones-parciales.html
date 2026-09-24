@@ -1,0 +1,181 @@
+<!-- guia
+titulo: Fracciones parciales
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo integral
+numero: 26
+descripcion: Cómo integrar cocientes de polinomios separándolos en fracciones simples: factores lineales distintos y repetidos, factores cuadráticos que no se factorizan, fracciones impropias que requieren dividir primero y el atajo de sustituir raíces.
+entrada: Una fracción como $\dfrac{5x - 1}{x^2 - 1}$ no se integra directamente, pero es la suma de dos fracciones muy simples cuya integral es un logaritmo. Aprender a separarla es sobre todo álgebra, y la vas a necesitar también en ecuaciones diferenciales.
+objetivo: Decidir si hay que dividir antes de descomponer.
+objetivo: Descomponer con factores lineales distintos.
+objetivo: Descomponer con factores lineales repetidos.
+objetivo: Descomponer con factores cuadráticos irreducibles.
+objetivo: Integrar cada fracción simple.
+autoeval: Encontrar $A$ y $B$ sustituyendo las raíces. | 01
+autoeval: Revisar primero si una sustitución es más rápida. | 01
+autoeval: Escribir la forma correcta con factores repetidos. | 02
+autoeval: Usar $\frac{Bx + C}{x^2 + 1}$ con cuadráticos. | 03
+autoeval: Reconocer una fracción impropia y dividir. | 04
+-->
+<section>
+  <h2>Factores lineales distintos</h2>
+  <p>Si el denominador se factoriza en factores lineales distintos, la fracción se separa en una por cada factor:</p>
+  $$\frac{P(x)}{(x - a)(x - b)} = \frac{A}{x - a} + \frac{B}{x - b}$$
+  <p>Para encontrar $A$ y $B$: multiplica todo por el denominador y <strong>sustituye las raíces</strong>; cada una elimina todas las constantes menos una.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int\frac{5x - 1}{x^2 - 1}\,dx$.</p>
+      <p class="paso">$x^2 - 1 = (x - 1)(x + 1)$. Plantea $5x - 1 = A(x + 1) + B(x - 1)$.</p>
+      <p class="paso">Con $x = 1$: $4 = 2A$, $A = 2$. Con $x = -1$: $-6 = -2B$, $B = 3$.</p>
+      $$\int\left(\frac{2}{x - 1} + \frac{3}{x + 1}\right)dx = 2\ln|x - 1| + 3\ln|x + 1| + C$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int\frac{dx}{x^2 - 4}$.</p>
+      <p class="paso">$1 = A(x + 2) + B(x - 2)$: con $x = 2$, $A = \tfrac{1}{4}$; con $x = -2$, $B = -\tfrac{1}{4}$.</p>
+      $$\frac{1}{4}\ln|x - 2| - \frac{1}{4}\ln|x + 2| + C = \frac{1}{4}\ln\left|\frac{x - 2}{x + 2}\right| + C$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Antes, revisa si es una sustitución</span>
+    <p>En $\displaystyle\int\frac{2x}{x^2 - 1}\,dx$ el numerador es la derivada del denominador: sale $\ln|x^2 - 1| + C$ directamente, sin fracciones parciales.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Factores repetidos</h2>
+  <p>Si un factor aparece elevado a una potencia, lleva una fracción por cada potencia, desde 1 hasta la mayor:</p>
+  $$\frac{P(x)}{(x - a)^2} = \frac{A}{x - a} + \frac{B}{(x - a)^2}$$
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int\frac{x + 3}{(x - 1)^2}\,dx$.</p>
+      <p class="paso">$x + 3 = A(x - 1) + B$. Con $x = 1$: $B = 4$. Comparando el coeficiente de $x$: $A = 1$.</p>
+      $$\int\left(\frac{1}{x - 1} + \frac{4}{(x - 1)^2}\right)dx = \ln|x - 1| - \frac{4}{x - 1} + C$$
+    </div>
+  </div>
+  <p>Cuando sustituir raíces no alcanza para todas las constantes, <strong>iguala coeficientes</strong> de las mismas potencias de $x$, o sustituye cualquier otro valor cómodo (como $x = 0$).</p>
+</section>
+
+<section>
+  <h2>Factores cuadráticos irreducibles</h2>
+  <p>Un factor como $x^2 + 1$ (que no tiene raíces reales) lleva un numerador lineal:</p>
+  $$\frac{P(x)}{x(x^2 + 1)} = \frac{A}{x} + \frac{Bx + C}{x^2 + 1}$$
+  <p>Y se integra separando: $\displaystyle\int\frac{x}{x^2 + 1}dx = \tfrac{1}{2}\ln(x^2 + 1)$ y $\displaystyle\int\frac{1}{x^2 + 1}dx = \arctan x$.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int\frac{dx}{x(x^2 + 1)}$.</p>
+      <p class="paso">$1 = A(x^2 + 1) + (Bx + C)x$. Con $x = 0$: $A = 1$. Coeficiente de $x^2$: $A + B = 0$, $B = -1$. Coeficiente de $x$: $C = 0$.</p>
+      $$\int\left(\frac{1}{x} - \frac{x}{x^2 + 1}\right)dx = \ln|x| - \frac{1}{2}\ln(x^2 + 1) + C$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Fracciones impropias</h2>
+  <p>Si el grado del numerador es <strong>mayor o igual</strong> que el del denominador, primero divide (división larga o sintética). Queda un polinomio más una fracción propia.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int\frac{x^2 + 1}{x^2 - 1}\,dx$.</p>
+      <p class="paso">Mismo grado: $\dfrac{x^2 + 1}{x^2 - 1} = 1 + \dfrac{2}{x^2 - 1} = 1 + \dfrac{1}{x - 1} - \dfrac{1}{x + 1}$.</p>
+      $$x + \ln|x - 1| - \ln|x + 1| + C$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Descomponer una impropia</td><td class="bien">Dividir primero</td><td>La descomposición solo sirve para propias.</td></tr>
+        <tr><td class="mal">$\dfrac{A}{(x - 1)^2}$ sola</td><td class="bien">$\dfrac{A}{x - 1} + \dfrac{B}{(x - 1)^2}$</td><td>Hace falta una por cada potencia.</td></tr>
+        <tr><td class="mal">$\dfrac{A}{x^2 + 1}$</td><td class="bien">$\dfrac{Bx + C}{x^2 + 1}$</td><td>Sobre un cuadrático va un lineal.</td></tr>
+        <tr><td class="mal">$\int\frac{4}{(x - 1)^2}dx = 4\ln(x - 1)^2$</td><td class="bien">$-\dfrac{4}{x - 1}$</td><td>Es una potencia $-2$, no un logaritmo.</td></tr>
+        <tr><td class="mal">$\ln(x - 1)$ sin valor absoluto</td><td class="bien">$\ln|x - 1|$</td><td>El logaritmo pide argumento positivo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>¿Impropia? Divide</div><div>Factoriza el denominador</div><div>Lineal: $\dfrac{A}{x - a}$</div>
+      <div>Repetido: $\dfrac{A}{x - a} + \dfrac{B}{(x - a)^2}$</div><div>Cuadrático: $\dfrac{Bx + C}{x^2 + k}$</div><div>Sustituye raíces</div>
+      <div>$\int\frac{dx}{x - a} = \ln|x - a|$</div><div>$\int\frac{dx}{(x - a)^2} = -\frac{1}{x - a}$</div><div>$\int\frac{dx}{x^2 + 1} = \arctan x$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Comprueba cada descomposición sumando las fracciones. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Lineales distintos</h3>
+    <ol>
+      <li>$\displaystyle\int\frac{dx}{x(x + 2)}$</li><li>$\displaystyle\int\frac{3x + 5}{(x + 1)(x + 3)}\,dx$</li>
+      <li>$\displaystyle\int\frac{x + 7}{x^2 - x - 6}\,dx$</li><li>$\displaystyle\int\frac{2x}{x^2 - 1}\,dx$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Repetidos</h3>
+    <ol>
+      <li>$\displaystyle\int\frac{2x + 1}{(x + 1)^2}\,dx$</li><li>$\displaystyle\int\frac{dx}{x^2(x - 1)}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Cuadráticos</h3>
+    <ol>
+      <li>$\displaystyle\int\frac{2x + 3}{x^2 + 1}\,dx$</li><li>$\displaystyle\int\frac{x^2 + 2}{x(x^2 + 1)}\,dx$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Impropias y definidas</h3>
+    <ol>
+      <li>$\displaystyle\int\frac{x^2}{x + 1}\,dx$</li><li>$\displaystyle\int_2^3\frac{dx}{x^2 - 1}$</li><li>$\displaystyle\int_0^1\frac{dx}{(x + 1)(x + 2)}$</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\tfrac{1}{2}\ln|x| - \tfrac{1}{2}\ln|x + 2| + C$</span></li>
+    <li><span>$\ln|x + 1| + 2\ln|x + 3| + C$</span></li>
+    <li><span>$2\ln|x - 3| - \ln|x + 2| + C$</span></li>
+    <li><span>$\ln|x^2 - 1| + C$</span></li>
+    <li><span>$2\ln|x + 1| + \dfrac{1}{x + 1} + C$</span></li>
+    <li><span>$-\ln|x| + \dfrac{1}{x} + \ln|x - 1| + C$</span></li>
+    <li><span>$\ln(x^2 + 1) + 3\arctan x + C$</span></li>
+    <li><span>$2\ln|x| - \tfrac{1}{2}\ln(x^2 + 1) + C$</span></li>
+    <li><span>$\tfrac{x^2}{2} - x + \ln|x + 1| + C$</span></li>
+    <li><span>$\tfrac{1}{2}\ln\tfrac{3}{2} \approx 0.203$</span></li>
+    <li><span>$\ln\tfrac{4}{3} \approx 0.288$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$1 = A(x + 2) + Bx$: $x = 0 \Rightarrow A = \tfrac{1}{2}$; $x = -2 \Rightarrow B = -\tfrac{1}{2}$.</div></div>
+    <div class="sol"><span>2</span><div>$3x + 5 = A(x + 3) + B(x + 1)$: $x = -1 \Rightarrow 2 = 2A$; $x = -3 \Rightarrow -4 = -2B$.</div></div>
+    <div class="sol"><span>3</span><div>$x^2 - x - 6 = (x - 3)(x + 2)$. $x = 3 \Rightarrow 10 = 5A$; $x = -2 \Rightarrow 5 = -5B$.</div></div>
+    <div class="sol"><span>4</span><div>Sustitución $u = x^2 - 1$. Por fracciones parciales sale $\ln|x - 1| + \ln|x + 1|$, que es lo mismo.</div></div>
+    <div class="sol"><span>5</span><div>$2x + 1 = 2(x + 1) - 1$: $\dfrac{2}{x + 1} - \dfrac{1}{(x + 1)^2}$.</div></div>
+    <div class="sol"><span>6</span><div>$1 = Ax(x - 1) + B(x - 1) + Cx^2$: $x = 0 \Rightarrow B = -1$; $x = 1 \Rightarrow C = 1$; coeficiente de $x^2$: $A + C = 0$.</div></div>
+    <div class="sol"><span>7</span><div>Ya está separada: $\dfrac{2x}{x^2 + 1} + \dfrac{3}{x^2 + 1}$.</div></div>
+    <div class="sol"><span>8</span><div>$x^2 + 2 = A(x^2 + 1) + (Bx + C)x$: $x = 0 \Rightarrow A = 2$; $x^2$: $A + B = 1 \Rightarrow B = -1$; $x$: $C = 0$.</div></div>
+    <div class="sol"><span>9</span><div>Divide: $x^2 = (x + 1)(x - 1) + 1$, así que $\dfrac{x^2}{x + 1} = x - 1 + \dfrac{1}{x + 1}$.</div></div>
+    <div class="sol"><span>10</span><div>$\tfrac{1}{2}\left[\ln\left|\tfrac{x - 1}{x + 1}\right|\right]_2^3 = \tfrac{1}{2}\left(\ln\tfrac{1}{2} - \ln\tfrac{1}{3}\right)$.</div></div>
+    <div class="sol"><span>11</span><div>$\dfrac{1}{x + 1} - \dfrac{1}{x + 2}$: $[\ln(x + 1) - \ln(x + 2)]_0^1 = (\ln 2 - \ln 3) + \ln 2$.</div></div>
+  </div>
+</section>

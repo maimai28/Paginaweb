@@ -1,0 +1,225 @@
+<!-- guia
+titulo: Integral definida y Teorema Fundamental del Cálculo
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo integral
+numero: 23
+tema: preparatoria-matematicas-integral-definida-y-teorema-fundamental-del-calculo
+descripcion: Sumas de Riemann, la integral definida como área con signo, sus propiedades, las dos partes del Teorema Fundamental del Cálculo, valor promedio de una función y la diferencia entre desplazamiento y distancia recorrida.
+entrada: Calcular el área bajo una curva parece un problema de geometría sin relación con las derivadas. El Teorema Fundamental del Cálculo muestra que son operaciones inversas, y con eso un área que parecía imposible se calcula restando dos números.
+objetivo: Aproximar áreas con sumas de Riemann.
+objetivo: Interpretar la integral definida como área con signo.
+objetivo: Usar las propiedades de la integral definida.
+objetivo: Evaluar integrales con el Teorema Fundamental.
+objetivo: Derivar funciones definidas por una integral.
+objetivo: Calcular valores promedio, desplazamientos y distancias.
+autoeval: Calcular una suma de Riemann con extremos izquierdos o derechos. | 01
+autoeval: Explicar por qué una integral puede dar cero o negativa. | 03
+autoeval: Evaluar $F(b) - F(a)$ sin errores de signo. | 03
+autoeval: Derivar $\int_a^{g(x)} f(t)\,dt$. | 03
+autoeval: Distinguir desplazamiento de distancia recorrida. | 04
+-->
+<section>
+  <h2>Sumas de Riemann</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Para aproximar el área bajo $y = f(x)$ entre $a$ y $b$, parte el intervalo en $n$ pedazos de ancho $\Delta x = \dfrac{b - a}{n}$ y levanta un rectángulo en cada uno, con la altura de la función en un punto del pedazo (el extremo izquierdo o el derecho):</p>
+      $$\text{Área} \approx \sum_{i=1}^{n} f(x_i)\,\Delta x$$
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 190 155" width="48mm">
+        <g fill="#efe3cf" stroke="#c28a2e" stroke-width="1">
+          <rect x="30.0" y="132.5" width="35" height="7.5"/><rect x="65.0" y="110.0" width="35" height="30.0"/>
+          <rect x="100.0" y="72.5" width="35" height="67.5"/><rect x="135.0" y="20.0" width="35" height="120.0"/>
+        </g>
+        <line x1="20" y1="140" x2="185" y2="140" stroke="#2b241e" stroke-width="1"/>
+        <line x1="30" y1="5" x2="30" y2="150" stroke="#2b241e" stroke-width="1"/>
+        <path d="M30.0 140.0 L33.5 139.9 L37.0 139.7 L40.5 139.3 L44.0 138.8 L47.5 138.1 L51.0 137.3 L54.5 136.3 L58.0 135.2 L61.5 133.9 L65.0 132.5 L68.5 130.9 L72.0 129.2 L75.5 127.3 L79.0 125.3 L82.5 123.1 L86.0 120.8 L89.5 118.3 L93.0 115.7 L96.5 112.9 L100.0 110.0 L103.5 106.9 L107.0 103.7 L110.5 100.3 L114.0 96.8 L117.5 93.1 L121.0 89.3 L124.5 85.3 L128.0 81.2 L131.5 76.9 L135.0 72.5 L138.5 67.9 L142.0 63.2 L145.5 58.3 L149.0 53.3 L152.5 48.1 L156.0 42.8 L159.5 37.3 L163.0 31.7 L166.5 25.9 L170.0 20.0 L173.5 13.9 L177.0 7.7" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="27" y="152">0</text><text x="166" y="152">2</text><text x="138" y="12" fill="#b5562c">y = x²</text>
+        </g>
+      </svg>
+      <figcaption>4 rectángulos con extremo derecho.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Aproxima el área bajo $y = x^2$ entre 0 y 2 con 4 rectángulos y extremos derechos.</p>
+      <p class="paso">$\Delta x = 0.5$; extremos derechos $0.5, 1, 1.5, 2$:</p>
+      $$(0.25 + 1 + 2.25 + 4)(0.5) = 3.75$$
+      <p class="paso">Se pasa un poco porque los rectángulos sobresalen de la curva. El valor exacto (lo verás abajo) es $\tfrac{8}{3} \approx 2.67$.</p>
+    </div>
+  </div>
+  <div class="definicion">
+    <span class="etq">Integral definida</span>
+    $$\int_a^b f(x)\,dx = \lim_{n \to \infty}\sum_{i=1}^{n} f(x_i)\,\Delta x$$
+    <p>Es el <strong>área con signo</strong>: las partes sobre el eje $x$ cuentan positivo y las de abajo, negativo.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Propiedades</h2>
+  <table class="leyes">
+    <thead><tr><th>Propiedad</th><th>Fórmula</th></tr></thead>
+    <tbody>
+      <tr><td>Linealidad</td><td>$\int_a^b (cf + g)\,dx = c\int_a^b f\,dx + \int_a^b g\,dx$</td></tr>
+      <tr><td>Intervalos pegados</td><td>$\int_a^b f\,dx + \int_b^c f\,dx = \int_a^c f\,dx$</td></tr>
+      <tr><td>Invertir límites</td><td>$\int_b^a f\,dx = -\int_a^b f\,dx$</td></tr>
+      <tr><td>Intervalo nulo</td><td>$\int_a^a f\,dx = 0$</td></tr>
+      <tr><td>Función impar en intervalo simétrico</td><td>$\int_{-a}^a f\,dx = 0$</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>El Teorema Fundamental del Cálculo</h2>
+  <div class="definicion">
+    <span class="etq">TFC, segunda parte (para evaluar)</span>
+    <p>Si $f$ es continua en $[a, b]$ y $F$ es cualquier antiderivada de $f$:</p>
+    $$\int_a^b f(x)\,dx = F(b) - F(a) = \Big[F(x)\Big]_a^b$$
+  </div>
+  <p>La constante $C$ se cancela al restar, así que no se escribe.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int_0^2 x^2\,dx$, $\displaystyle\int_1^3 (2x + 1)\,dx$ y $\displaystyle\int_0^\pi \sin x\,dx$.</p>
+      $$\left[\frac{x^3}{3}\right]_0^2 = \frac{8}{3} \qquad \Big[x^2 + x\Big]_1^3 = 12 - 2 = 10 \qquad \Big[-\cos x\Big]_0^\pi = 1 - (-1) = 2$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int_{-1}^2 (x^2 - 1)\,dx$ e interpreta.</p>
+      $$\left[\frac{x^3}{3} - x\right]_{-1}^2 = \left(\frac{8}{3} - 2\right) - \left(-\frac{1}{3} + 1\right) = \frac{2}{3} - \frac{2}{3} = 0$$
+      <p class="paso">No significa que no haya área: la parte bajo el eje (entre $-1$ y $1$) y la parte sobre el eje (entre 1 y 2) se cancelan.</p>
+    </div>
+  </div>
+  <div class="definicion">
+    <span class="etq">TFC, primera parte (derivar una integral)</span>
+    $$\frac{d}{dx}\int_a^x f(t)\,dt = f(x) \qquad\qquad \frac{d}{dx}\int_a^{g(x)} f(t)\,dt = f\big(g(x)\big)\,g'(x)$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $G(x) = \displaystyle\int_0^x \sqrt{1 + t^3}\,dt$ y $H(x) = \displaystyle\int_1^{x^2}\cos t\,dt$.</p>
+      $$G'(x) = \sqrt{1 + x^3} \qquad\qquad H'(x) = \cos(x^2)\cdot 2x$$
+      <p class="paso">No hace falta (ni se puede fácilmente) integrar $\sqrt{1 + t^3}$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Aplicaciones</h2>
+  <div class="definicion">
+    <span class="etq">Valor promedio</span>
+    $$\bar{f} = \frac{1}{b - a}\int_a^b f(x)\,dx$$
+  </div>
+  <p>Por ejemplo, el promedio de $x^2$ en $[0, 3]$ es $\tfrac{1}{3}\cdot 9 = 3$.</p>
+  <p>Si $v(t)$ es una velocidad, $\int_a^b v\,dt$ es el <strong>desplazamiento</strong> (cambio neto de posición). La <strong>distancia recorrida</strong> es $\int_a^b |v|\,dt$: hay que partir el intervalo donde $v$ cambia de signo.</p>
+  <div class="nota">
+    <span class="etq">La integral de una razón es un cambio total</span>
+    <p>Si $r(t)$ es un ritmo (litros por minuto, personas por día), $\int_a^b r(t)\,dt$ es cuánto se acumuló entre $a$ y $b$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$F(a) - F(b)$</td><td class="bien">$F(b) - F(a)$</td><td>Arriba menos abajo.</td></tr>
+        <tr><td class="mal">$[-\cos x]_0^\pi = -1 - 1$</td><td class="bien">$(-\cos\pi) - (-\cos 0) = 2$</td><td>Cuida el signo en cada evaluación.</td></tr>
+        <tr><td class="mal">Integral $= 0 \Rightarrow$ área $= 0$</td><td class="bien">Puede haber cancelación</td><td>Es área con signo.</td></tr>
+        <tr><td class="mal">$\dfrac{d}{dx}\int_1^{x^2} f(t)\,dt = f(x^2)$</td><td class="bien">$f(x^2)\cdot 2x$</td><td>Cadena por el límite superior.</td></tr>
+        <tr><td class="mal">Distancia $= \int v\,dt$</td><td class="bien">$\int |v|\,dt$</td><td>La integral de $v$ es desplazamiento.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\Delta x = \dfrac{b - a}{n}$</div><div>$\sum f(x_i)\Delta x$</div><div>Área con signo</div>
+      <div>$\int_a^b f = F(b) - F(a)$</div><div>$\frac{d}{dx}\int_a^x f = f(x)$</div><div>$\int_b^a = -\int_a^b$</div>
+      <div>$\bar{f} = \frac{1}{b - a}\int_a^b f$</div><div>$\int v$: desplazamiento</div><div>$\int |v|$: distancia</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Sumas de Riemann para $f(x) = x + 1$ en $[0, 4]$ con $n = 4$</h3>
+    <ol>
+      <li>Con extremos izquierdos</li><li>Con extremos derechos</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Evalúa</h3>
+    <ol>
+      <li>$\displaystyle\int_0^2 (3x^2 - 2x)\,dx$</li><li>$\displaystyle\int_1^4 \sqrt{x}\,dx$</li><li>$\displaystyle\int_1^e \frac{dx}{x}$</li>
+      <li>$\displaystyle\int_0^{\pi/2}\cos x\,dx$</li><li>$\displaystyle\int_0^1 e^x\,dx$</li><li>$\displaystyle\int_{-2}^2 x^3\,dx$</li>
+      <li>$\displaystyle\int_1^2 \frac{x^2 + 1}{x^2}\,dx$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Deriva</h3>
+    <ol>
+      <li>$\displaystyle\int_2^x (t^3 + 1)\,dt$</li><li>$\displaystyle\int_0^{x^2}\sin t\,dt$</li><li>$\displaystyle\int_x^5 e^{t^2}\,dt$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Aplicaciones</h3>
+    <ol class="largo">
+      <li>Área entre $y = 4 - x^2$ y el eje $x$.</li>
+      <li>Valor promedio de $\sin x$ en $[0, \pi]$.</li>
+      <li>Con $v(t) = t^2 - 4t + 3$ m/s en $[0, 3]$, calcula el desplazamiento y la distancia recorrida.</li>
+      <li>Un tanque se llena a razón de $r(t) = 20 - 2t$ litros por minuto durante 10 minutos. ¿Cuántos litros entraron?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$10$</span></li>
+    <li><span>$14$</span></li>
+    <li><span>$4$</span></li>
+    <li><span>$\tfrac{14}{3}$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$e - 1$</span></li>
+    <li><span>$0$</span></li>
+    <li><span>$\tfrac{3}{2}$</span></li>
+    <li><span>$x^3 + 1$</span></li>
+    <li><span>$2x\sin(x^2)$</span></li>
+    <li><span>$-e^{x^2}$</span></li>
+    <li><span>$\tfrac{32}{3}$</span></li>
+    <li><span>$\tfrac{2}{\pi} \approx 0.637$</span></li>
+    <li><span>$0$ m y $\tfrac{8}{3}$ m</span></li>
+    <li><span>$100$ L</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\Delta x = 1$; alturas $f(0), f(1), f(2), f(3) = 1, 2, 3, 4$. El valor exacto es 12: una queda abajo y la otra arriba.</div></div>
+    <div class="sol"><span>2</span><div>Alturas $2, 3, 4, 5$.</div></div>
+    <div class="sol"><span>3</span><div>$[x^3 - x^2]_0^2 = 8 - 4$.</div></div>
+    <div class="sol"><span>4</span><div>$\left[\tfrac{2}{3}x^{3/2}\right]_1^4 = \tfrac{2}{3}(8 - 1)$.</div></div>
+    <div class="sol"><span>5</span><div>$\ln e - \ln 1 = 1 - 0$.</div></div>
+    <div class="sol"><span>8</span><div>$x^3$ es impar y el intervalo es simétrico.</div></div>
+    <div class="sol"><span>9</span><div>$\int_1^2 (1 + x^{-2})\,dx = \left[x - \tfrac{1}{x}\right]_1^2 = \tfrac{3}{2} - 0$.</div></div>
+    <div class="sol"><span>12</span><div>$\int_x^5 = -\int_5^x$, así que la derivada es $-e^{x^2}$.</div></div>
+    <div class="sol"><span>13</span><div>Corta el eje en $\pm 2$: $\left[4x - \tfrac{x^3}{3}\right]_{-2}^2 = \tfrac{16}{3} - \left(-\tfrac{16}{3}\right)$.</div></div>
+    <div class="sol"><span>14</span><div>$\dfrac{1}{\pi}\int_0^\pi\sin x\,dx = \dfrac{2}{\pi}$.</div></div>
+    <div class="sol"><span>15</span><div>$v = (t - 1)(t - 3)$: positiva en $[0, 1)$ y negativa en $(1, 3)$. $\int_0^1 v = \tfrac{4}{3}$ y $\int_1^3 v = -\tfrac{4}{3}$. Desplazamiento $0$ (regresa al inicio); distancia $\tfrac{4}{3} + \tfrac{4}{3}$.</div></div>
+    <div class="sol"><span>16</span><div>$[20t - t^2]_0^{10} = 200 - 100$.</div></div>
+  </div>
+</section>

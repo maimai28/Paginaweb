@@ -1015,6 +1015,150 @@ def _():
         ('ej10', F(-4, 1)*F(1, 2)/3, F(-2, 3)),
     ]
 
+I = lambda e, v=x: sp.integrate(e, v)
+Idef = lambda e, a_, b_, v=x: sp.simplify(sp.integrate(e, (v, a_, b_)))
+
+def antider(F_, f_, v=x):
+    """F es antiderivada de f (comprueba derivando)."""
+    return sp.simplify(sp.diff(F_, v) - f_) == 0
+
+@guia('PM22 Antiderivadas')
+def _():
+    return [
+        ('ejemplo1a', antider(2*x**3 - 2*x**2 + 5*x, 6*x**2 - 4*x + 5), True),
+        ('ejemplo1b', antider(3*sp.sin(x) - 2*sp.exp(x) + 4*sp.log(x), 3*sp.cos(x) - 2*sp.exp(x) + 4/x), True),
+        ('ejemplo2', antider(sp.Rational(2, 3)*x**sp.Rational(3, 2) - 1/x, sp.sqrt(x) + 1/x**2), True),
+        ('ejemplo3', antider(x**2/2 + sp.log(x), (x**2 + 1)/x), True),
+        ('tabla', all(antider(F_, f_) for F_, f_ in [(2**x/sp.log(2), 2**x), (sp.sec(x), sp.sec(x)*sp.tan(x)), (sp.asin(x), 1/sp.sqrt(1 - x**2))]), True),
+        ('ejemplo4', sp.solve(1 - 2 + a - 4, a), [5]), ('ejemplo5', (I(-sp.Float(9.8), t) + 20, I(20 - sp.Float(9.8)*t, t)), (20 - 9.8*t, 20*t - 4.9*t**2)),
+        ('ej1', antider(x**4 - 3*x**2 + x, 4*x**3 - 6*x + 1), True), ('ej2', antider(-1/(2*x**2), x**-3), True),
+        ('ej3', antider(sp.Rational(10, 3)*x**sp.Rational(3, 2), 5*sp.sqrt(x)), True),
+        ('ej4', antider(-1/x**2 + sp.Rational(9, 4)*x**sp.Rational(4, 3), 2/x**3 + 3*sp.cbrt(x)), True),
+        ('ej5', antider(x**3/3 + 2*x**2 + 4*x, (x + 2)**2), True), ('ej6', antider(x**3/3 - 4*x, (x**3 - 4*x)/x), True),
+        ('ej7', antider(-sp.cos(x) + 2*sp.sin(x), sp.sin(x) + 2*sp.cos(x)), True), ('ej8', antider(sp.tan(x), sp.sec(x)**2), True),
+        ('ej9', antider(sp.exp(x) - 3*sp.log(x), sp.exp(x) - 3/x), True), ('ej10', antider(sp.atan(x), 1/(1 + x**2)), True),
+        ('ej11', antider(2**x/sp.log(2), 2**x), True),
+        ('ej12', (antider(x**2 + 3*x - 1, 2*x + 3), (x**2 + 3*x - 1).subs(x, 0)), (True, -1)),
+        ('ej13', (antider(2*x**3 - 2*x**2 + 5, 6*x**2 - 4*x), (2*x**3 - 2*x**2 + 5).subs(x, 1)), (True, 5)),
+        ('ej14', (sp.diff(2*x**3 + 2*x + 1, x, 2), sp.diff(2*x**3 + 2*x + 1, x).subs(x, 0), 1), (12*x, 2, 1)),
+        ('ej15', (sp.sin(x) + 2).subs(x, sp.pi/2), 3),
+        ('ej16', (I(3*t**2 - 2*t, t) + 4, (t**3 - t**2 + 4).subs(t, 2)), (t**3 - t**2 + 4, 8)),
+        ('ej17', (F('14.7')/F('9.8'), F('14.7')*F(3, 2) - F('4.9')*F(9, 4)), (F(3, 2), F('11.025'))),
+        ('ej18', (25/5, 25*5 - 2.5*25), (5.0, 62.5)),
+    ]
+
+@guia('PM23 Integral definida y TFC')
+def _():
+    G = sp.Integral(sp.sqrt(1 + t**3), (t, 0, x))
+    H = sp.Integral(sp.cos(t), (t, 1, x**2))
+    v = t**2 - 4*t + 3
+    return [
+        ('ejemplo1', (sum(q**2 for q in (0.5, 1, 1.5, 2)) * 0.5, Idef(x**2, 0, 2)), (3.75, sp.Rational(8, 3))),
+        ('ejemplo2', (Idef(x**2, 0, 2), Idef(2*x + 1, 1, 3), Idef(sp.sin(x), 0, sp.pi)), (sp.Rational(8, 3), 10, 2)),
+        ('ejemplo3', (Idef(x**2 - 1, -1, 2), Idef(x**2 - 1, -1, 1), Idef(x**2 - 1, 1, 2)), (0, -sp.Rational(4, 3), sp.Rational(4, 3))),
+        ('ejemplo4', (sp.diff(G, x), sp.diff(H, x)), (sp.sqrt(1 + x**3), 2*x*sp.cos(x**2))),
+        ('promedio', Idef(x**2, 0, 3) / 3, 3),
+        ('ej1', sum(q + 1 for q in range(4)), 10), ('ej2', sum(q + 1 for q in range(1, 5)), 14), ('ej1b', Idef(x + 1, 0, 4), 12),
+        ('ej3', Idef(3*x**2 - 2*x, 0, 2), 4), ('ej4', Idef(sp.sqrt(x), 1, 4), sp.Rational(14, 3)), ('ej5', Idef(1/x, 1, sp.E), 1),
+        ('ej6', Idef(sp.cos(x), 0, sp.pi/2), 1), ('ej7', Idef(sp.exp(x), 0, 1), sp.E - 1), ('ej8', Idef(x**3, -2, 2), 0),
+        ('ej9', Idef((x**2 + 1)/x**2, 1, 2), sp.Rational(3, 2)),
+        ('ej10', sp.diff(sp.Integral(t**3 + 1, (t, 2, x)), x), x**3 + 1), ('ej11', sp.diff(sp.Integral(sp.sin(t), (t, 0, x**2)), x), 2*x*sp.sin(x**2)),
+        ('ej12', sp.diff(sp.Integral(sp.exp(t**2), (t, x, 5)), x), -sp.exp(x**2)),
+        ('ej13', Idef(4 - x**2, -2, 2), sp.Rational(32, 3)), ('ej14', (Idef(sp.sin(x), 0, sp.pi)/sp.pi, round(2/math.pi, 3)), (2/sp.pi, 0.637)),
+        ('ej15', (Idef(v, 0, 3, t), Idef(v, 0, 1, t), Idef(v, 1, 3, t), Idef(sp.Abs(v), 0, 3, t)), (0, sp.Rational(4, 3), -sp.Rational(4, 3), sp.Rational(8, 3))),
+        ('ej16', Idef(20 - 2*t, 0, 10, t), 100),
+    ]
+
+@guia('PM24 Integración por sustitución')
+def _():
+    return [
+        ('ejemplo1', antider((x**2 + 1)**6/6, 2*x*(x**2 + 1)**5), True), ('ejemplo2', antider(sp.Rational(1, 3)*(x**2 + 4)**sp.Rational(3, 2), x*sp.sqrt(x**2 + 4)), True),
+        ('lineal', (antider(sp.sin(3*x)/3, sp.cos(3*x)), antider(-sp.exp(-2*x)/2, sp.exp(-2*x))), (True, True)),
+        ('ejemplo3', (antider(-sp.log(sp.cos(x)), sp.tan(x)), antider(sp.log(x)**2/2, sp.log(x)/x)), (True, True)),
+        ('ejemplo4', (Idef(x*sp.exp(x**2), 0, 1), round((math.e - 1)/2, 3)), ((sp.E - 1)/2, 0.859)),
+        ('ejemplo5', antider(x + 1 - sp.log(x + 1), x/(x + 1)), True),
+        ('ej1', antider((x**3 - 5)**5/5, 3*x**2*(x**3 - 5)**4), True), ('ej2', antider((x**2 + 3)**8/16, x*(x**2 + 3)**7), True),
+        ('ej3', antider((2*x + 1)**sp.Rational(3, 2)/3, sp.sqrt(2*x + 1)), True), ('ej4', antider(sp.sqrt(x**2 + 9), x/sp.sqrt(x**2 + 9)), True),
+        ('ej5', antider(sp.log(3*x - 2)/3, 1/(3*x - 2)), True), ('ej6', antider(-sp.cos(5*x)/5, sp.sin(5*x)), True),
+        ('ej7', antider(sp.sin(x**2)/2, x*sp.cos(x**2)), True), ('ej8', antider(sp.exp(4*x)/4, sp.exp(4*x)), True),
+        ('ej9', antider(sp.log(1 + sp.exp(x)), sp.exp(x)/(1 + sp.exp(x))), True), ('ej10', antider(-sp.cos(x)**4/4, sp.sin(x)*sp.cos(x)**3), True),
+        ('ej11', antider(sp.log(x)**3/3, sp.log(x)**2/x), True), ('ej12', antider(sp.atan(2*x)/2, 1/(1 + 4*x**2)), True),
+        ('ej13', Idef(x*(x**2 + 1)**2, 0, 2), sp.Rational(62, 3)), ('ej14', Idef(sp.sin(x)*sp.cos(x), 0, sp.pi/2), sp.Rational(1, 2)),
+        ('ej15', Idef(sp.log(x)/x, 1, sp.E), sp.Rational(1, 2)), ('ej16', (Idef(x/(x**2 + 1), 0, 1), round(math.log(2)/2, 3)), (sp.log(2)/2, 0.347)),
+        ('ej17', antider(sp.Rational(2, 5)*(x - 1)**sp.Rational(5, 2) + sp.Rational(2, 3)*(x - 1)**sp.Rational(3, 2), x*sp.sqrt(x - 1)), True),
+        ('ej18', (antider(4000*sp.exp(t/20), 200*sp.exp(t/20), t), round(4000*math.exp(0.5))), (True, 6595)),
+    ]
+
+@guia('PM25 Integración por partes')
+def _():
+    return [
+        ('ejemplo1', antider(x*sp.exp(x) - sp.exp(x), x*sp.exp(x)), True), ('ejemplo2', antider(x*sp.sin(x) + sp.cos(x), x*sp.cos(x)), True),
+        ('ejemplo3', antider(x*sp.log(x) - x, sp.log(x)), True), ('ejemplo4', antider(sp.exp(x)*(x**2 - 2*x + 2), x**2*sp.exp(x)), True),
+        ('ejemplo5', antider(sp.exp(x)*(sp.sin(x) - sp.cos(x))/2, sp.exp(x)*sp.sin(x)), True), ('ejemplo6', Idef(x*sp.sin(x), 0, sp.pi), sp.pi),
+        ('ej1', antider(sp.exp(2*x)*(x/2 - sp.Rational(1, 4)), x*sp.exp(2*x)), True), ('ej2', antider(-x*sp.cos(x) + sp.sin(x), x*sp.sin(x)), True),
+        ('ej3', antider(x**2/2*sp.log(x) - x**2/4, x*sp.log(x)), True), ('ej4', antider(x*sp.atan(x) - sp.log(1 + x**2)/2, sp.atan(x)), True),
+        ('ej5', antider(x*sp.tan(x) + sp.log(sp.cos(x)), x*sp.sec(x)**2), True),
+        ('ej6', antider(x**2*sp.sin(x) + 2*x*sp.cos(x) - 2*sp.sin(x), x**2*sp.cos(x)), True),
+        ('ej7', antider(sp.exp(x)*(x**3 - 3*x**2 + 6*x - 6), x**3*sp.exp(x)), True),
+        ('ej8', antider(x*sp.log(x)**2 - 2*x*sp.log(x) + 2*x, sp.log(x)**2), True),
+        ('ej9', antider(sp.exp(x)*(sp.sin(x) + sp.cos(x))/2, sp.exp(x)*sp.cos(x)), True),
+        ('ej10', antider(sp.exp(2*x)*(2*sp.sin(x) - sp.cos(x))/5, sp.exp(2*x)*sp.sin(x)), True),
+        ('ej11', Idef(x*sp.exp(x), 0, 1), 1), ('ej12', Idef(sp.log(x), 1, sp.E), 1),
+        ('ej13', (Idef(x*sp.cos(x), 0, sp.pi/2), round(math.pi/2 - 1, 3)), (sp.pi/2 - 1, 0.571)),
+        ('ej14', (Idef(sp.log(x), 1, sp.E)/(sp.E - 1), round(1/(math.e - 1), 3)), (1/(sp.E - 1), 0.582)),
+    ]
+
+@guia('PM26 Fracciones parciales')
+def _():
+    ap = sp.apart
+    return [
+        ('ejemplo1', ap((5*x - 1)/(x**2 - 1)), 2/(x - 1) + 3/(x + 1)), ('ejemplo2', ap(1/(x**2 - 4)), 1/(4*(x - 2)) - 1/(4*(x + 2))),
+        ('nota', antider(sp.log(x**2 - 1), 2*x/(x**2 - 1)), True),
+        ('ejemplo3', ap((x + 3)/(x - 1)**2), 1/(x - 1) + 4/(x - 1)**2), ('ejemplo3b', antider(-4/(x - 1), 4/(x - 1)**2), True),
+        ('ejemplo4', ap(1/(x*(x**2 + 1))), 1/x - x/(x**2 + 1)), ('ejemplo5', ap((x**2 + 1)/(x**2 - 1)), 1 + 1/(x - 1) - 1/(x + 1)),
+        ('ej1', ap(1/(x*(x + 2))), 1/(2*x) - 1/(2*(x + 2))), ('ej2', ap((3*x + 5)/((x + 1)*(x + 3))), 1/(x + 1) + 2/(x + 3)),
+        ('ej3', ap((x + 7)/(x**2 - x - 6)), 2/(x - 3) - 1/(x + 2)), ('ej4', ap(2*x/(x**2 - 1)), 1/(x - 1) + 1/(x + 1)),
+        ('ej5', ap((2*x + 1)/(x + 1)**2), 2/(x + 1) - 1/(x + 1)**2), ('ej5b', antider(2*sp.log(x + 1) + 1/(x + 1), (2*x + 1)/(x + 1)**2), True),
+        ('ej6', ap(1/(x**2*(x - 1))), -1/x - 1/x**2 + 1/(x - 1)), ('ej6b', antider(-sp.log(x) + 1/x + sp.log(x - 1), 1/(x**2*(x - 1))), True),
+        ('ej7', antider(sp.log(x**2 + 1) + 3*sp.atan(x), (2*x + 3)/(x**2 + 1)), True),
+        ('ej8', ap((x**2 + 2)/(x*(x**2 + 1))), 2/x - x/(x**2 + 1)),
+        ('ej9', ap(x**2/(x + 1)), x - 1 + 1/(x + 1)), ('ej9b', antider(x**2/2 - x + sp.log(x + 1), x**2/(x + 1)), True),
+        ('ej10', (sp.nsimplify(Idef(1/(x**2 - 1), 2, 3) - sp.log(sp.Rational(3, 2))/2), round(math.log(1.5)/2, 3)), (0, 0.203)),
+        ('ej11', (sp.simplify(Idef(1/((x + 1)*(x + 2)), 0, 1) - sp.log(sp.Rational(4, 3))), round(math.log(4/3), 3)), (0, 0.288)),
+    ]
+
+@guia('PM27 Áreas entre curvas')
+def _():
+    return [
+        ('ejemplo1', (sp.solve(x**2 - x - 2, x), Idef(x + 2 - x**2, -1, 2)), ([-1, 2], sp.Rational(9, 2))),
+        ('ejemplo1b', ((x**2/2 + 2*x - x**3/3).subs(x, 2), (x**2/2 + 2*x - x**3/3).subs(x, -1)), (sp.Rational(10, 3), -sp.Rational(7, 6))),
+        ('ejemplo2', (Idef(sp.Abs(sp.cos(x) - sp.sin(x)), 0, sp.pi/2).evalf(), round(2*(math.sqrt(2) - 1), 3)), (2*(math.sqrt(2) - 1), 0.828)),
+        ('ejemplo3', (Idef(sp.Abs(x - x**3), -1, 1), Idef(x - x**3, -1, 1)), (sp.Rational(1, 2), 0)),
+        ('ejemplo4', Idef(y + 2 - y**2, -1, 2, y), sp.Rational(9, 2)),
+        ('ej1', Idef(4 - x**2, -2, 2), sp.Rational(32, 3)), ('ej2', Idef(2*x - x**2, 0, 2), sp.Rational(4, 3)),
+        ('ej3', (sp.solve(x**2 + x - 6, x), Idef(6 - x**2 - x, -3, 2)), ([-3, 2], sp.Rational(125, 6))),
+        ('ej4', Idef(sp.sqrt(x) - x, 0, 1), sp.Rational(1, 6)), ('ej5', (Idef(sp.exp(x) - x, 0, 1), round(math.e - 1.5, 3)), (sp.E - sp.Rational(3, 2), 1.218)),
+        ('ej6', Idef(sp.Abs(sp.sin(x)), 0, 2*sp.pi), 4), ('ej7', (Idef(4 - x**2, 0, 2) + Idef(x**2 - 4, 2, 3), Idef(4 - x**2, 0, 2), Idef(x**2 - 4, 2, 3)), (sp.Rational(23, 3), sp.Rational(16, 3), sp.Rational(7, 3))),
+        ('ej8', Idef(4 - y**2, -2, 2, y), sp.Rational(32, 3)), ('ej9', Idef((1 - y**2) - (y**2 - 1), -1, 1, y), sp.Rational(8, 3)),
+        ('ej10', Idef(2*t - t**2, 0, 2, t), sp.Rational(4, 3)),
+    ]
+
+@guia('PM28 Volúmenes de revolución')
+def _():
+    pi = sp.pi
+    r_, h_ = sp.symbols('r h', positive=True)
+    return [
+        ('ejemplo1', pi*Idef(x, 0, 4), 8*pi), ('cono', sp.simplify(pi*Idef((r_/h_*x)**2, 0, h_)), pi*r_**2*h_/3),
+        ('esfera', sp.simplify(pi*Idef(r_**2 - x**2, -r_, r_)), sp.Rational(4, 3)*pi*r_**3),
+        ('ejemplo3', pi*Idef(x**2 - x**4, 0, 1), 2*pi/15), ('ejemplo4', 2*pi*Idef(x*(x - x**2), 0, 1), pi/6),
+        ('ejemplo5', pi*Idef(y, 0, 4, y), 8*pi),
+        ('ej1', pi*Idef(x**2, 0, 3), 9*pi), ('ej2', pi*Idef(x**4, 0, 2), 32*pi/5),
+        ('ej3', (pi*Idef(sp.exp(2*x), 0, 1), round(math.pi/2*(math.e**2 - 1), 2)), (pi*(sp.E**2 - 1)/2, 10.04)),
+        ('ej4', pi*Idef(x**-2, 1, 3), 2*pi/3), ('ej5', pi*Idef(x - x**2, 0, 1), pi/6), ('ej6', pi*Idef(16 - x**4, -2, 2), 256*pi/5),
+        ('ej7', 2*pi*Idef(x**3, 0, 2), 8*pi), ('ej8', 2*pi*Idef(x*(4 - x**2), 0, 2), 8*pi), ('ej9', 2*pi*Idef(x**2 - x**3, 0, 1), pi/6),
+        ('ej10', pi*Idef(9 - x**2, -3, 3), 36*pi), ('ej11', (pi*Idef(4*y, 0, 4, y), round(32*math.pi, 1)), (32*pi, 100.5)),
+    ]
+
 if __name__ == '__main__':
     fallas = 0
     for nombre, fn in GUIAS.items():

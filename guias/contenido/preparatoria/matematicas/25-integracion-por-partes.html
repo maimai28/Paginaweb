@@ -1,0 +1,219 @@
+<!-- guia
+titulo: Integración por partes
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo integral
+numero: 25
+descripcion: La regla del producto al revés: fórmula de integración por partes, cómo elegir u con la regla LIATE, integrales como x·eˣ, ln x y arctan x, partes repetidas con el método tabular, integrales cíclicas y definidas.
+entrada: La sustitución deshace la regla de la cadena; la integración por partes deshace la del producto. Sirve cuando multiplicas dos funciones de tipos distintos, como $x\,e^x$ o $x\cos x$, y también para integrar funciones «solas» como $\ln x$.
+objetivo: Deducir y usar la fórmula de integración por partes.
+objetivo: Elegir $u$ y $dv$ con la regla LIATE.
+objetivo: Integrar $\ln x$ y $\arctan x$.
+objetivo: Aplicar partes varias veces con el método tabular.
+objetivo: Resolver integrales cíclicas.
+objetivo: Evaluar integrales definidas por partes.
+autoeval: Escribir la fórmula $\int u\,dv = uv - \int v\,du$. | 01
+autoeval: Elegir bien $u$ con LIATE. | 02
+autoeval: Integrar $\ln x$ tomando $dv = dx$. | 03
+autoeval: Usar el método tabular con $x^n$. | 04
+autoeval: Despejar la integral en un caso cíclico. | 05
+-->
+<section>
+  <h2>La fórmula</h2>
+  <p>Integra la regla del producto $(uv)' = u'v + uv'$ y despeja:</p>
+  <div class="definicion">
+    <span class="etq">Integración por partes</span>
+    $$\int u\,dv = uv - \int v\,du$$
+    <p>Se elige una parte del integrando como $u$ (que vas a derivar) y el resto como $dv$ (que vas a integrar). Funciona si la nueva integral $\int v\,du$ es más fácil que la original.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int x\,e^x\,dx$.</p>
+      <p class="paso">$u = x$ (al derivarla desaparece) y $dv = e^x\,dx$. Entonces $du = dx$ y $v = e^x$:</p>
+      $$\int x\,e^x\,dx = x\,e^x - \int e^x\,dx = x\,e^x - e^x + C$$
+      <p class="paso">Comprueba: $(xe^x - e^x)' = e^x + xe^x - e^x = xe^x$ ✔</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cómo elegir $u$</h2>
+  <p>Una guía práctica es la regla <strong>LIATE</strong>: toma como $u$ la función que aparezca primero en esta lista.</p>
+  <table class="leyes">
+    <thead><tr><th>Letra</th><th>Tipo</th><th>Ejemplos</th></tr></thead>
+    <tbody>
+      <tr><td>L</td><td>Logarítmicas</td><td>$\ln x$</td></tr>
+      <tr><td>I</td><td>Inversas trigonométricas</td><td>$\arctan x$, $\arcsin x$</td></tr>
+      <tr><td>A</td><td>Algebraicas</td><td>$x$, $x^2$, $3x + 1$</td></tr>
+      <tr><td>T</td><td>Trigonométricas</td><td>$\sin x$, $\cos x$</td></tr>
+      <tr><td>E</td><td>Exponenciales</td><td>$e^x$, $2^x$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int x\cos x\,dx$.</p>
+      <p class="paso">A antes que T: $u = x$, $dv = \cos x\,dx$, $du = dx$, $v = \sin x$.</p>
+      $$\int x\cos x\,dx = x\sin x - \int\sin x\,dx = x\sin x + \cos x + C$$
+      <p class="paso">Si hubieras elegido $u = \cos x$, la nueva integral tendría $x^2$: peor que al inicio.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Funciones solas: $\ln x$ y $\arctan x$</h2>
+  <p>No hay fórmula de tabla para $\int\ln x\,dx$. El truco: $u = \ln x$ y $dv = dx$.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int\ln x\,dx$.</p>
+      <p class="paso">$u = \ln x$, $du = \tfrac{1}{x}dx$, $v = x$:</p>
+      $$\int\ln x\,dx = x\ln x - \int x\cdot\frac{1}{x}\,dx = x\ln x - x + C$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Partes repetidas: método tabular</h2>
+  <p>Con $x^n$ por una exponencial o una trigonométrica, hay que aplicar partes $n$ veces. El <strong>método tabular</strong> lo organiza: en una columna derivas $u$ hasta llegar a cero; en otra integras $dv$ las mismas veces; multiplicas en diagonal con signos alternados $+, -, +, \ldots$</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int x^2e^x\,dx$.</p>
+      <table class="leyes">
+        <thead><tr><th>Signo</th><th>Derivadas de $x^2$</th><th>Integrales de $e^x$</th></tr></thead>
+        <tbody>
+          <tr><td>$+$</td><td>$x^2$</td><td>$e^x$</td></tr>
+          <tr><td>$-$</td><td>$2x$</td><td>$e^x$</td></tr>
+          <tr><td>$+$</td><td>$2$</td><td>$e^x$</td></tr>
+          <tr><td></td><td>$0$</td><td>$e^x$</td></tr>
+        </tbody>
+      </table>
+      $$\int x^2e^x\,dx = x^2e^x - 2xe^x + 2e^x + C = e^x(x^2 - 2x + 2) + C$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Integrales cíclicas</h2>
+  <p>Con $e^x$ por seno o coseno, las derivadas nunca llegan a cero. Aplica partes dos veces: reaparece la integral original y la despejas como en una ecuación.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $I = \displaystyle\int e^x\sin x\,dx$.</p>
+      <p class="paso">Primera vez, $u = \sin x$, $dv = e^x dx$: $I = e^x\sin x - \int e^x\cos x\,dx$.</p>
+      <p class="paso">Segunda vez, $u = \cos x$: $\int e^x\cos x\,dx = e^x\cos x + \int e^x\sin x\,dx = e^x\cos x + I$.</p>
+      $$I = e^x\sin x - e^x\cos x - I \;\Rightarrow\; I = \frac{e^x(\sin x - \cos x)}{2} + C$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">6</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\int_0^\pi x\sin x\,dx$.</p>
+      <p class="paso">Por partes, $\int x\sin x\,dx = -x\cos x + \sin x$. Evalúa:</p>
+      $$\Big[-x\cos x + \sin x\Big]_0^\pi = (-\pi\cos\pi + 0) - 0 = \pi$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\int uv\,dx = \int u\,dx\cdot\int v\,dx$</td><td class="bien">$uv - \int v\,du$</td><td>No hay regla del producto directa.</td></tr>
+        <tr><td class="mal">$uv + \int v\,du$</td><td class="bien">$uv - \int v\,du$</td><td>Es una resta.</td></tr>
+        <tr><td class="mal">Elegir $u = e^x$ en $\int xe^x$</td><td class="bien">$u = x$</td><td>La nueva integral sería peor.</td></tr>
+        <tr><td class="mal">Tabular sin alternar signos</td><td class="bien">$+, -, +, \ldots$</td><td>Cada aplicación de partes resta.</td></tr>
+        <tr><td class="mal">En la cíclica, volver a $u = \sin x$ la segunda vez</td><td class="bien">Mantener el mismo tipo de $u$</td><td>Si no, deshaces el primer paso.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\int u\,dv = uv - \int v\,du$</div><div>LIATE para $u$</div><div>$u$: la que se simplifica al derivar</div>
+      <div>$\int xe^x = e^x(x - 1) + C$</div><div>$\int\ln x = x\ln x - x + C$</div><div>$\int x\cos x = x\sin x + \cos x + C$</div>
+      <div>$x^n$: tabular</div><div>$e^x\sin x$: cíclica, despeja</div><div>Comprueba derivando</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Comprueba derivando las indefinidas. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Una vez</h3>
+    <ol>
+      <li>$\displaystyle\int x\,e^{2x}\,dx$</li><li>$\displaystyle\int x\sin x\,dx$</li><li>$\displaystyle\int x\ln x\,dx$</li>
+      <li>$\displaystyle\int\arctan x\,dx$</li><li>$\displaystyle\int x\sec^2 x\,dx$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Varias veces</h3>
+    <ol>
+      <li>$\displaystyle\int x^2\cos x\,dx$</li><li>$\displaystyle\int x^3e^x\,dx$</li><li>$\displaystyle\int(\ln x)^2\,dx$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Cíclicas</h3>
+    <ol>
+      <li>$\displaystyle\int e^x\cos x\,dx$</li><li>$\displaystyle\int e^{2x}\sin x\,dx$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Definidas</h3>
+    <ol class="largo">
+      <li>$\displaystyle\int_0^1 x\,e^x\,dx$</li>
+      <li>$\displaystyle\int_1^e\ln x\,dx$</li>
+      <li>$\displaystyle\int_0^{\pi/2} x\cos x\,dx$</li>
+      <li>Valor promedio de $\ln x$ en $[1, e]$.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$e^{2x}\left(\tfrac{x}{2} - \tfrac{1}{4}\right) + C$</span></li>
+    <li><span>$-x\cos x + \sin x + C$</span></li>
+    <li><span>$\tfrac{x^2}{2}\ln x - \tfrac{x^2}{4} + C$</span></li>
+    <li><span>$x\arctan x - \tfrac{1}{2}\ln(1 + x^2) + C$</span></li>
+    <li><span>$x\tan x + \ln|\cos x| + C$</span></li>
+    <li><span>$x^2\sin x + 2x\cos x - 2\sin x + C$</span></li>
+    <li><span>$e^x(x^3 - 3x^2 + 6x - 6) + C$</span></li>
+    <li><span>$x(\ln x)^2 - 2x\ln x + 2x + C$</span></li>
+    <li><span>$\tfrac{1}{2}e^x(\sin x + \cos x) + C$</span></li>
+    <li><span>$\tfrac{1}{5}e^{2x}(2\sin x - \cos x) + C$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$\tfrac{\pi}{2} - 1 \approx 0.571$</span></li>
+    <li><span>$\tfrac{1}{e - 1} \approx 0.582$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$u = x$, $v = \tfrac{1}{2}e^{2x}$: $\tfrac{x}{2}e^{2x} - \tfrac{1}{2}\int e^{2x}dx = \tfrac{x}{2}e^{2x} - \tfrac{1}{4}e^{2x}$.</div></div>
+    <div class="sol"><span>3</span><div>L antes que A: $u = \ln x$, $v = \tfrac{x^2}{2}$. Queda $\int\tfrac{x^2}{2}\cdot\tfrac{1}{x}dx = \tfrac{x^2}{4}$.</div></div>
+    <div class="sol"><span>4</span><div>$u = \arctan x$, $dv = dx$: $x\arctan x - \int\dfrac{x}{1 + x^2}dx$; la última es sustitución.</div></div>
+    <div class="sol"><span>5</span><div>$u = x$, $v = \tan x$: $x\tan x - \int\tan x\,dx = x\tan x + \ln|\cos x|$.</div></div>
+    <div class="sol"><span>6</span><div>Tabular: $x^2, 2x, 2, 0$ con $\sin x, -\cos x, -\sin x$ y signos $+, -, +$.</div></div>
+    <div class="sol"><span>7</span><div>Tabular: $x^3, 3x^2, 6x, 6$ con $e^x$ y signos alternados.</div></div>
+    <div class="sol"><span>8</span><div>$u = (\ln x)^2$, $v = x$: $x(\ln x)^2 - \int 2\ln x\,dx$, y usa el ejemplo 3.</div></div>
+    <div class="sol"><span>9</span><div>$I = e^x\cos x + \int e^x\sin x = e^x\cos x + e^x\sin x - I$.</div></div>
+    <div class="sol"><span>10</span><div>Con $u$ trigonométrica: $I = \tfrac{1}{2}e^{2x}\sin x - \tfrac{1}{2}\left(\tfrac{1}{2}e^{2x}\cos x + \tfrac{1}{2}I\right)$, así que $\tfrac{5}{4}I = \tfrac{1}{2}e^{2x}\sin x - \tfrac{1}{4}e^{2x}\cos x$.</div></div>
+    <div class="sol"><span>11</span><div>$[e^x(x - 1)]_0^1 = 0 - (-1)$.</div></div>
+    <div class="sol"><span>12</span><div>$[x\ln x - x]_1^e = (e - e) - (0 - 1)$.</div></div>
+    <div class="sol"><span>13</span><div>$[x\sin x + \cos x]_0^{\pi/2} = \tfrac{\pi}{2} - 1$.</div></div>
+    <div class="sol"><span>14</span><div>$\dfrac{1}{e - 1}\int_1^e\ln x\,dx = \dfrac{1}{e - 1}\cdot 1$.</div></div>
+  </div>
+</section>
