@@ -1,0 +1,185 @@
+<!-- guia
+titulo: Ecuación de continuidad y Bernoulli
+nivel: Preparatoria
+materia: Física
+rama: Fluidos
+numero: 11
+descripcion: Caudal y ecuación de continuidad para fluidos en movimiento, ecuación de Bernoulli como conservación de la energía, teorema de Torricelli, tubos que se estrechan o suben y aplicaciones como techos que se levantan con el viento.
+entrada: Cuando tapas la mitad de la manguera con el dedo, el agua sale disparada. Cuando pasa un camión rápido junto a ti, sientes que te jala. Las dos cosas se explican con dos ecuaciones: lo que entra a un tubo tiene que salir, y donde el fluido va más rápido, la presión baja.
+objetivo: Calcular caudales.
+objetivo: Aplicar la ecuación de continuidad.
+objetivo: Aplicar la ecuación de Bernoulli.
+objetivo: Usar el teorema de Torricelli.
+objetivo: Explicar fenómenos cotidianos con Bernoulli.
+autoeval: Calcular el caudal con área y velocidad. | 01
+autoeval: Encontrar la velocidad en un estrechamiento. | 01
+autoeval: Plantear Bernoulli entre dos puntos. | 02
+autoeval: Calcular la velocidad de salida por un orificio. | 03
+autoeval: Explicar por qué baja la presión donde el fluido va rápido. | 02
+-->
+<section>
+  <h2>Caudal y continuidad</h2>
+  <div class="definicion">
+    <span class="etq">Caudal y ecuación de continuidad</span>
+    $$Q = \frac{V}{t} = A\,v \qquad\qquad A_1v_1 = A_2v_2$$
+    <p>El caudal (m³/s) es el volumen que pasa por segundo. En un tubo sin fugas y con un líquido incompresible, el caudal es el mismo en cualquier sección: donde el tubo se angosta, el fluido va más rápido.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Por una manguera de 2 cm de diámetro sale agua a 1.5 m/s. ¿Cuánto tarda en llenar una cubeta de 20 L? Si tapas la salida dejando un orificio de 0.5 cm de diámetro, ¿a qué velocidad sale?</p>
+      $$Q = \pi(0.01)^2(1.5) \approx 4.71\times 10^{-4} \text{ m}^3/\text{s} \qquad t = \frac{0.020}{4.71\times 10^{-4}} \approx 42 \text{ s}$$
+      $$v_2 = v_1\left(\frac{d_1}{d_2}\right)^2 = 1.5(4)^2 = 24 \text{ m/s}$$
+      <p class="paso">(Idealmente; en la práctica, tapar la manguera también reduce un poco el caudal.)</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ecuación de Bernoulli</h2>
+  <div class="definicion">
+    <span class="etq">Ecuación de Bernoulli</span>
+    $$P_1 + \tfrac{1}{2}\rho v_1^2 + \rho g h_1 = P_2 + \tfrac{1}{2}\rho v_2^2 + \rho g h_2$$
+    <p>Vale a lo largo de un flujo estable de un fluido incompresible y sin fricción. Es la conservación de la energía por unidad de volumen: presión, energía cinética y energía potencial.</p>
+  </div>
+  <p>La consecuencia más famosa: a la misma altura, <strong>donde la velocidad es mayor, la presión es menor</strong>.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Por un tubo horizontal fluye agua a 2 m/s con presión de 150 kPa. El tubo se estrecha a la mitad del área. ¿Qué velocidad y presión hay en la parte angosta?</p>
+      <p class="paso">Continuidad: $v_2 = 2v_1 = 4$ m/s. Bernoulli con $h_1 = h_2$:</p>
+      $$P_2 = 150\,000 - \tfrac{1}{2}(1000)(4^2 - 2^2) = 144\,000 \text{ Pa}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Bernoulli en la vida diaria</span>
+    <p>Con viento fuerte, el aire rápido sobre un techo baja la presión arriba; la de adentro, mayor, puede levantarlo. El mismo efecto hace que un atomizador succione el líquido y ayuda (junto con el ángulo del ala) a sostener a los aviones.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Teorema de Torricelli</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Un tanque abierto tiene un orificio a una profundidad $h$ bajo la superficie. Arriba y en el chorro la presión es la atmosférica, y la superficie baja muy despacio ($v_1 \approx 0$). Bernoulli da:</p>
+      $$v = \sqrt{2gh}$$
+      <p>La misma rapidez que tendría un objeto que cayera libremente la altura $h$.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 196 130" width="50mm">
+        <path d="M20 15 L20 120 L90 120 L90 15" fill="none" stroke="#2b241e" stroke-width="2"/>
+        <rect x="21" y="30" width="68" height="89" fill="#b9cfd6"/>
+        <path d="M90 92 Q125 92 150 125" fill="none" stroke="#5a8fa3" stroke-width="3"/>
+        <line x1="100" y1="30" x2="100" y2="92" stroke="#2b241e" stroke-width="1"/>
+        <line x1="96" y1="30" x2="104" y2="30" stroke="#2b241e" stroke-width="1"/><line x1="96" y1="92" x2="104" y2="92" stroke="#2b241e" stroke-width="1"/>
+        <g font-family="Nunito" font-size="11" fill="#2b241e"><text x="106" y="64">h</text><text x="124" y="84">v = √(2gh)</text></g>
+      </svg>
+      <figcaption>El chorro sale como si hubiera caído desde la superficie.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un tinaco tiene una fuga 5 m por debajo del nivel del agua. ¿A qué velocidad sale el chorro?</p>
+      $$v = \sqrt{2(9.8)(5)} \approx 9.9 \text{ m/s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tubos que suben</h2>
+  <p>Si el tubo tiene el mismo diámetro, la velocidad no cambia (continuidad) y Bernoulli se reduce a la hidrostática: la presión baja $\rho g$ por cada metro que sube.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En la planta baja de un edificio la presión del agua es de 300 kPa. ¿Qué presión hay 10 m más arriba, en un tubo del mismo diámetro?</p>
+      $$P_2 = 300\,000 - 1000(9.8)(10) = 202\,000 \text{ Pa}$$
+      <p class="paso">Por eso en los pisos altos a veces hacen falta bombas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$A_1d_1 = A_2d_2$ con diámetros</td><td class="bien">Con áreas: $d^2$</td><td>El área va con el cuadrado.</td></tr>
+        <tr><td class="mal">Más velocidad, más presión</td><td class="bien">Menos presión</td><td>La energía se reparte.</td></tr>
+        <tr><td class="mal">Olvidar el $\tfrac{1}{2}$ en $\tfrac{1}{2}\rho v^2$</td><td class="bien">Ponerlo</td><td>Es energía cinética por volumen.</td></tr>
+        <tr><td class="mal">Litros como m³</td><td class="bien">1 L $= 10^{-3}$ m³</td><td>Unidades SI.</td></tr>
+        <tr><td class="mal">Torricelli con la altura sobre el suelo</td><td class="bien">Profundidad bajo la superficie</td><td>Lo que cuenta es cuánto «cae» el agua.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$Q = Av$</div><div>$A_1v_1 = A_2v_2$</div><div>$v_2 = v_1\left(\tfrac{d_1}{d_2}\right)^2$</div>
+      <div>$P + \tfrac{1}{2}\rho v^2 + \rho g h = \text{cte}$</div><div>Rápido: menos presión</div><div>$v = \sqrt{2gh}$</div>
+      <div>Mismo diámetro: $\Delta P = -\rho g\Delta h$</div><div>1 L $= 10^{-3}$ m³</div><div>$A = \pi r^2$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s², $\rho_{\text{agua}} = 1000$ kg/m³ y $\rho_{\text{aire}} = 1.2$ kg/m³. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Continuidad</h3>
+    <ol class="largo">
+      <li>Una llave llena 10 L en 25 s. ¿Cuál es el caudal en L/s y en m³/s?</li>
+      <li>Ese caudal pasa por un tubo de 4 cm de diámetro. ¿A qué velocidad va el agua?</li>
+      <li>Una arteria se estrecha a la mitad de su radio. ¿Cuántas veces aumenta la velocidad de la sangre?</li>
+      <li>Un río de 20 m de ancho y 2 m de profundidad corre a 0.5 m/s. Más adelante mide 10 m de ancho y 1.5 m de profundidad. ¿A qué velocidad corre ahí?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Torricelli</h3>
+    <ol class="largo">
+      <li>¿A qué velocidad sale el agua por un orificio 1.25 m debajo de la superficie?</li>
+      <li>Un orificio está 3.2 m debajo de la superficie y 1.25 m sobre el suelo. ¿A qué distancia horizontal del tanque cae el chorro?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Bernoulli</h3>
+    <ol class="largo">
+      <li>Por un tubo horizontal de 6 cm de diámetro fluye agua a 3 m/s con 200 kPa. El tubo se reduce a 3 cm. ¿Qué velocidad y presión hay en la parte angosta?</li>
+      <li>En el primer piso la presión del agua es de 350 kPa. ¿Cuánta hay 8 m más arriba, en un tubo del mismo diámetro?</li>
+      <li>El viento sopla a 30 m/s sobre un techo plano de 100 m²; adentro el aire está quieto. ¿Qué diferencia de presión y qué fuerza neta hacia arriba se produce?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>0.4 L/s; $4\times 10^{-4}$ m³/s</span></li>
+    <li><span>$\approx 0.32$ m/s</span></li>
+    <li><span>4 veces</span></li>
+    <li><span>$\approx 1.33$ m/s</span></li>
+    <li><span>$\approx 4.95$ m/s</span></li>
+    <li><span>$\approx 4.0$ m</span></li>
+    <li><span>12 m/s; 132 500 Pa</span></li>
+    <li><span>271 600 Pa</span></li>
+    <li><span>540 Pa; 54 000 N</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$v = \tfrac{4\times 10^{-4}}{\pi(0.02)^2}$.</div></div>
+    <div class="sol"><span>3</span><div>El área baja a $\left(\tfrac{1}{2}\right)^2 = \tfrac{1}{4}$.</div></div>
+    <div class="sol"><span>4</span><div>$20(2)(0.5) = 10(1.5)v$.</div></div>
+    <div class="sol"><span>5</span><div>$\sqrt{2(9.8)(1.25)} = \sqrt{24.5}$.</div></div>
+    <div class="sol"><span>6</span><div>Sale horizontal a $\sqrt{2(9.8)(3.2)} \approx 7.92$ m/s y cae 1.25 m en $\sqrt{\tfrac{2.5}{9.8}} \approx 0.505$ s: $7.92(0.505)$. Es un tiro horizontal.</div></div>
+    <div class="sol"><span>7</span><div>$v_2 = 3(2)^2$. $P_2 = 200\,000 - 500(144 - 9)$.</div></div>
+    <div class="sol"><span>8</span><div>$350\,000 - 1000(9.8)(8)$.</div></div>
+    <div class="sol"><span>9</span><div>$\Delta P = \tfrac{1}{2}(1.2)(30^2)$; $F = 540(100)$. Unas 5.5 toneladas de fuerza: por eso los huracanes arrancan techos.</div></div>
+  </div>
+</section>

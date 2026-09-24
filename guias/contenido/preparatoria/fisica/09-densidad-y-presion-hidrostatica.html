@@ -1,0 +1,203 @@
+<!-- guia
+titulo: Densidad y presión hidrostática
+nivel: Preparatoria
+materia: Física
+rama: Fluidos
+numero: 09
+descripcion: Densidad y densidad relativa, presión como fuerza entre área, presión dentro de un líquido y por qué solo depende de la profundidad, presión atmosférica, absoluta y manométrica, tubo en U y barómetro de mercurio.
+entrada: ¿Por qué duelen los oídos al bucear en lo hondo? ¿Por qué un tacón delgado hunde el pasto y un tenis no? La presión explica ambos casos, y en los líquidos crece con la profundidad de una forma muy sencilla.
+objetivo: Calcular densidades y usar la densidad relativa.
+objetivo: Calcular presiones y fuerzas sobre superficies.
+objetivo: Usar $P = \rho g h$ en líquidos.
+objetivo: Distinguir presión absoluta y manométrica.
+objetivo: Resolver tubos en U y barómetros.
+autoeval: Convertir densidades entre g/cm³ y kg/m³. | 01
+autoeval: Explicar por qué la misma fuerza puede dar presiones muy distintas. | 02
+autoeval: Calcular la presión a cierta profundidad. | 03
+autoeval: Sumar la atmosférica para obtener la presión absoluta. | 04
+autoeval: Igualar presiones al mismo nivel en un tubo en U. | 05
+-->
+<section>
+  <h2>Densidad</h2>
+  <div class="definicion">
+    <span class="etq">Densidad</span>
+    $$\rho = \frac{m}{V}$$
+    <p>Se mide en kg/m³ o g/cm³, con $1 \text{ g/cm}^3 = 1000 \text{ kg/m}^3$. La <strong>densidad relativa</strong> compara con el agua: $\rho_r = \rho / \rho_{\text{agua}}$, sin unidades.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Sustancia</th><th>$\rho$ (kg/m³)</th><th>Sustancia</th><th>$\rho$ (kg/m³)</th></tr></thead>
+    <tbody>
+      <tr><td>Aire (20 °C)</td><td>1.2</td><td>Aluminio</td><td>2700</td></tr>
+      <tr><td>Aceite</td><td>≈ 900</td><td>Hierro</td><td>7870</td></tr>
+      <tr><td>Agua</td><td>1000</td><td>Mercurio</td><td>13 600</td></tr>
+      <tr><td>Agua de mar</td><td>≈ 1025</td><td>Oro</td><td>19 300</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un cubo de 5 cm de lado tiene una masa de 337.5 g. ¿De qué material podría ser?</p>
+      $$\rho = \frac{337.5}{5^3} = 2.7 \text{ g/cm}^3 = 2700 \text{ kg/m}^3$$
+      <p class="paso">Coincide con el aluminio.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Presión</h2>
+  <div class="definicion">
+    <span class="etq">Presión</span>
+    $$P = \frac{F}{A}$$
+    <p>Fuerza perpendicular por unidad de área, en pascales: $1 \text{ Pa} = 1 \text{ N/m}^2$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una persona de 60 kg se apoya en un tacón de 1 cm² o en un tenis de 200 cm². Compara las presiones.</p>
+      $$P_{\text{tacón}} = \frac{588}{1\times 10^{-4}} = 5.88\times 10^6 \text{ Pa} \qquad P_{\text{tenis}} = \frac{588}{0.02} = 29\,400 \text{ Pa}$$
+      <p class="paso">Con la misma fuerza, 200 veces más presión. Por eso un cuchillo afilado corta y unos esquís no se hunden en la nieve.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Presión en un líquido</h2>
+  <div class="figura-lado">
+    <div>
+      <p>El líquido de arriba pesa sobre el de abajo. Una columna de altura $h$ ejerce, en su base, una presión</p>
+      <div class="definicion">
+        <span class="etq">Presión hidrostática</span>
+        $$P = \rho\,g\,h$$
+      </div>
+      <p>Solo depende de la profundidad y del líquido, <strong>no de la forma del recipiente</strong> ni de cuánta agua haya a los lados. Por eso en vasos comunicantes el líquido llega a la misma altura.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 170 130" width="44mm">
+        <path d="M15 20 L15 115 L155 115 L155 20 M60 20 L60 95 L110 95 L110 20" fill="none" stroke="#2b241e" stroke-width="2"/>
+        <rect x="16" y="40" width="43" height="74" fill="#b9cfd6"/>
+        <rect x="59" y="96" width="52" height="18" fill="#b9cfd6"/>
+        <rect x="111" y="40" width="43" height="74" fill="#b9cfd6"/>
+        <line x1="10" y1="40" x2="160" y2="40" stroke="#5c7a5a" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="37" cy="105" r="3" fill="#b5562c"/><circle cx="85" cy="105" r="3" fill="#b5562c"/><circle cx="133" cy="105" r="3" fill="#b5562c"/>
+        <line x1="10" y1="105" x2="160" y2="105" stroke="#b5562c" stroke-width="0.8" stroke-dasharray="2 3"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e"><text x="64" y="88">misma P</text><text x="62" y="34" fill="#5c7a5a">mismo nivel</text></g>
+      </svg>
+      <figcaption>A igual profundidad, igual presión.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Presión atmosférica, absoluta y manométrica</h2>
+  <p>Sobre la superficie de un lago también está el aire: la <strong>presión atmosférica</strong>, $P_0 \approx 101\,325$ Pa $= 1$ atm al nivel del mar. Entonces:</p>
+  $$P_{\text{absoluta}} = P_0 + \rho g h \qquad\qquad P_{\text{manométrica}} = P_{\text{absoluta}} - P_0 = \rho g h$$
+  <p>Un manómetro de llanta marca la manométrica: una llanta «desinflada» marca 0 aunque dentro haya 1 atm.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un buzo baja a 10 m en el mar ($\rho = 1025$ kg/m³). ¿Qué presión soporta?</p>
+      $$P_{\text{man}} = 1025(9.8)(10) = 100\,450 \text{ Pa} \qquad P_{\text{abs}} = 101\,325 + 100\,450 \approx 2.02\times 10^5 \text{ Pa}$$
+      <p class="paso">Cada 10 m de agua agregan aproximadamente una atmósfera: a 10 m hay el doble que en la superficie.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tubo en U y barómetro</h2>
+  <p>En un fluido en reposo, dos puntos <strong>al mismo nivel y en el mismo líquido</strong> tienen la misma presión. Con eso se resuelven los tubos en U.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En un tubo en U con agua se vierte aceite ($\rho = 800$ kg/m³) en un brazo, formando una columna de 12 cm. ¿Qué altura de agua, medida desde la interfaz, la equilibra en el otro brazo?</p>
+      $$\rho_{\text{aceite}}\,g\,h_a = \rho_{\text{agua}}\,g\,h_w \;\Rightarrow\; h_w = \frac{800(12)}{1000} = 9.6 \text{ cm}$$
+    </div>
+  </div>
+  <p>El <strong>barómetro de Torricelli</strong> es un tubo con mercurio invertido: la atmósfera sostiene una columna de unos 76 cm, porque $13\,600(9.8)(0.76) \approx 101\,300$ Pa. De ahí la unidad «760 mmHg».</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\rho$ en g/cm³ dentro de $\rho gh$</td><td class="bien">En kg/m³</td><td>Para obtener pascales.</td></tr>
+        <tr><td class="mal">Área en cm² sin convertir</td><td class="bien">1 cm² $= 10^{-4}$ m²</td><td>No es $10^{-2}$.</td></tr>
+        <tr><td class="mal">Más agua a los lados, más presión</td><td class="bien">Solo importa la profundidad</td><td>$P = \rho g h$.</td></tr>
+        <tr><td class="mal">Olvidar $P_0$ en la presión absoluta</td><td class="bien">$P_0 + \rho g h$</td><td>El aire también empuja.</td></tr>
+        <tr><td class="mal">Igualar presiones en líquidos distintos al mismo nivel</td><td class="bien">Solo dentro del mismo líquido</td><td>Por eso se mide desde la interfaz.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\rho = \dfrac{m}{V}$</div><div>1 g/cm³ $= 1000$ kg/m³</div><div>$P = \dfrac{F}{A}$</div>
+      <div>$P = \rho g h$</div><div>$P_0 = 101\,325$ Pa</div><div>$P_{\text{abs}} = P_0 + \rho g h$</div>
+      <div>Mismo nivel, mismo líquido: misma $P$</div><div>10 m de agua $\approx$ 1 atm</div><div>760 mmHg $=$ 1 atm</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s², $\rho_{\text{agua}} = 1000$ kg/m³ y $P_0 = 101\,325$ Pa. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Densidad</h3>
+    <ol class="largo">
+      <li>Una piedra de 540 g desplaza 200 cm³ de agua. ¿Cuál es su densidad?</li>
+      <li>¿Qué masa tienen 2 L de aceite de 920 kg/m³?</li>
+      <li>¿Qué volumen ocupa 1 kg de oro?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Presión</h3>
+    <ol class="largo">
+      <li>Una ventana de 1.2 m² tiene 5000 Pa más de presión de un lado que del otro. ¿Qué fuerza neta soporta?</li>
+      <li>Un elefante de 5000 kg se apoya en 4 patas de 0.1 m² cada una. ¿Qué presión hace sobre el suelo?</li>
+      <li>¿Qué presión manométrica y absoluta hay en el fondo de una alberca de 3 m?</li>
+      <li>¿A qué profundidad en agua dulce la presión absoluta es de 3 atm?</li>
+      <li>¿Qué presión manométrica soporta el fondo de una presa de 40 m de profundidad?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Tubos y barómetros</h3>
+    <ol class="largo">
+      <li>En un tubo en U con mercurio se agregan 20 cm de agua en un brazo. ¿Qué desnivel de mercurio se produce?</li>
+      <li>Si un barómetro usara agua en lugar de mercurio, ¿qué altura tendría la columna a nivel del mar?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>2.7 g/cm³</span></li>
+    <li><span>1.84 kg</span></li>
+    <li><span>$\approx 51.8$ cm³</span></li>
+    <li><span>6000 N</span></li>
+    <li><span>122 500 Pa</span></li>
+    <li><span>29 400 Pa; $\approx 130.7$ kPa</span></li>
+    <li><span>$\approx 20.7$ m</span></li>
+    <li><span>392 000 Pa</span></li>
+    <li><span>$\approx 1.47$ cm</span></li>
+    <li><span>$\approx 10.3$ m</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>El volumen desplazado es el volumen de la piedra: $\tfrac{540}{200}$.</div></div>
+    <div class="sol"><span>2</span><div>2 L $= 0.002$ m³; $920(0.002)$.</div></div>
+    <div class="sol"><span>3</span><div>$\tfrac{1}{19\,300}$ m³ $\approx 5.18\times 10^{-5}$ m³: un cubo de solo 3.7 cm de lado.</div></div>
+    <div class="sol"><span>5</span><div>$\tfrac{5000(9.8)}{0.4}$. Unas 48 veces menos que el tacón del ejemplo 2: un elefante presiona el suelo mucho menos que un tacón.</div></div>
+    <div class="sol"><span>6</span><div>$1000(9.8)(3)$; más $101\,325$.</div></div>
+    <div class="sol"><span>7</span><div>La manométrica debe valer 2 atm $= 202\,650$ Pa: $h = \tfrac{202\,650}{9800}$.</div></div>
+    <div class="sol"><span>9</span><div>$1000(0.20) = 13\,600\,h$.</div></div>
+    <div class="sol"><span>10</span><div>$h = \tfrac{101\,325}{1000(9.8)}$. Por eso se usa mercurio: 13.6 veces más denso.</div></div>
+  </div>
+</section>

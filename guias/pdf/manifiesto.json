@@ -48,6 +48,24 @@
     "pdf": "preparatoria-fisica-08-gravitacion-universal.pdf"
   },
   {
+    "tema": "preparatoria-fisica-densidad-y-presion-hidrostatica",
+    "titulo": "Densidad y presión hidrostática",
+    "descripcion": "Densidad y densidad relativa, presión como fuerza entre área, presión dentro de un líquido y por qué solo depende de la profundidad, presión atmosférica, absoluta y manométrica, tubo en U y barómetro de mercurio.",
+    "pdf": "preparatoria-fisica-09-densidad-y-presion-hidrostatica.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-principios-de-pascal-y-arquimedes",
+    "titulo": "Principios de Pascal y Arquímedes",
+    "descripcion": "Principio de Pascal y prensa hidráulica con su intercambio fuerza-distancia, principio de Arquímedes y fuerza de empuje, flotación y fracción sumergida, peso aparente y cómo medir densidades pesando dentro del agua.",
+    "pdf": "preparatoria-fisica-10-principios-de-pascal-y-arquimedes.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-ecuacion-de-continuidad-y-bernoulli",
+    "titulo": "Ecuación de continuidad y Bernoulli",
+    "descripcion": "Caudal y ecuación de continuidad para fluidos en movimiento, ecuación de Bernoulli como conservación de la energía, teorema de Torricelli, tubos que se estrechan o suben y aplicaciones como techos que se levantan con el viento.",
+    "pdf": "preparatoria-fisica-11-ecuacion-de-continuidad-y-bernoulli.pdf"
+  },
+  {
     "tema": "preparatoria-matematicas-funciones-y-sus-graficas",
     "titulo": "Funciones y sus gráficas",
     "descripcion": "Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.",

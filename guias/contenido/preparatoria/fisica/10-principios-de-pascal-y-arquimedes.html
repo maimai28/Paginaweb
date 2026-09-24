@@ -1,0 +1,192 @@
+<!-- guia
+titulo: Principios de Pascal y Arquímedes
+nivel: Preparatoria
+materia: Física
+rama: Fluidos
+numero: 10
+descripcion: Principio de Pascal y prensa hidráulica con su intercambio fuerza-distancia, principio de Arquímedes y fuerza de empuje, flotación y fracción sumergida, peso aparente y cómo medir densidades pesando dentro del agua.
+entrada: Con un gato hidráulico una persona levanta un coche, y un barco de acero de miles de toneladas flota. Dos principios de los fluidos lo explican: la presión se transmite a todo el líquido (Pascal) y todo objeto sumergido recibe un empuje hacia arriba (Arquímedes).
+objetivo: Enunciar y aplicar el principio de Pascal.
+objetivo: Resolver prensas hidráulicas, incluyendo desplazamientos.
+objetivo: Calcular el empuje con el principio de Arquímedes.
+objetivo: Decidir si algo flota y qué fracción se hunde.
+objetivo: Usar el peso aparente para encontrar volumen y densidad.
+autoeval: Calcular la fuerza de salida de una prensa hidráulica. | 01
+autoeval: Explicar por qué la prensa no «regala» energía. | 01
+autoeval: Calcular el empuje con el volumen sumergido. | 02
+autoeval: Calcular la fracción sumergida de un objeto que flota. | 03
+autoeval: Obtener la densidad de un objeto con su peso aparente. | 04
+-->
+<section>
+  <h2>Principio de Pascal</h2>
+  <div class="definicion">
+    <span class="etq">Principio de Pascal</span>
+    <p>Un cambio de presión aplicado a un fluido encerrado se transmite completo a todos los puntos del fluido y a las paredes del recipiente.</p>
+  </div>
+  <div class="figura-lado">
+    <div>
+      <p>En una <strong>prensa hidráulica</strong>, la presión en los dos pistones es la misma:</p>
+      $$\frac{F_1}{A_1} = \frac{F_2}{A_2} \;\Rightarrow\; F_2 = F_1\,\frac{A_2}{A_1}$$
+      <p>Pero el volumen de líquido que baja en un lado es el que sube en el otro: $A_1d_1 = A_2d_2$. Lo que ganas en fuerza lo pierdes en distancia, y el trabajo $F\,d$ es el mismo en los dos lados.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 180 120" width="46mm">
+        <defs><marker id="pp1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#b5562c"/></marker></defs>
+        <path d="M20 30 L20 105 L165 105 L165 45 M40 30 L40 85 L105 85 L105 45" fill="none" stroke="#2b241e" stroke-width="2"/>
+        <path d="M21 50 L39 50 L39 86 L106 86 L106 60 L164 60 L164 104 L21 104 Z" fill="#b9cfd6"/>
+        <rect x="21" y="44" width="18" height="6" fill="#8a7a66"/><rect x="106" y="54" width="58" height="6" fill="#8a7a66"/>
+        <line x1="30" y1="14" x2="30" y2="42" stroke="#b5562c" stroke-width="2.2" marker-end="url(#pp1)"/>
+        <line x1="135" y1="52" x2="135" y2="18" stroke="#b5562c" stroke-width="2.6" marker-end="url(#pp1)"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e"><text x="4" y="24">F₁</text><text x="140" y="26">F₂</text><text x="22" y="118">A₁</text><text x="128" y="118">A₂</text></g>
+      </svg>
+      <figcaption>Fuerza chica en área chica, fuerza grande en área grande.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un gato hidráulico tiene pistones de 2 cm y 20 cm de diámetro. ¿Qué fuerza hay que aplicar para levantar un auto de 1500 kg? Si el auto sube 1 cm, ¿cuánto baja el pistón chico?</p>
+      <p class="paso">El diámetro es 10 veces mayor, así que el área es $10^2 = 100$ veces mayor:</p>
+      $$F_1 = \frac{1500(9.8)}{100} = 147 \text{ N} \qquad d_1 = 100(1 \text{ cm}) = 100 \text{ cm}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Principio de Arquímedes</h2>
+  <div class="definicion">
+    <span class="etq">Principio de Arquímedes</span>
+    <p>Todo cuerpo sumergido, total o parcialmente, en un fluido recibe una fuerza hacia arriba (empuje) igual al peso del fluido que desaloja:</p>
+    $$E = \rho_{\text{fluido}}\,g\,V_{\text{sumergido}}$$
+  </div>
+  <p>El empuje existe porque la presión en la cara de abajo del objeto es mayor que en la de arriba (está más profunda). Depende del volumen sumergido y del fluido, <strong>no</strong> del material del objeto.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un bloque de 2 L está totalmente sumergido en agua. ¿Qué empuje recibe?</p>
+      $$E = 1000(9.8)(0.002) = 19.6 \text{ N}$$
+      <p class="paso">El mismo empuje recibe un bloque de plomo que uno de plástico del mismo volumen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Flotación</h2>
+  <ul>
+    <li>Si $\rho_{\text{objeto}} \gt \rho_{\text{fluido}}$, el peso gana y se hunde.</li>
+    <li>Si $\rho_{\text{objeto}} \lt \rho_{\text{fluido}}$, sube hasta flotar parcialmente sumergido, cuando el empuje iguala al peso.</li>
+  </ul>
+  <p>Al flotar, $\rho_f\,g\,V_{\text{sum}} = \rho_o\,g\,V$, así que</p>
+  $$\frac{V_{\text{sumergido}}}{V} = \frac{\rho_{\text{objeto}}}{\rho_{\text{fluido}}}$$
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Qué fracción de un iceberg queda bajo el agua? ($\rho_{\text{hielo}} = 917$, $\rho_{\text{mar}} = 1025$ kg/m³)</p>
+      $$\frac{917}{1025} \approx 0.895$$
+      <p class="paso">Casi el 90 % está sumergido: solo se ve la «punta del iceberg».</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">¿Y los barcos de acero?</span>
+    <p>Un barco es un casco hueco: su densidad <em>promedio</em> (acero más todo el aire de adentro) es menor que la del agua. Si se inunda, esa densidad promedio sube y se hunde.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Peso aparente y densidad</h2>
+  <p>Un objeto colgado de un dinamómetro y sumergido parece pesar menos: $W_{\text{aparente}} = W - E$. La diferencia da el empuje, y con él, el volumen y la densidad. Así resolvió Arquímedes el problema de la corona del rey.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una piedra pesa 50 N en el aire y 30 N sumergida en agua. ¿Cuál es su densidad?</p>
+      $$E = 20 \text{ N} \;\Rightarrow\; V = \frac{20}{1000(9.8)} \approx 2.04\times 10^{-3} \text{ m}^3 \qquad \rho = \frac{50/9.8}{2.04\times 10^{-3}} = 2500 \text{ kg/m}^3$$
+      <p class="paso">Atajo: $\dfrac{\rho}{\rho_{\text{agua}}} = \dfrac{W}{E} = \dfrac{50}{20} = 2.5$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Diámetro 10 veces mayor, fuerza 10 veces mayor</td><td class="bien">100 veces</td><td>El área va con el cuadrado.</td></tr>
+        <tr><td class="mal">$E = \rho_{\text{objeto}}gV$</td><td class="bien">$\rho_{\text{fluido}}gV_{\text{sum}}$</td><td>Es el peso del fluido desalojado.</td></tr>
+        <tr><td class="mal">Lo pesado siempre se hunde</td><td class="bien">Depende de la densidad</td><td>Un tronco enorme flota.</td></tr>
+        <tr><td class="mal">Usar el volumen total en algo que flota</td><td class="bien">Solo el sumergido</td><td>Lo que está afuera no desaloja agua.</td></tr>
+        <tr><td class="mal">La prensa multiplica la energía</td><td class="bien">Multiplica la fuerza</td><td>Se paga con distancia.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\dfrac{F_1}{A_1} = \dfrac{F_2}{A_2}$</div><div>$A_1d_1 = A_2d_2$</div><div>Área $\propto$ diámetro²</div>
+      <div>$E = \rho_f g V_{\text{sum}}$</div><div>Flota si $\rho_o \lt \rho_f$</div><div>$\dfrac{V_{\text{sum}}}{V} = \dfrac{\rho_o}{\rho_f}$</div>
+      <div>$W_{\text{ap}} = W - E$</div><div>$\dfrac{\rho}{\rho_{\text{agua}}} = \dfrac{W}{E}$</div><div>Empuje: no depende del material</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s² y $\rho_{\text{agua}} = 1000$ kg/m³. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Pascal</h3>
+    <ol class="largo">
+      <li>Una prensa tiene pistones de 10 cm² y 500 cm². Si se aplican 200 N en el chico, ¿qué fuerza sale en el grande?</li>
+      <li>Un elevador de autos tiene pistones de 3 cm y 15 cm de radio. ¿Qué fuerza hay que hacer para levantar un auto de 2000 kg?</li>
+      <li>En ese elevador, si el pistón chico baja 50 cm, ¿cuánto sube el auto?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Empuje y flotación</h3>
+    <ol class="largo">
+      <li>Una persona de 70 L de volumen está totalmente sumergida en agua. ¿Qué empuje recibe?</li>
+      <li>Un bloque de madera de 600 kg/m³ flota en agua. ¿Qué porcentaje queda sumergido?</li>
+      <li>Un cubo de hierro ($\rho = 7870$ kg/m³) de 10 cm de lado se cuelga sumergido en agua. Calcula su peso, el empuje y su peso aparente.</li>
+      <li>Un barco de 5000 toneladas flota en el mar ($\rho = 1025$ kg/m³). ¿Qué volumen de agua desaloja?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Peso aparente</h3>
+    <ol class="largo">
+      <li>Una corona pesa 7.84 N en el aire y 6.86 N sumergida en agua. ¿Cuál es su densidad? ¿Es de oro puro (19 300 kg/m³)?</li>
+      <li>Una balsa de 2 m³ de madera de 500 kg/m³. ¿Cuánta carga (en kg) puede llevar antes de hundirse por completo?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>10 000 N</span></li>
+    <li><span>784 N</span></li>
+    <li><span>2 cm</span></li>
+    <li><span>686 N</span></li>
+    <li><span>60 %</span></li>
+    <li><span>$\approx 77.1$ N; 9.8 N; $\approx 67.3$ N</span></li>
+    <li><span>$\approx 4878$ m³</span></li>
+    <li><span>8000 kg/m³; no</span></li>
+    <li><span>1000 kg</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$200\cdot\tfrac{500}{10}$.</div></div>
+    <div class="sol"><span>2</span><div>Razón de áreas $\left(\tfrac{15}{3}\right)^2 = 25$: $\tfrac{2000(9.8)}{25}$.</div></div>
+    <div class="sol"><span>3</span><div>$\tfrac{50}{25}$.</div></div>
+    <div class="sol"><span>4</span><div>$1000(9.8)(0.070)$. Muy cerca de su peso: por eso flotamos casi a ras del agua.</div></div>
+    <div class="sol"><span>5</span><div>$\tfrac{600}{1000}$.</div></div>
+    <div class="sol"><span>6</span><div>$V = 0.001$ m³. $W = 7870(9.8)(0.001)$; $E = 1000(9.8)(0.001)$.</div></div>
+    <div class="sol"><span>7</span><div>Flotando, empuje = peso: $1025\,V = 5\times 10^6$ kg.</div></div>
+    <div class="sol"><span>8</span><div>$E = 0.98$ N $\Rightarrow V = 10^{-4}$ m³. Masa $\tfrac{7.84}{9.8} = 0.8$ kg; $\rho = \tfrac{0.8}{10^{-4}}$. Es mucho menos que el oro: está mezclada.</div></div>
+    <div class="sol"><span>9</span><div>Empuje máximo (toda sumergida): $1000(2)$ kg de agua desalojada. La balsa ya pesa $500(2) = 1000$ kg; sobran 1000 kg.</div></div>
+  </div>
+</section>
