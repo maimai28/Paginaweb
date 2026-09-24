@@ -1,0 +1,172 @@
+<!-- guia
+titulo: Razones de cambio relacionadas
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo diferencial
+numero: 21
+descripcion: Cómo relacionar la rapidez con la que cambian varias cantidades a la vez: método en cinco pasos, globos que se inflan, escaleras que resbalan, tanques cónicos que se llenan, sombras, distancias entre móviles y gases.
+entrada: Cuando inflas un globo, el volumen y el radio crecen al mismo tiempo, pero no igual de rápido. Si sabes qué tan rápido entra el aire, ¿qué tan rápido crece el radio? Estos problemas se resuelven derivando una ecuación respecto al tiempo, y siguen siempre el mismo método.
+objetivo: Identificar las razones conocidas y la que se busca.
+objetivo: Encontrar una ecuación que relacione las variables.
+objetivo: Derivar respecto al tiempo con la regla de la cadena.
+objetivo: Sustituir los valores del instante indicado al final.
+objetivo: Usar triángulos semejantes para eliminar variables.
+autoeval: Escribir los datos como derivadas con respecto a $t$. | 01
+autoeval: Derivar implícitamente respecto al tiempo. | 01
+autoeval: Sustituir valores solo después de derivar. | 02
+autoeval: Usar semejanza en conos y sombras. | 03
+autoeval: Interpretar el signo de la razón obtenida. | 02
+-->
+<section>
+  <h2>El método</h2>
+  <p>Todas las cantidades dependen del tiempo $t$, y su rapidez de cambio es su derivada: si el radio crece 2 cm/s, escribes $\dfrac{dr}{dt} = 2$.</p>
+  <ol>
+    <li><strong>Dibuja</strong> y nombra con letras las cantidades que cambian.</li>
+    <li><strong>Escribe los datos</strong> como derivadas y marca la que buscas.</li>
+    <li><strong>Encuentra una ecuación</strong> que relacione las variables (geometría, Pitágoras, semejanza).</li>
+    <li><strong>Deriva respecto a $t$</strong> (implícitamente, con la cadena).</li>
+    <li><strong>Sustituye</strong> los valores del instante indicado y despeja.</li>
+  </ol>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un globo esférico se infla a 100 cm³/s. ¿Qué tan rápido crece el radio cuando mide 5 cm?</p>
+      <p class="paso">Datos: $\dfrac{dV}{dt} = 100$. Buscas $\dfrac{dr}{dt}$ cuando $r = 5$. Ecuación: $V = \tfrac{4}{3}\pi r^3$.</p>
+      $$\frac{dV}{dt} = 4\pi r^2\frac{dr}{dt} \;\Rightarrow\; 100 = 4\pi(25)\frac{dr}{dt} \;\Rightarrow\; \frac{dr}{dt} = \frac{1}{\pi} \approx 0.318 \text{ cm/s}$$
+      <p class="paso">Mientras más grande el globo, más despacio crece el radio con el mismo flujo de aire.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Pitágoras: la escalera</h2>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">2</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>Una escalera de 5 m está recargada en una pared. La base se aleja a 1 m/s. ¿Con qué rapidez baja la parte de arriba cuando la base está a 3 m?</p>
+        <p class="paso">$x^2 + y^2 = 25$. Derivando: $2x\dfrac{dx}{dt} + 2y\dfrac{dy}{dt} = 0$.</p>
+        <p class="paso">Cuando $x = 3$, $y = 4$:</p>
+        $$3(1) + 4\frac{dy}{dt} = 0 \;\Rightarrow\; \frac{dy}{dt} = -0.75 \text{ m/s}$$
+        <p class="paso">El signo menos dice que $y$ disminuye: baja a 0.75 m/s.</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 150 150" width="38mm">
+        <line x1="20" y1="10" x2="20" y2="130" stroke="#2b241e" stroke-width="3"/>
+        <line x1="10" y1="130" x2="145" y2="130" stroke="#2b241e" stroke-width="2"/>
+        <line x1="20" y1="34" x2="92" y2="130" stroke="#b5562c" stroke-width="3"/>
+        <g font-family="Nunito" font-size="11" fill="#2b241e">
+          <text x="50" y="144">x</text><text x="6" y="86">y</text><text x="62" y="76" fill="#b5562c">5 m</text>
+          <text x="96" y="122" fill="#5c7a5a">→ 1 m/s</text>
+        </g>
+      </svg>
+      <figcaption>La escalera no cambia de largo.</figcaption>
+    </figure>
+  </div>
+  <div class="nota">
+    <span class="etq">No sustituyas antes de derivar</span>
+    <p>Si pones $x = 3$ antes de derivar, $x$ se vuelve constante y su derivada sale cero. Los valores del instante van <strong>al final</strong>; solo las constantes de verdad (como los 5 m) se pueden poner desde el principio.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Semejanza: conos y sombras</h2>
+  <p>Cuando hay más variables que datos, busca triángulos semejantes para dejar la ecuación con una sola variable antes de derivar.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un tanque en forma de cono invertido tiene 2 m de radio y 4 m de altura. Entra agua a 2 m³/min. ¿Qué tan rápido sube el nivel cuando el agua tiene 3 m de profundidad?</p>
+      <p class="paso">El agua forma un cono semejante al tanque: $\dfrac{r}{h} = \dfrac{2}{4}$, así que $r = \tfrac{h}{2}$. Entonces</p>
+      $$V = \tfrac{1}{3}\pi r^2 h = \tfrac{1}{3}\pi\left(\tfrac{h}{2}\right)^2 h = \frac{\pi h^3}{12} \qquad \frac{dV}{dt} = \frac{\pi h^2}{4}\frac{dh}{dt}$$
+      $$2 = \frac{\pi(9)}{4}\frac{dh}{dt} \;\Rightarrow\; \frac{dh}{dt} = \frac{8}{9\pi} \approx 0.283 \text{ m/min}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Sustituir $x = 3$ antes de derivar</td><td class="bien">Derivar y luego sustituir</td><td>$x$ cambia; solo vale 3 en ese instante.</td></tr>
+        <tr><td class="mal">$\dfrac{d}{dt}(r^3) = 3r^2$</td><td class="bien">$3r^2\dfrac{dr}{dt}$</td><td>$r$ depende de $t$: cadena.</td></tr>
+        <tr><td class="mal">Dar la rapidez sin signo o sin unidades</td><td class="bien">Interpretar el signo y poner unidades</td><td>El signo dice si aumenta o disminuye.</td></tr>
+        <tr><td class="mal">Usar $V = \tfrac{1}{3}\pi r^2h$ con dos variables</td><td class="bien">Eliminar $r$ con semejanza</td><td>Solo conoces $\tfrac{dV}{dt}$.</td></tr>
+        <tr><td class="mal">$\dfrac{dy}{dt} = 0.75$ «sube»</td><td class="bien">$-0.75$: baja</td><td>Lee el signo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>1. Dibuja y nombra</div><div>2. Datos como $\tfrac{d}{dt}$</div><div>3. Ecuación que las relacione</div>
+      <div>4. Deriva respecto a $t$</div><div>5. Sustituye al final</div><div>Semejanza para eliminar variables</div>
+      <div>$V_{\text{esfera}} = \tfrac{4}{3}\pi r^3$</div><div>$V_{\text{cono}} = \tfrac{1}{3}\pi r^2h$</div><div>$x^2 + y^2 = L^2$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Sigue los cinco pasos en cada uno. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Figuras que crecen</h3>
+    <ol class="largo">
+      <li>El radio de un círculo crece 3 cm/s. ¿Qué tan rápido crece el área cuando $r = 10$ cm?</li>
+      <li>El lado de un cuadrado crece 2 cm/s. ¿Qué tan rápido crece el área cuando el lado mide 5 cm?</li>
+      <li>El volumen de un cubo crece 12 cm³/s. ¿Qué tan rápido crece la arista cuando mide 2 cm?</li>
+      <li>El radio de una bola de nieve disminuye 0.5 cm/min al derretirse. ¿Qué tan rápido cambia su volumen cuando $r = 6$ cm?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Pitágoras</h3>
+    <ol class="largo">
+      <li>Una escalera de 10 m resbala: su base se aleja de la pared a 2 m/s. ¿Qué tan rápido baja la punta cuando la base está a 6 m?</li>
+      <li>Dos coches salen del mismo cruce: uno hacia el norte a 60 km/h y otro hacia el este a 80 km/h. ¿Con qué rapidez aumenta la distancia entre ellos a las 2 horas?</li>
+      <li>Un avión vuela horizontalmente a 6 km de altura y 500 km/h, y pasa justo sobre un radar. ¿Con qué rapidez aumenta su distancia al radar cuando esa distancia es de 10 km?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Semejanza y otros</h3>
+    <ol class="largo">
+      <li>Un tanque cónico invertido tiene radio 3 m y altura 6 m. Entra agua a 5 m³/min. ¿Qué tan rápido sube el nivel cuando $h = 2$ m?</li>
+      <li>Una persona de 1.8 m se aleja de un farol de 6 m de alto a 1.5 m/s. ¿Qué tan rápido crece su sombra? ¿Qué tan rápido se mueve la punta de la sombra?</li>
+      <li>En un gas a temperatura constante, $PV = k$. Cuando $V = 4$ L y $P = 3$ atm, la presión aumenta 0.5 atm/s. ¿Cómo cambia el volumen?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$60\pi \approx 188.5$ cm²/s</span></li>
+    <li><span>$20$ cm²/s</span></li>
+    <li><span>$1$ cm/s</span></li>
+    <li><span>$-72\pi \approx -226.2$ cm³/min</span></li>
+    <li><span>Baja a $1.5$ m/s</span></li>
+    <li><span>$100$ km/h</span></li>
+    <li><span>$400$ km/h</span></li>
+    <li><span>$\tfrac{5}{\pi} \approx 1.59$ m/min</span></li>
+    <li><span>$\approx 0.64$ m/s y $\approx 2.14$ m/s</span></li>
+    <li><span>Disminuye $\tfrac{2}{3}$ L/s</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$A = \pi r^2$, $\dfrac{dA}{dt} = 2\pi r\dfrac{dr}{dt} = 2\pi(10)(3)$.</div></div>
+    <div class="sol"><span>3</span><div>$V = a^3$, $12 = 3a^2\dfrac{da}{dt} = 12\dfrac{da}{dt}$.</div></div>
+    <div class="sol"><span>4</span><div>$\dfrac{dV}{dt} = 4\pi r^2\dfrac{dr}{dt} = 4\pi(36)(-0.5)$. Negativo: el volumen disminuye.</div></div>
+    <div class="sol"><span>5</span><div>$x^2 + y^2 = 100$; con $x = 6$, $y = 8$. $6(2) + 8\dfrac{dy}{dt} = 0$.</div></div>
+    <div class="sol"><span>6</span><div>A las 2 h: $y = 120$, $x = 160$, $D = 200$. $D\dfrac{dD}{dt} = x\dfrac{dx}{dt} + y\dfrac{dy}{dt}$: $\dfrac{dD}{dt} = \dfrac{160(80) + 120(60)}{200} = 100$.</div></div>
+    <div class="sol"><span>7</span><div>$x^2 + 36 = D^2$; con $D = 10$, $x = 8$. $x\dfrac{dx}{dt} = D\dfrac{dD}{dt} \Rightarrow \dfrac{dD}{dt} = \dfrac{8(500)}{10}$.</div></div>
+    <div class="sol"><span>8</span><div>$r = \tfrac{h}{2}$ otra vez: $V = \dfrac{\pi h^3}{12}$. $5 = \dfrac{\pi(4)}{4}\dfrac{dh}{dt}$.</div></div>
+    <div class="sol"><span>9</span><div>Con $x$ la distancia al farol y $s$ la sombra: $\dfrac{s}{1.8} = \dfrac{x + s}{6} \Rightarrow s = \tfrac{3}{7}x$. $\dfrac{ds}{dt} = \tfrac{3}{7}(1.5) \approx 0.64$. La punta: $\dfrac{d(x + s)}{dt} = 1.5 + 0.64$.</div></div>
+    <div class="sol"><span>10</span><div>$P\dfrac{dV}{dt} + V\dfrac{dP}{dt} = 0 \Rightarrow \dfrac{dV}{dt} = -\dfrac{4(0.5)}{3}$.</div></div>
+  </div>
+</section>

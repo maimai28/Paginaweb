@@ -78,6 +78,54 @@
     "pdf": "preparatoria-matematicas-13-la-hiperbola.pdf"
   },
   {
+    "tema": "preparatoria-matematicas-limites",
+    "titulo": "Límites",
+    "descripcion": "La idea de límite, límites laterales, cuándo basta sustituir, cómo resolver la indeterminación 0/0 factorizando o racionalizando, límites al infinito, límites infinitos y asíntotas, y el límite notable de sen x / x.",
+    "pdf": "preparatoria-matematicas-14-limites.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-continuidad",
+    "titulo": "Continuidad",
+    "descripcion": "Las tres condiciones de continuidad, tipos de discontinuidad (removible, de salto e infinita), funciones por partes y cómo elegir constantes para que sean continuas, y el teorema del valor intermedio con el método de bisección.",
+    "pdf": "preparatoria-matematicas-15-continuidad.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-definicion-de-derivada",
+    "titulo": "Definición de derivada",
+    "descripcion": "De la razón de cambio promedio a la instantánea, la derivada como límite, cómo calcularla con la definición, la recta tangente, la velocidad instantánea y los casos en que una función no es derivable.",
+    "pdf": "preparatoria-matematicas-16-definicion-de-derivada.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-reglas-de-derivacion",
+    "titulo": "Reglas de derivación",
+    "descripcion": "Las reglas que evitan usar el límite cada vez: potencia, suma, producto y cociente, derivadas de funciones trigonométricas, exponenciales y logarítmicas, segundas derivadas y velocidad y aceleración.",
+    "pdf": "preparatoria-matematicas-17-reglas-de-derivacion.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-regla-de-la-cadena",
+    "titulo": "Regla de la cadena",
+    "descripcion": "Cómo derivar funciones compuestas: la idea de «derivada de afuera por derivada de adentro», potencias de expresiones, funciones trigonométricas, exponenciales y logarítmicas de expresiones, cadenas largas y combinación con producto y cociente.",
+    "pdf": "preparatoria-matematicas-18-regla-de-la-cadena.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-derivacion-implicita",
+    "titulo": "Derivación implícita",
+    "descripcion": "Cómo derivar cuando no puedes despejar y, tangentes a curvas como circunferencias y elipses, segundas derivadas implícitas, derivadas de las funciones trigonométricas inversas y derivación logarítmica para funciones como x elevada a la x.",
+    "pdf": "preparatoria-matematicas-19-derivacion-implicita.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-maximos-y-minimos",
+    "titulo": "Máximos y mínimos",
+    "descripcion": "Crecimiento y decrecimiento con la primera derivada, puntos críticos, criterios de la primera y segunda derivada, concavidad y puntos de inflexión, extremos absolutos en un intervalo cerrado y problemas de optimización paso a paso.",
+    "pdf": "preparatoria-matematicas-20-maximos-y-minimos.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-razones-de-cambio-relacionadas",
+    "titulo": "Razones de cambio relacionadas",
+    "descripcion": "Cómo relacionar la rapidez con la que cambian varias cantidades a la vez: método en cinco pasos, globos que se inflan, escaleras que resbalan, tanques cónicos que se llenan, sombras, distancias entre móviles y gases.",
+    "pdf": "preparatoria-matematicas-21-razones-de-cambio-relacionadas.pdf"
+  },
+  {
     "tema": "secundaria-fisica-posicion-distancia-y-desplazamiento",
     "titulo": "Posición, distancia y desplazamiento",
     "descripcion": "Sistema de referencia, escalares y vectores, distancia recorrida contra desplazamiento, y desplazamientos en dos direcciones con Pitágoras.",

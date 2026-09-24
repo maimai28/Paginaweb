@@ -1,0 +1,216 @@
+<!-- guia
+titulo: Límites
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo diferencial
+numero: 14
+descripcion: La idea de límite, límites laterales, cuándo basta sustituir, cómo resolver la indeterminación 0/0 factorizando o racionalizando, límites al infinito, límites infinitos y asíntotas, y el límite notable de sen x / x.
+entrada: El límite responde a una pregunta muy concreta: ¿a qué valor se acerca una función cuando la $x$ se acerca a cierto número, aunque no lleguemos a tocarlo? Es la herramienta que permite definir la derivada y la integral, así que vale la pena dominarla.
+objetivo: Entender qué significa un límite y leerlo en una tabla o gráfica.
+objetivo: Calcular límites laterales y decidir si el límite existe.
+objetivo: Resolver límites por sustitución directa.
+objetivo: Resolver la forma $\tfrac{0}{0}$ factorizando o racionalizando.
+objetivo: Calcular límites al infinito de funciones racionales.
+objetivo: Reconocer límites infinitos y asíntotas verticales.
+autoeval: Explicar qué significa $\lim_{x \to a} f(x) = L$. | 01
+autoeval: Decidir si un límite existe usando los laterales. | 02
+autoeval: Quitar un $\tfrac{0}{0}$ factorizando. | 03
+autoeval: Quitar un $\tfrac{0}{0}$ con raíces multiplicando por el conjugado. | 03
+autoeval: Comparar grados en límites al infinito. | 04
+autoeval: Usar $\lim_{x\to 0}\frac{\sin x}{x} = 1$. | 05
+-->
+<section>
+  <h2>La idea de límite</h2>
+  <div class="definicion">
+    <span class="etq">Límite</span>
+    $$\lim_{x \to a} f(x) = L$$
+    <p>significa que $f(x)$ se acerca tanto como queramos a $L$ cuando $x$ se acerca a $a$ (por los dos lados), <strong>sin importar lo que pase exactamente en $x = a$</strong>.</p>
+  </div>
+  <p>Por ejemplo, $f(x) = \dfrac{x^2 - 4}{x - 2}$ no está definida en $x = 2$, pero mira la tabla:</p>
+  <table class="leyes">
+    <thead><tr><th>$x$</th><th>1.9</th><th>1.99</th><th>1.999</th><th>2</th><th>2.001</th><th>2.01</th><th>2.1</th></tr></thead>
+    <tbody><tr><td>$f(x)$</td><td>3.9</td><td>3.99</td><td>3.999</td><td>—</td><td>4.001</td><td>4.01</td><td>4.1</td></tr></tbody>
+  </table>
+  <p>Los valores se acercan a 4, así que $\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = 4$, aunque $f(2)$ no exista. La gráfica es una recta con un hueco en $(2, 4)$.</p>
+</section>
+
+<section>
+  <h2>Límites laterales</h2>
+  <p>$\displaystyle\lim_{x \to a^-} f(x)$ es el límite acercándose <strong>por la izquierda</strong> (valores menores que $a$) y $\displaystyle\lim_{x \to a^+} f(x)$ por la <strong>derecha</strong>.</p>
+  <div class="definicion">
+    <span class="etq">Cuándo existe el límite</span>
+    <p>$\displaystyle\lim_{x \to a} f(x)$ existe si y solo si los dos laterales existen y son iguales.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Existe $\displaystyle\lim_{x \to 0} \frac{|x|}{x}$?</p>
+      <p class="paso">Para $x \gt 0$, $|x| = x$ y la función vale 1. Para $x \lt 0$, $|x| = -x$ y vale $-1$:</p>
+      $$\lim_{x \to 0^-} \frac{|x|}{x} = -1 \qquad \lim_{x \to 0^+} \frac{|x|}{x} = 1$$
+      <p class="paso">Son distintos: el límite no existe (la gráfica da un salto).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cómo calcular límites</h2>
+  <p><strong>Paso 1: sustituye.</strong> Los límites de sumas, productos, cocientes (con denominador distinto de cero) y raíces se calculan evaluando. Si sale un número, esa es la respuesta.</p>
+  <p><strong>Paso 2: si sale $\tfrac{0}{0}$</strong>, es una indeterminación: no significa nada todavía. Hay que transformar la expresión:</p>
+  <ul>
+    <li>Con polinomios: <strong>factoriza</strong> y cancela el factor que hace cero.</li>
+    <li>Con raíces: <strong>multiplica por el conjugado</strong>.</li>
+  </ul>
+  <p><strong>Paso 3: si sale $\tfrac{k}{0}$</strong> con $k \neq 0$, el límite es infinito o no existe (ve la sección de límites infinitos).</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$.</p>
+      $$\lim_{x \to 2} \frac{(x - 2)(x + 2)}{x - 2} = \lim_{x \to 2}(x + 2) = 4$$
+      <p class="paso">Cancelar está permitido porque en el límite $x \neq 2$.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\lim_{x \to 0} \frac{\sqrt{x + 9} - 3}{x}$.</p>
+      <p class="paso">Sustituir da $\tfrac{0}{0}$. Multiplica arriba y abajo por el conjugado $\sqrt{x + 9} + 3$:</p>
+      $$\frac{(x + 9) - 9}{x\left(\sqrt{x + 9} + 3\right)} = \frac{1}{\sqrt{x + 9} + 3} \;\xrightarrow{\,x \to 0\,}\; \frac{1}{6}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Límites al infinito</h2>
+  <p>$\displaystyle\lim_{x \to \infty} f(x)$ describe qué pasa cuando $x$ crece sin parar. En un cociente de polinomios mandan los términos de mayor grado:</p>
+  <table class="leyes">
+    <thead><tr><th>Si el grado de arriba es…</th><th>El límite es</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Menor que el de abajo</td><td>$0$</td><td>$\dfrac{2x + 1}{x^2 - 3} \to 0$</td></tr>
+      <tr><td>Igual</td><td>Cociente de coeficientes principales</td><td>$\dfrac{3x^2 - 5x}{2x^2 + 1} \to \dfrac{3}{2}$</td></tr>
+      <tr><td>Mayor</td><td>$\pm\infty$</td><td>$\dfrac{x^3}{x + 1} \to \infty$</td></tr>
+    </tbody>
+  </table>
+  <p>La justificación: divide todo entre la mayor potencia de $x$ del denominador; los términos $\tfrac{k}{x^n}$ se van a cero. Si el límite al infinito es un número $L$, la recta $y = L$ es una <strong>asíntota horizontal</strong>.</p>
+</section>
+
+<section>
+  <h2>Límites infinitos y límites notables</h2>
+  <p>Si el denominador se va a cero y el numerador no, la función crece sin límite. Revisa el signo por cada lado:</p>
+  $$\lim_{x \to 3^+} \frac{1}{x - 3} = +\infty \qquad\qquad \lim_{x \to 3^-} \frac{1}{x - 3} = -\infty$$
+  <p>Ahí la recta $x = 3$ es una <strong>asíntota vertical</strong>. Escribir $\infty$ no significa que el límite exista: dice <em>cómo</em> no existe.</p>
+  <div class="definicion">
+    <span class="etq">Límites trigonométricos notables ($x$ en radianes)</span>
+    $$\lim_{x \to 0} \frac{\sin x}{x} = 1 \qquad\qquad \lim_{x \to 0} \frac{1 - \cos x}{x} = 0$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\displaystyle\lim_{x \to 0} \frac{\sin 3x}{x}$.</p>
+      <p class="paso">Haz que el ángulo y el denominador coincidan multiplicando y dividiendo entre 3:</p>
+      $$\lim_{x \to 0} 3\cdot\frac{\sin 3x}{3x} = 3\cdot 1 = 3$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\tfrac{0}{0} = 0$ o $= 1$</td><td class="bien">Indeterminado: transforma</td><td>Puede dar cualquier valor.</td></tr>
+        <tr><td class="mal">Si $f(a)$ no existe, el límite tampoco</td><td class="bien">Pueden ser distintos</td><td>El límite no mira $x = a$.</td></tr>
+        <tr><td class="mal">Escribir «$\lim$» y luego olvidarlo</td><td class="bien">Escribe $\lim$ hasta evaluar</td><td>Sin él, la igualdad es falsa.</td></tr>
+        <tr><td class="mal">$\dfrac{\sin 3x}{x} = \sin 3$</td><td class="bien">$3\cdot\dfrac{\sin 3x}{3x}$</td><td>No se «cancela» la $x$ del seno.</td></tr>
+        <tr><td class="mal">$\dfrac{4x + 1}{x^2 + 3} \to 4$ en $\infty$</td><td class="bien">$\to 0$</td><td>Abajo manda un grado mayor.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>1.º sustituye</div><div>$\tfrac{0}{0}$: factoriza o conjugado</div><div>$\tfrac{k}{0}$: $\pm\infty$ o no existe</div>
+      <div>Existe $\Leftrightarrow$ laterales iguales</div><div>Al $\infty$: compara grados</div><div>$\lim = L$ en $\infty$: asíntota $y = L$</div>
+      <div>$\dfrac{\sin x}{x} \to 1$</div><div>$\dfrac{1 - \cos x}{x} \to 0$</div><div>Radianes siempre</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Sustitución directa</h3>
+    <ol>
+      <li>$\displaystyle\lim_{x \to 3}(2x^2 - x + 1)$</li><li>$\displaystyle\lim_{x \to -1}\frac{x + 5}{x - 3}$</li><li>$\displaystyle\lim_{x \to 4}\sqrt{x + 5}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Forma $\tfrac{0}{0}$</h3>
+    <ol>
+      <li>$\displaystyle\lim_{x \to 3}\frac{x^2 - 9}{x - 3}$</li><li>$\displaystyle\lim_{x \to 1}\frac{x^2 + 2x - 3}{x^2 - 1}$</li><li>$\displaystyle\lim_{x \to -2}\frac{x^3 + 8}{x + 2}$</li>
+      <li>$\displaystyle\lim_{x \to 4}\frac{\sqrt{x} - 2}{x - 4}$</li><li>$\displaystyle\lim_{h \to 0}\frac{(2 + h)^2 - 4}{h}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Al infinito</h3>
+    <ol>
+      <li>$\displaystyle\lim_{x \to \infty}\frac{5x^3 - 2x}{2x^3 + 7}$</li><li>$\displaystyle\lim_{x \to \infty}\frac{4x + 1}{x^2 + 3}$</li>
+      <li>$\displaystyle\lim_{x \to \infty}\frac{x^2 - 1}{3x + 2}$</li><li>$\displaystyle\lim_{x \to \infty}\frac{\sqrt{x^2 + 1}}{2x}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Laterales, infinitos y notables</h3>
+    <ol class="largo">
+      <li>$f(x) = x + 1$ si $x \lt 2$ y $f(x) = x^2 - 1$ si $x \geq 2$. Calcula $\displaystyle\lim_{x \to 2} f(x)$.</li>
+      <li>$g(x) = 2x$ si $x \lt 1$ y $g(x) = x + 3$ si $x \geq 1$. ¿Existe $\displaystyle\lim_{x \to 1} g(x)$?</li>
+      <li>$\displaystyle\lim_{x \to 5^-}\frac{3}{x - 5}$</li>
+      <li>$\displaystyle\lim_{x \to 0}\frac{\sin 5x}{2x}$</li>
+      <li>$\displaystyle\lim_{x \to 0}\frac{\tan x}{x}$</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$16$</span></li>
+    <li><span>$-1$</span></li>
+    <li><span>$3$</span></li>
+    <li><span>$6$</span></li>
+    <li><span>$2$</span></li>
+    <li><span>$12$</span></li>
+    <li><span>$\tfrac{1}{4}$</span></li>
+    <li><span>$4$</span></li>
+    <li><span>$\tfrac{5}{2}$</span></li>
+    <li><span>$0$</span></li>
+    <li><span>$\infty$</span></li>
+    <li><span>$\tfrac{1}{2}$</span></li>
+    <li><span>$3$</span></li>
+    <li><span>No existe (2 y 4)</span></li>
+    <li><span>$-\infty$</span></li>
+    <li><span>$\tfrac{5}{2}$</span></li>
+    <li><span>$1$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$\dfrac{-1 + 5}{-1 - 3} = \dfrac{4}{-4}$.</div></div>
+    <div class="sol"><span>5</span><div>$\dfrac{(x + 3)(x - 1)}{(x + 1)(x - 1)} = \dfrac{x + 3}{x + 1} \to \dfrac{4}{2}$.</div></div>
+    <div class="sol"><span>6</span><div>Suma de cubos: $x^3 + 8 = (x + 2)(x^2 - 2x + 4)$. En $-2$: $4 + 4 + 4 = 12$.</div></div>
+    <div class="sol"><span>7</span><div>Conjugado: $\dfrac{x - 4}{(x - 4)(\sqrt{x} + 2)} = \dfrac{1}{\sqrt{x} + 2} \to \dfrac{1}{4}$.</div></div>
+    <div class="sol"><span>8</span><div>$\dfrac{4 + 4h + h^2 - 4}{h} = 4 + h \to 4$. Es la derivada de $x^2$ en 2 (lo verás en la guía 16).</div></div>
+    <div class="sol"><span>11</span><div>Arriba grado 2, abajo grado 1: crece sin límite, con signo positivo.</div></div>
+    <div class="sol"><span>12</span><div>Para $x \gt 0$: $\dfrac{\sqrt{x^2 + 1}}{2x} = \dfrac{\sqrt{1 + 1/x^2}}{2} \to \dfrac{1}{2}$.</div></div>
+    <div class="sol"><span>13</span><div>Izquierda: $2 + 1 = 3$. Derecha: $4 - 1 = 3$. Coinciden.</div></div>
+    <div class="sol"><span>14</span><div>Izquierda: $2(1) = 2$. Derecha: $1 + 3 = 4$. Son distintos.</div></div>
+    <div class="sol"><span>15</span><div>Si $x \lt 5$, $x - 5$ es un negativo muy pequeño: $\tfrac{3}{\text{negativo pequeño}} \to -\infty$.</div></div>
+    <div class="sol"><span>16</span><div>$\dfrac{5}{2}\cdot\dfrac{\sin 5x}{5x} \to \dfrac{5}{2}\cdot 1$.</div></div>
+    <div class="sol"><span>17</span><div>$\dfrac{\tan x}{x} = \dfrac{\sin x}{x}\cdot\dfrac{1}{\cos x} \to 1\cdot 1$.</div></div>
+  </div>
+</section>

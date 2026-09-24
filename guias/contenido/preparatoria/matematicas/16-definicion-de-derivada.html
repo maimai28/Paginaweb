@@ -1,0 +1,229 @@
+<!-- guia
+titulo: Definición de derivada
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo diferencial
+numero: 16
+descripcion: De la razón de cambio promedio a la instantánea, la derivada como límite, cómo calcularla con la definición, la recta tangente, la velocidad instantánea y los casos en que una función no es derivable.
+entrada: ¿Qué tan rápido va un coche justo ahora, en este instante? Con un solo instante no hay distancia ni tiempo que dividir. La derivada resuelve ese problema con un límite, y con ella nace el cálculo diferencial.
+objetivo: Calcular razones de cambio promedio.
+objetivo: Entender la derivada como límite de pendientes de secantes.
+objetivo: Calcular derivadas con la definición.
+objetivo: Encontrar la recta tangente en un punto.
+objetivo: Interpretar la derivada como velocidad o tasa de cambio.
+objetivo: Reconocer dónde una función no es derivable.
+autoeval: Calcular una razón de cambio promedio. | 01
+autoeval: Escribir la definición de derivada como límite. | 02
+autoeval: Derivar con la definición, incluyendo cocientes y raíces. | 03
+autoeval: Escribir la ecuación de la recta tangente. | 04
+autoeval: Explicar por qué $|x|$ no es derivable en 0. | 05
+-->
+<section>
+  <h2>Razón de cambio promedio</h2>
+  <p>Entre $x = a$ y $x = b$, una función cambia en promedio</p>
+  $$\frac{f(b) - f(a)}{b - a}$$
+  <p>unidades de $f$ por cada unidad de $x$. Geométricamente es la pendiente de la <strong>recta secante</strong> que une $(a, f(a))$ y $(b, f(b))$. Si $f$ es posición y $x$ es tiempo, es la velocidad media.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Para $f(x) = x^2$, calcula la razón de cambio promedio entre $x = 1$ y $x = 3$.</p>
+      $$\frac{f(3) - f(1)}{3 - 1} = \frac{9 - 1}{2} = 4$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>La derivada</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Si acercas el segundo punto al primero, la secante gira y se convierte en la <strong>recta tangente</strong>. Su pendiente es la razón de cambio <strong>instantánea</strong>.</p>
+      <div class="definicion">
+        <span class="etq">Derivada</span>
+        $$f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$$
+        <p>si el límite existe. Otras notaciones: $\dfrac{dy}{dx}$, $\dfrac{d}{dx}f(x)$, $y'$.</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 180 176" width="46mm">
+        <line x1="10" y1="150" x2="175" y2="150" stroke="#2b241e" stroke-width="1"/>
+        <line x1="30" y1="5" x2="30" y2="170" stroke="#2b241e" stroke-width="1"/>
+        <path d="M18.0 148.9 L21.6 149.5 L25.2 149.8 L28.8 150.0 L32.4 150.0 L36.0 149.7 L39.6 149.3 L43.2 148.7 L46.8 147.9 L50.4 146.9 L54.0 145.7 L57.6 144.3 L61.2 142.7 L64.8 140.9 L68.4 138.9 L72.0 136.8 L75.6 134.4 L79.2 131.8 L82.8 129.1 L86.4 126.1 L90.0 123.0 L93.6 119.7 L97.2 116.1 L100.8 112.4 L104.4 108.5 L108.0 104.4 L111.6 100.1 L115.2 95.6 L118.8 90.9 L122.4 86.0 L126.0 80.9 L129.6 75.6 L133.2 70.1 L136.8 64.5 L140.4 58.6 L144.0 52.5 L147.6 46.3 L151.2 39.8 L154.8 33.2 L158.4 26.4 L162.0 19.3" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="55" y1="156" x2="165" y2="24" stroke="#8a7a66" stroke-width="1.4" stroke-dasharray="5 3"/>
+        <line x1="20" y1="168" x2="160" y2="84" stroke="#5c7a5a" stroke-width="1.8"/>
+        <circle cx="70" cy="138" r="3" fill="#2b241e"/><circle cx="150" cy="42" r="3" fill="#2b241e"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="72" y="130">P</text><text x="136" y="40">Q</text>
+          <text x="84" y="60" fill="#8a7a66">secante</text><text x="126" y="128" fill="#5c7a5a">tangente</text>
+        </g>
+      </svg>
+      <figcaption>Cuando $Q$ se acerca a $P$, la secante tiende a la tangente.</figcaption>
+    </figure>
+  </div>
+  <p>Aquí $h$ es la distancia horizontal entre los dos puntos. El cociente $\dfrac{f(x + h) - f(x)}{h}$ siempre da $\tfrac{0}{0}$ al sustituir $h = 0$, así que hay que simplificar primero: la $h$ de abajo debe cancelarse.</p>
+</section>
+
+<section>
+  <h2>Derivar con la definición</h2>
+  <p>El procedimiento es siempre el mismo: calcula $f(x + h)$, resta $f(x)$, simplifica hasta sacar $h$ de factor común, cancela y haz $h \to 0$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $f(x) = x^2$.</p>
+      $$\frac{(x + h)^2 - x^2}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = \frac{h(2x + h)}{h} = 2x + h \;\xrightarrow{\,h \to 0\,}\; 2x$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $f(x) = \dfrac{1}{x}$.</p>
+      <p class="paso">Resta las fracciones antes de dividir entre $h$:</p>
+      $$\frac{\frac{1}{x + h} - \frac{1}{x}}{h} = \frac{x - (x + h)}{h\,x(x + h)} = \frac{-1}{x(x + h)} \;\xrightarrow{\,h \to 0\,}\; -\frac{1}{x^2}$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $f(x) = \sqrt{x}$.</p>
+      <p class="paso">Multiplica por el conjugado:</p>
+      $$\frac{\sqrt{x + h} - \sqrt{x}}{h}\cdot\frac{\sqrt{x + h} + \sqrt{x}}{\sqrt{x + h} + \sqrt{x}} = \frac{1}{\sqrt{x + h} + \sqrt{x}} \;\xrightarrow{\,h \to 0\,}\; \frac{1}{2\sqrt{x}}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tangente y velocidad</h2>
+  <p>La recta tangente a $y = f(x)$ en $x = a$ pasa por $(a, f(a))$ con pendiente $f'(a)$:</p>
+  $$y - f(a) = f'(a)(x - a)$$
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra la tangente a $y = x^2$ en $x = 3$.</p>
+      <p class="paso">Punto $(3, 9)$, pendiente $f'(3) = 2(3) = 6$:</p>
+      $$y - 9 = 6(x - 3) \;\Rightarrow\; y = 6x - 9$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">6</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un objeto se mueve con posición $s(t) = 5t^2$ metros ($t$ en segundos). ¿Qué velocidad tiene en $t = 2$?</p>
+      <p class="paso">Por el ejemplo 2, $s'(t) = 5\cdot 2t = 10t$. En $t = 2$: $v = 20$ m/s. La derivada de la posición es la velocidad.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Dónde no hay derivada</h2>
+  <p>Si $f$ es derivable en $a$, entonces es continua en $a$. Pero una función continua puede no ser derivable. Los tres casos típicos:</p>
+  <table class="leyes">
+    <thead><tr><th>Caso</th><th>Qué pasa</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Pico o esquina</td><td>Las pendientes por cada lado no coinciden</td><td>$|x|$ en $x = 0$: $-1$ y $1$</td></tr>
+      <tr><td>Tangente vertical</td><td>La pendiente se va a infinito</td><td>$\sqrt[3]{x}$ en $x = 0$</td></tr>
+      <tr><td>Discontinuidad</td><td>Si no es continua, no puede ser derivable</td><td>$\dfrac{|x|}{x}$ en $x = 0$</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$f(x + h) = f(x) + h$</td><td class="bien">Sustituye $x + h$ en la fórmula</td><td>Para $x^2$ es $(x + h)^2$.</td></tr>
+        <tr><td class="mal">Hacer $h = 0$ antes de cancelar</td><td class="bien">Cancelar primero</td><td>Si no, queda $\tfrac{0}{0}$.</td></tr>
+        <tr><td class="mal">Tangente $y = f'(x)(x - a) + f(a)$</td><td class="bien">Con $f'(a)$, un número</td><td>La pendiente de una recta es constante.</td></tr>
+        <tr><td class="mal">Continua $\Rightarrow$ derivable</td><td class="bien">Al revés</td><td>$|x|$ es continua y no derivable en 0.</td></tr>
+        <tr><td class="mal">Olvidar el paréntesis en $-(x + h)$</td><td class="bien">$x - (x + h) = -h$</td><td>Error típico al restar fracciones.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Promedio: $\dfrac{f(b) - f(a)}{b - a}$</div><div>$f'(x) = \displaystyle\lim_{h \to 0}\frac{f(x + h) - f(x)}{h}$</div><div>Cancela la $h$ y luego $h \to 0$</div>
+      <div>$(x^2)' = 2x$</div><div>$\left(\tfrac{1}{x}\right)' = -\tfrac{1}{x^2}$</div><div>$(\sqrt{x})' = \tfrac{1}{2\sqrt{x}}$</div>
+      <div>Tangente: $y - f(a) = f'(a)(x - a)$</div><div>$s'(t) = v(t)$</div><div>Derivable $\Rightarrow$ continua</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>En los bloques B y C usa la definición con límite, no reglas. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Razón de cambio promedio</h3>
+    <ol class="largo">
+      <li>$f(x) = x^3$ entre $x = 1$ y $x = 2$.</li>
+      <li>$f(x) = 3x + 2$ entre $x = -1$ y $x = 4$.</li>
+      <li>Una piedra cae con $s(t) = 4.9t^2$ metros. Velocidad media entre $t = 1$ y $t = 3$ s.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Deriva con la definición</h3>
+    <ol>
+      <li>$f(x) = 5x - 3$</li><li>$f(x) = x^2 + 3x$</li><li>$f(x) = 2x^2 - x$</li>
+      <li>$f(x) = \dfrac{3}{x}$</li><li>$f(x) = \sqrt{x + 1}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Rectas tangentes</h3>
+    <ol class="largo">
+      <li>Tangente a $y = x^2 + 3x$ en $x = 1$.</li>
+      <li>Tangente a $y = \dfrac{3}{x}$ en $x = 3$.</li>
+      <li>¿En qué punto de $y = x^2$ la tangente tiene pendiente 8?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Interpretación</h3>
+    <ol class="largo">
+      <li>Con $s(t) = 4.9t^2$, ¿qué velocidad lleva la piedra en $t = 3$ s?</li>
+      <li>¿Es derivable $f(x) = |x|$ en $x = 0$? Justifica con los laterales.</li>
+      <li>Fabricar $x$ piezas cuesta $C(x) = 0.02x^2 + 50x$ pesos. Calcula $C'(100)$ e interprétalo.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$7$</span></li>
+    <li><span>$3$</span></li>
+    <li><span>$19.6$ m/s</span></li>
+    <li><span>$5$</span></li>
+    <li><span>$2x + 3$</span></li>
+    <li><span>$4x - 1$</span></li>
+    <li><span>$-\dfrac{3}{x^2}$</span></li>
+    <li><span>$\dfrac{1}{2\sqrt{x + 1}}$</span></li>
+    <li><span>$y = 5x - 1$</span></li>
+    <li><span>$y = -\tfrac{1}{3}x + 2$</span></li>
+    <li><span>$(4, 16)$</span></li>
+    <li><span>$29.4$ m/s</span></li>
+    <li><span>No</span></li>
+    <li><span>54 pesos por pieza</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\dfrac{8 - 1}{2 - 1} = 7$.</div></div>
+    <div class="sol"><span>3</span><div>$\dfrac{4.9(9) - 4.9(1)}{3 - 1} = \dfrac{44.1 - 4.9}{2}$.</div></div>
+    <div class="sol"><span>4</span><div>$\dfrac{5(x + h) - 3 - (5x - 3)}{h} = \dfrac{5h}{h} = 5$. Una recta tiene la misma pendiente en todos lados.</div></div>
+    <div class="sol"><span>5</span><div>$\dfrac{2xh + h^2 + 3h}{h} = 2x + h + 3 \to 2x + 3$.</div></div>
+    <div class="sol"><span>6</span><div>$\dfrac{2(x + h)^2 - (x + h) - 2x^2 + x}{h} = \dfrac{4xh + 2h^2 - h}{h} = 4x + 2h - 1$.</div></div>
+    <div class="sol"><span>7</span><div>$\dfrac{\frac{3}{x + h} - \frac{3}{x}}{h} = \dfrac{-3h}{h\,x(x + h)} \to -\dfrac{3}{x^2}$.</div></div>
+    <div class="sol"><span>8</span><div>Conjugado: $\dfrac{(x + h + 1) - (x + 1)}{h\left(\sqrt{x + h + 1} + \sqrt{x + 1}\right)} \to \dfrac{1}{2\sqrt{x + 1}}$.</div></div>
+    <div class="sol"><span>9</span><div>Punto $(1, 4)$ y pendiente $2 + 3 = 5$: $y - 4 = 5(x - 1)$.</div></div>
+    <div class="sol"><span>10</span><div>Punto $(3, 1)$ y pendiente $-\tfrac{3}{9} = -\tfrac{1}{3}$: $y - 1 = -\tfrac{1}{3}(x - 3)$.</div></div>
+    <div class="sol"><span>11</span><div>$2x = 8 \Rightarrow x = 4$, y $y = 16$.</div></div>
+    <div class="sol"><span>12</span><div>$s'(t) = 9.8t$ (igual que en el ejemplo 2, por 4.9). En $t = 3$: $29.4$. Es justo $g\cdot t$.</div></div>
+    <div class="sol"><span>13</span><div>$\displaystyle\lim_{h \to 0^+}\frac{|h|}{h} = 1$ y $\displaystyle\lim_{h \to 0^-}\frac{|h|}{h} = -1$: distintos, no hay derivada.</div></div>
+    <div class="sol"><span>14</span><div>$C'(x) = 0.04x + 50$, así que $C'(100) = 54$: producir la pieza 101 cuesta aproximadamente 54 pesos más.</div></div>
+  </div>
+</section>

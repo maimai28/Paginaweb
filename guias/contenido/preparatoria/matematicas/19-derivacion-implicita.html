@@ -1,0 +1,197 @@
+<!-- guia
+titulo: Derivación implícita
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo diferencial
+numero: 19
+descripcion: Cómo derivar cuando no puedes despejar y, tangentes a curvas como circunferencias y elipses, segundas derivadas implícitas, derivadas de las funciones trigonométricas inversas y derivación logarítmica para funciones como x elevada a la x.
+entrada: No todas las curvas se pueden escribir como $y = f(x)$. En $x^3 + y^3 = 6xy$ no hay forma cómoda de despejar $y$, pero la curva tiene tangentes en cada punto. La derivación implícita te las da sin despejar nada.
+objetivo: Derivar ecuaciones con $x$ y $y$ mezcladas.
+objetivo: Encontrar pendientes y rectas tangentes a curvas implícitas.
+objetivo: Calcular segundas derivadas implícitas.
+objetivo: Deducir y usar las derivadas de $\arcsin$ y $\arctan$.
+objetivo: Usar la derivación logarítmica.
+autoeval: Multiplicar por $y'$ cada vez que derivas algo con $y$. | 01
+autoeval: Usar la regla del producto en términos como $x^2y$. | 02
+autoeval: Evaluar la pendiente en un punto de la curva. | 02
+autoeval: Derivar $\arcsin u$ y $\arctan u$. | 04
+autoeval: Derivar $x^x$ con logaritmos. | 05
+-->
+<section>
+  <h2>La idea</h2>
+  <p>Piensa que $y$ es una función de $x$, aunque no la conozcas. Entonces cada término con $y$ se deriva con la <strong>regla de la cadena</strong>: $\dfrac{d}{dx}(y^2) = 2y\,y'$, $\dfrac{d}{dx}(\sin y) = \cos y\cdot y'$.</p>
+  <div class="definicion">
+    <span class="etq">Método</span>
+    <ol>
+      <li>Deriva los dos lados de la ecuación respecto a $x$.</li>
+      <li>Cada vez que derives algo con $y$, multiplica por $y'$.</li>
+      <li>Junta los términos con $y'$ de un lado, factoriza y despeja.</li>
+    </ol>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra $y'$ en $x^2 + y^2 = 25$ y la pendiente en $(3, 4)$.</p>
+      $$2x + 2y\,y' = 0 \;\Rightarrow\; y' = -\frac{x}{y} \qquad\qquad y'\big|_{(3,4)} = -\frac{3}{4}$$
+      <p class="paso">Coincide con lo que sabías de la guía 10: la tangente es perpendicular al radio, cuya pendiente es $\tfrac{4}{3}$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Productos y tangentes</h2>
+  <p>Un término como $x^2y$ es un producto de dos funciones de $x$: $\dfrac{d}{dx}(x^2y) = 2x\,y + x^2y'$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra la pendiente de $x^2y + y^3 = 10$ en el punto $(1, 2)$.</p>
+      <p class="paso">Comprueba que el punto está en la curva: $2 + 8 = 10$ ✔. Deriva:</p>
+      $$2xy + x^2y' + 3y^2y' = 0 \;\Rightarrow\; y' = -\frac{2xy}{x^2 + 3y^2}$$
+      <p class="paso">En $(1, 2)$: $y' = -\dfrac{4}{1 + 12} = -\dfrac{4}{13}$.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>La curva $x^3 + y^3 = 6xy$ (el «folio de Descartes») pasa por $(3, 3)$. Encuentra su tangente ahí.</p>
+      $$3x^2 + 3y^2y' = 6y + 6xy' \;\Rightarrow\; y' = \frac{2y - x^2}{y^2 - 2x}$$
+      <p class="paso">En $(3, 3)$: $y' = \dfrac{6 - 9}{9 - 6} = -1$. Tangente: $y - 3 = -(x - 3)$, o sea $y = -x + 6$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Segunda derivada implícita</h2>
+  <p>Deriva otra vez la expresión de $y'$ (con la regla del cociente, y $y'$ donde aparezca $y$) y sustituye $y'$ por lo que ya encontraste.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra $y''$ en $x^2 + y^2 = 25$.</p>
+      $$y'' = \frac{d}{dx}\left(-\frac{x}{y}\right) = -\frac{y - x\,y'}{y^2} = -\frac{y + \frac{x^2}{y}}{y^2} = -\frac{y^2 + x^2}{y^3} = -\frac{25}{y^3}$$
+      <p class="paso">En el último paso se usó la ecuación original: $x^2 + y^2 = 25$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Trigonométricas inversas</h2>
+  <p>Si $y = \arcsin x$, entonces $\sin y = x$. Derivando implícitamente: $\cos y\cdot y' = 1$, y como $\cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - x^2}$:</p>
+  <table class="leyes">
+    <thead><tr><th>Función</th><th>Derivada</th></tr></thead>
+    <tbody>
+      <tr><td>$\arcsin u$</td><td>$\dfrac{u'}{\sqrt{1 - u^2}}$</td></tr>
+      <tr><td>$\arccos u$</td><td>$-\dfrac{u'}{\sqrt{1 - u^2}}$</td></tr>
+      <tr><td>$\arctan u$</td><td>$\dfrac{u'}{1 + u^2}$</td></tr>
+    </tbody>
+  </table>
+  <p>Las vas a necesitar en cálculo integral: $\dfrac{1}{1 + x^2}$ tiene como antiderivada a $\arctan x$.</p>
+</section>
+
+<section>
+  <h2>Derivación logarítmica</h2>
+  <p>Para funciones con la variable en la base <strong>y</strong> en el exponente, como $x^x$, ninguna regla sirve directo. Saca logaritmo, deriva implícitamente y despeja.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $y = x^x$ ($x \gt 0$).</p>
+      $$\ln y = x\ln x \;\Rightarrow\; \frac{y'}{y} = \ln x + 1 \;\Rightarrow\; y' = x^x(\ln x + 1)$$
+    </div>
+  </div>
+  <p>También sirve para productos y cocientes largos: el logaritmo los convierte en sumas.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$(y^2)' = 2y$</td><td class="bien">$2y\,y'$</td><td>$y$ depende de $x$: cadena.</td></tr>
+        <tr><td class="mal">$(xy)' = y'$</td><td class="bien">$y + x\,y'$</td><td>Es un producto.</td></tr>
+        <tr><td class="mal">$(25)' = 25$</td><td class="bien">$0$</td><td>La derivada de una constante es cero.</td></tr>
+        <tr><td class="mal">$(x^x)' = x\cdot x^{x - 1}$</td><td class="bien">$x^x(\ln x + 1)$</td><td>El exponente no es constante.</td></tr>
+        <tr><td class="mal">Evaluar en un punto que no está en la curva</td><td class="bien">Comprobar primero</td><td>La pendiente no tendría sentido.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Deriva ambos lados</div><div>Con $y$: multiplica por $y'$</div><div>Junta $y'$ y factoriza</div>
+      <div>$(y^n)' = ny^{n - 1}y'$</div><div>$(xy)' = y + xy'$</div><div>$x^2 + y^2 = r^2$: $y' = -\tfrac{x}{y}$</div>
+      <div>$(\arcsin x)' = \dfrac{1}{\sqrt{1 - x^2}}$</div><div>$(\arctan x)' = \dfrac{1}{1 + x^2}$</div><div>$x^x$: saca $\ln$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Encuentra $y'$</h3>
+    <ol>
+      <li>$x^2 + y^2 = 16$</li><li>$4x^2 + 9y^2 = 36$</li><li>$xy = 12$</li>
+      <li>$x^2y + xy^2 = 6$</li><li>$y^3 - 3y = x^2$</li><li>$e^y = x + y$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Tangentes</h3>
+    <ol class="largo">
+      <li>Tangente a $x^2 + y^2 = 25$ en $(-3, 4)$, en forma general.</li>
+      <li>Tangente a $x^2 - xy + y^2 = 7$ en $(3, 2)$.</li>
+      <li>¿En qué puntos de $x^2 + y^2 = 25$ la tangente es horizontal?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Inversas y logarítmica</h3>
+    <ol>
+      <li>$y = \arctan 2x$</li><li>$y = \arcsin\dfrac{x}{3}$</li><li>$y = x^{\sin x}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Segunda derivada</h3>
+    <ol>
+      <li>$y''$ en $x^2 + y^2 = 4$</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$-\dfrac{x}{y}$</span></li>
+    <li><span>$-\dfrac{4x}{9y}$</span></li>
+    <li><span>$-\dfrac{y}{x}$</span></li>
+    <li><span>$-\dfrac{2xy + y^2}{x^2 + 2xy}$</span></li>
+    <li><span>$\dfrac{2x}{3y^2 - 3}$</span></li>
+    <li><span>$\dfrac{1}{e^y - 1}$</span></li>
+    <li><span>$3x - 4y + 25 = 0$</span></li>
+    <li><span>$y = -4x + 14$</span></li>
+    <li><span>$(0, 5)$ y $(0, -5)$</span></li>
+    <li><span>$\dfrac{2}{1 + 4x^2}$</span></li>
+    <li><span>$\dfrac{1}{\sqrt{9 - x^2}}$</span></li>
+    <li><span>$x^{\sin x}\left(\cos x\ln x + \dfrac{\sin x}{x}\right)$</span></li>
+    <li><span>$-\dfrac{4}{y^3}$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$8x + 18y\,y' = 0$.</div></div>
+    <div class="sol"><span>3</span><div>$y + x\,y' = 0$. (También: $y = \tfrac{12}{x}$, $y' = -\tfrac{12}{x^2} = -\tfrac{y}{x}$.)</div></div>
+    <div class="sol"><span>4</span><div>$2xy + x^2y' + y^2 + 2xy\,y' = 0 \Rightarrow y'(x^2 + 2xy) = -(2xy + y^2)$.</div></div>
+    <div class="sol"><span>5</span><div>$3y^2y' - 3y' = 2x$.</div></div>
+    <div class="sol"><span>6</span><div>$e^y y' = 1 + y' \Rightarrow y'(e^y - 1) = 1$.</div></div>
+    <div class="sol"><span>7</span><div>$y' = -\tfrac{x}{y} = \tfrac{3}{4}$. $y - 4 = \tfrac{3}{4}(x + 3) \Rightarrow 4y - 16 = 3x + 9$.</div></div>
+    <div class="sol"><span>8</span><div>$2x - y - xy' + 2yy' = 0 \Rightarrow y' = \dfrac{y - 2x}{2y - x}$. En $(3, 2)$: $\dfrac{-4}{1}$. $y - 2 = -4(x - 3)$.</div></div>
+    <div class="sol"><span>9</span><div>$y' = -\tfrac{x}{y} = 0$ cuando $x = 0$; en la curva, $y = \pm 5$.</div></div>
+    <div class="sol"><span>11</span><div>$\dfrac{1/3}{\sqrt{1 - x^2/9}} = \dfrac{1/3}{\frac{1}{3}\sqrt{9 - x^2}}$.</div></div>
+    <div class="sol"><span>12</span><div>$\ln y = \sin x\ln x \Rightarrow \dfrac{y'}{y} = \cos x\ln x + \dfrac{\sin x}{x}$.</div></div>
+    <div class="sol"><span>13</span><div>Igual que el ejemplo 4 con $r^2 = 4$: $y'' = -\dfrac{x^2 + y^2}{y^3}$.</div></div>
+  </div>
+</section>

@@ -1,0 +1,200 @@
+<!-- guia
+titulo: Continuidad
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo diferencial
+numero: 15
+descripcion: Las tres condiciones de continuidad, tipos de discontinuidad (removible, de salto e infinita), funciones por partes y cómo elegir constantes para que sean continuas, y el teorema del valor intermedio con el método de bisección.
+entrada: Intuitivamente, una función continua es la que puedes dibujar sin levantar el lápiz. Aquí conviertes esa idea en una prueba de tres pasos, aprendes a clasificar los «brincos» y usas la continuidad para garantizar que una ecuación tiene solución aunque no sepas despejarla.
+objetivo: Aplicar la definición de continuidad en un punto.
+objetivo: Clasificar discontinuidades.
+objetivo: Estudiar la continuidad de funciones por partes.
+objetivo: Encontrar constantes que hacen continua una función.
+objetivo: Usar el teorema del valor intermedio y la bisección.
+autoeval: Revisar las tres condiciones de continuidad. | 01
+autoeval: Distinguir una discontinuidad removible de una de salto o infinita. | 02
+autoeval: Encontrar $k$ para que una función por partes sea continua. | 03
+autoeval: Justificar que una ecuación tiene raíz en un intervalo. | 04
+-->
+<section>
+  <h2>Definición</h2>
+  <div class="definicion">
+    <span class="etq">Continuidad en un punto</span>
+    <p>$f$ es continua en $x = a$ si se cumplen las <strong>tres</strong> condiciones:</p>
+    <ol>
+      <li>$f(a)$ existe;</li>
+      <li>$\displaystyle\lim_{x \to a} f(x)$ existe;</li>
+      <li>son iguales: $\displaystyle\lim_{x \to a} f(x) = f(a)$.</li>
+    </ol>
+  </div>
+  <p>Una función es continua en un intervalo si lo es en cada punto. Los polinomios, $\sin x$, $\cos x$, $e^x$ son continuos en todos los reales; los cocientes lo son donde el denominador no vale cero; las raíces y logaritmos, en su dominio.</p>
+</section>
+
+<section>
+  <h2>Tipos de discontinuidad</h2>
+  <table class="leyes">
+    <thead><tr><th>Tipo</th><th>Qué pasa</th><th>Ejemplo en $x = a$</th></tr></thead>
+    <tbody>
+      <tr><td>Removible</td><td>El límite existe, pero $f(a)$ no existe o es otro valor. Es un «hueco».</td><td>$\dfrac{x^2 - 1}{x - 1}$ en $x = 1$</td></tr>
+      <tr><td>De salto</td><td>Los laterales existen pero son distintos.</td><td>$\dfrac{|x|}{x}$ en $x = 0$</td></tr>
+      <tr><td>Infinita</td><td>Algún lateral es $\pm\infty$ (asíntota vertical).</td><td>$\dfrac{1}{(x - 2)^2}$ en $x = 2$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Estudia $f(x) = \dfrac{x^2 - 1}{x - 1}$ en $x = 1$.</p>
+      <p class="paso">$f(1)$ no existe (divide entre 0), pero $\displaystyle\lim_{x \to 1}\frac{(x - 1)(x + 1)}{x - 1} = 2$.</p>
+      <p class="paso">Es <strong>removible</strong>: si defines $f(1) = 2$, la función queda continua.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Cómo distinguirlas en un cociente</span>
+    <p>Si el denominador se anula en $a$: factoriza. Si el factor se cancela, es removible; si queda abajo, es infinita.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Funciones por partes</h2>
+  <p>Cada pedazo suele ser continuo; el único punto sospechoso es donde cambia la fórmula. Ahí compara el límite por la izquierda (con la fórmula de la izquierda), por la derecha y el valor de la función.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra $k$ para que sea continua:</p>
+      $$f(x) = \begin{cases} kx + 1 & x \lt 2 \\ x^2 - k & x \geq 2 \end{cases}$$
+      <p class="paso">Por la izquierda: $2k + 1$. Por la derecha y en $x = 2$: $4 - k$. Iguala:</p>
+      $$2k + 1 = 4 - k \;\Rightarrow\; 3k = 3 \;\Rightarrow\; k = 1$$
+      <p class="paso">Comprueba: los dos lados valen 3.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Teorema del valor intermedio</h2>
+  <div class="definicion">
+    <span class="etq">Teorema del valor intermedio (TVI)</span>
+    <p>Si $f$ es continua en $[a, b]$ y $N$ es cualquier número entre $f(a)$ y $f(b)$, entonces existe al menos un $c$ en $(a, b)$ con $f(c) = N$.</p>
+  </div>
+  <p>El caso más útil: si $f(a)$ y $f(b)$ tienen <strong>signos opuestos</strong>, la ecuación $f(x) = 0$ tiene al menos una raíz entre $a$ y $b$.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Muestra que $x^3 + x - 1 = 0$ tiene una solución entre 0 y 1, y acórtala.</p>
+      <p class="paso">$f(x) = x^3 + x - 1$ es un polinomio, continuo. $f(0) = -1 \lt 0$ y $f(1) = 1 \gt 0$: hay una raíz en $(0, 1)$.</p>
+      <p class="paso"><strong>Bisección:</strong> evalúa en el punto medio y quédate con la mitad donde cambia el signo.</p>
+      <table class="leyes">
+        <thead><tr><th>Intervalo</th><th>Punto medio</th><th>$f$ en el medio</th><th>Nuevo intervalo</th></tr></thead>
+        <tbody>
+          <tr><td>$[0, 1]$</td><td>$0.5$</td><td>$-0.375$</td><td>$[0.5, 1]$</td></tr>
+          <tr><td>$[0.5, 1]$</td><td>$0.75$</td><td>$0.171875$</td><td>$[0.5, 0.75]$</td></tr>
+        </tbody>
+      </table>
+      <p class="paso">Cada paso parte el error a la mitad. (La raíz es $\approx 0.6823$.)</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Sin continuidad no hay garantía</span>
+    <p>$f(x) = \dfrac{1}{x}$ cambia de signo entre $-1$ y $1$, pero nunca vale cero: no es continua en $x = 0$ y el TVI no aplica.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">El límite existe: es continua</td><td class="bien">Falta comparar con $f(a)$</td><td>Son tres condiciones.</td></tr>
+        <tr><td class="mal">Simplificar y declarar continua</td><td class="bien">La original sigue sin estar definida</td><td>Simplificar tapa el hueco pero no lo quita.</td></tr>
+        <tr><td class="mal">Usar la fórmula de la derecha para el lateral izquierdo</td><td class="bien">Cada lado con su fórmula</td><td>Por eso existen los laterales.</td></tr>
+        <tr><td class="mal">TVI: la raíz es el punto medio</td><td class="bien">Solo garantiza que existe</td><td>La bisección la aproxima.</td></tr>
+        <tr><td class="mal">Aplicar el TVI con asíntotas en medio</td><td class="bien">Revisar continuidad primero</td><td>Es hipótesis del teorema.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>1) $f(a)$ existe</div><div>2) $\lim f$ existe</div><div>3) $\lim f = f(a)$</div>
+      <div>Removible: hueco</div><div>Salto: laterales distintos</div><div>Infinita: asíntota</div>
+      <div>Por partes: iguala lados</div><div>TVI: signos opuestos $\Rightarrow$ raíz</div><div>Bisección: parte a la mitad</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. ¿Dónde es discontinua y de qué tipo?</h3>
+    <ol class="largo">
+      <li>$f(x) = \dfrac{x^2 - 4}{x + 2}$</li>
+      <li>$f(x) = \dfrac{1}{x^2 - 9}$</li>
+      <li>$f(x) = x + 2$ si $x \leq 1$ y $f(x) = 5 - x$ si $x \gt 1$</li>
+      <li>$f(x) = \dfrac{x - 3}{x^2 - 5x + 6}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. ¿Es continua en el punto indicado?</h3>
+    <ol class="largo">
+      <li>$f(x) = x^2$ si $x \lt 1$ y $f(x) = 2x - 1$ si $x \geq 1$, en $x = 1$.</li>
+      <li>$g(x) = \dfrac{\sin x}{x}$ si $x \neq 0$ y $g(0) = 0$, en $x = 0$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Encuentra la constante que la hace continua</h3>
+    <ol class="largo">
+      <li>$f(x) = 3x - k$ si $x \lt 2$ y $f(x) = kx + 1$ si $x \geq 2$.</li>
+      <li>$f(x) = x^2 - a$ si $x \lt 3$ y $f(x) = ax$ si $x \geq 3$.</li>
+      <li>$f(x) = \dfrac{x^2 - 16}{x - 4}$ si $x \neq 4$ y $f(4) = c$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Valor intermedio</h3>
+    <ol class="largo">
+      <li>Muestra que $x^3 - 3x + 1 = 0$ tiene una raíz en $[0, 1]$.</li>
+      <li>Haz dos pasos de bisección con esa ecuación. ¿En qué intervalo queda la raíz?</li>
+      <li>¿Tiene la ecuación $\cos x = x$ alguna solución en $\left[0, \tfrac{\pi}{2}\right]$?</li>
+      <li>A las 6:00 la temperatura era de 12 °C y a las 14:00 de 30 °C. ¿Hubo algún momento en que marcó exactamente 20 °C? Justifica.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$x = -2$, removible</span></li>
+    <li><span>$x = \pm 3$, infinitas</span></li>
+    <li><span>$x = 1$, de salto</span></li>
+    <li><span>$x = 3$ removible; $x = 2$ infinita</span></li>
+    <li><span>Sí</span></li>
+    <li><span>No (removible)</span></li>
+    <li><span>$k = \tfrac{5}{3}$</span></li>
+    <li><span>$a = \tfrac{9}{4}$</span></li>
+    <li><span>$c = 8$</span></li>
+    <li><span>$f(0) = 1$, $f(1) = -1$</span></li>
+    <li><span>$[0.25, 0.5]$</span></li>
+    <li><span>Sí</span></li>
+    <li><span>Sí, por el TVI</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\dfrac{(x - 2)(x + 2)}{x + 2} = x - 2 \to -4$: el límite existe, $f(-2)$ no.</div></div>
+    <div class="sol"><span>3</span><div>Izquierda: $1 + 2 = 3$. Derecha: $5 - 1 = 4$.</div></div>
+    <div class="sol"><span>4</span><div>$\dfrac{x - 3}{(x - 2)(x - 3)} = \dfrac{1}{x - 2}$: el factor $x - 3$ se cancela (hueco en $x = 3$, con límite 1); el $x - 2$ queda abajo.</div></div>
+    <div class="sol"><span>5</span><div>Izquierda $1^2 = 1$, derecha $2 - 1 = 1$ y $f(1) = 1$.</div></div>
+    <div class="sol"><span>6</span><div>El límite es 1 pero $g(0) = 0$. Se arregla definiendo $g(0) = 1$.</div></div>
+    <div class="sol"><span>7</span><div>$6 - k = 2k + 1 \Rightarrow 5 = 3k$.</div></div>
+    <div class="sol"><span>8</span><div>$9 - a = 3a \Rightarrow a = \tfrac{9}{4}$.</div></div>
+    <div class="sol"><span>9</span><div>$\dfrac{(x - 4)(x + 4)}{x - 4} = x + 4 \to 8$.</div></div>
+    <div class="sol"><span>10</span><div>Es un polinomio (continuo) y cambia de signo entre 0 y 1.</div></div>
+    <div class="sol"><span>11</span><div>$f(0.5) = -0.375$: la raíz está en $[0, 0.5]$. $f(0.25) = 0.265625$: queda en $[0.25, 0.5]$. (Es $\approx 0.3473$.)</div></div>
+    <div class="sol"><span>12</span><div>$h(x) = \cos x - x$ es continua; $h(0) = 1 \gt 0$ y $h\!\left(\tfrac{\pi}{2}\right) = -\tfrac{\pi}{2} \lt 0$.</div></div>
+    <div class="sol"><span>13</span><div>La temperatura varía de forma continua y 20 está entre 12 y 30.</div></div>
+  </div>
+</section>

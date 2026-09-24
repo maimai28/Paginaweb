@@ -26,6 +26,8 @@ def igual(calc, guia):
     if isinstance(calc, set) or isinstance(guia, set):
         return set(map(sp.nsimplify, calc)) == set(map(sp.nsimplify, guia))
     if isinstance(calc, sp.Basic) or isinstance(guia, sp.Basic):
+        if sp.sympify(calc).is_infinite or sp.sympify(guia).is_infinite:
+            return sp.sympify(calc) == sp.sympify(guia)
         return sp.simplify(sp.sympify(calc) - sp.sympify(guia)) == 0
     return calc == guia
 
@@ -837,6 +839,180 @@ def _():
         ('ej9', completar(16*y**2 - 9*x**2 + 54*x + 64*y - 161), (3, -2, -9, 16, 144)), ('ej9c', (math.sqrt(9 + 16), -2 + 5, -2 - 5), (5.0, 3, -7)),
         ('ej10', completar(3*x**2 + 3*y**2 - 6*x + 12*y), (1, -2, 3, 3, 15)),
         ('ej12', completar(x**2 - y**2 + 4*x), (-2, 0, 1, -1, 4)),
+    ]
+
+t, h = sp.symbols('t h')
+D = lambda e, v=x: sp.simplify(sp.diff(e, v))
+iguales = lambda e1, e2: sp.simplify(e1 - e2) == 0
+lim = sp.limit
+oo = sp.oo
+
+def por_definicion(f):
+    return sp.limit(sp.simplify((f.subs(x, x + h) - f) / h), h, 0)
+
+def implicita(ec):
+    Y = sp.Function('Y')(x)
+    e = ec.subs(y, Y)
+    d = sp.solve(sp.diff(e, x), sp.diff(Y, x))[0]
+    return d.subs(Y, y)
+
+@guia('PM14 Límites')
+def _():
+    tabla = [round(((v**2 - 4) / (v - 2)), 3) for v in (1.9, 1.99, 1.999, 2.001, 2.01, 2.1)]
+    return [
+        ('tabla', tabla, [3.9, 3.99, 3.999, 4.001, 4.01, 4.1]),
+        ('ejemplo1', (lim(sp.Abs(x)/x, x, 0, '-'), lim(sp.Abs(x)/x, x, 0, '+')), (-1, 1)),
+        ('ejemplo2', lim((x**2 - 4)/(x - 2), x, 2), 4), ('ejemplo3', lim((sp.sqrt(x + 9) - 3)/x, x, 0), sp.Rational(1, 6)),
+        ('infinito', (lim((2*x + 1)/(x**2 - 3), x, oo), lim((3*x**2 - 5*x)/(2*x**2 + 1), x, oo), lim(x**3/(x + 1), x, oo)), (0, sp.Rational(3, 2), oo)),
+        ('asintota', (lim(1/(x - 3), x, 3, '+'), lim(1/(x - 3), x, 3, '-')), (oo, -oo)),
+        ('notables', (lim(sp.sin(x)/x, x, 0), lim((1 - sp.cos(x))/x, x, 0), lim(sp.sin(3*x)/x, x, 0)), (1, 0, 3)),
+        ('ej1', lim(2*x**2 - x + 1, x, 3), 16), ('ej2', lim((x + 5)/(x - 3), x, -1), -1), ('ej3', lim(sp.sqrt(x + 5), x, 4), 3),
+        ('ej4', lim((x**2 - 9)/(x - 3), x, 3), 6), ('ej5', lim((x**2 + 2*x - 3)/(x**2 - 1), x, 1), 2),
+        ('ej6', lim((x**3 + 8)/(x + 2), x, -2), 12), ('ej7', lim((sp.sqrt(x) - 2)/(x - 4), x, 4), sp.Rational(1, 4)),
+        ('ej8', lim(((2 + h)**2 - 4)/h, h, 0), 4),
+        ('ej9', lim((5*x**3 - 2*x)/(2*x**3 + 7), x, oo), sp.Rational(5, 2)), ('ej10', lim((4*x + 1)/(x**2 + 3), x, oo), 0),
+        ('ej11', lim((x**2 - 1)/(3*x + 2), x, oo), oo), ('ej12', lim(sp.sqrt(x**2 + 1)/(2*x), x, oo), sp.Rational(1, 2)),
+        ('ej13', (2 + 1, 2**2 - 1), (3, 3)), ('ej14', (2*1, 1 + 3), (2, 4)), ('ej15', lim(3/(x - 5), x, 5, '-'), -oo),
+        ('ej16', lim(sp.sin(5*x)/(2*x), x, 0), sp.Rational(5, 2)), ('ej17', lim(sp.tan(x)/x, x, 0), 1),
+    ]
+
+@guia('PM15 Continuidad')
+def _():
+    f3 = lambda v: v**3 + v - 1
+    g = lambda v: v**3 - 3*v + 1
+    k = sp.Symbol('k')
+    return [
+        ('ejemplo1', lim((x**2 - 1)/(x - 1), x, 1), 2), ('ejemplo2', sp.solve(sp.Eq(2*k + 1, 4 - k), k), [1]), ('ejemplo2b', 4 - 1, 3),
+        ('ejemplo3', (f3(0), f3(1), f3(0.5), f3(0.75)), (-1, 1, -0.375, 0.171875)),
+        ('ejemplo3r', round(float(sp.nsolve(x**3 + x - 1, x, 0.7)), 4), 0.6823),
+        ('ej1', lim((x**2 - 4)/(x + 2), x, -2), -4), ('ej2', sp.solve(x**2 - 9, x), [-3, 3]),
+        ('ej3', (1 + 2, 5 - 1), (3, 4)), ('ej4', (lim((x - 3)/(x**2 - 5*x + 6), x, 3), lim((x - 3)/(x**2 - 5*x + 6), x, 2, '+')), (1, oo)),
+        ('ej5', (1**2, 2*1 - 1), (1, 1)), ('ej6', lim(sp.sin(x)/x, x, 0), 1),
+        ('ej7', sp.solve(sp.Eq(6 - k, 2*k + 1), k), [sp.Rational(5, 3)]), ('ej8', sp.solve(sp.Eq(9 - k, 3*k), k), [sp.Rational(9, 4)]),
+        ('ej9', lim((x**2 - 16)/(x - 4), x, 4), 8), ('ej10', (g(0), g(1)), (1, -1)),
+        ('ej11', (g(0.5), g(0.25)), (-0.375, 0.265625)), ('ej11r', round(float(sp.nsolve(x**3 - 3*x + 1, x, 0.35)), 4), 0.3473),
+        ('ej12', (math.cos(0) - 0 > 0, math.cos(math.pi/2) - math.pi/2 < 0), (True, True)),
+    ]
+
+@guia('PM16 Definición de derivada')
+def _():
+    return [
+        ('ejemplo1', F(9 - 1, 2), 4), ('ejemplo2', por_definicion(x**2), 2*x), ('ejemplo3', por_definicion(1/x), -1/x**2),
+        ('ejemplo4', por_definicion(sp.sqrt(x)), 1/(2*sp.sqrt(x))), ('ejemplo5', sp.expand(6*(x - 3) + 9), 6*x - 9),
+        ('ejemplo6', por_definicion(5*x**2).subs(x, 2), 20),
+        ('ej1', F(8 - 1, 1), 7), ('ej2', F((3*4 + 2) - (3*(-1) + 2), 5), 3), ('ej3', round((4.9*9 - 4.9) / 2, 9), 19.6),
+        ('ej4', por_definicion(5*x - 3), 5), ('ej5', por_definicion(x**2 + 3*x), 2*x + 3), ('ej6', por_definicion(2*x**2 - x), 4*x - 1),
+        ('ej7', por_definicion(3/x), -3/x**2), ('ej8', por_definicion(sp.sqrt(x + 1)), 1/(2*sp.sqrt(x + 1))),
+        ('ej9', sp.expand(4 + 5*(x - 1)), 5*x - 1), ('ej10', sp.expand(1 - sp.Rational(1, 3)*(x - 3)), -x/3 + 2),
+        ('ej11', (sp.solve(2*x - 8, x), 4**2), ([4], 16)), ('ej12', round(float(por_definicion(4.9*x**2).subs(x, 3)), 6), 29.4),
+        ('ej13', (lim(sp.Abs(h)/h, h, 0, '+'), lim(sp.Abs(h)/h, h, 0, '-')), (1, -1)),
+        ('ej14', por_definicion(sp.Rational(1, 50)*x**2 + 50*x).subs(x, 100), 54),
+    ]
+
+@guia('PM17 Reglas de derivación')
+def _():
+    return [
+        ('ejemplo1', D(4*x**5 - 3*x**2 + 7*x - 2), 20*x**4 - 6*x + 7), ('ejemplo2', D(3/x**2 + sp.sqrt(x)), -6/x**3 + 1/(2*sp.sqrt(x))),
+        ('ejemplo3', D(x**2*sp.sin(x)), 2*x*sp.sin(x) + x**2*sp.cos(x)), ('ejemplo4', D((x**2 + 1)/(x - 3)), (x**2 - 6*x - 1)/(x - 3)**2),
+        ('ejemplo5', D(sp.tan(x)), sp.sec(x)**2), ('ejemplo6', D(sp.exp(x)*sp.log(x)), sp.exp(x)*(sp.log(x) + 1/x)),
+        ('ejemplo7', (D(t**3 - 6*t**2, t).subs(t, 3), sp.diff(t**3 - 6*t**2, t, 2).subs(t, 3)), (-9, 6)),
+        ('tabla', (D(sp.sec(x)), D(sp.csc(x)), D(sp.cot(x)), D(5**x), D(sp.log(x, 3))),
+         (sp.sec(x)*sp.tan(x), -sp.csc(x)*sp.cot(x), -sp.csc(x)**2, 5**x*sp.log(5), 1/(x*sp.log(3)))),
+        ('ej1', D(7*x**3 - 4*x + 9), 21*x**2 - 4), ('ej2', D(x**-4 + 2/x), -4*x**-5 - 2*x**-2),
+        ('ej3', D(5*sp.sqrt(x) - 2*sp.cbrt(x)), 5/(2*sp.sqrt(x)) - 2/(3*x**sp.Rational(2, 3))),
+        ('ej4', D((2*x + 1)**2), 8*x + 4), ('ej5', D((x**3 - 2*x)/x), 2*x),
+        ('ej6', D(x**3*sp.exp(x)), x**2*sp.exp(x)*(x + 3)), ('ej7', D((x**2 + 1)*(3*x - 5)), 9*x**2 - 10*x + 3),
+        ('ej8', D(x/(x + 1)), 1/(x + 1)**2), ('ej9', D(sp.sin(x)/x), (x*sp.cos(x) - sp.sin(x))/x**2),
+        ('ej10', D((2*x - 3)/(x**2 + 4)), (-2*x**2 + 6*x + 8)/(x**2 + 4)**2),
+        ('ej11', D(3*sp.cos(x) - 2*sp.exp(x)), -3*sp.sin(x) - 2*sp.exp(x)), ('ej12', D(x*sp.log(x)), sp.log(x) + 1),
+        ('ej13', D(sp.exp(x)*sp.sin(x)), sp.exp(x)*(sp.sin(x) + sp.cos(x))), ('ej14', D(5**x), 5**x*sp.log(5)),
+        ('ej15', D(sp.tan(x) - x), sp.tan(x)**2),
+        ('ej16', (D(x**3 - 2*x).subs(x, 2), (x**3 - 2*x).subs(x, 2)), (10, 4)), ('ej16b', sp.expand(4 + 10*(x - 2)), 10*x - 16),
+        ('ej17', (sp.solve(D(t**3 - 9*t**2 + 24*t, t), t), sp.diff(t**3 - 9*t**2 + 24*t, t, 2).subs(t, 2)), ([2, 4], -6)),
+        ('ej18', sp.diff(x**4 - 3*x**2, x, 2), 12*x**2 - 6),
+    ]
+
+@guia('PM18 Regla de la cadena')
+def _():
+    return [
+        ('ejemplo1', D((3*x**2 + 1)**5), 30*x*(3*x**2 + 1)**4), ('ejemplo2', D(sp.sqrt(1 - x**2)), -x/sp.sqrt(1 - x**2)),
+        ('tabla', (D(sp.sin(4*x)), D(sp.cos(x**2)), D(sp.tan(3*x)), D(sp.exp(x**2)), D(sp.log(x**2 + 1))),
+         (4*sp.cos(4*x), -2*x*sp.sin(x**2), 3*sp.sec(3*x)**2, 2*x*sp.exp(x**2), 2*x/(x**2 + 1))),
+        ('nota', (D(sp.sin(x)**2), D(sp.sin(x**2))), (2*sp.sin(x)*sp.cos(x), 2*x*sp.cos(x**2))),
+        ('ejemplo3', D(sp.cos(2*x)**3), -6*sp.cos(2*x)**2*sp.sin(2*x)),
+        ('ejemplo4', D(20 + 60*sp.exp(-sp.Rational(1, 10)*t), t).subs(t, 0), -6),
+        ('ejemplo5', D(x*sp.exp(-3*x)), sp.exp(-3*x)*(1 - 3*x)),
+        ('ej1', D((2*x - 5)**4), 8*(2*x - 5)**3), ('ej2', D((x**3 + 2*x)**-2), -2*(3*x**2 + 2)/(x**3 + 2*x)**3),
+        ('ej3', D(sp.sqrt(3*x + 4)), 3/(2*sp.sqrt(3*x + 4))), ('ej4', D(1/(x**2 + 1)**3), -6*x/(x**2 + 1)**4),
+        ('ej5', D(sp.cos(5*x)), -5*sp.sin(5*x)), ('ej6', D(sp.tan(x**2)), 2*x*sp.sec(x**2)**2), ('ej7', D(sp.exp(3*x - 1)), 3*sp.exp(3*x - 1)),
+        ('ej8', D(sp.log(5*x)), 1/x), ('ej9', D(sp.log(sp.cos(x))), -sp.tan(x)), ('ej10', D(sp.sin(x)**3), 3*sp.sin(x)**2*sp.cos(x)),
+        ('ej11', D(x**2*(x - 1)**5), x*(x - 1)**4*(7*x - 2)), ('ej12', D(sp.exp(2*x)*sp.cos(x)), sp.exp(2*x)*(2*sp.cos(x) - sp.sin(x))),
+        ('ej13', D(sp.sqrt(x**2 + 9)).subs(x, 4), sp.Rational(4, 5)), ('ej14', D(((x + 1)/(x - 1))**2), -4*(x + 1)/(x - 1)**3),
+        ('ej15', (sp.sqrt(9), D(sp.sqrt(2*x + 1)).subs(x, 4), sp.expand(3 + sp.Rational(1, 3)*(x - 4))), (3, sp.Rational(1, 3), x/3 + sp.Rational(5, 3))),
+        ('ej16', (D(3*sp.sin(2*t), t), D(3*sp.sin(2*t), t).subs(t, 0), sp.diff(3*sp.sin(2*t), t, 2)), (6*sp.cos(2*t), 6, -12*sp.sin(2*t))),
+        ('ej17', round(float(D(500*sp.exp(sp.Rational(1, 5)*t), t).subs(t, 5))), 272),
+    ]
+
+@guia('PM19 Derivación implícita')
+def _():
+    return [
+        ('ejemplo1', (implicita(x**2 + y**2 - 25), implicita(x**2 + y**2 - 25).subs({x: 3, y: 4})), (-x/y, -sp.Rational(3, 4))),
+        ('ejemplo2', (2 + 8, implicita(x**2*y + y**3 - 10), implicita(x**2*y + y**3 - 10).subs({x: 1, y: 2})), (10, -2*x*y/(x**2 + 3*y**2), -sp.Rational(4, 13))),
+        ('ejemplo3', (implicita(x**3 + y**3 - 6*x*y), implicita(x**3 + y**3 - 6*x*y).subs({x: 3, y: 3}), 27 + 27 - 54), ((2*y - x**2)/(y**2 - 2*x), -1, 0)),
+        ('ejemplo4', sp.simplify(sp.diff(-x/y, x).subs(sp.Derivative(y, x), 0) + x*(-x/y)/y**2 - (-(x**2 + y**2)/y**3)), 0),
+        ('inversas', (D(sp.asin(x)), D(sp.acos(x)), D(sp.atan(x))), (1/sp.sqrt(1 - x**2), -1/sp.sqrt(1 - x**2), 1/(1 + x**2))),
+        ('ejemplo5', D(x**x), x**x*(sp.log(x) + 1)),
+        ('ej1', implicita(x**2 + y**2 - 16), -x/y), ('ej2', implicita(4*x**2 + 9*y**2 - 36), -4*x/(9*y)), ('ej3', implicita(x*y - 12), -y/x),
+        ('ej4', implicita(x**2*y + x*y**2 - 6), -(2*x*y + y**2)/(x**2 + 2*x*y)), ('ej5', implicita(y**3 - 3*y - x**2), 2*x/(3*y**2 - 3)),
+        ('ej6', implicita(sp.exp(y) - x - y), 1/(sp.exp(y) - 1)),
+        ('ej7', (implicita(x**2 + y**2 - 25).subs({x: -3, y: 4}), recta_por((-3, 4), (1, 7))), (sp.Rational(3, 4), (3, -4, 25))),
+        ('ej8', (9 - 6 + 4, implicita(x**2 - x*y + y**2 - 7).subs({x: 3, y: 2}), sp.expand(2 - 4*(x - 3))), (7, -4, -4*x + 14)),
+        ('ej9', sp.solve([x, x**2 + y**2 - 25], [x, y]), [(0, -5), (0, 5)]),
+        ('ej10', D(sp.atan(2*x)), 2/(1 + 4*x**2)), ('ej11', D(sp.asin(x/3)), 1/sp.sqrt(9 - x**2)),
+        ('ej12', D(x**sp.sin(x)), x**sp.sin(x)*(sp.cos(x)*sp.log(x) + sp.sin(x)/x)),
+        ('ej13', sp.simplify(-(x**2 + y**2)/y**3).subs(x**2 + y**2, 4), -4/y**3),
+    ]
+
+@guia('PM20 Máximos y mínimos')
+def _():
+    f = x**3 - 3*x**2 - 9*x + 5
+    crit = lambda e: sp.solve(D(e), x)
+    val = lambda e, v: e.subs(x, v)
+    V = x*(12 - 2*x)**2
+    return [
+        ('ejemplo1', (sp.factor(D(f)), crit(f), val(f, -1), val(f, 3)), (3*(x - 3)*(x + 1), [-1, 3], 10, -22)),
+        ('ejemplo2', (sp.diff(f, x, 2).subs(x, -1), sp.diff(f, x, 2).subs(x, 3), sp.solve(sp.diff(f, x, 2), x), val(f, 1)), (-12, 12, [1], -6)),
+        ('ejemplo3', ([v for v in crit(x**3 - 3*x) if 0 <= v <= 2], [val(x**3 - 3*x, v) for v in (0, 1, 2)]), ([1], [0, -2, 2])),
+        ('ejemplo4', (sp.factor(D(V)), crit(V), val(V, 2)), (sp.factor((12 - 2*x)*(12 - 6*x)), [2, 6], 128)),
+        ('ejemplo5', (crit(x*(100 - 2*x)), 100 - 50, val(x*(100 - 2*x), 25)), ([25], 50, 1250)),
+        ('ej1', (crit(x**2 - 6*x + 1), val(x**2 - 6*x + 1, 3)), ([3], -8)),
+        ('ej2', (crit(2*x**3 - 3*x**2 - 12*x), val(2*x**3 - 3*x**2 - 12*x, -1), val(2*x**3 - 3*x**2 - 12*x, 2)), ([-1, 2], 7, -20)),
+        ('ej3', (crit(x**4 - 2*x**2), [val(x**4 - 2*x**2, v) for v in (-1, 0, 1)]), ([-1, 0, 1], [-1, 0, -1])),
+        ('ej4', (crit(x*sp.exp(-x)), val(x*sp.exp(-x), 1)), ([1], sp.exp(-1))),
+        ('ej5', (sp.solve(sp.diff(x**3 - 6*x**2 + 4, x, 2), x), val(x**3 - 6*x**2 + 4, 2)), ([2], -12)),
+        ('ej6', (crit(x**3 - 12*x), val(x**3 - 12*x, -2), val(x**3 - 12*x, 2)), ([-2, 2], 16, -16)),
+        ('ej7', [val(x**2 - 4*x + 3, v) for v in (0, 2, 5)], [3, -1, 8]),
+        ('ej8', [val(x**3 - 12*x, v) for v in (-3, -2, 2, 5)], [9, 16, -16, 65]),
+        ('ej9', (crit(x*(20 - x)), 10*10), ([10], 100)), ('ej10', ([v for v in crit(x + 1/x) if v > 0], 1 + 1), ([1], 2)),
+        ('ej11', (crit(x*(30 - 2*x)**2), val(x*(30 - 2*x)**2, 5)), ([5, 15], 2000)),
+        ('ej12', (round((500/math.pi)**(1/3), 2), round(1000/(math.pi*(500/math.pi)**(2/3)), 2)), (5.42, 10.84)),
+        ('ej13', (crit(x*(200 - 4*x)), val(x*(200 - 4*x), 25)), ([25], 2500)),
+    ]
+
+@guia('PM21 Razones de cambio relacionadas')
+def _():
+    pi = sp.pi
+    return [
+        ('ejemplo1', sp.Rational(100) / (4*pi*25), 1/pi), ('ejemplo1b', round(1/math.pi, 3), 0.318),
+        ('ejemplo2', (math.sqrt(25 - 9), -3*1/4), (4.0, -0.75)),
+        ('ejemplo3', (sp.expand(sp.Rational(1, 3)*pi*(x/2)**2*x), 2 / (pi*9/4)), (pi*x**3/12, 8/(9*pi))), ('ejemplo3b', round(8/(9*math.pi), 3), 0.283),
+        ('ej1', 2*pi*10*3, 60*pi), ('ej2', 2*5*2, 20), ('ej3', F(12, 3*4), 1), ('ej4', 4*pi*36*(-sp.Rational(1, 2)), -72*pi),
+        ('ej4b', round(-72*math.pi, 1), -226.2), ('ej5', (math.sqrt(100 - 36), -6*2/8), (8.0, -1.5)),
+        ('ej6', (math.hypot(160, 120), (160*80 + 120*60)/200), (200.0, 100.0)),
+        ('ej7', (math.sqrt(100 - 36), 8*500/10), (8.0, 400.0)),
+        ('ej8', 5 / (pi*4/4), 5/pi), ('ej8b', round(5/math.pi, 2), 1.59),
+        ('ej9', (sp.solve(sp.Eq(y/sp.Rational(18, 10), (x + y)/6), y), round(3/7*1.5, 2), round(1.5 + 3/7*1.5, 2)), ([3*x/7], 0.64, 2.14)),
+        ('ej10', F(-4, 1)*F(1, 2)/3, F(-2, 3)),
     ]
 
 if __name__ == '__main__':

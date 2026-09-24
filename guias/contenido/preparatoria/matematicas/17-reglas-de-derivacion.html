@@ -1,0 +1,220 @@
+<!-- guia
+titulo: Reglas de derivación
+nivel: Preparatoria
+materia: Matemáticas
+rama: Cálculo diferencial
+numero: 17
+descripcion: Las reglas que evitan usar el límite cada vez: potencia, suma, producto y cociente, derivadas de funciones trigonométricas, exponenciales y logarítmicas, segundas derivadas y velocidad y aceleración.
+entrada: Derivar con la definición funciona, pero es lento. Unas cuantas reglas, todas demostradas con ese límite, te permiten derivar casi cualquier función en una línea. Aquí están, con los errores que más se repiten para que no caigas en ellos.
+objetivo: Usar la regla de la potencia con exponentes negativos y fraccionarios.
+objetivo: Aplicar las reglas del producto y del cociente.
+objetivo: Derivar funciones trigonométricas, exponenciales y logarítmicas.
+objetivo: Calcular segundas derivadas.
+objetivo: Obtener velocidad y aceleración a partir de la posición.
+autoeval: Reescribir raíces y fracciones como potencias antes de derivar. | 01
+autoeval: Aplicar la regla del producto sin multiplicar derivadas. | 02
+autoeval: Aplicar la regla del cociente con el orden correcto. | 02
+autoeval: Recordar las derivadas de $\sin$, $\cos$, $\tan$, $e^x$ y $\ln x$. | 03
+autoeval: Encontrar velocidad y aceleración. | 04
+-->
+<section>
+  <h2>Potencias, sumas y constantes</h2>
+  <table class="leyes">
+    <thead><tr><th>Regla</th><th>Fórmula</th></tr></thead>
+    <tbody>
+      <tr><td>Constante</td><td>$(c)' = 0$</td></tr>
+      <tr><td>Potencia (cualquier $n$ real)</td><td>$(x^n)' = n\,x^{n - 1}$</td></tr>
+      <tr><td>Múltiplo constante</td><td>$(c\,f)' = c\,f'$</td></tr>
+      <tr><td>Suma y resta</td><td>$(f \pm g)' = f' \pm g'$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $y = 4x^5 - 3x^2 + 7x - 2$.</p>
+      $$y' = 20x^4 - 6x + 7$$
+    </div>
+  </div>
+  <p>Para usar la regla de la potencia, <strong>escribe primero las raíces y las $x$ del denominador como potencias</strong>: $\sqrt{x} = x^{1/2}$, $\dfrac{1}{x^3} = x^{-3}$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $y = \dfrac{3}{x^2} + \sqrt{x}$.</p>
+      $$y = 3x^{-2} + x^{1/2} \;\Rightarrow\; y' = -6x^{-3} + \tfrac{1}{2}x^{-1/2} = -\frac{6}{x^3} + \frac{1}{2\sqrt{x}}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Producto y cociente</h2>
+  <div class="definicion">
+    <span class="etq">Reglas del producto y del cociente</span>
+    $$(f\,g)' = f'g + f\,g' \qquad\qquad \left(\frac{f}{g}\right)' = \frac{f'g - f\,g'}{g^2}$$
+  </div>
+  <p>La derivada de un producto <strong>no</strong> es el producto de las derivadas. En el cociente el orden importa por el signo menos: empieza derivando el de arriba.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $y = x^2\sin x$.</p>
+      $$y' = 2x\sin x + x^2\cos x$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $y = \dfrac{x^2 + 1}{x - 3}$.</p>
+      $$y' = \frac{2x(x - 3) - (x^2 + 1)(1)}{(x - 3)^2} = \frac{x^2 - 6x - 1}{(x - 3)^2}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Antes de usar el cociente, ¿se puede simplificar?</span>
+    <p>$\dfrac{x^3 - 2x}{x} = x^2 - 2$ (para $x \neq 0$) se deriva en un paso. Y $\dfrac{5}{x^4} = 5x^{-4}$ no necesita la regla del cociente.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Funciones trascendentes</h2>
+  <table class="leyes">
+    <thead><tr><th>Función</th><th>Derivada</th><th>Función</th><th>Derivada</th></tr></thead>
+    <tbody>
+      <tr><td>$\sin x$</td><td>$\cos x$</td><td>$e^x$</td><td>$e^x$</td></tr>
+      <tr><td>$\cos x$</td><td>$-\sin x$</td><td>$a^x$</td><td>$a^x\ln a$</td></tr>
+      <tr><td>$\tan x$</td><td>$\sec^2 x$</td><td>$\ln x$</td><td>$\dfrac{1}{x}$</td></tr>
+      <tr><td>$\sec x$</td><td>$\sec x\tan x$</td><td>$\log_a x$</td><td>$\dfrac{1}{x\ln a}$</td></tr>
+      <tr><td>$\csc x$</td><td>$-\csc x\cot x$</td><td>$\cot x$</td><td>$-\csc^2 x$</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Truco: las que empiezan con «co» ($\cos$, $\csc$, $\cot$) llevan signo menos. Todo en radianes.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Comprueba que $(\tan x)' = \sec^2 x$ con la regla del cociente.</p>
+      $$\left(\frac{\sin x}{\cos x}\right)' = \frac{\cos x\cos x - \sin x(-\sin x)}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">6</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Deriva $y = e^x\ln x$.</p>
+      $$y' = e^x\ln x + e^x\cdot\frac{1}{x} = e^x\left(\ln x + \frac{1}{x}\right)$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Derivadas superiores y movimiento</h2>
+  <p>La <strong>segunda derivada</strong> $f''$ es la derivada de $f'$. Si $s(t)$ es la posición, entonces $v(t) = s'(t)$ es la velocidad y $a(t) = v'(t) = s''(t)$ es la aceleración.</p>
+  <div class="ejemplo">
+    <div class="n">7</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un móvil tiene $s(t) = t^3 - 6t^2$ metros. Encuentra velocidad y aceleración en $t = 3$ s.</p>
+      $$v(t) = 3t^2 - 12t \qquad a(t) = 6t - 12$$
+      <p class="paso">En $t = 3$: $v = 27 - 36 = -9$ m/s (se mueve hacia atrás) y $a = 6$ m/s² (está frenando ese retroceso).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$(fg)' = f'g'$</td><td class="bien">$f'g + fg'$</td><td>Prueba con $x\cdot x$: da $1$ en vez de $2x$.</td></tr>
+        <tr><td class="mal">$(x^{-3})' = -3x^{-2}$</td><td class="bien">$-3x^{-4}$</td><td>Restar 1 a $-3$ da $-4$.</td></tr>
+        <tr><td class="mal">$\left(\dfrac{1}{x^2}\right)' = \dfrac{1}{2x}$</td><td class="bien">$-\dfrac{2}{x^3}$</td><td>Escríbela como $x^{-2}$ primero.</td></tr>
+        <tr><td class="mal">$(\cos x)' = \sin x$</td><td class="bien">$-\sin x$</td><td>Las «co» llevan menos.</td></tr>
+        <tr><td class="mal">$(e^x)' = x\,e^{x - 1}$</td><td class="bien">$e^x$</td><td>La regla de la potencia es para $x^n$, no para $a^x$.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$(x^n)' = nx^{n - 1}$</div><div>$(fg)' = f'g + fg'$</div><div>$\left(\dfrac{f}{g}\right)' = \dfrac{f'g - fg'}{g^2}$</div>
+      <div>$(\sin x)' = \cos x$</div><div>$(\cos x)' = -\sin x$</div><div>$(\tan x)' = \sec^2 x$</div>
+      <div>$(e^x)' = e^x$</div><div>$(\ln x)' = \dfrac{1}{x}$</div><div>$v = s'$, $a = s''$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Deriva y simplifica. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Potencias</h3>
+    <ol>
+      <li>$y = 7x^3 - 4x + 9$</li><li>$y = x^{-4} + 2x^{-1}$</li><li>$y = 5\sqrt{x} - 2\sqrt[3]{x}$</li>
+      <li>$y = (2x + 1)^2$</li><li>$y = \dfrac{x^3 - 2x}{x}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Producto y cociente</h3>
+    <ol>
+      <li>$y = x^3e^x$</li><li>$y = (x^2 + 1)(3x - 5)$</li><li>$y = \dfrac{x}{x + 1}$</li>
+      <li>$y = \dfrac{\sin x}{x}$</li><li>$y = \dfrac{2x - 3}{x^2 + 4}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Trascendentes</h3>
+    <ol>
+      <li>$y = 3\cos x - 2e^x$</li><li>$y = x\ln x$</li><li>$y = e^x\sin x$</li>
+      <li>$y = 5^x$</li><li>$y = \tan x - x$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Aplicaciones</h3>
+    <ol class="largo">
+      <li>Tangente a $y = x^3 - 2x$ en $x = 2$.</li>
+      <li>Con $s(t) = t^3 - 9t^2 + 24t$ metros, ¿en qué instantes la velocidad es cero? ¿Qué aceleración hay en el primero?</li>
+      <li>Calcula $f''(x)$ para $f(x) = x^4 - 3x^2$.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$21x^2 - 4$</span></li>
+    <li><span>$-4x^{-5} - 2x^{-2}$</span></li>
+    <li><span>$\dfrac{5}{2\sqrt{x}} - \dfrac{2}{3\sqrt[3]{x^2}}$</span></li>
+    <li><span>$8x + 4$</span></li>
+    <li><span>$2x$</span></li>
+    <li><span>$x^2e^x(x + 3)$</span></li>
+    <li><span>$9x^2 - 10x + 3$</span></li>
+    <li><span>$\dfrac{1}{(x + 1)^2}$</span></li>
+    <li><span>$\dfrac{x\cos x - \sin x}{x^2}$</span></li>
+    <li><span>$\dfrac{-2x^2 + 6x + 8}{(x^2 + 4)^2}$</span></li>
+    <li><span>$-3\sin x - 2e^x$</span></li>
+    <li><span>$\ln x + 1$</span></li>
+    <li><span>$e^x(\sin x + \cos x)$</span></li>
+    <li><span>$5^x\ln 5$</span></li>
+    <li><span>$\tan^2 x$</span></li>
+    <li><span>$y = 10x - 16$</span></li>
+    <li><span>$t = 2$ y $t = 4$ s; $-6$ m/s²</span></li>
+    <li><span>$12x^2 - 6$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>$5x^{1/2} - 2x^{1/3}$: derivada $\tfrac{5}{2}x^{-1/2} - \tfrac{2}{3}x^{-2/3}$.</div></div>
+    <div class="sol"><span>4</span><div>Desarrolla: $4x^2 + 4x + 1$. (Con regla de la cadena, en la guía 18, sale directo.)</div></div>
+    <div class="sol"><span>6</span><div>$3x^2e^x + x^3e^x$ y factoriza $x^2e^x$.</div></div>
+    <div class="sol"><span>7</span><div>$2x(3x - 5) + (x^2 + 1)(3) = 6x^2 - 10x + 3x^2 + 3$.</div></div>
+    <div class="sol"><span>8</span><div>$\dfrac{1\cdot(x + 1) - x\cdot 1}{(x + 1)^2}$.</div></div>
+    <div class="sol"><span>10</span><div>$\dfrac{2(x^2 + 4) - (2x - 3)(2x)}{(x^2 + 4)^2} = \dfrac{2x^2 + 8 - 4x^2 + 6x}{(x^2 + 4)^2}$.</div></div>
+    <div class="sol"><span>12</span><div>Producto: $1\cdot\ln x + x\cdot\tfrac{1}{x}$.</div></div>
+    <div class="sol"><span>15</span><div>$\sec^2 x - 1 = \tan^2 x$ por la identidad pitagórica.</div></div>
+    <div class="sol"><span>16</span><div>Punto $(2, 4)$; $y' = 3x^2 - 2$ vale $10$ en 2. $y - 4 = 10(x - 2)$.</div></div>
+    <div class="sol"><span>17</span><div>$v = 3t^2 - 18t + 24 = 3(t - 2)(t - 4)$. $a = 6t - 18$; en $t = 2$: $-6$.</div></div>
+    <div class="sol"><span>18</span><div>$f' = 4x^3 - 6x$ y $f'' = 12x^2 - 6$.</div></div>
+  </div>
+</section>
