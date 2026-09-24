@@ -1,0 +1,251 @@
+<!-- guia
+titulo: Probabilidad condicional
+nivel: Preparatoria
+materia: Matemáticas
+rama: Probabilidad y estadística
+numero: 31
+descripcion: Reglas del complemento, la suma y el producto, probabilidad condicional con tablas de contingencia, eventos independientes, diagramas de árbol, probabilidad total y teorema de Bayes, con el ejemplo de por qué un resultado positivo no siempre significa enfermedad.
+entrada: Saber algo cambia las probabilidades. La probabilidad de que llueva no es la misma si ya viste nubes negras. La probabilidad condicional mide ese cambio, y el teorema de Bayes explica resultados que parecen contradictorios, como pruebas médicas «confiables» que se equivocan casi siempre.
+objetivo: Usar las reglas del complemento, la suma y el producto.
+objetivo: Calcular probabilidades condicionales, también con tablas.
+objetivo: Decidir si dos eventos son independientes.
+objetivo: Resolver problemas en varias etapas con árboles.
+objetivo: Aplicar la probabilidad total y el teorema de Bayes.
+autoeval: Usar el complemento para «al menos uno». | 01
+autoeval: No contar dos veces la intersección en la regla de la suma. | 01
+autoeval: Calcular $P(A \mid B)$ en una tabla de contingencia. | 02
+autoeval: Probar independencia con $P(A \cap B) = P(A)P(B)$. | 03
+autoeval: Armar un árbol y multiplicar por las ramas. | 04
+autoeval: Invertir una condicional con Bayes. | 05
+-->
+<section>
+  <h2>Reglas básicas</h2>
+  <p>Si todos los resultados son igualmente probables, $P(A) = \dfrac{\text{casos de } A}{\text{casos posibles}}$, y siempre $0 \leq P(A) \leq 1$.</p>
+  <table class="leyes">
+    <thead><tr><th>Regla</th><th>Fórmula</th></tr></thead>
+    <tbody>
+      <tr><td>Complemento («no $A$»)</td><td>$P(A') = 1 - P(A)$</td></tr>
+      <tr><td>Suma («$A$ o $B$»)</td><td>$P(A \cup B) = P(A) + P(B) - P(A \cap B)$</td></tr>
+      <tr><td>Excluyentes (no pueden ocurrir juntos)</td><td>$P(A \cup B) = P(A) + P(B)$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Al lanzar un dado, ¿qué probabilidad hay de obtener un número par o mayor que 4?</p>
+      <p class="paso">Par: $\{2, 4, 6\}$; mayor que 4: $\{5, 6\}$; ambos: $\{6\}$.</p>
+      $$P = \frac{3}{6} + \frac{2}{6} - \frac{1}{6} = \frac{4}{6} = \frac{2}{3}$$
+      <p class="paso">El 6 se restó una vez porque estaba contado dos veces.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Probabilidad condicional</h2>
+  <div class="definicion">
+    <span class="etq">Probabilidad de $A$ dado $B$</span>
+    $$P(A \mid B) = \frac{P(A \cap B)}{P(B)} \qquad (P(B) \gt 0)$$
+    <p>Es la probabilidad de $A$ sabiendo que $B$ ocurrió: el espacio se reduce a $B$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resultados de 200 alumnos de una escuela:</p>
+      <table class="leyes">
+        <thead><tr><th></th><th>Aprobó</th><th>Reprobó</th><th>Total</th></tr></thead>
+        <tbody>
+          <tr><td>Matutino</td><td>90</td><td>30</td><td>120</td></tr>
+          <tr><td>Vespertino</td><td>50</td><td>30</td><td>80</td></tr>
+          <tr><td>Total</td><td>140</td><td>60</td><td>200</td></tr>
+        </tbody>
+      </table>
+      <p class="paso">$P(\text{aprobó}) = \tfrac{140}{200} = 0.70$.</p>
+      <p class="paso">$P(\text{aprobó} \mid \text{matutino}) = \tfrac{90}{120} = 0.75$: se mira solo el renglón del matutino.</p>
+      <p class="paso">$P(\text{matutino} \mid \text{aprobó}) = \tfrac{90}{140} \approx 0.643$: se mira solo la columna de aprobados.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">$P(A \mid B)$ y $P(B \mid A)$ son distintas</span>
+    <p>Casi todos los jugadores de básquetbol profesional son altos, pero muy pocas personas altas son jugadores profesionales. Confundirlas es uno de los errores más frecuentes (y más caros) en probabilidad.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Regla del producto e independencia</h2>
+  <p>Despejando la definición: $P(A \cap B) = P(B)\,P(A \mid B) = P(A)\,P(B \mid A)$.</p>
+  <div class="definicion">
+    <span class="etq">Eventos independientes</span>
+    <p>$A$ y $B$ son independientes si saber uno no cambia la probabilidad del otro: $P(A \mid B) = P(A)$. Equivale a</p>
+    $$P(A \cap B) = P(A)\,P(B)$$
+  </div>
+  <p>En el ejemplo 2, aprobar y ser del matutino <strong>no</strong> son independientes: $0.75 \neq 0.70$.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se sacan dos cartas de una baraja de 52, sin regresar la primera. ¿Qué probabilidad hay de que ambas sean ases?</p>
+      $$P = \frac{4}{52}\cdot\frac{3}{51} = \frac{12}{2652} = \frac{1}{221}$$
+      <p class="paso">La segunda probabilidad es condicional: si ya salió un as, quedan 3 ases de 51 cartas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Diagramas de árbol</h2>
+  <p>En un experimento de varias etapas, cada rama lleva la probabilidad condicional de ese paso. La probabilidad de un camino es el <strong>producto</strong> de sus ramas, y la de un evento es la <strong>suma</strong> de los caminos que llevan a él.</p>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">4</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>La máquina $A$ hace el 60 % de las piezas y el 2 % le sale defectuoso; la $B$ hace el 40 % con 5 % defectuoso. ¿Qué probabilidad hay de que una pieza sea defectuosa?</p>
+        $$P(D) = 0.6(0.02) + 0.4(0.05) = 0.012 + 0.020 = 0.032$$
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 190 130" width="50mm">
+        <g stroke="#8a7a66" stroke-width="1.3">
+          <line x1="15" y1="65" x2="80" y2="30"/><line x1="15" y1="65" x2="80" y2="100"/>
+          <line x1="95" y1="30" x2="150" y2="14"/><line x1="95" y1="30" x2="150" y2="46"/>
+          <line x1="95" y1="100" x2="150" y2="84"/><line x1="95" y1="100" x2="150" y2="116"/>
+        </g>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="82" y="34">A</text><text x="82" y="104">B</text>
+          <text x="153" y="18" fill="#b5562c">D</text><text x="153" y="50">D′</text><text x="153" y="88" fill="#b5562c">D</text><text x="153" y="120">D′</text>
+          <text x="30" y="40">0.6</text><text x="30" y="98">0.4</text>
+          <text x="110" y="15">0.02</text><text x="110" y="50">0.98</text><text x="110" y="85">0.05</text><text x="110" y="120">0.95</text>
+        </g>
+      </svg>
+      <figcaption>Multiplica a lo largo, suma entre caminos.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Probabilidad total y Bayes</h2>
+  <p>El cálculo del ejemplo 4 es la <strong>probabilidad total</strong>: $P(D) = P(A)P(D \mid A) + P(B)P(D \mid B)$. El <strong>teorema de Bayes</strong> responde la pregunta al revés:</p>
+  <div class="definicion">
+    <span class="etq">Teorema de Bayes</span>
+    $$P(A \mid D) = \frac{P(A)\,P(D \mid A)}{P(D)}$$
+  </div>
+  <p>Con el ejemplo 4: si una pieza salió defectuosa, la probabilidad de que venga de $A$ es $\dfrac{0.012}{0.032} = 0.375$.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una enfermedad afecta al 1 % de la población. Una prueba detecta al 95 % de los enfermos, pero da positivo al 5 % de los sanos. Si sales positivo, ¿qué probabilidad hay de que estés enfermo?</p>
+      $$P(+) = 0.01(0.95) + 0.99(0.05) = 0.0095 + 0.0495 = 0.059$$
+      $$P(E \mid +) = \frac{0.0095}{0.059} \approx 0.161$$
+      <p class="paso">Solo 16 %. Como los sanos son muchísimos, sus falsos positivos superan a los enfermos reales. Por eso los médicos confirman con una segunda prueba.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$P(A \cup B) = P(A) + P(B)$ siempre</td><td class="bien">Restar $P(A \cap B)$</td><td>Solo se omite si son excluyentes.</td></tr>
+        <tr><td class="mal">$P(A \mid B) = P(B \mid A)$</td><td class="bien">En general son distintas</td><td>Cambia el grupo de referencia.</td></tr>
+        <tr><td class="mal">$P(A \mid B) = \dfrac{P(A \cap B)}{P(A)}$</td><td class="bien">Dividir entre $P(B)$</td><td>Se divide entre lo que ya se sabe.</td></tr>
+        <tr><td class="mal">Sin reemplazo con las mismas probabilidades</td><td class="bien">Ajustar la segunda</td><td>Cambian los casos que quedan.</td></tr>
+        <tr><td class="mal">Excluyentes = independientes</td><td class="bien">Casi nunca</td><td>Si son excluyentes, saber uno descarta el otro.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$P(A') = 1 - P(A)$</div><div>$P(A \cup B) = P(A) + P(B) - P(A \cap B)$</div><div>$P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}$</div>
+      <div>$P(A \cap B) = P(B)P(A \mid B)$</div><div>Independientes: $P(A \cap B) = P(A)P(B)$</div><div>Árbol: $\times$ a lo largo, $+$ entre caminos</div>
+      <div>Total: $\sum P(A_i)P(D \mid A_i)$</div><div>Bayes: $\dfrac{P(A)P(D \mid A)}{P(D)}$</div><div>Tabla: renglón o columna</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Da fracciones simplificadas o decimales. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Reglas básicas (dos dados)</h3>
+    <ol class="largo">
+      <li>¿Qué probabilidad hay de que la suma sea 7?</li>
+      <li>¿Y de que sea 10 o más?</li>
+      <li>¿Y de que salga al menos un 6?</li>
+      <li>Si $P(A) = 0.5$, $P(B) = 0.4$ y $P(A \cap B) = 0.2$, calcula $P(A \cup B)$. ¿Son independientes?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Tabla de contingencia (250 personas)</h3>
+    <table class="leyes">
+      <thead><tr><th></th><th>Café</th><th>Té</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>Hombres</td><td>80</td><td>40</td><td>120</td></tr>
+        <tr><td>Mujeres</td><td>70</td><td>60</td><td>130</td></tr>
+        <tr><td>Total</td><td>150</td><td>100</td><td>250</td></tr>
+      </tbody>
+    </table>
+    <ol class="largo">
+      <li>$P(\text{café})$</li><li>$P(\text{café} \mid \text{mujer})$</li><li>$P(\text{mujer} \mid \text{té})$</li>
+      <li>¿Son independientes «prefiere café» y «es hombre»?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Producto y árboles</h3>
+    <ol class="largo">
+      <li>Una bolsa tiene 4 canicas rojas y 6 azules. Se sacan 2 sin reemplazo. ¿Qué probabilidad hay de que ambas sean azules?</li>
+      <li>En la misma situación, ¿de que salga una de cada color?</li>
+      <li>¿Y de que ambas sean azules si se regresa la primera?</li>
+      <li>Se lanza una moneda 3 veces. ¿Qué probabilidad hay de obtener al menos un águila?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Probabilidad total y Bayes</h3>
+    <ol class="largo">
+      <li>El 30 % de los alumnos llega en la ruta $A$, que se retrasa el 10 % de los días, y el 70 % en la ruta $B$, que se retrasa el 20 %. ¿Qué probabilidad hay de que un alumno llegue tarde? Si llegó tarde, ¿qué probabilidad hay de que viniera en la ruta $A$?</li>
+      <li>Una enfermedad afecta al 2 %. La prueba detecta al 90 % de los enfermos y da positivo al 3 % de los sanos. Si alguien sale positivo, ¿qué probabilidad hay de que esté enfermo?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\tfrac{1}{6}$</span></li>
+    <li><span>$\tfrac{1}{6}$</span></li>
+    <li><span>$\tfrac{11}{36}$</span></li>
+    <li><span>$0.7$; sí</span></li>
+    <li><span>$0.6$</span></li>
+    <li><span>$\tfrac{7}{13} \approx 0.538$</span></li>
+    <li><span>$0.6$</span></li>
+    <li><span>No</span></li>
+    <li><span>$\tfrac{1}{3}$</span></li>
+    <li><span>$\tfrac{8}{15}$</span></li>
+    <li><span>$0.36$</span></li>
+    <li><span>$\tfrac{7}{8}$</span></li>
+    <li><span>$0.17$; $\tfrac{3}{17} \approx 0.176$</span></li>
+    <li><span>$\approx 0.38$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>36 resultados; suma 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1).</div></div>
+    <div class="sol"><span>2</span><div>Suma 10: 3 casos; 11: 2; 12: 1. Total 6.</div></div>
+    <div class="sol"><span>3</span><div>Ningún 6: $\tfrac{5}{6}\cdot\tfrac{5}{6} = \tfrac{25}{36}$; complemento.</div></div>
+    <div class="sol"><span>4</span><div>$0.5 + 0.4 - 0.2$. Además $0.5\cdot 0.4 = 0.2 = P(A \cap B)$.</div></div>
+    <div class="sol"><span>6</span><div>Solo el renglón de mujeres: $\tfrac{70}{130}$.</div></div>
+    <div class="sol"><span>7</span><div>Solo la columna de té: $\tfrac{60}{100}$.</div></div>
+    <div class="sol"><span>8</span><div>$P(\text{café} \mid \text{hombre}) = \tfrac{80}{120} \approx 0.667 \neq 0.6$.</div></div>
+    <div class="sol"><span>9</span><div>$\tfrac{6}{10}\cdot\tfrac{5}{9} = \tfrac{30}{90}$.</div></div>
+    <div class="sol"><span>10</span><div>Roja y azul, o azul y roja: $\tfrac{4}{10}\cdot\tfrac{6}{9} + \tfrac{6}{10}\cdot\tfrac{4}{9} = \tfrac{48}{90}$.</div></div>
+    <div class="sol"><span>11</span><div>Con reemplazo son independientes: $0.6^2$.</div></div>
+    <div class="sol"><span>12</span><div>$1 - \left(\tfrac{1}{2}\right)^3$.</div></div>
+    <div class="sol"><span>13</span><div>$0.3(0.1) + 0.7(0.2) = 0.03 + 0.14$. Bayes: $\tfrac{0.03}{0.17}$.</div></div>
+    <div class="sol"><span>14</span><div>$P(+) = 0.02(0.9) + 0.98(0.03) = 0.018 + 0.0294 = 0.0474$. $P(E \mid +) = \tfrac{0.018}{0.0474} \approx 0.380$.</div></div>
+  </div>
+</section>

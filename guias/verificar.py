@@ -1159,6 +1159,86 @@ def _():
         ('ej10', pi*Idef(9 - x**2, -3, 3), 36*pi), ('ej11', (pi*Idef(4*y, 0, 4, y), round(32*math.pi, 1)), (32*pi, 100.5)),
     ]
 
+from math import comb as C_
+from statistics import NormalDist
+PHI = NormalDist().cdf
+
+@guia('PM29 Estadística descriptiva')
+def _():
+    import statistics as st
+    cal = [6, 7, 7, 8, 8, 8, 8, 9, 9, 10]
+    A = [3, 5, 5, 6, 7, 8, 8, 8, 10]
+    Cd = [11, 12, 13, 14, 15, 15, 18, 20]
+    ss = lambda d: sum((F(v) - F(sum(d), len(d)))**2 for v in d)
+    return [
+        ('ejemplo1', ([round(f/30, 3) for f in (5, 12, 8, 5)], [5, 17, 25, 30]), ([0.167, 0.4, 0.267, 0.167], [5, 17, 25, 30])),
+        ('ejemplo2', (F(sum(cal), 10), st.median(cal), st.mode(cal)), (8, 8.0, 8)),
+        ('ejemplo2b', (F(5*5 + 15*12 + 25*8 + 35*5, 30), round(580/30, 1)), (F(580, 30), 19.3)),
+        ('sueldos', (F(8 + 9 + 10 + 11 + 62, 5), st.median([8, 9, 10, 11, 62])), (20, 10)),
+        ('ejemplo3', (ss(cal), ss(cal)/10, round(st.pstdev(cal), 2), round(float(ss(cal)/9), 2), round(st.stdev(cal), 2)), (12, F(6, 5), 1.10, 1.33, 1.15)),
+        ('ejemplo4', (st.median(sorted(cal)[:5]), st.median(sorted(cal)[5:])), (7, 9)),
+        ('ejemplo5', F(82 - 70, 8), F(3, 2)),
+        ('ej1', F(sum(A), 9), F(20, 3)), ('ej2', st.median(A), 7), ('ej3', st.mode(A), 8), ('ej4', max(A) - min(A), 7),
+        ('ej5', (ss(A), ss(A)/9, st.pstdev(A)), (36, 4, 2.0)), ('ej6', (ss(A)/8, round(st.stdev(A), 2)), (F(9, 2), 2.12)),
+        ('ej7', (st.median(A[:4]), st.median(A[5:])), (5.0, 8.0)),
+        ('ej8', F(10, 30), F(1, 3)), ('ej9', 4 + 10, 14), ('ej10', (F(5*4 + 15*10 + 25*11 + 35*5, 30), round(620/30, 2)), (F(62, 3), 20.67)),
+        ('ej11', (st.mean(Cd), st.median(Cd), ss(Cd), round(st.stdev(Cd), 2)), (14.75, 14.5, F(127, 2), 3.01)),
+        ('ej12', F(176 - 160, 8), 2), ('ej13', (F(85 - 75, 5), F(90 - 80, 10)), (2, 1)),
+    ]
+
+@guia('PM30 Técnicas de conteo')
+def _():
+    fact = math.factorial
+    P_ = math.perm
+    return [
+        ('ejemplo1', 26**3 * 10**3, 17576000), ('ejemplo2', P_(8, 3), 336), ('ejemplo3', fact(6) // (fact(3)*fact(2)), 60),
+        ('ejemplo4', C_(6, 2)*C_(5, 3), 150), ('ejemplo5', C_(4, 2)*2**2, 24), ('ejemplo6', F(C_(5, 2), C_(8, 2)), F(5, 14)),
+        ('comite', C_(10, 3), 120), ('pascal', [C_(4, k) for k in range(5)], [1, 4, 6, 4, 1]),
+        ('ej1', 3*4*2, 24), ('ej2', (10**4, P_(10, 4)), (10000, 5040)), ('ej3', fact(6), 720), ('ej4', P_(12, 3), 1320),
+        ('ej5', fact(10) // (fact(2)*fact(3)*fact(2)), 151200), ('ej5b', sorted('MATEMATICA'), sorted('AAACEIMMTT')),
+        ('ej6', fact(4), 24), ('ej7', C_(12, 5), 792), ('ej8', (C_(10, 8), C_(7, 5)), (45, 21)),
+        ('ej9', C_(5, 2)*C_(7, 2), 210), ('ej10', (C_(12, 4) - C_(7, 4), sum(C_(5, k)*C_(7, 4 - k) for k in range(1, 5))), (460, 460)),
+        ('ej11', C_(6, 2) - 6, 9), ('ej12', sp.Poly(sp.expand((2*x - 1)**5), x).coeff_monomial(x**3), 80),
+        ('ej13', C_(56, 6), 32468436), ('ej14', F(C_(4, 2), C_(52, 2)), F(1, 221)),
+    ]
+
+@guia('PM31 Probabilidad condicional')
+def _():
+    dados = [(i, j) for i in range(1, 7) for j in range(1, 7)]
+    Pd = lambda cond: F(sum(1 for d in dados if cond(d)), 36)
+    return [
+        ('ejemplo1', F(3, 6) + F(2, 6) - F(1, 6), F(2, 3)),
+        ('ejemplo2', (F(140, 200), F(90, 120), round(90/140, 3)), (F(7, 10), F(3, 4), 0.643)),
+        ('ejemplo3', F(4, 52)*F(3, 51), F(1, 221)),
+        ('ejemplo4', (0.6*0.02 + 0.4*0.05, round(0.012/0.032, 3)), (0.032, 0.375)),
+        ('ejemplo5', (round(0.01*0.95 + 0.99*0.05, 4), round(0.0095/0.059, 3)), (0.059, 0.161)),
+        ('ej1', Pd(lambda d: sum(d) == 7), F(1, 6)), ('ej2', Pd(lambda d: sum(d) >= 10), F(1, 6)), ('ej3', Pd(lambda d: 6 in d), F(11, 36)),
+        ('ej4', (0.5 + 0.4 - 0.2, 0.5*0.4), (0.7, 0.2)),
+        ('ej5', F(150, 250), F(3, 5)), ('ej6', F(70, 130), F(7, 13)), ('ej7', F(60, 100), F(3, 5)), ('ej8', F(80, 120) == F(150, 250), False),
+        ('ej9', F(6, 10)*F(5, 9), F(1, 3)), ('ej10', 2*F(4, 10)*F(6, 9), F(8, 15)), ('ej11', F(6, 10)**2, F(9, 25)), ('ej12', 1 - F(1, 8), F(7, 8)),
+        ('ej13', (F(3, 10)*F(1, 10) + F(7, 10)*F(2, 10), F(3, 100) / F(17, 100)), (F(17, 100), F(3, 17))),
+        ('ej14', (round(0.02*0.9 + 0.98*0.03, 4), round(0.018/0.0474, 3)), (0.0474, 0.380)),
+    ]
+
+@guia('PM32 Distribución binomial y normal')
+def _():
+    b = lambda n, k, p: C_(n, k) * p**k * (1 - p)**(n - k)
+    tabla = [round(PHI(z), 4) for z in (0, 0.5, 0.75, 1, 1.25, 1.43, 1.5, 1.645, 1.96, 2, 2.5, 3)]
+    return [
+        ('tabla', tabla, [0.5, 0.6915, 0.7734, 0.8413, 0.8944, 0.9236, 0.9332, 0.95, 0.975, 0.9772, 0.9938, 0.9987]),
+        ('ejemplo1', 100*F(1, 10) - 20*F(9, 10), -8),
+        ('ejemplo2', (round(b(5, 3, 0.25), 4), round(1 - 0.75**5, 3), 5*0.25, round(math.sqrt(5*0.25*0.75), 2)), (0.0879, 0.763, 1.25, 0.97)),
+        ('regla', (round(PHI(1) - PHI(-1), 2), round(PHI(2) - PHI(-2), 2), round(PHI(3) - PHI(-3), 3)), (0.68, 0.95, 0.997)),
+        ('ejemplo3', (165 - 7, 165 + 7, (179 - 165)/7), (158, 172, 2.0)),
+        ('ejemplo4', (round((175 - 165)/7, 2), round(165 + 1.645*7, 1), round(NormalDist().inv_cdf(0.95), 3)), (1.43, 176.5, 1.645)),
+        ('ej1', F(5000, 200) - 50, -25), ('ej2', 0*0.1 + 1*0.3 + 2*0.4 + 3*0.2, 1.7),
+        ('ej3', F(C_(6, 4), 2**6), F(15, 64)), ('ej4', round(0.9**8, 3), 0.430), ('ej5', round(b(8, 0, 0.1) + b(8, 1, 0.1), 3), 0.813),
+        ('ej6', (8*0.1, round(math.sqrt(8*0.1*0.9), 2)), (0.8, 0.85)), ('ej7', round(b(5, 4, 0.7) + b(5, 5, 0.7), 3), 0.528),
+        ('ej10', round(1 - 0.9332, 4), 0.0668), ('ej11', round(1 - 0.8944, 4), 0.1056), ('ej12', round(0.9332 - (1 - 0.7734), 4), 0.7066),
+        ('ej10-12 exactos', (round(1 - PHI(1.5), 4), round(PHI(-1.25), 4), round(PHI(1.5) - PHI(-0.75), 4)), (0.0668, 0.1056, 0.7066)),
+        ('ej13', round(500 + 1.645*100, 1), 664.5), ('ej14', (F(592 - 600, 4), round(PHI(-2), 4)), (-2, 0.0228)),
+    ]
+
 if __name__ == '__main__':
     fallas = 0
     for nombre, fn in GUIAS.items():

@@ -168,6 +168,30 @@
     "pdf": "preparatoria-matematicas-28-volumenes-de-revolucion.pdf"
   },
   {
+    "tema": "preparatoria-matematicas-estadistica-descriptiva",
+    "titulo": "Estadística descriptiva",
+    "descripcion": "Tipos de variables, tablas de frecuencias con datos sueltos y agrupados, media, mediana y moda, rango, varianza y desviación estándar (poblacional y muestral), cuartiles con diagrama de caja y puntaje z para comparar datos de distintos grupos.",
+    "pdf": "preparatoria-matematicas-29-estadistica-descriptiva.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-tecnicas-de-conteo",
+    "titulo": "Técnicas de conteo",
+    "descripcion": "Principio multiplicativo y aditivo, factorial, permutaciones con y sin repetición, anagramas con letras repetidas, permutaciones circulares, combinaciones, problemas con condiciones («al menos uno»), binomio de Newton y probabilidades con conteo.",
+    "pdf": "preparatoria-matematicas-30-tecnicas-de-conteo.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-probabilidad-condicional",
+    "titulo": "Probabilidad condicional",
+    "descripcion": "Reglas del complemento, la suma y el producto, probabilidad condicional con tablas de contingencia, eventos independientes, diagramas de árbol, probabilidad total y teorema de Bayes, con el ejemplo de por qué un resultado positivo no siempre significa enfermedad.",
+    "pdf": "preparatoria-matematicas-31-probabilidad-condicional.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-distribucion-binomial-y-normal",
+    "titulo": "Distribución binomial y normal",
+    "descripcion": "Variables aleatorias y valor esperado, cuándo un experimento es binomial, la fórmula binomial con su media y desviación estándar, la curva normal, la regla 68-95-99.7, estandarización con z y uso de la tabla normal.",
+    "pdf": "preparatoria-matematicas-32-distribucion-binomial-y-normal.pdf"
+  },
+  {
     "tema": "secundaria-fisica-posicion-distancia-y-desplazamiento",
     "titulo": "Posición, distancia y desplazamiento",
     "descripcion": "Sistema de referencia, escalares y vectores, distancia recorrida contra desplazamiento, y desplazamientos en dos direcciones con Pitágoras.",

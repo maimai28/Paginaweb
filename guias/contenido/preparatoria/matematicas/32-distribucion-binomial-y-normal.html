@@ -1,0 +1,223 @@
+<!-- guia
+titulo: Distribución binomial y normal
+nivel: Preparatoria
+materia: Matemáticas
+rama: Probabilidad y estadística
+numero: 32
+descripcion: Variables aleatorias y valor esperado, cuándo un experimento es binomial, la fórmula binomial con su media y desviación estándar, la curva normal, la regla 68-95-99.7, estandarización con z y uso de la tabla normal.
+entrada: Muchos fenómenos siguen patrones conocidos. Contar éxitos en intentos repetidos da la distribución binomial; medir estaturas, errores o calificaciones suele dar la famosa campana, la distribución normal. Conocerlas te permite calcular probabilidades sin enumerar casos.
+objetivo: Calcular el valor esperado de una variable aleatoria discreta.
+objetivo: Reconocer un experimento binomial.
+objetivo: Calcular probabilidades binomiales, su media y su desviación.
+objetivo: Usar la regla empírica 68-95-99.7.
+objetivo: Estandarizar y usar la tabla normal.
+objetivo: Encontrar un valor a partir de un porcentaje.
+autoeval: Calcular un valor esperado y decir si un juego conviene. | 01
+autoeval: Revisar las cuatro condiciones de la binomial. | 02
+autoeval: Calcular $P(X = k)$ y «al menos» en una binomial. | 02
+autoeval: Estimar porcentajes con la regla 68-95-99.7. | 03
+autoeval: Pasar a $z$ y leer la tabla, también para colas y entre dos valores. | 04
+-->
+<section>
+  <h2>Variables aleatorias y valor esperado</h2>
+  <p>Una <strong>variable aleatoria</strong> asigna un número a cada resultado de un experimento (el número de águilas, la ganancia de un juego). Si es discreta, su distribución es la lista de valores con sus probabilidades, que suman 1.</p>
+  <div class="definicion">
+    <span class="etq">Valor esperado</span>
+    $$E(X) = \mu = \sum x_i\,P(x_i)$$
+    <p>Es el promedio a largo plazo si el experimento se repitiera muchísimas veces.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En un juego ganas 100 pesos con probabilidad 0.1 y pierdes 20 con probabilidad 0.9. ¿Conviene jugar?</p>
+      $$E = 100(0.1) + (-20)(0.9) = 10 - 18 = -8$$
+      <p class="paso">En promedio pierdes 8 pesos por juego: no conviene.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Distribución binomial</h2>
+  <p>Un experimento es <strong>binomial</strong> si:</p>
+  <ol>
+    <li>hay un número fijo $n$ de intentos;</li>
+    <li>cada intento tiene dos resultados: éxito o fracaso;</li>
+    <li>la probabilidad de éxito $p$ es la misma en cada intento;</li>
+    <li>los intentos son independientes.</li>
+  </ol>
+  <div class="definicion">
+    <span class="etq">Fórmula binomial</span>
+    $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k} \qquad \mu = np \qquad \sigma = \sqrt{np(1 - p)}$$
+    <p>$\binom{n}{k}$ cuenta en qué intentos caen los $k$ éxitos; $p^k(1 - p)^{n - k}$ es la probabilidad de cada uno de esos acomodos.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un examen tiene 5 preguntas de opción múltiple con 4 opciones. Si contestas todo al azar, ¿qué probabilidad hay de acertar exactamente 3? ¿Y al menos 1?</p>
+      <p class="paso">$n = 5$, $p = 0.25$:</p>
+      $$P(X = 3) = \binom{5}{3}(0.25)^3(0.75)^2 = 10(0.015625)(0.5625) \approx 0.0879$$
+      $$P(X \geq 1) = 1 - P(X = 0) = 1 - 0.75^5 \approx 0.763$$
+      <p class="paso">En promedio aciertas $\mu = 5(0.25) = 1.25$ preguntas, con $\sigma = \sqrt{5(0.25)(0.75)} \approx 0.97$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>La distribución normal</h2>
+  <div class="figura-lado">
+    <div>
+      <p>La distribución normal es continua, con forma de campana, simétrica alrededor de su media $\mu$; su anchura la fija la desviación estándar $\sigma$. Para variables continuas no se pregunta $P(X = a)$ (vale 0), sino la probabilidad de un intervalo: el <strong>área</strong> bajo la curva.</p>
+      <div class="definicion">
+        <span class="etq">Regla empírica</span>
+        <p>En una distribución normal, aproximadamente:</p>
+        <p>el 68 % de los datos está a menos de $1\sigma$ de la media, el 95 % a menos de $2\sigma$ y el 99.7 % a menos de $3\sigma$.</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 135" width="52mm">
+        <path d="M44.0 115.0 L44.0 102.8 L47.7 99.2 L51.5 95.0 L55.2 90.0 L58.9 84.3 L62.7 78.0 L66.4 71.2 L70.1 64.0 L73.9 56.8 L77.6 49.6 L81.3 42.9 L85.1 36.9 L88.8 31.9 L92.5 28.1 L96.3 25.8 L100.0 25.0 L103.7 25.8 L107.5 28.1 L111.2 31.9 L114.9 36.9 L118.7 42.9 L122.4 49.6 L126.1 56.8 L129.9 64.0 L133.6 71.2 L137.3 78.0 L141.1 84.3 L144.8 90.0 L148.5 95.0 L152.3 99.2 L156.0 102.8 L156.0 115.0 Z" fill="#f3e9d8"/>
+        <path d="M72.0 115.0 L72.0 60.4 L73.9 56.8 L75.7 53.2 L77.6 49.6 L79.5 46.2 L81.3 42.9 L83.2 39.8 L85.1 36.9 L86.9 34.3 L88.8 31.9 L90.7 29.9 L92.5 28.1 L94.4 26.8 L96.3 25.8 L98.1 25.2 L100.0 25.0 L101.9 25.2 L103.7 25.8 L105.6 26.8 L107.5 28.1 L109.3 29.9 L111.2 31.9 L113.1 34.3 L114.9 36.9 L116.8 39.8 L118.7 42.9 L120.5 46.2 L122.4 49.6 L124.3 53.2 L126.1 56.8 L128.0 60.4 L128.0 115.0 Z" fill="#e6cfae"/>
+        <path d="M7.6 114.6 L10.4 114.5 L13.2 114.3 L16.0 114.0 L18.8 113.7 L21.6 113.2 L24.4 112.6 L27.2 111.9 L30.0 111.0 L32.8 109.9 L35.6 108.6 L38.4 107.0 L41.2 105.1 L44.0 102.8 L46.8 100.2 L49.6 97.2 L52.4 93.8 L55.2 90.0 L58.0 85.8 L60.8 81.2 L63.6 76.3 L66.4 71.2 L69.2 65.9 L72.0 60.4 L74.8 55.0 L77.6 49.6 L80.4 44.6 L83.2 39.8 L86.0 35.6 L88.8 31.9 L91.6 29.0 L94.4 26.8 L97.2 25.4 L100.0 25.0 L102.8 25.4 L105.6 26.8 L108.4 29.0 L111.2 31.9 L114.0 35.6 L116.8 39.8 L119.6 44.6 L122.4 49.6 L125.2 55.0 L128.0 60.4 L130.8 65.9 L133.6 71.2 L136.4 76.3 L139.2 81.2 L142.0 85.8 L144.8 90.0 L147.6 93.8 L150.4 97.2 L153.2 100.2 L156.0 102.8 L158.8 105.1 L161.6 107.0 L164.4 108.6 L167.2 109.9 L170.0 111.0 L172.8 111.9 L175.6 112.6 L178.4 113.2 L181.2 113.7 L184.0 114.0 L186.8 114.3 L189.6 114.5 L192.4 114.6" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="5" y1="115" x2="195" y2="115" stroke="#2b241e" stroke-width="1"/>
+        <g font-family="Nunito" font-size="9" fill="#2b241e" text-anchor="middle">
+          <text x="44" y="127">μ−2σ</text><text x="72" y="127">μ−σ</text><text x="100" y="127">μ</text><text x="128" y="127">μ+σ</text><text x="156" y="127">μ+2σ</text>
+          <text x="100" y="95">68 %</text><text x="100" y="15">95 % entre ±2σ</text>
+        </g>
+      </svg>
+      <figcaption>La curva normal y la regla 68-95.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Las estaturas de un grupo son normales con $\mu = 165$ cm y $\sigma = 7$ cm. ¿Entre qué valores está el 68 % central? ¿Qué porcentaje mide más de 179 cm?</p>
+      <p class="paso">68 %: entre $165 - 7 = 158$ y $165 + 7 = 172$ cm.</p>
+      <p class="paso">179 está a $2\sigma$ de la media. Fuera de $\pm 2\sigma$ queda el 5 %, repartido en dos colas: más o menos el 2.5 % mide más de 179 cm.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Estandarizar y usar la tabla</h2>
+  <p>Cualquier normal se convierte en la <strong>normal estándar</strong> ($\mu = 0$, $\sigma = 1$) con $z = \dfrac{x - \mu}{\sigma}$. La tabla da $\Phi(z) = P(Z \lt z)$, el área a la izquierda:</p>
+  <table class="leyes">
+    <thead><tr><th>$z$</th><th>0</th><th>0.5</th><th>0.75</th><th>1</th><th>1.25</th><th>1.43</th><th>1.5</th><th>1.645</th><th>1.96</th><th>2</th><th>2.5</th><th>3</th></tr></thead>
+    <tbody><tr><td>$\Phi(z)$</td><td>0.5</td><td>0.6915</td><td>0.7734</td><td>0.8413</td><td>0.8944</td><td>0.9236</td><td>0.9332</td><td>0.9500</td><td>0.9750</td><td>0.9772</td><td>0.9938</td><td>0.9987</td></tr></tbody>
+  </table>
+  <table class="leyes">
+    <thead><tr><th>Quieres</th><th>Calcula</th></tr></thead>
+    <tbody>
+      <tr><td>$P(Z \lt z)$</td><td>$\Phi(z)$</td></tr>
+      <tr><td>$P(Z \gt z)$</td><td>$1 - \Phi(z)$</td></tr>
+      <tr><td>$P(Z \lt -z)$</td><td>$1 - \Phi(z)$ (por simetría)</td></tr>
+      <tr><td>$P(a \lt Z \lt b)$</td><td>$\Phi(b) - \Phi(a)$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Con las estaturas del ejemplo 3, ¿qué proporción mide menos de 175 cm? ¿Qué estatura deja por encima al 5 % más alto?</p>
+      $$z = \frac{175 - 165}{7} \approx 1.43 \qquad P(X \lt 175) = \Phi(1.43) \approx 0.9236$$
+      <p class="paso">Al revés: el 5 % superior empieza donde $\Phi(z) = 0.95$, o sea $z = 1.645$. Entonces $x = \mu + z\sigma = 165 + 1.645(7) \approx 176.5$ cm.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$P(X = 3) = p^3(1 - p)^2$</td><td class="bien">Multiplicar por $\binom{5}{3}$</td><td>Los éxitos pueden caer en distintos intentos.</td></tr>
+        <tr><td class="mal">Binomial sin independencia</td><td class="bien">Revisar las condiciones</td><td>Sin reemplazo, $p$ cambia.</td></tr>
+        <tr><td class="mal">$P(Z \gt 1.5) = 0.9332$</td><td class="bien">$1 - 0.9332 = 0.0668$</td><td>La tabla da el área a la izquierda.</td></tr>
+        <tr><td class="mal">$z = \dfrac{x - \mu}{\sigma^2}$</td><td class="bien">Dividir entre $\sigma$</td><td>No entre la varianza.</td></tr>
+        <tr><td class="mal">Más de $2\sigma$: 5 %</td><td class="bien">2.5 % por cola</td><td>El 5 % se reparte entre las dos colas.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$E(X) = \sum x\,P(x)$</div><div>$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}$</div><div>$\mu = np$, $\sigma = \sqrt{np(1 - p)}$</div>
+      <div>68 % en $\pm 1\sigma$</div><div>95 % en $\pm 2\sigma$</div><div>99.7 % en $\pm 3\sigma$</div>
+      <div>$z = \dfrac{x - \mu}{\sigma}$</div><div>$P(Z \gt z) = 1 - \Phi(z)$</div><div>$x = \mu + z\sigma$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa la tabla de la sección 04 y calculadora. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Valor esperado</h3>
+    <ol class="largo">
+      <li>Se venden 200 boletos de 50 pesos para rifar un premio de 5000 pesos. ¿Cuál es la ganancia esperada de quien compra un boleto?</li>
+      <li>$X$ vale 0, 1, 2 y 3 con probabilidades 0.1, 0.3, 0.4 y 0.2. Calcula $E(X)$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Binomial</h3>
+    <ol class="largo">
+      <li>Se lanza una moneda 6 veces. ¿Qué probabilidad hay de obtener exactamente 4 águilas?</li>
+      <li>El 10 % de los focos sale defectuoso. En una caja de 8, ¿qué probabilidad hay de que ninguno esté defectuoso?</li>
+      <li>¿Y de que haya a lo más uno defectuoso?</li>
+      <li>¿Cuál es la media y la desviación estándar del número de defectuosos por caja?</li>
+      <li>Un tirador acierta el 70 % de sus tiros. En 5 tiros, ¿qué probabilidad hay de que acierte al menos 4?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Normal: un examen con $\mu = 500$ y $\sigma = 100$</h3>
+    <ol class="largo">
+      <li>¿Qué porcentaje saca entre 400 y 600?</li>
+      <li>¿Y entre 300 y 700?</li>
+      <li>¿Qué proporción saca más de 650?</li>
+      <li>¿Qué proporción saca menos de 375?</li>
+      <li>¿Qué proporción saca entre 425 y 650?</li>
+      <li>¿Qué puntaje hay que sacar para estar en el 5 % superior?</li>
+      <li>Una máquina llena botellas con $\mu = 600$ ml y $\sigma = 4$ ml. ¿Qué porcentaje de botellas tiene menos de 592 ml?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$-25$ pesos</span></li>
+    <li><span>$1.7$</span></li>
+    <li><span>$\tfrac{15}{64} \approx 0.234$</span></li>
+    <li><span>$\approx 0.430$</span></li>
+    <li><span>$\approx 0.813$</span></li>
+    <li><span>$\mu = 0.8$, $\sigma \approx 0.85$</span></li>
+    <li><span>$\approx 0.528$</span></li>
+    <li><span>$\approx 68\,\%$</span></li>
+    <li><span>$\approx 95\,\%$</span></li>
+    <li><span>$0.0668$</span></li>
+    <li><span>$0.1056$</span></li>
+    <li><span>$0.7066$</span></li>
+    <li><span>$\approx 664.5$</span></li>
+    <li><span>$\approx 2.28\,\%$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>Ganas $5000$ con probabilidad $\tfrac{1}{200}$ y siempre pagas 50: $\tfrac{5000}{200} - 50 = 25 - 50$.</div></div>
+    <div class="sol"><span>2</span><div>$0(0.1) + 1(0.3) + 2(0.4) + 3(0.2) = 0.3 + 0.8 + 0.6$.</div></div>
+    <div class="sol"><span>3</span><div>$\binom{6}{4}(0.5)^6 = \tfrac{15}{64}$.</div></div>
+    <div class="sol"><span>4</span><div>$0.9^8$.</div></div>
+    <div class="sol"><span>5</span><div>$0.9^8 + \binom{8}{1}(0.1)(0.9)^7 \approx 0.4305 + 0.3826$.</div></div>
+    <div class="sol"><span>6</span><div>$8(0.1) = 0.8$ y $\sqrt{8(0.1)(0.9)} = \sqrt{0.72}$.</div></div>
+    <div class="sol"><span>7</span><div>$\binom{5}{4}(0.7)^4(0.3) + (0.7)^5 = 0.36015 + 0.16807$.</div></div>
+    <div class="sol"><span>10</span><div>$z = 1.5$: $1 - 0.9332$.</div></div>
+    <div class="sol"><span>11</span><div>$z = -1.25$: por simetría, $1 - \Phi(1.25) = 1 - 0.8944$.</div></div>
+    <div class="sol"><span>12</span><div>$z$ de $-0.75$ a $1.5$: $\Phi(1.5) - (1 - \Phi(0.75)) = 0.9332 - 0.2266$.</div></div>
+    <div class="sol"><span>13</span><div>$z = 1.645$: $500 + 1.645(100)$.</div></div>
+    <div class="sol"><span>14</span><div>$z = \tfrac{592 - 600}{4} = -2$: $1 - 0.9772 = 0.0228$.</div></div>
+  </div>
+</section>

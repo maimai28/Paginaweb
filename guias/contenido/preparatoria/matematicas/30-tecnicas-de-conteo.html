@@ -1,0 +1,218 @@
+<!-- guia
+titulo: Técnicas de conteo
+nivel: Preparatoria
+materia: Matemáticas
+rama: Probabilidad y estadística
+numero: 30
+descripcion: Principio multiplicativo y aditivo, factorial, permutaciones con y sin repetición, anagramas con letras repetidas, permutaciones circulares, combinaciones, problemas con condiciones («al menos uno»), binomio de Newton y probabilidades con conteo.
+entrada: ¿Cuántas placas distintas puede haber? ¿De cuántas formas se elige un comité? Contar uno por uno es imposible cuando las opciones son miles o millones. Con unas cuantas reglas, y la pregunta clave de si el orden importa, lo resuelves en una línea.
+objetivo: Usar los principios multiplicativo y aditivo.
+objetivo: Calcular permutaciones, con y sin repetición.
+objetivo: Contar arreglos con elementos repetidos.
+objetivo: Calcular combinaciones y decidir si el orden importa.
+objetivo: Resolver problemas con condiciones y «al menos uno».
+objetivo: Usar el binomio de Newton y calcular probabilidades con conteo.
+autoeval: Aplicar el principio multiplicativo a decisiones sucesivas. | 01
+autoeval: Decidir si el orden importa (permutación o combinación). | 04
+autoeval: Contar anagramas con letras repetidas. | 03
+autoeval: Usar el complemento en problemas de «al menos uno». | 05
+autoeval: Encontrar un coeficiente con el binomio de Newton. | 05
+-->
+<section>
+  <h2>Principio multiplicativo</h2>
+  <div class="definicion">
+    <span class="etq">Principio multiplicativo</span>
+    <p>Si una tarea se hace en pasos sucesivos, con $n_1$ opciones para el primero, $n_2$ para el segundo, etc., el total de formas es $n_1\cdot n_2\cdots n_k$.</p>
+  </div>
+  <p>Si en cambio eliges <strong>una</strong> de varias alternativas que no se pueden combinar (esto <em>o</em> aquello), las opciones se <strong>suman</strong> (principio aditivo).</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una placa tiene 3 letras (de 26) seguidas de 3 dígitos. ¿Cuántas placas distintas hay?</p>
+      $$26\cdot 26\cdot 26\cdot 10\cdot 10\cdot 10 = 17\,576\,000$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Permutaciones</h2>
+  <p>El <strong>factorial</strong> $n! = n(n - 1)\cdots 2\cdot 1$ cuenta las formas de ordenar $n$ objetos distintos. Por convención, $0! = 1$.</p>
+  <div class="definicion">
+    <span class="etq">Permutaciones de $n$ tomadas de $r$ en $r$</span>
+    $$P(n, r) = \frac{n!}{(n - r)!} = n(n - 1)\cdots(n - r + 1)$$
+    <p>Cuenta las formas de elegir $r$ de $n$ objetos <strong>cuando el orden importa</strong> y no se repiten.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En una carrera con 8 corredores, ¿de cuántas formas se pueden repartir oro, plata y bronce?</p>
+      $$P(8, 3) = 8\cdot 7\cdot 6 = 336$$
+    </div>
+  </div>
+  <p>Si se <strong>permite repetir</strong>, cada lugar tiene las $n$ opciones: $n^r$. En una <strong>mesa redonda</strong> no hay primer lugar, así que $n$ personas se sientan de $(n - 1)!$ formas.</p>
+</section>
+
+<section>
+  <h2>Elementos repetidos</h2>
+  <p>Si entre los $n$ objetos hay grupos de iguales, de tamaños $k_1, k_2, \ldots$, intercambiar objetos iguales no produce un arreglo nuevo. Se divide:</p>
+  $$\frac{n!}{k_1!\,k_2!\cdots}$$
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Cuántas «palabras» distintas se forman con las letras de PAPAYA?</p>
+      <p class="paso">6 letras: A tres veces, P dos veces, Y una vez.</p>
+      $$\frac{6!}{3!\,2!\,1!} = \frac{720}{12} = 60$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Combinaciones</h2>
+  <div class="definicion">
+    <span class="etq">Combinaciones de $n$ tomadas de $r$ en $r$</span>
+    $$C(n, r) = \binom{n}{r} = \frac{n!}{r!\,(n - r)!}$$
+    <p>Cuenta las formas de elegir $r$ de $n$ objetos <strong>cuando el orden no importa</strong>. Es $P(n, r)$ dividido entre las $r!$ formas de ordenar a los elegidos.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Pregunta clave</th><th>Si la respuesta es sí</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>¿Importa el orden o hay puestos distintos?</td><td>Permutación</td><td>Presidente y secretario</td></tr>
+      <tr><td>¿Solo importa quiénes quedan?</td><td>Combinación</td><td>Comité, equipo, mano de cartas</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>De 6 mujeres y 5 hombres se forma un comité con 2 mujeres y 3 hombres. ¿Cuántos comités hay?</p>
+      $$\binom{6}{2}\binom{5}{3} = 15\cdot 10 = 150$$
+      <p class="paso">Se multiplica porque se eligen las mujeres <em>y</em> los hombres.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Condiciones, binomio y probabilidad</h2>
+  <p>Para «<strong>al menos uno</strong>», casi siempre es más fácil contar el total y restar los casos con ninguno.</p>
+  <div class="definicion">
+    <span class="etq">Binomio de Newton</span>
+    $$(a + b)^n = \sum_{k=0}^{n}\binom{n}{k}a^{n - k}b^k$$
+    <p>Los coeficientes son los del triángulo de Pascal: para $n = 4$, $1, 4, 6, 4, 1$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Qué coeficiente tiene $x^2$ en $(x + 2)^4$?</p>
+      <p class="paso">El término con $x^2$ es $\binom{4}{2}x^2\cdot 2^2 = 6\cdot 4\,x^2 = 24x^2$.</p>
+    </div>
+  </div>
+  <p>Si todos los resultados son igual de probables, $P = \dfrac{\text{casos favorables}}{\text{casos posibles}}$, y ambos se cuentan con estas técnicas.</p>
+  <div class="ejemplo">
+    <div class="n">6</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una bolsa tiene 5 canicas rojas y 3 azules. Se sacan 2 al azar. ¿Qué probabilidad hay de que ambas sean rojas?</p>
+      $$P = \frac{\binom{5}{2}}{\binom{8}{2}} = \frac{10}{28} = \frac{5}{14} \approx 0.357$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Comité de 3 de 10: $P(10, 3)$</td><td class="bien">$\binom{10}{3} = 120$</td><td>En un comité no hay orden.</td></tr>
+        <tr><td class="mal">$0! = 0$</td><td class="bien">$0! = 1$</td><td>Hay una forma de ordenar nada.</td></tr>
+        <tr><td class="mal">Sumar pasos sucesivos</td><td class="bien">Multiplicar</td><td>Se suma solo con alternativas excluyentes.</td></tr>
+        <tr><td class="mal">«Al menos uno» sumando casos a mano</td><td class="bien">Total menos «ninguno»</td><td>Más rápido y sin olvidar casos.</td></tr>
+        <tr><td class="mal">Anagramas de PAPAYA: $6!$</td><td class="bien">$\dfrac{6!}{3!\,2!}$</td><td>Las letras iguales no dan palabras nuevas.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Pasos: multiplica</div><div>Alternativas: suma</div><div>Con repetición: $n^r$</div>
+      <div>$P(n, r) = \dfrac{n!}{(n - r)!}$</div><div>$\binom{n}{r} = \dfrac{n!}{r!(n - r)!}$</div><div>Repetidos: $\dfrac{n!}{k_1!k_2!\cdots}$</div>
+      <div>Circular: $(n - 1)!$</div><div>Al menos uno: total $-$ ninguno</div><div>$(a + b)^n$: $\binom{n}{k}a^{n - k}b^k$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>En cada uno decide primero si el orden importa. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Principio multiplicativo y permutaciones</h3>
+    <ol class="largo">
+      <li>Un menú tiene 3 entradas, 4 platos fuertes y 2 postres. ¿Cuántas comidas distintas de tres tiempos hay?</li>
+      <li>¿Cuántas contraseñas de 4 dígitos hay si se pueden repetir? ¿Y si no?</li>
+      <li>¿De cuántas formas se sientan 6 personas en una fila?</li>
+      <li>De 12 personas se eligen presidente, secretario y tesorero. ¿De cuántas formas?</li>
+      <li>¿Cuántos anagramas tiene MATEMATICA?</li>
+      <li>¿De cuántas formas se sientan 5 personas en una mesa redonda?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Combinaciones</h3>
+    <ol class="largo">
+      <li>¿Cuántos equipos de 5 se forman con 12 jugadores?</li>
+      <li>En un examen hay que contestar 8 de 10 preguntas. ¿De cuántas formas? ¿Y si las 3 primeras son obligatorias?</li>
+      <li>Con 7 hombres y 5 mujeres, ¿cuántos comités de 4 tienen exactamente 2 mujeres?</li>
+      <li>Con los mismos, ¿cuántos comités de 4 tienen al menos una mujer?</li>
+      <li>¿Cuántas diagonales tiene un hexágono?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Binomio y probabilidad</h3>
+    <ol class="largo">
+      <li>Coeficiente de $x^3$ en $(2x - 1)^5$.</li>
+      <li>En un sorteo se eligen 6 números de 56. ¿Cuántas combinaciones hay? ¿Qué probabilidad tiene un boleto de acertar los 6?</li>
+      <li>Se sacan 2 cartas de una baraja de 52. ¿Qué probabilidad hay de que las dos sean ases?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$24$</span></li>
+    <li><span>$10\,000$ y $5040$</span></li>
+    <li><span>$720$</span></li>
+    <li><span>$1320$</span></li>
+    <li><span>$151\,200$</span></li>
+    <li><span>$24$</span></li>
+    <li><span>$792$</span></li>
+    <li><span>$45$ y $21$</span></li>
+    <li><span>$210$</span></li>
+    <li><span>$460$</span></li>
+    <li><span>$9$</span></li>
+    <li><span>$80$</span></li>
+    <li><span>$32\,468\,436$; $\tfrac{1}{32\,468\,436}$</span></li>
+    <li><span>$\tfrac{1}{221} \approx 0.0045$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$3\cdot 4\cdot 2$.</div></div>
+    <div class="sol"><span>2</span><div>Con repetición $10^4$; sin repetición $10\cdot 9\cdot 8\cdot 7$.</div></div>
+    <div class="sol"><span>4</span><div>Los puestos son distintos: $P(12, 3) = 12\cdot 11\cdot 10$.</div></div>
+    <div class="sol"><span>5</span><div>10 letras: M dos, A tres, T dos, E, I, C una. $\dfrac{10!}{2!\,3!\,2!} = \dfrac{3\,628\,800}{24}$.</div></div>
+    <div class="sol"><span>6</span><div>$(5 - 1)! = 4!$.</div></div>
+    <div class="sol"><span>7</span><div>$\binom{12}{5} = \dfrac{12\cdot 11\cdot 10\cdot 9\cdot 8}{120}$.</div></div>
+    <div class="sol"><span>8</span><div>$\binom{10}{8} = \binom{10}{2} = 45$. Con 3 obligatorias faltan 5 de las 7 restantes: $\binom{7}{5} = 21$.</div></div>
+    <div class="sol"><span>9</span><div>$\binom{5}{2}\binom{7}{2} = 10\cdot 21$.</div></div>
+    <div class="sol"><span>10</span><div>Total $\binom{12}{4} = 495$; sin mujeres $\binom{7}{4} = 35$.</div></div>
+    <div class="sol"><span>11</span><div>Segmentos entre 6 vértices: $\binom{6}{2} = 15$; menos los 6 lados.</div></div>
+    <div class="sol"><span>12</span><div>Término $\binom{5}{3}(2x)^3(-1)^2 = 10\cdot 8x^3$.</div></div>
+    <div class="sol"><span>13</span><div>$\binom{56}{6} = \dfrac{56\cdot 55\cdot 54\cdot 53\cdot 52\cdot 51}{720}$.</div></div>
+    <div class="sol"><span>14</span><div>$\dfrac{\binom{4}{2}}{\binom{52}{2}} = \dfrac{6}{1326}$.</div></div>
+  </div>
+</section>

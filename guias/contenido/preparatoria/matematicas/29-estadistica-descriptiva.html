@@ -1,0 +1,235 @@
+<!-- guia
+titulo: Estadística descriptiva
+nivel: Preparatoria
+materia: Matemáticas
+rama: Probabilidad y estadística
+numero: 29
+descripcion: Tipos de variables, tablas de frecuencias con datos sueltos y agrupados, media, mediana y moda, rango, varianza y desviación estándar (poblacional y muestral), cuartiles con diagrama de caja y puntaje z para comparar datos de distintos grupos.
+entrada: Una lista de cien números no dice nada a simple vista. La estadística descriptiva la resume en unas cuantas cifras: dónde está el centro, qué tan dispersos están los datos y qué tan raro es un valor. Así se leen encuestas, resultados de exámenes o mediciones de laboratorio.
+objetivo: Distinguir variables cualitativas y cuantitativas.
+objetivo: Construir tablas de frecuencias, también con datos agrupados.
+objetivo: Calcular e interpretar media, mediana y moda.
+objetivo: Calcular rango, varianza y desviación estándar.
+objetivo: Encontrar cuartiles y dibujar un diagrama de caja.
+objetivo: Usar el puntaje $z$ para comparar.
+autoeval: Construir una tabla con frecuencia relativa y acumulada. | 01
+autoeval: Elegir entre media y mediana cuando hay datos atípicos. | 02
+autoeval: Calcular la desviación estándar y saber cuándo dividir entre $n - 1$. | 03
+autoeval: Encontrar cuartiles y el rango intercuartil. | 04
+autoeval: Comparar dos datos de grupos distintos con $z$. | 05
+-->
+<section>
+  <h2>Variables y frecuencias</h2>
+  <p>Una variable es <strong>cualitativa</strong> si describe una cualidad (color, carrera, marca) y <strong>cuantitativa</strong> si es un número: <em>discreta</em> si se cuenta (hermanos, goles) o <em>continua</em> si se mide (estatura, tiempo).</p>
+  <table class="leyes">
+    <thead><tr><th>Frecuencia</th><th>Qué es</th></tr></thead>
+    <tbody>
+      <tr><td>Absoluta $f$</td><td>Cuántas veces aparece el valor</td></tr>
+      <tr><td>Relativa $f/n$</td><td>La proporción del total (suman 1, o 100 %)</td></tr>
+      <tr><td>Acumulada $F$</td><td>Cuántos datos hay hasta ese valor, inclusive</td></tr>
+    </tbody>
+  </table>
+  <p>Con muchos datos continuos se agrupan en <strong>clases</strong> (intervalos) de igual ancho. Cada clase se representa por su <strong>marca de clase</strong>, el punto medio.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se preguntó a 30 personas cuánto tardan en llegar a la escuela:</p>
+      <table class="leyes">
+        <thead><tr><th>Minutos</th><th>Marca $x$</th><th>$f$</th><th>$f/n$</th><th>$F$</th></tr></thead>
+        <tbody>
+          <tr><td>$[0, 10)$</td><td>5</td><td>5</td><td>0.167</td><td>5</td></tr>
+          <tr><td>$[10, 20)$</td><td>15</td><td>12</td><td>0.400</td><td>17</td></tr>
+          <tr><td>$[20, 30)$</td><td>25</td><td>8</td><td>0.267</td><td>25</td></tr>
+          <tr><td>$[30, 40)$</td><td>35</td><td>5</td><td>0.167</td><td>30</td></tr>
+        </tbody>
+      </table>
+      <p class="paso">El 40 % tarda entre 10 y 20 minutos; 17 personas tardan menos de 20.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Medidas de tendencia central</h2>
+  <table class="leyes">
+    <thead><tr><th>Medida</th><th>Cómo se calcula</th></tr></thead>
+    <tbody>
+      <tr><td>Media $\bar{x}$</td><td>$\dfrac{\sum x_i}{n}$; con tabla, $\dfrac{\sum x_i f_i}{n}$</td></tr>
+      <tr><td>Mediana</td><td>El valor central de los datos <strong>ordenados</strong> (promedio de los dos centrales si $n$ es par)</td></tr>
+      <tr><td>Moda</td><td>El valor más frecuente (puede haber varias o ninguna)</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calificaciones de 10 alumnos: 6, 7, 7, 8, 8, 8, 8, 9, 9, 10.</p>
+      <p class="paso">Media: $\dfrac{80}{10} = 8$. Mediana: promedio de los lugares 5 y 6, $\dfrac{8 + 8}{2} = 8$. Moda: 8.</p>
+      <p class="paso">Con la tabla del ejemplo 1 (usando marcas): $\bar{x} = \dfrac{5(5) + 15(12) + 25(8) + 35(5)}{30} = \dfrac{580}{30} \approx 19.3$ minutos.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">La media se deja jalar por los extremos</span>
+    <p>Sueldos de cinco personas: 8, 9, 10, 11 y 62 mil pesos. La media es 20 mil, más que lo que ganan cuatro de los cinco. La mediana, 10 mil, describe mejor al grupo. Con datos atípicos, usa la mediana.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Medidas de dispersión</h2>
+  <p>Dos grupos pueden tener la misma media y ser muy distintos: uno muy parejo y otro muy disperso.</p>
+  <div class="definicion">
+    <span class="etq">Varianza y desviación estándar</span>
+    $$\sigma^2 = \frac{\sum (x_i - \bar{x})^2}{n} \ \ \text{(población)} \qquad s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1} \ \ \text{(muestra)}$$
+    <p>La desviación estándar es la raíz: $\sigma = \sqrt{\sigma^2}$ o $s = \sqrt{s^2}$. Mide, más o menos, qué tan lejos de la media está un dato típico, en las mismas unidades que los datos.</p>
+  </div>
+  <p>Se divide entre $n - 1$ cuando los datos son una <strong>muestra</strong> y quieres estimar la dispersión de toda la población: la muestra tiende a subestimarla y el $n - 1$ lo corrige. El <strong>rango</strong>, máximo menos mínimo, es la medida más simple pero depende solo de dos datos.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Desviación estándar de las calificaciones del ejemplo 2 (como población).</p>
+      <p class="paso">Desviaciones respecto a 8: $-2, -1, -1, 0, 0, 0, 0, 1, 1, 2$. Sus cuadrados suman $4 + 1 + 1 + 1 + 1 + 4 = 12$.</p>
+      $$\sigma^2 = \frac{12}{10} = 1.2 \qquad \sigma \approx 1.10 \qquad\qquad (s^2 = \tfrac{12}{9} \approx 1.33,\ s \approx 1.15)$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cuartiles y diagrama de caja</h2>
+  <p>Los <strong>cuartiles</strong> parten los datos ordenados en cuatro partes iguales. $Q_2$ es la mediana; $Q_1$ es la mediana de la mitad inferior y $Q_3$ la de la mitad superior (si $n$ es impar, no incluyas la mediana en ninguna mitad). El <strong>rango intercuartil</strong> $RIC = Q_3 - Q_1$ mide la dispersión del 50 % central y no le afectan los atípicos.</p>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">4</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>Con 6, 7, 7, 8, 8, 8, 8, 9, 9, 10:</p>
+        <p class="paso">Mitad inferior 6, 7, 7, 8, 8: $Q_1 = 7$. Mitad superior 8, 8, 9, 9, 10: $Q_3 = 9$. $RIC = 2$.</p>
+        <p class="paso">El diagrama de caja muestra los cinco números: mínimo, $Q_1$, mediana, $Q_3$ y máximo.</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 80" width="52mm">
+        <line x1="20" y1="35" x2="60" y2="35" stroke="#2b241e" stroke-width="1.4"/>
+        <line x1="140" y1="35" x2="180" y2="35" stroke="#2b241e" stroke-width="1.4"/>
+        <line x1="20" y1="25" x2="20" y2="45" stroke="#2b241e" stroke-width="1.4"/><line x1="180" y1="25" x2="180" y2="45" stroke="#2b241e" stroke-width="1.4"/>
+        <rect x="60" y="18" width="80" height="34" fill="#efe3cf" stroke="#b5562c" stroke-width="1.8"/>
+        <line x1="100" y1="18" x2="100" y2="52" stroke="#b5562c" stroke-width="2.4"/>
+        <line x1="20" y1="64" x2="180" y2="64" stroke="#8a7a66" stroke-width="0.8"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e" text-anchor="middle">
+          <text x="20" y="76">6</text><text x="60" y="76">7</text><text x="100" y="76">8</text><text x="140" y="76">9</text><text x="180" y="76">10</text>
+          <text x="60" y="12">Q₁</text><text x="100" y="12">Q₂</text><text x="140" y="12">Q₃</text>
+        </g>
+      </svg>
+      <figcaption>Caja: el 50 % central de los datos.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Puntaje $z$</h2>
+  <div class="definicion">
+    <span class="etq">Puntaje estándar</span>
+    $$z = \frac{x - \bar{x}}{\sigma}$$
+    <p>Dice a cuántas desviaciones estándar está un dato de la media (positivo arriba, negativo abajo). Sirve para comparar datos de grupos con escalas distintas.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En un examen la media fue 70 y $\sigma = 8$. ¿Qué tan destacado es un 82?</p>
+      $$z = \frac{82 - 70}{8} = 1.5$$
+      <p class="paso">Está una desviación estándar y media por encima del promedio.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Mediana sin ordenar los datos</td><td class="bien">Ordenar primero</td><td>Es el valor central de la lista ordenada.</td></tr>
+        <tr><td class="mal">Con tabla: $\bar{x} = \dfrac{\sum x_i}{\text{número de clases}}$</td><td class="bien">$\dfrac{\sum x_i f_i}{n}$</td><td>Cada marca pesa según su frecuencia.</td></tr>
+        <tr><td class="mal">$\sigma = \dfrac{\sum (x_i - \bar{x})}{n}$</td><td class="bien">Elevar al cuadrado</td><td>Sin cuadrado, las desviaciones suman 0.</td></tr>
+        <tr><td class="mal">Olvidar la raíz</td><td class="bien">$\sigma = \sqrt{\sigma^2}$</td><td>La varianza está en unidades al cuadrado.</td></tr>
+        <tr><td class="mal">Dividir entre $n$ en una muestra</td><td class="bien">Entre $n - 1$</td><td>Para estimar la dispersión de la población.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$f$, $f/n$, $F$</div><div>Marca: punto medio de la clase</div><div>$\bar{x} = \dfrac{\sum x_i f_i}{n}$</div>
+      <div>Mediana: centro ordenado</div><div>Atípicos: mejor mediana</div><div>$\sigma^2 = \dfrac{\sum (x - \bar{x})^2}{n}$</div>
+      <div>Muestra: $n - 1$</div><div>$RIC = Q_3 - Q_1$</div><div>$z = \dfrac{x - \bar{x}}{\sigma}$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Puedes usar calculadora. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Datos: 3, 5, 5, 6, 7, 8, 8, 8, 10</h3>
+    <ol>
+      <li>Media</li><li>Mediana</li><li>Moda</li><li>Rango</li>
+      <li>Varianza y desviación estándar (población)</li><li>Varianza y desviación estándar (muestra)</li><li>$Q_1$, $Q_3$ y $RIC$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Datos agrupados</h3>
+    <table class="leyes">
+      <thead><tr><th>Minutos</th><th>$[0, 10)$</th><th>$[10, 20)$</th><th>$[20, 30)$</th><th>$[30, 40)$</th></tr></thead>
+      <tbody><tr><td>$f$</td><td>4</td><td>10</td><td>11</td><td>5</td></tr></tbody>
+    </table>
+    <ol class="largo">
+      <li>¿Qué frecuencia relativa tiene la clase $[10, 20)$?</li>
+      <li>¿Cuántos datos hay antes de 20 minutos?</li>
+      <li>Estima la media con las marcas de clase. ¿Cuál es la clase modal?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Interpretación</h3>
+    <ol class="largo">
+      <li>Datos: 11, 12, 13, 14, 15, 15, 18, 20. Calcula media, mediana y desviación estándar muestral.</li>
+      <li>Las estaturas de un grupo tienen media 160 cm y $\sigma = 8$ cm. ¿Qué puntaje $z$ tiene una persona de 176 cm?</li>
+      <li>Ana sacó 85 en un examen con media 75 y $\sigma = 5$. Luis sacó 90 en otro con media 80 y $\sigma = 10$. ¿Quién destacó más en su grupo?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\tfrac{20}{3} \approx 6.67$</span></li>
+    <li><span>$7$</span></li>
+    <li><span>$8$</span></li>
+    <li><span>$7$</span></li>
+    <li><span>$\sigma^2 = 4$, $\sigma = 2$</span></li>
+    <li><span>$s^2 = 4.5$, $s \approx 2.12$</span></li>
+    <li><span>$Q_1 = 5$, $Q_3 = 8$, $RIC = 3$</span></li>
+    <li><span>$\tfrac{1}{3} \approx 33.3\,\%$</span></li>
+    <li><span>$14$</span></li>
+    <li><span>$\approx 20.67$ min; $[20, 30)$</span></li>
+    <li><span>$14.75$; $14.5$; $s \approx 3.01$</span></li>
+    <li><span>$z = 2$</span></li>
+    <li><span>Ana ($z = 2$ contra $z = 1$)</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>Suma: 60, entre 9.</div></div>
+    <div class="sol"><span>2</span><div>Son 9 datos ya ordenados: el quinto es 7.</div></div>
+    <div class="sol"><span>5</span><div>Con $\bar{x} = \tfrac{20}{3}$, la suma de cuadrados de desviaciones es 36. $\tfrac{36}{9} = 4$.</div></div>
+    <div class="sol"><span>6</span><div>$\tfrac{36}{8} = 4.5$ y $\sqrt{4.5} \approx 2.12$.</div></div>
+    <div class="sol"><span>7</span><div>Sin la mediana (7): mitad inferior 3, 5, 5, 6 da $Q_1 = 5$; superior 8, 8, 8, 10 da $Q_3 = 8$.</div></div>
+    <div class="sol"><span>8</span><div>$n = 30$: $\tfrac{10}{30}$.</div></div>
+    <div class="sol"><span>9</span><div>Acumulada: $4 + 10$.</div></div>
+    <div class="sol"><span>10</span><div>$\dfrac{5(4) + 15(10) + 25(11) + 35(5)}{30} = \dfrac{620}{30}$. La clase con más datos es $[20, 30)$.</div></div>
+    <div class="sol"><span>11</span><div>Suma 118, entre 8. Centrales: 14 y 15. Suma de cuadrados de desviaciones: 63.5; $s^2 = \tfrac{63.5}{7}$.</div></div>
+    <div class="sol"><span>12</span><div>$\dfrac{176 - 160}{8} = 2$.</div></div>
+    <div class="sol"><span>13</span><div>Ana: $\tfrac{85 - 75}{5} = 2$. Luis: $\tfrac{90 - 80}{10} = 1$. Aunque Luis sacó más puntos, Ana quedó más arriba en su grupo.</div></div>
+  </div>
+</section>
