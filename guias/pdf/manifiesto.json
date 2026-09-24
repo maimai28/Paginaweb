@@ -1,5 +1,35 @@
 [
   {
+    "tema": "preparatoria-fisica-vectores",
+    "titulo": "Vectores",
+    "descripcion": "Escalares y vectores, componentes rectangulares, magnitud y dirección, suma y resta por componentes, vectores unitarios, producto escalar y aplicaciones como fuerzas combinadas, aviones con viento y lanchas que cruzan un río.",
+    "pdf": "preparatoria-fisica-01-vectores.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-cinematica-en-una-dimension",
+    "titulo": "Cinemática en una dimensión",
+    "descripcion": "Posición, velocidad y aceleración con signo, MRU y MRUA con sus cuatro ecuaciones, caída libre y tiro vertical desde una altura, lectura de gráficas posición-tiempo y velocidad-tiempo, y problemas de encuentro y persecución.",
+    "pdf": "preparatoria-fisica-02-cinematica-en-una-dimension.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-tiro-parabolico",
+    "titulo": "Tiro parabólico",
+    "descripcion": "Por qué el movimiento horizontal y el vertical son independientes, tiro horizontal, tiro oblicuo con tiempo de vuelo, altura máxima y alcance, el ángulo de 45°, ángulos complementarios y lanzamientos desde una altura.",
+    "pdf": "preparatoria-fisica-03-tiro-parabolico.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-movimiento-circular",
+    "titulo": "Movimiento circular",
+    "descripcion": "Periodo, frecuencia y velocidad angular, relación entre velocidad lineal y angular, aceleración y fuerza centrípetas, curvas con fricción, la velocidad mínima en un rizo y el movimiento circular uniformemente acelerado.",
+    "pdf": "preparatoria-fisica-04-movimiento-circular.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-leyes-de-newton-y-diagramas-de-cuerpo-libre",
+    "titulo": "Leyes de Newton y diagramas de cuerpo libre",
+    "descripcion": "Las tres leyes de Newton aplicadas con diagramas de cuerpo libre: peso, normal, tensión y fricción estática y cinética, planos inclinados, sistemas de bloques con poleas (máquina de Atwood), elevadores y objetos en equilibrio.",
+    "pdf": "preparatoria-fisica-05-leyes-de-newton-y-diagramas-de-cuerpo-libre.pdf"
+  },
+  {
     "tema": "preparatoria-matematicas-funciones-y-sus-graficas",
     "titulo": "Funciones y sus gráficas",
     "descripcion": "Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.",

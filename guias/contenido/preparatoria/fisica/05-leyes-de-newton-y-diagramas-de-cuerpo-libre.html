@@ -1,0 +1,206 @@
+<!-- guia
+titulo: Leyes de Newton y diagramas de cuerpo libre
+nivel: Preparatoria
+materia: Física
+rama: Mecánica
+numero: 05
+descripcion: Las tres leyes de Newton aplicadas con diagramas de cuerpo libre: peso, normal, tensión y fricción estática y cinética, planos inclinados, sistemas de bloques con poleas (máquina de Atwood), elevadores y objetos en equilibrio.
+entrada: Casi cualquier problema de dinámica se resuelve igual: dibujas el objeto solo, pones todas las fuerzas que actúan sobre él, eliges ejes y aplicas $\sum F = ma$ en cada dirección. Esta guía te entrena en ese método con los casos que más se preguntan.
+objetivo: Enunciar y aplicar las tres leyes de Newton.
+objetivo: Dibujar diagramas de cuerpo libre correctos.
+objetivo: Calcular fricción estática y cinética.
+objetivo: Resolver planos inclinados con ejes girados.
+objetivo: Resolver sistemas de varios cuerpos unidos por cuerdas.
+objetivo: Resolver elevadores y problemas de equilibrio.
+autoeval: Dibujar solo las fuerzas que actúan sobre el objeto. | 01
+autoeval: Distinguir fricción estática de cinética. | 02
+autoeval: Descomponer el peso en un plano inclinado. | 03
+autoeval: Plantear $\sum F = ma$ para cada bloque de un sistema. | 04
+autoeval: Explicar por qué la báscula marca distinto en un elevador. | 05
+-->
+<section>
+  <h2>Las tres leyes y el diagrama de cuerpo libre</h2>
+  <table class="leyes">
+    <thead><tr><th>Ley</th><th>Enunciado</th></tr></thead>
+    <tbody>
+      <tr><td>Primera (inercia)</td><td>Si la fuerza neta es cero, la velocidad no cambia (reposo o MRU).</td></tr>
+      <tr><td>Segunda</td><td>$\sum\vec{F} = m\vec{a}$</td></tr>
+      <tr><td>Tercera</td><td>Si $A$ empuja a $B$, $B$ empuja a $A$ con fuerza igual y opuesta. Esas dos fuerzas actúan sobre cuerpos <strong>distintos</strong>.</td></tr>
+    </tbody>
+  </table>
+  <div class="definicion">
+    <span class="etq">Diagrama de cuerpo libre (DCL)</span>
+    <p>Dibuja el objeto aislado como un punto o una caja y una flecha por cada fuerza que actúa <strong>sobre él</strong>. Después elige ejes (uno en la dirección de la aceleración) y escribe $\sum F_x = ma_x$, $\sum F_y = ma_y$.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Fuerza</th><th>Dirección</th><th>Valor</th></tr></thead>
+    <tbody>
+      <tr><td>Peso $W$</td><td>Hacia abajo</td><td>$W = mg$</td></tr>
+      <tr><td>Normal $N$</td><td>Perpendicular a la superficie</td><td>La que haga falta (se calcula)</td></tr>
+      <tr><td>Tensión $T$</td><td>A lo largo de la cuerda, jalando</td><td>Se calcula</td></tr>
+      <tr><td>Fricción $f$</td><td>Paralela a la superficie, contra el deslizamiento</td><td>Ver siguiente sección</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Fricción</h2>
+  <p>La fricción <strong>estática</strong> impide que algo empiece a moverse: se ajusta a lo necesario hasta un máximo $f_s \leq \mu_s N$. Una vez que desliza, actúa la <strong>cinética</strong>, constante: $f_k = \mu_k N$. Normalmente $\mu_k \lt \mu_s$: cuesta más arrancar que mantener.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se jala una caja de 20 kg con 100 N horizontales sobre un piso con $\mu_k = 0.3$. ¿Qué aceleración tiene?</p>
+      <p class="paso">En $y$: $N = mg = 196$ N. Fricción: $f_k = 0.3(196) = 58.8$ N. En $x$:</p>
+      $$100 - 58.8 = 20a \;\Rightarrow\; a \approx 2.06 \text{ m/s}^2$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Plano inclinado</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Gira los ejes: $x$ a lo largo del plano, $y$ perpendicular. Así la aceleración queda en un solo eje y el peso se descompone en:</p>
+      $$W_\parallel = mg\sin\theta \qquad W_\perp = mg\cos\theta$$
+      <p>La normal equilibra a $W_\perp$: $N = mg\cos\theta$ (si no hay otras fuerzas perpendiculares).</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 190 130" width="48mm">
+        <defs><marker id="fn1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#2b241e"/></marker></defs>
+        <path d="M10 120 L180 120 L180 22 Z" fill="#efe3cf" stroke="#2b241e" stroke-width="1.4"/>
+        <g transform="rotate(-30 99.5 55.7)"><rect x="81.5" y="44.7" width="36" height="22" fill="#d9b98c" stroke="#2b241e" stroke-width="1.4"/></g>
+        <g stroke="#2b241e" stroke-width="1.8" marker-end="url(#fn1)">
+          <line x1="99.5" y1="55.7" x2="99.5" y2="105.7"/>
+          <line x1="99.5" y1="55.7" x2="79.5" y2="21.1"/>
+          <line x1="99.5" y1="55.7" x2="134.1" y2="35.7" stroke="#b5562c"/>
+        </g>
+        <path d="M40 120 A30 30 0 0 0 36 105" fill="none" stroke="#2b241e" stroke-width="1"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="104" y="104">mg</text><text x="68" y="22">N</text><text x="136" y="30" fill="#b5562c">f</text><text x="42" y="114">θ</text>
+        </g>
+      </svg>
+      <figcaption>Bloque que baja: la fricción apunta hacia arriba del plano.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un bloque baja por un plano de $30^\circ$ con $\mu_k = 0.2$. ¿Qué aceleración tiene?</p>
+      $$ma = mg\sin\theta - \mu_k mg\cos\theta \;\Rightarrow\; a = 9.8(0.5 - 0.2\cdot 0.866) \approx 3.20 \text{ m/s}^2$$
+      <p class="paso">Sin fricción sería $g\sin 30^\circ = 4.9$ m/s². La masa se cancela.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Sistemas de cuerpos</h2>
+  <p>Con varios bloques unidos por una cuerda (ideal: sin masa, no se estira), todos tienen la misma aceleración y la tensión es la misma en toda la cuerda. Haz un DCL para <strong>cada</strong> bloque y resuelve el sistema.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Máquina de Atwood: masas de 3 kg y 5 kg cuelgan de una polea. Encuentra $a$ y $T$.</p>
+      $$5g - T = 5a \qquad T - 3g = 3a$$
+      <p class="paso">Sumando: $2g = 8a$, así que $a = \dfrac{2(9.8)}{8} = 2.45$ m/s². Luego $T = 3(9.8 + 2.45) = 36.75$ N.</p>
+      <p class="paso">Comprueba: la tensión queda entre los dos pesos (29.4 N y 49 N), como debe ser.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Elevadores y equilibrio</h2>
+  <p>Una báscula mide la <strong>normal</strong>, no tu peso. En un elevador con aceleración $a$ (positiva hacia arriba): $N - mg = ma$, así que $N = m(g + a)$.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una persona de 70 kg está sobre una báscula en un elevador que arranca hacia arriba con 2 m/s². ¿Qué marca la báscula?</p>
+      $$N = 70(9.8 + 2) = 826 \text{ N}$$
+      <p class="paso">La báscula lo traduce como $\tfrac{826}{9.8} \approx 84.3$ kg. Al frenar de subida marcaría menos que 70 kg.</p>
+    </div>
+  </div>
+  <p>En <strong>equilibrio</strong> ($a = 0$) la suma de fuerzas en cada eje es cero. Por ejemplo, un letrero de 5 kg colgado de dos cuerdas que forman $30^\circ$ con la horizontal cumple $2T\sin 30^\circ = 49$ N, o sea $T = 49$ N: cada cuerda aguanta tanto como el peso completo.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$N = mg$ siempre</td><td class="bien">Se calcula con el DCL</td><td>En planos o elevadores cambia.</td></tr>
+        <tr><td class="mal">Poner «$ma$» como fuerza en el DCL</td><td class="bien">Solo fuerzas reales</td><td>$ma$ es el resultado.</td></tr>
+        <tr><td class="mal">$f_s = \mu_s N$ siempre</td><td class="bien">$f_s \leq \mu_s N$</td><td>Solo vale eso al máximo.</td></tr>
+        <tr><td class="mal">Acción y reacción se cancelan</td><td class="bien">Actúan en cuerpos distintos</td><td>No se suman en el mismo DCL.</td></tr>
+        <tr><td class="mal">$W_\parallel = mg\cos\theta$</td><td class="bien">$mg\sin\theta$</td><td>Con $\theta = 0$ (plano horizontal) debe dar 0.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\sum\vec{F} = m\vec{a}$</div><div>$W = mg$</div><div>$f_k = \mu_k N$, $f_s \leq \mu_s N$</div>
+      <div>Plano: $mg\sin\theta$ a lo largo</div><div>$N = mg\cos\theta$</div><div>Un DCL por cuerpo</div>
+      <div>Atwood: $a = \dfrac{(m_2 - m_1)g}{m_1 + m_2}$</div><div>Elevador: $N = m(g + a)$</div><div>Equilibrio: $\sum F = 0$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s² y dibuja siempre el DCL. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Una sola masa</h3>
+    <ol class="largo">
+      <li>Una fuerza neta de 50 N actúa sobre 10 kg. ¿Qué aceleración produce?</li>
+      <li>Una caja de 15 kg descansa en un piso con $\mu_s = 0.4$ y $\mu_k = 0.3$. ¿Qué fuerza horizontal mínima la pone en movimiento? Si se empuja con 60 N, ¿qué aceleración adquiere?</li>
+      <li>Un auto de 1000 kg a 20 m/s frena con una fuerza de 5000 N. ¿Qué distancia recorre hasta detenerse?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Planos inclinados ($\sin 37^\circ \approx 0.6$, $\cos 37^\circ \approx 0.8$)</h3>
+    <ol class="largo">
+      <li>Un bloque de 5 kg baja sin fricción por un plano de $37^\circ$. Calcula su aceleración y la normal.</li>
+      <li>¿Qué coeficiente de fricción estática mínimo evita que un objeto resbale en un plano de $25^\circ$?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Sistemas y elevadores</h3>
+    <ol class="largo">
+      <li>Máquina de Atwood con 2 kg y 4 kg. Encuentra $a$ y $T$.</li>
+      <li>Un bloque de 4 kg sobre una mesa sin fricción está unido por una cuerda, que pasa por una polea, a otro de 2 kg que cuelga. Encuentra $a$ y $T$.</li>
+      <li>Una persona de 60 kg está en un elevador que baja acelerando a 1.5 m/s². ¿Qué fuerza hace el piso sobre ella?</li>
+      <li>Un semáforo de 20 kg cuelga de dos cables que forman $30^\circ$ con la horizontal. ¿Qué tensión tiene cada cable?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$5$ m/s²</span></li>
+    <li><span>$58.8$ N; $1.06$ m/s²</span></li>
+    <li><span>$40$ m</span></li>
+    <li><span>$5.88$ m/s²; $39.2$ N</span></li>
+    <li><span>$\approx 0.47$</span></li>
+    <li><span>$\approx 3.27$ m/s²; $\approx 26.1$ N</span></li>
+    <li><span>$\approx 3.27$ m/s²; $\approx 13.1$ N</span></li>
+    <li><span>$498$ N</span></li>
+    <li><span>$196$ N</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$\mu_s mg = 0.4(15)(9.8)$. Ya en movimiento: $60 - 0.3(147) = 15a \Rightarrow 15.9 = 15a$.</div></div>
+    <div class="sol"><span>3</span><div>$a = -\tfrac{5000}{1000} = -5$ m/s². $0 = 400 - 10\,\Delta x$.</div></div>
+    <div class="sol"><span>4</span><div>$a = g\sin 37^\circ = 9.8(0.6)$; $N = 5(9.8)(0.8)$.</div></div>
+    <div class="sol"><span>5</span><div>Al borde de resbalar: $mg\sin\theta = \mu_s mg\cos\theta \Rightarrow \mu_s = \tan 25^\circ$.</div></div>
+    <div class="sol"><span>6</span><div>$a = \tfrac{(4 - 2)(9.8)}{6}$; $T = 2(9.8 + 3.27)$.</div></div>
+    <div class="sol"><span>7</span><div>Colgante: $2g - T = 2a$. Mesa: $T = 4a$. Suma: $2g = 6a$.</div></div>
+    <div class="sol"><span>8</span><div>Positivo hacia abajo: $mg - N = ma \Rightarrow N = 60(9.8 - 1.5)$.</div></div>
+    <div class="sol"><span>9</span><div>Las componentes horizontales se cancelan; verticales: $2T\sin 30^\circ = 196$, y $\sin 30^\circ = \tfrac{1}{2}$.</div></div>
+  </div>
+</section>

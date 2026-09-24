@@ -1,0 +1,190 @@
+<!-- guia
+titulo: Movimiento circular
+nivel: Preparatoria
+materia: Física
+rama: Mecánica
+numero: 04
+descripcion: Periodo, frecuencia y velocidad angular, relación entre velocidad lineal y angular, aceleración y fuerza centrípetas, curvas con fricción, la velocidad mínima en un rizo y el movimiento circular uniformemente acelerado.
+entrada: Una rueda, un satélite, un auto en una curva: en el movimiento circular algo cambia aunque la rapidez sea constante, porque la dirección gira todo el tiempo. Ese cambio necesita una fuerza hacia el centro, y entenderla explica por qué derrapan los coches o por qué no se cae el agua de una cubeta que gira.
+objetivo: Relacionar periodo, frecuencia y velocidad angular.
+objetivo: Pasar de velocidad angular a lineal.
+objetivo: Calcular la aceleración y la fuerza centrípetas.
+objetivo: Identificar qué fuerza hace el papel de centrípeta.
+objetivo: Resolver el movimiento circular uniformemente acelerado.
+autoeval: Convertir rpm a rad/s. | 01
+autoeval: Usar $v = \omega r$. | 01
+autoeval: Explicar por qué hay aceleración con rapidez constante. | 02
+autoeval: Encontrar la rapidez máxima en una curva con fricción. | 03
+autoeval: Usar las ecuaciones del MCUA con ángulos en radianes. | 04
+-->
+<section>
+  <h2>Periodo, frecuencia y velocidad angular</h2>
+  <table class="leyes">
+    <thead><tr><th>Cantidad</th><th>Significado</th><th>Relación</th></tr></thead>
+    <tbody>
+      <tr><td>Periodo $T$</td><td>Tiempo de una vuelta (s)</td><td>$T = \dfrac{1}{f}$</td></tr>
+      <tr><td>Frecuencia $f$</td><td>Vueltas por segundo (Hz)</td><td>$f = \dfrac{1}{T}$</td></tr>
+      <tr><td>Velocidad angular $\omega$</td><td>Ángulo recorrido por segundo (rad/s)</td><td>$\omega = \dfrac{2\pi}{T} = 2\pi f$</td></tr>
+      <tr><td>Rapidez lineal $v$</td><td>Distancia sobre el círculo por segundo</td><td>$v = \omega r = \dfrac{2\pi r}{T}$</td></tr>
+    </tbody>
+  </table>
+  <p>Todos los puntos de un objeto rígido que gira tienen la misma $\omega$, pero los más alejados del eje van más rápido: $v$ crece con $r$.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un ventilador gira a 1200 rpm y sus aspas miden 25 cm. Encuentra $f$, $T$, $\omega$ y la rapidez de la punta.</p>
+      $$f = \frac{1200}{60} = 20 \text{ Hz} \qquad T = 0.05 \text{ s} \qquad \omega = 2\pi(20) \approx 125.7 \text{ rad/s} \qquad v = 125.7(0.25) \approx 31.4 \text{ m/s}$$
+      <p class="paso">La punta va a más de 110 km/h.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Aceleración centrípeta</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Aunque la rapidez sea constante (MCU), la <strong>velocidad cambia</strong> porque cambia su dirección: siempre es tangente al círculo. Ese cambio es una aceleración que apunta <strong>hacia el centro</strong>:</p>
+      <div class="definicion">
+        <span class="etq">Aceleración y fuerza centrípetas</span>
+        $$a_c = \frac{v^2}{r} = \omega^2 r \qquad\qquad F_c = m\,a_c = \frac{mv^2}{r}$$
+      </div>
+      <p>La fuerza centrípeta <strong>no es una fuerza nueva</strong>: es el nombre del papel que juega alguna fuerza real (tensión, fricción, gravedad, normal) que jala hacia el centro.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 150 150" width="40mm">
+        <defs><marker id="fc1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#5c7a5a"/></marker>
+        <marker id="fc2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#b5562c"/></marker></defs>
+        <circle cx="75" cy="75" r="55" fill="none" stroke="#8a7a66" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <circle cx="75" cy="75" r="2.5" fill="#2b241e"/>
+        <circle cx="113.9" cy="36.1" r="5" fill="#2b241e"/>
+        <line x1="113.9" y1="36.1" x2="141" y2="63" stroke="#5c7a5a" stroke-width="2.2" marker-end="url(#fc1)"/>
+        <line x1="113.9" y1="36.1" x2="92" y2="58" stroke="#b5562c" stroke-width="2.2" marker-end="url(#fc2)"/>
+        <g font-family="Nunito" font-size="11">
+          <text x="128" y="50" fill="#5c7a5a">v</text><text x="78" y="52" fill="#b5562c">a<tspan font-size="8" dy="3">c</tspan></text>
+        </g>
+      </svg>
+      <figcaption>$v$ tangente, $a_c$ hacia el centro.</figcaption>
+    </figure>
+  </div>
+  <div class="nota">
+    <span class="etq">¿Y la «fuerza centrífuga»?</span>
+    <p>La sensación de ser empujado hacia afuera en una curva es tu inercia: tu cuerpo quiere seguir en línea recta y el coche lo obliga a girar. Vista desde afuera, no hay ninguna fuerza que te empuje hacia afuera.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Curvas y rizos</h2>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un auto de 1200 kg toma una curva plana de 50 m de radio a 20 m/s. ¿Qué fuerza centrípeta necesita y qué coeficiente de fricción mínimo debe haber?</p>
+      $$a_c = \frac{20^2}{50} = 8 \text{ m/s}^2 \qquad F_c = 1200(8) = 9600 \text{ N}$$
+      <p class="paso">La fricción estática es la centrípeta: $\mu mg \geq \dfrac{mv^2}{r}$, así que $\mu \geq \dfrac{v^2}{gr} = \dfrac{400}{490} \approx 0.82$. La masa se cancela: un camión y un coche derrapan a la misma rapidez.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un carrito recorre un rizo vertical de 10 m de radio. ¿Qué rapidez mínima necesita en la parte más alta para no despegarse?</p>
+      <p class="paso">Arriba, peso y normal apuntan al centro: $mg + N = \dfrac{mv^2}{r}$. En el límite $N = 0$:</p>
+      $$v_{\text{mín}} = \sqrt{gr} = \sqrt{98} \approx 9.9 \text{ m/s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Movimiento circular acelerado</h2>
+  <p>Si la rotación acelera, hay una <strong>aceleración angular</strong> $\alpha$ (rad/s²). Con $\alpha$ constante valen las mismas ecuaciones que en el MRUA, cambiando $x \to \theta$, $v \to \omega$, $a \to \alpha$:</p>
+  $$\omega = \omega_0 + \alpha t \qquad \theta = \omega_0 t + \tfrac{1}{2}\alpha t^2 \qquad \omega^2 = \omega_0^2 + 2\alpha\theta$$
+  <p>Además aparece una aceleración tangencial $a_t = \alpha r$, que se suma (en perpendicular) a la centrípeta.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una rueda pasa del reposo a 30 rad/s en 6 s con aceleración constante. ¿Cuántas vueltas da?</p>
+      $$\alpha = \frac{30}{6} = 5 \text{ rad/s}^2 \qquad \theta = \tfrac{1}{2}(5)(36) = 90 \text{ rad} = \frac{90}{2\pi} \approx 14.3 \text{ vueltas}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Rapidez constante: $a = 0$</td><td class="bien">$a_c = \dfrac{v^2}{r}$</td><td>La dirección cambia.</td></tr>
+        <tr><td class="mal">$\omega = \text{rpm}$</td><td class="bien">$\omega = \text{rpm}\cdot\dfrac{2\pi}{60}$</td><td>Hay que pasar a rad/s.</td></tr>
+        <tr><td class="mal">Dibujar «$F_c$» además de las otras fuerzas</td><td class="bien">Una fuerza real hace de $F_c$</td><td>No es una fuerza adicional.</td></tr>
+        <tr><td class="mal">Fuerza centrífuga hacia afuera</td><td class="bien">Inercia</td><td>Desde el suelo no existe.</td></tr>
+        <tr><td class="mal">Vueltas $= \theta$ en radianes</td><td class="bien">Dividir entre $2\pi$</td><td>Una vuelta son $2\pi$ rad.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$T = \dfrac{1}{f}$</div><div>$\omega = \dfrac{2\pi}{T} = 2\pi f$</div><div>$v = \omega r$</div>
+      <div>$a_c = \dfrac{v^2}{r} = \omega^2 r$</div><div>$F_c = \dfrac{mv^2}{r}$</div><div>Curva plana: $v_{\text{máx}} = \sqrt{\mu g r}$</div>
+      <div>Rizo: $v_{\text{mín}} = \sqrt{gr}$</div><div>$\omega = \omega_0 + \alpha t$</div><div>1 rpm $= \tfrac{2\pi}{60}$ rad/s</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s². Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Cinemática circular</h3>
+    <ol class="largo">
+      <li>Una rueda de la fortuna de 15 m de radio da una vuelta cada 40 s. Calcula $\omega$, $v$ y $a_c$.</li>
+      <li>Un disco gira a 45 rpm. ¿Cuánto vale $\omega$ y su periodo?</li>
+      <li>La Tierra gira alrededor del Sol en un círculo de $1.5\times 10^{11}$ m de radio en 365.25 días. Calcula su rapidez orbital y su aceleración centrípeta.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Dinámica circular</h3>
+    <ol class="largo">
+      <li>Una piedra de 0.2 kg gira en un círculo horizontal de 0.8 m atada a una cuerda, dando 3 vueltas por segundo. ¿Qué tensión hay en la cuerda? (Desprecia el peso.)</li>
+      <li>¿Qué rapidez máxima puede llevar un coche en una curva plana de 80 m de radio si $\mu = 0.5$? Dala también en km/h.</li>
+      <li>Se gira una cubeta con agua en un círculo vertical de 1 m de radio. ¿Qué rapidez mínima necesita arriba para que el agua no caiga?</li>
+      <li>Una centrífuga gira a 6000 rpm con un radio de 10 cm. ¿Cuántas veces $g$ es su aceleración centrípeta?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Movimiento circular acelerado</h3>
+    <ol class="largo">
+      <li>Un motor pasa del reposo a 3000 rpm en 5 s con aceleración constante. Calcula $\alpha$ y cuántas vueltas da en ese tiempo.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$0.157$ rad/s; $2.36$ m/s; $0.370$ m/s²</span></li>
+    <li><span>$4.71$ rad/s; $1.33$ s</span></li>
+    <li><span>$\approx 2.99\times 10^4$ m/s; $\approx 5.95\times 10^{-3}$ m/s²</span></li>
+    <li><span>$\approx 56.8$ N</span></li>
+    <li><span>$\approx 19.8$ m/s $\approx 71.3$ km/h</span></li>
+    <li><span>$\approx 3.13$ m/s</span></li>
+    <li><span>$\approx 4028\,g$</span></li>
+    <li><span>$\approx 62.8$ rad/s²; 125 vueltas</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\omega = \tfrac{2\pi}{40}$, $v = \omega(15)$, $a_c = \omega^2(15)$.</div></div>
+    <div class="sol"><span>2</span><div>$45\cdot\tfrac{2\pi}{60} = 1.5\pi$; $T = \tfrac{60}{45}$.</div></div>
+    <div class="sol"><span>3</span><div>$T = 365.25(86\,400)$ s. $v = \tfrac{2\pi(1.5\times 10^{11})}{T}$ (casi 30 km/s) y $a = \tfrac{v^2}{r}$.</div></div>
+    <div class="sol"><span>4</span><div>$v = 2\pi(0.8)(3) \approx 15.08$ m/s; $T = \tfrac{0.2(15.08)^2}{0.8}$.</div></div>
+    <div class="sol"><span>5</span><div>$v = \sqrt{\mu g r} = \sqrt{0.5(9.8)(80)} = \sqrt{392}$; por 3.6.</div></div>
+    <div class="sol"><span>6</span><div>$v = \sqrt{gr} = \sqrt{9.8}$.</div></div>
+    <div class="sol"><span>7</span><div>$\omega = 200\pi \approx 628.3$ rad/s; $a = \omega^2 r \approx 39\,478$ m/s²; entre 9.8.</div></div>
+    <div class="sol"><span>8</span><div>$\omega = 100\pi \approx 314.2$ rad/s; $\alpha = \tfrac{314.2}{5}$; $\theta = \tfrac{1}{2}\alpha t^2 \approx 785.4$ rad; entre $2\pi$.</div></div>
+  </div>
+</section>

@@ -1,0 +1,191 @@
+<!-- guia
+titulo: Tiro parabólico
+nivel: Preparatoria
+materia: Física
+rama: Mecánica
+numero: 03
+descripcion: Por qué el movimiento horizontal y el vertical son independientes, tiro horizontal, tiro oblicuo con tiempo de vuelo, altura máxima y alcance, el ángulo de 45°, ángulos complementarios y lanzamientos desde una altura.
+entrada: Un balón pateado, el agua de una manguera, una pelota que rueda fuera de la mesa: todos dibujan una parábola. El truco para resolverlos es separar el movimiento en dos que ya conoces: uno horizontal con velocidad constante y uno vertical de caída libre.
+objetivo: Separar el movimiento en sus componentes horizontal y vertical.
+objetivo: Resolver tiros horizontales.
+objetivo: Calcular tiempo de vuelo, altura máxima y alcance en tiros oblicuos.
+objetivo: Encontrar la velocidad en cualquier instante.
+objetivo: Resolver lanzamientos que empiezan y terminan a distinta altura.
+autoeval: Explicar por qué $v_x$ no cambia. | 01
+autoeval: Encontrar el tiempo con el movimiento vertical en un tiro horizontal. | 02
+autoeval: Calcular $T$, $H$ y $R$ en un tiro oblicuo. | 03
+autoeval: Calcular la rapidez y dirección en un instante. | 03
+autoeval: Resolver con la ecuación cuadrática un lanzamiento desde una altura. | 04
+-->
+<section>
+  <h2>Dos movimientos independientes</h2>
+  <p>Sin aire, la única fuerza sobre un proyectil es su peso, que es vertical. Por eso:</p>
+  <ul>
+    <li>en $x$ no hay aceleración: <strong>MRU</strong> con $v_x$ constante;</li>
+    <li>en $y$ la aceleración es $-g$: <strong>caída libre</strong>.</li>
+  </ul>
+  <p>Los dos movimientos ocurren a la vez y comparten el <strong>tiempo</strong>, que es lo que los conecta. Si se lanza con rapidez $v_0$ y ángulo $\theta$:</p>
+  $$v_x = v_0\cos\theta \qquad v_{0y} = v_0\sin\theta$$
+  $$x = v_x\,t \qquad y = v_{0y}\,t - \tfrac{1}{2}gt^2 \qquad v_y = v_{0y} - gt$$
+  <div class="nota">
+    <span class="etq">La prueba clásica</span>
+    <p>Si al mismo tiempo sueltas una moneda y lanzas otra horizontalmente desde la misma altura, llegan al piso a la vez. La velocidad horizontal no ayuda ni estorba a la caída.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Tiro horizontal</h2>
+  <p>Si sale horizontal, $v_{0y} = 0$: el tiempo de caída depende solo de la altura, $t = \sqrt{\dfrac{2h}{g}}$, y el alcance es $x = v_0 t$.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una pelota rueda a 3 m/s y se sale de una mesa de 1.25 m de altura. ¿Cuánto tarda en caer y a qué distancia de la mesa pega en el piso?</p>
+      $$t = \sqrt{\frac{2(1.25)}{9.8}} \approx 0.505 \text{ s} \qquad x = 3(0.505) \approx 1.52 \text{ m}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tiro oblicuo</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Si sale y cae a la misma altura:</p>
+      <table class="leyes">
+        <thead><tr><th>Cantidad</th><th>Fórmula</th></tr></thead>
+        <tbody>
+          <tr><td>Tiempo de vuelo</td><td>$T = \dfrac{2v_0\sin\theta}{g}$</td></tr>
+          <tr><td>Altura máxima</td><td>$H = \dfrac{v_0^2\sin^2\theta}{2g}$</td></tr>
+          <tr><td>Alcance</td><td>$R = \dfrac{v_0^2\sin 2\theta}{g}$</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 190 125" width="50mm">
+        <defs><marker id="fp1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#5c7a5a"/></marker></defs>
+        <line x1="8" y1="110" x2="185" y2="110" stroke="#2b241e" stroke-width="1"/>
+        <path d="M15.0 110.0 L19.0 104.0 L23.0 98.4 L26.9 93.0 L30.9 88.0 L34.9 83.2 L38.9 78.8 L42.8 74.6 L46.8 70.8 L50.8 67.3 L54.8 64.1 L58.7 61.2 L62.7 58.6 L66.7 56.3 L70.7 54.3 L74.7 52.6 L78.6 51.2 L82.6 50.2 L86.6 49.4 L90.6 48.9 L94.5 48.8 L98.5 48.9 L102.5 49.4 L106.5 50.2 L110.4 51.2 L114.4 52.6 L118.4 54.3 L122.4 56.3 L126.4 58.6 L130.3 61.2 L134.3 64.1 L138.3 67.3 L142.3 70.8 L146.2 74.7 L150.2 78.8 L154.2 83.2 L158.2 88.0 L162.1 93.0 L166.1 98.4 L170.1 104.0 L174.1 110.0" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="15" y1="110" x2="50" y2="89.8" stroke="#5c7a5a" stroke-width="2" marker-end="url(#fp1)"/>
+        <line x1="94.5" y1="48.8" x2="126" y2="48.8" stroke="#5c7a5a" stroke-width="2" marker-end="url(#fp1)"/>
+        <line x1="94.5" y1="110" x2="94.5" y2="50" stroke="#8a7a66" stroke-width="1" stroke-dasharray="3 3"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="40" y="84" fill="#5c7a5a">v₀</text><text x="104" y="42" fill="#5c7a5a">v<tspan font-size="8" dy="3">x</tspan><tspan dy="-3"> (v</tspan><tspan font-size="8" dy="3">y</tspan><tspan dy="-3"> = 0)</tspan></text>
+          <text x="98" y="84">H</text><text x="90" y="122">R</text><text x="20" y="104">θ</text>
+        </g>
+      </svg>
+      <figcaption>Arriba solo queda la velocidad horizontal.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se patea un balón a 20 m/s con $30^\circ$ de elevación. Encuentra $T$, $H$ y $R$.</p>
+      <p class="paso">$v_x = 20\cos 30^\circ \approx 17.32$ m/s, $v_{0y} = 20\sin 30^\circ = 10$ m/s.</p>
+      $$T = \frac{2(10)}{9.8} \approx 2.04 \text{ s} \qquad H = \frac{10^2}{2(9.8)} \approx 5.10 \text{ m} \qquad R = 17.32(2.04) \approx 35.3 \text{ m}$$
+    </div>
+  </div>
+  <p>Como $\sin 2\theta$ vale máximo 1 en $\theta = 45^\circ$, ese ángulo da el mayor alcance: $R_{\text{máx}} = \dfrac{v_0^2}{g}$. Y dos ángulos complementarios ($30^\circ$ y $60^\circ$, por ejemplo) dan el mismo alcance, porque $\sin 60^\circ = \sin 120^\circ$.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Con el balón del ejemplo 2, ¿qué velocidad tiene a los 1.5 s?</p>
+      $$v_y = 10 - 9.8(1.5) = -4.7 \text{ m/s} \qquad v = \sqrt{17.32^2 + 4.7^2} \approx 17.9 \text{ m/s}$$
+      <p class="paso">$v_y$ negativa: ya va bajando. Apunta $\tan^{-1}\tfrac{4.7}{17.32} \approx 15.2^\circ$ por debajo de la horizontal.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Desde una altura</h2>
+  <p>Si el lanzamiento empieza y termina a distinta altura, las fórmulas de $T$, $H$ y $R$ ya no sirven. Vuelve a las ecuaciones básicas: plantea $y$ del punto de llegada, resuelve la cuadrática para $t$ y úsalo en $x$.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Desde un acantilado de 10 m se lanza una piedra a 15 m/s con $v_x = 12$ m/s y $v_{0y} = 9$ m/s. ¿Dónde cae?</p>
+      <p class="paso">Origen arriba del acantilado; el agua está en $y = -10$:</p>
+      $$-10 = 9t - 4.9t^2 \;\Rightarrow\; t = \frac{9 + \sqrt{81 + 196}}{9.8} \approx 2.62 \text{ s} \qquad x = 12(2.62) \approx 31.4 \text{ m}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Aceleración horizontal $g$</td><td class="bien">$a_x = 0$</td><td>El peso es vertical.</td></tr>
+        <tr><td class="mal">En la cima $v = 0$</td><td class="bien">$v = v_x$</td><td>Solo $v_y$ se anula.</td></tr>
+        <tr><td class="mal">Usar $R = \frac{v_0^2\sin 2\theta}{g}$ desde un acantilado</td><td class="bien">Resolver con las ecuaciones</td><td>La fórmula supone misma altura.</td></tr>
+        <tr><td class="mal">Tiempo con $x$ y $v_0$</td><td class="bien">$t = x / v_x$</td><td>En $x$ solo cuenta la componente.</td></tr>
+        <tr><td class="mal">Calculadora en radianes</td><td class="bien">Grados</td><td>$\sin 30 \neq \sin 30^\circ$.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$v_x = v_0\cos\theta$ (constante)</div><div>$v_{0y} = v_0\sin\theta$</div><div>Comparten el tiempo</div>
+      <div>$x = v_x t$</div><div>$y = v_{0y}t - \tfrac{1}{2}gt^2$</div><div>$v_y = v_{0y} - gt$</div>
+      <div>$T = \dfrac{2v_0\sin\theta}{g}$</div><div>$H = \dfrac{v_0^2\sin^2\theta}{2g}$</div><div>$R = \dfrac{v_0^2\sin 2\theta}{g}$; máx. en $45^\circ$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s² y desprecia el aire. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Tiro horizontal</h3>
+    <ol class="largo">
+      <li>Un avión vuela horizontalmente a 500 m de altura y 60 m/s y suelta un paquete. ¿Cuánto tarda en caer y cuánto avanza horizontalmente?</li>
+      <li>Una canica sale de una mesa de 0.8 m y cae a 1.2 m de la orilla. ¿Con qué rapidez salió?</li>
+      <li>¿Con qué rapidez y ángulo (bajo la horizontal) llega al suelo el paquete del ejercicio 1?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Tiro oblicuo</h3>
+    <ol class="largo">
+      <li>Un proyectil sale con $v_x = 15$ m/s y $v_{0y} = 20$ m/s. Calcula $T$, $H$ y $R$.</li>
+      <li>¿Cuál es el alcance máximo posible lanzando a 30 m/s?</li>
+      <li>Un proyectil lanzado a $30^\circ$ tiene cierto alcance. ¿Con qué otro ángulo, a la misma rapidez, tendría el mismo alcance?</li>
+      <li>Un balón sale a 20 m/s con $45^\circ$. ¿A qué altura va cuando ha avanzado 20 m horizontalmente?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Desde una altura</h3>
+    <ol class="largo">
+      <li>Desde lo alto de un edificio de 20 m se lanza una pelota a 15 m/s con $30^\circ$ sobre la horizontal. ¿Cuánto tarda en llegar al suelo y a qué distancia del edificio cae?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\approx 10.10$ s y $\approx 606$ m</span></li>
+    <li><span>$\approx 2.97$ m/s</span></li>
+    <li><span>$\approx 115.8$ m/s a $\approx 58.8^\circ$</span></li>
+    <li><span>$\approx 4.08$ s; $\approx 20.4$ m; $\approx 61.2$ m</span></li>
+    <li><span>$\approx 91.8$ m (a $45^\circ$)</span></li>
+    <li><span>$60^\circ$</span></li>
+    <li><span>$10.2$ m</span></li>
+    <li><span>$\approx 2.93$ s y $\approx 38.0$ m</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$t = \sqrt{\tfrac{2(500)}{9.8}}$ y $x = 60t$. Visto desde el avión, el paquete cae justo debajo todo el tiempo.</div></div>
+    <div class="sol"><span>2</span><div>$t = \sqrt{\tfrac{1.6}{9.8}} \approx 0.404$ s y $v_0 = \tfrac{1.2}{0.404}$.</div></div>
+    <div class="sol"><span>3</span><div>$v_y = 9.8(10.10) \approx 99.0$ m/s y $v_x = 60$. $v = \sqrt{60^2 + 99^2}$; $\tan^{-1}\tfrac{99}{60}$.</div></div>
+    <div class="sol"><span>4</span><div>$T = \tfrac{2(20)}{9.8}$, $H = \tfrac{20^2}{2(9.8)}$, $R = 15T$.</div></div>
+    <div class="sol"><span>5</span><div>$\tfrac{v_0^2}{g} = \tfrac{900}{9.8}$.</div></div>
+    <div class="sol"><span>6</span><div>El complementario: $90^\circ - 30^\circ$.</div></div>
+    <div class="sol"><span>7</span><div>$v_x = v_{0y} = 20\cos 45^\circ \approx 14.14$. $t = \tfrac{20}{14.14} \approx 1.414$ s. $y = 14.14(1.414) - 4.9(1.414)^2 = 20 - 9.8$.</div></div>
+    <div class="sol"><span>8</span><div>$v_x \approx 12.99$, $v_{0y} = 7.5$. $-20 = 7.5t - 4.9t^2 \Rightarrow t = \tfrac{7.5 + \sqrt{56.25 + 392}}{9.8} \approx 2.93$. $x = 12.99(2.93)$.</div></div>
+  </div>
+</section>

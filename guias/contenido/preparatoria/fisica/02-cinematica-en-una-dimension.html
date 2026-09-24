@@ -1,0 +1,219 @@
+<!-- guia
+titulo: Cinemática en una dimensión
+nivel: Preparatoria
+materia: Física
+rama: Mecánica
+numero: 02
+descripcion: Posición, velocidad y aceleración con signo, MRU y MRUA con sus cuatro ecuaciones, caída libre y tiro vertical desde una altura, lectura de gráficas posición-tiempo y velocidad-tiempo, y problemas de encuentro y persecución.
+entrada: La cinemática describe el movimiento sin preguntarse todavía qué lo causa. Con un sistema de referencia, un signo para cada sentido y cuatro ecuaciones, puedes predecir dónde estará un coche, cuándo alcanza una patrulla a un auto o cuánto tarda en caer una piedra.
+objetivo: Usar posición, velocidad y aceleración con su signo.
+objetivo: Aplicar las ecuaciones de MRU y MRUA.
+objetivo: Resolver caída libre y tiro vertical, también desde una altura.
+objetivo: Leer pendientes y áreas en gráficas de movimiento.
+objetivo: Resolver problemas de encuentro y persecución.
+autoeval: Elegir un sistema de referencia y poner signos. | 01
+autoeval: Elegir la ecuación de MRUA que no necesita el dato que falta. | 02
+autoeval: Resolver un tiro vertical que termina más abajo de donde empezó. | 03
+autoeval: Obtener aceleración y desplazamiento de una gráfica $v$-$t$. | 04
+autoeval: Igualar posiciones para encontrar cuándo se alcanzan. | 05
+-->
+<section>
+  <h2>Referencia y signos</h2>
+  <p>Para describir un movimiento en línea recta elige un <strong>origen</strong> y un <strong>sentido positivo</strong>. A partir de ahí:</p>
+  <table class="leyes">
+    <thead><tr><th>Cantidad</th><th>Definición</th><th>Unidad SI</th></tr></thead>
+    <tbody>
+      <tr><td>Posición $x$</td><td>Dónde está, respecto al origen</td><td>m</td></tr>
+      <tr><td>Desplazamiento $\Delta x$</td><td>$x_f - x_i$</td><td>m</td></tr>
+      <tr><td>Velocidad media</td><td>$\bar{v} = \dfrac{\Delta x}{\Delta t}$</td><td>m/s</td></tr>
+      <tr><td>Aceleración media</td><td>$\bar{a} = \dfrac{\Delta v}{\Delta t}$</td><td>m/s²</td></tr>
+    </tbody>
+  </table>
+  <p>La velocidad y la aceleración instantáneas son las derivadas: $v = \dfrac{dx}{dt}$ y $a = \dfrac{dv}{dt}$.</p>
+  <div class="nota">
+    <span class="etq">Aceleración negativa no siempre es frenar</span>
+    <p>Un objeto frena cuando $v$ y $a$ tienen <strong>signos opuestos</strong>. Si ambos son negativos, el objeto va cada vez más rápido en el sentido negativo.</p>
+  </div>
+</section>
+
+<section>
+  <h2>MRU y MRUA</h2>
+  <p>En el <strong>MRU</strong> la velocidad es constante: $x = x_0 + vt$. En el <strong>MRUA</strong> la aceleración es constante y valen cuatro ecuaciones; cada una omite una variable:</p>
+  <table class="leyes">
+    <thead><tr><th>Ecuación</th><th>No contiene</th></tr></thead>
+    <tbody>
+      <tr><td>$v = v_0 + at$</td><td>$\Delta x$</td></tr>
+      <tr><td>$\Delta x = v_0t + \tfrac{1}{2}at^2$</td><td>$v$</td></tr>
+      <tr><td>$v^2 = v_0^2 + 2a\,\Delta x$</td><td>$t$</td></tr>
+      <tr><td>$\Delta x = \dfrac{v_0 + v}{2}\,t$</td><td>$a$</td></tr>
+    </tbody>
+  </table>
+  <p>Estrategia: anota los datos, identifica la incógnita y usa la ecuación que <strong>no contiene</strong> el dato que no tienes.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un coche a 30 m/s frena con aceleración constante y se detiene en 60 m. ¿Qué aceleración tuvo y cuánto tardó?</p>
+      <p class="paso">Datos: $v_0 = 30$, $v = 0$, $\Delta x = 60$. No hay $t$: usa $v^2 = v_0^2 + 2a\Delta x$.</p>
+      $$0 = 900 + 2a(60) \;\Rightarrow\; a = -7.5 \text{ m/s}^2 \qquad t = \frac{v - v_0}{a} = \frac{-30}{-7.5} = 4 \text{ s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Caída libre y tiro vertical</h2>
+  <p>Sin resistencia del aire, todo objeto que sube o baja libremente tiene $a = -g = -9.8$ m/s² (tomando arriba como positivo). Las ecuaciones son las mismas del MRUA con $y$ en lugar de $x$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Desde una azotea de 20 m se lanza una pelota hacia arriba a 15 m/s. ¿Cuánto tarda en llegar al suelo y con qué velocidad?</p>
+      <p class="paso">Origen en la azotea, arriba positivo. El suelo está en $y = -20$ m:</p>
+      $$-20 = 15t - 4.9t^2 \;\Rightarrow\; 4.9t^2 - 15t - 20 = 0 \;\Rightarrow\; t = \frac{15 + \sqrt{225 + 392}}{9.8} \approx 4.07 \text{ s}$$
+      <p class="paso">La raíz negativa se descarta. Velocidad al llegar: $v^2 = 15^2 + 2(-9.8)(-20) = 617$, así que $v \approx -24.8$ m/s (hacia abajo).</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">El punto más alto</span>
+    <p>Arriba, $v = 0$ pero $a$ sigue valiendo $-9.8$ m/s². Si $a$ fuera cero ahí, el objeto se quedaría flotando.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Gráficas de movimiento</h2>
+  <table class="leyes">
+    <thead><tr><th>Gráfica</th><th>La pendiente es</th><th>El área bajo la curva es</th></tr></thead>
+    <tbody>
+      <tr><td>$x$ contra $t$</td><td>La velocidad</td><td>(no tiene significado útil)</td></tr>
+      <tr><td>$v$ contra $t$</td><td>La aceleración</td><td>El desplazamiento</td></tr>
+      <tr><td>$a$ contra $t$</td><td>(el «tirón»)</td><td>El cambio de velocidad</td></tr>
+    </tbody>
+  </table>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">3</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>Un elevador sube acelerando de 0 a 2 m/s en 2 s, sigue a 2 m/s durante 6 s y frena hasta detenerse en 2 s. ¿Cuánto subió?</p>
+        <p class="paso">Área de la gráfica $v$-$t$ (un trapecio): $\tfrac{1}{2}(2)(2) + 2(6) + \tfrac{1}{2}(2)(2) = 2 + 12 + 2 = 16$ m.</p>
+        <p class="paso">Aceleraciones: $1$ m/s², $0$ y $-1$ m/s² (las pendientes).</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 190 120" width="48mm">
+        <path d="M20 100 L50 60 L140 60 L170 100 Z" fill="#efe3cf"/>
+        <path d="M20 100 L50 60 L140 60 L170 100" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="12" y1="100" x2="185" y2="100" stroke="#2b241e" stroke-width="1"/>
+        <line x1="20" y1="108" x2="20" y2="10" stroke="#2b241e" stroke-width="1"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="4" y="64">2</text><text x="46" y="113">2</text><text x="136" y="113">8</text><text x="164" y="113">10</text>
+          <text x="176" y="96">t (s)</text><text x="24" y="16">v (m/s)</text><text x="84" y="86">16 m</text>
+        </g>
+      </svg>
+      <figcaption>El área bajo $v$-$t$ es el desplazamiento.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Encuentros y persecuciones</h2>
+  <p>Escribe la posición de cada móvil <strong>con el mismo origen y el mismo reloj</strong>, e iguala: se encuentran cuando están en el mismo lugar al mismo tiempo.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un auto pasa frente a una patrulla detenida a 30 m/s constantes. En ese instante la patrulla arranca con $a = 3$ m/s². ¿Cuándo y dónde lo alcanza?</p>
+      $$x_{\text{auto}} = 30t \qquad x_{\text{patrulla}} = \tfrac{1}{2}(3)t^2 = 1.5t^2$$
+      $$1.5t^2 = 30t \;\Rightarrow\; t = 20 \text{ s} \qquad x = 600 \text{ m}$$
+      <p class="paso">En ese momento la patrulla va a $3(20) = 60$ m/s: al alcanzarlo va al doble de rapidez.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$g = +9.8$ con arriba positivo</td><td class="bien">$a = -9.8$ m/s²</td><td>La gravedad apunta hacia abajo.</td></tr>
+        <tr><td class="mal">Mezclar km/h con m/s²</td><td class="bien">Convertir: $\div 3.6$</td><td>Las unidades deben ser compatibles.</td></tr>
+        <tr><td class="mal">En el punto más alto $a = 0$</td><td class="bien">$v = 0$, $a = -g$</td><td>La gravedad no se apaga.</td></tr>
+        <tr><td class="mal">Área bajo $x$-$t$ = distancia</td><td class="bien">Área bajo $v$-$t$</td><td>Revisa qué eje tienes.</td></tr>
+        <tr><td class="mal">Cada móvil con su propio origen</td><td class="bien">Un solo origen para todos</td><td>Si no, igualar posiciones no tiene sentido.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$v = v_0 + at$</div><div>$\Delta x = v_0t + \tfrac{1}{2}at^2$</div><div>$v^2 = v_0^2 + 2a\Delta x$</div>
+      <div>$\Delta x = \dfrac{v_0 + v}{2}t$</div><div>Caída: $a = -9.8$ m/s²</div><div>km/h $\div 3.6$ = m/s</div>
+      <div>Pendiente de $x$-$t$: $v$</div><div>Pendiente de $v$-$t$: $a$</div><div>Área de $v$-$t$: $\Delta x$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s² y define siempre tu sentido positivo. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. MRU y MRUA</h3>
+    <ol class="largo">
+      <li>Un ciclista va a 18 km/h durante 20 minutos. ¿Qué distancia recorre? ¿Cuánto es su velocidad en m/s?</li>
+      <li>Un auto va de 0 a 100 km/h en 8 s. ¿Qué aceleración media tiene?</li>
+      <li>¿Qué distancia recorre ese auto en esos 8 s?</li>
+      <li>Un tren a 25 m/s frena con $a = -1.25$ m/s². ¿Cuánto tarda en detenerse y qué distancia recorre?</li>
+      <li>Un objeto a 4 m/s acelera a 2 m/s² durante 50 m. ¿Con qué velocidad termina?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Caída libre</h3>
+    <ol class="largo">
+      <li>Se suelta una piedra desde 45 m. ¿Cuánto tarda en caer y con qué rapidez llega?</li>
+      <li>Se lanza una pelota hacia arriba a 29.4 m/s. ¿Cuánto tarda en subir, qué altura alcanza y cuánto tiempo está en el aire?</li>
+      <li>Desde 30 m de altura se lanza una piedra <em>hacia abajo</em> a 5 m/s. ¿Cuánto tarda en llegar al suelo y con qué rapidez?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Gráficas y encuentros</h3>
+    <ol class="largo">
+      <li>Un auto acelera de 0 a 12 m/s en 4 s, mantiene esa velocidad 6 s y frena hasta 0 en 3 s. Calcula la aceleración en cada tramo y la distancia total.</li>
+      <li>El auto $A$ está en $x = 0$ a 25 m/s y el $B$ en $x = 150$ m a 15 m/s, en el mismo sentido. ¿Cuándo y dónde lo alcanza $A$?</li>
+      <li>Dos ciudades están a 300 km. Un auto sale de la primera a 80 km/h y, al mismo tiempo, otro sale de la segunda hacia la primera a 70 km/h. ¿Cuándo y a qué distancia de la primera se cruzan?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>6 km; 5 m/s</span></li>
+    <li><span>$\approx 3.47$ m/s²</span></li>
+    <li><span>$\approx 111.1$ m</span></li>
+    <li><span>20 s y 250 m</span></li>
+    <li><span>$\approx 14.70$ m/s</span></li>
+    <li><span>$\approx 3.03$ s y $29.7$ m/s</span></li>
+    <li><span>3 s; 44.1 m; 6 s</span></li>
+    <li><span>$\approx 2.02$ s y $\approx 24.8$ m/s</span></li>
+    <li><span>$3$, $0$ y $-4$ m/s²; 114 m</span></li>
+    <li><span>15 s, en $x = 375$ m</span></li>
+    <li><span>2 h, a 160 km</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>20 min $= \tfrac{1}{3}$ h: $18 \cdot \tfrac{1}{3} = 6$ km. $\tfrac{18}{3.6} = 5$ m/s.</div></div>
+    <div class="sol"><span>2</span><div>$100$ km/h $= 27.78$ m/s; $a = \tfrac{27.78}{8}$.</div></div>
+    <div class="sol"><span>3</span><div>$\Delta x = \tfrac{0 + 27.78}{2}(8)$.</div></div>
+    <div class="sol"><span>4</span><div>$t = \tfrac{0 - 25}{-1.25} = 20$; $\Delta x = \tfrac{25 + 0}{2}(20) = 250$.</div></div>
+    <div class="sol"><span>5</span><div>$v^2 = 16 + 2(2)(50) = 216$.</div></div>
+    <div class="sol"><span>6</span><div>$t = \sqrt{\tfrac{2(45)}{9.8}} \approx 3.03$ y $v = \sqrt{2(9.8)(45)} = \sqrt{882} \approx 29.7$.</div></div>
+    <div class="sol"><span>7</span><div>$t_s = \tfrac{29.4}{9.8} = 3$; $h = \tfrac{29.4^2}{2(9.8)} = 44.1$; bajar tarda lo mismo.</div></div>
+    <div class="sol"><span>8</span><div>Abajo positivo: $30 = 5t + 4.9t^2 \Rightarrow t = \tfrac{-5 + \sqrt{25 + 588}}{9.8} \approx 2.02$. $v^2 = 25 + 2(9.8)(30) = 613$.</div></div>
+    <div class="sol"><span>9</span><div>Pendientes: $\tfrac{12}{4}$, $0$, $\tfrac{-12}{3}$. Áreas: $\tfrac{1}{2}(4)(12) + 6(12) + \tfrac{1}{2}(3)(12) = 24 + 72 + 18$.</div></div>
+    <div class="sol"><span>10</span><div>$25t = 150 + 15t \Rightarrow t = 15$; $x = 25(15)$.</div></div>
+    <div class="sol"><span>11</span><div>$80t = 300 - 70t \Rightarrow t = 2$ h; $x = 80(2)$.</div></div>
+  </div>
+</section>

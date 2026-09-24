@@ -1,0 +1,216 @@
+<!-- guia
+titulo: Vectores
+nivel: Preparatoria
+materia: Física
+rama: Mecánica
+numero: 01
+descripcion: Escalares y vectores, componentes rectangulares, magnitud y dirección, suma y resta por componentes, vectores unitarios, producto escalar y aplicaciones como fuerzas combinadas, aviones con viento y lanchas que cruzan un río.
+entrada: Decir «camina 500 metros» no basta para llegar a un lugar: falta decir hacia dónde. Desplazamientos, velocidades y fuerzas necesitan magnitud y dirección, y se suman de una forma especial. Esta guía es la base de toda la mecánica que sigue.
+objetivo: Distinguir cantidades escalares y vectoriales.
+objetivo: Descomponer un vector en componentes.
+objetivo: Obtener magnitud y dirección a partir de las componentes.
+objetivo: Sumar y restar vectores por componentes.
+objetivo: Usar vectores unitarios y el producto escalar.
+objetivo: Resolver problemas de fuerzas y velocidades relativas.
+autoeval: Decir si una cantidad es escalar o vectorial. | 01
+autoeval: Calcular componentes con seno y coseno. | 02
+autoeval: Encontrar la dirección en el cuadrante correcto. | 02
+autoeval: Sumar varios vectores por componentes. | 03
+autoeval: Calcular el ángulo entre dos vectores con el producto escalar. | 04
+autoeval: Resolver el problema de la lancha y el río. | 05
+-->
+<section>
+  <h2>Escalares y vectores</h2>
+  <p>Una cantidad <strong>escalar</strong> queda completa con un número y su unidad: masa, tiempo, temperatura, energía. Una <strong>vectorial</strong> necesita además una dirección: desplazamiento, velocidad, aceleración, fuerza.</p>
+  <p>Un vector se dibuja como una flecha: su largo es la <strong>magnitud</strong> y su orientación, la <strong>dirección</strong>. Se escribe con flecha, $\vec{A}$, y su magnitud como $|\vec{A}|$ o simplemente $A$.</p>
+  <div class="nota">
+    <span class="etq">Rapidez y velocidad no son lo mismo</span>
+    <p>Un coche que da una vuelta completa a una pista a 20 m/s tiene rapidez constante, pero su velocidad cambia todo el tiempo porque cambia la dirección.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Componentes, magnitud y dirección</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Todo vector en el plano se puede escribir como la suma de un vector horizontal y uno vertical, sus <strong>componentes</strong>. Si $\vec{A}$ tiene magnitud $A$ y forma un ángulo $\theta$ con el eje $x$ positivo:</p>
+      $$A_x = A\cos\theta \qquad A_y = A\sin\theta$$
+      <p>Y al revés, de las componentes a la magnitud y la dirección:</p>
+      $$A = \sqrt{A_x^2 + A_y^2} \qquad \tan\theta = \frac{A_y}{A_x}$$
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 170 130" width="44mm">
+        <defs><marker id="fv1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#b5562c"/></marker>
+        <marker id="fv2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#5c7a5a"/></marker></defs>
+        <line x1="10" y1="110" x2="165" y2="110" stroke="#2b241e" stroke-width="1"/>
+        <line x1="20" y1="120" x2="20" y2="8" stroke="#2b241e" stroke-width="1"/>
+        <line x1="20" y1="110" x2="140" y2="110" stroke="#5c7a5a" stroke-width="2.4" marker-end="url(#fv2)"/>
+        <line x1="140" y1="110" x2="140" y2="25" stroke="#5c7a5a" stroke-width="2.4" marker-end="url(#fv2)" stroke-dasharray="5 3"/>
+        <line x1="20" y1="110" x2="140" y2="25" stroke="#b5562c" stroke-width="2.6" marker-end="url(#fv1)"/>
+        <path d="M50 110 A30 30 0 0 0 44.5 92.7" fill="none" stroke="#2b241e" stroke-width="1"/>
+        <g font-family="Nunito" font-size="11" fill="#2b241e">
+          <text x="54" y="104">θ</text><text x="70" y="124" fill="#5c7a5a">A<tspan font-size="8" dy="3">x</tspan></text><text x="146" y="72" fill="#5c7a5a">A<tspan font-size="8" dy="3">y</tspan></text>
+          <text x="66" y="60" fill="#b5562c">A</text>
+        </g>
+      </svg>
+      <figcaption>El vector es la hipotenusa; sus componentes, los catetos.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un desplazamiento de 50 m forma $30^\circ$ con el eje $x$. Encuentra sus componentes.</p>
+      $$A_x = 50\cos 30^\circ \approx 43.30 \text{ m} \qquad A_y = 50\sin 30^\circ = 25 \text{ m}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Cuidado con el cuadrante</span>
+    <p>La calculadora da $\tan^{-1}$ entre $-90^\circ$ y $90^\circ$. Si $A_x \lt 0$, el vector apunta a la izquierda y hay que sumar $180^\circ$. Para $(-6, 8)$: $\tan^{-1}\!\left(\tfrac{8}{-6}\right) = -53.13^\circ$, pero la dirección real es $126.87^\circ$. Dibuja siempre el vector.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Suma de vectores</h2>
+  <p>Gráficamente, los vectores se suman poniéndolos <strong>punta con cola</strong>: la resultante va de la cola del primero a la punta del último. Para calcular, se suman <strong>componente por componente</strong>:</p>
+  $$\vec{R} = \vec{A} + \vec{B} \;\Rightarrow\; R_x = A_x + B_x, \quad R_y = A_y + B_y$$
+  <p>Restar es sumar el opuesto: $\vec{A} - \vec{B} = \vec{A} + (-\vec{B})$. Multiplicar por un escalar $k$ multiplica cada componente por $k$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Sobre una caja actúan $\vec{A}$ de 10 N a $30^\circ$ y $\vec{B}$ de 15 N a $120^\circ$. Encuentra la fuerza resultante.</p>
+      <table class="leyes">
+        <thead><tr><th>Vector</th><th>Componente $x$</th><th>Componente $y$</th></tr></thead>
+        <tbody>
+          <tr><td>$\vec{A}$</td><td>$10\cos 30^\circ = 8.66$</td><td>$10\sin 30^\circ = 5.00$</td></tr>
+          <tr><td>$\vec{B}$</td><td>$15\cos 120^\circ = -7.50$</td><td>$15\sin 120^\circ = 12.99$</td></tr>
+          <tr><td>$\vec{R}$</td><td>$1.16$</td><td>$17.99$</td></tr>
+        </tbody>
+      </table>
+      $$R = \sqrt{1.16^2 + 17.99^2} \approx 18.03 \text{ N} \qquad \theta = \tan^{-1}\frac{17.99}{1.16} \approx 86.3^\circ$$
+      <p class="paso">Comprueba: $\vec{A}$ y $\vec{B}$ forman $90^\circ$, así que $R = \sqrt{10^2 + 15^2} \approx 18.03$ ✔</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Vectores unitarios y producto escalar</h2>
+  <p>Los vectores $\hat{\imath}$ y $\hat{\jmath}$ miden 1 y apuntan en $x$ y en $y$. Así, $\vec{A} = A_x\hat{\imath} + A_y\hat{\jmath}$; por ejemplo, $3\hat{\imath} + 4\hat{\jmath}$ es el vector $(3, 4)$, de magnitud 5.</p>
+  <div class="definicion">
+    <span class="etq">Producto escalar (producto punto)</span>
+    $$\vec{A}\cdot\vec{B} = A_xB_x + A_yB_y = AB\cos\theta$$
+    <p>Da un número (escalar). Si vale cero, los vectores son perpendiculares. En física aparece en el trabajo: $W = \vec{F}\cdot\vec{d}$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Qué ángulo forman $\vec{A} = (1, 2)$ y $\vec{B} = (3, 1)$?</p>
+      $$\cos\theta = \frac{1(3) + 2(1)}{\sqrt{5}\,\sqrt{10}} = \frac{5}{\sqrt{50}} \approx 0.707 \;\Rightarrow\; \theta = 45^\circ$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Velocidades relativas</h2>
+  <p>Si algo se mueve dentro de un medio que también se mueve (un avión en el viento, una lancha en un río), su velocidad respecto al suelo es la <strong>suma vectorial</strong> de las dos.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un avión vuela a 200 km/h hacia el norte respecto al aire, y el viento sopla a 50 km/h hacia el este. ¿Qué velocidad tiene respecto al suelo?</p>
+      $$v = \sqrt{200^2 + 50^2} \approx 206.2 \text{ km/h} \qquad \theta = \tan^{-1}\frac{50}{200} \approx 14.0^\circ \text{ al este del norte}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$|\vec{A} + \vec{B}| = A + B$</td><td class="bien">Sumar componentes</td><td>Solo es cierto si apuntan igual.</td></tr>
+        <tr><td class="mal">$A_x = A\sin\theta$ con $\theta$ desde el eje $x$</td><td class="bien">$A_x = A\cos\theta$</td><td>El coseno va con el lado adyacente.</td></tr>
+        <tr><td class="mal">$(-6, 8)$ apunta a $-53^\circ$</td><td class="bien">$126.87^\circ$</td><td>Está en el segundo cuadrante.</td></tr>
+        <tr><td class="mal">Sumar magnitudes y ángulos por separado</td><td class="bien">Por componentes</td><td>Los ángulos no se suman.</td></tr>
+        <tr><td class="mal">$\vec{A}\cdot\vec{B}$ es un vector</td><td class="bien">Es un número</td><td>Por eso se llama producto escalar.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$A_x = A\cos\theta$</div><div>$A_y = A\sin\theta$</div><div>$A = \sqrt{A_x^2 + A_y^2}$</div>
+      <div>$\tan\theta = \dfrac{A_y}{A_x}$ (revisa cuadrante)</div><div>$R_x = \sum A_x$, $R_y = \sum A_y$</div><div>Punta con cola</div>
+      <div>$\vec{A} = A_x\hat{\imath} + A_y\hat{\jmath}$</div><div>$\vec{A}\cdot\vec{B} = AB\cos\theta$</div><div>Perpendiculares: producto 0</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Ángulos medidos desde el eje $x$ positivo, en sentido contrario al reloj. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Componentes, magnitud y dirección</h3>
+    <ol class="largo">
+      <li>Componentes de un vector de 20 m a $60^\circ$.</li>
+      <li>Componentes de una fuerza de 12 N a $210^\circ$.</li>
+      <li>Magnitud y dirección de $(-6, 8)$.</li>
+      <li>Magnitud y dirección de $(5, -12)$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Suma de vectores</h3>
+    <ol class="largo">
+      <li>Con $\vec{A} = (2, 5)$ y $\vec{B} = (4, -1)$: calcula $\vec{A} + \vec{B}$, su magnitud y $\vec{A} - \vec{B}$.</li>
+      <li>Con los mismos, calcula $3\vec{A} - 2\vec{B}$.</li>
+      <li>Caminas 300 m al este y luego 400 m al norte. ¿Cuál es tu desplazamiento?</li>
+      <li>Sobre un objeto actúan 60 N a $0^\circ$, 80 N a $90^\circ$ y 50 N a $180^\circ$. Encuentra la resultante.</li>
+      <li>Dos cuerdas jalan con 100 N cada una, a $45^\circ$ y a $135^\circ$. Encuentra la resultante.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Aplicaciones</h3>
+    <ol class="largo">
+      <li>Una lancha va a 4 m/s perpendicular a la corriente de un río que fluye a 3 m/s. ¿Qué velocidad tiene respecto a la orilla? Si el río mide 80 m de ancho, ¿cuánto tarda en cruzar y cuánto la arrastra la corriente?</li>
+      <li>¿Son perpendiculares $\vec{A} = (3, 4)$ y $\vec{B} = (4, -3)$?</li>
+      <li>¿Qué ángulo forman $\vec{A} = (2, 0)$ y $\vec{B} = (1, \sqrt{3})$?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$(10, 17.32)$ m</span></li>
+    <li><span>$(-10.39, -6)$ N</span></li>
+    <li><span>$10$ a $126.87^\circ$</span></li>
+    <li><span>$13$ a $-67.38^\circ$ (o $292.62^\circ$)</span></li>
+    <li><span>$(6, 4)$; $\approx 7.21$; $(-2, 6)$</span></li>
+    <li><span>$(-2, 17)$</span></li>
+    <li><span>500 m a $53.13^\circ$ al norte del este</span></li>
+    <li><span>$\approx 80.62$ N a $\approx 82.87^\circ$</span></li>
+    <li><span>$\approx 141.4$ N a $90^\circ$</span></li>
+    <li><span>5 m/s; 20 s; 60 m</span></li>
+    <li><span>Sí</span></li>
+    <li><span>$60^\circ$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$12\cos 210^\circ = -6\sqrt{3} \approx -10.39$ y $12\sin 210^\circ = -6$. Tercer cuadrante: ambas negativas.</div></div>
+    <div class="sol"><span>3</span><div>$\sqrt{36 + 64} = 10$. $A_x \lt 0$: $-53.13^\circ + 180^\circ$.</div></div>
+    <div class="sol"><span>4</span><div>$\sqrt{25 + 144} = 13$; $\tan^{-1}\!\left(-\tfrac{12}{5}\right) = -67.38^\circ$, cuarto cuadrante.</div></div>
+    <div class="sol"><span>5</span><div>$(2 + 4, 5 - 1)$; $\sqrt{36 + 16} = \sqrt{52}$; $(2 - 4, 5 + 1)$.</div></div>
+    <div class="sol"><span>6</span><div>$(6, 15) - (8, -2)$.</div></div>
+    <div class="sol"><span>7</span><div>$\sqrt{300^2 + 400^2} = 500$; $\tan^{-1}\tfrac{400}{300}$.</div></div>
+    <div class="sol"><span>8</span><div>$R_x = 60 - 50 = 10$, $R_y = 80$. $\sqrt{100 + 6400} \approx 80.62$; $\tan^{-1} 8 \approx 82.87^\circ$.</div></div>
+    <div class="sol"><span>9</span><div>Las $x$ se cancelan ($70.71 - 70.71$); $R_y = 2(100\sin 45^\circ) \approx 141.4$.</div></div>
+    <div class="sol"><span>10</span><div>$\sqrt{4^2 + 3^2} = 5$. El cruce depende solo de la velocidad perpendicular: $\tfrac{80}{4} = 20$ s. En ese tiempo la corriente la arrastra $3(20) = 60$ m.</div></div>
+    <div class="sol"><span>11</span><div>$3(4) + 4(-3) = 0$.</div></div>
+    <div class="sol"><span>12</span><div>$\cos\theta = \dfrac{2}{2\cdot 2} = \tfrac{1}{2}$.</div></div>
+  </div>
+</section>
