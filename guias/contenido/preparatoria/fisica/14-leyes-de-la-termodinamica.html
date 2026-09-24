@@ -1,0 +1,212 @@
+<!-- guia
+titulo: Leyes de la termodinámica
+nivel: Preparatoria
+materia: Física
+rama: Termodinámica
+numero: 14
+descripcion: Gas ideal, trabajo de un gas y diagrama presión-volumen, primera ley con su convención de signos, procesos isobárico, isocórico, isotérmico y adiabático, segunda ley, eficiencia de máquinas térmicas, ciclo de Carnot y refrigeradores.
+entrada: Un motor de coche convierte calor en movimiento, pero nunca todo: la mayor parte se pierde por el escape y el radiador. Las leyes de la termodinámica explican cuánto se puede aprovechar y por qué ninguna máquina puede ser perfecta.
+objetivo: Usar la ecuación del gas ideal.
+objetivo: Calcular el trabajo de un gas y leerlo en un diagrama $P$-$V$.
+objetivo: Aplicar la primera ley con signos correctos.
+objetivo: Reconocer los cuatro procesos básicos.
+objetivo: Calcular eficiencias reales y de Carnot.
+objetivo: Analizar refrigeradores.
+autoeval: Usar $PV = nRT$ con temperatura en kelvin. | 01
+autoeval: Calcular el trabajo como área bajo la curva $P$-$V$. | 02
+autoeval: Aplicar $\Delta U = Q - W$ con los signos correctos. | 03
+autoeval: Decir qué vale cero en cada proceso. | 04
+autoeval: Decidir si una máquina es posible comparando con Carnot. | 05
+-->
+<section>
+  <h2>Gas ideal</h2>
+  <div class="definicion">
+    <span class="etq">Ecuación del gas ideal</span>
+    $$PV = nRT \qquad R = 8.314 \ \text{J/(mol·K)}$$
+    <p>$P$ en pascales, $V$ en m³, $n$ en moles y $T$ <strong>en kelvin</strong>. Si la cantidad de gas no cambia: $\dfrac{P_1V_1}{T_1} = \dfrac{P_2V_2}{T_2}$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Qué presión tienen 2 mol de gas a 300 K en un recipiente de 50 L?</p>
+      $$P = \frac{2(8.314)(300)}{0.050} \approx 99\,800 \text{ Pa} \approx 0.98 \text{ atm}$$
+    </div>
+  </div>
+  <p>La <strong>energía interna</strong> $U$ de un gas ideal es la energía cinética de sus moléculas, y depende solo de la temperatura: si $T$ no cambia, $\Delta U = 0$.</p>
+</section>
+
+<section>
+  <h2>Trabajo de un gas</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Cuando un gas se expande empujando un pistón, hace trabajo. A presión constante:</p>
+      $$W = P\,\Delta V$$
+      <p>En general, el trabajo es el <strong>área bajo la curva</strong> en el diagrama presión-volumen. Si el gas se expande, $W \gt 0$ (lo hace el gas); si se comprime, $W \lt 0$ (se hace sobre él).</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 180 125" width="46mm">
+        <rect x="50" y="40" width="90" height="70" fill="#efe3cf"/>
+        <line x1="20" y1="110" x2="175" y2="110" stroke="#2b241e" stroke-width="1"/>
+        <line x1="20" y1="115" x2="20" y2="8" stroke="#2b241e" stroke-width="1"/>
+        <line x1="50" y1="40" x2="140" y2="40" stroke="#b5562c" stroke-width="2.4"/>
+        <circle cx="50" cy="40" r="3" fill="#b5562c"/><circle cx="140" cy="40" r="3" fill="#b5562c"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="80" y="80">W = PΔV</text><text x="46" y="122">V₁</text><text x="136" y="122">V₂</text>
+          <text x="164" y="122">V</text><text x="24" y="14">P</text>
+        </g>
+      </svg>
+      <figcaption>Expansión a presión constante: el trabajo es el rectángulo.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Primera ley</h2>
+  <div class="definicion">
+    <span class="etq">Primera ley de la termodinámica</span>
+    $$\Delta U = Q - W$$
+    <p>Es la conservación de la energía: el calor que entra al gas se reparte entre aumentar su energía interna y hacer trabajo.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Signo</th><th>$Q$</th><th>$W$</th></tr></thead>
+    <tbody>
+      <tr><td>Positivo</td><td>El gas <strong>recibe</strong> calor</td><td>El gas <strong>hace</strong> trabajo (se expande)</td></tr>
+      <tr><td>Negativo</td><td>El gas <strong>cede</strong> calor</td><td>Se hace trabajo <strong>sobre</strong> el gas (se comprime)</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un gas a $2\times 10^5$ Pa constantes se expande de 10 L a 30 L mientras recibe 10 000 J de calor. ¿Cuánto cambia su energía interna?</p>
+      $$W = (2\times 10^5)(0.030 - 0.010) = 4000 \text{ J} \qquad \Delta U = 10\,000 - 4000 = 6000 \text{ J}$$
+      <p class="paso">$\Delta U \gt 0$: el gas se calentó.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Procesos básicos</h2>
+  <table class="leyes">
+    <thead><tr><th>Proceso</th><th>Qué se mantiene</th><th>Consecuencia</th></tr></thead>
+    <tbody>
+      <tr><td>Isobárico</td><td>Presión</td><td>$W = P\Delta V$</td></tr>
+      <tr><td>Isocórico</td><td>Volumen</td><td>$W = 0$, así que $\Delta U = Q$</td></tr>
+      <tr><td>Isotérmico</td><td>Temperatura</td><td>$\Delta U = 0$, así que $Q = W$</td></tr>
+      <tr><td>Adiabático</td><td>Sin intercambio de calor</td><td>$Q = 0$, así que $\Delta U = -W$</td></tr>
+    </tbody>
+  </table>
+  <div class="nota">
+    <span class="etq">Adiabático en la vida real</span>
+    <p>Al inflar una llanta con bomba, el aire se comprime rápido, sin tiempo de soltar calor: $W \lt 0$ y $\Delta U \gt 0$. Por eso la bomba se calienta. Al revés, un aerosol que se expande de golpe se enfría.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Segunda ley y máquinas térmicas</h2>
+  <p>Una <strong>máquina térmica</strong> toma calor $Q_h$ de un foco caliente, hace trabajo $W$ y tira el resto $Q_c$ a un foco frío. En cada ciclo $W = Q_h - Q_c$ y su eficiencia es:</p>
+  $$e = \frac{W}{Q_h} = 1 - \frac{Q_c}{Q_h}$$
+  <div class="definicion">
+    <span class="etq">Segunda ley (y límite de Carnot)</span>
+    <p>Es imposible una máquina que convierta todo el calor en trabajo: siempre hay que tirar algo al foco frío. La máxima eficiencia posible entre dos temperaturas (en kelvin) es la de Carnot:</p>
+    $$e_{\text{Carnot}} = 1 - \frac{T_c}{T_h}$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una máquina absorbe 2000 J y expulsa 1500 J por ciclo. Trabaja entre 500 K y 300 K. ¿Qué eficiencia tiene y cuál es la máxima posible?</p>
+      $$e = \frac{2000 - 1500}{2000} = 25\,\% \qquad e_{\text{Carnot}} = 1 - \frac{300}{500} = 40\,\%$$
+    </div>
+  </div>
+  <p>Un <strong>refrigerador</strong> es una máquina al revés: usa trabajo para sacar calor del interior frío. Su rendimiento es $COP = \dfrac{Q_c}{W}$, y expulsa hacia la cocina $Q_h = Q_c + W$ (por eso atrás está tibio).</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$T$ en °C en $PV = nRT$</td><td class="bien">En kelvin</td><td>Con °C podrías dividir entre cero.</td></tr>
+        <tr><td class="mal">Volumen en litros</td><td class="bien">1 L $= 10^{-3}$ m³</td><td>Para obtener joules.</td></tr>
+        <tr><td class="mal">$\Delta U = Q + W$ con $W$ del gas</td><td class="bien">$Q - W$</td><td>El trabajo que hace el gas le quita energía.</td></tr>
+        <tr><td class="mal">Isotérmico: no hay calor</td><td class="bien">Sin calor es adiabático</td><td>Isotérmico: $\Delta U = 0$, no $Q = 0$.</td></tr>
+        <tr><td class="mal">Carnot con °C</td><td class="bien">Con kelvin</td><td>$1 - \tfrac{27}{227}$ daría un valor falso.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$PV = nRT$</div><div>$R = 8.314$ J/(mol·K)</div><div>$W = P\Delta V$ (área)</div>
+      <div>$\Delta U = Q - W$</div><div>Isocórico: $W = 0$</div><div>Isotérmico: $\Delta U = 0$</div>
+      <div>Adiabático: $Q = 0$</div><div>$e = \dfrac{W}{Q_h}$</div><div>$e_C = 1 - \dfrac{T_c}{T_h}$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $R = 8.314$ J/(mol·K) y 1 atm $= 101\,325$ Pa. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Gas ideal y trabajo</h3>
+    <ol class="largo">
+      <li>¿Cuántos moles de gas hay en 1 m³ a 1 atm y 0 °C?</li>
+      <li>Un gas en un recipiente rígido está a 2 atm y 300 K. Si se calienta a 450 K, ¿qué presión alcanza?</li>
+      <li>Un gas a $1.5\times 10^5$ Pa constantes se expande de 2 L a 5 L. ¿Qué trabajo hace?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Primera ley</h3>
+    <ol class="largo">
+      <li>Un gas recibe 800 J de calor y hace 300 J de trabajo. ¿Cuánto cambia su energía interna?</li>
+      <li>Se comprime un gas haciendo 200 J de trabajo sobre él, mientras cede 50 J de calor. ¿Cuánto cambia su energía interna?</li>
+      <li>En una expansión isotérmica el gas recibe 1200 J de calor. ¿Qué trabajo hace?</li>
+      <li>En una expansión adiabática el gas hace 400 J de trabajo. ¿Cuánto cambia su energía interna? ¿Se calienta o se enfría?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Máquinas</h3>
+    <ol class="largo">
+      <li>Un motor con 30 % de eficiencia produce 600 J de trabajo por ciclo. ¿Cuánto calor absorbe y cuánto expulsa?</li>
+      <li>¿Cuál es la eficiencia máxima de una máquina que trabaja entre 800 K y 300 K?</li>
+      <li>Un inventor dice que su máquina trabaja entre 600 K y 300 K con 60 % de eficiencia. ¿Es posible?</li>
+      <li>Un refrigerador saca 300 J del interior usando 100 J de trabajo. ¿Cuál es su COP y cuánto calor expulsa?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\approx 44.6$ mol</span></li>
+    <li><span>3 atm</span></li>
+    <li><span>450 J</span></li>
+    <li><span>+500 J</span></li>
+    <li><span>+150 J</span></li>
+    <li><span>1200 J</span></li>
+    <li><span>$-400$ J; se enfría</span></li>
+    <li><span>2000 J y 1400 J</span></li>
+    <li><span>62.5 %</span></li>
+    <li><span>No (máximo 50 %)</span></li>
+    <li><span>3; 400 J</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$n = \tfrac{101\,325(1)}{8.314(273.15)}$. (Un mol ocupa unos 22.4 L en esas condiciones.)</div></div>
+    <div class="sol"><span>2</span><div>$V$ constante: $\tfrac{P_1}{T_1} = \tfrac{P_2}{T_2} \Rightarrow P_2 = 2\cdot\tfrac{450}{300}$.</div></div>
+    <div class="sol"><span>3</span><div>$(1.5\times 10^5)(3\times 10^{-3})$.</div></div>
+    <div class="sol"><span>4</span><div>$800 - 300$.</div></div>
+    <div class="sol"><span>5</span><div>$Q = -50$, $W = -200$: $\Delta U = -50 - (-200)$.</div></div>
+    <div class="sol"><span>6</span><div>$\Delta U = 0 \Rightarrow W = Q$.</div></div>
+    <div class="sol"><span>7</span><div>$Q = 0 \Rightarrow \Delta U = -W$: pierde energía interna, baja su temperatura.</div></div>
+    <div class="sol"><span>8</span><div>$Q_h = \tfrac{600}{0.3}$; $Q_c = 2000 - 600$.</div></div>
+    <div class="sol"><span>9</span><div>$1 - \tfrac{300}{800} = 0.625$.</div></div>
+    <div class="sol"><span>10</span><div>$e_{\text{Carnot}} = 1 - \tfrac{300}{600} = 0.5$: ninguna máquina puede superar ese límite.</div></div>
+    <div class="sol"><span>11</span><div>$\tfrac{300}{100}$; $Q_h = 300 + 100$.</div></div>
+  </div>
+</section>

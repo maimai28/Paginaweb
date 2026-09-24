@@ -1,0 +1,192 @@
+<!-- guia
+titulo: Calorimetría y cambios de fase
+nivel: Preparatoria
+materia: Física
+rama: Termodinámica
+numero: 13
+descripcion: Calor específico, mezclas y temperatura de equilibrio, cómo medir el calor específico de un metal, calor latente de fusión y vaporización y curva de calentamiento del agua, incluidas mezclas con hielo.
+entrada: ¿Por qué la arena de la playa quema y el agua está fresca, si les da el mismo sol? ¿Por qué el hielo enfría tanto un refresco? La calorimetría cuenta la energía que entra y sale de los cuerpos, y explica también por qué hervir agua tarda tanto.
+objetivo: Usar $Q = mc\Delta T$.
+objetivo: Encontrar la temperatura de equilibrio de una mezcla.
+objetivo: Medir calores específicos con un calorímetro.
+objetivo: Calcular el calor de los cambios de fase.
+objetivo: Resolver problemas que combinan calentamiento y cambio de fase.
+autoeval: Calcular el calor para cambiar la temperatura de algo. | 01
+autoeval: Plantear calor ganado = calor cedido en una mezcla. | 02
+autoeval: Usar calor latente durante un cambio de fase. | 03
+autoeval: Sumar los tramos de una curva de calentamiento. | 04
+autoeval: Revisar si alcanza el calor para derretir todo el hielo. | 04
+-->
+<section>
+  <h2>Calor específico</h2>
+  <div class="definicion">
+    <span class="etq">Calor sensible</span>
+    $$Q = m\,c\,\Delta T$$
+    <p>$c$ es el calor específico: la energía para subir 1 °C la temperatura de 1 kg de la sustancia (J/kg·°C). $Q$ positivo: el cuerpo gana calor; negativo: lo cede.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Sustancia</th><th>$c$ (J/kg·°C)</th><th>Sustancia</th><th>$c$ (J/kg·°C)</th></tr></thead>
+    <tbody>
+      <tr><td>Agua</td><td>4186</td><td>Aluminio</td><td>900</td></tr>
+      <tr><td>Hielo</td><td>2100</td><td>Hierro</td><td>450</td></tr>
+      <tr><td>Vapor de agua</td><td>2010</td><td>Cobre</td><td>385</td></tr>
+      <tr><td>Arena</td><td>≈ 800</td><td>Plomo</td><td>128</td></tr>
+    </tbody>
+  </table>
+  <p>El agua tiene un calor específico altísimo: se calienta y se enfría despacio. Por eso modera el clima de las costas y por eso la arena quema mientras el mar está fresco. Una <strong>caloría</strong> es 4.186 J (lo que sube 1 g de agua 1 °C); la «Caloría» de los alimentos es una kilocaloría.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Cuánto calor hace falta para calentar 2 kg de agua de 20 °C a 100 °C?</p>
+      $$Q = 2(4186)(80) = 669\,760 \text{ J} \approx 670 \text{ kJ}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Mezclas y equilibrio</h2>
+  <p>En un recipiente aislado, el calor que ceden los cuerpos calientes es el que ganan los fríos. Escrito con signos:</p>
+  $$\sum Q = 0 \qquad\text{o bien}\qquad Q_{\text{ganado}} = -Q_{\text{cedido}}$$
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se mezclan 200 g de agua a 80 °C con 300 g de agua a 20 °C. ¿Qué temperatura final alcanzan?</p>
+      $$0.2(4186)(T - 80) + 0.3(4186)(T - 20) = 0 \;\Rightarrow\; T = \frac{0.2(80) + 0.3(20)}{0.5} = 44 \ ^\circ\text{C}$$
+      <p class="paso">Si es la misma sustancia, la temperatura final es el promedio ponderado por las masas.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una pieza de hierro de 0.5 kg a 200 °C se echa en 1 kg de agua a 20 °C. ¿Temperatura final?</p>
+      $$0.5(450)(T - 200) + 1(4186)(T - 20) = 0 \;\Rightarrow\; T = \frac{225(200) + 4186(20)}{225 + 4186} \approx 29.2 \ ^\circ\text{C}$$
+      <p class="paso">El agua apenas sube 9 °C: su calor específico domina. Al revés, con este método se mide el $c$ de un metal desconocido (calorímetro).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cambios de fase</h2>
+  <p>Durante un cambio de fase la temperatura <strong>no cambia</strong>: la energía se usa en romper enlaces entre moléculas, no en agitarlas más.</p>
+  <div class="definicion">
+    <span class="etq">Calor latente</span>
+    $$Q = m\,L$$
+    <p>Agua: fusión $L_f = 3.34\times 10^5$ J/kg (a 0 °C); vaporización $L_v = 2.26\times 10^6$ J/kg (a 100 °C). El mismo calor se libera en el proceso inverso (congelar, condensar).</p>
+  </div>
+  <p>Vaporizar agua cuesta casi 7 veces más que fundirla y más de 5 veces lo que cuesta calentarla de 0 a 100 °C. Por eso una quemadura con vapor es peor que con agua hirviendo: al condensarse en la piel, el vapor libera todo ese calor latente.</p>
+</section>
+
+<section>
+  <h2>Curva de calentamiento</h2>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">4</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>¿Cuánto calor hace falta para llevar 1 kg de hielo de $-10$ °C a agua a 20 °C?</p>
+        <p class="paso">Tres tramos: calentar el hielo, fundirlo y calentar el agua.</p>
+        $$1(2100)(10) + 1(3.34\times 10^5) + 1(4186)(20)$$
+        $$= 21\,000 + 334\,000 + 83\,720 = 438\,720 \text{ J}$$
+        <p class="paso">Casi todo se va en fundirlo.</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 190 135" width="48mm">
+        <line x1="20" y1="120" x2="185" y2="120" stroke="#2b241e" stroke-width="1"/>
+        <line x1="20" y1="125" x2="20" y2="8" stroke="#2b241e" stroke-width="1"/>
+        <path d="M20 110 L30 98 L60 98 L80 38 L175 38 L182 20" fill="none" stroke="#b5562c" stroke-width="2.4"/>
+        <line x1="16" y1="98" x2="60" y2="98" stroke="#8a7a66" stroke-width="0.6" stroke-dasharray="3 3"/>
+        <line x1="16" y1="38" x2="80" y2="38" stroke="#8a7a66" stroke-width="0.6" stroke-dasharray="3 3"/>
+        <g font-family="Nunito" font-size="9" fill="#2b241e">
+          <text x="4" y="101">0</text><text x="0" y="41">100</text>
+          <text x="32" y="92">funde</text><text x="104" y="32">hierve</text>
+          <text x="150" y="132">Q</text><text x="24" y="14">T (°C)</text>
+        </g>
+      </svg>
+      <figcaption>Los tramos planos son los cambios de fase.</figcaption>
+    </figure>
+  </div>
+  <div class="nota">
+    <span class="etq">¿Alcanza para derretir todo?</span>
+    <p>En mezclas con hielo, primero revisa si el calor que puede ceder el agua al bajar a 0 °C alcanza para fundir todo el hielo. Si no alcanza, la mezcla termina a 0 °C con algo de hielo sin fundir.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\Delta T$ durante la fusión</td><td class="bien">$Q = mL$, sin $\Delta T$</td><td>La temperatura no cambia.</td></tr>
+        <tr><td class="mal">Masa en gramos con $c$ en J/kg·°C</td><td class="bien">En kg</td><td>Si no, sale 1000 veces más.</td></tr>
+        <tr><td class="mal">$\Delta T = T_{\text{inicial}} - T_{\text{final}}$</td><td class="bien">$T_f - T_i$</td><td>Para que los signos cuadren en $\sum Q = 0$.</td></tr>
+        <tr><td class="mal">Usar $c$ del agua para el hielo</td><td class="bien">$c_{\text{hielo}} = 2100$</td><td>Cada fase tiene su $c$.</td></tr>
+        <tr><td class="mal">Suponer que todo el hielo se funde</td><td class="bien">Comprobarlo</td><td>Puede que no alcance el calor.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$Q = mc\Delta T$</div><div>$c_{\text{agua}} = 4186$</div><div>$\sum Q = 0$</div>
+      <div>$Q = mL$</div><div>$L_f = 3.34\times 10^5$ J/kg</div><div>$L_v = 2.26\times 10^6$ J/kg</div>
+      <div>Tramos planos: cambio de fase</div><div>1 cal $= 4.186$ J</div><div>Masas en kg</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa los valores de las tablas. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Calor sensible y mezclas</h3>
+    <ol class="largo">
+      <li>¿Cuánto calor se necesita para calentar 500 g de agua de 15 °C a 95 °C?</li>
+      <li>Se dan 1000 J a 100 g de aluminio. ¿Cuánto sube su temperatura?</li>
+      <li>Se mezcla 1 L de agua a 90 °C con 2 L a 15 °C. ¿Temperatura final?</li>
+      <li>Un metal de 0.2 kg a 100 °C se echa en 0.5 kg de agua a 20 °C y el equilibrio queda en 23 °C. ¿Cuál es su calor específico?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Cambios de fase</h3>
+    <ol class="largo">
+      <li>¿Cuánto calor se necesita para fundir 200 g de hielo a 0 °C?</li>
+      <li>¿Y para evaporar 0.5 kg de agua a 100 °C?</li>
+      <li>¿Cuánto calor lleva 200 g de hielo a $-5$ °C hasta vapor a 100 °C?</li>
+      <li>Se echan 50 g de hielo a 0 °C en 200 g de agua a 40 °C. ¿Se funde todo? ¿Cuál es la temperatura final?</li>
+      <li>Una comida tiene 250 Calorías (kcal) de energía. ¿Cuántos joules son?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>167 440 J</span></li>
+    <li><span>$\approx 11.1$ °C</span></li>
+    <li><span>40 °C</span></li>
+    <li><span>$\approx 408$ J/kg·°C</span></li>
+    <li><span>66 800 J</span></li>
+    <li><span>$1.13\times 10^6$ J</span></li>
+    <li><span>604 620 J</span></li>
+    <li><span>Sí; $\approx 16.0$ °C</span></li>
+    <li><span>1 046 500 J</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$0.5(4186)(80)$.</div></div>
+    <div class="sol"><span>2</span><div>$\Delta T = \tfrac{1000}{0.1(900)}$.</div></div>
+    <div class="sol"><span>3</span><div>1 L de agua pesa 1 kg: $\tfrac{1(90) + 2(15)}{3}$.</div></div>
+    <div class="sol"><span>4</span><div>$0.2\,c\,(23 - 100) + 0.5(4186)(3) = 0 \Rightarrow c = \tfrac{6279}{15.4}$. Parecido al hierro.</div></div>
+    <div class="sol"><span>6</span><div>$0.5(2.26\times 10^6)$.</div></div>
+    <div class="sol"><span>7</span><div>$0.2(2100)(5) + 0.2(334\,000) + 0.2(4186)(100) + 0.2(2.26\times 10^6) = 2100 + 66\,800 + 83\,720 + 452\,000$.</div></div>
+    <div class="sol"><span>8</span><div>El agua cede hasta 0 °C: $0.2(4186)(40) = 33\,488$ J; fundir el hielo cuesta $16\,700$ J: sí alcanza. $16\,700 + 0.05(4186)T = 0.2(4186)(40 - T) \Rightarrow T = \tfrac{16\,788}{1046.5}$.</div></div>
+    <div class="sol"><span>9</span><div>$250(1000)(4.186)$.</div></div>
+  </div>
+</section>

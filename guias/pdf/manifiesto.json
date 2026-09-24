@@ -66,6 +66,24 @@
     "pdf": "preparatoria-fisica-11-ecuacion-de-continuidad-y-bernoulli.pdf"
   },
   {
+    "tema": "preparatoria-fisica-temperatura-y-dilatacion-termica",
+    "titulo": "Temperatura y dilatación térmica",
+    "descripcion": "Qué mide la temperatura, equilibrio térmico y ley cero, escalas Celsius, Fahrenheit y Kelvin con sus conversiones, dilatación lineal, superficial y volumétrica, juntas de dilatación, láminas bimetálicas y el comportamiento raro del agua cerca de 4 °C.",
+    "pdf": "preparatoria-fisica-12-temperatura-y-dilatacion-termica.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-calorimetria-y-cambios-de-fase",
+    "titulo": "Calorimetría y cambios de fase",
+    "descripcion": "Calor específico, mezclas y temperatura de equilibrio, cómo medir el calor específico de un metal, calor latente de fusión y vaporización y curva de calentamiento del agua, incluidas mezclas con hielo.",
+    "pdf": "preparatoria-fisica-13-calorimetria-y-cambios-de-fase.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-leyes-de-la-termodinamica",
+    "titulo": "Leyes de la termodinámica",
+    "descripcion": "Gas ideal, trabajo de un gas y diagrama presión-volumen, primera ley con su convención de signos, procesos isobárico, isocórico, isotérmico y adiabático, segunda ley, eficiencia de máquinas térmicas, ciclo de Carnot y refrigeradores.",
+    "pdf": "preparatoria-fisica-14-leyes-de-la-termodinamica.pdf"
+  },
+  {
     "tema": "preparatoria-matematicas-funciones-y-sus-graficas",
     "titulo": "Funciones y sus gráficas",
     "descripcion": "Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.",

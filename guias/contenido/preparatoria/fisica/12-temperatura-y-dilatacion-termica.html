@@ -1,0 +1,182 @@
+<!-- guia
+titulo: Temperatura y dilatación térmica
+nivel: Preparatoria
+materia: Física
+rama: Termodinámica
+numero: 12
+descripcion: Qué mide la temperatura, equilibrio térmico y ley cero, escalas Celsius, Fahrenheit y Kelvin con sus conversiones, dilatación lineal, superficial y volumétrica, juntas de dilatación, láminas bimetálicas y el comportamiento raro del agua cerca de 4 °C.
+entrada: En verano los rieles del tren se alargan, los cables de luz cuelgan más y un frasco atorado se abre con agua caliente. La materia se dilata al calentarse, y saber cuánto es indispensable para construir puentes, vías y hasta termómetros.
+objetivo: Relacionar temperatura con la energía de las partículas.
+objetivo: Convertir entre Celsius, Fahrenheit y Kelvin.
+objetivo: Calcular dilataciones lineales.
+objetivo: Calcular dilataciones superficiales y volumétricas.
+objetivo: Explicar aplicaciones de la dilatación.
+autoeval: Explicar el equilibrio térmico y la ley cero. | 01
+autoeval: Convertir temperaturas entre las tres escalas. | 02
+autoeval: Usar $\Delta L = \alpha L_0\Delta T$. | 03
+autoeval: Usar $2\alpha$ y $3\alpha$ para áreas y volúmenes. | 04
+autoeval: Explicar por qué el hielo flota y los lagos no se congelan hasta el fondo. | 05
+-->
+<section>
+  <h2>Qué es la temperatura</h2>
+  <p>La temperatura mide la <strong>energía cinética promedio</strong> de las partículas de un cuerpo: más temperatura, más agitación. No es lo mismo que el calor, que es energía que <em>pasa</em> de un cuerpo a otro por diferencia de temperatura.</p>
+  <div class="definicion">
+    <span class="etq">Ley cero de la termodinámica</span>
+    <p>Si dos cuerpos están cada uno en equilibrio térmico con un tercero, están en equilibrio entre sí (tienen la misma temperatura). Es lo que permite usar termómetros: el termómetro es el «tercero».</p>
+  </div>
+</section>
+
+<section>
+  <h2>Escalas de temperatura</h2>
+  <table class="leyes">
+    <thead><tr><th>Referencia</th><th>Celsius</th><th>Fahrenheit</th><th>Kelvin</th></tr></thead>
+    <tbody>
+      <tr><td>Cero absoluto</td><td>$-273.15$</td><td>$-459.67$</td><td>$0$</td></tr>
+      <tr><td>Congelación del agua</td><td>$0$</td><td>$32$</td><td>$273.15$</td></tr>
+      <tr><td>Ebullición del agua (1 atm)</td><td>$100$</td><td>$212$</td><td>$373.15$</td></tr>
+    </tbody>
+  </table>
+  $$T_F = \tfrac{9}{5}T_C + 32 \qquad T_C = \tfrac{5}{9}(T_F - 32) \qquad T_K = T_C + 273.15$$
+  <p>La escala Kelvin empieza en el <strong>cero absoluto</strong>, donde la agitación es mínima; no tiene temperaturas negativas y es la que se usa en fórmulas de gases. Un cambio de 1 °C es igual a un cambio de 1 K.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>La temperatura normal del cuerpo es 98.6 °F. ¿Cuánto es en °C y en K?</p>
+      $$T_C = \tfrac{5}{9}(98.6 - 32) = 37 \ ^\circ\text{C} \qquad T_K = 37 + 273.15 = 310.15 \text{ K}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Dilatación lineal</h2>
+  <div class="definicion">
+    <span class="etq">Dilatación lineal</span>
+    $$\Delta L = \alpha\,L_0\,\Delta T$$
+    <p>$\alpha$ es el coeficiente de dilatación lineal del material (1/°C). El cambio es proporcional a la longitud inicial y al cambio de temperatura.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Material</th><th>$\alpha$ (1/°C)</th><th>Material</th><th>$\alpha$ (1/°C)</th></tr></thead>
+    <tbody>
+      <tr><td>Acero</td><td>$1.2\times 10^{-5}$</td><td>Aluminio</td><td>$2.4\times 10^{-5}$</td></tr>
+      <tr><td>Cobre</td><td>$1.7\times 10^{-5}$</td><td>Latón</td><td>$1.9\times 10^{-5}$</td></tr>
+      <tr><td>Vidrio común</td><td>$0.9\times 10^{-5}$</td><td>Concreto</td><td>$1.2\times 10^{-5}$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un riel de acero de 12 m se instala en invierno a $-5$ °C. ¿Cuánto se alarga en verano, a 45 °C?</p>
+      $$\Delta L = (1.2\times 10^{-5})(12)(50) = 7.2\times 10^{-3} \text{ m} = 7.2 \text{ mm}$$
+      <p class="paso">Por eso se dejan pequeñas separaciones entre rieles y juntas de dilatación en los puentes.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Dilatación superficial y volumétrica</h2>
+  <p>En dos y tres dimensiones cada lado se dilata, así que los coeficientes son aproximadamente el doble y el triple:</p>
+  $$\Delta A = 2\alpha\,A_0\,\Delta T \qquad\qquad \Delta V = \beta\,V_0\,\Delta T, \quad \beta \approx 3\alpha$$
+  <p>Los líquidos solo tienen coeficiente volumétrico $\beta$, y suele ser mucho mayor que el de los sólidos. Un <strong>agujero</strong> en una placa se agranda al calentarla, como si estuviera hecho del mismo material.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un tanque de acero de 60 L se llena de gasolina ($\beta = 9.5\times 10^{-4}$) a 10 °C y se deja al sol hasta 35 °C. ¿Cuánta gasolina se derrama?</p>
+      $$\Delta V_{\text{gas}} = 60(9.5\times 10^{-4})(25) \approx 1.43 \text{ L} \qquad \Delta V_{\text{tanque}} = 60(3.6\times 10^{-5})(25) = 0.054 \text{ L}$$
+      <p class="paso">Se derraman unos $1.43 - 0.05 \approx 1.37$ L: el tanque también crece, pero mucho menos.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Aplicaciones y el caso del agua</h2>
+  <ul>
+    <li><strong>Lámina bimetálica:</strong> dos metales pegados con distinto $\alpha$ se curvan al calentarse. Se usan en termostatos y en interruptores de planchas.</li>
+    <li><strong>Termómetros de líquido:</strong> el líquido se dilata más que el vidrio y sube por el tubo.</li>
+    <li><strong>Frascos atorados:</strong> el agua caliente dilata la tapa metálica más que el vidrio.</li>
+  </ul>
+  <div class="nota">
+    <span class="etq">El agua es rara</span>
+    <p>Entre 0 y 4 °C el agua se <em>contrae</em> al calentarse, así que es más densa a 4 °C. Y al congelarse se expande casi un 9 %: el hielo flota. En invierno, el agua a 4 °C se queda en el fondo de los lagos y el hielo forma una capa arriba que aísla: la vida acuática sobrevive.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$T_F = \tfrac{9}{5}(T_C + 32)$</td><td class="bien">$\tfrac{9}{5}T_C + 32$</td><td>El 32 se suma al final.</td></tr>
+        <tr><td class="mal">$T_K = T_C - 273$</td><td class="bien">$T_C + 273.15$</td><td>En kelvin los números son mayores.</td></tr>
+        <tr><td class="mal">Temperatura = calor</td><td class="bien">El calor es energía en tránsito</td><td>Un cuerpo no «tiene» calor.</td></tr>
+        <tr><td class="mal">$\Delta L$ con la longitud final</td><td class="bien">Con $L_0$</td><td>Aunque la diferencia es mínima, la fórmula usa la inicial.</td></tr>
+        <tr><td class="mal">El agujero se hace más chico</td><td class="bien">Se agranda</td><td>Todo el material se escala.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$T_F = \tfrac{9}{5}T_C + 32$</div><div>$T_K = T_C + 273.15$</div><div>$-40$ °C $= -40$ °F</div>
+      <div>$\Delta L = \alpha L_0\Delta T$</div><div>$\Delta A = 2\alpha A_0\Delta T$</div><div>$\Delta V = \beta V_0\Delta T$, $\beta \approx 3\alpha$</div>
+      <div>1 °C de cambio = 1 K</div><div>Agua: máx. densidad a 4 °C</div><div>Bimetálica: se curva</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa los coeficientes de la tabla. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Escalas</h3>
+    <ol>
+      <li>25 °C a °F</li><li>$-10$ °F a °C</li><li>300 K a °C</li><li>¿A qué temperatura coinciden °C y °F?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Dilatación lineal</h3>
+    <ol class="largo">
+      <li>Un puente de acero mide 500 m. ¿Cuánto cambia su longitud entre $-10$ °C y 40 °C?</li>
+      <li>Una varilla de aluminio de 2 m se calienta de 20 °C a 120 °C. ¿Cuánto se alarga (en mm)?</li>
+      <li>Un anillo de latón mide 5.00 cm de diámetro interior a 20 °C. ¿A qué temperatura hay que calentarlo para que pase un eje de 5.01 cm?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Superficial y volumétrica</h3>
+    <ol class="largo">
+      <li>Una placa de cobre de 1 m² se calienta 100 °C. ¿Cuánto aumenta su área (en cm²)?</li>
+      <li>Un litro de mercurio ($\beta = 1.8\times 10^{-4}$) se calienta 50 °C. ¿Cuántos mililitros aumenta su volumen?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>77 °F</span></li>
+    <li><span>$\approx -23.3$ °C</span></li>
+    <li><span>26.85 °C</span></li>
+    <li><span>$-40$</span></li>
+    <li><span>0.30 m</span></li>
+    <li><span>4.8 mm</span></li>
+    <li><span>$\approx 125$ °C</span></li>
+    <li><span>34 cm²</span></li>
+    <li><span>9 mL</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\tfrac{9}{5}(25) + 32 = 45 + 32$.</div></div>
+    <div class="sol"><span>2</span><div>$\tfrac{5}{9}(-10 - 32) = \tfrac{5}{9}(-42)$.</div></div>
+    <div class="sol"><span>4</span><div>$T = \tfrac{9}{5}T + 32 \Rightarrow -\tfrac{4}{5}T = 32 \Rightarrow T = -40$.</div></div>
+    <div class="sol"><span>5</span><div>$(1.2\times 10^{-5})(500)(50)$: 30 cm, por eso las juntas de los puentes son tan visibles.</div></div>
+    <div class="sol"><span>6</span><div>$(2.4\times 10^{-5})(2)(100) = 4.8\times 10^{-3}$ m.</div></div>
+    <div class="sol"><span>7</span><div>$\Delta T = \tfrac{0.01}{(1.9\times 10^{-5})(5)} \approx 105$ °C, así que $T \approx 20 + 105$.</div></div>
+    <div class="sol"><span>8</span><div>$2(1.7\times 10^{-5})(1)(100) = 3.4\times 10^{-3}$ m² $= 34$ cm².</div></div>
+    <div class="sol"><span>9</span><div>$(1.8\times 10^{-4})(1000 \text{ mL})(50)$.</div></div>
+  </div>
+</section>
