@@ -4,6 +4,7 @@ const express = require('express');
 const { db, UPLOAD_DIR } = require('./db');
 const { html, layout, aviso } = require('./html');
 const auth = require('./auth');
+const permisos = require('./permisos');
 
 const router = express.Router();
 
@@ -12,6 +13,7 @@ const MENSAJES = {
   salir: ['ok', 'Sesión cerrada.'],
   credenciales: ['error', 'Correo o contraseña incorrectos.'],
   pendiente: ['info', 'Tu solicitud todavía no ha sido autorizada. Te aviso cuando esté lista.'],
+  areas: ['error', 'Marca al menos un nivel y materia de lo que compraste.'],
   revocado: ['error', 'Tu acceso está desactivado. Escríbeme si crees que es un error.'],
   vencido: ['error', 'Tu periodo de acceso terminó. Escríbeme para renovarlo.'],
   existe: ['error', 'Ya existe una cuenta o solicitud con ese correo.'],
@@ -79,7 +81,9 @@ router.get('/solicitar', (req, res) => {
           <label>Correo <input type="email" name="correo" required maxlength="200" autocomplete="email"></label>
           <label>Contraseña (mínimo 8 caracteres) <input type="password" name="password" required minlength="8" autocomplete="new-password"></label>
           <label>Repite la contraseña <input type="password" name="password2" required minlength="8" autocomplete="new-password"></label>
-          <label>¿Qué tutoría compraste? <textarea name="nota" maxlength="500" rows="3" placeholder="Ej. Paquete de 4 clases de cálculo diferencial, pagado el 20 de septiembre"></textarea></label>
+          <p class="etiqueta-campo">¿Qué compraste? Marca nivel y materia</p>
+          ${permisos.casillas()}
+          <label>Detalles de tu tutoría (opcional) <textarea name="nota" maxlength="500" rows="3" placeholder="Ej. Paquete de 4 clases de cálculo diferencial, pagado el 20 de septiembre"></textarea></label>
           <button class="boton">Enviar solicitud</button>
         </form>
         <p class="nota">¿Ya tienes acceso? <a href="/login">Entra aquí</a>.</p>
@@ -95,9 +99,13 @@ router.post('/solicitar', auth.limiteIntentos(5, 60 * 60 * 1000), (req, res) => 
   if (!nombre || !correoValido(correo) || password.length < 8 || password.length > 200 || password !== req.body.password2) {
     return res.redirect('/solicitar?m=datos');
   }
+  const areas = permisos.idsDelFormulario(req.body);
+  if (!areas.length) return res.redirect('/solicitar?m=areas');
   if (db.prepare('SELECT 1 FROM alumnos WHERE correo = ?').get(correo)) return res.redirect('/solicitar?m=existe');
-  db.prepare("INSERT INTO alumnos (nombre, correo, pass_hash, estado, nota) VALUES (?, ?, ?, 'pendiente', ?)")
-    .run(nombre, correo, auth.hashPassword(password), nota);
+  // Las áreas marcadas quedan como propuesta: el alumno no entra hasta que tú lo autorizas y puedes corregirlas.
+  const id = db.prepare("INSERT INTO alumnos (nombre, correo, pass_hash, estado, nota) VALUES (?, ?, ?, 'pendiente', ?)")
+    .run(nombre, correo, auth.hashPassword(password), nota).lastInsertRowid;
+  permisos.guardar(id, areas);
   req.registrarIntento();
   res.redirect('/login?m=enviado');
 });
@@ -105,18 +113,25 @@ router.post('/solicitar', auth.limiteIntentos(5, 60 * 60 * 1000), (req, res) => 
 // ---------- Contenido protegido ----------
 
 router.get('/cursos', auth.requiereAlumno, (req, res) => {
-  const niveles = db.prepare(`
-    SELECT n.*,
-      (SELECT COUNT(*) FROM temas t JOIN ramas r ON r.id = t.rama_id JOIN areas a ON a.id = r.area_id WHERE a.nivel_id = n.id) AS temas,
-      (SELECT COUNT(*) FROM recursos x JOIN temas t ON t.id = x.tema_id JOIN ramas r ON r.id = t.rama_id JOIN areas a ON a.id = r.area_id WHERE a.nivel_id = n.id) AS recursos
-    FROM niveles n ORDER BY n.orden`).all();
-  const areas = db.prepare('SELECT * FROM areas ORDER BY orden').all();
+  const areas = db.prepare(`
+    SELECT a.*,
+      (SELECT COUNT(*) FROM temas t JOIN ramas r ON r.id = t.rama_id WHERE r.area_id = a.id) AS temas,
+      (SELECT COUNT(*) FROM recursos x JOIN temas t ON t.id = x.tema_id JOIN ramas r ON r.id = t.rama_id WHERE r.area_id = a.id) AS recursos
+    FROM areas a ORDER BY a.orden`).all().filter((a) => auth.puedeVerArea(req.usuario, a.id));
+  const suma = (lista, campo) => lista.reduce((t, a) => t + a[campo], 0);
+  const niveles = db.prepare('SELECT * FROM niveles ORDER BY orden').all()
+    .map((n) => {
+      const propias = areas.filter((a) => a.nivel_id === n.id);
+      return { ...n, temas: suma(propias, 'temas'), recursos: suma(propias, 'recursos'), visibles: propias.length };
+    })
+    .filter((n) => n.visibles > 0);
   res.send(layout({
     titulo: 'Cursos',
     usuario: req.usuario,
     cuerpo: html`
       <h1>Cursos</h1>
       <p class="sub">Elige tu nivel. Cada tema se abre en su propia pestaña con videos, PDF descargables y enlaces.</p>
+      ${!niveles.length ? html`<p class="aviso info">Todavía no tienes materias asignadas. Escríbeme para activarlas.</p>` : ''}
       <div class="rejilla">
         ${niveles.map((n) => html`
           <a class="tarjeta nivel" href="/cursos/${n.slug}">
@@ -132,7 +147,9 @@ router.get('/cursos', auth.requiereAlumno, (req, res) => {
 router.get('/cursos/:nivel', auth.requiereAlumno, (req, res, next) => {
   const nivel = db.prepare('SELECT * FROM niveles WHERE slug = ?').get(req.params.nivel);
   if (!nivel) return next();
-  const areas = db.prepare('SELECT * FROM areas WHERE nivel_id = ? ORDER BY orden').all(nivel.id);
+  const areas = db.prepare('SELECT * FROM areas WHERE nivel_id = ? ORDER BY orden').all(nivel.id)
+    .filter((a) => auth.puedeVerArea(req.usuario, a.id));
+  if (!areas.length) return sinAcceso(req, res);
   const ramas = db.prepare('SELECT r.* FROM ramas r JOIN areas a ON a.id = r.area_id WHERE a.nivel_id = ? ORDER BY r.orden').all(nivel.id);
   const temas = db.prepare(`
     SELECT t.*, (SELECT COUNT(*) FROM recursos x WHERE x.tema_id = t.id) AS recursos
@@ -165,6 +182,19 @@ router.get('/cursos/:nivel', auth.requiereAlumno, (req, res, next) => {
   }));
 });
 
+function sinAcceso(req, res) {
+  res.status(403).send(layout({
+    titulo: 'Sin acceso',
+    usuario: req.usuario,
+    cuerpo: html`
+      <section class="tarjeta angosta">
+        <h1>Este material no está en tu plan</h1>
+        <p>Tu acceso no incluye esta materia. Si quieres agregarla, escríbeme.</p>
+        <p><a class="boton" href="/cursos">Ir a mis cursos</a></p>
+      </section>`,
+  }));
+}
+
 function idYoutube(url) {
   const m = String(url).match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/) || String(url).match(/^([\w-]{11})$/);
   return m ? m[1] : null;
@@ -177,10 +207,11 @@ function tamanoLegible(bytes) {
 
 router.get('/tema/:slug', auth.requiereAlumno, (req, res, next) => {
   const tema = db.prepare(`
-    SELECT t.*, r.nombre AS rama, a.nombre AS area, n.nombre AS nivel, n.slug AS nivel_slug
+    SELECT t.*, r.nombre AS rama, a.id AS area_id, a.nombre AS area, n.nombre AS nivel, n.slug AS nivel_slug
     FROM temas t JOIN ramas r ON r.id = t.rama_id JOIN areas a ON a.id = r.area_id JOIN niveles n ON n.id = a.nivel_id
     WHERE t.slug = ?`).get(req.params.slug);
   if (!tema) return next();
+  if (!auth.puedeVerArea(req.usuario, tema.area_id)) return sinAcceso(req, res);
   const recursos = db.prepare('SELECT * FROM recursos WHERE tema_id = ? ORDER BY orden, id').all(tema.id);
   const videos = recursos.filter((r) => r.tipo === 'youtube');
   const pdfs = recursos.filter((r) => r.tipo === 'pdf');
@@ -246,8 +277,10 @@ function hostDe(url) {
 }
 
 function enviarPdf(req, res, next, descargar) {
-  const r = db.prepare("SELECT * FROM recursos WHERE id = ? AND tipo = 'pdf'").get(Number(req.params.id));
+  const r = db.prepare(`SELECT x.*, ra.area_id FROM recursos x JOIN temas t ON t.id = x.tema_id JOIN ramas ra ON ra.id = t.rama_id
+    WHERE x.id = ? AND x.tipo = 'pdf'`).get(Number(req.params.id));
   if (!r) return next();
+  if (!auth.puedeVerArea(req.usuario, r.area_id)) return sinAcceso(req, res);
   const ruta = path.join(UPLOAD_DIR, path.basename(r.archivo));
   if (!fs.existsSync(ruta)) return next();
   const nombre = (r.nombre_original || `${r.titulo}.pdf`).replace(/["\\\r\n]/g, '');

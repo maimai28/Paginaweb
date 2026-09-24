@@ -101,4 +101,16 @@ function sembrarCatalogo() {
 
 sembrarCatalogo();
 
+// Permisos por alumno: qué áreas (nivel + materia) puede ver.
+// Al crear la tabla por primera vez, los alumnos que ya existían conservan acceso a todo.
+const habiaPermisos = db.prepare("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'permisos'").get();
+db.exec(`
+CREATE TABLE IF NOT EXISTS permisos (
+  alumno_id INTEGER NOT NULL REFERENCES alumnos(id) ON DELETE CASCADE,
+  area_id INTEGER NOT NULL REFERENCES areas(id) ON DELETE CASCADE,
+  PRIMARY KEY (alumno_id, area_id)
+);
+`);
+if (!habiaPermisos) db.exec('INSERT INTO permisos (alumno_id, area_id) SELECT al.id, ar.id FROM alumnos al CROSS JOIN areas ar');
+
 module.exports = { db, DATA_DIR, UPLOAD_DIR, slugify, slugUnico };

@@ -183,6 +183,17 @@ details.nivel-admin summary h2 { display: inline; }
 details.nivel-admin summary::before { content: '▸ '; color: var(--acento); }
 details.nivel-admin[open] summary::before { content: '▾ '; }
 
+.casillas { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin: 0 0 .6rem; }
+.casillas fieldset { border: 1px solid var(--borde); border-radius: 8px; padding: .4rem .7rem .6rem; margin: 0; }
+.casillas legend { font-weight: 700; font-size: .85rem; color: var(--acento); padding: 0 .3rem; }
+label.casilla { display: flex; align-items: center; gap: .45rem; font-weight: 400; font-size: .9rem; margin-top: .25rem; cursor: pointer; }
+label.casilla input { width: auto; margin: 0; }
+.etiqueta-campo { font-weight: 500; font-size: .95rem; margin: .2rem 0 -.3rem; }
+.editar-permisos { margin-top: .4rem; font-size: .9rem; }
+.editar-permisos summary { cursor: pointer; color: var(--acento-2); }
+.editar-permisos form { margin-top: .5rem; min-width: 240px; }
+.editar-permisos .casillas { grid-template-columns: 1fr; }
+
 @media (max-width: 600px) {
   .tabla thead { display: none; }
   .tabla tr { display: block; border-bottom: 2px solid var(--borde); }

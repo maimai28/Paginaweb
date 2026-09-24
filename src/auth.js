@@ -68,7 +68,8 @@ function alumnoVigente(alumno) {
   return true;
 }
 
-// Carga la sesión actual en req.usuario = { esAdmin, alumno }
+// Carga la sesión actual en req.usuario = { esAdmin, alumno, areas }.
+// areas: ids de las áreas que el alumno puede ver (el admin ve todo).
 function cargarSesion(req, res, next) {
   req.usuario = null;
   const token = leerCookie(req, COOKIE);
@@ -79,13 +80,20 @@ function cargarSesion(req, res, next) {
         req.usuario = { esAdmin: true, alumno: null };
       } else {
         const alumno = db.prepare('SELECT * FROM alumnos WHERE id = ?').get(s.alumno_id);
-        if (alumnoVigente(alumno)) req.usuario = { esAdmin: false, alumno };
+        if (alumnoVigente(alumno)) {
+          const areas = new Set(db.prepare('SELECT area_id FROM permisos WHERE alumno_id = ?').all(alumno.id).map((p) => p.area_id));
+          req.usuario = { esAdmin: false, alumno, areas };
+        }
       }
     }
     if (!req.usuario) res.clearCookie(COOKIE, { path: '/' });
   }
   res.locals.usuario = req.usuario;
   next();
+}
+
+function puedeVerArea(usuario, areaId) {
+  return Boolean(usuario && (usuario.esAdmin || usuario.areas.has(areaId)));
 }
 
 function requiereAlumno(req, res, next) {
@@ -137,5 +145,5 @@ setInterval(() => {
 module.exports = {
   hashPassword, verificarPassword, compararSeguro, generarPassword,
   crearSesion, cerrarSesion, cargarSesion, requiereAlumno, requiereAdmin,
-  mismoOrigen, limiteIntentos, alumnoVigente,
+  mismoOrigen, limiteIntentos, alumnoVigente, puedeVerArea,
 };

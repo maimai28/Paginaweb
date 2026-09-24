@@ -6,6 +6,7 @@ const multer = require('multer');
 const { db, UPLOAD_DIR, slugify, slugUnico } = require('./db');
 const { html, layout, aviso } = require('./html');
 const auth = require('./auth');
+const permisos = require('./permisos');
 const { idYoutube } = require('./rutas-alumno');
 
 const router = express.Router();
@@ -63,13 +64,26 @@ router.use(auth.requiereAdmin);
 
 // ---------- Alumnos ----------
 
-function filaAlumno(a) {
+function filaAlumno(a, areas) {
   const vencido = a.estado === 'activo' && !auth.alumnoVigente(a);
   return html`
     <tr>
       <td><strong>${a.nombre}</strong><br><span class="meta">${a.correo}</span>
         ${a.nota ? html`<br><span class="nota-alumno">“${a.nota}”</span>` : ''}</td>
       <td class="meta">Alta: ${a.creado.slice(0, 10)}<br>Último acceso: ${a.ultimo_acceso ? a.ultimo_acceso.slice(0, 16) : 'nunca'}</td>
+      <td>
+        <div class="chips">${permisos.resumen(areas)}</div>
+        <details class="editar-permisos" ${a.estado === 'pendiente' ? 'open' : ''}>
+          <summary>Editar materias</summary>
+          <form method="post" action="/admin/alumnos/${a.id}/permisos">
+            ${permisos.casillas(areas)}
+            <div class="acciones">
+              <button class="boton mini secundario">Guardar materias</button>
+              ${a.estado === 'pendiente' ? html`<button class="boton mini" name="autorizar" value="1">Guardar y autorizar</button>` : ''}
+            </div>
+          </form>
+        </details>
+      </td>
       <td>
         <form method="post" action="/admin/alumnos/${a.id}/vigencia" class="en-linea">
           <input type="date" name="expira" value="${a.expira || ''}" aria-label="Acceso hasta">
@@ -91,14 +105,14 @@ function filaAlumno(a) {
     </tr>`;
 }
 
-function tablaAlumnos(titulo, lista, vacio) {
+function tablaAlumnos(titulo, lista, vacio, areasPorAlumno) {
   return html`
     <section class="bloque">
       <h2>${titulo} <span class="contador">${lista.length}</span></h2>
       ${lista.length ? html`
         <div class="tabla-scroll"><table class="tabla">
-          <thead><tr><th>Alumno</th><th>Actividad</th><th>Acceso hasta</th><th>Acciones</th></tr></thead>
-          <tbody>${lista.map(filaAlumno)}</tbody>
+          <thead><tr><th>Alumno</th><th>Actividad</th><th>Materias</th><th>Acceso hasta</th><th>Acciones</th></tr></thead>
+          <tbody>${lista.map((a) => filaAlumno(a, areasPorAlumno.get(a.id) || new Set()))}</tbody>
         </table></div>` : html`<p class="meta">${vacio}</p>`}
     </section>`;
 }
@@ -106,7 +120,13 @@ function tablaAlumnos(titulo, lista, vacio) {
 router.get('/', (req, res) => {
   const alumnos = db.prepare('SELECT * FROM alumnos ORDER BY creado DESC').all();
   const de = (estado) => alumnos.filter((a) => a.estado === estado);
+  const areasPorAlumno = new Map();
+  for (const p of db.prepare('SELECT alumno_id, area_id FROM permisos').all()) {
+    if (!areasPorAlumno.has(p.alumno_id)) areasPorAlumno.set(p.alumno_id, new Set());
+    areasPorAlumno.get(p.alumno_id).add(p.area_id);
+  }
   const avisos = {
+    areas: aviso('error', 'Marca al menos una materia para el alumno.'),
     existe: aviso('error', 'Ya existe un alumno con ese correo.'),
     datos: aviso('error', 'Nombre y correo válido son obligatorios.'),
     ok: aviso('ok', 'Cambios guardados.'),
@@ -117,17 +137,21 @@ router.get('/', (req, res) => {
     <section class="tarjeta">
       <h2>Dar de alta a un alumno</h2>
       <p class="meta">Se genera una contraseña única para esa persona. Solo se muestra una vez: cópiala y mándasela.</p>
-      <form method="post" action="/admin/alumnos" class="formulario fila">
-        <label>Nombre <input name="nombre" required maxlength="100"></label>
-        <label>Correo <input type="email" name="correo" required maxlength="200"></label>
-        <label>Acceso hasta (opcional) <input type="date" name="expira"></label>
-        <label>Nota (opcional) <input name="nota" maxlength="500" placeholder="Ej. 4 clases de física"></label>
-        <button class="boton">Crear alumno</button>
+      <form method="post" action="/admin/alumnos" class="formulario">
+        <div class="formulario fila">
+          <label>Nombre <input name="nombre" required maxlength="100"></label>
+          <label>Correo <input type="email" name="correo" required maxlength="200"></label>
+          <label>Acceso hasta (opcional) <input type="date" name="expira"></label>
+          <label>Nota (opcional) <input name="nota" maxlength="500" placeholder="Ej. 4 clases de física"></label>
+        </div>
+        <p class="etiqueta-campo">Materias a las que tendrá acceso</p>
+        ${permisos.casillas()}
+        <div><button class="boton">Crear alumno</button></div>
       </form>
     </section>
-    ${tablaAlumnos('Solicitudes pendientes de autorizar', de('pendiente'), 'No hay solicitudes pendientes.')}
-    ${tablaAlumnos('Alumnos con acceso', de('activo'), 'Aún no hay alumnos activos.')}
-    ${tablaAlumnos('Acceso revocado', de('revocado'), 'Ninguno.')}
+    ${tablaAlumnos('Solicitudes pendientes de autorizar', de('pendiente'), 'No hay solicitudes pendientes.', areasPorAlumno)}
+    ${tablaAlumnos('Alumnos con acceso', de('activo'), 'Aún no hay alumnos activos.', areasPorAlumno)}
+    ${tablaAlumnos('Acceso revocado', de('revocado'), 'Ninguno.', areasPorAlumno)}
   `));
 });
 
@@ -158,10 +182,13 @@ router.post('/alumnos', (req, res) => {
   const nombre = String(req.body.nombre || '').trim().slice(0, 100);
   const correo = String(req.body.correo || '').trim().toLowerCase();
   if (!nombre || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) return res.redirect('/admin?m=datos');
+  const areas = permisos.idsDelFormulario(req.body);
+  if (!areas.length) return res.redirect('/admin?m=areas');
   if (db.prepare('SELECT 1 FROM alumnos WHERE correo = ?').get(correo)) return res.redirect('/admin?m=existe');
   const password = auth.generarPassword();
   const id = db.prepare("INSERT INTO alumnos (nombre, correo, pass_hash, estado, nota, expira) VALUES (?, ?, ?, 'activo', ?, ?)")
     .run(nombre, correo, auth.hashPassword(password), String(req.body.nota || '').slice(0, 500), fechaValida(req.body.expira)).lastInsertRowid;
+  permisos.guardar(id, areas);
   mostrarCredenciales(req, res, db.prepare('SELECT * FROM alumnos WHERE id = ?').get(id), password);
 });
 
@@ -170,6 +197,16 @@ router.post('/alumnos/:id/estado', (req, res) => {
   if (estado) {
     db.prepare('UPDATE alumnos SET estado = ? WHERE id = ?').run(estado, Number(req.params.id));
     if (estado === 'revocado') db.prepare('DELETE FROM sesiones WHERE alumno_id = ?').run(Number(req.params.id));
+  }
+  res.redirect('/admin?m=ok');
+});
+
+router.post('/alumnos/:id/permisos', (req, res) => {
+  const alumno = db.prepare('SELECT * FROM alumnos WHERE id = ?').get(Number(req.params.id));
+  if (!alumno) return res.redirect('/admin');
+  permisos.guardar(alumno.id, permisos.idsDelFormulario(req.body));
+  if (req.body.autorizar && alumno.estado === 'pendiente') {
+    db.prepare("UPDATE alumnos SET estado = 'activo' WHERE id = ?").run(alumno.id);
   }
   res.redirect('/admin?m=ok');
 });

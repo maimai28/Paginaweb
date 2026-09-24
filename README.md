@@ -14,6 +14,7 @@ Solo entran los alumnos que tú autorizas. Cada alumno tiene **su propia contras
   - El alumno pide acceso en `/solicitar` y crea su contraseña → queda **pendiente** hasta que tú la autorizas.
   - O tú lo das de alta en `/admin` y el sistema genera una contraseña única (con botón para copiarla o mandarla por WhatsApp).
   - Fecha de vencimiento opcional por alumno, revocar/reactivar, generar contraseña nueva.
+  - **Permisos por materia**: cada alumno ve solo los niveles y áreas que le marques (ej. Preparatoria · Física). Se bloquea también el acceso directo por enlace a temas y PDF.
   - **Una sesión por alumno**: si comparte su contraseña y otra persona entra, a él se le cierra la sesión.
   - Los PDF solo se descargan con sesión iniciada; el sitio no se indexa en buscadores.
 
@@ -33,9 +34,10 @@ npm start                # http://localhost:3000
 ## Uso diario
 
 1. Alguien te compra una tutoría → le mandas el enlace `/solicitar` **o** lo das de alta tú en `/admin`.
-2. En `/admin` → “Solicitudes pendientes” → **Autorizar**.
+2. En `/admin` → “Solicitudes pendientes”: revisa las materias que marcó el alumno, corrígelas si hace falta y pulsa **Guardar y autorizar**.
 3. Para subir material: `/admin/contenido` → clic en el tema → agrega video, PDF o enlace.
-4. Si un alumno deja de pagar: **Revocar** (o ponle fecha en “Acceso hasta”).
+4. Si un alumno compra otra materia: “Editar materias” en su fila y marca la nueva.
+5. Si un alumno deja de pagar: **Revocar** (o ponle fecha en “Acceso hasta”).
 
 Recomendación: sube tus videos a YouTube como **No listado**. Si los pones públicos, cualquiera los puede ver fuera de la plataforma.
 
@@ -71,6 +73,7 @@ Todo vive en `DATA_DIR`: `cursos.db` (alumnos, temas, recursos) y `archivos/` (P
 server.js              arranque, cabeceras de seguridad
 src/catalogo.js        temario inicial (solo se usa la primera vez)
 src/db.js              esquema SQLite
+src/permisos.js        materias (nivel + área) que puede ver cada alumno
 src/auth.js            contraseñas (scrypt), sesiones, límites de intentos
 src/rutas-alumno.js    login, solicitud de acceso, cursos, página de tema, PDF
 src/rutas-admin.js     panel: alumnos y contenido
