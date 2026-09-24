@@ -35,7 +35,10 @@ node construir.js contenido/secundaria/fisica/20-mi-tema.html   # una guía
 node construir.js                                                # todas
 ```
 
-El PDF queda en `pdf/`. El generador **se detiene** si una fórmula está mal escrita, si algo se sale
+El PDF queda en `pdf/` y se actualiza `pdf/manifiesto.json`, que la plataforma usa para subir la
+guía y la descripción del tema al arrancar. El tema se busca por el título (debe coincidir con el
+del catálogo); si no coincide, agrega `tema: <slug-del-tema>` al bloque de datos. La descripción
+va en `descripcion:`. El generador **se detiene** si una fórmula está mal escrita, si algo se sale
 del margen, si falta una fuente o si la autoevaluación apunta a una sección que no existe.
 
 Requiere Node.js 20+ y Chromium (en una computadora normal, instala Chrome y define

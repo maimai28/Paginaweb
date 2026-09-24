@@ -62,6 +62,7 @@ Comando de inicio: `npm start`. Usa siempre HTTPS en producción.
 | `DATA_DIR` | Carpeta de la base de datos y los PDF. |
 | `PORT` | Puerto (el hosting normalmente lo pone solo). |
 | `MAX_PDF_MB` | Tamaño máximo por PDF (50 por defecto). |
+| `IMPORTAR_GUIAS` | Pon `0` para no cargar automáticamente las guías de `guias/pdf/`. |
 
 ### Respaldos
 
@@ -70,6 +71,15 @@ Todo vive en `DATA_DIR`: `cursos.db` (alumnos, temas, recursos) y `archivos/` (P
 ## Guías PDF
 
 La carpeta `guias/` tiene el generador de guías de estudio con el diseño de la marca y 35 guías de secundaria (matemáticas y física) listas en `guias/pdf/`. Ver `guias/README.md`.
+
+**Se cargan solas.** Al arrancar, el servidor lee `guias/pdf/manifiesto.json` y, para cada guía:
+
+- pone la descripción del tema si está vacía (no toca las que escribiste tú);
+- sube el PDF como primer material del tema, con el título «Guía de estudio: …»;
+- si la guía cambió en el repositorio, reemplaza el archivo;
+- si la borraste desde el panel, no la vuelve a subir.
+
+Para publicar guías nuevas: haz push y en Railway pulsa **Check for updates** (o *Redeploy*).
 
 ## Estructura
 

@@ -213,6 +213,29 @@ async function construir(navegador, archivo) {
   return { archivo, salida, errores };
 }
 
+// ---------- Manifiesto para la plataforma ----------
+// La plataforma lee pdf/manifiesto.json al arrancar y carga descripción y PDF en cada tema.
+
+const slugify = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+
+function escribirManifiesto() {
+  const lista = [];
+  for (const archivo of listarContenido(path.join(RAIZ, 'contenido'))) {
+    const { meta } = leerGuia(archivo);
+    const nombre = path.relative(path.join(RAIZ, 'contenido'), archivo).replace(/\.html$/, '').split(path.sep).join('-') + '.pdf';
+    if (!fs.existsSync(path.join(RAIZ, 'pdf', nombre))) continue;
+    lista.push({
+      tema: meta.tema || `${slugify(meta.nivel)}-${slugify(meta.materia)}-${slugify(meta.titulo)}`,
+      titulo: meta.titulo,
+      descripcion: meta.descripcion || '',
+      pdf: nombre,
+    });
+  }
+  fs.writeFileSync(path.join(RAIZ, 'pdf', 'manifiesto.json'), JSON.stringify(lista, null, 2) + '\n');
+  console.log(`Manifiesto: ${lista.length} guías.`);
+}
+
 (async () => {
   const archivos = process.argv.slice(2).length
     ? process.argv.slice(2).map((a) => path.resolve(a))
@@ -232,6 +255,7 @@ async function construir(navegador, archivo) {
     }
   }
   await navegador.close();
+  escribirManifiesto();
   console.log(`\n${archivos.length - fallas} de ${archivos.length} guías construidas.`);
   process.exit(fallas ? 1 : 0);
 })();

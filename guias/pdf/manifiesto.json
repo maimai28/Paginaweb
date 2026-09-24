@@ -1,0 +1,212 @@
+[
+  {
+    "tema": "secundaria-fisica-posicion-distancia-y-desplazamiento",
+    "titulo": "Posición, distancia y desplazamiento",
+    "descripcion": "Sistema de referencia, escalares y vectores, distancia recorrida contra desplazamiento, y desplazamientos en dos direcciones con Pitágoras.",
+    "pdf": "secundaria-fisica-01-posicion-distancia-desplazamiento.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-velocidad-y-rapidez-mru",
+    "titulo": "Velocidad y rapidez (MRU)",
+    "descripcion": "Rapidez contra velocidad, conversión de km/h a m/s, rapidez media, ecuaciones del movimiento rectilíneo uniforme, gráficas posición-tiempo y problemas de encuentro.",
+    "pdf": "secundaria-fisica-02-velocidad-y-rapidez.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-aceleracion-mrua",
+    "titulo": "Aceleración (MRUA)",
+    "descripcion": "Qué es la aceleración y su signo, las cuatro ecuaciones del MRUA, distancias de frenado y lectura de gráficas velocidad-tiempo.",
+    "pdf": "secundaria-fisica-03-aceleracion-mrua.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-caida-libre",
+    "titulo": "Caída libre",
+    "descripcion": "Por qué todo cae igual sin aire (el martillo y la pluma en la Luna), ecuaciones de caída, tiro vertical, altura máxima y tiempo de vuelo.",
+    "pdf": "secundaria-fisica-04-caida-libre.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-leyes-de-newton",
+    "titulo": "Leyes de Newton",
+    "descripcion": "Fuerza neta y diagrama de cuerpo libre, inercia, F = ma con fricción y acción-reacción, explicadas con situaciones cotidianas.",
+    "pdf": "secundaria-fisica-05-leyes-de-newton.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-masa-y-peso",
+    "titulo": "Masa y peso",
+    "descripcion": "Diferencia entre masa y peso, W = mg, cuánto pesarías en la Luna, Marte y Júpiter, y qué mide realmente una báscula.",
+    "pdf": "secundaria-fisica-06-masa-y-peso.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-presion",
+    "titulo": "Presión",
+    "descripcion": "Presión en sólidos y en líquidos, presión atmosférica (menor en Juárez que al nivel del mar) y el principio de Pascal en la prensa hidráulica.",
+    "pdf": "secundaria-fisica-07-presion.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-tipos-de-energia",
+    "titulo": "Tipos de energía",
+    "descripcion": "Formas de energía, energía cinética y potencial, cadenas de transformación en aparatos, trabajo y potencia.",
+    "pdf": "secundaria-fisica-08-tipos-de-energia.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-conservacion-de-la-energia",
+    "titulo": "Conservación de la energía",
+    "descripcion": "Energía mecánica, caídas, péndulos y montañas rusas resueltos con energía, qué pasa con la fricción y cómo se calcula la eficiencia.",
+    "pdf": "secundaria-fisica-09-conservacion-de-la-energia.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-calor-y-temperatura",
+    "titulo": "Calor y temperatura",
+    "descripcion": "Calor contra temperatura, escalas Celsius, Fahrenheit y Kelvin, conducción, convección y radiación, Q = mcΔT y por qué el desierto se enfría de noche.",
+    "pdf": "secundaria-fisica-10-calor-y-temperatura.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-carga-electrica",
+    "titulo": "Carga eléctrica",
+    "descripcion": "Origen de la carga, atracción y repulsión, formas de electrizar, conductores y aislantes, ley de Coulomb y los toques de la puerta del carro en días secos.",
+    "pdf": "secundaria-fisica-11-carga-electrica.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-circuitos-electricos-simples",
+    "titulo": "Circuitos eléctricos simples",
+    "descripcion": "Corriente, voltaje y resistencia, ley de Ohm, circuitos en serie y en paralelo, potencia eléctrica y consumo en kWh.",
+    "pdf": "secundaria-fisica-12-circuitos-electricos.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-magnetismo-e-imanes",
+    "titulo": "Magnetismo e imanes",
+    "descripcion": "Polos y materiales magnéticos, líneas de campo, la Tierra como imán y la brújula, electroimanes, y diferencia entre motor y generador.",
+    "pdf": "secundaria-fisica-13-magnetismo-e-imanes.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-ondas-y-sus-caracteristicas",
+    "titulo": "Ondas y sus características",
+    "descripcion": "Ondas mecánicas y electromagnéticas, transversales y longitudinales; amplitud, longitud de onda, frecuencia, periodo y v = λf; reflexión, refracción, difracción e interferencia.",
+    "pdf": "secundaria-fisica-14-ondas.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-el-sonido",
+    "titulo": "El sonido",
+    "descripcion": "Cómo se produce y viaja el sonido, su velocidad en distintos medios, distancia a un rayo y por eco, tono, intensidad, timbre y rango audible.",
+    "pdf": "secundaria-fisica-15-el-sonido.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-la-luz-y-los-colores",
+    "titulo": "La luz y los colores",
+    "descripcion": "Velocidad de la luz y año luz, espectro electromagnético, reflexión y refracción, color de los objetos, mezcla de luces y pinturas, y por qué el cielo es azul.",
+    "pdf": "secundaria-fisica-16-la-luz-y-los-colores.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-modelo-cinetico-de-particulas",
+    "titulo": "Modelo cinético de partículas",
+    "descripcion": "Ideas del modelo de partículas, difusión, dilatación y presión de gases, leyes de Boyle y Charles, y qué es un modelo científico.",
+    "pdf": "secundaria-fisica-17-modelo-cinetico-de-particulas.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-estados-de-agregacion",
+    "titulo": "Estados de agregación",
+    "descripcion": "Sólidos, líquidos y gases, los seis cambios de estado, curva de calentamiento, calor latente, evaporación contra ebullición y por qué el cooler enfría tan bien en Juárez.",
+    "pdf": "secundaria-fisica-18-estados-de-agregacion.pdf"
+  },
+  {
+    "tema": "secundaria-fisica-el-sistema-solar-y-el-universo",
+    "titulo": "El Sistema Solar y el universo",
+    "descripcion": "Planetas y planetas enanos, unidad astronómica y año luz, día, noche y estaciones, fases de la Luna y eclipses, la Vía Láctea y la edad del universo.",
+    "pdf": "secundaria-fisica-19-sistema-solar-y-universo.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-numeros-enteros-y-operaciones",
+    "titulo": "Números enteros y operaciones",
+    "descripcion": "Recta numérica, valor absoluto, suma y resta con signos, ley de los signos y jerarquía de operaciones, con problemas de temperaturas bajo cero y saldos.",
+    "pdf": "secundaria-matematicas-01-numeros-enteros.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-fracciones-y-decimales",
+    "titulo": "Fracciones y decimales",
+    "descripcion": "Fracciones equivalentes y simplificación, números mixtos, las cuatro operaciones con fracciones y conversión entre fracción y decimal, incluidos los periódicos.",
+    "pdf": "secundaria-matematicas-02-fracciones-y-decimales.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-potencias-y-raices",
+    "titulo": "Potencias y raíces",
+    "descripcion": "Qué es una potencia, leyes de los exponentes (exponente cero y negativo), raíces exactas, simplificación de radicales y cómo estimar raíces no exactas.",
+    "pdf": "secundaria-matematicas-03-potencias-y-raices.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-proporcionalidad-y-porcentajes",
+    "titulo": "Proporcionalidad y porcentajes",
+    "descripcion": "Razones, regla de tres, proporcionalidad directa e inversa, porcentajes, aumentos y descuentos, cómo encontrar el precio original y escalas en mapas.",
+    "pdf": "secundaria-matematicas-04-proporcionalidad-y-porcentajes.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-expresiones-algebraicas",
+    "titulo": "Expresiones algebraicas",
+    "descripcion": "Traducir del lenguaje común al algebraico, términos semejantes, quitar paréntesis, multiplicar polinomios y evaluar expresiones, con perímetros y áreas en literales.",
+    "pdf": "secundaria-matematicas-05-expresiones-algebraicas.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-ecuaciones-lineales",
+    "titulo": "Ecuaciones lineales",
+    "descripcion": "Despejar sin adivinar: ecuaciones de uno y dos pasos, con paréntesis, con la incógnita en ambos lados y con fracciones. Plantear problemas y comprobar la solución.",
+    "pdf": "secundaria-matematicas-06-ecuaciones-lineales.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-sistemas-de-ecuaciones-2-2",
+    "titulo": "Sistemas de ecuaciones 2×2",
+    "descripcion": "La solución como el cruce de dos rectas, métodos de sustitución, suma y resta e igualación, sistemas sin solución o con infinitas soluciones, y problemas con dos incógnitas.",
+    "pdf": "secundaria-matematicas-07-sistemas-de-ecuaciones.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-productos-notables-y-factorizacion",
+    "titulo": "Productos notables y factorización",
+    "descripcion": "Binomio al cuadrado, conjugados y término común; factor común, diferencia de cuadrados, trinomio cuadrado perfecto y trinomios x² + bx + c.",
+    "pdf": "secundaria-matematicas-08-productos-notables-y-factorizacion.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-ecuaciones-cuadraticas",
+    "titulo": "Ecuaciones cuadráticas",
+    "descripcion": "Ecuaciones incompletas, factorización y fórmula general; el discriminante para saber cuántas soluciones hay y problemas donde hay que descartar soluciones sin sentido.",
+    "pdf": "secundaria-matematicas-09-ecuaciones-cuadraticas.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-angulos-y-triangulos",
+    "titulo": "Ángulos y triángulos",
+    "descripcion": "Ángulos complementarios y suplementarios, paralelas cortadas por una transversal, clasificación de triángulos, suma de ángulos, desigualdad del triángulo y semejanza.",
+    "pdf": "secundaria-matematicas-10-angulos-y-triangulos.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-teorema-de-pitagoras",
+    "titulo": "Teorema de Pitágoras",
+    "descripcion": "Calcular hipotenusa o cateto, reconocer triángulos rectángulos, ternas pitagóricas, distancia entre dos puntos y problemas de escaleras, diagonales y alturas.",
+    "pdf": "secundaria-matematicas-11-teorema-de-pitagoras.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-perimetros-y-areas",
+    "titulo": "Perímetros y áreas",
+    "descripcion": "Fórmulas de polígonos y del círculo, figuras compuestas, áreas sombreadas y conversión de unidades de área.",
+    "pdf": "secundaria-matematicas-12-perimetros-y-areas.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-volumenes-de-cuerpos-geometricos",
+    "titulo": "Volúmenes de cuerpos geométricos",
+    "descripcion": "Prismas, cilindros, pirámides, conos y esferas; relación entre volumen y capacidad en litros, con problemas de tinacos, albercas y latas.",
+    "pdf": "secundaria-matematicas-13-volumenes.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-medidas-de-tendencia-central",
+    "titulo": "Medidas de tendencia central",
+    "descripcion": "Media, mediana, moda y rango, también desde tablas de frecuencias; cuándo conviene cada medida y cómo encontrar un dato faltante a partir del promedio.",
+    "pdf": "secundaria-matematicas-14-medidas-de-tendencia-central.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-graficas-e-interpretacion-de-datos",
+    "titulo": "Gráficas e interpretación de datos",
+    "descripcion": "Gráficas de barras, circulares, de líneas e histogramas: cómo leerlas, calcular porcentajes y ángulos, y detectar gráficas engañosas.",
+    "pdf": "secundaria-matematicas-15-graficas-e-interpretacion-de-datos.pdf"
+  },
+  {
+    "tema": "secundaria-matematicas-probabilidad-basica",
+    "titulo": "Probabilidad básica",
+    "descripcion": "Espacio muestral, regla de Laplace, complemento, diagramas de árbol y tablas con monedas y dados, frecuencia relativa y errores comunes de intuición.",
+    "pdf": "secundaria-matematicas-16-probabilidad-basica.pdf"
+  }
+]

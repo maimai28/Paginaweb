@@ -1,6 +1,7 @@
 const path = require('node:path');
 const express = require('express');
 require('./src/db');
+const { importarGuias } = require('./src/guias');
 const auth = require('./src/auth');
 const { layout, html } = require('./src/html');
 const alumno = require('./src/rutas-alumno');
@@ -54,6 +55,8 @@ app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).send('Ocurrió un error en el servidor.');
 });
+
+try { importarGuias(); } catch (e) { console.error('No se pudieron importar las guías:', e); }
 
 const PORT = Number(process.env.PORT) || 3000;
 app.listen(PORT, () => {
