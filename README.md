@@ -46,7 +46,7 @@ Es una app de Node con base de datos SQLite y archivos en disco (carpeta `DATA_D
 
 Opciones que funcionan:
 
-- **Railway**: crea el proyecto desde este repositorio, agrega un *Volume* montado en `/data` y define las variables `ADMIN_PASSWORD` y `DATA_DIR=/data`.
+- **Railway**: crea el proyecto desde este repositorio, agrega un *Volume* montado en `/data` y define `ADMIN_PASSWORD`. La app detecta el volumen sola (`RAILWAY_VOLUME_MOUNT_PATH`), no hace falta `DATA_DIR`.
 - **Render**: Web Service con *Persistent Disk* montado en `/data` (requiere plan de pago), mismas variables.
 - **VPS** (DigitalOcean, Hetzner, etc.): `npm install && npm start` detrás de Nginx/Caddy con HTTPS.
 

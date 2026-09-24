@@ -3,7 +3,10 @@ const path = require('node:path');
 const { DatabaseSync } = require('node:sqlite');
 const catalogo = require('./catalogo');
 
-const DATA_DIR = path.resolve(process.env.DATA_DIR || path.join(__dirname, '..', 'data'));
+// En Railway se usa el volumen montado automáticamente (RAILWAY_VOLUME_MOUNT_PATH).
+const DATA_DIR = path.resolve(
+  process.env.DATA_DIR || process.env.RAILWAY_VOLUME_MOUNT_PATH || path.join(__dirname, '..', 'data'),
+);
 const UPLOAD_DIR = path.join(DATA_DIR, 'archivos');
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
