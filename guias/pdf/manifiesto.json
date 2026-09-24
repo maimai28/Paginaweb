@@ -108,6 +108,24 @@
     "pdf": "preparatoria-fisica-18-espejos-y-lentes.pdf"
   },
   {
+    "tema": "preparatoria-fisica-ley-de-coulomb",
+    "titulo": "Ley de Coulomb",
+    "descripcion": "Carga eléctrica, cuantización y conservación, conductores y aislantes, formas de electrizar un cuerpo, ley de Coulomb, comparación con la gravedad y suma vectorial de fuerzas entre varias cargas en línea y en el plano.",
+    "pdf": "preparatoria-fisica-19-ley-de-coulomb.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-campo-electrico",
+    "titulo": "Campo eléctrico",
+    "descripcion": "Qué es el campo eléctrico y cómo se mide, campo de una carga puntual, líneas de campo, suma de campos de varias cargas, campo uniforme entre placas, movimiento de electrones y protones en un campo y el experimento de la gota de Millikan.",
+    "pdf": "preparatoria-fisica-20-campo-electrico.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-potencial-electrico",
+    "titulo": "Potencial eléctrico",
+    "descripcion": "Energía potencial eléctrica, potencial y diferencia de potencial (voltaje), potencial de cargas puntuales, relación entre voltaje y campo uniforme, electronvolt, cargas aceleradas por un voltaje, superficies equipotenciales y capacitores con su energía.",
+    "pdf": "preparatoria-fisica-21-potencial-electrico.pdf"
+  },
+  {
     "tema": "preparatoria-matematicas-funciones-y-sus-graficas",
     "titulo": "Funciones y sus gráficas",
     "descripcion": "Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.",

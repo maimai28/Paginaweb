@@ -1,0 +1,175 @@
+<!-- guia
+titulo: Potencial eléctrico
+nivel: Preparatoria
+materia: Física
+rama: Electricidad y magnetismo
+numero: 21
+descripcion: Energía potencial eléctrica, potencial y diferencia de potencial (voltaje), potencial de cargas puntuales, relación entre voltaje y campo uniforme, electronvolt, cargas aceleradas por un voltaje, superficies equipotenciales y capacitores con su energía.
+entrada: «Voltaje» es una de las palabras más usadas en electricidad, y mide algo muy concreto: cuánta energía gana o pierde cada coulomb de carga al moverse de un punto a otro. Con esa idea entiendes pilas, cañones de electrones y capacitores.
+objetivo: Calcular energía potencial eléctrica.
+objetivo: Calcular el potencial de una o varias cargas.
+objetivo: Relacionar voltaje, trabajo y energía cinética.
+objetivo: Usar $V = Ed$ en campos uniformes.
+objetivo: Calcular carga, capacitancia y energía de un capacitor.
+autoeval: Calcular el potencial de varias cargas como suma de números con signo. | 02
+autoeval: Calcular el trabajo para mover una carga entre dos potenciales. | 03
+autoeval: Calcular la rapidez de una partícula acelerada por un voltaje. | 03
+autoeval: Pasar de voltaje a campo entre placas. | 04
+autoeval: Calcular $Q$, $C$ y la energía de un capacitor. | 05
+-->
+<section>
+  <h2>Energía potencial eléctrica</h2>
+  <p>Como la gravitatoria, la fuerza eléctrica tiene energía potencial asociada. Para dos cargas puntuales:</p>
+  $$U = k\,\frac{q_1q_2}{r}$$
+  <p>Aquí <strong>sí importa el signo</strong>: $U \gt 0$ si se repelen (cuesta acercarlas) y $U \lt 0$ si se atraen.</p>
+</section>
+
+<section>
+  <h2>Potencial eléctrico</h2>
+  <div class="definicion">
+    <span class="etq">Potencial</span>
+    $$V = \frac{U}{q} \qquad\qquad V = k\,\frac{q}{r} \ \ \text{(carga puntual)}$$
+    <p>Es la energía potencial por unidad de carga, en volts: $1 \text{ V} = 1 \text{ J/C}$. Es un <strong>escalar</strong>: el potencial de varias cargas es la suma de sus potenciales, con su signo.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un punto está a 10 cm de una carga de $+3\ \mu$C y a 20 cm de una de $-2\ \mu$C. ¿Cuál es el potencial ahí?</p>
+      $$V = (8.99\times 10^9)\left(\frac{3\times 10^{-6}}{0.1} + \frac{-2\times 10^{-6}}{0.2}\right) \approx 1.80\times 10^5 \text{ V}$$
+      <p class="paso">Mucho más sencillo que sumar campos: no hay direcciones.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Voltaje, trabajo y energía</h2>
+  <p>La <strong>diferencia de potencial</strong> o voltaje entre dos puntos es $\Delta V = V_B - V_A$. El trabajo que hace el campo al llevar una carga de $A$ a $B$ y el cambio de energía son:</p>
+  $$\Delta U = q\,\Delta V \qquad\qquad \Delta K = -q\,\Delta V$$
+  <p>Las cargas positivas «caen» hacia menor potencial; las negativas, hacia mayor potencial. En física atómica se usa el <strong>electronvolt</strong>: $1 \text{ eV} = 1.6\times 10^{-19}$ J, la energía que gana un electrón al atravesar 1 V.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un electrón parte del reposo y se acelera con 1000 V. ¿Qué rapidez alcanza?</p>
+      $$K = (1.6\times 10^{-19})(1000) = 1.6\times 10^{-16} \text{ J} \qquad v = \sqrt{\frac{2K}{m}} \approx 1.87\times 10^7 \text{ m/s}$$
+      <p class="paso">Es el 6 % de la rapidez de la luz: así funcionaban las pantallas de tubo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Campo uniforme y equipotenciales</h2>
+  <p>Entre dos placas paralelas separadas una distancia $d$, con voltaje $V$:</p>
+  $$E = \frac{V}{d}$$
+  <p>Por eso el campo también se mide en V/m. Las <strong>superficies equipotenciales</strong> (mismo potencial) son perpendiculares a las líneas de campo, y mover una carga sobre ellas no cuesta trabajo. Entre placas son planos paralelos a ellas; alrededor de una carga, esferas.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Dos placas separadas 5 cm se conectan a 200 V. ¿Cuánto vale el campo entre ellas?</p>
+      $$E = \frac{200}{0.05} = 4000 \text{ V/m}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Capacitores</h2>
+  <div class="definicion">
+    <span class="etq">Capacitancia</span>
+    $$C = \frac{Q}{V} \qquad\qquad C = \varepsilon_0\frac{A}{d} \ \ \text{(placas paralelas)} \qquad\qquad U = \tfrac{1}{2}CV^2$$
+    <p>Un capacitor guarda carga (y energía) en dos conductores separados. Se mide en farads (F); $\varepsilon_0 = 8.85\times 10^{-12}$ F/m.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un capacitor de $10\ \mu$F se carga a 12 V. ¿Cuánta carga y cuánta energía guarda?</p>
+      $$Q = (10\times 10^{-6})(12) = 1.2\times 10^{-4} \text{ C} \qquad U = \tfrac{1}{2}(10^{-5})(144) = 7.2\times 10^{-4} \text{ J}$$
+    </div>
+  </div>
+  <p>Unas placas de 0.01 m² a 1 mm tienen $C = \dfrac{(8.85\times 10^{-12})(0.01)}{0.001} = 8.85\times 10^{-11}$ F: un farad es una capacitancia enorme.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$V = k\dfrac{q}{r^2}$</td><td class="bien">$k\dfrac{q}{r}$</td><td>El potencial va con $\tfrac{1}{r}$.</td></tr>
+        <tr><td class="mal">Quitar el signo de $q$ en $V$</td><td class="bien">Con signo</td><td>El potencial es escalar con signo.</td></tr>
+        <tr><td class="mal">Sumar potenciales como vectores</td><td class="bien">Sumar números</td><td>No tienen dirección.</td></tr>
+        <tr><td class="mal">$E = Vd$</td><td class="bien">$E = \dfrac{V}{d}$</td><td>Unidades: V/m.</td></tr>
+        <tr><td class="mal">$U = CV^2$</td><td class="bien">$\tfrac{1}{2}CV^2$</td><td>Falta el un medio.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$U = k\dfrac{q_1q_2}{r}$</div><div>$V = k\dfrac{q}{r}$</div><div>1 V $= 1$ J/C</div>
+      <div>$W = q\Delta V$</div><div>$\Delta K = -q\Delta V$</div><div>1 eV $= 1.6\times 10^{-19}$ J</div>
+      <div>$E = \dfrac{V}{d}$</div><div>$C = \dfrac{Q}{V} = \varepsilon_0\dfrac{A}{d}$</div><div>$U = \tfrac{1}{2}CV^2$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $k = 8.99\times 10^9$, $e = 1.6\times 10^{-19}$ C, $m_p = 1.67\times 10^{-27}$ kg y $\varepsilon_0 = 8.85\times 10^{-12}$ F/m. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Potencial y energía</h3>
+    <ol class="largo">
+      <li>¿Qué potencial hay a 30 cm de una carga de $2\ \mu$C?</li>
+      <li>¿Y a 50 cm de una de $-5$ nC?</li>
+      <li>¿Qué energía potencial tienen dos cargas de $3\ \mu$C y $4\ \mu$C separadas 20 cm?</li>
+      <li>¿Qué potencial hay en el punto medio entre $+4\ \mu$C y $-4\ \mu$C?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Voltaje y movimiento</h3>
+    <ol class="largo">
+      <li>¿Cuánto trabajo hace falta para mover $2\ \mu$C a través de 50 V?</li>
+      <li>Un protón parte del reposo y se acelera con 500 V. ¿Qué rapidez alcanza?</li>
+      <li>¿Cuánto es 50 eV en joules?</li>
+      <li>Entre dos placas separadas 2 mm hay un campo de $1.5\times 10^5$ V/m. ¿Qué voltaje tienen?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Capacitores</h3>
+    <ol class="largo">
+      <li>Un capacitor de $470\ \mu$F se carga a 9 V. ¿Qué carga y qué energía guarda?</li>
+      <li>¿Qué capacitancia tienen dos placas de 0.02 m² separadas 0.5 mm?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\approx 6.0\times 10^4$ V</span></li>
+    <li><span>$\approx -89.9$ V</span></li>
+    <li><span>$\approx 0.54$ J</span></li>
+    <li><span>0 V</span></li>
+    <li><span>$1\times 10^{-4}$ J</span></li>
+    <li><span>$\approx 3.1\times 10^5$ m/s</span></li>
+    <li><span>$8\times 10^{-18}$ J</span></li>
+    <li><span>300 V</span></li>
+    <li><span>$4.23\times 10^{-3}$ C; $\approx 0.019$ J</span></li>
+    <li><span>$\approx 3.54\times 10^{-10}$ F</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\tfrac{k(2\times 10^{-6})}{0.3} \approx 59\,900$ V.</div></div>
+    <div class="sol"><span>3</span><div>$\tfrac{k(3\times 10^{-6})(4\times 10^{-6})}{0.2}$: positiva, se repelen.</div></div>
+    <div class="sol"><span>4</span><div>Los dos potenciales son iguales y de signo contrario. (El campo ahí no es cero.)</div></div>
+    <div class="sol"><span>5</span><div>$(2\times 10^{-6})(50)$.</div></div>
+    <div class="sol"><span>6</span><div>$K = (1.6\times 10^{-19})(500) = 8\times 10^{-17}$ J; $v = \sqrt{\tfrac{2(8\times 10^{-17})}{1.67\times 10^{-27}}}$.</div></div>
+    <div class="sol"><span>8</span><div>$V = Ed = (1.5\times 10^5)(0.002)$.</div></div>
+    <div class="sol"><span>9</span><div>$Q = (470\times 10^{-6})(9)$; $U = \tfrac{1}{2}(470\times 10^{-6})(81)$.</div></div>
+    <div class="sol"><span>10</span><div>$\tfrac{(8.85\times 10^{-12})(0.02)}{0.0005}$.</div></div>
+  </div>
+</section>
