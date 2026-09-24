@@ -1,0 +1,264 @@
+<!-- guia
+titulo: Exponentes y logaritmos
+nivel: Preparatoria
+materia: Matemáticas
+rama: Álgebra y funciones
+numero: 04
+descripcion: Exponentes fraccionarios y negativos, la función exponencial y el número e, qué es un logaritmo, sus propiedades y cambio de base, ecuaciones exponenciales y logarítmicas, interés compuesto y vida media.
+entrada: El logaritmo es la pregunta inversa de la potencia: ¿a qué exponente hay que elevar para obtener este número? Con esa idea vas a resolver ecuaciones donde la incógnita está en el exponente, como cuánto tarda en duplicarse una inversión o en desaparecer una sustancia radiactiva.
+objetivo: Usar exponentes fraccionarios y negativos.
+objetivo: Reconocer la función exponencial y el número $e$.
+objetivo: Pasar de forma exponencial a logarítmica y al revés.
+objetivo: Aplicar las propiedades de los logaritmos y el cambio de base.
+objetivo: Resolver ecuaciones exponenciales y logarítmicas.
+objetivo: Resolver problemas de crecimiento y decaimiento.
+autoeval: Calcular potencias como $27^{2/3}$ sin calculadora. | 01
+autoeval: Evaluar logaritmos sencillos de memoria. | 03
+autoeval: Expandir y juntar logaritmos con sus propiedades. | 04
+autoeval: Despejar una incógnita del exponente. | 05
+autoeval: Descartar soluciones que dan logaritmos de negativos. | 05
+autoeval: Plantear un problema de interés compuesto o vida media. | 06
+-->
+<section>
+  <h2>Exponentes fraccionarios y negativos</h2>
+  <p>Las leyes de los exponentes que ya conoces siguen valiendo con cualquier exponente real. Dos definiciones completan el cuadro:</p>
+  $$a^{-n} = \frac{1}{a^n} \qquad\qquad a^{m/n} = \sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m$$
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $27^{2/3}$ y $16^{-3/4}$.</p>
+      $$27^{2/3} = \left(\sqrt[3]{27}\right)^2 = 3^2 = 9 \qquad\qquad 16^{-3/4} = \frac{1}{\left(\sqrt[4]{16}\right)^3} = \frac{1}{2^3} = \frac{1}{8}$$
+      <p class="paso">Saca primero la raíz: los números quedan más chicos.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>La función exponencial</h2>
+  <p>Una función exponencial tiene la variable en el exponente: $f(x) = b^x$, con $b \gt 0$ y $b \neq 1$.</p>
+  <ul>
+    <li>Si $b \gt 1$ crece; si $0 \lt b \lt 1$ decrece.</li>
+    <li>Siempre pasa por $(0, 1)$ y nunca toca el eje $x$: su rango es $(0, \infty)$.</li>
+    <li>Crece más rápido que cualquier polinomio a la larga.</li>
+  </ul>
+  <div class="definicion">
+    <span class="etq">El número $e$</span>
+    <p>$e \approx 2.71828$ es la base «natural»: aparece solo cuando algo crece de forma continua, en proporción a lo que ya hay. Es la base que más vas a usar en cálculo.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Qué es un logaritmo</h2>
+  <div class="figura-lado">
+    <div>
+      <div class="definicion">
+        <span class="etq">Logaritmo</span>
+        $$\log_b y = x \quad\Longleftrightarrow\quad b^x = y$$
+        <p>El logaritmo en base $b$ de $y$ es el exponente al que hay que elevar $b$ para obtener $y$.</p>
+      </div>
+      <p>Así, $\log_2 32 = 5$ porque $2^5 = 32$, y $\log 0.001 = -3$ porque $10^{-3} = 0.001$.</p>
+      <p>Notación: $\log$ sin base es base 10 y $\ln$ es base $e$ (logaritmo natural).</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 170" width="52mm">
+        <line x1="0" y1="125" x2="200" y2="125" stroke="#2b241e" stroke-width="1.2"/>
+        <line x1="65" y1="5" x2="65" y2="168" stroke="#2b241e" stroke-width="1.2"/>
+        <line x1="15" y1="175" x2="185" y2="5" stroke="#8a7a66" stroke-width="1" stroke-dasharray="4 4"/>
+        <path d="M1.0 122.8 L3.9 122.6 L6.8 122.3 L9.6 122.1 L12.5 121.8 L15.4 121.4 L18.2 121.0 L21.1 120.6 L24.0 120.2 L26.9 119.7 L29.8 119.1 L32.6 118.5 L35.5 117.8 L38.4 117.1 L41.2 116.2 L44.1 115.3 L47.0 114.3 L49.9 113.2 L52.7 111.9 L55.6 110.5 L58.5 109.0 L61.4 107.4 L64.2 105.5 L67.1 103.5 L70.0 101.2 L72.9 98.7 L75.8 96.0 L78.6 92.9 L81.5 89.6 L84.4 85.9 L87.2 81.8 L90.1 77.2 L93.0 72.2 L95.9 66.7 L98.8 60.6 L101.6 53.8 L104.5 46.4 L107.4 38.1 L110.2 29.0 L113.1 19.0 L116.0 7.9" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <path d="M70.6 161.6 L72.7 152.4 L74.8 145.5 L77.0 139.9 L79.1 135.2 L81.2 131.1 L83.3 127.6 L85.4 124.4 L87.5 121.6 L89.6 119.0 L91.7 116.6 L93.8 114.4 L95.9 112.4 L98.1 110.5 L100.2 108.7 L102.3 107.0 L104.4 105.5 L106.5 103.9 L108.6 102.5 L110.7 101.1 L112.8 99.8 L114.9 98.6 L117.0 97.4 L119.2 96.3 L121.3 95.2 L123.4 94.1 L125.5 93.1 L127.6 92.1 L129.7 91.1 L131.8 90.2 L133.9 89.3 L136.0 88.4 L138.1 87.6 L140.2 86.8 L142.4 86.0 L144.5 85.2 L146.6 84.4 L148.7 83.7 L150.8 83.0 L152.9 82.3 L155.0 81.6 L157.1 80.9 L159.2 80.3 L161.4 79.6 L163.5 79.0 L165.6 78.4 L167.7 77.8 L169.8 77.2 L171.9 76.6 L174.0 76.1 L176.1 75.5 L178.2 75.0 L180.3 74.4 L182.4 73.9 L184.6 73.4 L186.7 72.9 L188.8 72.4 L190.9 71.9 L193.0 71.4" fill="none" stroke="#5c7a5a" stroke-width="2.2"/>
+        <circle cx="65" cy="105" r="2.6" fill="#b5562c"/><circle cx="85" cy="125" r="2.6" fill="#5c7a5a"/>
+        <g font-family="Nunito" font-size="10">
+          <text x="118" y="16" fill="#b5562c">y = 2ˣ</text><text x="150" y="66" fill="#5c7a5a">y = log₂ x</text>
+          <text x="170" y="42" fill="#8a7a66">y = x</text><text x="30" y="102" fill="#2b241e">(0, 1)</text><text x="84" y="139" fill="#2b241e">(1, 0)</text>
+        </g>
+      </svg>
+      <figcaption>Una es el reflejo de la otra sobre $y = x$.</figcaption>
+    </figure>
+  </div>
+  <p>Como $\log_b$ y $b^x$ son inversas, se deshacen: $\log_b(b^x) = x$ y $b^{\log_b x} = x$. En particular $\ln e^4 = 4$. Además, solo existen logaritmos de números <strong>positivos</strong>.</p>
+</section>
+
+<section>
+  <h2>Propiedades de los logaritmos</h2>
+  <p>Vienen directo de las leyes de los exponentes ($M, N \gt 0$):</p>
+  <table class="leyes">
+    <thead><tr><th>Propiedad</th><th>Fórmula</th><th>Viene de</th></tr></thead>
+    <tbody>
+      <tr><td>Producto</td><td>$\log_b(MN) = \log_b M + \log_b N$</td><td>$b^m b^n = b^{m+n}$</td></tr>
+      <tr><td>Cociente</td><td>$\log_b\!\left(\dfrac{M}{N}\right) = \log_b M - \log_b N$</td><td>$\dfrac{b^m}{b^n} = b^{m-n}$</td></tr>
+      <tr><td>Potencia</td><td>$\log_b(M^k) = k\log_b M$</td><td>$(b^m)^k = b^{mk}$</td></tr>
+      <tr><td>Cambio de base</td><td>$\log_b M = \dfrac{\ln M}{\ln b}$</td><td>Sirve para usar la calculadora</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Expande $\log\!\left(\dfrac{x^2\sqrt{y}}{z}\right)$.</p>
+      $$\log(x^2) + \log(y^{1/2}) - \log z = 2\log x + \tfrac{1}{2}\log y - \log z$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">No existe regla para la suma</span>
+    <p>$\log(M + N)$ <strong>no</strong> se puede separar. $\log(2 + 8) = 1$, pero $\log 2 + \log 8 = \log 16 \approx 1.2$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ecuaciones exponenciales y logarítmicas</h2>
+  <h3>Incógnita en el exponente</h3>
+  <p>Si puedes escribir los dos lados con la misma base, iguala exponentes. Si no, saca logaritmo a los dos lados.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $3^{x + 1} = 81$ y $5^x = 20$.</p>
+      $$3^{x + 1} = 3^4 \;\Rightarrow\; x + 1 = 4 \;\Rightarrow\; x = 3$$
+      $$\ln(5^x) = \ln 20 \;\Rightarrow\; x\ln 5 = \ln 20 \;\Rightarrow\; x = \frac{\ln 20}{\ln 5} \approx 1.861$$
+    </div>
+  </div>
+  <h3>Incógnita dentro del logaritmo</h3>
+  <p>Junta todo en un solo logaritmo, pasa a forma exponencial y <strong>comprueba</strong>: una solución que deja un logaritmo de un número negativo o cero se descarta.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $\log_2 x + \log_2(x - 2) = 3$.</p>
+      $$\log_2[x(x - 2)] = 3 \;\Rightarrow\; x^2 - 2x = 8 \;\Rightarrow\; (x - 4)(x + 2) = 0$$
+      <p class="paso">$x = -2$ no sirve ($\log_2(-2)$ no existe). La única solución es $x = 4$: $\log_2 4 + \log_2 2 = 2 + 1 = 3$ ✔.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Crecimiento y decaimiento</h2>
+  <table class="leyes">
+    <thead><tr><th>Situación</th><th>Modelo</th></tr></thead>
+    <tbody>
+      <tr><td>Interés compuesto anual a tasa $r$</td><td>$A = P(1 + r)^t$</td></tr>
+      <tr><td>Crecimiento continuo</td><td>$N = N_0\,e^{kt}$</td></tr>
+      <tr><td>Vida media $T$</td><td>$N = N_0\left(\tfrac{1}{2}\right)^{t/T}$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Inviertes 10 000 pesos al 8 % anual compuesto. ¿En cuánto tiempo se duplican?</p>
+      $$10\,000(1.08)^t = 20\,000 \;\Rightarrow\; 1.08^t = 2 \;\Rightarrow\; t = \frac{\ln 2}{\ln 1.08} \approx 9.0 \text{ años}$$
+      <p class="paso">El tiempo de duplicación no depende de cuánto inviertas, solo de la tasa.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">6</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>El carbono 14 tiene una vida media de 5730 años. Un hueso conserva el 25 % de su carbono 14 original. ¿Qué edad tiene?</p>
+      <p class="paso">$25\,\% = \tfrac{1}{4} = \left(\tfrac{1}{2}\right)^2$: pasaron dos vidas medias, $2 \times 5730 = 11\,460$ años.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\log(x + y) = \log x + \log y$</td><td class="bien">No se separa</td><td>La propiedad es para el producto.</td></tr>
+        <tr><td class="mal">$\dfrac{\log 8}{\log 2} = \log 4$</td><td class="bien">$= 3$</td><td>Es cambio de base: $\log_2 8$.</td></tr>
+        <tr><td class="mal">$16^{-1/2} = -4$</td><td class="bien">$\tfrac{1}{4}$</td><td>El exponente negativo da recíproco, no negativo.</td></tr>
+        <tr><td class="mal">$(\ln x)^2 = 2\ln x$</td><td class="bien">$\ln(x^2) = 2\ln x$</td><td>El exponente debe estar dentro del logaritmo.</td></tr>
+        <tr><td class="mal">Aceptar $x = -2$ en $\log_2 x$</td><td class="bien">Descartarla</td><td>No hay logaritmos de negativos.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$a^{m/n} = \sqrt[n]{a^m}$</div><div>$a^{-n} = \dfrac{1}{a^n}$</div><div>$\log_b y = x \Leftrightarrow b^x = y$</div>
+      <div>$\log(MN) = \log M + \log N$</div><div>$\log(M/N) = \log M - \log N$</div><div>$\log M^k = k\log M$</div>
+      <div>$\log_b M = \dfrac{\ln M}{\ln b}$</div><div>$A = P(1 + r)^t$</div><div>$N = N_0\left(\tfrac{1}{2}\right)^{t/T}$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Los primeros bloques son sin calculadora. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Exponentes</h3>
+    <ol>
+      <li>$8^{2/3}$</li><li>$81^{-1/4}$</li><li>$\dfrac{x^{1/2}\,x^{3/2}}{x}$</li><li>$(2a^{-1}b^2)^3$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Logaritmos</h3>
+    <ol>
+      <li>$\log_3 81$</li><li>$\log_5 \tfrac{1}{25}$</li><li>$\log 1000 + \log 0.01$</li><li>$\log_2 40 - \log_2 5$</li>
+      <li>Expande $\ln\dfrac{x^3}{\sqrt{x + 1}}$</li><li>Escribe como un solo logaritmo: $2\log x + \log 5 - \log y$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Ecuaciones</h3>
+    <ol>
+      <li>$2^{3x - 1} = 32$</li><li>$4^x = 8^{x - 1}$</li><li>$3^x = 50$</li>
+      <li>$\log_3(2x + 1) = 2$</li><li>$\log x + \log(x - 3) = 1$</li><li>$e^{2x} = 7$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Aplicaciones (con calculadora)</h3>
+    <ol class="largo">
+      <li>Inviertes 5000 pesos al 6 % anual compuesto. ¿Cuánto tienes a los 10 años?</li>
+      <li>¿En cuántos años se duplica una inversión al 6 % anual compuesto?</li>
+      <li>Una sustancia tiene una vida media de 8 días. ¿Qué fracción queda después de 24 días?</li>
+      <li>Un cultivo tiene $N = 200\,e^{0.3t}$ bacterias ($t$ en horas). ¿Cuándo llega a 2000?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$4$</span></li>
+    <li><span>$\tfrac{1}{3}$</span></li>
+    <li><span>$x$</span></li>
+    <li><span>$\dfrac{8b^6}{a^3}$</span></li>
+    <li><span>$4$</span></li>
+    <li><span>$-2$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$3$</span></li>
+    <li><span>$3\ln x - \tfrac{1}{2}\ln(x + 1)$</span></li>
+    <li><span>$\log\dfrac{5x^2}{y}$</span></li>
+    <li><span>$x = 2$</span></li>
+    <li><span>$x = 3$</span></li>
+    <li><span>$x \approx 3.56$</span></li>
+    <li><span>$x = 4$</span></li>
+    <li><span>$x = 5$</span></li>
+    <li><span>$x \approx 0.973$</span></li>
+    <li><span>$\approx 8954.24$ pesos</span></li>
+    <li><span>$\approx 11.9$ años</span></li>
+    <li><span>$\tfrac{1}{8}$</span></li>
+    <li><span>$\approx 7.7$ horas</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$\sqrt[4]{81} = 3$, y el exponente negativo da el recíproco.</div></div>
+    <div class="sol"><span>3</span><div>$x^{1/2 + 3/2} = x^2$, y $x^2 / x = x$.</div></div>
+    <div class="sol"><span>6</span><div>$\tfrac{1}{25} = 5^{-2}$.</div></div>
+    <div class="sol"><span>8</span><div>$\log_2 \tfrac{40}{5} = \log_2 8 = 3$.</div></div>
+    <div class="sol"><span>9</span><div>$\ln x^3 - \ln (x + 1)^{1/2}$ y bajas los exponentes.</div></div>
+    <div class="sol"><span>12</span><div>$2^{2x} = 2^{3(x - 1)} \Rightarrow 2x = 3x - 3 \Rightarrow x = 3$.</div></div>
+    <div class="sol"><span>13</span><div>$x = \dfrac{\ln 50}{\ln 3} = \dfrac{3.912}{1.0986} \approx 3.56$. Tiene sentido: $3^3 = 27$ y $3^4 = 81$.</div></div>
+    <div class="sol"><span>14</span><div>$2x + 1 = 3^2 = 9 \Rightarrow x = 4$.</div></div>
+    <div class="sol"><span>15</span><div>$\log[x(x - 3)] = 1 \Rightarrow x^2 - 3x = 10 \Rightarrow (x - 5)(x + 2) = 0$. Se descarta $x = -2$.</div></div>
+    <div class="sol"><span>16</span><div>$2x = \ln 7 \Rightarrow x = \tfrac{1}{2}\ln 7 \approx 0.973$.</div></div>
+    <div class="sol"><span>17</span><div>$5000(1.06)^{10} = 5000(1.790848\ldots) \approx 8954.24$.</div></div>
+    <div class="sol"><span>18</span><div>$1.06^t = 2 \Rightarrow t = \dfrac{\ln 2}{\ln 1.06} \approx 11.9$.</div></div>
+    <div class="sol"><span>19</span><div>24 días son 3 vidas medias: $\left(\tfrac{1}{2}\right)^3 = \tfrac{1}{8}$.</div></div>
+    <div class="sol"><span>20</span><div>$e^{0.3t} = 10 \Rightarrow 0.3t = \ln 10 \Rightarrow t = \dfrac{2.3026}{0.3} \approx 7.7$.</div></div>
+  </div>
+</section>

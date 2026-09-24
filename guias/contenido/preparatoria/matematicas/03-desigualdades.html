@@ -1,0 +1,222 @@
+<!-- guia
+titulo: Desigualdades
+nivel: Preparatoria
+materia: Matemáticas
+rama: Álgebra y funciones
+numero: 03
+descripcion: Notación de intervalos, desigualdades lineales y dobles, cuadráticas y racionales con tabla de signos, desigualdades con valor absoluto y problemas de «cuándo conviene».
+entrada: Una ecuación te da puntos; una desigualdad te da regiones enteras. Saber resolverlas te sirve para encontrar dominios, para decidir cuándo conviene una opción sobre otra y, más adelante, para saber dónde una función sube o baja.
+objetivo: Escribir soluciones con notación de intervalos.
+objetivo: Resolver desigualdades lineales y dobles.
+objetivo: Resolver desigualdades cuadráticas con tabla de signos.
+objetivo: Resolver desigualdades racionales sin multiplicar por la incógnita.
+objetivo: Resolver desigualdades con valor absoluto.
+autoeval: Pasar de desigualdad a intervalo y al revés. | 01
+autoeval: Voltear el signo al multiplicar o dividir entre negativos. | 02
+autoeval: Armar una tabla de signos para una cuadrática. | 03
+autoeval: Excluir los valores que anulan el denominador. | 04
+autoeval: Convertir $|x - a| \lt b$ y $|x - a| \gt b$ en desigualdades sin valor absoluto. | 05
+-->
+<section>
+  <h2>Intervalos</h2>
+  <p>La solución de una desigualdad suele ser un conjunto infinito de números. Se escribe con <strong>intervalos</strong>: el corchete incluye el extremo y el paréntesis lo excluye.</p>
+  <table class="leyes">
+    <thead><tr><th>Desigualdad</th><th>Intervalo</th><th>En la recta</th></tr></thead>
+    <tbody>
+      <tr><td>$2 \lt x \leq 5$</td><td>$(2, 5]$</td><td>Hueco en 2, punto lleno en 5</td></tr>
+      <tr><td>$x \geq -1$</td><td>$[-1, \infty)$</td><td>Punto lleno en $-1$ y hacia la derecha</td></tr>
+      <tr><td>$x \lt 3$</td><td>$(-\infty, 3)$</td><td>Hueco en 3 y hacia la izquierda</td></tr>
+      <tr><td>$x \lt 0$ o $x \gt 4$</td><td>$(-\infty, 0) \cup (4, \infty)$</td><td>Dos pedazos</td></tr>
+    </tbody>
+  </table>
+  <p>Con $\infty$ siempre va paréntesis: el infinito no es un número que se pueda alcanzar.</p>
+</section>
+
+<section>
+  <h2>Desigualdades lineales</h2>
+  <p>Se despejan igual que una ecuación, con una regla extra:</p>
+  <div class="definicion">
+    <span class="etq">La regla que no se olvida</span>
+    <p>Si multiplicas o divides ambos lados entre un número <strong>negativo</strong>, el signo de desigualdad se invierte. Por ejemplo, $2 \lt 5$, pero $-2 \gt -5$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $3 - 2x \leq 11$.</p>
+      $$-2x \leq 8 \;\Rightarrow\; x \geq -4 \qquad\text{Solución: } [-4, \infty)$$
+      <p class="paso">Al dividir entre $-2$ el $\leq$ se volvió $\geq$. Comprueba con $x = 0$: $3 \leq 11$ ✔.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve la desigualdad doble $-1 \lt 2x + 3 \leq 9$.</p>
+      <p class="paso">Lo que hagas, hazlo en las tres partes a la vez:</p>
+      $$-4 \lt 2x \leq 6 \;\Rightarrow\; -2 \lt x \leq 3 \qquad\text{Solución: } (-2, 3]$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Desigualdades cuadráticas</h2>
+  <p>No se despeja $x^2$ como en una ecuación. El método seguro es la <strong>tabla de signos</strong>:</p>
+  <ol>
+    <li>Pasa todo a un lado para comparar con cero.</li>
+    <li>Factoriza y encuentra los <strong>puntos críticos</strong> (donde vale cero).</li>
+    <li>Esos puntos parten la recta en intervalos; en cada uno el signo no cambia. Pruébalo con un número.</li>
+  </ol>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $x^2 - x - 6 \gt 0$.</p>
+      <p class="paso">$(x - 3)(x + 2) \gt 0$. Puntos críticos: $-2$ y $3$.</p>
+      <table class="leyes">
+        <thead><tr><th>Intervalo</th><th>Prueba</th><th>$x - 3$</th><th>$x + 2$</th><th>Producto</th></tr></thead>
+        <tbody>
+          <tr><td>$x \lt -2$</td><td>$x = -3$</td><td>$-$</td><td>$-$</td><td>$+$</td></tr>
+          <tr><td>$-2 \lt x \lt 3$</td><td>$x = 0$</td><td>$-$</td><td>$+$</td><td>$-$</td></tr>
+          <tr><td>$x \gt 3$</td><td>$x = 4$</td><td>$+$</td><td>$+$</td><td>$+$</td></tr>
+        </tbody>
+      </table>
+      <p class="paso">Buscamos positivo: $(-\infty, -2) \cup (3, \infty)$. Los extremos no entran porque ahí vale 0 y pedimos $\gt 0$.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Otra forma de verlo</span>
+    <p>$y = x^2 - x - 6$ es una parábola que abre hacia arriba y corta el eje en $-2$ y $3$. Está por encima del eje afuera de sus raíces y por debajo entre ellas.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Desigualdades racionales</h2>
+  <p>Con la incógnita en el denominador <strong>no multipliques por el denominador</strong>: no sabes si es positivo o negativo. Usa la tabla de signos con los ceros del numerador y del denominador.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $\dfrac{x + 1}{x - 2} \leq 0$.</p>
+      <p class="paso">Puntos críticos: $-1$ (numerador) y $2$ (denominador). Probando: para $x \lt -1$ el cociente es $+$; entre $-1$ y $2$ es $-$; para $x \gt 2$ es $+$.</p>
+      <p class="paso">Buscamos $\leq 0$: el intervalo del medio, con $-1$ incluido (ahí vale 0) y $2$ excluido (ahí se divide entre cero).</p>
+      $$\text{Solución: } [-1, 2)$$
+    </div>
+  </div>
+  <p>Si no tienes cero de un lado, pásalo primero: $\dfrac{3}{x - 2} \gt 1$ se vuelve $\dfrac{3}{x - 2} - 1 \gt 0$, o sea $\dfrac{5 - x}{x - 2} \gt 0$.</p>
+</section>
+
+<section>
+  <h2>Valor absoluto</h2>
+  <p>$|x - a|$ es la distancia entre $x$ y $a$. Con eso las reglas se entienden solas ($b \gt 0$):</p>
+  <table class="leyes">
+    <thead><tr><th>Desigualdad</th><th>Significa</th><th>Se convierte en</th></tr></thead>
+    <tbody>
+      <tr><td>$|x - a| \lt b$</td><td>A menos de $b$ de $a$</td><td>$-b \lt x - a \lt b$</td></tr>
+      <tr><td>$|x - a| \gt b$</td><td>A más de $b$ de $a$</td><td>$x - a \lt -b$ o $x - a \gt b$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $|x - 3| \lt 5$ y $|2x + 1| \geq 7$.</p>
+      $$-5 \lt x - 3 \lt 5 \;\Rightarrow\; -2 \lt x \lt 8$$
+      $$2x + 1 \leq -7 \ \text{ o } \ 2x + 1 \geq 7 \;\Rightarrow\; x \leq -4 \ \text{ o } \ x \geq 3$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$-3x \lt 6 \Rightarrow x \lt -2$</td><td class="bien">$x \gt -2$</td><td>Dividir entre negativo invierte el signo.</td></tr>
+        <tr><td class="mal">$x^2 \lt 9 \Rightarrow x \lt \pm 3$</td><td class="bien">$-3 \lt x \lt 3$</td><td>Hay que ver el signo en cada intervalo.</td></tr>
+        <tr><td class="mal">$\dfrac{x + 1}{x - 2} \leq 0$: $[-1, 2]$</td><td class="bien">$[-1, 2)$</td><td>El denominador nunca puede ser cero.</td></tr>
+        <tr><td class="mal">$|x| \gt 4 \Rightarrow -4 \gt x \gt 4$</td><td class="bien">$x \lt -4$ o $x \gt 4$</td><td>Son dos pedazos separados.</td></tr>
+        <tr><td class="mal">$[2, \infty]$</td><td class="bien">$[2, \infty)$</td><td>El infinito siempre va con paréntesis.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$[\ ]$ incluye, $(\ )$ excluye</div><div>Entre negativo: voltea</div><div>Doble: opera en las 3 partes</div>
+      <div>Compara con 0 y factoriza</div><div>Tabla de signos por intervalo</div><div>Denominador: siempre abierto</div>
+      <div>$|x - a| \lt b$: un intervalo</div><div>$|x - a| \gt b$: dos pedazos</div><div>Comprueba con un número</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Da cada solución como intervalo. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Lineales</h3>
+    <ol>
+      <li>$5x - 7 \gt 3$</li><li>$4 - 3x \geq 16$</li><li>$\dfrac{x}{2} + 1 \lt \dfrac{x}{3} + 2$</li><li>$-3 \leq 2x - 1 \lt 5$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Cuadráticas</h3>
+    <ol>
+      <li>$x^2 - 9 \lt 0$</li><li>$x^2 + 2x - 8 \geq 0$</li><li>$2x^2 - 5x - 3 \leq 0$</li><li>$x^2 + 4 \gt 0$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Racionales</h3>
+    <ol>
+      <li>$\dfrac{x - 4}{x + 1} \gt 0$</li><li>$\dfrac{2x + 6}{x - 5} \leq 0$</li><li>$\dfrac{3}{x - 2} \gt 1$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Valor absoluto y problemas</h3>
+    <ol class="largo">
+      <li>$|x + 2| \leq 6$</li>
+      <li>$|3x - 1| \gt 8$</li>
+      <li>Un plan de datos cuesta 299 pesos fijos al mes. Otro cuesta 150 pesos más 2.50 pesos por GB usado. ¿Para cuántos GB (enteros) conviene el segundo?</li>
+      <li>La altura de una pelota es $h = 20t - 5t^2$ metros ($t$ en segundos). ¿Durante qué intervalo de tiempo está a más de 15 m?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$(2, \infty)$</span></li>
+    <li><span>$(-\infty, -4]$</span></li>
+    <li><span>$(-\infty, 6)$</span></li>
+    <li><span>$[-1, 3)$</span></li>
+    <li><span>$(-3, 3)$</span></li>
+    <li><span>$(-\infty, -4] \cup [2, \infty)$</span></li>
+    <li><span>$\left[-\tfrac{1}{2}, 3\right]$</span></li>
+    <li><span>Todos los reales</span></li>
+    <li><span>$(-\infty, -1) \cup (4, \infty)$</span></li>
+    <li><span>$[-3, 5)$</span></li>
+    <li><span>$(2, 5)$</span></li>
+    <li><span>$[-8, 4]$</span></li>
+    <li><span>$\left(-\infty, -\tfrac{7}{3}\right) \cup (3, \infty)$</span></li>
+    <li><span>De 0 a 59 GB</span></li>
+    <li><span>$1 \lt t \lt 3$ s</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$-3x \geq 12$; al dividir entre $-3$ se voltea: $x \leq -4$.</div></div>
+    <div class="sol"><span>3</span><div>Multiplica todo por 6 (positivo, no se voltea): $3x + 6 \lt 2x + 12 \Rightarrow x \lt 6$.</div></div>
+    <div class="sol"><span>4</span><div>Suma 1 en las tres partes: $-2 \leq 2x \lt 6$; divide entre 2: $-1 \leq x \lt 3$.</div></div>
+    <div class="sol"><span>6</span><div>$(x + 4)(x - 2) \geq 0$. Positivo afuera de las raíces; los extremos entran por el $\geq$.</div></div>
+    <div class="sol"><span>7</span><div>$(2x + 1)(x - 3) \leq 0$: raíces $-\tfrac{1}{2}$ y $3$; negativo entre ellas.</div></div>
+    <div class="sol"><span>8</span><div>$x^2 \geq 0$, así que $x^2 + 4 \geq 4 \gt 0$ para cualquier $x$.</div></div>
+    <div class="sol"><span>10</span><div>Puntos críticos $-3$ y $5$. Signos: $+,\ -,\ +$. El $-3$ entra (vale 0); el 5 no (denominador).</div></div>
+    <div class="sol"><span>11</span><div>$\dfrac{3}{x - 2} - 1 = \dfrac{3 - (x - 2)}{x - 2} = \dfrac{5 - x}{x - 2} \gt 0$. Signos: $-,\ +,\ -$ con críticos 2 y 5.</div></div>
+    <div class="sol"><span>12</span><div>$-6 \leq x + 2 \leq 6 \Rightarrow -8 \leq x \leq 4$.</div></div>
+    <div class="sol"><span>13</span><div>$3x - 1 \gt 8 \Rightarrow x \gt 3$, o $3x - 1 \lt -8 \Rightarrow x \lt -\tfrac{7}{3}$.</div></div>
+    <div class="sol"><span>14</span><div>$150 + 2.5g \lt 299 \Rightarrow g \lt 59.6$. Con 59 GB pagas 297.50 pesos; con 60 GB, 300.</div></div>
+    <div class="sol"><span>15</span><div>$20t - 5t^2 \gt 15 \Rightarrow t^2 - 4t + 3 \lt 0 \Rightarrow (t - 1)(t - 3) \lt 0$.</div></div>
+  </div>
+</section>

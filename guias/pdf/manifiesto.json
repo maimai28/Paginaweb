@@ -1,5 +1,53 @@
 [
   {
+    "tema": "preparatoria-matematicas-funciones-y-sus-graficas",
+    "titulo": "Funciones y sus gráficas",
+    "descripcion": "Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.",
+    "pdf": "preparatoria-matematicas-01-funciones-y-sus-graficas.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-polinomios",
+    "titulo": "Polinomios",
+    "descripcion": "Grado y coeficiente principal, operaciones, división larga y sintética, teorema del residuo y del factor, búsqueda de raíces racionales y cómo se ve la gráfica según el grado y la multiplicidad.",
+    "pdf": "preparatoria-matematicas-02-polinomios.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-desigualdades",
+    "titulo": "Desigualdades",
+    "descripcion": "Notación de intervalos, desigualdades lineales y dobles, cuadráticas y racionales con tabla de signos, desigualdades con valor absoluto y problemas de «cuándo conviene».",
+    "pdf": "preparatoria-matematicas-03-desigualdades.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-exponentes-y-logaritmos",
+    "titulo": "Exponentes y logaritmos",
+    "descripcion": "Exponentes fraccionarios y negativos, la función exponencial y el número e, qué es un logaritmo, sus propiedades y cambio de base, ecuaciones exponenciales y logarítmicas, interés compuesto y vida media.",
+    "pdf": "preparatoria-matematicas-04-exponentes-y-logaritmos.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-razones-trigonometricas",
+    "titulo": "Razones trigonométricas",
+    "descripcion": "Seno, coseno y tangente en el triángulo rectángulo, sus recíprocas, los ángulos de 30°, 45° y 60° sin calculadora, grados y radianes, cómo resolver triángulos rectángulos y problemas de elevación y depresión.",
+    "pdf": "preparatoria-matematicas-05-razones-trigonometricas.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-ley-de-senos-y-ley-de-cosenos",
+    "titulo": "Ley de senos y ley de cosenos",
+    "descripcion": "Cómo resolver triángulos que no son rectángulos: cuándo usar la ley de senos y cuándo la de cosenos, el caso ambiguo, el área con dos lados y un ángulo, la fórmula de Herón y problemas de distancias inaccesibles.",
+    "pdf": "preparatoria-matematicas-06-ley-de-senos-y-ley-de-cosenos.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-circulo-unitario-y-funciones-trigonometricas",
+    "titulo": "Círculo unitario y funciones trigonométricas",
+    "descripcion": "Seno y coseno para cualquier ángulo con el círculo unitario, signos por cuadrante, ángulos de referencia y coterminales, gráficas de seno, coseno y tangente, amplitud, periodo y desfase, y ecuaciones trigonométricas básicas.",
+    "pdf": "preparatoria-matematicas-07-circulo-unitario-y-funciones-trigonometricas.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-identidades-trigonometricas",
+    "titulo": "Identidades trigonométricas",
+    "descripcion": "Identidades fundamentales y pitagóricas, paridad, fórmulas de suma y resta, ángulo doble y mitad, una estrategia para demostrar identidades y ecuaciones trigonométricas que se resuelven con ellas.",
+    "pdf": "preparatoria-matematicas-08-identidades-trigonometricas.pdf"
+  },
+  {
     "tema": "secundaria-fisica-posicion-distancia-y-desplazamiento",
     "titulo": "Posición, distancia y desplazamiento",
     "descripcion": "Sistema de referencia, escalares y vectores, distancia recorrida contra desplazamiento, y desplazamientos en dos direcciones con Pitágoras.",

@@ -1,0 +1,228 @@
+<!-- guia
+titulo: Identidades trigonométricas
+nivel: Preparatoria
+materia: Matemáticas
+rama: Trigonometría
+numero: 08
+descripcion: Identidades fundamentales y pitagóricas, paridad, fórmulas de suma y resta, ángulo doble y mitad, una estrategia para demostrar identidades y ecuaciones trigonométricas que se resuelven con ellas.
+entrada: Las identidades son igualdades que se cumplen para cualquier ángulo. Sirven para transformar una expresión fea en una sencilla, y en cálculo integral las vas a usar muchísimo. Aquí aprendes las esenciales y un método para demostrar identidades sin perderte.
+objetivo: Usar las identidades recíprocas, de cociente y pitagóricas.
+objetivo: Simplificar expresiones trigonométricas.
+objetivo: Demostrar identidades trabajando un solo lado.
+objetivo: Usar las fórmulas de suma, resta y ángulo doble.
+objetivo: Resolver ecuaciones que necesitan una identidad.
+autoeval: Escribir las tres identidades pitagóricas. | 01
+autoeval: Simplificar una expresión pasando todo a seno y coseno. | 02
+autoeval: Demostrar una identidad sin «pasar» términos al otro lado. | 03
+autoeval: Calcular valores exactos con suma, resta y ángulo doble. | 04
+autoeval: Resolver ecuaciones con $\sin 2x$ o con $\sin^2 x$ y $\cos x$ mezclados. | 05
+-->
+<section>
+  <h2>Identidades fundamentales</h2>
+  <table class="leyes">
+    <thead><tr><th>Tipo</th><th>Identidades</th></tr></thead>
+    <tbody>
+      <tr><td>Recíprocas</td><td>$\csc x = \dfrac{1}{\sin x}$, $\ \sec x = \dfrac{1}{\cos x}$, $\ \cot x = \dfrac{1}{\tan x}$</td></tr>
+      <tr><td>De cociente</td><td>$\tan x = \dfrac{\sin x}{\cos x}$, $\ \cot x = \dfrac{\cos x}{\sin x}$</td></tr>
+      <tr><td>Pitagóricas</td><td>$\sin^2 x + \cos^2 x = 1$, $\ 1 + \tan^2 x = \sec^2 x$, $\ 1 + \cot^2 x = \csc^2 x$</td></tr>
+      <tr><td>Paridad</td><td>$\sin(-x) = -\sin x$, $\ \cos(-x) = \cos x$, $\ \tan(-x) = -\tan x$</td></tr>
+    </tbody>
+  </table>
+  <div class="nota">
+    <span class="etq">Solo necesitas memorizar una pitagórica</span>
+    <p>Divide $\sin^2 x + \cos^2 x = 1$ entre $\cos^2 x$ y obtienes $\tan^2 x + 1 = \sec^2 x$. Divide entre $\sin^2 x$ y sale la tercera.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Simplificar</h2>
+  <p>La estrategia que casi siempre funciona: <strong>pasa todo a senos y cosenos</strong>, junta fracciones y busca $\sin^2 x + \cos^2 x$.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Simplifica $\sec x - \cos x$.</p>
+      $$\frac{1}{\cos x} - \cos x = \frac{1 - \cos^2 x}{\cos x} = \frac{\sin^2 x}{\cos x} = \sin x\cdot\frac{\sin x}{\cos x} = \sin x\tan x$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Demostrar identidades</h2>
+  <p>Demostrar no es resolver una ecuación: <strong>no puedes pasar términos de un lado a otro</strong>, porque eso ya supone que la igualdad es cierta. El método correcto:</p>
+  <ol>
+    <li>Elige el lado más complicado.</li>
+    <li>Transfórmalo con identidades y álgebra hasta que quede igual al otro lado.</li>
+    <li>Ideas útiles: pasar a seno y coseno, sumar fracciones, factorizar, multiplicar por el conjugado.</li>
+  </ol>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Demuestra que $(1 - \cos^2 x)(1 + \cot^2 x) = 1$.</p>
+      <p class="paso">Trabaja el lado izquierdo con las pitagóricas:</p>
+      $$(1 - \cos^2 x)(1 + \cot^2 x) = \sin^2 x\cdot\csc^2 x = \sin^2 x\cdot\frac{1}{\sin^2 x} = 1 \quad \checkmark$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Demuestra que $\dfrac{\sin x}{1 + \cos x} = \dfrac{1 - \cos x}{\sin x}$.</p>
+      <p class="paso">Multiplica el lado izquierdo arriba y abajo por el conjugado $1 - \cos x$:</p>
+      $$\frac{\sin x\,(1 - \cos x)}{(1 + \cos x)(1 - \cos x)} = \frac{\sin x\,(1 - \cos x)}{1 - \cos^2 x} = \frac{\sin x\,(1 - \cos x)}{\sin^2 x} = \frac{1 - \cos x}{\sin x} \quad \checkmark$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Suma, resta y ángulo doble</h2>
+  <table class="leyes">
+    <thead><tr><th>Fórmula</th><th>Identidad</th></tr></thead>
+    <tbody>
+      <tr><td>Seno de suma/resta</td><td>$\sin(a \pm b) = \sin a\cos b \pm \cos a\sin b$</td></tr>
+      <tr><td>Coseno de suma/resta</td><td>$\cos(a \pm b) = \cos a\cos b \mp \sin a\sin b$</td></tr>
+      <tr><td>Tangente de suma/resta</td><td>$\tan(a \pm b) = \dfrac{\tan a \pm \tan b}{1 \mp \tan a\tan b}$</td></tr>
+      <tr><td>Seno doble</td><td>$\sin 2x = 2\sin x\cos x$</td></tr>
+      <tr><td>Coseno doble</td><td>$\cos 2x = \cos^2 x - \sin^2 x = 2\cos^2 x - 1 = 1 - 2\sin^2 x$</td></tr>
+      <tr><td>Mitad (para integrar)</td><td>$\sin^2 x = \dfrac{1 - \cos 2x}{2}$, $\ \cos^2 x = \dfrac{1 + \cos 2x}{2}$</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Fíjate en el signo del coseno: $\cos(a + b)$ lleva un <strong>menos</strong>.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula el valor exacto de $\sin 75^\circ$.</p>
+      $$\sin(45^\circ + 30^\circ) = \frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2}\cdot\frac{1}{2} = \frac{\sqrt{6} + \sqrt{2}}{4} \approx 0.9659$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Si $\sin\theta = \tfrac{3}{5}$ y $\theta$ está en el cuadrante I, calcula $\sin 2\theta$ y $\cos 2\theta$.</p>
+      <p class="paso">Primero $\cos\theta = \tfrac{4}{5}$ (triángulo 3, 4, 5).</p>
+      $$\sin 2\theta = 2\cdot\frac{3}{5}\cdot\frac{4}{5} = \frac{24}{25} \qquad\qquad \cos 2\theta = \frac{16}{25} - \frac{9}{25} = \frac{7}{25}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ecuaciones con identidades</h2>
+  <p>El objetivo es dejar una sola función de un solo ángulo. Si aparece $\sin 2x$ junto con $\sin x$, desarrolla el doble. Si aparecen $\sin^2 x$ y $\cos x$, cambia $\sin^2 x = 1 - \cos^2 x$. Luego factoriza.</p>
+  <div class="ejemplo">
+    <div class="n">6</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $2\sin^2 x - \sin x - 1 = 0$ en $[0, 2\pi)$.</p>
+      <p class="paso">Es cuadrática en $\sin x$:</p>
+      $$(2\sin x + 1)(\sin x - 1) = 0 \;\Rightarrow\; \sin x = -\tfrac{1}{2} \ \text{ o } \ \sin x = 1$$
+      <p class="paso">Soluciones: $x = \dfrac{\pi}{2}$, $\dfrac{7\pi}{6}$ y $\dfrac{11\pi}{6}$.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">No dividas entre $\sin x$</span>
+    <p>En $\sin 2x = \sin x$, dividir entre $\sin x$ pierde las soluciones donde $\sin x = 0$. Factoriza en su lugar: $\sin x\,(2\cos x - 1) = 0$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\sin(a + b) = \sin a + \sin b$</td><td class="bien">$\sin a\cos b + \cos a\sin b$</td><td>El seno no se distribuye.</td></tr>
+        <tr><td class="mal">$\sin 2x = 2\sin x$</td><td class="bien">$2\sin x\cos x$</td><td>Prueba con $x = 90^\circ$: $0 \neq 2$.</td></tr>
+        <tr><td class="mal">$\cos(a + b) = \cos a\cos b + \sin a\sin b$</td><td class="bien">Con signo menos</td><td>El coseno cambia el signo.</td></tr>
+        <tr><td class="mal">$\sin^2 x = \sin(x^2)$</td><td class="bien">$\sin^2 x = (\sin x)^2$</td><td>Es notación.</td></tr>
+        <tr><td class="mal">Demostrar pasando términos</td><td class="bien">Transformar un solo lado</td><td>Si no, supones lo que quieres probar.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\sin^2 x + \cos^2 x = 1$</div><div>$1 + \tan^2 x = \sec^2 x$</div><div>$1 + \cot^2 x = \csc^2 x$</div>
+      <div>$\sin(a \pm b) = \sin a\cos b \pm \cos a\sin b$</div><div>$\cos(a \pm b) = \cos a\cos b \mp \sin a\sin b$</div><div>$\sin 2x = 2\sin x\cos x$</div>
+      <div>$\cos 2x = 1 - 2\sin^2 x$</div><div>$\cos^2 x = \dfrac{1 + \cos 2x}{2}$</div><div>Todo a seno y coseno</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Todo es sin calculadora. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Simplifica</h3>
+    <ol>
+      <li>$\tan x\cos x$</li><li>$\sin^2 x + \cos^2 x + \tan^2 x$</li><li>$(1 + \tan^2 x)\cos^2 x$</li>
+      <li>$\dfrac{\sin x}{\csc x} + \dfrac{\cos x}{\sec x}$</li><li>$\csc x - \sin x$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Demuestra</h3>
+    <ol class="largo">
+      <li>$(1 + \sin x)(1 - \sin x) = \cos^2 x$</li>
+      <li>$\tan x + \cot x = \sec x\csc x$</li>
+      <li>$\dfrac{\cos x}{1 - \sin x} = \dfrac{1 + \sin x}{\cos x}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Suma, resta y ángulo doble</h3>
+    <ol class="largo">
+      <li>Valor exacto de $\cos 15^\circ$.</li>
+      <li>Valor exacto de $\tan 15^\circ$.</li>
+      <li>Si $\cos\theta = \tfrac{5}{13}$ y $\theta$ está en el cuadrante IV, calcula $\sin 2\theta$ y $\cos 2\theta$.</li>
+      <li>Simplifica $2\sin 3x\cos 3x$.</li>
+      <li>Calcula $\cos^2 22.5^\circ - \sin^2 22.5^\circ$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Ecuaciones en $[0, 2\pi)$</h3>
+    <ol>
+      <li>$2\cos^2 x - 1 = 0$</li><li>$\sin 2x = \sin x$</li><li>$2\sin^2 x + 3\cos x - 3 = 0$</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\sin x$</span></li>
+    <li><span>$\sec^2 x$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$\cos x\cot x$</span></li>
+    <li><span>Ver solución</span></li>
+    <li><span>Ver solución</span></li>
+    <li><span>Ver solución</span></li>
+    <li><span>$\dfrac{\sqrt{6} + \sqrt{2}}{4}$</span></li>
+    <li><span>$2 - \sqrt{3}$</span></li>
+    <li><span>$-\tfrac{120}{169}$ y $-\tfrac{119}{169}$</span></li>
+    <li><span>$\sin 6x$</span></li>
+    <li><span>$\tfrac{\sqrt{2}}{2}$</span></li>
+    <li><span>$\tfrac{\pi}{4}, \tfrac{3\pi}{4}, \tfrac{5\pi}{4}, \tfrac{7\pi}{4}$</span></li>
+    <li><span>$0, \tfrac{\pi}{3}, \pi, \tfrac{5\pi}{3}$</span></li>
+    <li><span>$0, \tfrac{\pi}{3}, \tfrac{5\pi}{3}$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$1 + \tan^2 x = \sec^2 x$.</div></div>
+    <div class="sol"><span>4</span><div>$\sin x\cdot\sin x + \cos x\cdot\cos x = \sin^2 x + \cos^2 x = 1$.</div></div>
+    <div class="sol"><span>5</span><div>$\dfrac{1}{\sin x} - \sin x = \dfrac{1 - \sin^2 x}{\sin x} = \dfrac{\cos^2 x}{\sin x} = \cos x\cdot\dfrac{\cos x}{\sin x}$.</div></div>
+    <div class="sol"><span>6</span><div>Diferencia de cuadrados: $1 - \sin^2 x = \cos^2 x$.</div></div>
+    <div class="sol"><span>7</span><div>$\dfrac{\sin x}{\cos x} + \dfrac{\cos x}{\sin x} = \dfrac{\sin^2 x + \cos^2 x}{\sin x\cos x} = \dfrac{1}{\sin x\cos x} = \sec x\csc x$.</div></div>
+    <div class="sol"><span>8</span><div>Multiplica el lado izquierdo por $\dfrac{1 + \sin x}{1 + \sin x}$: $\dfrac{\cos x\,(1 + \sin x)}{1 - \sin^2 x} = \dfrac{\cos x\,(1 + \sin x)}{\cos^2 x} = \dfrac{1 + \sin x}{\cos x}$.</div></div>
+    <div class="sol"><span>9</span><div>$\cos(45^\circ - 30^\circ) = \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} + \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2}$.</div></div>
+    <div class="sol"><span>10</span><div>$\dfrac{1 - \frac{\sqrt{3}}{3}}{1 + \frac{\sqrt{3}}{3}} = \dfrac{3 - \sqrt{3}}{3 + \sqrt{3}}$; racionaliza: $\dfrac{(3 - \sqrt{3})^2}{9 - 3} = \dfrac{12 - 6\sqrt{3}}{6} = 2 - \sqrt{3}$.</div></div>
+    <div class="sol"><span>11</span><div>En el IV el seno es negativo: $\sin\theta = -\tfrac{12}{13}$. $\sin 2\theta = 2\left(-\tfrac{12}{13}\right)\tfrac{5}{13}$ y $\cos 2\theta = \tfrac{25}{169} - \tfrac{144}{169}$.</div></div>
+    <div class="sol"><span>13</span><div>Es $\cos(2\cdot 22.5^\circ) = \cos 45^\circ$.</div></div>
+    <div class="sol"><span>14</span><div>$\cos^2 x = \tfrac{1}{2}$, así que $\cos x = \pm\tfrac{\sqrt{2}}{2}$: un ángulo en cada cuadrante.</div></div>
+    <div class="sol"><span>15</span><div>$2\sin x\cos x - \sin x = \sin x\,(2\cos x - 1) = 0$: $\sin x = 0$ da $0$ y $\pi$; $\cos x = \tfrac{1}{2}$ da $\tfrac{\pi}{3}$ y $\tfrac{5\pi}{3}$.</div></div>
+    <div class="sol"><span>16</span><div>Cambia $\sin^2 x = 1 - \cos^2 x$: $-2\cos^2 x + 3\cos x - 1 = 0$, o sea $(2\cos x - 1)(\cos x - 1) = 0$.</div></div>
+  </div>
+</section>

@@ -1,0 +1,228 @@
+<!-- guia
+titulo: Razones trigonométricas
+nivel: Preparatoria
+materia: Matemáticas
+rama: Trigonometría
+numero: 05
+descripcion: Seno, coseno y tangente en el triángulo rectángulo, sus recíprocas, los ángulos de 30°, 45° y 60° sin calculadora, grados y radianes, cómo resolver triángulos rectángulos y problemas de elevación y depresión.
+entrada: Con un solo ángulo y un lado de un triángulo rectángulo puedes conocer todo lo demás. Así se miden alturas de edificios, distancias a barcos o la inclinación de una rampa, sin subir ni tocar nada.
+objetivo: Definir seno, coseno, tangente y sus recíprocas.
+objetivo: Calcular las razones de 30°, 45° y 60° de forma exacta.
+objetivo: Convertir entre grados y radianes.
+objetivo: Resolver triángulos rectángulos.
+objetivo: Plantear problemas de ángulos de elevación y depresión.
+autoeval: Escribir las razones de un ángulo a partir de los lados. | 01
+autoeval: Dar de memoria el seno, coseno y tangente de 30°, 45° y 60°. | 02
+autoeval: Convertir grados a radianes y al revés. | 03
+autoeval: Encontrar un lado o un ángulo que falta. | 04
+autoeval: Dibujar y resolver un problema de elevación o depresión. | 05
+-->
+<section>
+  <h2>Las seis razones</h2>
+  <div class="figura-lado">
+    <div>
+      <p>En un triángulo rectángulo, tomando uno de los ángulos agudos $\theta$, los lados se nombran según su posición respecto a ese ángulo: <strong>hipotenusa</strong> (frente al ángulo recto, la mayor), cateto <strong>opuesto</strong> (enfrente de $\theta$) y cateto <strong>adyacente</strong> (junto a $\theta$).</p>
+      <div class="definicion">
+        <span class="etq">Razones trigonométricas</span>
+        $$\sin\theta = \frac{\text{op}}{\text{hip}} \qquad \cos\theta = \frac{\text{ady}}{\text{hip}} \qquad \tan\theta = \frac{\text{op}}{\text{ady}}$$
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 236 140" width="58mm">
+        <path d="M20 120 L180 120 L180 30 Z" fill="#efe3cf" stroke="#2b241e" stroke-width="1.6"/>
+        <path d="M168 120 L168 108 L180 108" fill="none" stroke="#2b241e" stroke-width="1"/>
+        <path d="M52 120 A32 32 0 0 0 48.0 104.3" fill="none" stroke="#b5562c" stroke-width="1.6"/>
+        <g font-family="Nunito" font-size="11" fill="#2b241e">
+          <text x="56" y="114" fill="#b5562c">θ</text>
+          <text x="72" y="136">adyacente</text><text x="184" y="80">opuesto</text>
+          <text x="62" y="66" transform="rotate(-29 90 70)">hipotenusa</text>
+        </g>
+      </svg>
+      <figcaption>Los nombres dependen del ángulo que elijas.</figcaption>
+    </figure>
+  </div>
+  <p>Las otras tres son sus recíprocas: $\csc\theta = \dfrac{1}{\sin\theta}$, $\sec\theta = \dfrac{1}{\cos\theta}$ y $\cot\theta = \dfrac{1}{\tan\theta}$. Además, $\tan\theta = \dfrac{\sin\theta}{\cos\theta}$.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un triángulo rectángulo tiene catetos 5 y 12. Da las razones del ángulo $\theta$ opuesto al lado 5.</p>
+      <p class="paso">Primero la hipotenusa: $\sqrt{5^2 + 12^2} = \sqrt{169} = 13$.</p>
+      $$\sin\theta = \frac{5}{13} \qquad \cos\theta = \frac{12}{13} \qquad \tan\theta = \frac{5}{12}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">No dependen del tamaño</span>
+    <p>Todos los triángulos rectángulos con el mismo ángulo $\theta$ son semejantes, así que sus lados son proporcionales y las razones son iguales. Por eso $\sin 35^\circ$ es un solo número (0.5736), sin importar el triángulo.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ángulos notables</h2>
+  <p>Salen de dos triángulos que conviene saber dibujar: la mitad de un cuadrado de lado 1 (ángulos de 45°, hipotenusa $\sqrt{2}$) y la mitad de un triángulo equilátero de lado 2 (ángulos de 30° y 60°, catetos 1 y $\sqrt{3}$).</p>
+  <table class="leyes">
+    <thead><tr><th>$\theta$</th><th>$\sin\theta$</th><th>$\cos\theta$</th><th>$\tan\theta$</th></tr></thead>
+    <tbody>
+      <tr><td>$30^\circ$</td><td>$\dfrac{1}{2}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{\sqrt{3}}{3}$</td></tr>
+      <tr><td>$45^\circ$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$1$</td></tr>
+      <tr><td>$60^\circ$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{1}{2}$</td><td>$\sqrt{3}$</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Truco: los senos de 30°, 45° y 60° son $\dfrac{\sqrt{1}}{2}, \dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{3}}{2}$; los cosenos van en orden inverso.</p>
+</section>
+
+<section>
+  <h2>Grados y radianes</h2>
+  <p>El <strong>radián</strong> mide un ángulo por el arco que abarca en un círculo de radio 1. Una vuelta completa mide $2\pi$ radianes, así que:</p>
+  $$180^\circ = \pi \text{ rad} \qquad\qquad \text{grados} \times \frac{\pi}{180} = \text{radianes}$$
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Convierte $150^\circ$ a radianes y $\dfrac{3\pi}{4}$ rad a grados.</p>
+      $$150 \cdot \frac{\pi}{180} = \frac{5\pi}{6} \qquad\qquad \frac{3\pi}{4} \cdot \frac{180}{\pi} = 135^\circ$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Revisa el modo de tu calculadora</span>
+    <p>El error más común es calcular $\sin 30$ con la calculadora en radianes: da $-0.988$ en vez de $0.5$. En cálculo siempre se trabaja en radianes.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Resolver triángulos rectángulos</h2>
+  <p>«Resolver» es encontrar todos los lados y ángulos. Necesitas dos datos además del ángulo recto, y al menos uno debe ser un lado.</p>
+  <ul>
+    <li>Para un <strong>lado</strong>: elige la razón que relaciona lo que tienes con lo que buscas y despeja.</li>
+    <li>Para un <strong>ángulo</strong>: usa la función inversa, $\theta = \tan^{-1}\!\left(\dfrac{\text{op}}{\text{ady}}\right)$, y lo mismo con $\sin^{-1}$ y $\cos^{-1}$.</li>
+    <li>Los dos ángulos agudos suman $90^\circ$.</li>
+  </ul>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>La hipotenusa mide 10 y un ángulo mide $35^\circ$. Encuentra los catetos.</p>
+      $$\text{op} = 10\sin 35^\circ \approx 5.74 \qquad\qquad \text{ady} = 10\cos 35^\circ \approx 8.19$$
+      <p class="paso">El otro ángulo mide $90^\circ - 35^\circ = 55^\circ$. Comprueba: $5.74^2 + 8.19^2 \approx 100$ ✔</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Los catetos miden 3 y 4. ¿Cuánto mide el ángulo opuesto al 3?</p>
+      $$\theta = \tan^{-1}\!\left(\frac{3}{4}\right) \approx 36.87^\circ$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Elevación y depresión</h2>
+  <p>El <strong>ángulo de elevación</strong> se mide desde la horizontal hacia arriba; el de <strong>depresión</strong>, desde la horizontal hacia abajo. Siempre desde la horizontal, nunca desde la vertical.</p>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Te paras a 40 m del pie de un edificio y ves la azotea con un ángulo de elevación de $52^\circ$. ¿Qué altura tiene? (Ignora tu estatura.)</p>
+      <p class="paso">La altura es el cateto opuesto y los 40 m son el adyacente:</p>
+      $$h = 40\tan 52^\circ \approx 51.2 \text{ m}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\sin 30 = -0.988$</td><td class="bien">$\sin 30^\circ = 0.5$</td><td>La calculadora estaba en radianes.</td></tr>
+        <tr><td class="mal">$\sin^{-1}x = \dfrac{1}{\sin x}$</td><td class="bien">Es el ángulo cuyo seno es $x$</td><td>$\dfrac{1}{\sin x}$ es $\csc x$.</td></tr>
+        <tr><td class="mal">Opuesto y adyacente fijos</td><td class="bien">Dependen del ángulo</td><td>Cambian si eliges el otro ángulo agudo.</td></tr>
+        <tr><td class="mal">$\dfrac{\sin\theta}{\theta} = \sin$</td><td class="bien">No se simplifica</td><td>$\sin$ no es un número que multiplica.</td></tr>
+        <tr><td class="mal">Depresión medida desde la vertical</td><td class="bien">Desde la horizontal</td><td>Es la definición.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\sin = \dfrac{\text{op}}{\text{hip}}$</div><div>$\cos = \dfrac{\text{ady}}{\text{hip}}$</div><div>$\tan = \dfrac{\text{op}}{\text{ady}}$</div>
+      <div>$\sin 30^\circ = \tfrac{1}{2}$</div><div>$\sin 45^\circ = \tfrac{\sqrt{2}}{2}$</div><div>$\sin 60^\circ = \tfrac{\sqrt{3}}{2}$</div>
+      <div>$180^\circ = \pi$ rad</div><div>Ángulo: $\tan^{-1}$, $\sin^{-1}$…</div><div>Agudos suman $90^\circ$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa calculadora en grados solo en el bloque D. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Un triángulo rectángulo tiene catetos 8 y 15; $A$ es el ángulo opuesto al 8</h3>
+    <ol>
+      <li>$\sin A$</li><li>$\cos A$</li><li>$\tan A$</li>
+      <li>Si $\theta$ es agudo y $\sin\theta = \tfrac{3}{5}$, da $\cos\theta$ y $\tan\theta$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Valores exactos</h3>
+    <ol>
+      <li>$\sin 30^\circ + \cos 60^\circ$</li><li>$\tan 45^\circ \cdot \sin 60^\circ$</li><li>$2\sin 45^\circ\cos 45^\circ$</li><li>$\tan^2 60^\circ$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Convierte</h3>
+    <ol>
+      <li>$45^\circ$ a radianes</li><li>$240^\circ$ a radianes</li><li>$\dfrac{5\pi}{3}$ rad a grados</li><li>$2$ rad a grados</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Resuelve (redondea a centésimos o décimas)</h3>
+    <ol class="largo">
+      <li>La hipotenusa mide 20 y un ángulo $40^\circ$. Encuentra los dos catetos.</li>
+      <li>Los catetos miden 7 y 9. Encuentra la hipotenusa y el ángulo opuesto al 7.</li>
+      <li>Una escalera de 6 m se apoya en una pared formando $70^\circ$ con el suelo. ¿A qué altura toca la pared?</li>
+      <li>Desde un mirador a 80 m sobre el mar se ve un barco con un ángulo de depresión de $25^\circ$. ¿A qué distancia horizontal está?</li>
+      <li>Un poste de 4 m proyecta una sombra de 6.5 m. ¿Qué ángulo de elevación tiene el Sol?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\tfrac{8}{17}$</span></li>
+    <li><span>$\tfrac{15}{17}$</span></li>
+    <li><span>$\tfrac{8}{15}$</span></li>
+    <li><span>$\cos\theta = \tfrac{4}{5}$, $\tan\theta = \tfrac{3}{4}$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$\tfrac{\sqrt{3}}{2}$</span></li>
+    <li><span>$1$</span></li>
+    <li><span>$3$</span></li>
+    <li><span>$\tfrac{\pi}{4}$</span></li>
+    <li><span>$\tfrac{4\pi}{3}$</span></li>
+    <li><span>$300^\circ$</span></li>
+    <li><span>$\approx 114.6^\circ$</span></li>
+    <li><span>$\approx 12.86$ y $\approx 15.32$</span></li>
+    <li><span>$\approx 11.40$ y $\approx 37.9^\circ$</span></li>
+    <li><span>$\approx 5.64$ m</span></li>
+    <li><span>$\approx 171.6$ m</span></li>
+    <li><span>$\approx 31.6^\circ$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>Hipotenusa: $\sqrt{64 + 225} = \sqrt{289} = 17$.</div></div>
+    <div class="sol"><span>4</span><div>Dibuja un triángulo con opuesto 3 e hipotenusa 5: el adyacente es $\sqrt{25 - 9} = 4$.</div></div>
+    <div class="sol"><span>7</span><div>$2\cdot\dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{2}}{2} = 2\cdot\dfrac{2}{4} = 1$.</div></div>
+    <div class="sol"><span>8</span><div>$(\sqrt{3})^2 = 3$.</div></div>
+    <div class="sol"><span>10</span><div>$240\cdot\dfrac{\pi}{180} = \dfrac{4\pi}{3}$.</div></div>
+    <div class="sol"><span>12</span><div>$2\cdot\dfrac{180}{\pi} \approx 114.59$. Un radián mide unos $57.3^\circ$.</div></div>
+    <div class="sol"><span>13</span><div>$20\sin 40^\circ \approx 12.86$ (opuesto) y $20\cos 40^\circ \approx 15.32$ (adyacente).</div></div>
+    <div class="sol"><span>14</span><div>$\sqrt{49 + 81} = \sqrt{130} \approx 11.40$ y $\tan^{-1}\!\left(\tfrac{7}{9}\right) \approx 37.9^\circ$.</div></div>
+    <div class="sol"><span>15</span><div>La escalera es la hipotenusa y la altura es el opuesto a los $70^\circ$: $6\sin 70^\circ \approx 5.64$.</div></div>
+    <div class="sol"><span>16</span><div>El ángulo de depresión es igual al de elevación desde el barco (ángulos alternos). $\tan 25^\circ = \dfrac{80}{d} \Rightarrow d = \dfrac{80}{\tan 25^\circ} \approx 171.6$.</div></div>
+    <div class="sol"><span>17</span><div>$\tan\theta = \dfrac{4}{6.5} \Rightarrow \theta = \tan^{-1}(0.615) \approx 31.6^\circ$.</div></div>
+  </div>
+</section>

@@ -1,0 +1,247 @@
+<!-- guia
+titulo: Polinomios
+nivel: Preparatoria
+materia: Matemáticas
+rama: Álgebra y funciones
+numero: 02
+descripcion: Grado y coeficiente principal, operaciones, división larga y sintética, teorema del residuo y del factor, búsqueda de raíces racionales y cómo se ve la gráfica según el grado y la multiplicidad.
+entrada: Los polinomios son las funciones más sencillas que existen y aparecen en todo: trayectorias, áreas, costos. Aquí aprendes a dividirlos, a encontrar sus raíces sin adivinar a ciegas y a imaginar su gráfica antes de dibujarla.
+objetivo: Identificar grado, coeficiente principal y término independiente.
+objetivo: Sumar, restar y multiplicar polinomios.
+objetivo: Dividir con división larga y con división sintética.
+objetivo: Usar los teoremas del residuo y del factor.
+objetivo: Factorizar polinomios de grado 3 y 4 con raíces racionales.
+objetivo: Describir la gráfica por su grado y la multiplicidad de sus raíces.
+autoeval: Dar el grado de un producto sin desarrollarlo completo. | 01
+autoeval: Dividir con división sintética, incluyendo coeficientes cero. | 03
+autoeval: Calcular un residuo sin hacer la división. | 04
+autoeval: Encontrar todas las raíces de un polinomio de grado 3. | 05
+autoeval: Decir si la gráfica cruza o toca el eje en cada raíz. | 06
+-->
+<section>
+  <h2>Vocabulario</h2>
+  <p>Un polinomio en $x$ es una suma de términos de la forma $a\,x^n$, con $n$ entero no negativo:</p>
+  $$P(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0 \qquad (a_n \neq 0)$$
+  <table class="leyes">
+    <thead><tr><th>Nombre</th><th>Qué es</th><th>En $P(x) = -3x^4 + x^2 - 7$</th></tr></thead>
+    <tbody>
+      <tr><td>Grado</td><td>El exponente mayor</td><td>$4$</td></tr>
+      <tr><td>Coeficiente principal</td><td>El número que acompaña a la potencia mayor</td><td>$-3$</td></tr>
+      <tr><td>Término independiente</td><td>El que no tiene $x$; es $P(0)$</td><td>$-7$</td></tr>
+    </tbody>
+  </table>
+  <p>Las expresiones con $x$ en el denominador o dentro de una raíz, como $\dfrac{1}{x}$ o $\sqrt{x}$, <strong>no</strong> son polinomios.</p>
+</section>
+
+<section>
+  <h2>Operaciones</h2>
+  <p>Para sumar y restar, junta términos semejantes (mismo exponente). Para multiplicar, cada término del primero por cada término del segundo.</p>
+  <div class="nota">
+    <span class="etq">Atajo para el grado</span>
+    <p>El grado de un producto es la <strong>suma</strong> de los grados, y su coeficiente principal es el producto de los coeficientes principales. En $(2x^3 - 1)(5x^2 + x)$ el término mayor es $10x^5$, sin desarrollar lo demás.</p>
+  </div>
+</section>
+
+<section>
+  <h2>División de polinomios</h2>
+  <p>Igual que con números: $P(x) = D(x)\,Q(x) + R(x)$, donde $Q$ es el cociente y el residuo $R$ tiene grado menor que el divisor $D$.</p>
+  <h3>División larga</h3>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Divide $x^3 + 2x - 1$ entre $x^2 + 1$.</p>
+      <p class="paso">¿Por qué se multiplica $x^2$ para dar $x^3$? Por $x$. Resta $x(x^2 + 1) = x^3 + x$:</p>
+      $$(x^3 + 2x - 1) - (x^3 + x) = x - 1$$
+      <p class="paso">$x - 1$ tiene grado 1, menor que el del divisor: se acabó. Cociente $x$, residuo $x - 1$.</p>
+      <p class="paso">Comprueba: $x(x^2 + 1) + (x - 1) = x^3 + 2x - 1$ ✔</p>
+    </div>
+  </div>
+  <h3>División sintética</h3>
+  <p>Cuando el divisor es de la forma $x - r$, hay un atajo que solo usa los coeficientes. <strong>Escribe un cero por cada potencia que falte.</strong></p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Divide $2x^3 - 3x^2 + 4x - 5$ entre $x - 2$ (aquí $r = 2$).</p>
+      <p class="paso">Baja el primer coeficiente. Multiplica por $r$, súmalo al siguiente y repite:</p>
+      <table class="leyes">
+        <tbody>
+          <tr><td>$r = 2$</td><td>$2$</td><td>$-3$</td><td>$4$</td><td>$-5$</td></tr>
+          <tr><td></td><td></td><td>$4$</td><td>$2$</td><td>$12$</td></tr>
+          <tr><td></td><td>$\mathbf{2}$</td><td>$\mathbf{1}$</td><td>$\mathbf{6}$</td><td>$\mathbf{7}$</td></tr>
+        </tbody>
+      </table>
+      <p class="paso">Los primeros números son el cociente y el último es el residuo: $Q(x) = 2x^2 + x + 6$, $R = 7$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Teoremas del residuo y del factor</h2>
+  <div class="definicion">
+    <span class="etq">Teorema del residuo</span>
+    <p>El residuo de dividir $P(x)$ entre $x - r$ es $P(r)$.</p>
+  </div>
+  <p>En el ejemplo 2: $P(2) = 16 - 12 + 8 - 5 = 7$, el mismo residuo, sin dividir.</p>
+  <div class="definicion">
+    <span class="etq">Teorema del factor</span>
+    <p>$x - r$ es factor de $P(x)$ exactamente cuando $P(r) = 0$, es decir, cuando $r$ es raíz.</p>
+  </div>
+  <div class="nota">
+    <span class="etq">Cuidado con el signo</span>
+    <p>Para dividir entre $x + 3$ usa $r = -3$, porque $x + 3 = x - (-3)$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Encontrar raíces</h2>
+  <div class="definicion">
+    <span class="etq">Raíces racionales posibles</span>
+    <p>Si $P(x)$ tiene coeficientes enteros, sus raíces racionales son de la forma $\dfrac{p}{q}$, donde $p$ divide al término independiente y $q$ divide al coeficiente principal.</p>
+  </div>
+  <p>Prueba candidatos hasta encontrar uno con $P(r) = 0$, divide entre $x - r$ y sigue con el cociente, que ya es de grado menor.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Factoriza $P(x) = x^3 - 2x^2 - 5x + 6$.</p>
+      <p class="paso">Candidatos: divisores de 6, o sea $\pm 1, \pm 2, \pm 3, \pm 6$. Prueba $x = 1$: $1 - 2 - 5 + 6 = 0$ ✔.</p>
+      <p class="paso">Divide entre $x - 1$ con sintética: coeficientes $1, -2, -5, 6$ dan $1, -1, -6$ y residuo $0$.</p>
+      $$P(x) = (x - 1)(x^2 - x - 6) = (x - 1)(x - 3)(x + 2)$$
+      <p class="paso">Raíces: $1$, $3$ y $-2$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>La forma de la gráfica</h2>
+  <p>Lejos del origen, manda el término de mayor grado. Eso decide hacia dónde se van los extremos:</p>
+  <table class="leyes">
+    <thead><tr><th>Grado</th><th>Coef. principal $\gt 0$</th><th>Coef. principal $\lt 0$</th></tr></thead>
+    <tbody>
+      <tr><td>Par</td><td>Sube por los dos lados</td><td>Baja por los dos lados</td></tr>
+      <tr><td>Impar</td><td>Baja a la izquierda, sube a la derecha</td><td>Sube a la izquierda, baja a la derecha</td></tr>
+    </tbody>
+  </table>
+  <div class="figura-lado">
+    <div class="definicion">
+      <span class="etq">Multiplicidad</span>
+      <p>Si el factor $(x - r)$ aparece $k$ veces, $r$ es raíz de multiplicidad $k$. Con $k$ impar la gráfica <strong>cruza</strong> el eje en $r$; con $k$ par solo lo <strong>toca</strong> y rebota.</p>
+      <p>En $P(x) = (x - 1)^2(x + 2)$: cruza en $-2$ y toca en $1$.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 150" width="52mm">
+        <line x1="10" y1="95" x2="190" y2="95" stroke="#2b241e" stroke-width="1.2"/>
+        <line x1="100" y1="20" x2="100" y2="145" stroke="#2b241e" stroke-width="1.2"/>
+        <path d="M10.0 134.6 L14.2 116.5 L18.4 100.5 L22.6 86.6 L26.8 74.6 L31.0 64.4 L35.2 55.9 L39.4 49.0 L43.6 43.6 L47.8 39.6 L52.0 36.9 L56.2 35.4 L60.4 35.0 L64.6 35.6 L68.8 37.0 L73.0 39.2 L77.2 42.1 L81.4 45.6 L85.6 49.5 L89.8 53.8 L94.0 58.3 L98.2 63.0 L102.4 67.7 L106.6 72.4 L110.8 76.9 L115.0 81.1 L119.2 84.9 L123.4 88.3 L127.6 91.1 L131.8 93.2 L136.0 94.6 L140.2 95.0 L144.4 94.4 L148.6 92.8 L152.8 89.9 L157.0 85.7 L161.2 80.1 L165.4 73.0 L169.6 64.3 L173.8 53.8 L178.0 41.5" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <circle cx="20" cy="95" r="3" fill="#b5562c"/><circle cx="140" cy="95" r="3" fill="#b5562c"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="24" y="109">−2</text><text x="137" y="109">1</text><text x="30" y="128">cruza</text><text x="128" y="122">toca</text>
+        </g>
+      </svg>
+      <figcaption>$y = (x - 1)^2(x + 2)$</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Sintética de $x^3 - 8$ con $1, -8$</td><td class="bien">$1, 0, 0, -8$</td><td>Cada potencia faltante lleva un cero.</td></tr>
+        <tr><td class="mal">Entre $x + 3$ usar $r = 3$</td><td class="bien">$r = -3$</td><td>$x + 3 = x - (-3)$.</td></tr>
+        <tr><td class="mal">$(x^2 + 1)(x^3) $ tiene grado 6</td><td class="bien">Grado 5</td><td>Los grados se suman, no se multiplican.</td></tr>
+        <tr><td class="mal">Restar en la división larga sin cambiar signos</td><td class="bien">Cambia el signo de todo lo que restas</td><td>Es una resta de polinomios completa.</td></tr>
+        <tr><td class="mal">Raíz doble: la gráfica cruza</td><td class="bien">Solo toca y rebota</td><td>Con multiplicidad par no cambia de signo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$P = D\cdot Q + R$</div><div>Residuo entre $x - r$: $P(r)$</div><div>$P(r) = 0 \Leftrightarrow (x - r)$ es factor</div>
+      <div>Candidatos: $\dfrac{\text{div. de } a_0}{\text{div. de } a_n}$</div><div>Grado del producto: suma</div><div>Faltantes: escribe 0</div>
+      <div>Par: extremos iguales</div><div>Impar: extremos opuestos</div><div>Multiplicidad par: toca</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Operaciones con $P(x) = 2x^2 - 3x + 1$ y $Q(x) = x^2 + 4x - 5$</h3>
+    <ol>
+      <li>$P(x) + Q(x)$</li><li>$P(x) - Q(x)$</li><li>$P(x)\,(x - 2)$</li>
+      <li>Grado y coeficiente principal de $(3x^2 - 1)(2x^3 + x)$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. División</h3>
+    <ol class="largo">
+      <li>$(x^3 - 4x^2 + x + 6) \div (x - 3)$</li>
+      <li>$(2x^3 + 5x^2 - x + 4) \div (x + 2)$</li>
+      <li>$(x^4 - 16) \div (x - 2)$</li>
+      <li>Sin dividir, encuentra el residuo de $x^{100} - 1$ entre $x + 1$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Raíces y factorización</h3>
+    <ol class="largo">
+      <li>Factoriza $x^3 - 7x + 6$.</li>
+      <li>Encuentra todas las raíces de $2x^3 - 3x^2 - 3x + 2$.</li>
+      <li>Encuentra todas las raíces de $x^4 - 5x^2 + 4$.</li>
+      <li>¿Qué valor de $k$ hace que $x - 1$ sea factor de $x^3 + kx^2 - 4x + 2$?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Gráficas</h3>
+    <ol class="largo">
+      <li>¿Hacia dónde van los extremos de la gráfica de $P(x) = -2x^4 + x$?</li>
+      <li>Da las raíces de $P(x) = x(x - 3)^2$ y di si la gráfica cruza o toca el eje en cada una.</li>
+      <li>Escribe, desarrollado, un polinomio de grado 3 con coeficiente principal 1 y raíces $-1$, $2$ y $4$.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$3x^2 + x - 4$</span></li>
+    <li><span>$x^2 - 7x + 6$</span></li>
+    <li><span>$2x^3 - 7x^2 + 7x - 2$</span></li>
+    <li><span>Grado 5, coeficiente 6</span></li>
+    <li><span>$x^2 - x - 2$, residuo 0</span></li>
+    <li><span>$2x^2 + x - 3$, residuo 10</span></li>
+    <li><span>$x^3 + 2x^2 + 4x + 8$, residuo 0</span></li>
+    <li><span>$0$</span></li>
+    <li><span>$(x - 1)(x - 2)(x + 3)$</span></li>
+    <li><span>$2$, $\tfrac{1}{2}$ y $-1$</span></li>
+    <li><span>$\pm 1$ y $\pm 2$</span></li>
+    <li><span>$k = 1$</span></li>
+    <li><span>Los dos hacia abajo</span></li>
+    <li><span>$0$ (cruza) y $3$ (toca)</span></li>
+    <li><span>$x^3 - 5x^2 + 2x + 8$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>$2x^3 - 4x^2 - 3x^2 + 6x + x - 2 = 2x^3 - 7x^2 + 7x - 2$.</div></div>
+    <div class="sol"><span>4</span><div>$2 + 3 = 5$ y $3 \cdot 2 = 6$: el término mayor es $6x^5$.</div></div>
+    <div class="sol"><span>5</span><div>Con $r = 3$ sobre $1, -4, 1, 6$: $1,\ -1,\ -2$ y residuo $0$.</div></div>
+    <div class="sol"><span>6</span><div>Con $r = -2$ sobre $2, 5, -1, 4$: $2,\ 1,\ -3$ y residuo $4 + 6 = 10$.</div></div>
+    <div class="sol"><span>7</span><div>Coeficientes $1, 0, 0, 0, -16$ con $r = 2$: $1,\ 2,\ 4,\ 8$ y residuo $0$.</div></div>
+    <div class="sol"><span>8</span><div>$P(-1) = (-1)^{100} - 1 = 1 - 1 = 0$. Así que $x + 1$ es factor.</div></div>
+    <div class="sol"><span>9</span><div>$P(1) = 0$. Sintética sobre $1, 0, -7, 6$: $1, 1, -6$, así que queda $x^2 + x - 6 = (x + 3)(x - 2)$.</div></div>
+    <div class="sol"><span>10</span><div>$P(2) = 16 - 12 - 6 + 2 = 0$. Sintética: $2, 1, -1$, o sea $2x^2 + x - 1 = (2x - 1)(x + 1)$.</div></div>
+    <div class="sol"><span>11</span><div>Es cuadrática en $x^2$: $(x^2 - 1)(x^2 - 4) = 0$, así que $x^2 = 1$ o $x^2 = 4$.</div></div>
+    <div class="sol"><span>12</span><div>$P(1) = 1 + k - 4 + 2 = k - 1 = 0$.</div></div>
+    <div class="sol"><span>13</span><div>Grado par con coeficiente principal negativo.</div></div>
+    <div class="sol"><span>14</span><div>$x = 0$ tiene multiplicidad 1 (impar) y $x = 3$ multiplicidad 2 (par).</div></div>
+    <div class="sol"><span>15</span><div>$(x + 1)(x - 2)(x - 4) = (x + 1)(x^2 - 6x + 8) = x^3 - 5x^2 + 2x + 8$.</div></div>
+  </div>
+</section>

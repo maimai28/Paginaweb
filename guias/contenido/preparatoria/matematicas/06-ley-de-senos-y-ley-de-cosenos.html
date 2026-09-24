@@ -1,0 +1,242 @@
+<!-- guia
+titulo: Ley de senos y ley de cosenos
+nivel: Preparatoria
+materia: Matemáticas
+rama: Trigonometría
+numero: 06
+descripcion: Cómo resolver triángulos que no son rectángulos: cuándo usar la ley de senos y cuándo la de cosenos, el caso ambiguo, el área con dos lados y un ángulo, la fórmula de Herón y problemas de distancias inaccesibles.
+entrada: En el mundo real casi ningún triángulo tiene un ángulo recto. Con dos leyes puedes resolver cualquiera: calcular la distancia entre dos puntos separados por un río o la altura de una torre a la que no puedes acercarte.
+objetivo: Nombrar lados y ángulos de un triángulo cualquiera.
+objetivo: Aplicar la ley de senos.
+objetivo: Reconocer el caso ambiguo.
+objetivo: Aplicar la ley de cosenos.
+objetivo: Calcular áreas con la fórmula trigonométrica y con Herón.
+objetivo: Elegir la ley correcta según los datos.
+autoeval: Decidir qué ley usar según los datos que tienes. | 01
+autoeval: Encontrar un lado o un ángulo con la ley de senos. | 02
+autoeval: Saber si hay cero, uno o dos triángulos posibles. | 03
+autoeval: Encontrar un lado o un ángulo con la ley de cosenos. | 04
+autoeval: Calcular el área de un triángulo sin conocer su altura. | 05
+-->
+<section>
+  <h2>Cómo elegir la ley</h2>
+  <div class="figura-lado">
+    <div>
+      <p>La convención es nombrar los vértices con mayúsculas $A$, $B$, $C$ y cada lado con la minúscula del vértice que tiene <strong>enfrente</strong>: el lado $a$ está frente al ángulo $A$.</p>
+      <table class="leyes">
+        <thead><tr><th>Si conoces…</th><th>Usa</th></tr></thead>
+        <tbody>
+          <tr><td>Dos ángulos y un lado</td><td>Senos</td></tr>
+          <tr><td>Dos lados y el ángulo opuesto a uno</td><td>Senos (¡caso ambiguo!)</td></tr>
+          <tr><td>Dos lados y el ángulo entre ellos</td><td>Cosenos</td></tr>
+          <tr><td>Los tres lados</td><td>Cosenos</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 145" width="50mm">
+        <path d="M20 120 L180 120 L110 30 Z" fill="#efe3cf" stroke="#2b241e" stroke-width="1.6"/>
+        <g font-family="Nunito" font-size="12" fill="#2b241e">
+          <text x="6" y="132">A</text><text x="184" y="132">B</text><text x="105" y="22">C</text>
+        </g>
+        <g font-family="Nunito" font-size="12" font-style="italic" fill="#b5562c">
+          <text x="96" y="138">c</text><text x="52" y="70">b</text><text x="150" y="70">a</text>
+        </g>
+      </svg>
+      <figcaption>Cada lado se llama como el ángulo opuesto.</figcaption>
+    </figure>
+  </div>
+  <p>Para usar la ley de senos necesitas conocer al menos una <strong>pareja completa</strong>: un ángulo y su lado opuesto. Si no la tienes, usa cosenos.</p>
+</section>
+
+<section>
+  <h2>Ley de senos</h2>
+  <div class="definicion">
+    <span class="etq">Ley de senos</span>
+    $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$
+    <p>En todo triángulo, cada lado es proporcional al seno del ángulo opuesto.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En un triángulo, $A = 40^\circ$, $B = 60^\circ$ y $a = 10$. Resuélvelo.</p>
+      <p class="paso">El tercer ángulo: $C = 180^\circ - 40^\circ - 60^\circ = 80^\circ$. La pareja completa es $a$ con $A$:</p>
+      $$b = \frac{10\sin 60^\circ}{\sin 40^\circ} \approx 13.47 \qquad\qquad c = \frac{10\sin 80^\circ}{\sin 40^\circ} \approx 15.32$$
+      <p class="paso">Revisa el orden: el lado mayor ($c$) está frente al ángulo mayor ($C$). ✔</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>El caso ambiguo</h2>
+  <p>Cuando conoces dos lados y el ángulo opuesto a uno de ellos (LLA), al despejar un seno pueden salir <strong>dos ángulos</strong>, porque $\sin\theta = \sin(180^\circ - \theta)$. Hay que revisar cada uno:</p>
+  <ul>
+    <li>Si el seno que te sale es mayor que 1, <strong>no hay</strong> triángulo.</li>
+    <li>Si el ángulo suplementario ($180^\circ - \theta$) más el ángulo que ya tenías pasan de $180^\circ$, solo hay <strong>uno</strong>.</li>
+    <li>Si no, hay <strong>dos</strong> triángulos distintos con esos datos.</li>
+  </ul>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Con $a = 8$, $b = 10$ y $A = 40^\circ$, encuentra $B$.</p>
+      $$\sin B = \frac{10\sin 40^\circ}{8} \approx 0.8035 \;\Rightarrow\; B \approx 53.46^\circ \ \text{ o } \ B \approx 126.54^\circ$$
+      <p class="paso">Las dos sirven, porque $40^\circ + 126.54^\circ \lt 180^\circ$. Hay dos triángulos: uno con $C \approx 86.54^\circ$ y otro con $C \approx 13.46^\circ$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ley de cosenos</h2>
+  <div class="definicion">
+    <span class="etq">Ley de cosenos</span>
+    $$a^2 = b^2 + c^2 - 2bc\cos A$$
+    <p>Y lo mismo para los otros lados, cambiando letras. Si $A = 90^\circ$, el coseno es 0 y queda el teorema de Pitágoras.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Con $b = 5$, $c = 7$ y $A = 60^\circ$ (el ángulo entre ellos), encuentra $a$.</p>
+      $$a^2 = 25 + 49 - 2(5)(7)\left(\tfrac{1}{2}\right) = 39 \;\Rightarrow\; a = \sqrt{39} \approx 6.24$$
+    </div>
+  </div>
+  <p>Para encontrar un ángulo con los tres lados, despeja el coseno:</p>
+  $$\cos C = \frac{a^2 + b^2 - c^2}{2ab}$$
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un triángulo tiene lados 7, 8 y 9. ¿Cuánto mide el ángulo mayor?</p>
+      <p class="paso">El ángulo mayor está frente al lado mayor, $c = 9$:</p>
+      $$\cos C = \frac{49 + 64 - 81}{2(7)(8)} = \frac{32}{112} \approx 0.2857 \;\Rightarrow\; C \approx 73.40^\circ$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">El coseno no tiene caso ambiguo</span>
+    <p>Si el coseno sale negativo, el ángulo es obtuso, y $\cos^{-1}$ lo da directamente. Por eso conviene encontrar primero el ángulo mayor con cosenos y después los demás.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Área de un triángulo</h2>
+  <p>Si conoces dos lados y el ángulo entre ellos:</p>
+  $$\text{Área} = \tfrac{1}{2}\,ab\sin C$$
+  <p>Si conoces los tres lados, usa la <strong>fórmula de Herón</strong>, con $s = \dfrac{a + b + c}{2}$ (el semiperímetro):</p>
+  $$\text{Área} = \sqrt{s(s - a)(s - b)(s - c)}$$
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Dos lados miden 6 y 9 y forman un ángulo de $30^\circ$. ¿Cuál es el área?</p>
+      $$\text{Área} = \tfrac{1}{2}(6)(9)\sin 30^\circ = 27\cdot\tfrac{1}{2} = 13.5$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">6</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Dos barcos salen del mismo puerto por rutas que forman $50^\circ$. Uno avanza 12 km y el otro 18 km. ¿Qué tan separados quedan?</p>
+      $$d^2 = 12^2 + 18^2 - 2(12)(18)\cos 50^\circ \approx 190.3 \;\Rightarrow\; d \approx 13.80 \text{ km}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Senos sin pareja completa</td><td class="bien">Usar cosenos</td><td>La ley de senos necesita un ángulo con su lado opuesto.</td></tr>
+        <tr><td class="mal">LLA con una sola respuesta</td><td class="bien">Revisar $180^\circ - \theta$</td><td>Puede haber dos triángulos.</td></tr>
+        <tr><td class="mal">$a^2 = b^2 + c^2 - 2bc\cos B$</td><td class="bien">$\ldots - 2bc\cos A$</td><td>El ángulo es el opuesto al lado que despejas: el que forman $b$ y $c$.</td></tr>
+        <tr><td class="mal">$(b^2 + c^2 - 2bc)\cos A$</td><td class="bien">$b^2 + c^2 - (2bc\cos A)$</td><td>Solo el último término lleva coseno.</td></tr>
+        <tr><td class="mal">Área $= \tfrac{1}{2}ab$ siempre</td><td class="bien">$\tfrac{1}{2}ab\sin C$</td><td>Solo es $\tfrac{1}{2}ab$ si $C = 90^\circ$.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\dfrac{a}{\sin A} = \dfrac{b}{\sin B}$</div><div>$a^2 = b^2 + c^2 - 2bc\cos A$</div><div>$\cos C = \dfrac{a^2 + b^2 - c^2}{2ab}$</div>
+      <div>AAL o LLA: senos</div><div>LAL o LLL: cosenos</div><div>LLA: revisa $180^\circ - \theta$</div>
+      <div>Área $= \tfrac{1}{2}ab\sin C$</div><div>Herón: $\sqrt{s(s - a)(s - b)(s - c)}$</div><div>Lado mayor frente a ángulo mayor</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa calculadora en grados y redondea a centésimos. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Ley de senos</h3>
+    <ol class="largo">
+      <li>Con $A = 30^\circ$, $B = 45^\circ$ y $a = 12$, encuentra $b$.</li>
+      <li>En el mismo triángulo, encuentra $C$ y $c$.</li>
+      <li>Con $A = 50^\circ$, $a = 9$ y $b = 7$, encuentra $B$. ¿Cuántos triángulos hay?</li>
+      <li>Con $A = 30^\circ$, $a = 3$ y $b = 8$, ¿cuántos triángulos hay?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Ley de cosenos</h3>
+    <ol class="largo">
+      <li>Con $b = 6$, $c = 10$ y $A = 120^\circ$, encuentra $a$.</li>
+      <li>Un triángulo tiene lados 5, 6 y 7. Encuentra su ángulo mayor.</li>
+      <li>Un triángulo tiene lados 4, 7 y 10. Encuentra el ángulo opuesto al lado 10.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Áreas</h3>
+    <ol class="largo">
+      <li>Dos lados miden 8 y 11 y forman un ángulo de $40^\circ$.</li>
+      <li>Un triángulo equilátero de lado 6 (da el valor exacto).</li>
+      <li>Un triángulo de lados 13, 14 y 15.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Problemas</h3>
+    <ol class="largo">
+      <li>Para medir el ancho de un lago, desde un punto $C$ se mide $CA = 120$ m, $CB = 150$ m y el ángulo $C = 65^\circ$. ¿Cuánto mide $AB$?</li>
+      <li>Desde un punto se ve la punta de una torre con elevación de $30^\circ$. Al caminar 40 m hacia la torre, la elevación es de $50^\circ$. ¿Qué altura tiene la torre?</li>
+      <li>Un terreno triangular tiene lados de 50, 70 y 90 m. ¿Cuál es su área?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$b \approx 16.97$</span></li>
+    <li><span>$C = 105^\circ$, $c \approx 23.18$</span></li>
+    <li><span>$B \approx 36.57^\circ$, un solo triángulo</span></li>
+    <li><span>Ninguno</span></li>
+    <li><span>$a = 14$</span></li>
+    <li><span>$\approx 78.46^\circ$</span></li>
+    <li><span>$\approx 128.68^\circ$</span></li>
+    <li><span>$\approx 28.28$</span></li>
+    <li><span>$9\sqrt{3} \approx 15.59$</span></li>
+    <li><span>$84$</span></li>
+    <li><span>$\approx 147.26$ m</span></li>
+    <li><span>$\approx 44.80$ m</span></li>
+    <li><span>$\approx 1741.23$ m²</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$b = \dfrac{12\sin 45^\circ}{\sin 30^\circ} = 24\sin 45^\circ = 12\sqrt{2} \approx 16.97$.</div></div>
+    <div class="sol"><span>2</span><div>$C = 180^\circ - 75^\circ = 105^\circ$ y $c = 24\sin 105^\circ \approx 23.18$.</div></div>
+    <div class="sol"><span>3</span><div>$\sin B = \dfrac{7\sin 50^\circ}{9} \approx 0.5958$, $B \approx 36.57^\circ$. El suplemento $143.43^\circ$ más $50^\circ$ pasa de $180^\circ$: no sirve.</div></div>
+    <div class="sol"><span>4</span><div>$\sin B = \dfrac{8\sin 30^\circ}{3} = \dfrac{4}{3} \gt 1$: imposible. El lado $a$ es demasiado corto para cerrar el triángulo.</div></div>
+    <div class="sol"><span>5</span><div>$a^2 = 36 + 100 - 120\cos 120^\circ = 136 + 60 = 196$. Ojo: $\cos 120^\circ = -\tfrac{1}{2}$.</div></div>
+    <div class="sol"><span>6</span><div>Frente al lado 7: $\cos C = \dfrac{25 + 36 - 49}{60} = 0.2$.</div></div>
+    <div class="sol"><span>7</span><div>$\cos\theta = \dfrac{16 + 49 - 100}{56} = -0.625$: el coseno negativo indica ángulo obtuso.</div></div>
+    <div class="sol"><span>9</span><div>$\tfrac{1}{2}(6)(6)\sin 60^\circ = 18\cdot\dfrac{\sqrt{3}}{2} = 9\sqrt{3}$.</div></div>
+    <div class="sol"><span>10</span><div>$s = 21$. $\sqrt{21\cdot 8\cdot 7\cdot 6} = \sqrt{7056} = 84$.</div></div>
+    <div class="sol"><span>11</span><div>$AB^2 = 120^2 + 150^2 - 2(120)(150)\cos 65^\circ \approx 21\,685.7$.</div></div>
+    <div class="sol"><span>12</span><div>En el triángulo formado por los dos puntos y la punta, el ángulo en la punta es $50^\circ - 30^\circ = 20^\circ$. Distancia del segundo punto a la punta: $\dfrac{40\sin 30^\circ}{\sin 20^\circ} \approx 58.48$. Altura: $58.48\sin 50^\circ \approx 44.80$.</div></div>
+    <div class="sol"><span>13</span><div>Herón con $s = 105$: $\sqrt{105\cdot 55\cdot 35\cdot 15} = \sqrt{3\,031\,875} \approx 1741.23$.</div></div>
+  </div>
+</section>

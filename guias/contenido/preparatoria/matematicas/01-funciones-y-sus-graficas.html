@@ -1,0 +1,271 @@
+<!-- guia
+titulo: Funciones y sus gráficas
+nivel: Preparatoria
+materia: Matemáticas
+rama: Álgebra y funciones
+numero: 01
+descripcion: Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.
+entrada: Casi todo lo que vas a estudiar en cálculo son funciones: reglas que a cada número le asignan otro. En esta guía aprendes a leerlas, a saber dónde tienen sentido y a dibujar muchas gráficas a partir de unas cuantas que ya conoces.
+objetivo: Reconocer cuándo una relación es función.
+objetivo: Evaluar funciones, también con expresiones algebraicas.
+objetivo: Encontrar el dominio y el rango.
+objetivo: Reconocer las gráficas básicas.
+objetivo: Aplicar desplazamientos, reflexiones y estiramientos.
+objetivo: Componer funciones y encontrar la inversa.
+autoeval: Decidir si una gráfica es función con la prueba de la recta vertical. | 01
+autoeval: Evaluar $f(a + 1)$ sin errores de signo. | 02
+autoeval: Encontrar el dominio cuando hay raíces o denominadores. | 03
+autoeval: Dibujar $y = (x - h)^2 + k$ a partir de $y = x^2$. | 05
+autoeval: Calcular $f(g(x))$ y distinguirla de $g(f(x))$. | 06
+autoeval: Despejar la inversa y comprobarla. | 06
+-->
+<section>
+  <h2>Qué es una función</h2>
+  <div class="definicion">
+    <span class="etq">Función</span>
+    <p>Una función es una regla que a cada valor de entrada $x$ le asigna <strong>exactamente un</strong> valor de salida $y$. Se escribe $y = f(x)$ y se lee «$f$ de $x$».</p>
+  </div>
+  <p>La palabra clave es <em>exactamente uno</em>. Dos entradas distintas pueden dar la misma salida (en $f(x) = x^2$, tanto $2$ como $-2$ dan $4$), pero una entrada no puede dar dos salidas.</p>
+  <div class="nota">
+    <span class="etq">Prueba de la recta vertical</span>
+    <p>Una gráfica representa una función si ninguna recta vertical la corta en más de un punto. Una circunferencia no es función: la recta $x = 0$ la corta dos veces.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Evaluar funciones</h2>
+  <p>Evaluar es sustituir la $x$ por lo que esté dentro del paréntesis, <strong>siempre entre paréntesis</strong>.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Si $f(x) = x^2 - 4x + 1$, calcula $f(-2)$ y $f(a + 3)$.</p>
+      $$f(-2) = (-2)^2 - 4(-2) + 1 = 4 + 8 + 1 = 13$$
+      $$f(a + 3) = (a + 3)^2 - 4(a + 3) + 1 = a^2 + 6a + 9 - 4a - 12 + 1 = a^2 + 2a - 2$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">$f(a + 3)$ no es $f(a) + 3$</span>
+    <p>Con la misma $f$: $f(a) + 3 = a^2 - 4a + 4$, que es otra cosa. Sustituye la expresión completa.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Dominio y rango</h2>
+  <p>El <strong>dominio</strong> es el conjunto de entradas permitidas; el <strong>rango</strong> (o imagen), el de salidas que realmente se obtienen. En preparatoria, el dominio se restringe casi siempre por dos razones:</p>
+  <table class="leyes">
+    <thead><tr><th>Si aparece…</th><th>Condición</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Un denominador</td><td>No puede valer cero</td><td>$\dfrac{1}{x - 5}$: $x \neq 5$</td></tr>
+      <tr><td>Una raíz par</td><td>Lo de adentro $\geq 0$</td><td>$\sqrt{2x - 6}$: $x \geq 3$</td></tr>
+      <tr><td>Un logaritmo</td><td>Lo de adentro $\gt 0$</td><td>$\log(x + 1)$: $x \gt -1$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra el dominio de $g(x) = \dfrac{\sqrt{x + 2}}{x - 1}$.</p>
+      <p class="paso">La raíz pide $x + 2 \geq 0$, o sea $x \geq -2$. El denominador pide $x \neq 1$. Las dos condiciones a la vez:</p>
+      $$\text{Dominio} = [-2, 1) \cup (1, \infty)$$
+    </div>
+  </div>
+  <p>El rango se lee mejor en la gráfica. Por ejemplo, $f(x) = x^2 + 3$ nunca baja de 3, así que su rango es $[3, \infty)$.</p>
+</section>
+
+<section>
+  <h2>Gráficas que debes reconocer</h2>
+  <p>Con estas seis gráficas y las transformaciones de la siguiente sección puedes dibujar la mayoría de las funciones de preparatoria sin tabular punto por punto.</p>
+  <table class="leyes">
+    <thead><tr><th>Función</th><th>Forma</th><th>Dominio</th><th>Rango</th></tr></thead>
+    <tbody>
+      <tr><td>$y = x$</td><td>Recta por el origen</td><td>$\mathbb{R}$</td><td>$\mathbb{R}$</td></tr>
+      <tr><td>$y = x^2$</td><td>Parábola, vértice en el origen</td><td>$\mathbb{R}$</td><td>$[0, \infty)$</td></tr>
+      <tr><td>$y = x^3$</td><td>Curva en S por el origen</td><td>$\mathbb{R}$</td><td>$\mathbb{R}$</td></tr>
+      <tr><td>$y = \sqrt{x}$</td><td>Media parábola acostada</td><td>$[0, \infty)$</td><td>$[0, \infty)$</td></tr>
+      <tr><td>$y = |x|$</td><td>V con vértice en el origen</td><td>$\mathbb{R}$</td><td>$[0, \infty)$</td></tr>
+      <tr><td>$y = \dfrac{1}{x}$</td><td>Dos ramas (hipérbola)</td><td>$x \neq 0$</td><td>$y \neq 0$</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Transformaciones de gráficas</h2>
+  <p>Si conoces la gráfica de $y = f(x)$, las siguientes se obtienen moviéndola ($c \gt 0$):</p>
+  <table class="leyes">
+    <thead><tr><th>Fórmula</th><th>Efecto</th></tr></thead>
+    <tbody>
+      <tr><td>$y = f(x) + c$</td><td>Sube $c$ unidades</td></tr>
+      <tr><td>$y = f(x) - c$</td><td>Baja $c$ unidades</td></tr>
+      <tr><td>$y = f(x - c)$</td><td>Se mueve $c$ a la <strong>derecha</strong></td></tr>
+      <tr><td>$y = f(x + c)$</td><td>Se mueve $c$ a la <strong>izquierda</strong></td></tr>
+      <tr><td>$y = -f(x)$</td><td>Se refleja respecto al eje $x$</td></tr>
+      <tr><td>$y = f(-x)$</td><td>Se refleja respecto al eje $y$</td></tr>
+      <tr><td>$y = c\,f(x)$</td><td>Estiramiento vertical si $c \gt 1$; se aplana si $0 \lt c \lt 1$</td></tr>
+    </tbody>
+  </table>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">3</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>Dibuja $y = (x - 2)^2 + 1$.</p>
+        <p class="paso">Parte de $y = x^2$. El $x - 2$ la mueve 2 a la derecha y el $+1$ la sube 1. El vértice pasa de $(0, 0)$ a $(2, 1)$.</p>
+        <p class="paso">Rango: $[1, \infty)$.</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 184" width="52mm">
+        <g stroke="#b9ab96" stroke-width="0.6">
+          <line x1="20" y1="20" x2="20" y2="160"/><line x1="40" y1="20" x2="40" y2="160"/><line x1="80" y1="20" x2="80" y2="160"/><line x1="100" y1="20" x2="100" y2="160"/><line x1="120" y1="20" x2="120" y2="160"/><line x1="140" y1="20" x2="140" y2="160"/><line x1="160" y1="20" x2="160" y2="160"/><line x1="180" y1="20" x2="180" y2="160"/>
+          <line x1="10" y1="40" x2="190" y2="40"/><line x1="10" y1="60" x2="190" y2="60"/><line x1="10" y1="80" x2="190" y2="80"/><line x1="10" y1="100" x2="190" y2="100"/><line x1="10" y1="120" x2="190" y2="120"/><line x1="10" y1="160" x2="190" y2="160"/>
+        </g>
+        <line x1="10" y1="140" x2="190" y2="140" stroke="#2b241e" stroke-width="1.2"/>
+        <line x1="60" y1="15" x2="60" y2="165" stroke="#2b241e" stroke-width="1.2"/>
+        <path d="M20 60 Q60 220 100 60" fill="none" stroke="#8a7a66" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <path d="M60 40 Q100 200 140 40" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <circle cx="100" cy="120" r="3" fill="#b5562c"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="104" y="132">(2, 1)</text><text x="64" y="152">0</text><text x="102" y="152">2</text>
+          <text x="24" y="54" fill="#8a7a66">y = x²</text><text x="108" y="176" fill="#b5562c">y = (x − 2)² + 1</text>
+        </g>
+      </svg>
+      <figcaption>La parábola se mueve sin deformarse.</figcaption>
+    </figure>
+  </div>
+  <div class="nota">
+    <span class="etq">¿Por qué $x - 2$ mueve a la derecha?</span>
+    <p>Porque ahora necesitas $x = 2$ para obtener lo que antes obtenías con $x = 0$: todo pasa 2 unidades «más tarde». Lo de adentro del paréntesis actúa al revés de lo que parece.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Composición e inversa</h2>
+  <p><strong>Componer</strong> es usar la salida de una función como entrada de otra: $(f \circ g)(x) = f(g(x))$. Primero se aplica $g$ (la de adentro) y luego $f$.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Si $f(x) = x + 2$ y $g(x) = x^2$, calcula $f(g(x))$ y $g(f(x))$.</p>
+      $$f(g(x)) = x^2 + 2 \qquad\qquad g(f(x)) = (x + 2)^2 = x^2 + 4x + 4$$
+      <p class="paso">Son distintas: el orden importa.</p>
+    </div>
+  </div>
+  <div class="definicion">
+    <span class="etq">Función inversa</span>
+    <p>La inversa $f^{-1}$ deshace lo que hace $f$: si $f(a) = b$, entonces $f^{-1}(b) = a$. Se cumple $f(f^{-1}(x)) = x$. Solo existe si $f$ nunca repite salidas (es <strong>uno a uno</strong>). Su gráfica es la de $f$ reflejada sobre la recta $y = x$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">5</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra la inversa de $f(x) = 4x - 3$.</p>
+      <p class="paso">Escribe $y = 4x - 3$, intercambia $x$ y $y$, y despeja $y$:</p>
+      $$x = 4y - 3 \;\Rightarrow\; y = \frac{x + 3}{4} \qquad\text{así que}\qquad f^{-1}(x) = \frac{x + 3}{4}$$
+      <p class="paso">Comprueba: $f\!\left(\dfrac{x + 3}{4}\right) = 4\cdot\dfrac{x + 3}{4} - 3 = x$ ✔</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">$f^{-1}$ no es $1/f$</span>
+    <p>El $-1$ aquí no es exponente. Para $f(x) = 4x - 3$, $\dfrac{1}{f(x)} = \dfrac{1}{4x - 3}$, que no tiene nada que ver con la inversa.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$f(a + 1) = a^2 + 1$ si $f(x) = x^2$</td><td class="bien">$(a + 1)^2 = a^2 + 2a + 1$</td><td>Se sustituye toda la expresión.</td></tr>
+        <tr><td class="mal">$f(-3) = -3^2 = -9$</td><td class="bien">$(-3)^2 = 9$</td><td>Faltó el paréntesis.</td></tr>
+        <tr><td class="mal">$y = (x + 4)^2$ va a la derecha</td><td class="bien">Va a la izquierda</td><td>Lo de adentro actúa al revés.</td></tr>
+        <tr><td class="mal">Dominio de $\sqrt{x - 2}$: $x \gt 2$</td><td class="bien">$x \geq 2$</td><td>$\sqrt{0} = 0$ sí existe.</td></tr>
+        <tr><td class="mal">$f(g(x)) = g(f(x))$</td><td class="bien">En general son distintas</td><td>El orden de la composición importa.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Una entrada, una salida</div><div>Denominador $\neq 0$</div><div>Raíz par: adentro $\geq 0$</div>
+      <div>$f(x) + c$: sube</div><div>$f(x - c)$: derecha</div><div>$-f(x)$: refleja en eje $x$</div>
+      <div>$(f \circ g)(x) = f(g(x))$</div><div>Inversa: cambia $x \leftrightarrow y$ y despeja</div><div>$f(f^{-1}(x)) = x$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Evalúa $f(x) = x^2 - 3x + 2$</h3>
+    <ol>
+      <li>$f(0)$</li><li>$f(-2)$</li><li>$f(3)$</li><li>$f(a + 1)$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Encuentra el dominio</h3>
+    <ol>
+      <li>$g(x) = \sqrt{x - 4}$</li><li>$h(x) = \dfrac{1}{x + 3}$</li><li>$k(x) = \sqrt{6 - 2x}$</li><li>$m(x) = \dfrac{x + 1}{x^2 - 9}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Transformaciones</h3>
+    <ol class="largo">
+      <li>Describe cómo se obtiene $y = (x + 3)^2 - 2$ a partir de $y = x^2$ y da su vértice.</li>
+      <li>Describe cómo se obtiene $y = -|x| + 4$ a partir de $y = |x|$ y da su rango.</li>
+      <li>Da el dominio y el rango de $y = \sqrt{x - 1} + 2$.</li>
+      <li>Escribe la función que resulta de mover $y = x^3$ cinco unidades a la derecha y una hacia abajo.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Composición e inversa (con $f(x) = 2x + 1$ y $g(x) = x^2$)</h3>
+    <ol class="largo">
+      <li>Calcula $f(g(x))$.</li>
+      <li>Calcula $g(f(x))$ y desarróllala.</li>
+      <li>Calcula $(f \circ g)(3)$.</li>
+      <li>Encuentra $f^{-1}(x)$.</li>
+      <li>Encuentra la inversa de $h(x) = \dfrac{3x - 2}{5}$.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$2$</span></li>
+    <li><span>$12$</span></li>
+    <li><span>$2$</span></li>
+    <li><span>$a^2 - a$</span></li>
+    <li><span>$[4, \infty)$</span></li>
+    <li><span>$x \neq -3$</span></li>
+    <li><span>$(-\infty, 3]$</span></li>
+    <li><span>$x \neq 3$ y $x \neq -3$</span></li>
+    <li><span>3 a la izquierda, 2 abajo; vértice $(-3, -2)$</span></li>
+    <li><span>Reflejo en el eje $x$ y sube 4; rango $(-\infty, 4]$</span></li>
+    <li><span>Dominio $[1, \infty)$, rango $[2, \infty)$</span></li>
+    <li><span>$y = (x - 5)^3 - 1$</span></li>
+    <li><span>$2x^2 + 1$</span></li>
+    <li><span>$4x^2 + 4x + 1$</span></li>
+    <li><span>$19$</span></li>
+    <li><span>$\dfrac{x - 1}{2}$</span></li>
+    <li><span>$\dfrac{5x + 2}{3}$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$(-2)^2 - 3(-2) + 2 = 4 + 6 + 2 = 12$.</div></div>
+    <div class="sol"><span>4</span><div>$(a + 1)^2 - 3(a + 1) + 2 = a^2 + 2a + 1 - 3a - 3 + 2 = a^2 - a$.</div></div>
+    <div class="sol"><span>7</span><div>$6 - 2x \geq 0 \Rightarrow 6 \geq 2x \Rightarrow x \leq 3$.</div></div>
+    <div class="sol"><span>8</span><div>$x^2 - 9 = 0$ cuando $x = \pm 3$; esos dos valores se excluyen.</div></div>
+    <div class="sol"><span>10</span><div>El signo menos voltea la V hacia abajo; el $+4$ sube el vértice a $(0, 4)$, que queda como valor máximo.</div></div>
+    <div class="sol"><span>11</span><div>$\sqrt{x - 1}$ pide $x \geq 1$. La raíz vale al menos 0, así que $y$ vale al menos 2.</div></div>
+    <div class="sol"><span>12</span><div>Derecha 5: cambia $x$ por $x - 5$. Abajo 1: resta 1 afuera.</div></div>
+    <div class="sol"><span>14</span><div>$g(2x + 1) = (2x + 1)^2 = 4x^2 + 4x + 1$.</div></div>
+    <div class="sol"><span>15</span><div>$g(3) = 9$ y $f(9) = 19$. También sale de sustituir en el ejercicio 13: $2(9) + 1$.</div></div>
+    <div class="sol"><span>16</span><div>$x = 2y + 1 \Rightarrow y = \dfrac{x - 1}{2}$. Comprueba: $2\cdot\dfrac{x - 1}{2} + 1 = x$.</div></div>
+    <div class="sol"><span>17</span><div>$x = \dfrac{3y - 2}{5} \Rightarrow 5x = 3y - 2 \Rightarrow y = \dfrac{5x + 2}{3}$.</div></div>
+  </div>
+</section>

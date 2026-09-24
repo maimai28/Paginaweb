@@ -1,0 +1,247 @@
+<!-- guia
+titulo: Círculo unitario y funciones trigonométricas
+nivel: Preparatoria
+materia: Matemáticas
+rama: Trigonometría
+numero: 07
+descripcion: Seno y coseno para cualquier ángulo con el círculo unitario, signos por cuadrante, ángulos de referencia y coterminales, gráficas de seno, coseno y tangente, amplitud, periodo y desfase, y ecuaciones trigonométricas básicas.
+entrada: En el triángulo rectángulo los ángulos solo llegan a 90°. El círculo unitario extiende el seno y el coseno a cualquier ángulo, incluso negativos o de varias vueltas, y los convierte en funciones que se repiten: el lenguaje de todo lo que oscila, desde un péndulo hasta la corriente de tu casa.
+objetivo: Definir seno y coseno con el círculo unitario.
+objetivo: Saber el signo de cada función en cada cuadrante.
+objetivo: Calcular valores exactos con el ángulo de referencia.
+objetivo: Encontrar ángulos coterminales.
+objetivo: Dibujar $y = A\sin(Bx - C) + D$ leyendo amplitud, periodo y desfase.
+objetivo: Resolver ecuaciones trigonométricas sencillas en $[0, 2\pi)$.
+autoeval: Ubicar el punto $(\cos\theta, \sin\theta)$ en el círculo. | 01
+autoeval: Dar el signo de seno, coseno y tangente en cada cuadrante. | 02
+autoeval: Calcular valores exactos como $\cos 135^\circ$ o $\sin\frac{7\pi}{6}$. | 03
+autoeval: Leer amplitud, periodo y desfase de una fórmula. | 05
+autoeval: Encontrar todas las soluciones en una vuelta. | 06
+-->
+<section>
+  <h2>El círculo unitario</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Es el círculo de radio 1 con centro en el origen. Un ángulo en <strong>posición estándar</strong> empieza en el eje $x$ positivo y gira en sentido contrario a las manecillas del reloj (si es negativo, gira a favor).</p>
+      <div class="definicion">
+        <span class="etq">Seno y coseno de cualquier ángulo</span>
+        <p>Si el lado final del ángulo $\theta$ corta al círculo unitario en el punto $P$, entonces</p>
+        $$P = (\cos\theta,\ \sin\theta) \qquad\qquad \tan\theta = \frac{\sin\theta}{\cos\theta}$$
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 170" width="50mm">
+        <circle cx="100" cy="85" r="65" fill="#faf3e6" stroke="#2b241e" stroke-width="1.4"/>
+        <line x1="20" y1="85" x2="180" y2="85" stroke="#2b241e" stroke-width="1"/>
+        <line x1="100" y1="10" x2="100" y2="160" stroke="#2b241e" stroke-width="1"/>
+        <line x1="100" y1="85" x2="141.8" y2="35.2" stroke="#b5562c" stroke-width="2"/>
+        <line x1="141.8" y1="35.2" x2="141.8" y2="85" stroke="#5c7a5a" stroke-width="2" stroke-dasharray="4 3"/>
+        <line x1="100" y1="85" x2="141.8" y2="85" stroke="#c28a2e" stroke-width="3"/>
+        <path d="M118 85 A18 18 0 0 0 111.6 71.2" fill="none" stroke="#b5562c" stroke-width="1.4"/>
+        <circle cx="141.8" cy="35.2" r="3" fill="#b5562c"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="120" y="77" fill="#b5562c">θ</text><text x="120" y="15">P(cos θ, sen θ)</text>
+          <text x="146" y="64" fill="#5c7a5a">sen θ</text><text x="106" y="98" fill="#c28a2e">cos θ</text>
+          <text x="167" y="98">1</text><text x="104" y="17">1</text>
+        </g>
+      </svg>
+      <figcaption>El punto se mueve sobre el círculo al cambiar $\theta$.</figcaption>
+    </figure>
+  </div>
+  <p>Como el punto está sobre el círculo, $\cos^2\theta + \sin^2\theta = 1$ para todo ángulo, y ambos valores quedan siempre entre $-1$ y $1$.</p>
+</section>
+
+<section>
+  <h2>Signos por cuadrante</h2>
+  <p>El signo lo deciden las coordenadas de $P$. Una forma de recordarlo es «Todos Sienten Tanto Calor», de I a IV: en cada cuadrante es positiva la función que empieza con esa letra.</p>
+  <table class="leyes">
+    <thead><tr><th>Cuadrante</th><th>Ángulos</th><th>$\sin$</th><th>$\cos$</th><th>$\tan$</th></tr></thead>
+    <tbody>
+      <tr><td>I</td><td>$0^\circ$ a $90^\circ$</td><td>$+$</td><td>$+$</td><td>$+$</td></tr>
+      <tr><td>II</td><td>$90^\circ$ a $180^\circ$</td><td>$+$</td><td>$-$</td><td>$-$</td></tr>
+      <tr><td>III</td><td>$180^\circ$ a $270^\circ$</td><td>$-$</td><td>$-$</td><td>$+$</td></tr>
+      <tr><td>IV</td><td>$270^\circ$ a $360^\circ$</td><td>$-$</td><td>$+$</td><td>$-$</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Ángulo de referencia y valores exactos</h2>
+  <p>El <strong>ángulo de referencia</strong> es el ángulo agudo entre el lado final y el eje $x$. Las funciones de $\theta$ valen lo mismo que las de su ángulo de referencia, salvo el signo, que da el cuadrante.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\sin 150^\circ$ y $\cos 150^\circ$.</p>
+      <p class="paso">$150^\circ$ está en el cuadrante II; su referencia es $180^\circ - 150^\circ = 30^\circ$. En el II el seno es positivo y el coseno negativo:</p>
+      $$\sin 150^\circ = \tfrac{1}{2} \qquad\qquad \cos 150^\circ = -\tfrac{\sqrt{3}}{2}$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Calcula $\cos\dfrac{5\pi}{4}$ y $\tan\dfrac{5\pi}{4}$.</p>
+      <p class="paso">$\dfrac{5\pi}{4} = \pi + \dfrac{\pi}{4}$: cuadrante III, referencia $\dfrac{\pi}{4}$ ($45^\circ$).</p>
+      $$\cos\frac{5\pi}{4} = -\frac{\sqrt{2}}{2} \qquad\qquad \tan\frac{5\pi}{4} = 1$$
+    </div>
+  </div>
+  <h3>Ángulos coterminales</h3>
+  <p>Si sumas o restas vueltas completas ($360^\circ$ o $2\pi$), llegas al mismo punto $P$, así que las funciones no cambian. Por ejemplo, $420^\circ$ es coterminal con $60^\circ$ y $-\dfrac{\pi}{3}$ con $\dfrac{5\pi}{3}$.</p>
+</section>
+
+<section>
+  <h2>Gráficas de seno, coseno y tangente</h2>
+  <p>Si dibujas la altura de $P$ contra el ángulo, obtienes la onda del seno; si dibujas la coordenada horizontal, la del coseno. Las dos se repiten cada $2\pi$: son <strong>periódicas</strong>.</p>
+  <figure class="figura">
+    <svg viewBox="0 0 360 132" width="120mm">
+      <line x1="25" y1="65" x2="345" y2="65" stroke="#2b241e" stroke-width="1"/>
+      <line x1="30" y1="12" x2="30" y2="120" stroke="#2b241e" stroke-width="1"/>
+      <g stroke="#e4d2b4" stroke-width="0.8"><line x1="105" y1="15" x2="105" y2="115"/><line x1="180" y1="15" x2="180" y2="115"/><line x1="255" y1="15" x2="255" y2="115"/><line x1="330" y1="15" x2="330" y2="115"/><line x1="30" y1="20" x2="340" y2="20"/><line x1="30" y1="110" x2="340" y2="110"/></g>
+      <path d="M30.0 65.0 L36.2 59.1 L42.5 53.4 L48.7 47.8 L55.0 42.5 L61.2 37.6 L67.5 33.2 L73.7 29.3 L80.0 26.0 L86.2 23.4 L92.5 21.5 L98.7 20.4 L105.0 20.0 L111.2 20.4 L117.5 21.5 L123.7 23.4 L130.0 26.0 L136.2 29.3 L142.5 33.2 L148.7 37.6 L155.0 42.5 L161.2 47.8 L167.5 53.4 L173.7 59.1 L180.0 65.0 L186.2 70.9 L192.5 76.6 L198.7 82.2 L205.0 87.5 L211.2 92.4 L217.5 96.8 L223.7 100.7 L230.0 104.0 L236.2 106.6 L242.5 108.5 L248.7 109.6 L255.0 110.0 L261.2 109.6 L267.5 108.5 L273.7 106.6 L280.0 104.0 L286.2 100.7 L292.5 96.8 L298.7 92.4 L305.0 87.5 L311.2 82.2 L317.5 76.6 L323.7 70.9 L330.0 65.0" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+      <path d="M30.0 20.0 L36.2 20.4 L42.5 21.5 L48.7 23.4 L55.0 26.0 L61.2 29.3 L67.5 33.2 L73.7 37.6 L80.0 42.5 L86.2 47.8 L92.5 53.4 L98.7 59.1 L105.0 65.0 L111.2 70.9 L117.5 76.6 L123.7 82.2 L130.0 87.5 L136.2 92.4 L142.5 96.8 L148.7 100.7 L155.0 104.0 L161.2 106.6 L167.5 108.5 L173.7 109.6 L180.0 110.0 L186.2 109.6 L192.5 108.5 L198.7 106.6 L205.0 104.0 L211.2 100.7 L217.5 96.8 L223.7 92.4 L230.0 87.5 L236.2 82.2 L242.5 76.6 L248.7 70.9 L255.0 65.0 L261.2 59.1 L267.5 53.4 L273.7 47.8 L280.0 42.5 L286.2 37.6 L292.5 33.2 L298.7 29.3 L305.0 26.0 L311.2 23.4 L317.5 21.5 L323.7 20.4 L330.0 20.0" fill="none" stroke="#5c7a5a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <g font-family="Nunito" font-size="10" fill="#2b241e">
+        <text x="99" y="128">π/2</text><text x="176" y="128">π</text><text x="245" y="128">3π/2</text><text x="322" y="128">2π</text>
+        <text x="20" y="24">1</text><text x="14" y="114">−1</text>
+        <text x="112" y="16" fill="#b5562c">y = sen x</text><text x="262" y="16" fill="#5c7a5a">y = cos x</text>
+      </g>
+    </svg>
+    <figcaption>El coseno es el seno recorrido $\frac{\pi}{2}$ a la izquierda.</figcaption>
+  </figure>
+  <p>La tangente es distinta: tiene periodo $\pi$, toma todos los valores reales y tiene asíntotas verticales donde $\cos x = 0$ ($x = \frac{\pi}{2} + k\pi$).</p>
+  <div class="definicion">
+    <span class="etq">Forma general</span>
+    $$y = A\sin(Bx - C) + D \qquad (B \gt 0)$$
+    <p><strong>Amplitud</strong> $|A|$ (altura de la onda desde su centro), <strong>periodo</strong> $\dfrac{2\pi}{B}$, <strong>desfase</strong> $\dfrac{C}{B}$ (a la derecha si es positivo) y <strong>eje central</strong> $y = D$. Lo mismo para coseno.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Describe $y = 3\sin(2x) - 1$.</p>
+      <p class="paso">Amplitud 3, periodo $\dfrac{2\pi}{2} = \pi$, sin desfase y eje central $y = -1$. Oscila entre $-1 - 3 = -4$ y $-1 + 3 = 2$: rango $[-4, 2]$.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Factoriza antes de leer el desfase</span>
+    <p>En $y = \sin(2x + \pi)$ el desfase no es $\pi$: escribe $2x + \pi = 2\left(x + \frac{\pi}{2}\right)$. La onda se recorre $\frac{\pi}{2}$ a la izquierda.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ecuaciones trigonométricas</h2>
+  <p>Despeja la función y busca <strong>todos</strong> los ángulos de una vuelta con ese valor: casi siempre hay dos, uno en cada cuadrante donde el signo coincide.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Resuelve $\sin x = -\dfrac{1}{2}$ en $[0, 2\pi)$.</p>
+      <p class="paso">Referencia: $\dfrac{\pi}{6}$. El seno es negativo en los cuadrantes III y IV:</p>
+      $$x = \pi + \frac{\pi}{6} = \frac{7\pi}{6} \qquad\qquad x = 2\pi - \frac{\pi}{6} = \frac{11\pi}{6}$$
+    </div>
+  </div>
+  <p>La calculadora con $\sin^{-1}(-0.5)$ solo te da $-30^\circ$: la otra solución la tienes que buscar tú con el círculo.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\cos 120^\circ = \tfrac{1}{2}$</td><td class="bien">$-\tfrac{1}{2}$</td><td>En el cuadrante II el coseno es negativo.</td></tr>
+        <tr><td class="mal">Periodo de $\sin 3x$: $6\pi$</td><td class="bien">$\dfrac{2\pi}{3}$</td><td>Se divide entre $B$, no se multiplica.</td></tr>
+        <tr><td class="mal">Desfase de $\sin(2x - \pi)$: $\pi$</td><td class="bien">$\dfrac{\pi}{2}$</td><td>Factoriza: $2\left(x - \frac{\pi}{2}\right)$.</td></tr>
+        <tr><td class="mal">$\sin x = \tfrac{1}{2}$: solo $x = \tfrac{\pi}{6}$</td><td class="bien">También $\tfrac{5\pi}{6}$</td><td>El seno es positivo en I y en II.</td></tr>
+        <tr><td class="mal">Referencia de $300^\circ$: $300^\circ - 270^\circ$</td><td class="bien">$360^\circ - 300^\circ = 60^\circ$</td><td>Se mide contra el eje $x$, no el $y$.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$P = (\cos\theta, \sin\theta)$</div><div>$\cos^2\theta + \sin^2\theta = 1$</div><div>Todos Sienten Tanto Calor</div>
+      <div>Referencia: agudo contra eje $x$</div><div>Coterminal: $\pm 360^\circ$</div><div>Periodo $\dfrac{2\pi}{B}$</div>
+      <div>Amplitud $|A|$</div><div>Desfase $\dfrac{C}{B}$</div><div>Tangente: periodo $\pi$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Todo es sin calculadora. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Valores exactos</h3>
+    <ol>
+      <li>$\sin 210^\circ$</li><li>$\cos 135^\circ$</li><li>$\tan 300^\circ$</li>
+      <li>$\cos\dfrac{5\pi}{3}$</li><li>$\sin\left(-\dfrac{\pi}{2}\right)$</li><li>$\tan\dfrac{3\pi}{4}$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Referencia y cuadrantes</h3>
+    <ol class="largo">
+      <li>Da el ángulo coterminal con $-100^\circ$ que está entre $0^\circ$ y $360^\circ$.</li>
+      <li>¿Cuál es el ángulo de referencia de $330^\circ$?</li>
+      <li>Si $\cos\theta = -\tfrac{3}{5}$ y $\theta$ está en el cuadrante III, da $\sin\theta$ y $\tan\theta$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Gráficas</h3>
+    <ol class="largo">
+      <li>Da amplitud y periodo de $y = 4\sin 3x$.</li>
+      <li>Da amplitud, periodo y rango de $y = -2\cos\dfrac{x}{2} + 1$.</li>
+      <li>¿Cuánto y hacia dónde se recorre $y = \sin(2x + \pi)$ respecto a $y = \sin 2x$?</li>
+      <li>Escribe una función seno con amplitud 5, periodo $\pi$ y eje central $y = 2$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Ecuaciones en $[0, 2\pi)$ y aplicación</h3>
+    <ol class="largo">
+      <li>$\sin x = \dfrac{\sqrt{3}}{2}$</li>
+      <li>$2\cos x + 1 = 0$</li>
+      <li>$\tan x = 1$</li>
+      <li>La altura de una canastilla de la rueda de la fortuna es $h(t) = 12 - 10\cos\dfrac{\pi t}{15}$ metros ($t$ en segundos). Da la altura máxima, la mínima y cuánto tarda una vuelta.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$-\tfrac{1}{2}$</span></li>
+    <li><span>$-\tfrac{\sqrt{2}}{2}$</span></li>
+    <li><span>$-\sqrt{3}$</span></li>
+    <li><span>$\tfrac{1}{2}$</span></li>
+    <li><span>$-1$</span></li>
+    <li><span>$-1$</span></li>
+    <li><span>$260^\circ$</span></li>
+    <li><span>$30^\circ$</span></li>
+    <li><span>$\sin\theta = -\tfrac{4}{5}$, $\tan\theta = \tfrac{4}{3}$</span></li>
+    <li><span>Amplitud 4, periodo $\tfrac{2\pi}{3}$</span></li>
+    <li><span>Amplitud 2, periodo $4\pi$, rango $[-1, 3]$</span></li>
+    <li><span>$\tfrac{\pi}{2}$ a la izquierda</span></li>
+    <li><span>$y = 5\sin 2x + 2$</span></li>
+    <li><span>$\tfrac{\pi}{3}$ y $\tfrac{2\pi}{3}$</span></li>
+    <li><span>$\tfrac{2\pi}{3}$ y $\tfrac{4\pi}{3}$</span></li>
+    <li><span>$\tfrac{\pi}{4}$ y $\tfrac{5\pi}{4}$</span></li>
+    <li><span>22 m, 2 m y 30 s</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>Cuadrante III, referencia $30^\circ$, seno negativo.</div></div>
+    <div class="sol"><span>3</span><div>Cuadrante IV, referencia $60^\circ$: $\tan 60^\circ = \sqrt{3}$ con signo negativo.</div></div>
+    <div class="sol"><span>4</span><div>$\tfrac{5\pi}{3} = 2\pi - \tfrac{\pi}{3}$: cuadrante IV, coseno positivo.</div></div>
+    <div class="sol"><span>5</span><div>$-\tfrac{\pi}{2}$ apunta hacia abajo: $P = (0, -1)$.</div></div>
+    <div class="sol"><span>7</span><div>$-100^\circ + 360^\circ = 260^\circ$.</div></div>
+    <div class="sol"><span>9</span><div>$\sin^2\theta = 1 - \tfrac{9}{25} = \tfrac{16}{25}$; en el III el seno es negativo. $\tan\theta = \dfrac{-4/5}{-3/5} = \tfrac{4}{3}$.</div></div>
+    <div class="sol"><span>11</span><div>$B = \tfrac{1}{2}$, periodo $\dfrac{2\pi}{1/2} = 4\pi$. Centro en 1 y amplitud 2: de $-1$ a $3$. El signo menos solo voltea la onda.</div></div>
+    <div class="sol"><span>12</span><div>$2x + \pi = 2\left(x + \tfrac{\pi}{2}\right)$.</div></div>
+    <div class="sol"><span>13</span><div>$\dfrac{2\pi}{B} = \pi \Rightarrow B = 2$.</div></div>
+    <div class="sol"><span>14</span><div>Referencia $\tfrac{\pi}{3}$; el seno es positivo en I y II: $\tfrac{\pi}{3}$ y $\pi - \tfrac{\pi}{3}$.</div></div>
+    <div class="sol"><span>15</span><div>$\cos x = -\tfrac{1}{2}$: referencia $\tfrac{\pi}{3}$ en II y III.</div></div>
+    <div class="sol"><span>16</span><div>Referencia $\tfrac{\pi}{4}$; la tangente es positiva en I y III.</div></div>
+    <div class="sol"><span>17</span><div>El coseno va de $-1$ a $1$: $h$ va de $12 - 10 = 2$ a $12 + 10 = 22$. Periodo $\dfrac{2\pi}{\pi/15} = 30$.</div></div>
+  </div>
+</section>

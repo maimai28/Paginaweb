@@ -21,6 +21,10 @@ def igual(calc, guia):
         return len(calc) == len(guia) and all(igual(c, g) for c, g in zip(calc, guia))
     if isinstance(calc, float) or isinstance(guia, float):
         return math.isclose(float(calc), float(guia), rel_tol=1e-9, abs_tol=1e-9)
+    if isinstance(calc, sp.Set) or isinstance(guia, sp.Set):
+        return calc == guia
+    if isinstance(calc, set) or isinstance(guia, set):
+        return set(map(sp.nsimplify, calc)) == set(map(sp.nsimplify, guia))
     if isinstance(calc, sp.Basic) or isinstance(guia, sp.Basic):
         return sp.simplify(sp.sympify(calc) - sp.sympify(guia)) == 0
     return calc == guia
@@ -507,6 +511,213 @@ def _():
         ('orden', sorted(['Saturno', 'Tierra', 'Neptuno', 'Mercurio', 'Júpiter', 'Marte', 'Urano', 'Venus'],
                          key=['Mercurio', 'Venus', 'Tierra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Neptuno'].index),
          ['Mercurio', 'Venus', 'Tierra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Neptuno']),
+    ]
+
+# ---------------- Preparatoria · Matemáticas ----------------
+
+def dominio(expr_cond, var=x):
+    if isinstance(expr_cond, sp.And):
+        return sp.Intersection(*[dominio(c, var) for c in expr_cond.args])
+    return sp.solve_univariate_inequality(expr_cond, var, relational=False)
+
+@guia('PM01 Funciones y sus gráficas')
+def _():
+    f = lambda t: t**2 - 3*t + 2
+    F_ = lambda t: 2*t + 1
+    g = lambda t: t**2
+    h = lambda t: (3*t - 2) / 5
+    hinv = (5*x + 2) / 3
+    return [
+        ('ejemplo1a', (lambda t: t**2 - 4*t + 1)(-2), 13), ('ejemplo1b', sp.expand((lambda t: t**2 - 4*t + 1)(a + 3)), a**2 + 2*a - 2),
+        ('ejemplo1c', sp.expand(a**2 - 4*a + 1 + 3), a**2 - 4*a + 4),
+        ('ejemplo2', sp.calculus.util.continuous_domain(sp.sqrt(x + 2) / (x - 1), x, sp.S.Reals), sp.Union(sp.Interval.Ropen(-2, 1), sp.Interval.open(1, sp.oo))),
+        ('ejemplo4', sp.expand((x + 2)**2), x**2 + 4*x + 4), ('ejemplo5', sp.simplify(4 * (x + 3) / 4 - 3), x),
+        ('ej1', f(0), 2), ('ej2', f(-2), 12), ('ej3', f(3), 2), ('ej4', sp.expand(f(a + 1)), a**2 - a),
+        ('ej5', sp.calculus.util.continuous_domain(sp.sqrt(x - 4), x, sp.S.Reals), sp.Interval(4, sp.oo)),
+        ('ej6', sp.calculus.util.continuous_domain(1 / (x + 3), x, sp.S.Reals), sp.S.Reals - sp.FiniteSet(-3)),
+        ('ej7', sp.calculus.util.continuous_domain(sp.sqrt(6 - 2*x), x, sp.S.Reals), sp.Interval(-sp.oo, 3)),
+        ('ej8', sp.calculus.util.continuous_domain((x + 1) / (x**2 - 9), x, sp.S.Reals), sp.S.Reals - sp.FiniteSet(-3, 3)),
+        ('ej10', max(4 - abs(t) for t in range(-50, 51)), 4),
+        ('ej11', sp.calculus.util.function_range(sp.sqrt(x - 1) + 2, x, sp.Interval(1, sp.oo)), sp.Interval(2, sp.oo)),
+        ('ej13', sp.expand(F_(g(x))), 2*x**2 + 1), ('ej14', sp.expand(g(F_(x))), 4*x**2 + 4*x + 1), ('ej15', F_(g(3)), 19),
+        ('ej16', sp.simplify(F_((x - 1) / 2)), x), ('ej17', sp.simplify(h(hinv)), x),
+    ]
+
+@guia('PM02 Polinomios')
+def _():
+    P, Q = 2*x**2 - 3*x + 1, x**2 + 4*x - 5
+    div = lambda n, d: tuple(sp.div(n, d, x))
+    return [
+        ('ejemplo1', div(x**3 + 2*x - 1, x**2 + 1), (x, x - 1)),
+        ('ejemplo2', div(2*x**3 - 3*x**2 + 4*x - 5, x - 2), (2*x**2 + x + 6, 7)),
+        ('residuo', (2*x**3 - 3*x**2 + 4*x - 5).subs(x, 2), 7),
+        ('ejemplo3', sp.factor(x**3 - 2*x**2 - 5*x + 6), (x - 1)*(x - 3)*(x + 2)),
+        ('atajo', sp.LT(sp.expand((2*x**3 - 1)*(5*x**2 + x))), 10*x**5),
+        ('ej1', sp.expand(P + Q), 3*x**2 + x - 4), ('ej2', sp.expand(P - Q), x**2 - 7*x + 6),
+        ('ej3', sp.expand(P * (x - 2)), 2*x**3 - 7*x**2 + 7*x - 2),
+        ('ej4', (sp.degree(sp.expand((3*x**2 - 1)*(2*x**3 + x)), x), sp.LC(sp.expand((3*x**2 - 1)*(2*x**3 + x)))), (5, 6)),
+        ('ej5', div(x**3 - 4*x**2 + x + 6, x - 3), (x**2 - x - 2, 0)),
+        ('ej6', div(2*x**3 + 5*x**2 - x + 4, x + 2), (2*x**2 + x - 3, 10)),
+        ('ej7', div(x**4 - 16, x - 2), (x**3 + 2*x**2 + 4*x + 8, 0)),
+        ('ej8', (x**100 - 1).subs(x, -1), 0),
+        ('ej9', sp.factor(x**3 - 7*x + 6), (x - 1)*(x - 2)*(x + 3)),
+        ('ej10', set(sp.solve(2*x**3 - 3*x**2 - 3*x + 2, x)), {2, sp.Rational(1, 2), -1}),
+        ('ej11', set(sp.solve(x**4 - 5*x**2 + 4, x)), {1, -1, 2, -2}),
+        ('ej12', sp.solve((x**3 + a*x**2 - 4*x + 2).subs(x, 1), a), [1]),
+        ('ej15', sp.expand((x + 1)*(x - 2)*(x - 4)), x**3 - 5*x**2 + 2*x + 8),
+    ]
+
+@guia('PM03 Desigualdades')
+def _():
+    I, oo = sp.Interval, sp.oo
+    return [
+        ('ejemplo1', dominio(3 - 2*x <= 11), I(-4, oo)),
+        ('ejemplo2', dominio(sp.And(-1 < 2*x + 3, 2*x + 3 <= 9)), I.Lopen(-2, 3)),
+        ('ejemplo3', dominio(x**2 - x - 6 > 0), sp.Union(I.open(-oo, -2), I.open(3, oo))),
+        ('ejemplo4', dominio((x + 1) / (x - 2) <= 0), I.Ropen(-1, 2)),
+        ('ejemplo5a', dominio(sp.Abs(x - 3) < 5), I.open(-2, 8)),
+        ('ejemplo5b', dominio(sp.Abs(2*x + 1) >= 7), sp.Union(I(-oo, -4), I(3, oo))),
+        ('ej1', dominio(5*x - 7 > 3), I.open(2, oo)), ('ej2', dominio(4 - 3*x >= 16), I(-oo, -4)),
+        ('ej3', dominio(x / 2 + 1 < x / 3 + 2), I.open(-oo, 6)),
+        ('ej4', dominio(sp.And(-3 <= 2*x - 1, 2*x - 1 < 5)), I.Ropen(-1, 3)),
+        ('ej5', dominio(x**2 - 9 < 0), I.open(-3, 3)),
+        ('ej6', dominio(x**2 + 2*x - 8 >= 0), sp.Union(I(-oo, -4), I(2, oo))),
+        ('ej7', dominio(2*x**2 - 5*x - 3 <= 0), I(-sp.Rational(1, 2), 3)),
+        ('ej8', dominio(x**2 + 4 > 0), sp.S.Reals),
+        ('ej9', dominio((x - 4) / (x + 1) > 0), sp.Union(I.open(-oo, -1), I.open(4, oo))),
+        ('ej10', dominio((2*x + 6) / (x - 5) <= 0), I.Ropen(-3, 5)),
+        ('ej11', dominio(3 / (x - 2) > 1), I.open(2, 5)), ('ej11b', sp.simplify(3 / (x - 2) - 1 - (5 - x) / (x - 2)), 0),
+        ('ej12', dominio(sp.Abs(x + 2) <= 6), I(-8, 4)),
+        ('ej13', dominio(sp.Abs(3*x - 1) > 8), sp.Union(I.open(-oo, -sp.Rational(7, 3)), I.open(3, oo))),
+        ('ej14', (max(g for g in range(200) if 150 + 2.5*g < 299), 150 + 2.5*59, 150 + 2.5*60), (59, 297.5, 300.0)),
+        ('ej15', dominio(20*x - 5*x**2 > 15), I.open(1, 3)),
+    ]
+
+@guia('PM04 Exponentes y logaritmos')
+def _():
+    L = lambda v, b: sp.log(v, b)
+    return [
+        ('ejemplo1', (sp.Integer(27)**sp.Rational(2, 3), sp.Integer(16)**sp.Rational(-3, 4)), (9, sp.Rational(1, 8))),
+        ('log-def', (L(32, 2), sp.log(sp.Rational(1, 1000), 10), sp.log(sp.E**4)), (5, -3, 4)),
+        ('suma-no', (round(math.log10(10), 9), round(math.log10(16), 1)), (1.0, 1.2)),
+        ('ejemplo3', (sp.solve(3**(x + 1) - 81, x), round(math.log(20) / math.log(5), 3)), ([3], 1.861)),
+        ('ejemplo4', [s for s in sp.solve(x*(x - 2) - 8, x) if s > 2], [4]),
+        ('ejemplo5', round(math.log(2) / math.log(1.08), 1), 9.0), ('ejemplo6', 2 * 5730, 11460),
+        ('ej1', sp.Integer(8)**sp.Rational(2, 3), 4), ('ej2', sp.Integer(81)**sp.Rational(-1, 4), sp.Rational(1, 3)),
+        ('ej3', sp.powsimp(x**sp.Rational(1, 2) * x**sp.Rational(3, 2) / x), x), ('ej4', sp.expand((2 / a * b**2)**3), 8*b**6 / a**3),
+        ('ej5', L(81, 3), 4), ('ej6', L(sp.Rational(1, 25), 5), -2), ('ej7', sp.log(1000, 10) + sp.log(sp.Rational(1, 100), 10), 1),
+        ('ej8', sp.simplify(L(40, 2) - L(5, 2)), 3),
+        ('ej11', [s for s in sp.solve(2**(3*x - 1) - 32, x) if s.is_real], [2]), ('ej12', sp.solve(sp.Eq(2*x, 3*(x - 1)), x), [3]),
+        ('ej13', round(math.log(50) / math.log(3), 2), 3.56), ('ej14', sp.solve(2*x + 1 - 9, x), [4]),
+        ('ej15', [s for s in sp.solve(x*(x - 3) - 10, x) if s > 3], [5]), ('ej16', round(math.log(7) / 2, 3), 0.973),
+        ('ej17', round(5000 * 1.06**10, 2), 8954.24), ('ej18', round(math.log(2) / math.log(1.06), 1), 11.9),
+        ('ej19', F(1, 2)**(24 // 8), F(1, 8)), ('ej20', round(math.log(10) / 0.3, 1), 7.7),
+    ]
+
+def trig_sol(ecuacion):
+    """Soluciones en [0, 2π) de una ecuación trigonométrica en x."""
+    # Numérico e independiente de solveset (que a veces pierde soluciones): busca mínimos de |f| y los refina.
+    e = (ecuacion.lhs - ecuacion.rhs) if isinstance(ecuacion, sp.Equality) else ecuacion
+    f = sp.lambdify(x, e, 'math')
+    N, raices = 7200, []
+    def val(t):
+        try: return abs(f(t))
+        except (ValueError, ZeroDivisionError): return float('inf')
+    for i in range(N):
+        t0, t1, t2 = (2*math.pi*(i - 1)/N, 2*math.pi*i/N, 2*math.pi*(i + 1)/N)
+        if val(t1) <= val(t0) and val(t1) < val(t2) and val(t1) < 1e-2:
+            try: r = float(sp.nsolve(e, x, t1))
+            except Exception: continue
+            r = r % (2*math.pi)
+            if abs(f(r)) < 1e-9 and all(abs(r - q) > 1e-6 for q in raices): raices.append(r)
+    return [sp.nsimplify(r / math.pi, tolerance=1e-9, rational=True) * sp.pi for r in sorted(raices)]
+
+@guia('PM05 Razones trigonométricas')
+def _():
+    r = math.radians
+    S = lambda d: sp.sin(sp.pi * d / 180)
+    C = lambda d: sp.cos(sp.pi * d / 180)
+    T = lambda d: sp.tan(sp.pi * d / 180)
+    return [
+        ('ejemplo1', (math.hypot(5, 12), F(5, 13), F(12, 13), F(5, 12)), (13.0, F(5, 13), F(12, 13), F(5, 12))),
+        ('sin35', round(math.sin(r(35)), 4), 0.5736), ('notables', (S(30), C(30), T(30), S(45), T(45), S(60), C(60), T(60)),
+         (sp.Rational(1, 2), sp.sqrt(3)/2, sp.sqrt(3)/3, sp.sqrt(2)/2, 1, sp.sqrt(3)/2, sp.Rational(1, 2), sp.sqrt(3))),
+        ('ejemplo2', (sp.Rational(150, 180) * sp.pi, sp.Rational(3, 4) * 180), (5*sp.pi/6, 135)),
+        ('calc-rad', round(math.sin(30), 3), -0.988),
+        ('ejemplo3', (round(10*math.sin(r(35)), 2), round(10*math.cos(r(35)), 2), round(5.74**2 + 8.19**2)), (5.74, 8.19, 100)),
+        ('ejemplo4', round(math.degrees(math.atan(3/4)), 2), 36.87), ('ejemplo5', round(40*math.tan(r(52)), 1), 51.2),
+        ('ej1-3', (math.hypot(8, 15), F(8, 17), F(15, 17), F(8, 15)), (17.0, F(8, 17), F(15, 17), F(8, 15))),
+        ('ej4', (math.sqrt(1 - 0.36), 0.6 / 0.8), (0.8, 0.75)),
+        ('ej5', S(30) + C(60), 1), ('ej6', T(45) * S(60), sp.sqrt(3)/2), ('ej7', 2*S(45)*C(45), 1), ('ej8', T(60)**2, 3),
+        ('ej9', sp.Rational(45, 180)*sp.pi, sp.pi/4), ('ej10', sp.Rational(240, 180)*sp.pi, 4*sp.pi/3),
+        ('ej11', sp.Rational(5, 3)*180, 300), ('ej12', round(math.degrees(2), 1), 114.6),
+        ('ej13', (round(20*math.sin(r(40)), 2), round(20*math.cos(r(40)), 2)), (12.86, 15.32)),
+        ('ej14', (round(math.sqrt(130), 2), round(math.degrees(math.atan(7/9)), 1)), (11.40, 37.9)),
+        ('ej15', round(6*math.sin(r(70)), 2), 5.64), ('ej16', round(80/math.tan(r(25)), 1), 171.6),
+        ('ej17', round(math.degrees(math.atan(4/6.5)), 1), 31.6),
+    ]
+
+@guia('PM06 Ley de senos y ley de cosenos')
+def _():
+    r, d = math.radians, math.degrees
+    sen = lambda g: math.sin(r(g))
+    ang = lambda a_, b_, c_: d(math.acos((a_*a_ + b_*b_ - c_*c_) / (2*a_*b_)))
+    B1 = d(math.asin(10*sen(40)/8))
+    h = 40*sen(30)/sen(20)
+    return [
+        ('ejemplo1', (round(10*sen(60)/sen(40), 2), round(10*sen(80)/sen(40), 2)), (13.47, 15.32)),
+        ('ejemplo2', (round(10*sen(40)/8, 4), round(B1, 2), round(180 - B1, 2), round(180 - 40 - B1, 2), round(B1 - 40, 2)), (0.8035, 53.46, 126.54, 86.54, 13.46)),
+        ('ejemplo3', 25 + 49 - 2*5*7*F(1, 2), 39), ('ejemplo3b', round(math.sqrt(39), 2), 6.24),
+        ('ejemplo4', (F(49 + 64 - 81, 2*7*8), round(ang(7, 8, 9), 2)), (F(32, 112), 73.40)),
+        ('ejemplo5', 0.5*6*9*0.5, 13.5), ('ejemplo6', (round(144 + 324 - 432*math.cos(r(50)), 1), round(math.sqrt(468 - 432*math.cos(r(50))), 2)), (190.3, 13.80)),
+        ('ej1', round(12*sen(45)/sen(30), 2), 16.97), ('ej2', round(12*sen(105)/sen(30), 2), 23.18),
+        ('ej3', (round(d(math.asin(7*sen(50)/9)), 2), 180 - d(math.asin(7*sen(50)/9)) + 50 > 180), (36.57, True)),
+        ('ej4', 8*F(1, 2)/3 > 1, True), ('ej5', 36 + 100 - 120*sp.cos(sp.pi*2/3), 196),
+        ('ej6', round(ang(5, 6, 7), 2), 78.46), ('ej7', round(ang(4, 7, 10), 2), 128.68),
+        ('ej8', round(0.5*8*11*sen(40), 2), 28.28), ('ej9', sp.Rational(1, 2)*36*sp.sin(sp.pi/3), 9*sp.sqrt(3)),
+        ('ej10', math.sqrt(21*8*7*6), 84.0),
+        ('ej11', round(math.sqrt(120**2 + 150**2 - 2*120*150*math.cos(r(65))), 2), 147.26),
+        ('ej12', (round(h, 2), round(h*sen(50), 2)), (58.48, 44.80)), ('ej13', round(math.sqrt(105*55*35*15), 2), 1741.23),
+    ]
+
+@guia('PM07 Círculo unitario y funciones trigonométricas')
+def _():
+    pi = sp.pi
+    return [
+        ('ejemplo1', (sp.sin(pi*150/180), sp.cos(pi*150/180)), (sp.Rational(1, 2), -sp.sqrt(3)/2)),
+        ('ejemplo2', (sp.cos(5*pi/4), sp.tan(5*pi/4)), (-sp.sqrt(2)/2, 1)),
+        ('coterminal', (sp.cos(pi*420/180) - sp.cos(pi/3), sp.sin(-pi/3) - sp.sin(5*pi/3)), (0, 0)),
+        ('ejemplo3', (2*pi/2, -1 - 3, -1 + 3), (pi, -4, 2)),
+        ('ejemplo4', trig_sol(sp.Eq(sp.sin(x), -sp.Rational(1, 2))), [7*pi/6, 11*pi/6]),
+        ('calc', round(math.degrees(math.asin(-0.5))), -30),
+        ('ej1', sp.sin(pi*210/180), -sp.Rational(1, 2)), ('ej2', sp.cos(pi*135/180), -sp.sqrt(2)/2), ('ej3', sp.tan(pi*300/180), -sp.sqrt(3)),
+        ('ej4', sp.cos(5*pi/3), sp.Rational(1, 2)), ('ej5', sp.sin(-pi/2), -1), ('ej6', sp.tan(3*pi/4), -1),
+        ('ej7', -100 % 360, 260), ('ej8', 360 - 330, 30), ('ej9', (-sp.sqrt(1 - sp.Rational(9, 25)), (-sp.Rational(4, 5)) / (-sp.Rational(3, 5))), (-sp.Rational(4, 5), sp.Rational(4, 3))),
+        ('ej10', (4, 2*pi/3), (4, 2*pi/3)), ('ej11', (2*pi/sp.Rational(1, 2), 1 - 2, 1 + 2), (4*pi, -1, 3)),
+        ('ej12', sp.simplify(sp.sin(2*(x + pi/2)) - sp.sin(2*x + pi)), 0), ('ej13', 2*pi/2, pi),
+        ('ej14', trig_sol(sp.Eq(sp.sin(x), sp.sqrt(3)/2)), [pi/3, 2*pi/3]), ('ej15', trig_sol(sp.Eq(2*sp.cos(x) + 1, 0)), [2*pi/3, 4*pi/3]),
+        ('ej16', trig_sol(sp.Eq(sp.tan(x), 1)), [pi/4, 5*pi/4]), ('ej17', (12 + 10, 12 - 10, 2*pi/(pi/15)), (22, 2, 30)),
+    ]
+
+@guia('PM08 Identidades trigonométricas')
+def _():
+    pi, s_, c_ = sp.pi, sp.sin(x), sp.cos(x)
+    cero = lambda e: sp.simplify(sp.expand_trig(e)) == 0
+    return [
+        ('ejemplo1', cero(1/c_ - c_ - s_*sp.tan(x)), True), ('ejemplo2', cero((1 - c_**2)*(1 + sp.cot(x)**2) - 1), True),
+        ('ejemplo3', cero(s_/(1 + c_) - (1 - c_)/s_), True), ('ejemplo4', sp.nsimplify(sp.sin(5*pi/12)), (sp.sqrt(6) + sp.sqrt(2))/4),
+        ('ejemplo4b', round(math.sin(math.radians(75)), 4), 0.9659),
+        ('ejemplo5', (2*F(3, 5)*F(4, 5), F(16, 25) - F(9, 25)), (F(24, 25), F(7, 25))),
+        ('ejemplo6', trig_sol(2*s_**2 - s_ - 1), [pi/2, 7*pi/6, 11*pi/6]),
+        ('ej1', cero(sp.tan(x)*c_ - s_), True), ('ej2', cero(s_**2 + c_**2 + sp.tan(x)**2 - sp.sec(x)**2), True),
+        ('ej3', cero((1 + sp.tan(x)**2)*c_**2 - 1), True), ('ej4', cero(s_/sp.csc(x) + c_/sp.sec(x) - 1), True),
+        ('ej5', cero(sp.csc(x) - s_ - c_*sp.cot(x)), True), ('ej6', cero((1 + s_)*(1 - s_) - c_**2), True),
+        ('ej7', cero(sp.tan(x) + sp.cot(x) - sp.sec(x)*sp.csc(x)), True), ('ej8', cero(c_/(1 - s_) - (1 + s_)/c_), True),
+        ('ej9', sp.nsimplify(sp.cos(pi/12)), (sp.sqrt(6) + sp.sqrt(2))/4), ('ej10', sp.simplify(sp.tan(pi/12)), 2 - sp.sqrt(3)),
+        ('ej11', (2*F(-12, 13)*F(5, 13), F(25, 169) - F(144, 169)), (F(-120, 169), F(-119, 169))),
+        ('ej12', cero(2*sp.sin(3*x)*sp.cos(3*x) - sp.sin(6*x)), True), ('ej13', sp.cos(pi/8)**2 - sp.sin(pi/8)**2, sp.sqrt(2)/2),
+        ('ej14', trig_sol(2*c_**2 - 1), [pi/4, 3*pi/4, 5*pi/4, 7*pi/4]),
+        ('ej15', trig_sol(sp.sin(2*x) - s_), [0, pi/3, pi, 5*pi/3]), ('ej16', trig_sol(2*s_**2 + 3*c_ - 3), [0, pi/3, 5*pi/3]),
     ]
 
 if __name__ == '__main__':
