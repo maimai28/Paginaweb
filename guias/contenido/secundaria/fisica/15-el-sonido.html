@@ -1,0 +1,149 @@
+<!-- guia
+titulo: El sonido
+nivel: Secundaria
+materia: Física
+rama: Ondas, sonido y luz
+numero: 15
+entrada: Ves el relámpago y segundos después escuchas el trueno. Gritas frente a un cerro y tu voz regresa. El sonido es una onda que viaja mucho más despacio que la luz, y con eso puedes medir distancias. En esta guía vas a entender cómo se produce, cómo viaja y qué lo hace grave, agudo, fuerte o suave.
+objetivo: Explicar cómo se produce y se propaga el sonido.
+objetivo: Comparar la velocidad del sonido en distintos medios.
+objetivo: Calcular distancias con el tiempo del sonido y del eco.
+objetivo: Relacionar tono con frecuencia e intensidad con amplitud.
+objetivo: Identificar el rango audible, el infrasonido y el ultrasonido.
+autoeval: Explicar por qué el sonido no viaja en el vacío. | 01
+autoeval: Calcular la distancia a un rayo con el tiempo del trueno. | 02
+autoeval: Calcular distancias con eco. | 02
+autoeval: Relacionar tono, intensidad y timbre con las características de la onda. | 03
+autoeval: Clasificar sonidos como audibles, infrasonidos o ultrasonidos. | 03
+-->
+<section>
+  <h2>Qué es el sonido</h2>
+  <p>El sonido se produce cuando algo <strong>vibra</strong>: las cuerdas de una guitarra, la membrana de una bocina, tus cuerdas vocales. Esa vibración empuja al aire que está junto, que empuja al siguiente, y así se forma una onda de compresiones y descompresiones que viaja hasta tu oído.</p>
+  <div class="definicion">
+    <span class="etq">El sonido es una onda mecánica longitudinal</span>
+    <p>Mecánica, porque necesita un medio (aire, agua, un sólido) para viajar. Longitudinal, porque las partículas del medio vibran en la misma dirección en la que avanza la onda.</p>
+  </div>
+  <p>Por eso en el espacio no hay sonido: en el vacío no hay partículas que puedan vibrar. Las explosiones silenciosas serían lo realista en una película del espacio.</p>
+</section>
+
+<section>
+  <h2>Velocidad del sonido</h2>
+  <table class="leyes">
+    <thead><tr><th>Medio</th><th>Velocidad aproximada</th></tr></thead>
+    <tbody>
+      <tr><td>Aire (a unos 15 °C)</td><td>340 m/s</td></tr>
+      <tr><td>Agua</td><td>1500 m/s</td></tr>
+      <tr><td>Acero</td><td>5000 m/s</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">En los sólidos las partículas están más unidas y transmiten la vibración más rápido. En el aire, la velocidad sube un poco con la temperatura.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Ves un relámpago y escuchas el trueno 6 segundos después. ¿A qué distancia cayó el rayo?</p>
+      <p class="paso">La luz llega prácticamente al instante; el sonido tarda. Con $d = v\,t$:</p>
+      $$d = 340\cdot 6 = 2040 \text{ m} \approx 2 \text{ km}$$
+      <p class="paso">Regla rápida: cada 3 segundos entre el relámpago y el trueno son como 1 km.</p>
+    </div>
+  </div>
+  <h3>El eco</h3>
+  <p>El eco es sonido reflejado. Si el sonido va hasta un obstáculo y regresa, recorre <strong>dos veces</strong> la distancia:</p>
+  $$d = \frac{v\,t}{2}$$
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Gritas frente a un cerro y escuchas el eco 0.8 s después. ¿A qué distancia está el cerro?</p>
+      $$d = \frac{340\cdot 0.8}{2} = \frac{272}{2} = 136 \text{ m}$$
+    </div>
+  </div>
+  <p>Los murciélagos, los delfines y el <strong>sonar</strong> de los barcos usan el eco para “ver” obstáculos y medir profundidades.</p>
+</section>
+
+<section>
+  <h2>Cualidades del sonido</h2>
+  <table class="leyes">
+    <thead><tr><th>Cualidad</th><th>Depende de</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tono</strong> (grave o agudo)</td><td>La <strong>frecuencia</strong>: más frecuencia, más agudo</td><td>Un bajo suena grave; un silbato, agudo</td></tr>
+      <tr><td><strong>Intensidad</strong> (fuerte o suave)</td><td>La <strong>amplitud</strong>: más amplitud, más fuerte</td><td>Subir el volumen de una bocina</td></tr>
+      <tr><td><strong>Timbre</strong></td><td>La forma de la onda (los sonidos que acompañan a la nota principal)</td><td>Una guitarra y un piano tocando la misma nota se distinguen</td></tr>
+    </tbody>
+  </table>
+  <h3>Lo que podemos oír</h3>
+  <p>El oído humano percibe, aproximadamente, frecuencias entre <strong>20 Hz y 20 000 Hz</strong>. Por debajo están los <strong>infrasonidos</strong> (los usan los elefantes para comunicarse) y por arriba los <strong>ultrasonidos</strong> (los usan los murciélagos y los aparatos de ultrasonido médico).</p>
+  <div class="nota">
+    <span class="etq">Cuida tus oídos</span>
+    <p>La intensidad se mide en decibeles (dB). Una conversación normal anda por los 60 dB. Exponerse por horas a sonidos de más de 85 dB (audífonos a todo volumen, conciertos, maquinaria) puede dañar el oído de forma permanente.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Eco: $d = v\,t$</td><td class="bien">$d = \dfrac{v\,t}{2}$</td><td>El sonido va y regresa.</td></tr>
+        <tr><td class="mal">El sonido viaja más rápido en el aire</td><td class="bien">Más rápido en sólidos</td><td>Las partículas están más unidas.</td></tr>
+        <tr><td class="mal">Sonido fuerte = agudo</td><td class="bien">Fuerte: amplitud · Agudo: frecuencia</td><td>Son cualidades independientes.</td></tr>
+        <tr><td class="mal">En el espacio se oyen las explosiones</td><td class="bien">No hay sonido en el vacío</td><td>No hay medio que vibre.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Onda mecánica longitudinal</div><div>Aire ≈ 340 m/s</div><div>Agua ≈ 1500 · acero ≈ 5000 m/s</div>
+      <div>$d = vt$</div><div>Eco: $d = \dfrac{vt}{2}$</div><div>3 s de trueno ≈ 1 km</div>
+      <div>Tono ↔ frecuencia</div><div>Intensidad ↔ amplitud</div><div>Audible: 20 a 20 000 Hz</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa las velocidades de la tabla de la sección 02. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Distancias</h3>
+    <ol class="largo">
+      <li>Escuchas un trueno 4 s después de ver el relámpago. ¿A qué distancia cayó el rayo?</li>
+      <li>Un grito regresa como eco 1.5 s después. ¿A qué distancia está la pared que lo reflejó?</li>
+      <li>El sonar de un barco envía un pulso y recibe el eco del fondo 2 s después. ¿Qué profundidad tiene el mar ahí?</li>
+      <li>Alguien golpea un riel de acero a 1 km de ti. ¿Cuánto tarda en llegarte el sonido por el riel y cuánto por el aire?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Cualidades y ondas</h3>
+    <ol class="largo">
+      <li>La nota La que usan los músicos para afinar tiene 440 Hz. ¿Cuál es su longitud de onda en el aire? ($\lambda = \tfrac{v}{f}$)</li>
+      <li>¿Cuáles de estos sonidos puede oír una persona? 10 Hz, 440 Hz, 15 000 Hz, 40 000 Hz. ¿Cómo se llaman los que no?</li>
+      <li>Una guitarra y un violín tocan la misma nota con el mismo volumen, pero se distinguen. ¿Qué cualidad del sonido es distinta?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>1360 m</span></li>
+    <li><span>255 m</span></li>
+    <li><span>1500 m</span></li>
+    <li><span>Acero 0.2 s; aire ≈ 2.94 s</span></li>
+    <li><span>≈ 0.77 m</span></li>
+    <li><span>440 y 15 000 Hz; 10 Hz es infrasonido y 40 000 Hz, ultrasonido</span></li>
+    <li><span>El timbre</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$d = 340\cdot 4 = 1360$ m.</div></div>
+    <div class="sol"><span>2</span><div>$d = \dfrac{340\cdot 1.5}{2} = \dfrac{510}{2} = 255$ m.</div></div>
+    <div class="sol"><span>3</span><div>En agua: $d = \dfrac{1500\cdot 2}{2} = 1500$ m.</div></div>
+    <div class="sol"><span>4</span><div>Por el acero: $t = \dfrac{1000}{5000} = 0.2$ s. Por el aire: $t = \dfrac{1000}{340} \approx 2.94$ s. Primero lo oyes por el riel.</div></div>
+    <div class="sol"><span>5</span><div>$\lambda = \dfrac{340}{440} \approx 0.77$ m.</div></div>
+    <div class="sol"><span>6</span><div>El rango audible es de 20 a 20 000 Hz. 10 Hz está por debajo (infrasonido) y 40 000 Hz por arriba (ultrasonido).</div></div>
+  </div>
+</section>

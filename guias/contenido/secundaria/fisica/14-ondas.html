@@ -1,0 +1,176 @@
+<!-- guia
+titulo: Ondas y sus características
+nivel: Secundaria
+materia: Física
+rama: Ondas, sonido y luz
+numero: 14
+entrada: El sonido, la luz, las olas del mar y la señal de tu celular son ondas. Todas transportan energía de un lugar a otro sin llevarse la materia consigo. En esta guía vas a aprender a describirlas con unos cuantos números.
+objetivo: Explicar qué es una onda y qué transporta.
+objetivo: Distinguir ondas mecánicas de electromagnéticas.
+objetivo: Distinguir ondas transversales de longitudinales.
+objetivo: Identificar amplitud, longitud de onda, frecuencia y periodo.
+objetivo: Usar $v = \lambda f$ y $T = \tfrac{1}{f}$.
+objetivo: Reconocer reflexión, refracción, difracción e interferencia.
+autoeval: Explicar qué transporta una onda. | 01
+autoeval: Clasificar ondas en mecánicas o electromagnéticas y en transversales o longitudinales. | 01
+autoeval: Señalar amplitud y longitud de onda en un dibujo. | 02
+autoeval: Calcular frecuencia, periodo, longitud de onda y velocidad. | 02
+autoeval: Reconocer fenómenos ondulatorios en la vida diaria. | 03
+-->
+<section>
+  <h2>Qué es una onda</h2>
+  <p>Si tiras una piedra a un estanque, las ondas llegan a la orilla, pero una hoja que flota solo sube y baja: el agua no viaja hasta la orilla. Una <strong>onda</strong> es una perturbación que viaja y <strong>transporta energía sin transportar materia</strong>.</p>
+  <table class="leyes">
+    <thead><tr><th>Clasificación</th><th>Tipo</th><th>Ejemplos</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="2">¿Necesita un medio?</td><td><strong>Mecánica:</strong> sí (sólido, líquido o gas)</td><td>Sonido, olas, ondas en una cuerda, sismos</td></tr>
+      <tr><td><strong>Electromagnética:</strong> no, viaja por el vacío</td><td>Luz, ondas de radio, microondas, rayos X</td></tr>
+      <tr><td rowspan="2">¿Cómo vibra el medio?</td><td><strong>Transversal:</strong> perpendicular a la dirección de avance</td><td>Una cuerda de guitarra, la “ola” en un estadio</td></tr>
+      <tr><td><strong>Longitudinal:</strong> en la misma dirección de avance</td><td>El sonido en el aire, un resorte empujado</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Características de una onda</h2>
+  <figure class="figura">
+<svg viewBox="0 0 440 148" width="120mm">
+  <line x1="15" y1="80" x2="430" y2="80" stroke="#e4d2b4" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <polyline points="20.0,80.0 22.0,76.9 24.0,73.7 26.0,70.7 28.0,67.6 30.0,64.7 32.0,61.8 34.0,59.1 36.0,56.5 38.0,54.0 40.0,51.7 42.0,49.6 44.0,47.6 46.0,45.9 48.0,44.4 50.0,43.0 52.0,42.0 54.0,41.1 56.0,40.5 58.0,40.1 60.0,40.0 62.0,40.1 64.0,40.5 66.0,41.1 68.0,42.0 70.0,43.0 72.0,44.4 74.0,45.9 76.0,47.6 78.0,49.6 80.0,51.7 82.0,54.0 84.0,56.5 86.0,59.1 88.0,61.8 90.0,64.7 92.0,67.6 94.0,70.7 96.0,73.7 98.0,76.9 100.0,80.0 102.0,83.1 104.0,86.3 106.0,89.3 108.0,92.4 110.0,95.3 112.0,98.2 114.0,100.9 116.0,103.5 118.0,106.0 120.0,108.3 122.0,110.4 124.0,112.4 126.0,114.1 128.0,115.6 130.0,117.0 132.0,118.0 134.0,118.9 136.0,119.5 138.0,119.9 140.0,120.0 142.0,119.9 144.0,119.5 146.0,118.9 148.0,118.0 150.0,117.0 152.0,115.6 154.0,114.1 156.0,112.4 158.0,110.4 160.0,108.3 162.0,106.0 164.0,103.5 166.0,100.9 168.0,98.2 170.0,95.3 172.0,92.4 174.0,89.3 176.0,86.3 178.0,83.1 180.0,80.0 182.0,76.9 184.0,73.7 186.0,70.7 188.0,67.6 190.0,64.7 192.0,61.8 194.0,59.1 196.0,56.5 198.0,54.0 200.0,51.7 202.0,49.6 204.0,47.6 206.0,45.9 208.0,44.4 210.0,43.0 212.0,42.0 214.0,41.1 216.0,40.5 218.0,40.1 220.0,40.0 222.0,40.1 224.0,40.5 226.0,41.1 228.0,42.0 230.0,43.0 232.0,44.4 234.0,45.9 236.0,47.6 238.0,49.6 240.0,51.7 242.0,54.0 244.0,56.5 246.0,59.1 248.0,61.8 250.0,64.7 252.0,67.6 254.0,70.7 256.0,73.7 258.0,76.9 260.0,80.0 262.0,83.1 264.0,86.3 266.0,89.3 268.0,92.4 270.0,95.3 272.0,98.2 274.0,100.9 276.0,103.5 278.0,106.0 280.0,108.3 282.0,110.4 284.0,112.4 286.0,114.1 288.0,115.6 290.0,117.0 292.0,118.0 294.0,118.9 296.0,119.5 298.0,119.9 300.0,120.0 302.0,119.9 304.0,119.5 306.0,118.9 308.0,118.0 310.0,117.0 312.0,115.6 314.0,114.1 316.0,112.4 318.0,110.4 320.0,108.3 322.0,106.0 324.0,103.5 326.0,100.9 328.0,98.2 330.0,95.3 332.0,92.4 334.0,89.3 336.0,86.3 338.0,83.1 340.0,80.0 342.0,76.9 344.0,73.7 346.0,70.7 348.0,67.6 350.0,64.7 352.0,61.8 354.0,59.1 356.0,56.5 358.0,54.0 360.0,51.7 362.0,49.6 364.0,47.6 366.0,45.9 368.0,44.4 370.0,43.0 372.0,42.0 374.0,41.1 376.0,40.5 378.0,40.1 380.0,40.0 382.0,40.1 384.0,40.5 386.0,41.1 388.0,42.0 390.0,43.0 392.0,44.4 394.0,45.9 396.0,47.6 398.0,49.6 400.0,51.7 402.0,54.0 404.0,56.5 406.0,59.1 408.0,61.8 410.0,64.7 412.0,67.6 414.0,70.7 416.0,73.7 418.0,76.9 420.0,80.0" fill="none" stroke="#4b5d6b" stroke-width="2.4"/>
+  <g stroke="#a8492a" stroke-width="1.5" fill="#a8492a">
+    <line x1="60" y1="28" x2="220" y2="28"/>
+    <line x1="60" y1="22" x2="60" y2="40"/><line x1="220" y1="22" x2="220" y2="40"/>
+  </g>
+  <text x="140.0" y="20" font-family="Nunito" font-size="13" font-weight="800" fill="#a8492a" text-anchor="middle">λ (longitud de onda)</text>
+  <g stroke="#c08a2e" stroke-width="1.5" fill="#c08a2e">
+    <line x1="300" y1="80" x2="300" y2="120"/>
+    <path d="M300 120 l-4 -8 h8 z"/><path d="M300 80 l-4 8 h8 z"/>
+  </g>
+  <text x="308" y="108" font-family="Nunito" font-size="13" font-weight="800" fill="#c08a2e">A</text>
+  <text x="44" y="38" font-family="Nunito" font-size="11" fill="#5f5448" text-anchor="end">cresta</text>
+  <text x="140" y="138" font-family="Nunito" font-size="11" fill="#5f5448" text-anchor="middle">valle</text>
+  <text x="425" y="96" font-family="Nunito" font-size="10" fill="#5f5448" text-anchor="end">equilibrio</text>
+</svg>
+    <figcaption>Una onda transversal. La amplitud se mide desde la posición de equilibrio.</figcaption>
+  </figure>
+  <table class="leyes">
+    <thead><tr><th>Característica</th><th>Qué mide</th><th>Unidad</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Amplitud</strong> ($A$)</td><td>La altura máxima desde el equilibrio. Mayor amplitud, más energía.</td><td>metros</td></tr>
+      <tr><td><strong>Longitud de onda</strong> ($\lambda$)</td><td>La distancia entre dos crestas (o dos valles) seguidas.</td><td>metros</td></tr>
+      <tr><td><strong>Frecuencia</strong> ($f$)</td><td>Cuántas ondas completas pasan por un punto cada segundo.</td><td>hertz (Hz) = 1/s</td></tr>
+      <tr><td><strong>Periodo</strong> ($T$)</td><td>Cuánto tarda en pasar una onda completa.</td><td>segundos</td></tr>
+    </tbody>
+  </table>
+  <div class="definicion">
+    <span class="etq">Relaciones básicas</span>
+    $$T = \frac{1}{f} \qquad\qquad v = \lambda\,f$$
+    <p>En cada periodo la onda avanza una longitud de onda; por eso su velocidad es longitud de onda por frecuencia.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Las olas de un lago tienen 4 m de longitud de onda y llegan 2 cada 4 segundos a la orilla. ¿Cuál es su frecuencia, su periodo y su velocidad?</p>
+      $$f = \frac{2}{4 \text{ s}} = 0.5 \text{ Hz} \qquad T = \frac{1}{0.5} = 2 \text{ s} \qquad v = 4\cdot 0.5 = 2 \text{ m/s}$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una estación de radio FM transmite a 100 MHz. Las ondas de radio viajan a la velocidad de la luz, $3\times 10^{8}$ m/s. ¿Cuál es su longitud de onda?</p>
+      $$\lambda = \frac{v}{f} = \frac{3\times 10^{8}}{100\times 10^{6}} = 3 \text{ m}$$
+      <p class="paso">“Mega” (M) significa millón: $100 \text{ MHz} = 100\times 10^{6}$ Hz.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Fenómenos ondulatorios</h2>
+  <table class="leyes">
+    <thead><tr><th>Fenómeno</th><th>Qué pasa</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Reflexión</strong></td><td>La onda rebota al chocar con un obstáculo.</td><td>El eco, tu imagen en un espejo</td></tr>
+      <tr><td><strong>Refracción</strong></td><td>La onda cambia de dirección al pasar de un medio a otro, porque cambia su velocidad.</td><td>Una cuchara que se ve “quebrada” en un vaso con agua</td></tr>
+      <tr><td><strong>Difracción</strong></td><td>La onda rodea obstáculos o se abre al pasar por una rendija.</td><td>Oír a alguien que habla detrás de una pared</td></tr>
+      <tr><td><strong>Interferencia</strong></td><td>Dos ondas se juntan y se refuerzan o se cancelan.</td><td>Los audífonos con cancelación de ruido</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">La onda lleva el agua a la orilla</td><td class="bien">Lleva energía, no materia</td><td>Cada parte del medio solo oscila en su lugar.</td></tr>
+        <tr><td class="mal">Amplitud = altura de cresta a valle</td><td class="bien">Del equilibrio a la cresta</td><td>De cresta a valle son dos amplitudes.</td></tr>
+        <tr><td class="mal">$T = f$</td><td class="bien">$T = \dfrac{1}{f}$</td><td>Mientras más ondas por segundo, menos tarda cada una.</td></tr>
+        <tr><td class="mal">El sonido viaja en el vacío</td><td class="bien">Necesita un medio</td><td>Es una onda mecánica.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Onda: energía sin materia</div><div>Mecánica: necesita medio</div><div>Electromagnética: viaja en vacío</div>
+      <div>Transversal: vibra ⟂ al avance</div><div>Longitudinal: vibra ∥ al avance</div><div>$A$: equilibrio a cresta</div>
+      <div>$\lambda$: cresta a cresta</div><div>$T = \dfrac{1}{f}$</div><div>$v = \lambda f$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Cuida los prefijos: kilo (k) = $10^{3}$ y mega (M) = $10^{6}$. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Frecuencia y periodo</h3>
+    <ol>
+      <li>$f = 5$ Hz. ¿$T$?</li><li>$T = 0.04$ s. ¿$f$?</li><li>Por un punto pasan 10 crestas en 2 s. ¿$f$?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Velocidad y longitud de onda</h3>
+    <ol class="largo">
+      <li>Una onda en una cuerda tiene $\lambda = 0.5$ m y $f = 8$ Hz. ¿A qué velocidad viaja?</li>
+      <li>El sonido viaja en el aire a unos 340 m/s. ¿Cuál es la longitud de onda de un sonido de 680 Hz?</li>
+      <li>Una estación de radio AM transmite a 1000 kHz. ¿Cuál es la longitud de onda de su señal? ($v = 3\times 10^{8}$ m/s)</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Clasifica</h3>
+    <ol class="largo">
+      <li>Di si es transversal o longitudinal: a) una cuerda de guitarra, b) el sonido en el aire, c) la “ola” en un estadio, d) un resorte que empujas y jalas a lo largo.</li>
+      <li>¿Cuáles de estas ondas pueden viajar por el espacio vacío? Sonido, luz, ondas de radio, olas del mar, microondas.</li>
+      <li>¿Qué fenómeno ondulatorio explica cada caso? a) El eco en un cañón. b) Un popote que parece doblado en un vaso con agua.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>0.2 s</span></li>
+    <li><span>25 Hz</span></li>
+    <li><span>5 Hz</span></li>
+    <li><span>4 m/s</span></li>
+    <li><span>0.5 m</span></li>
+    <li><span>300 m</span></li>
+    <li><span>a) transversal, b) longitudinal, c) transversal, d) longitudinal</span></li>
+    <li><span>Luz, radio y microondas</span></li>
+    <li><span>a) reflexión, b) refracción</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$T = \dfrac{1}{5} = 0.2$ s.</div></div>
+    <div class="sol"><span>2</span><div>$f = \dfrac{1}{0.04} = 25$ Hz.</div></div>
+    <div class="sol"><span>3</span><div>$f = \dfrac{10}{2} = 5$ Hz.</div></div>
+    <div class="sol"><span>5</span><div>$\lambda = \dfrac{v}{f} = \dfrac{340}{680} = 0.5$ m.</div></div>
+    <div class="sol"><span>6</span><div>$1000 \text{ kHz} = 1000\times 10^{3} = 10^{6}$ Hz. $\lambda = \dfrac{3\times 10^{8}}{10^{6}} = 300$ m.</div></div>
+    <div class="sol"><span>8</span><div>Son electromagnéticas. El sonido y las olas son mecánicas: necesitan aire o agua.</div></div>
+  </div>
+</section>

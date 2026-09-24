@@ -421,6 +421,94 @@ def _():
         ('ej5', 3 * 900 * 50, 135000), ('ej6', r(10000 / 4186, 2), 2.39),
     ]
 
+@guia('F11 Carga eléctrica')
+def _():
+    k, e = 9e9, 1.6e-19
+    return [
+        ('coulomb-e', 1 / e, 6.25e18), ('ejemplo1', k * 1e-6 * 2e-6 / 0.3**2, 0.2),
+        ('ej1', -2 * e, -3.2e-19), ('ej3', 1 / e, 6.25e18), ('ej5', k * 3e-6 * 4e-6 / 0.2**2, 2.7), ('ej6', 36 / 3**2, 4), ('ej7', 2 * 5, 10),
+    ]
+
+@guia('F12 Circuitos eléctricos')
+def _():
+    par = lambda a, b: 1 / (1 / a + 1 / b)
+    return [
+        ('ejemplo1', 127 / 254, 0.5), ('ejemplo2', (4 + 8, 12 / 12, 1 * 4, 1 * 8), (12, 1, 4, 8)),
+        ('ejemplo3', (12 / 4, 12 / 8, 12 / 4 + 12 / 8, round(12 / 4.5, 2), round(par(4, 8), 2)), (3, 1.5, 4.5, 2.67, 2.67)),
+        ('ejemplo4', (1.2 * 0.25 * 30, round(9 * 1.20, 2)), (9, 10.80)),
+        ('ej1', 12 / 4, 3), ('ej2', 0.5 * 254, 127), ('ej3', 9 / 0.03, 300), ('ej4', (12 / 24, 0.5 * 6, 0.5 * 18), (0.5, 3, 9)),
+        ('ej5', (12 / 6, 12 / 3, 12 / 6 + 12 / 3, par(6, 3)), (2, 4, 6, 2)), ('ej7', round(1000 / 127, 2), 7.87),
+        ('ej8', (round(0.010 * 5 * 30, 6), round(1.5 * 1.20, 2)), (1.5, 1.80)),
+    ]
+
+@guia('F13 Magnetismo')
+def _():
+    # Figura: los picos de las líneas de campo (Bézier) deben coincidir con las flechas dibujadas.
+    pico = lambda y0, yc: 0.25 * y0 + 0.75 * yc
+    return [
+        ('ej2', (3, 3 * 2), (3, 6)),
+        ('figura-arriba', [pico(80, 45), pico(78, 15), pico(76, -12)], [53.75, 30.75, 10]),
+        ('figura-abajo', [pico(90, 125), pico(92, 155), pico(94, 182)], [116.25, 139.25, 160]),
+    ]
+
+@guia('F14 Ondas')
+def _():
+    return [
+        ('ejemplo1', (2 / 4, 1 / 0.5, 4 * 0.5), (0.5, 2, 2)), ('ejemplo2', 3e8 / 100e6, 3),
+        ('figura', (60 - 20, 220 - 60), (160 / 4, 160)),
+        ('ej1', 1 / 5, 0.2), ('ej2', 1 / 0.04, 25), ('ej3', 10 / 2, 5), ('ej4', 0.5 * 8, 4), ('ej5', 340 / 680, 0.5), ('ej6', 3e8 / 1e6, 300),
+    ]
+
+@guia('F15 El sonido')
+def _():
+    return [
+        ('ejemplo1', 340 * 6, 2040), ('regla', 340 * 3, 1020), ('ejemplo2', 340 * 0.8 / 2, 136),
+        ('ej1', 340 * 4, 1360), ('ej2', 340 * 1.5 / 2, 255), ('ej3', 1500 * 2 / 2, 1500), ('ej4', (1000 / 5000, round(1000 / 340, 2)), (0.2, 2.94)),
+        ('ej5', round(340 / 440, 2), 0.77), ('ej6', [20 <= f <= 20000 for f in (10, 440, 15000, 40000)], [False, True, True, False]),
+    ]
+
+@guia('F16 La luz y los colores')
+def _():
+    c = 3e8
+    return [
+        ('año-luz (c exacta)', round(299792458 * 365.25 * 24 * 3600 / 1e15, 2), 9.46), ('ejemplo1', c / 1.5, 2e8),
+        ('ej1', 3.84e8 / c, 1.28), ('ej2', round(c / 1.33 / 1e8, 2), 2.26), ('ej3', c / 2.5e8, 1.2), ('ej4', 35, 35),
+    ]
+
+@guia('F17 Modelo cinético')
+def _():
+    moleculas_vaso = 250 / 18.015 * 6.022e23
+    return [
+        ('vaso>estrellas(1e24, cota alta)', moleculas_vaso > 1e24, True),
+        ('ejemplo1', 100 * 60 / 30, 200), ('ejemplo2', (27 + 273, 87 + 273, 2 * 360 / 300), (300, 360, 2.4)), ('ejemplo2-mal', round(2 * 87 / 27, 1), 6.4),
+        ('ej4', 100 * 4 / 1, 400), ('ej5', 200 * 3 / 150, 4), ('ej6', 1.5 * 360 / 300, 1.8), ('ej7', (300 * 2 / 3, 300 * 2 / 3 - 273), (200, -73)),
+    ]
+
+@guia('F18 Estados de agregación')
+def _():
+    Lf, Lv = 334000, 2260000
+    # Punto de ebullición en Juárez (≈1140 m): presión barométrica y ecuación de Antoine para el agua.
+    P = 101.325 * (1 - 2.25577e-5 * 1140) ** 5.25588  # kPa
+    Teb = 1730.63 / (8.07131 - math.log10(P * 7.50062)) - 233.426
+    return [
+        ('ejemplo1', (2 * Lf, 2 * Lv, round(Lv / Lf, 1)), (668000, 4520000, 6.8)), ('ebullicion-juarez', round(Teb), 96),
+        ('ej2', 0.5 * Lf, 167000), ('ej3', 0.5 * Lv, 1130000), ('ej4', (4186 * 80, 4186 * 80 + Lv), (334880, 2594880)),
+    ]
+
+@guia('F19 Sistema Solar y universo')
+def _():
+    UA, c, al_km = 1.5e8, 3e8, 9.46e12
+    UA_por_al = 9.4607e12 / 1.495978707e8  # con valores exactos
+    return [
+        ('ejemplo1', (5.2 * UA, 5.2 * UA * 1000 / c, round(5.2 * UA * 1000 / c / 60)), (7.8e8, 2600, 43)),
+        ('escala-proxima', 4.24 * UA_por_al / 1000 > 260, True), ('luz-sol-tierra', round(1.495978707e11 / 299792458 / 60, 1), 8.3),
+        ('ej4', 30.1 * UA, 4.515e9), ('ej5', (30.1 * UA * 1000 / c, round(30.1 * UA * 1000 / c / 3600, 1)), (15050, 4.2)),
+        ('ej6', round(4.24 * al_km / 1e13, 2), 4.01),
+        ('orden', sorted(['Saturno', 'Tierra', 'Neptuno', 'Mercurio', 'Júpiter', 'Marte', 'Urano', 'Venus'],
+                         key=['Mercurio', 'Venus', 'Tierra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Neptuno'].index),
+         ['Mercurio', 'Venus', 'Tierra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Neptuno']),
+    ]
+
 if __name__ == '__main__':
     fallas = 0
     for nombre, fn in GUIAS.items():

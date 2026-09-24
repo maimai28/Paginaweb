@@ -1,0 +1,120 @@
+<!-- guia
+titulo: Título del tema
+nivel: Secundaria
+materia: Matemáticas
+rama: Nombre de la rama
+numero: 00
+entrada: Uno o dos enunciados que expliquen al alumno de qué trata la guía y por qué le sirve. Puede llevar fórmulas como $a^2 + b^2 = c^2$.
+objetivo: Primer objetivo, empezando con un verbo (calcular, explicar, distinguir…).
+objetivo: Segundo objetivo.
+objetivo: Tercer objetivo (entre 4 y 6 objetivos funciona bien).
+autoeval: Lo que el alumno debe poder hacer. | 01
+autoeval: Otra habilidad, que se repasa en dos secciones. | 01 y 02
+-->
+<!--
+  PLANTILLA DE GUÍA · El Lab del Desierto
+  ----------------------------------------
+  - El bloque de arriba lo usa el generador para la portada, los objetivos y la autoevaluación.
+    En "autoeval" el número después de | es la sección que el alumno debe repasar.
+  - Cada <section> con un <h2> se numera sola (01, 02, …). No escribas el número.
+  - Fórmulas: $...$ dentro del texto y $$...$$ en su propia línea (sintaxis LaTeX/KaTeX).
+    Dentro de tablas y listas usa \dfrac para que las fracciones se lean bien.
+    Para < y > dentro de fórmulas usa \lt y \gt.
+  - Signo de pesos en el texto: escribe \$ (nunca dentro de una fórmula).
+  - La última sección debe ser la de respuestas: el generador le agrega la
+    autoevaluación y el bloque de contacto.
+  - Construir: node construir.js plantilla/EJEMPLO.html
+-->
+
+<section>
+  <h2>Primera sección</h2>
+  <p>Texto normal. Usa <strong>negritas</strong> para los términos nuevos y <em>cursivas</em> para énfasis.</p>
+
+  <div class="definicion">
+    <span class="etq">Definición</span>
+    <p>Un concepto formal, con su fórmula:</p>
+    $$v = \frac{d}{t}$$
+  </div>
+
+  <div class="nota">
+    <span class="etq">Nota o dato curioso</span>
+    <p>Recuadro color arena para aclaraciones, contexto o conexiones con la vida diaria.</p>
+  </div>
+
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Enunciado del ejemplo.</p>
+      <p class="paso">Explicación del paso, en gris.</p>
+      $$\text{operaciones} = \text{resultado}$$
+    </div>
+  </div>
+
+  <table class="leyes">
+    <thead><tr><th>Columna 1</th><th>Columna 2</th><th>Columna 3</th></tr></thead>
+    <tbody>
+      <tr><td>Dato</td><td>$x^2$</td><td>Ejemplo</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Leyenda o aclaración pequeña debajo de una tabla.</p>
+
+  <div class="figura-lado">
+    <div><p>Texto a la izquierda de una figura.</p></div>
+    <figure class="figura">
+      <svg viewBox="0 0 100 60" width="40mm"><rect x="10" y="10" width="80" height="40" fill="#efe3cf" stroke="#2b241e"/></svg>
+      <figcaption>Pie de figura. Las gráficas se pueden generar con herramientas/graficas.py.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$2 + 3\cdot 4 = 20$</td><td class="bien">$14$</td><td>Primero la multiplicación.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Fórmula 1</div><div>Fórmula 2</div><div>Fórmula 3</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Instrucciones generales para el alumno.</p>
+  <div class="bloque-ej">
+    <h3>A. Ejercicios cortos (tres columnas)</h3>
+    <ol>
+      <li>$3 + 4$</li><li>$5\cdot 6$</li><li>$10 - 7$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Problemas (una columna, con espacio para resolver)</h3>
+    <ol class="largo">
+      <li>Enunciado de un problema.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$7$</span></li>
+    <li><span>$30$</span></li>
+    <li><span>$3$</span></li>
+    <li><span>Respuesta del problema</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>4</span><div>Solución explicada del problema 4.</div></div>
+  </div>
+</section>

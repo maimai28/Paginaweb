@@ -1,0 +1,206 @@
+<!-- guia
+titulo: Circuitos eléctricos simples
+nivel: Secundaria
+materia: Física
+rama: Electricidad y magnetismo
+numero: 12
+entrada: Cada vez que prendes un foco, cierras un circuito. En esta guía vas a entender qué son la corriente, el voltaje y la resistencia, cómo se relacionan con la ley de Ohm y cómo cambia todo cuando conectas aparatos en serie o en paralelo.
+objetivo: Definir corriente, voltaje y resistencia con sus unidades.
+objetivo: Usar la ley de Ohm.
+objetivo: Analizar circuitos en serie.
+objetivo: Analizar circuitos en paralelo.
+objetivo: Calcular la potencia y el consumo de un aparato.
+autoeval: Explicar corriente, voltaje y resistencia con sus unidades. | 01
+autoeval: Usar $V = IR$ para despejar cualquier variable. | 02
+autoeval: Calcular resistencia equivalente, corriente y voltajes en serie. | 03
+autoeval: Calcular resistencia equivalente y corrientes en paralelo. | 03
+autoeval: Calcular potencia y consumo en kWh. | 04
+-->
+<section>
+  <h2>Corriente, voltaje y resistencia</h2>
+  <p>Un <strong>circuito</strong> es un camino cerrado por el que circulan cargas eléctricas. Tiene una fuente de energía (pila, contacto), cables y uno o más aparatos que aprovechan esa energía.</p>
+  <table class="leyes">
+    <thead><tr><th>Cantidad</th><th>Qué es</th><th>Unidad</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Corriente</strong> ($I$)</td><td>Cuánta carga pasa por un punto cada segundo</td><td>Ampere (A)</td></tr>
+      <tr><td><strong>Voltaje</strong> ($V$)</td><td>El “empuje” que da la fuente a las cargas (diferencia de potencial)</td><td>Volt (V)</td></tr>
+      <tr><td><strong>Resistencia</strong> ($R$)</td><td>Qué tanto se opone un material al paso de la corriente</td><td>Ohm (Ω)</td></tr>
+    </tbody>
+  </table>
+  <div class="nota">
+    <span class="etq">Una comparación con agua</span>
+    <p>Piensa en una manguera: el voltaje es la presión del agua, la corriente es cuánta agua pasa por segundo y la resistencia es qué tan angosta está la manguera. Con más presión pasa más agua; con una manguera más angosta, pasa menos.</p>
+  </div>
+  <p>En México, los contactos de las casas dan unos <strong>127 V</strong>. Una pila AA da 1.5 V.</p>
+</section>
+
+<section>
+  <h2>Ley de Ohm</h2>
+  <div class="definicion">
+    <span class="etq">Ley de Ohm</span>
+    <p>En muchos materiales, la corriente es proporcional al voltaje:</p>
+    $$V = I\,R \qquad\qquad I = \frac{V}{R} \qquad\qquad R = \frac{V}{I}$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un aparato con resistencia de 254 Ω se conecta a 127 V. ¿Qué corriente pasa por él?</p>
+      $$I = \frac{V}{R} = \frac{127}{254} = 0.5 \text{ A}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Serie y paralelo</h2>
+  <div class="dos-figuras">
+    <figure class="figura">
+      <svg viewBox="0 0 200 125" width="52mm">
+        <g stroke="#2b241e" stroke-width="2" fill="none" stroke-linejoin="round">
+          <path d="M30 55 V20 H60"/><path d="M100 20 H110"/><path d="M150 20 H170 V100 H30 V65"/>
+          <path d="M60 20 l5 -7 l10 14 l10 -14 l10 14 l5 -7" stroke="#a8492a"/>
+          <path d="M110 20 l5 -7 l10 14 l10 -14 l10 14 l5 -7" stroke="#a8492a"/>
+          <line x1="16" y1="55" x2="44" y2="55" stroke-width="2.5"/><line x1="23" y1="65" x2="37" y2="65" stroke-width="4"/>
+        </g>
+        <g font-family="Nunito" font-size="11" fill="#2b241e">
+          <text x="72" y="44">R<tspan dy="3" font-size="8">1</tspan></text><text x="122" y="44">R<tspan dy="3" font-size="8">2</tspan></text>
+          <text x="46" y="64">V</text><text x="82" y="120" fill="#5f5448">En serie</text>
+        </g>
+      </svg>
+    </figure>
+    <figure class="figura">
+      <svg viewBox="0 0 200 125" width="52mm">
+        <g stroke="#2b241e" stroke-width="2" fill="none" stroke-linejoin="round">
+          <path d="M30 55 V20 H160 V40"/><path d="M100 20 V40"/><path d="M100 80 V100"/><path d="M160 80 V100 H30 V65"/>
+          <path d="M100 40 l-7 5 l14 10 l-14 10 l14 10 l-7 5" stroke="#a8492a"/>
+          <path d="M160 40 l-7 5 l14 10 l-14 10 l14 10 l-7 5" stroke="#a8492a"/>
+          <line x1="16" y1="55" x2="44" y2="55" stroke-width="2.5"/><line x1="23" y1="65" x2="37" y2="65" stroke-width="4"/>
+        </g>
+        <g font-family="Nunito" font-size="11" fill="#2b241e">
+          <text x="112" y="64">R<tspan dy="3" font-size="8">1</tspan></text><text x="172" y="64">R<tspan dy="3" font-size="8">2</tspan></text>
+          <text x="46" y="64">V</text><text x="72" y="120" fill="#5f5448">En paralelo</text>
+        </g>
+      </svg>
+    </figure>
+  </div>
+  <table class="leyes">
+    <thead><tr><th></th><th>En serie</th><th>En paralelo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Camino</strong></td><td>Uno solo: la corriente pasa por todos</td><td>Varios: la corriente se reparte</td></tr>
+      <tr><td><strong>Corriente</strong></td><td>La misma en todos</td><td>Se suma: $I = I_1 + I_2$</td></tr>
+      <tr><td><strong>Voltaje</strong></td><td>Se reparte: $V = V_1 + V_2$</td><td>El mismo en todos</td></tr>
+      <tr><td><strong>Resistencia equivalente</strong></td><td>$R_{\text{eq}} = R_1 + R_2$</td><td>$\dfrac{1}{R_{\text{eq}}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$</td></tr>
+      <tr><td><strong>Si un aparato se funde</strong></td><td>Se apagan todos</td><td>Los demás siguen funcionando</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Dos resistencias de 4 Ω y 8 Ω se conectan en serie a 12 V. Calcula la corriente y el voltaje en cada una.</p>
+      $$R_{\text{eq}} = 4 + 8 = 12\ \Omega \qquad I = \frac{12}{12} = 1 \text{ A} \qquad V_1 = 1(4) = 4 \text{ V},\ \ V_2 = 1(8) = 8 \text{ V}$$
+      <p class="paso">Comprueba: $4 + 8 = 12$ V, el voltaje de la fuente. ✔</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Las mismas resistencias de 4 Ω y 8 Ω se conectan en paralelo a 12 V. Calcula la corriente en cada una y la total.</p>
+      $$I_1 = \frac{12}{4} = 3 \text{ A} \qquad I_2 = \frac{12}{8} = 1.5 \text{ A} \qquad I = 4.5 \text{ A}$$
+      <p class="paso">La resistencia equivalente es $\dfrac{12}{4.5} \approx 2.67$ Ω: en paralelo es <em>menor</em> que la más pequeña. Por eso, mientras más aparatos conectas en paralelo, más corriente sale de la fuente.</p>
+    </div>
+  </div>
+  <p class="leyenda">Las instalaciones de las casas están en paralelo: todos los aparatos reciben 127 V y puedes apagar uno sin apagar los demás.</p>
+</section>
+
+<section>
+  <h2>Potencia y consumo</h2>
+  <p>La <strong>potencia</strong> de un aparato es la energía que usa cada segundo:</p>
+  $$P = V\,I \qquad (\text{watts, W})$$
+  <p>La compañía de luz cobra la energía en <strong>kilowatt-hora</strong> (kWh): la energía que usa un aparato de 1000 W funcionando una hora.</p>
+  $$E\,(\text{kWh}) = P\,(\text{kW})\times t\,(\text{h})$$
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un microondas de 1200 W se usa 15 minutos al día durante 30 días. ¿Cuántos kWh consume? Si el kWh costara \$1.20, ¿cuánto pagarías por él?</p>
+      $$E = 1.2 \text{ kW}\times 0.25 \text{ h}\times 30 = 9 \text{ kWh} \qquad\qquad 9\times 1.20 = 10.80$$
+      <p class="paso">Pagarías \$10.80 al mes por el microondas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$R_{\text{eq}}$ en paralelo $= R_1 + R_2$</td><td class="bien">$\dfrac{1}{R_{\text{eq}}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$</td><td>Sumar es para serie.</td></tr>
+        <tr><td class="mal">Dar $\dfrac{1}{R_{\text{eq}}}$ como resultado</td><td class="bien">Voltear al final</td><td>Si $\tfrac{1}{R_{\text{eq}}} = \tfrac{1}{2}$, entonces $R_{\text{eq}} = 2$ Ω.</td></tr>
+        <tr><td class="mal">La corriente “se gasta” en el foco</td><td class="bien">La corriente es la misma en serie</td><td>Lo que se transforma es la energía.</td></tr>
+        <tr><td class="mal">Usar minutos en kWh</td><td class="bien">Pasar a horas</td><td>15 min = 0.25 h.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$I$ en A · $V$ en V · $R$ en Ω</div><div>$V = IR$</div><div>$P = VI$</div>
+      <div>Serie: $R_{\text{eq}} = R_1 + R_2$</div><div>Serie: misma $I$</div><div>Serie: $V$ se reparte</div>
+      <div>Paralelo: $\dfrac{1}{R_{\text{eq}}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$</div><div>Paralelo: mismo $V$</div><div>kWh = kW × h</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Anota qué valores son de toda la fuente y cuáles de cada resistencia. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Ley de Ohm</h3>
+    <ol>
+      <li>$V = 12$ V, $R = 4$ Ω. ¿$I$?</li><li>$I = 0.5$ A, $R = 254$ Ω. ¿$V$?</li><li>$V = 9$ V, $I = 0.03$ A. ¿$R$?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Serie y paralelo</h3>
+    <ol class="largo">
+      <li>Una resistencia de 6 Ω y otra de 18 Ω se conectan en serie a una pila de 12 V. ¿Cuál es la corriente? ¿Qué voltaje hay en cada una?</li>
+      <li>Una resistencia de 6 Ω y otra de 3 Ω se conectan en paralelo a 12 V. ¿Cuál es la corriente en cada una, la total y la resistencia equivalente?</li>
+      <li>¿Por qué las casas se conectan en paralelo y no en serie?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Potencia y consumo</h3>
+    <ol class="largo">
+      <li>Una plancha de 1000 W se conecta a 127 V. ¿Qué corriente usa?</li>
+      <li>Un foco LED de 10 W está prendido 5 horas diarias durante 30 días. ¿Cuántos kWh consume? Si el kWh costara \$1.20, ¿cuánto cuesta tenerlo prendido ese mes?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>3 A</span></li>
+    <li><span>127 V</span></li>
+    <li><span>300 Ω</span></li>
+    <li><span>0.5 A; 3 V y 9 V</span></li>
+    <li><span>2 A, 4 A; 6 A; 2 Ω</span></li>
+    <li><span>Todos reciben 127 V y son independientes</span></li>
+    <li><span>≈ 7.87 A</span></li>
+    <li><span>1.5 kWh; \$1.80</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>$R = \dfrac{9}{0.03} = 300$ Ω.</div></div>
+    <div class="sol"><span>4</span><div>$R_{\text{eq}} = 6 + 18 = 24$ Ω. $I = \dfrac{12}{24} = 0.5$ A. $V_1 = 0.5(6) = 3$ V y $V_2 = 0.5(18) = 9$ V; suman 12. ✔</div></div>
+    <div class="sol"><span>5</span><div>Cada una recibe 12 V: $I_1 = \dfrac{12}{6} = 2$ A, $I_2 = \dfrac{12}{3} = 4$ A. Total: 6 A. $\dfrac{1}{R_{\text{eq}}} = \dfrac{1}{6} + \dfrac{1}{3} = \dfrac{1}{2}$, así que $R_{\text{eq}} = 2$ Ω. Comprueba: $\dfrac{12}{2} = 6$ A. ✔</div></div>
+    <div class="sol"><span>6</span><div>En paralelo cada aparato recibe el voltaje completo y funciona aunque otro esté apagado o fundido. En serie, se repartiría el voltaje y al fallar uno se apagarían todos.</div></div>
+    <div class="sol"><span>7</span><div>$I = \dfrac{P}{V} = \dfrac{1000}{127} \approx 7.87$ A.</div></div>
+    <div class="sol"><span>8</span><div>$0.010 \text{ kW}\times 5\times 30 = 1.5$ kWh. $1.5\times 1.20 = 1.80$, es decir, \$1.80.</div></div>
+  </div>
+</section>

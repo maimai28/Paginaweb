@@ -126,6 +126,10 @@ function numerar(cuerpo) {
 
 function formulas(html, errores) {
   const tex = (src, display) => {
+    if (src.includes('\u0000PESO')) {
+      errores.push(`Fórmula: ${src.replace(/\u0000PESO\u0000/g, '\\$')}\n    No escribas \\$ dentro de una fórmula; ponlo en el texto.`);
+      return '';
+    }
     try {
       return katex.renderToString(src, { displayMode: display, throwOnError: true, strict: 'error' });
     } catch (e) {
@@ -166,7 +170,8 @@ async function construir(navegador, archivo) {
 <body>${formulas(portada(meta) + cuerpo.replace(/<\/section>\s*$/, `${cierre(meta)}\n</section>`), errores)}</body></html>`;
   if (!/<\/section>\s*$/.test(cuerpo)) errores.push('El contenido debe terminar con </section> (la sección de respuestas).');
 
-  const relativo = path.relative(path.join(RAIZ, 'contenido'), archivo).replace(/\.html$/, '');
+  let relativo = path.relative(path.join(RAIZ, 'contenido'), archivo).replace(/\.html$/, '');
+  if (relativo.startsWith('..')) relativo = path.basename(relativo); // archivos fuera de contenido/
   const salida = path.join(RAIZ, 'pdf', relativo.split(path.sep).join('-') + '.pdf');
   const tmp = path.join(RAIZ, `.render-${process.pid}.html`);
   fs.writeFileSync(tmp, html);
@@ -214,7 +219,7 @@ async function construir(navegador, archivo) {
     : listarContenido(path.join(RAIZ, 'contenido'));
   const exe = process.env.CHROMIUM_PATH
     || ['/opt/pw-browsers'].filter(fs.existsSync).flatMap((d) => fs.readdirSync(d).map((s) => `${d}/${s}/chrome-linux/chrome`)).find(fs.existsSync);
-  const navegador = await chromium.launch(exe ? { executablePath: exe } : {});
+  const navegador = await chromium.launch(exe ? { executablePath: exe } : { channel: 'chrome' }); // sin ruta: usa Google Chrome instalado
   let fallas = 0;
   for (const archivo of archivos) {
     const r = await construir(navegador, archivo);

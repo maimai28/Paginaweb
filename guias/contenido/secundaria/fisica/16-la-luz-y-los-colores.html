@@ -1,0 +1,165 @@
+<!-- guia
+titulo: La luz y los colores
+nivel: Secundaria
+materia: Física
+rama: Ondas, sonido y luz
+numero: 16
+entrada: Los atardeceres del desierto se pintan de naranja y rojo, el cielo de mediodía es azul y un arcoíris aparece después de la lluvia. Todo eso se explica con cómo viaja la luz, cómo rebota, cómo se desvía y de qué está hecha la luz blanca.
+objetivo: Describir la luz como onda electromagnética.
+objetivo: Ubicar la luz visible en el espectro electromagnético.
+objetivo: Usar la ley de la reflexión.
+objetivo: Explicar la refracción y calcular con el índice de refracción.
+objetivo: Explicar el color de los objetos y la mezcla de colores.
+objetivo: Explicar por qué el cielo es azul y los atardeceres rojos.
+autoeval: Calcular tiempos y distancias con la velocidad de la luz. | 01
+autoeval: Ordenar las regiones del espectro electromagnético. | 01
+autoeval: Aplicar la ley de la reflexión. | 02
+autoeval: Calcular con el índice de refracción. | 02
+autoeval: Predecir el color con que se ve un objeto bajo cierta luz. | 03
+-->
+<section>
+  <h2>Qué es la luz</h2>
+  <p>La luz es una <strong>onda electromagnética</strong>: no necesita un medio y viaja incluso por el vacío. En el vacío avanza a la velocidad más alta posible:</p>
+  $$c \approx 3\times 10^{8} \text{ m/s} = 300\,000 \text{ km/s}$$
+  <p>Un <strong>año luz</strong> es la distancia que recorre la luz en un año, unos $9.46\times 10^{15}$ m. No es una unidad de tiempo, sino de distancia.</p>
+  <h3>El espectro electromagnético</h3>
+  <p>La luz que vemos es solo una pequeña parte de una familia de ondas que se distinguen por su longitud de onda. De mayor a menor longitud de onda:</p>
+  <table class="leyes">
+    <thead><tr><th>Región</th><th>Uso o ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Ondas de radio</td><td>Radio, televisión</td></tr>
+      <tr><td>Microondas</td><td>Horno de microondas, wifi</td></tr>
+      <tr><td>Infrarrojo</td><td>Control remoto, calor que sientes del Sol</td></tr>
+      <tr><td><strong>Luz visible</strong></td><td>De unos 700 nm (rojo) a 400 nm (violeta)</td></tr>
+      <tr><td>Ultravioleta</td><td>Broncea y quema la piel</td></tr>
+      <tr><td>Rayos X</td><td>Radiografías</td></tr>
+      <tr><td>Rayos gamma</td><td>Tratamientos contra el cáncer</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">1 nanómetro (nm) es una milmillonésima de metro: $10^{-9}$ m.</p>
+</section>
+
+<section>
+  <h2>Reflexión y refracción</h2>
+  <div class="figura-lado">
+    <div>
+      <div class="definicion">
+        <span class="etq">Ley de la reflexión</span>
+        <p>Cuando la luz rebota en una superficie, el ángulo con que llega (de incidencia) es igual al ángulo con que sale (de reflexión). Los dos se miden desde la <strong>normal</strong>, una línea perpendicular a la superficie.</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 120" width="54mm">
+        <line x1="10" y1="100" x2="190" y2="100" stroke="#2b241e" stroke-width="2"/>
+        <line x1="100" y1="100" x2="100" y2="12" stroke="#5f5448" stroke-dasharray="4 3"/>
+        <line x1="40" y1="30" x2="100" y2="100" stroke="#c08a2e" stroke-width="2.4"/>
+        <line x1="100" y1="100" x2="160" y2="30" stroke="#c08a2e" stroke-width="2.4"/>
+        <path d="M73.0 68.5 L63.1 63.8 L69.9 58.0 Z" fill="#c08a2e"/><path d="M133.0 61.5 L129.9 72.0 L123.1 66.2 Z" fill="#c08a2e"/>
+        <g font-family="Nunito" font-size="11" fill="#2b241e"><text x="84" y="62">i</text><text x="110" y="62">r</text><text x="104" y="20" fill="#5f5448">normal</text></g>
+      </svg>
+      <figcaption>El ángulo $i$ es igual al ángulo $r$.</figcaption>
+    </figure>
+  </div>
+  <p>La <strong>refracción</strong> es el cambio de dirección de la luz al pasar de un medio a otro, porque cambia su velocidad. Por eso un popote se ve “quebrado” en un vaso con agua. Qué tanto se frena la luz lo indica el <strong>índice de refracción</strong>:</p>
+  $$n = \frac{c}{v}$$
+  <p class="leyenda">En el vacío $n = 1$; en el agua, $n \approx 1.33$; en el vidrio, $n \approx 1.5$. Mientras mayor el índice, más lento viaja la luz en ese material.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿A qué velocidad viaja la luz dentro del vidrio ($n = 1.5$)?</p>
+      $$v = \frac{c}{n} = \frac{3\times 10^{8}}{1.5} = 2\times 10^{8} \text{ m/s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Los colores</h2>
+  <p>En 1666, Isaac Newton hizo pasar luz del Sol por un prisma y la separó en colores. Con otro prisma los volvió a juntar y obtuvo luz blanca. Conclusión: <strong>la luz blanca es una mezcla de todos los colores</strong>. El arcoíris es lo mismo, con gotas de lluvia en lugar de prismas.</p>
+  <div class="definicion">
+    <span class="etq">¿Por qué un objeto tiene color?</span>
+    <p>Un objeto absorbe algunos colores de la luz y <strong>refleja</strong> otros. El color que vemos es el que refleja. Una hoja verde refleja la luz verde y absorbe casi todo lo demás. Un objeto blanco refleja todos los colores; uno negro los absorbe casi todos.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Mezcla de luces (pantallas)</th><th>Mezcla de pinturas</th></tr></thead>
+    <tbody>
+      <tr><td>Primarios: rojo, verde, azul</td><td>Primarios: cian, magenta, amarillo</td></tr>
+      <tr><td>Rojo + verde = amarillo</td><td>Cian + amarillo = verde</td></tr>
+      <tr><td>Los tres juntos = blanco</td><td>Los tres juntos ≈ negro</td></tr>
+    </tbody>
+  </table>
+  <div class="nota">
+    <span class="etq">Cielo azul, atardecer rojo</span>
+    <p>Las moléculas del aire desvían (dispersan) mucho más la luz azul que la roja. De día, esa luz azul dispersada nos llega de todas partes del cielo. Al atardecer la luz del Sol cruza mucho más aire; el azul se dispersa en el camino y nos llegan sobre todo el naranja y el rojo.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">El año luz mide tiempo</td><td class="bien">Mide distancia</td><td>Es lo que recorre la luz en un año.</td></tr>
+        <tr><td class="mal">Medir ángulos desde el espejo</td><td class="bien">Desde la normal</td><td>La normal es perpendicular a la superficie.</td></tr>
+        <tr><td class="mal">El objeto rojo “tiene” color rojo</td><td class="bien">Refleja luz roja</td><td>Sin luz roja que reflejar, se ve oscuro.</td></tr>
+        <tr><td class="mal">Mezclar luces igual que pinturas</td><td class="bien">Luces suman, pinturas restan</td><td>Rojo + verde de luz da amarillo, no café.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$c \approx 3\times 10^{8}$ m/s</div><div>Año luz: distancia</div><div>Visible: 400 a 700 nm</div>
+      <div>Reflexión: $i = r$</div><div>$n = \dfrac{c}{v}$</div><div>$n_{\text{agua}} \approx 1.33$</div>
+      <div>Luz blanca: todos los colores</div><div>Color = luz reflejada</div><div>R + V + A (luz) = blanco</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $c = 3\times 10^{8}$ m/s. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Velocidad de la luz</h3>
+    <ol class="largo">
+      <li>La Luna está a unos 384 000 km. ¿Cuánto tarda en llegarnos la luz que refleja?</li>
+      <li>¿A qué velocidad viaja la luz en el agua ($n = 1.33$)?</li>
+      <li>En cierto plástico la luz viaja a $2.5\times 10^{8}$ m/s. ¿Cuál es su índice de refracción?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Reflexión y color</h3>
+    <ol class="largo">
+      <li>Un rayo llega a un espejo con un ángulo de $35^\circ$ respecto a la normal. ¿Con qué ángulo sale?</li>
+      <li>¿Qué tiene mayor longitud de onda, la luz roja o la violeta? ¿Qué región del espectro tiene longitudes de onda aún mayores que el rojo?</li>
+      <li>Una camiseta roja se ilumina solo con luz verde. ¿De qué color se ve? ¿Por qué?</li>
+      <li>En una pantalla, ¿qué color ves si se encienden juntos los puntos rojos y verdes? ¿Y si se encienden rojos, verdes y azules?</li>
+      <li>¿Por qué el cielo se ve azul al mediodía?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>1.28 s</span></li>
+    <li><span>≈ $2.26\times 10^{8}$ m/s</span></li>
+    <li><span>$1.2$</span></li>
+    <li><span>$35^\circ$</span></li>
+    <li><span>La roja; el infrarrojo</span></li>
+    <li><span>Negra (oscura)</span></li>
+    <li><span>Amarillo; blanco</span></li>
+    <li><span>El aire dispersa más la luz azul</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$384\,000$ km $= 3.84\times 10^{8}$ m. $t = \dfrac{3.84\times 10^{8}}{3\times 10^{8}} = 1.28$ s.</div></div>
+    <div class="sol"><span>2</span><div>$v = \dfrac{3\times 10^{8}}{1.33} \approx 2.26\times 10^{8}$ m/s.</div></div>
+    <div class="sol"><span>3</span><div>$n = \dfrac{3\times 10^{8}}{2.5\times 10^{8}} = 1.2$.</div></div>
+    <div class="sol"><span>6</span><div>La camiseta solo refleja luz roja. Con luz verde no hay rojo que reflejar y absorbe el verde: se ve negra.</div></div>
+    <div class="sol"><span>8</span><div>Las moléculas del aire dispersan mucho más la luz de longitud de onda corta (azul) que la larga (roja). Esa luz azul nos llega desde todas las direcciones del cielo.</div></div>
+  </div>
+</section>

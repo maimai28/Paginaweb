@@ -67,6 +67,10 @@ Comando de inicio: `npm start`. Usa siempre HTTPS en producción.
 
 Todo vive en `DATA_DIR`: `cursos.db` (alumnos, temas, recursos) y `archivos/` (PDF). Copia esa carpeta para respaldar.
 
+## Guías PDF
+
+La carpeta `guias/` tiene el generador de guías de estudio con el diseño de la marca y 35 guías de secundaria (matemáticas y física) listas en `guias/pdf/`. Ver `guias/README.md`.
+
 ## Estructura
 
 ```
