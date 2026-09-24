@@ -1,0 +1,200 @@
+<!-- guia
+titulo: Movimiento armónico simple
+nivel: Preparatoria
+materia: Física
+rama: Ondas y óptica
+numero: 15
+descripcion: Fuerza restauradora y ley de Hooke, posición, velocidad y aceleración en función del tiempo, periodo de un sistema masa-resorte, energía en el oscilador, rapidez en cualquier posición y el péndulo simple.
+entrada: Un columpio, una cuerda de guitarra, un edificio que se mece con el viento, los átomos de un sólido: todo lo que oscila cerca de su equilibrio se parece a una masa en un resorte. Con este modelo sencillo describes cualquier vibración pequeña, y es la puerta de entrada a las ondas.
+objetivo: Reconocer un movimiento armónico simple.
+objetivo: Usar $x(t) = A\cos(\omega t + \varphi)$.
+objetivo: Calcular periodo y frecuencia de un resorte.
+objetivo: Calcular rapidez y aceleración máximas.
+objetivo: Usar la energía del oscilador.
+objetivo: Calcular el periodo de un péndulo simple.
+autoeval: Explicar qué es una fuerza restauradora. | 01
+autoeval: Leer amplitud, frecuencia angular y periodo de $x(t)$. | 02
+autoeval: Calcular $T$ de un resorte sin depender de la amplitud. | 03
+autoeval: Calcular la rapidez en una posición con la energía. | 04
+autoeval: Calcular el periodo o la longitud de un péndulo. | 05
+-->
+<section>
+  <h2>Fuerza restauradora</h2>
+  <p>Un resorte estirado o comprimido una distancia $x$ jala hacia el equilibrio con la fuerza de Hooke:</p>
+  $$F = -kx$$
+  <p>El signo menos dice que la fuerza apunta al revés del desplazamiento: siempre hacia el centro. Cuando la fuerza es proporcional al desplazamiento y opuesta a él, el movimiento es <strong>armónico simple</strong> (MAS).</p>
+  <table class="leyes">
+    <thead><tr><th>Posición</th><th>Rapidez</th><th>Aceleración</th></tr></thead>
+    <tbody>
+      <tr><td>En el centro ($x = 0$)</td><td>Máxima</td><td>Cero</td></tr>
+      <tr><td>En los extremos ($x = \pm A$)</td><td>Cero</td><td>Máxima (hacia el centro)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Ecuación del movimiento</h2>
+  <div class="figura-lado">
+    <div>
+      <p>La posición oscila como un coseno (o seno):</p>
+      $$x(t) = A\cos(\omega t + \varphi)$$
+      <p>$A$ es la <strong>amplitud</strong> (desplazamiento máximo), $\omega$ la <strong>frecuencia angular</strong> (rad/s) y $\varphi$ la fase inicial. Derivando:</p>
+      $$v(t) = -A\omega\sin(\omega t + \varphi) \qquad a(t) = -A\omega^2\cos(\omega t + \varphi) = -\omega^2x$$
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 195 120" width="50mm">
+        <line x1="20" y1="60" x2="192" y2="60" stroke="#2b241e" stroke-width="1"/>
+        <line x1="25" y1="100" x2="25" y2="8" stroke="#2b241e" stroke-width="1"/>
+        <path d="M25.0 22.0 L27.0 22.5 L29.0 23.9 L31.0 26.1 L33.0 29.3 L35.1 33.1 L37.1 37.7 L39.1 42.7 L41.1 48.3 L43.1 54.1 L45.1 60.0 L47.1 65.9 L49.1 71.7 L51.1 77.2 L53.1 82.3 L55.2 86.9 L57.2 90.7 L59.2 93.9 L61.2 96.1 L63.2 97.5 L65.2 98.0 L67.2 97.5 L69.2 96.1 L71.2 93.9 L73.3 90.7 L75.3 86.9 L77.3 82.3 L79.3 77.3 L81.3 71.7 L83.3 65.9 L85.3 60.0 L87.3 54.1 L89.3 48.3 L91.3 42.8 L93.4 37.7 L95.4 33.1 L97.4 29.3 L99.4 26.1 L101.4 23.9 L103.4 22.5 L105.4 22.0 L107.4 22.5 L109.4 23.9 L111.5 26.1 L113.5 29.3 L115.5 33.1 L117.5 37.7 L119.5 42.7 L121.5 48.2 L123.5 54.0 L125.5 60.0 L127.5 65.9 L129.5 71.7 L131.6 77.2 L133.6 82.3 L135.6 86.9 L137.6 90.7 L139.6 93.9 L141.6 96.1 L143.6 97.5 L145.6 98.0 L147.6 97.5 L149.7 96.1 L151.7 93.9 L153.7 90.7 L155.7 86.9 L157.7 82.3 L159.7 77.3 L161.7 71.8 L163.7 66.0 L165.7 60.0 L167.7 54.1 L169.8 48.3 L171.8 42.8 L173.8 37.7 L175.8 33.1 L177.8 29.3 L179.8 26.1 L181.8 23.9 L183.8 22.5 L185.8 22.0" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="25" y1="106" x2="105.4" y2="106" stroke="#5c7a5a" stroke-width="1.2"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="10" y="25">A</text><text x="4" y="101">−A</text><text x="62" y="117" fill="#5c7a5a">T</text><text x="178" y="72">t</text><text x="30" y="12">x</text>
+        </g>
+      </svg>
+      <figcaption>Dos periodos de $x(t) = A\cos\omega t$.</figcaption>
+    </figure>
+  </div>
+  <p>Valores máximos: $v_{\text{máx}} = A\omega$ (en el centro) y $a_{\text{máx}} = A\omega^2$ (en los extremos). Además $T = \dfrac{2\pi}{\omega}$ y $f = \dfrac{1}{T}$.</p>
+</section>
+
+<section>
+  <h2>Sistema masa-resorte</h2>
+  <div class="definicion">
+    <span class="etq">Periodo de un resorte</span>
+    $$\omega = \sqrt{\frac{k}{m}} \qquad\qquad T = 2\pi\sqrt{\frac{m}{k}}$$
+    <p>El periodo <strong>no depende de la amplitud</strong>: oscilaciones grandes y chicas tardan lo mismo. Más masa lo hace más lento; un resorte más duro, más rápido.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una masa de 0.5 kg en un resorte de $k = 200$ N/m oscila con amplitud de 5 cm. Encuentra $\omega$, $T$, $f$, $v_{\text{máx}}$ y $a_{\text{máx}}$.</p>
+      $$\omega = \sqrt{\frac{200}{0.5}} = 20 \text{ rad/s} \qquad T = \frac{2\pi}{20} \approx 0.314 \text{ s} \qquad f \approx 3.18 \text{ Hz}$$
+      $$v_{\text{máx}} = 0.05(20) = 1 \text{ m/s} \qquad a_{\text{máx}} = 0.05(400) = 20 \text{ m/s}^2$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Al colgar 0.2 kg de un resorte, este se estira 5 cm. ¿Con qué periodo oscila la masa?</p>
+      <p class="paso">En equilibrio, $kx = mg$: $k = \dfrac{0.2(9.8)}{0.05} = 39.2$ N/m.</p>
+      $$T = 2\pi\sqrt{\frac{0.2}{39.2}} \approx 0.449 \text{ s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Energía</h2>
+  <p>Sin fricción, la energía se pasa de potencial elástica a cinética y de regreso, pero el total es constante:</p>
+  $$E = \tfrac{1}{2}kx^2 + \tfrac{1}{2}mv^2 = \tfrac{1}{2}kA^2$$
+  <p>Despejando, la rapidez en cualquier posición es $v = \omega\sqrt{A^2 - x^2}$.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Con el oscilador del ejemplo 1, ¿cuánta energía tiene y qué rapidez lleva cuando $x = 3$ cm?</p>
+      $$E = \tfrac{1}{2}(200)(0.05)^2 = 0.25 \text{ J} \qquad v = 20\sqrt{0.05^2 - 0.03^2} = 20(0.04) = 0.8 \text{ m/s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Péndulo simple</h2>
+  <div class="definicion">
+    <span class="etq">Periodo del péndulo simple</span>
+    $$T = 2\pi\sqrt{\frac{L}{g}}$$
+    <p>Vale para ángulos pequeños (menos de unos $15^\circ$). No depende de la masa ni de la amplitud, solo de la longitud y de la gravedad.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Qué periodo tiene un péndulo de 1 m? ¿Qué longitud debe tener para que su periodo sea exactamente 2 s?</p>
+      $$T = 2\pi\sqrt{\frac{1}{9.8}} \approx 2.01 \text{ s} \qquad L = \frac{gT^2}{4\pi^2} = \frac{9.8(4)}{4\pi^2} \approx 0.993 \text{ m}$$
+      <p class="paso">Los relojes de péndulo aprovechan justo esa regularidad.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$T = 2\pi\sqrt{\dfrac{k}{m}}$</td><td class="bien">$2\pi\sqrt{\dfrac{m}{k}}$</td><td>Más masa, más lento.</td></tr>
+        <tr><td class="mal">Más amplitud, más periodo</td><td class="bien">El periodo no cambia</td><td>Recorre más, pero más rápido.</td></tr>
+        <tr><td class="mal">En el extremo la aceleración es 0</td><td class="bien">Es máxima</td><td>Ahí la fuerza del resorte es máxima.</td></tr>
+        <tr><td class="mal">Calculadora en grados con $\cos\omega t$</td><td class="bien">En radianes</td><td>$\omega t$ está en radianes.</td></tr>
+        <tr><td class="mal">El péndulo depende de la masa</td><td class="bien">Solo de $L$ y $g$</td><td>La masa se cancela.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$F = -kx$</div><div>$x = A\cos(\omega t + \varphi)$</div><div>$a = -\omega^2x$</div>
+      <div>$\omega = \sqrt{k/m}$</div><div>$T = 2\pi\sqrt{m/k}$</div><div>$T = 2\pi\sqrt{L/g}$</div>
+      <div>$v_{\text{máx}} = A\omega$</div><div>$a_{\text{máx}} = A\omega^2$</div><div>$E = \tfrac{1}{2}kA^2$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s² y la calculadora en radianes. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Masa-resorte</h3>
+    <ol class="largo">
+      <li>Una masa de 2 kg oscila en un resorte de $k = 800$ N/m. Calcula $\omega$, $T$ y $f$.</li>
+      <li>¿Por cuánto hay que multiplicar la masa para duplicar el periodo?</li>
+      <li>Si ese oscilador tiene amplitud de 10 cm, ¿cuánto valen $v_{\text{máx}}$ y $a_{\text{máx}}$?</li>
+      <li>¿Qué energía total tiene y qué rapidez lleva a 5 cm del equilibrio?</li>
+      <li>Al colgar 0.5 kg de un resorte se estira 10 cm. ¿Cuál es $k$ y el periodo de oscilación?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Ecuación de movimiento</h3>
+    <ol class="largo">
+      <li>Si $x(t) = 0.2\cos(5t)$ (en metros y segundos), da la amplitud, $\omega$, el periodo y la posición en $t = 0.5$ s.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Péndulo</h3>
+    <ol class="largo">
+      <li>¿Qué periodo tiene un péndulo de 2.5 m?</li>
+      <li>¿Qué longitud debe tener un péndulo con periodo de 1.5 s?</li>
+      <li>¿Qué periodo tendría un péndulo de 1 m en la Luna ($g = 1.62$ m/s²)?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>20 rad/s; $\approx 0.314$ s; $\approx 3.18$ Hz</span></li>
+    <li><span>Por 4</span></li>
+    <li><span>2 m/s; 40 m/s²</span></li>
+    <li><span>4 J; $\approx 1.73$ m/s</span></li>
+    <li><span>49 N/m; $\approx 0.635$ s</span></li>
+    <li><span>0.2 m; 5 rad/s; $\approx 1.26$ s; $\approx -0.160$ m</span></li>
+    <li><span>$\approx 3.17$ s</span></li>
+    <li><span>$\approx 0.559$ m</span></li>
+    <li><span>$\approx 4.94$ s</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\sqrt{\tfrac{800}{2}} = 20$; $T = \tfrac{2\pi}{20}$.</div></div>
+    <div class="sol"><span>2</span><div>$T \propto \sqrt{m}$: para $\times 2$ en $T$ hace falta $\times 4$ en $m$.</div></div>
+    <div class="sol"><span>3</span><div>$0.1(20)$ y $0.1(400)$.</div></div>
+    <div class="sol"><span>4</span><div>$\tfrac{1}{2}(800)(0.1)^2$; $v = 20\sqrt{0.01 - 0.0025}$.</div></div>
+    <div class="sol"><span>5</span><div>$k = \tfrac{0.5(9.8)}{0.1}$; $T = 2\pi\sqrt{\tfrac{0.5}{49}}$.</div></div>
+    <div class="sol"><span>6</span><div>$T = \tfrac{2\pi}{5}$; $x = 0.2\cos 2.5$ (2.5 rad): ya pasó del centro y está del lado negativo.</div></div>
+    <div class="sol"><span>7</span><div>$2\pi\sqrt{\tfrac{2.5}{9.8}}$.</div></div>
+    <div class="sol"><span>8</span><div>$L = \tfrac{9.8(1.5)^2}{4\pi^2}$.</div></div>
+    <div class="sol"><span>9</span><div>$2\pi\sqrt{\tfrac{1}{1.62}}$: unas 2.5 veces más lento que en la Tierra.</div></div>
+  </div>
+</section>

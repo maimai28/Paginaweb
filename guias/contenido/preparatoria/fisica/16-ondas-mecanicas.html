@@ -1,0 +1,206 @@
+<!-- guia
+titulo: Ondas mecánicas
+nivel: Preparatoria
+materia: Física
+rama: Ondas y óptica
+numero: 16
+descripcion: Ondas transversales y longitudinales, longitud de onda, frecuencia y rapidez, rapidez en una cuerda tensa, sonido y eco, intensidad en decibeles, superposición, ondas estacionarias en cuerdas y tubos, y efecto Doppler.
+entrada: Una onda transporta energía sin transportar materia: el agua de un estadio que «hace la ola» no se va a ningún lado. Con una sola ecuación, $v = \lambda f$, y unas cuantas ideas más explicas el sonido de una guitarra, el eco de un cañón o por qué la sirena de una ambulancia cambia de tono al pasar.
+objetivo: Distinguir ondas transversales y longitudinales.
+objetivo: Usar $v = \lambda f$.
+objetivo: Calcular la rapidez de una onda en una cuerda.
+objetivo: Calcular niveles de intensidad en decibeles.
+objetivo: Encontrar frecuencias de ondas estacionarias.
+objetivo: Aplicar el efecto Doppler.
+autoeval: Identificar $\lambda$, $A$, $T$ y $f$ en una gráfica. | 01
+autoeval: Calcular distancias con el eco. | 02
+autoeval: Pasar de intensidad a decibeles y al revés. | 03
+autoeval: Calcular armónicos en cuerdas y tubos. | 04
+autoeval: Elegir los signos del efecto Doppler. | 05
+-->
+<section>
+  <h2>Qué es una onda</h2>
+  <p>Una onda mecánica es una perturbación que viaja por un medio (cuerda, agua, aire). Las partículas solo oscilan en su lugar; lo que avanza es la energía.</p>
+  <ul>
+    <li><strong>Transversal:</strong> las partículas oscilan perpendicular a la dirección de avance (cuerda, ola).</li>
+    <li><strong>Longitudinal:</strong> oscilan en la misma dirección de avance, formando compresiones y rarefacciones (sonido).</li>
+  </ul>
+  <div class="figura-lado">
+    <div>
+      <table class="leyes">
+        <thead><tr><th>Elemento</th><th>Qué es</th></tr></thead>
+        <tbody>
+          <tr><td>Longitud de onda $\lambda$</td><td>Distancia entre dos crestas</td></tr>
+          <tr><td>Amplitud $A$</td><td>Altura de la cresta sobre el equilibrio</td></tr>
+          <tr><td>Periodo $T$</td><td>Tiempo de una oscilación completa</td></tr>
+          <tr><td>Frecuencia $f = \tfrac{1}{T}$</td><td>Oscilaciones por segundo (Hz)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 195 105" width="50mm">
+        <line x1="10" y1="55" x2="192" y2="55" stroke="#8a7a66" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <path d="M15.0 55.0 L17.1 50.0 L19.2 45.1 L21.4 40.5 L23.5 36.2 L25.6 32.4 L27.7 29.1 L29.8 26.5 L32.0 24.6 L34.1 23.4 L36.2 23.0 L38.3 23.4 L40.4 24.6 L42.6 26.5 L44.7 29.1 L46.8 32.4 L48.9 36.2 L51.0 40.5 L53.2 45.1 L55.3 50.0 L57.4 55.0 L59.5 60.0 L61.7 64.9 L63.8 69.5 L65.9 73.8 L68.0 77.6 L70.1 80.9 L72.3 83.5 L74.4 85.4 L76.5 86.6 L78.6 87.0 L80.7 86.6 L82.9 85.4 L85.0 83.5 L87.1 80.9 L89.2 77.6 L91.3 73.8 L93.5 69.5 L95.6 64.9 L97.7 60.0 L99.8 55.0 L101.9 50.0 L104.1 45.1 L106.2 40.5 L108.3 36.2 L110.4 32.4 L112.5 29.1 L114.7 26.5 L116.8 24.6 L118.9 23.4 L121.0 23.0 L123.1 23.4 L125.3 24.6 L127.4 26.5 L129.5 29.1 L131.6 32.4 L133.7 36.2 L135.9 40.5 L138.0 45.1 L140.1 50.0 L142.2 55.0 L144.4 60.0 L146.5 64.9 L148.6 69.5 L150.7 73.8 L152.8 77.6 L155.0 80.9 L157.1 83.5 L159.2 85.4 L161.3 86.6 L163.4 87.0 L165.6 86.6 L167.7 85.4 L169.8 83.5 L171.9 80.9 L174.0 77.6 L176.2 73.8 L178.3 69.5 L180.4 64.9 L182.5 60.0 L184.6 55.0" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="36.2" y1="12" x2="121" y2="12" stroke="#5c7a5a" stroke-width="1.2"/>
+        <line x1="36.2" y1="8" x2="36.2" y2="20" stroke="#5c7a5a" stroke-width="1"/><line x1="121" y1="8" x2="121" y2="20" stroke="#5c7a5a" stroke-width="1"/>
+        <line x1="163.4" y1="55" x2="163.4" y2="87" stroke="#2b241e" stroke-width="1"/>
+        <g font-family="Nunito" font-size="11"><text x="74" y="9" fill="#5c7a5a">λ</text><text x="160" y="100" fill="#2b241e">A</text></g>
+      </svg>
+      <figcaption>Una «foto» de la onda en un instante.</figcaption>
+    </figure>
+  </div>
+  <div class="definicion">
+    <span class="etq">Rapidez de una onda</span>
+    $$v = \lambda f = \frac{\lambda}{T}$$
+    <p>La rapidez depende del <strong>medio</strong>; la frecuencia, de la <strong>fuente</strong>. Si una onda pasa a otro medio, conserva $f$ y cambia $v$ y $\lambda$.</p>
+  </div>
+  <p>En una cuerda de tensión $F_T$ y masa por unidad de longitud $\mu = \tfrac{m}{L}$: $v = \sqrt{\dfrac{F_T}{\mu}}$.</p>
+</section>
+
+<section>
+  <h2>El sonido</h2>
+  <p>Es una onda longitudinal de presión. En aire a 20 °C viaja a unos 343 m/s (más rápido en agua, ~1480 m/s, y en sólidos). El oído humano percibe entre 20 Hz y 20 000 Hz.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Gritas frente a una barda y oyes el eco 1.2 s después. ¿A qué distancia está?</p>
+      $$d = \frac{343(1.2)}{2} \approx 206 \text{ m}$$
+      <p class="paso">Se divide entre 2 porque el sonido va y vuelve.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Intensidad y decibeles</h2>
+  <p>La intensidad $I$ es la potencia por unidad de área (W/m²). Como el oído percibe en escala logarítmica, se usa el nivel en decibeles:</p>
+  $$\beta = 10\log\frac{I}{I_0} \qquad I_0 = 10^{-12} \text{ W/m}^2$$
+  <table class="leyes">
+    <thead><tr><th>Sonido</th><th>dB</th><th>Sonido</th><th>dB</th></tr></thead>
+    <tbody>
+      <tr><td>Umbral de audición</td><td>0</td><td>Tráfico intenso</td><td>≈ 85</td></tr>
+      <tr><td>Conversación</td><td>≈ 60</td><td>Umbral de dolor</td><td>≈ 120</td></tr>
+    </tbody>
+  </table>
+  <p>Cada 10 dB más es 10 veces más intensidad; duplicar la intensidad suma unos 3 dB.</p>
+</section>
+
+<section>
+  <h2>Superposición y ondas estacionarias</h2>
+  <p>Cuando dos ondas coinciden, sus desplazamientos se <strong>suman</strong>: se refuerzan (interferencia constructiva) o se cancelan (destructiva). Una onda que rebota en los extremos de una cuerda interfiere consigo misma y forma una <strong>onda estacionaria</strong>, con nodos que no se mueven.</p>
+  <table class="leyes">
+    <thead><tr><th>Sistema</th><th>Frecuencias posibles</th></tr></thead>
+    <tbody>
+      <tr><td>Cuerda fija en ambos extremos o tubo abierto en ambos</td><td>$f_n = n\dfrac{v}{2L}$, $n = 1, 2, 3, \ldots$</td></tr>
+      <tr><td>Tubo cerrado en un extremo</td><td>$f_n = n\dfrac{v}{4L}$, solo $n$ impar</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una cuerda de 1.5 m y 12 g está tensa con 80 N. ¿Qué frecuencia fundamental tiene?</p>
+      $$\mu = \frac{0.012}{1.5} = 0.008 \text{ kg/m} \qquad v = \sqrt{\frac{80}{0.008}} = 100 \text{ m/s} \qquad f_1 = \frac{100}{2(1.5)} \approx 33.3 \text{ Hz}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Efecto Doppler</h2>
+  <p>Si la fuente o el observador se mueven, la frecuencia que se oye cambia: más aguda al acercarse, más grave al alejarse.</p>
+  $$f' = f\,\frac{v \pm v_o}{v \mp v_s}$$
+  <p>Signos de arriba (+ en el numerador, − en el denominador) cuando se <strong>acercan</strong>; de abajo cuando se <strong>alejan</strong>. $v_o$ es la rapidez del observador y $v_s$ la de la fuente.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una ambulancia con sirena de 700 Hz va a 25 m/s. ¿Qué frecuencia oye una persona parada cuando se acerca y cuando se aleja?</p>
+      $$f_{\text{acerca}} = 700\,\frac{343}{343 - 25} \approx 755 \text{ Hz} \qquad f_{\text{aleja}} = 700\,\frac{343}{343 + 25} \approx 652 \text{ Hz}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Mayor frecuencia, mayor rapidez</td><td class="bien">La rapidez la fija el medio</td><td>Si sube $f$, baja $\lambda$.</td></tr>
+        <tr><td class="mal">Eco sin dividir entre 2</td><td class="bien">$d = \tfrac{vt}{2}$</td><td>Es ida y vuelta.</td></tr>
+        <tr><td class="mal">Doble intensidad, doble dB</td><td class="bien">+3 dB</td><td>La escala es logarítmica.</td></tr>
+        <tr><td class="mal">Tubo cerrado con $\tfrac{v}{2L}$</td><td class="bien">$\tfrac{v}{4L}$, impares</td><td>Un extremo es nodo.</td></tr>
+        <tr><td class="mal">Doppler con signos al azar</td><td class="bien">Acercarse: $f'$ mayor</td><td>Revisa que el resultado tenga sentido.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$v = \lambda f$</div><div>$v = \sqrt{F_T/\mu}$</div><div>Sonido: 343 m/s</div>
+      <div>$\beta = 10\log\dfrac{I}{I_0}$</div><div>+10 dB: $\times 10$ en $I$</div><div>Eco: $d = \tfrac{vt}{2}$</div>
+      <div>Cuerda: $f_n = \dfrac{nv}{2L}$</div><div>Tubo cerrado: $\dfrac{nv}{4L}$, $n$ impar</div><div>$f' = f\dfrac{v \pm v_o}{v \mp v_s}$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $v_{\text{sonido}} = 343$ m/s. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Ondas y sonido</h3>
+    <ol class="largo">
+      <li>Unas olas llegan con frecuencia de 2 Hz y están separadas 1.5 m. ¿Qué rapidez tienen?</li>
+      <li>¿Qué longitud de onda tiene la nota La (440 Hz) en el aire?</li>
+      <li>Ves un relámpago y oyes el trueno 3 s después. ¿A qué distancia cayó?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Cuerdas, tubos y decibeles</h3>
+    <ol class="largo">
+      <li>Una cuerda de guitarra de 0.65 m tiene frecuencia fundamental de 110 Hz. ¿Con qué rapidez viajan las ondas en ella? ¿Cuál es su segundo armónico?</li>
+      <li>Si se cuadruplica la tensión de una cuerda, ¿qué pasa con su frecuencia fundamental?</li>
+      <li>¿Qué nivel en dB tiene un sonido de $10^{-3}$ W/m²?</li>
+      <li>Un ruido pasa de 60 dB a 80 dB. ¿Cuántas veces aumentó su intensidad?</li>
+      <li>¿Cuáles son las dos primeras frecuencias de un tubo cerrado en un extremo de 25 cm?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Doppler</h3>
+    <ol class="largo">
+      <li>Una fuente de 500 Hz se aleja de ti a 30 m/s. ¿Qué frecuencia oyes?</li>
+      <li>Te acercas a 20 m/s a una fuente fija de 400 Hz. ¿Qué frecuencia oyes?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>3 m/s</span></li>
+    <li><span>$\approx 0.78$ m</span></li>
+    <li><span>$\approx 1029$ m</span></li>
+    <li><span>143 m/s; 220 Hz</span></li>
+    <li><span>Se duplica</span></li>
+    <li><span>90 dB</span></li>
+    <li><span>100 veces</span></li>
+    <li><span>343 Hz y 1029 Hz</span></li>
+    <li><span>$\approx 460$ Hz</span></li>
+    <li><span>$\approx 423$ Hz</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$v = 1.5(2)$.</div></div>
+    <div class="sol"><span>2</span><div>$\lambda = \tfrac{343}{440}$.</div></div>
+    <div class="sol"><span>3</span><div>La luz llega casi al instante: $343(3)$. Regla práctica: 3 s por kilómetro.</div></div>
+    <div class="sol"><span>4</span><div>$f_1 = \tfrac{v}{2L} \Rightarrow v = 2(0.65)(110)$; $f_2 = 2f_1$.</div></div>
+    <div class="sol"><span>5</span><div>$v \propto \sqrt{F_T}$: $\sqrt{4} = 2$, y $f_1 \propto v$.</div></div>
+    <div class="sol"><span>6</span><div>$10\log\tfrac{10^{-3}}{10^{-12}} = 10(9)$.</div></div>
+    <div class="sol"><span>7</span><div>20 dB más: $10^{20/10} = 100$.</div></div>
+    <div class="sol"><span>8</span><div>$\tfrac{343}{4(0.25)} = 343$ Hz; el siguiente es $n = 3$: $3(343)$.</div></div>
+    <div class="sol"><span>9</span><div>Se aleja la fuente: $500\cdot\tfrac{343}{343 + 30}$.</div></div>
+    <div class="sol"><span>10</span><div>Se acerca el observador: $400\cdot\tfrac{343 + 20}{343}$.</div></div>
+  </div>
+</section>

@@ -1,0 +1,187 @@
+<!-- guia
+titulo: Reflexión y refracción
+nivel: Preparatoria
+materia: Física
+rama: Ondas y óptica
+numero: 17
+descripcion: Ley de la reflexión, índice de refracción, ley de Snell, reflexión total interna y ángulo crítico, fibra óptica, profundidad aparente, cambio de longitud de onda y dispersión de la luz en un prisma.
+entrada: Un popote parece quebrado dentro de un vaso, la alberca se ve menos honda de lo que es y un diamante brilla como ningún vidrio. Todo es refracción: la luz cambia de rapidez y de dirección al pasar de un material a otro, siguiendo una ley muy precisa.
+objetivo: Aplicar la ley de la reflexión.
+objetivo: Relacionar el índice de refracción con la rapidez de la luz.
+objetivo: Aplicar la ley de Snell.
+objetivo: Calcular el ángulo crítico y reconocer la reflexión total.
+objetivo: Explicar la profundidad aparente y la dispersión.
+autoeval: Medir los ángulos desde la normal. | 01
+autoeval: Calcular la rapidez de la luz en un medio. | 02
+autoeval: Usar la ley de Snell en los dos sentidos. | 03
+autoeval: Decidir si hay reflexión total. | 04
+autoeval: Explicar por qué la luz blanca se separa en colores. | 05
+-->
+<section>
+  <h2>Reflexión</h2>
+  <div class="definicion">
+    <span class="etq">Ley de la reflexión</span>
+    <p>El ángulo de reflexión es igual al de incidencia, $\theta_r = \theta_i$, y ambos rayos y la normal están en el mismo plano.</p>
+  </div>
+  <p>Todos los ángulos en óptica se miden desde la <strong>normal</strong>: la recta perpendicular a la superficie en el punto donde llega el rayo. En una superficie lisa la reflexión es especular (espejo); en una rugosa es difusa, y por eso vemos los objetos desde cualquier lugar.</p>
+</section>
+
+<section>
+  <h2>Índice de refracción</h2>
+  <div class="definicion">
+    <span class="etq">Índice de refracción</span>
+    $$n = \frac{c}{v} \qquad c = 3.00\times 10^8 \text{ m/s}$$
+    <p>Dice cuántas veces más lento va la luz en el medio que en el vacío. Siempre $n \geq 1$.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Medio</th><th>$n$</th><th>Medio</th><th>$n$</th></tr></thead>
+    <tbody>
+      <tr><td>Vacío / aire</td><td>1.00</td><td>Vidrio común</td><td>1.50</td></tr>
+      <tr><td>Agua</td><td>1.33</td><td>Diamante</td><td>2.42</td></tr>
+    </tbody>
+  </table>
+  <p>Al cambiar de medio la frecuencia no cambia, pero la longitud de onda sí: $\lambda_{\text{medio}} = \dfrac{\lambda_0}{n}$. En vidrio la luz va a $\tfrac{3\times 10^8}{1.5} = 2\times 10^8$ m/s.</p>
+</section>
+
+<section>
+  <h2>Ley de Snell</h2>
+  <div class="figura-lado">
+    <div>
+      <div class="definicion">
+        <span class="etq">Ley de Snell</span>
+        $$n_1\sin\theta_1 = n_2\sin\theta_2$$
+      </div>
+      <p>Al entrar a un medio más «lento» (mayor $n$), la luz se acerca a la normal; al salir a uno más rápido, se aleja.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 180 130" width="46mm">
+        <rect x="5" y="70" width="170" height="58" fill="#dbe8ec"/>
+        <line x1="5" y1="70" x2="175" y2="70" stroke="#2b241e" stroke-width="1.2"/>
+        <line x1="90" y1="8" x2="90" y2="128" stroke="#8a7a66" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="51.4" y1="24" x2="90" y2="70" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="90" y1="70" x2="119" y2="122.5" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="90" y1="70" x2="128.6" y2="24" stroke="#b5562c" stroke-width="1" stroke-dasharray="3 3"/>
+        <path d="M90 45 A25 25 0 0 0 73.9 50.8" fill="none" stroke="#2b241e" stroke-width="1"/>
+        <path d="M90 95 A25 25 0 0 0 102.1 91.9" fill="none" stroke="#2b241e" stroke-width="1"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="70" y="42">θ₁</text><text x="98" y="108">θ₂</text><text x="10" y="64">aire (n₁)</text><text x="10" y="84">agua (n₂)</text>
+        </g>
+      </svg>
+      <figcaption>Al entrar al agua, el rayo se acerca a la normal.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un rayo pasa del aire al agua con $40^\circ$ respecto a la normal. ¿Con qué ángulo sigue en el agua?</p>
+      $$1.00\sin 40^\circ = 1.33\sin\theta_2 \;\Rightarrow\; \sin\theta_2 \approx 0.483 \;\Rightarrow\; \theta_2 \approx 28.9^\circ$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Reflexión total interna</h2>
+  <p>Al pasar a un medio con <strong>menor</strong> $n$, el rayo se aleja de la normal. Hay un ángulo de incidencia, el <strong>crítico</strong>, para el que el rayo refractado sale rasante ($90^\circ$). Si se incide con más ángulo, la luz ya no sale: se refleja toda.</p>
+  $$\sin\theta_c = \frac{n_2}{n_1} \qquad (n_1 \gt n_2)$$
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Cuál es el ángulo crítico del vidrio al aire?</p>
+      $$\sin\theta_c = \frac{1}{1.5} \;\Rightarrow\; \theta_c \approx 41.8^\circ$$
+      <p class="paso">Las <strong>fibras ópticas</strong> guían la luz así: el rayo rebota por dentro del vidrio siempre con ángulos mayores que el crítico, sin escapar. El diamante, con $\theta_c \approx 24.4^\circ$, atrapa mucha luz y por eso brilla tanto.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Profundidad aparente y dispersión</h2>
+  <p>Viendo casi en vertical, un objeto bajo el agua parece estar a una profundidad $d_{\text{aparente}} \approx \dfrac{d_{\text{real}}}{n}$. Una alberca de 2 m parece de $\tfrac{2}{1.33} \approx 1.5$ m.</p>
+  <div class="nota">
+    <span class="etq">Dispersión: el arcoíris</span>
+    <p>El índice de refracción depende un poco del color: el violeta se desvía más que el rojo. Un prisma o una gota de lluvia separan así la luz blanca en sus colores.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Ángulo medido desde la superficie</td><td class="bien">Desde la normal</td><td>Así están definidas las leyes.</td></tr>
+        <tr><td class="mal">$n_1\theta_1 = n_2\theta_2$</td><td class="bien">Con senos</td><td>Solo es aproximado para ángulos muy pequeños.</td></tr>
+        <tr><td class="mal">Reflexión total al entrar al agua</td><td class="bien">Solo al pasar a menor $n$</td><td>Hace falta $n_1 \gt n_2$.</td></tr>
+        <tr><td class="mal">La frecuencia cambia al refractarse</td><td class="bien">Cambia $\lambda$, no $f$</td><td>La fuente fija la frecuencia.</td></tr>
+        <tr><td class="mal">$\sin\theta_2 \gt 1$: error de cálculo</td><td class="bien">Reflexión total</td><td>No hay rayo refractado.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\theta_r = \theta_i$</div><div>$n = \dfrac{c}{v}$</div><div>$\lambda = \dfrac{\lambda_0}{n}$</div>
+      <div>$n_1\sin\theta_1 = n_2\sin\theta_2$</div><div>Mayor $n$: se acerca a la normal</div><div>$\sin\theta_c = \dfrac{n_2}{n_1}$</div>
+      <div>$d_{\text{ap}} = \dfrac{d}{n}$</div><div>Agua 1.33, vidrio 1.5</div><div>Violeta se desvía más</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa los índices de la tabla y $c = 3.00\times 10^8$ m/s. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Reflexión e índice</h3>
+    <ol class="largo">
+      <li>Un rayo llega a un espejo formando $35^\circ$ con la normal. ¿Qué ángulo forma el rayo reflejado con la normal? ¿Y con el espejo?</li>
+      <li>¿A qué rapidez va la luz en el diamante?</li>
+      <li>En cierto líquido la luz va a $2.25\times 10^8$ m/s. ¿Cuál es su índice?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Snell y reflexión total</h3>
+    <ol class="largo">
+      <li>Un rayo pasa del aire al vidrio con $30^\circ$. ¿Con qué ángulo se refracta?</li>
+      <li>Un rayo sale del agua al aire con $30^\circ$. ¿Con qué ángulo sale?</li>
+      <li>¿Y si llega a la superficie desde el agua con $60^\circ$?</li>
+      <li>¿Cuál es el ángulo crítico del diamante al aire?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Otras aplicaciones</h3>
+    <ol class="largo">
+      <li>Un pez nada a 1.2 m de profundidad. ¿A qué profundidad lo ve alguien que mira desde arriba?</li>
+      <li>Luz de 500 nm en el aire entra a un vidrio. ¿Qué longitud de onda y qué frecuencia tiene dentro?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$35^\circ$; $55^\circ$</span></li>
+    <li><span>$\approx 1.24\times 10^8$ m/s</span></li>
+    <li><span>$\approx 1.33$</span></li>
+    <li><span>$\approx 19.5^\circ$</span></li>
+    <li><span>$\approx 41.7^\circ$</span></li>
+    <li><span>Reflexión total</span></li>
+    <li><span>$\approx 24.4^\circ$</span></li>
+    <li><span>$\approx 0.90$ m</span></li>
+    <li><span>$\approx 333$ nm; $6\times 10^{14}$ Hz</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>Mismo ángulo con la normal; con el espejo, el complemento: $90^\circ - 35^\circ$.</div></div>
+    <div class="sol"><span>2</span><div>$\tfrac{3\times 10^8}{2.42}$.</div></div>
+    <div class="sol"><span>3</span><div>$\tfrac{3\times 10^8}{2.25\times 10^8}$: probablemente agua.</div></div>
+    <div class="sol"><span>4</span><div>$\sin\theta_2 = \tfrac{\sin 30^\circ}{1.5} = 0.333$.</div></div>
+    <div class="sol"><span>5</span><div>$\sin\theta_2 = 1.33\sin 30^\circ = 0.665$: se aleja de la normal.</div></div>
+    <div class="sol"><span>6</span><div>$1.33\sin 60^\circ \approx 1.15 \gt 1$: no hay refracción. De hecho $60^\circ$ supera el crítico del agua ($48.8^\circ$).</div></div>
+    <div class="sol"><span>7</span><div>$\sin\theta_c = \tfrac{1}{2.42}$.</div></div>
+    <div class="sol"><span>8</span><div>$\tfrac{1.2}{1.33}$: el pez está más hondo de lo que parece.</div></div>
+    <div class="sol"><span>9</span><div>$\tfrac{500}{1.5}$ nm. La frecuencia es la del aire: $\tfrac{3\times 10^8}{500\times 10^{-9}}$.</div></div>
+  </div>
+</section>

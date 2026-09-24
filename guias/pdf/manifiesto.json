@@ -84,6 +84,30 @@
     "pdf": "preparatoria-fisica-14-leyes-de-la-termodinamica.pdf"
   },
   {
+    "tema": "preparatoria-fisica-movimiento-armonico-simple",
+    "titulo": "Movimiento armónico simple",
+    "descripcion": "Fuerza restauradora y ley de Hooke, posición, velocidad y aceleración en función del tiempo, periodo de un sistema masa-resorte, energía en el oscilador, rapidez en cualquier posición y el péndulo simple.",
+    "pdf": "preparatoria-fisica-15-movimiento-armonico-simple.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-ondas-mecanicas",
+    "titulo": "Ondas mecánicas",
+    "descripcion": "Ondas transversales y longitudinales, longitud de onda, frecuencia y rapidez, rapidez en una cuerda tensa, sonido y eco, intensidad en decibeles, superposición, ondas estacionarias en cuerdas y tubos, y efecto Doppler.",
+    "pdf": "preparatoria-fisica-16-ondas-mecanicas.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-reflexion-y-refraccion",
+    "titulo": "Reflexión y refracción",
+    "descripcion": "Ley de la reflexión, índice de refracción, ley de Snell, reflexión total interna y ángulo crítico, fibra óptica, profundidad aparente, cambio de longitud de onda y dispersión de la luz en un prisma.",
+    "pdf": "preparatoria-fisica-17-reflexion-y-refraccion.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-espejos-y-lentes",
+    "titulo": "Espejos y lentes",
+    "descripcion": "Espejos planos, espejos cóncavos y convexos, lentes convergentes y divergentes, ecuación de espejos y lentes con su convención de signos, aumento, imágenes reales y virtuales, potencia en dioptrías y cómo corrigen la vista unos lentes.",
+    "pdf": "preparatoria-fisica-18-espejos-y-lentes.pdf"
+  },
+  {
     "tema": "preparatoria-matematicas-funciones-y-sus-graficas",
     "titulo": "Funciones y sus gráficas",
     "descripcion": "Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.",
