@@ -1,0 +1,156 @@
+<!-- guia
+titulo: Conservación de la energía
+nivel: Secundaria
+materia: Física
+rama: Energía
+numero: 09
+entrada: La energía no aparece de la nada ni desaparece: solo cambia de forma. Esta idea es una de las más poderosas de la física, porque te permite resolver problemas de movimiento sin preocuparte por todo lo que pasa en medio.
+objetivo: Enunciar el principio de conservación de la energía.
+objetivo: Calcular la energía mecánica.
+objetivo: Resolver caídas, péndulos y montañas rusas con energía.
+objetivo: Explicar a dónde va la energía cuando hay fricción.
+objetivo: Calcular la eficiencia de un aparato.
+autoeval: Explicar el principio de conservación de la energía. | 01
+autoeval: Calcular la energía mecánica en distintos puntos. | 02
+autoeval: Encontrar velocidades y alturas con conservación de energía. | 02
+autoeval: Calcular la energía convertida en calor por la fricción. | 03
+autoeval: Calcular la eficiencia. | 03
+-->
+<section>
+  <h2>El principio de conservación</h2>
+  <div class="definicion">
+    <span class="etq">Conservación de la energía</span>
+    <p>La energía no se crea ni se destruye, solo se transforma de una forma a otra. En un sistema aislado, la energía total siempre es la misma.</p>
+  </div>
+  <p>Cuando decimos que “se gastó” la pila, en realidad su energía química se transformó en luz y calor que se dispersaron en el ambiente. La energía sigue existiendo, pero ya no la podemos aprovechar.</p>
+</section>
+
+<section>
+  <h2>Energía mecánica</h2>
+  <p>La <strong>energía mecánica</strong> de un objeto es la suma de su energía cinética y su energía potencial:</p>
+  $$E_m = E_c + E_p = \tfrac{1}{2}\,m\,v^2 + m\,g\,h$$
+  <p>Si no hay fricción ni resistencia del aire, <strong>la energía mecánica se conserva</strong>: lo que pierde una forma lo gana la otra.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Se deja caer una pelota de 1 kg desde 20 m. Completa la tabla de energías conforme cae.</p>
+      <table>
+        <thead><tr><th>Altura</th><th>$E_p = mgh$</th><th>$E_c$</th><th>$E_m$</th></tr></thead>
+        <tbody>
+          <tr><td>20 m (arriba)</td><td>196 J</td><td>0 J</td><td>196 J</td></tr>
+          <tr><td>15 m</td><td>147 J</td><td>49 J</td><td>196 J</td></tr>
+          <tr><td>10 m</td><td>98 J</td><td>98 J</td><td>196 J</td></tr>
+          <tr><td>5 m</td><td>49 J</td><td>147 J</td><td>196 J</td></tr>
+          <tr><td>0 m (suelo)</td><td>0 J</td><td>196 J</td><td>196 J</td></tr>
+        </tbody>
+      </table>
+      <p class="paso">La energía mecánica es la misma en todos los puntos. Justo antes de tocar el suelo, toda la energía es cinética: $\tfrac{1}{2}(1)v^2 = 196$, así que $v = \sqrt{392} \approx 19.8$ m/s.</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Un atajo muy útil</span>
+    <p>Si un objeto baja una altura $h$ partiendo del reposo y sin fricción, al igualar $mgh = \tfrac{1}{2}mv^2$ la masa se cancela y queda $v = \sqrt{2gh}$. No importa si cae recto, por una rampa o en una montaña rusa: solo importa cuánto bajó.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un carrito de montaña rusa parte del reposo a 20 m de altura. Sin fricción, ¿a qué velocidad pasa por el punto más bajo? ¿Y por una loma de 12 m?</p>
+      $$v_{\text{abajo}} = \sqrt{2(9.8)(20)} = \sqrt{392} \approx 19.8 \text{ m/s}$$
+      <p class="paso">En la loma de 12 m solo ha bajado $20 - 12 = 8$ m:</p>
+      $$v = \sqrt{2(9.8)(8)} = \sqrt{156.8} \approx 12.5 \text{ m/s}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cuando hay fricción</h2>
+  <p>En la vida real siempre hay fricción y resistencia del aire. Parte de la energía mecánica se convierte en <strong>energía térmica</strong> (calor) y sonido. La energía total se sigue conservando, pero la mecánica disminuye:</p>
+  $$E_{m,\text{inicial}} = E_{m,\text{final}} + E_{\text{térmica}}$$
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un trineo de 20 kg baja una colina de 5 m de altura partiendo del reposo y llega abajo a 8 m/s. ¿Cuánta energía se convirtió en calor?</p>
+      $$E_p = 20(9.8)(5) = 980 \text{ J} \qquad E_c = \tfrac{1}{2}(20)(8)^2 = 640 \text{ J} \qquad 980 - 640 = 340 \text{ J}$$
+      <p class="paso">Se transformaron 340 J en calor por la fricción con el suelo y el aire.</p>
+    </div>
+  </div>
+  <div class="definicion">
+    <span class="etq">Eficiencia</span>
+    <p>Ningún aparato aprovecha el 100 % de la energía que recibe. La eficiencia mide qué parte se convierte en lo que nos interesa:</p>
+    $$\text{eficiencia} = \frac{\text{energía útil}}{\text{energía recibida}}\times 100\,\%$$
+    <p>Si un motor recibe 500 J y entrega 350 J de trabajo, su eficiencia es de $\tfrac{350}{500}\times 100 = 70\,\%$. Los otros 150 J se van como calor y sonido.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">La energía se gasta y desaparece</td><td class="bien">Se transforma</td><td>Se vuelve calor y deja de ser aprovechable.</td></tr>
+        <tr><td class="mal">Un objeto más pesado llega más rápido</td><td class="bien">$v = \sqrt{2gh}$</td><td>Sin aire, la masa se cancela.</td></tr>
+        <tr><td class="mal">Con fricción no se conserva la energía</td><td class="bien">No se conserva la <em>mecánica</em></td><td>La total sí: una parte se volvió térmica.</td></tr>
+        <tr><td class="mal">Máquina con 100 % de eficiencia</td><td class="bien">Siempre menos de 100 %</td><td>Siempre hay pérdidas por calor.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>No se crea ni se destruye</div><div>$E_m = E_c + E_p$</div><div>Sin fricción: $E_m$ constante</div>
+      <div>$mgh = \tfrac{1}{2}mv^2$</div><div>$v = \sqrt{2gh}$</div><div>$h = \dfrac{v^2}{2g}$</div>
+      <div>Fricción: $E_m$ → calor</div><div>Eficiencia $= \dfrac{\text{útil}}{\text{recibida}}\cdot 100$</div><div>Eficiencia $\lt 100\,\%$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $g = 9.8$ m/s² e ignora la fricción salvo que el problema diga otra cosa. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Sin fricción</h3>
+    <ol class="largo">
+      <li>Una maceta de 3 kg cae desde 10 m. ¿Cuál es su energía potencial inicial? ¿Con qué velocidad llega al suelo?</li>
+      <li>Lanzas una pelota hacia arriba a 7 m/s. Usando energía, ¿qué altura alcanza?</li>
+      <li>Un carrito de montaña rusa parte del reposo a 45 m de altura. ¿A qué velocidad pasa por el punto más bajo?</li>
+      <li>Un péndulo pasa por su punto más bajo a 2 m/s. ¿Cuánto sube la pesa por encima de ese punto?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Con fricción y eficiencia</h3>
+    <ol class="largo">
+      <li>Un niño de 30 kg baja por una resbaladilla de 2.5 m de altura y llega abajo a 5 m/s. ¿Cuánta energía se convirtió en calor?</li>
+      <li>Una bomba de agua recibe 2000 J de energía eléctrica y sube agua dándole 1500 J de energía potencial. ¿Cuál es su eficiencia?</li>
+      <li>¿Por qué una pelota que rebota nunca regresa a la altura desde la que la soltaste?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>294 J; 14 m/s</span></li>
+    <li><span>2.5 m</span></li>
+    <li><span>29.7 m/s</span></li>
+    <li><span>≈ 0.20 m (20 cm)</span></li>
+    <li><span>360 J</span></li>
+    <li><span>75 %</span></li>
+    <li><span>Parte de la energía se vuelve calor y sonido</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$E_p = 3(9.8)(10) = 294$ J. $v = \sqrt{2(9.8)(10)} = \sqrt{196} = 14$ m/s.</div></div>
+    <div class="sol"><span>2</span><div>$h = \dfrac{v^2}{2g} = \dfrac{49}{19.6} = 2.5$ m.</div></div>
+    <div class="sol"><span>3</span><div>$v = \sqrt{2(9.8)(45)} = \sqrt{882} \approx 29.7$ m/s (unos 107 km/h).</div></div>
+    <div class="sol"><span>4</span><div>$h = \dfrac{2^2}{2(9.8)} = \dfrac{4}{19.6} \approx 0.20$ m.</div></div>
+    <div class="sol"><span>5</span><div>$E_p = 30(9.8)(2.5) = 735$ J. $E_c = \tfrac{1}{2}(30)(25) = 375$ J. Calor: $735 - 375 = 360$ J.</div></div>
+    <div class="sol"><span>6</span><div>$\dfrac{1500}{2000}\times 100 = 75\,\%$.</div></div>
+    <div class="sol"><span>7</span><div>En cada rebote parte de la energía mecánica se convierte en calor (la pelota y el piso se calientan un poco) y en sonido. Con menos energía mecánica, alcanza menos altura.</div></div>
+  </div>
+</section>

@@ -1,0 +1,233 @@
+<!-- guia
+titulo: Velocidad y rapidez (MRU)
+nivel: Secundaria
+materia: Física
+rama: Movimiento
+numero: 02
+entrada: El velocímetro de un auto marca rapidez, pero para saber a dónde llegas necesitas la velocidad. En esta guía vas a distinguirlas, a convertir unidades y a resolver problemas de movimiento rectilíneo uniforme, el movimiento más sencillo que existe.
+objetivo: Distinguir rapidez de velocidad.
+objetivo: Convertir entre km/h y m/s.
+objetivo: Calcular rapidez media de un viaje completo.
+objetivo: Usar las ecuaciones del movimiento rectilíneo uniforme.
+objetivo: Leer la velocidad en una gráfica posición-tiempo.
+objetivo: Resolver problemas de encuentro.
+autoeval: Explicar la diferencia entre rapidez y velocidad. | 01
+autoeval: Convertir km/h a m/s y al revés. | 01
+autoeval: Calcular la rapidez media de un viaje con varios tramos. | 02
+autoeval: Usar $d = vt$ y $x = x_0 + vt$. | 03
+autoeval: Obtener la velocidad a partir de una gráfica. | 04
+autoeval: Resolver problemas de encuentro. | 03
+-->
+<section>
+  <h2>Rapidez y velocidad</h2>
+  <div class="definicion">
+    <span class="etq">Definiciones</span>
+    <p>La <strong>rapidez</strong> es la distancia recorrida entre el tiempo que tardaste. Es escalar.</p>
+    <p>La <strong>velocidad</strong> es el desplazamiento entre el tiempo. Es vectorial: tiene dirección.</p>
+    $$\text{rapidez} = \frac{d}{t} \qquad\qquad v = \frac{\Delta x}{\Delta t}$$
+  </div>
+  <p>Si te mueves en línea recta sin regresarte, la rapidez es igual al tamaño de la velocidad. Si das una vuelta completa a una pista, tu rapidez media no es cero, pero tu velocidad media sí, porque tu desplazamiento fue cero.</p>
+  <h3>Unidades</h3>
+  <p>En el Sistema Internacional la velocidad se mide en m/s, pero en la vida diaria se usa km/h. Como $1 \text{ km/h} = \dfrac{1000 \text{ m}}{3600 \text{ s}}$:</p>
+  $$\text{km/h} \xrightarrow{\ \div 3.6\ } \text{m/s} \qquad\qquad \text{m/s} \xrightarrow{\ \times 3.6\ } \text{km/h}$$
+  <p>Por ejemplo, $72 \text{ km/h} = 72 \div 3.6 = 20 \text{ m/s}$ y $25 \text{ m/s} = 25\times 3.6 = 90 \text{ km/h}$.</p>
+</section>
+
+<section>
+  <h2>Rapidez media</h2>
+  <p>Casi nadie viaja a la misma rapidez todo el tiempo. La <strong>rapidez media</strong> de un viaje es la distancia total entre el tiempo total. La del velocímetro, la que tienes en un instante, es la <strong>rapidez instantánea</strong>.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un auto recorre 120 km en 1.5 h y regresa los mismos 120 km en 2 h. ¿Cuál fue su rapidez media en todo el viaje?</p>
+      $$\text{rapidez media} = \frac{120 + 120}{1.5 + 2} = \frac{240}{3.5} \approx 68.6 \text{ km/h}$$
+      <p class="paso">Ojo: la ida fue a 80 km/h y el regreso a 60 km/h, pero la media <em>no</em> es 70 km/h, porque pasó más tiempo viajando despacio.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Movimiento rectilíneo uniforme</h2>
+  <p>Un movimiento es <strong>rectilíneo uniforme (MRU)</strong> si ocurre en línea recta y con velocidad constante: recorre distancias iguales en tiempos iguales. Sus ecuaciones son:</p>
+  $$d = v\,t \qquad\qquad t = \frac{d}{v} \qquad\qquad x = x_0 + v\,t$$
+  <p class="leyenda">$x_0$ es la posición inicial y $x$ la posición después de un tiempo $t$. Cuida que las unidades coincidan: si $v$ está en km/h, el tiempo va en horas.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Cuánto tarda la luz del Sol en llegar a la Tierra? La distancia es de unos $1.5\times 10^{8}$ km y la luz viaja a $3\times 10^{5}$ km/s.</p>
+      $$t = \frac{d}{v} = \frac{1.5\times 10^{8}}{3\times 10^{5}} = 500 \text{ s} \approx 8.3 \text{ minutos}$$
+      <p class="paso">La luz que ves del Sol salió de él hace poco más de ocho minutos.</p>
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Dos autos están separados 360 km y salen al mismo tiempo, uno hacia el otro, a 70 km/h y 50 km/h. ¿Cuándo y dónde se encuentran?</p>
+      <p class="paso">Se acercan a razón de $70 + 50 = 120$ km/h, así que se encuentran en:</p>
+      $$t = \frac{360}{120} = 3 \text{ h}$$
+      <p class="paso">En ese tiempo el primero recorrió $70\cdot 3 = 210$ km y el segundo $50\cdot 3 = 150$ km. Comprueba: $210 + 150 = 360$. ✔</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Gráficas del MRU</h2>
+  <div class="figura-lado">
+    <div>
+      <p>En una gráfica <strong>posición-tiempo</strong>, el MRU es una línea recta. Su <strong>pendiente</strong> (cuánto sube por cada unidad hacia la derecha) es la velocidad:</p>
+      $$v = \frac{\Delta x}{\Delta t} = \frac{50 - 0}{10 - 0} = 5 \text{ m/s}$$
+      <p>Mientras más inclinada la recta, mayor la velocidad. Una recta horizontal significa que el objeto está quieto. Una recta que baja indica velocidad negativa (se mueve hacia atrás).</p>
+    </div>
+    <figure class="figura">
+<svg viewBox="0 0 300 170" width="78mm">
+<line x1="36" y1="145.0" x2="288" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">0</text>
+<line x1="36" y1="118.4" x2="288" y2="118.4" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="121.9" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">10</text>
+<line x1="36" y1="91.8" x2="288" y2="91.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="95.3" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">20</text>
+<line x1="36" y1="65.2" x2="288" y2="65.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="68.7" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">30</text>
+<line x1="36" y1="38.6" x2="288" y2="38.6" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="42.1" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">40</text>
+<line x1="36" y1="12.0" x2="288" y2="12.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="15.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">50</text>
+<text x="36.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">0 s</text>
+<text x="86.4" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">2 s</text>
+<text x="136.8" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">4 s</text>
+<text x="187.2" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">6 s</text>
+<text x="237.6" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">8 s</text>
+<text x="288.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">10 s</text>
+<line x1="36" y1="145" x2="288" y2="145" stroke="#2b241e"/>
+<polyline points="36.0,145.0 86.4,118.4 136.8,91.8 187.2,65.2 237.6,38.6 288.0,12.0" fill="none" stroke="#a8492a" stroke-width="2.2"/>
+<circle cx="36.0" cy="145.0" r="3.2" fill="#a8492a"/>
+<circle cx="86.4" cy="118.4" r="3.2" fill="#a8492a"/>
+<circle cx="136.8" cy="91.8" r="3.2" fill="#a8492a"/>
+<circle cx="187.2" cy="65.2" r="3.2" fill="#a8492a"/>
+<circle cx="237.6" cy="38.6" r="3.2" fill="#a8492a"/>
+<circle cx="288.0" cy="12.0" r="3.2" fill="#a8492a"/>
+</svg>
+      <figcaption>Posición (m) contra tiempo (s) de un objeto con MRU.</figcaption>
+    </figure>
+  </div>
+  <div class="nota">
+    <span class="etq">Gráfica velocidad-tiempo</span>
+    <p>En una gráfica velocidad-tiempo, el MRU es una línea horizontal (la velocidad no cambia), y el <strong>área bajo la línea</strong> es el desplazamiento: un rectángulo de altura $v$ y base $t$, es decir, $v\cdot t$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$72 \text{ km/h} = 72\times 3.6 \text{ m/s}$</td><td class="bien">$72\div 3.6 = 20 \text{ m/s}$</td><td>El m/s es la unidad más grande: el número se hace más chico.</td></tr>
+        <tr><td class="mal">Rapidez media = promedio de las rapideces</td><td class="bien">Distancia total ÷ tiempo total</td><td>Cada tramo dura un tiempo distinto.</td></tr>
+        <tr><td class="mal">Mezclar km/h con minutos</td><td class="bien">Pasar los minutos a horas</td><td>30 min son 0.5 h, no 30 h.</td></tr>
+        <tr><td class="mal">Velocidad sin dirección</td><td class="bien">“20 m/s hacia el norte”</td><td>La velocidad es un vector.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Rapidez $= \dfrac{d}{t}$</div><div>$v = \dfrac{\Delta x}{\Delta t}$</div><div>km/h $\div 3.6$ = m/s</div>
+      <div>$d = vt$</div><div>$t = \dfrac{d}{v}$</div><div>$x = x_0 + vt$</div>
+      <div>Media: total ÷ total</div><div>Pendiente de $x$-$t$ = $v$</div><div>Área de $v$-$t$ = desplazamiento</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Escribe los datos con sus unidades antes de sustituir. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Rapidez y unidades</h3>
+    <ol>
+      <li>Un corredor hace 150 m en 12 s. ¿Su rapidez?</li><li>Convierte 54 km/h a m/s</li><li>Convierte 25 m/s a km/h</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. MRU</h3>
+    <ol class="largo">
+      <li>Un autobús viaja a 80 km/h durante 3.5 h. ¿Qué distancia recorre?</li>
+      <li>¿Cuánto tarda en recorrer 450 km un auto que va a 90 km/h?</li>
+      <li>La posición de un ciclista es $x = 20 + 4t$ (en metros y segundos). ¿Dónde está a los 15 s? ¿Cuál es su velocidad?</li>
+      <li>Recorres 60 km en 1 h y otros 60 km en media hora. ¿Cuál fue tu rapidez media?</li>
+      <li>Dos ciclistas están separados 5.4 km y pedalean uno hacia el otro a 5 m/s y 4 m/s. ¿Cuánto tardan en encontrarse?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Gráfica</h3>
+    <div class="figura-lado">
+      <ol class="largo">
+        <li>La gráfica muestra la posición de un carrito. ¿Cuál es su posición inicial? ¿Cuál es su velocidad?</li>
+        <li>Con esa velocidad, ¿dónde estaría el carrito a los 20 s?</li>
+      </ol>
+      <figure class="figura">
+<svg viewBox="0 0 300 170" width="78mm">
+<line x1="36" y1="145.0" x2="288" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">0</text>
+<line x1="36" y1="122.8" x2="288" y2="122.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="126.3" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">10</text>
+<line x1="36" y1="100.7" x2="288" y2="100.7" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="104.2" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">20</text>
+<line x1="36" y1="78.5" x2="288" y2="78.5" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="82.0" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">30</text>
+<line x1="36" y1="56.3" x2="288" y2="56.3" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="59.8" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">40</text>
+<line x1="36" y1="34.2" x2="288" y2="34.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="37.7" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">50</text>
+<line x1="36" y1="12.0" x2="288" y2="12.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="15.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">60</text>
+<text x="36.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">0 s</text>
+<text x="99.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">2 s</text>
+<text x="162.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">4 s</text>
+<text x="225.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">6 s</text>
+<text x="288.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">8 s</text>
+<line x1="36" y1="145" x2="288" y2="145" stroke="#2b241e"/>
+<polyline points="36.0,122.8 99.0,100.7 162.0,78.5 225.0,56.3 288.0,34.2" fill="none" stroke="#4b5d6b" stroke-width="2.2"/>
+<circle cx="36.0" cy="122.8" r="3.2" fill="#4b5d6b"/>
+<circle cx="99.0" cy="100.7" r="3.2" fill="#4b5d6b"/>
+<circle cx="162.0" cy="78.5" r="3.2" fill="#4b5d6b"/>
+<circle cx="225.0" cy="56.3" r="3.2" fill="#4b5d6b"/>
+<circle cx="288.0" cy="34.2" r="3.2" fill="#4b5d6b"/>
+</svg>
+        <figcaption>Posición (m) contra tiempo (s).</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>12.5 m/s</span></li>
+    <li><span>15 m/s</span></li>
+    <li><span>90 km/h</span></li>
+    <li><span>280 km</span></li>
+    <li><span>5 h</span></li>
+    <li><span>80 m; 4 m/s</span></li>
+    <li><span>80 km/h</span></li>
+    <li><span>10 min</span></li>
+    <li><span>10 m; 5 m/s</span></li>
+    <li><span>110 m</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\dfrac{150}{12} = 12.5$ m/s.</div></div>
+    <div class="sol"><span>2</span><div>$54\div 3.6 = 15$ m/s.</div></div>
+    <div class="sol"><span>4</span><div>$d = 80\cdot 3.5 = 280$ km.</div></div>
+    <div class="sol"><span>6</span><div>$x = 20 + 4(15) = 80$ m. La velocidad es el número que multiplica a $t$: 4 m/s.</div></div>
+    <div class="sol"><span>7</span><div>$\dfrac{60 + 60}{1 + 0.5} = \dfrac{120}{1.5} = 80$ km/h (no 90, que sería promediar 60 y 120).</div></div>
+    <div class="sol"><span>8</span><div>Se acercan a $5 + 4 = 9$ m/s. $5.4$ km $= 5400$ m. $t = \dfrac{5400}{9} = 600$ s $= 10$ min.</div></div>
+    <div class="sol"><span>9</span><div>En $t = 0$ la gráfica marca 10 m. Pendiente: $\dfrac{50 - 10}{8 - 0} = 5$ m/s.</div></div>
+    <div class="sol"><span>10</span><div>$x = 10 + 5(20) = 110$ m.</div></div>
+  </div>
+</section>

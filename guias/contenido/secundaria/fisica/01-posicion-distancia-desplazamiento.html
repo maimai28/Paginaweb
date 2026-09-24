@@ -1,0 +1,192 @@
+<!-- guia
+titulo: Posición, distancia y desplazamiento
+nivel: Secundaria
+materia: Física
+rama: Movimiento
+numero: 01
+entrada: Para describir un movimiento primero hay que decir dónde está algo y desde dónde lo medimos. En esta guía vas a aprender la diferencia entre la distancia que recorres y qué tan lejos terminas de donde empezaste, que no siempre es lo mismo.
+objetivo: Usar un sistema de referencia para indicar posiciones.
+objetivo: Distinguir cantidades escalares de vectoriales.
+objetivo: Calcular la distancia recorrida.
+objetivo: Calcular el desplazamiento con su signo o dirección.
+objetivo: Encontrar desplazamientos en dos direcciones con Pitágoras.
+objetivo: Convertir unidades de longitud.
+autoeval: Indicar posiciones positivas y negativas en una recta. | 01
+autoeval: Distinguir escalares de vectores. | 02
+autoeval: Calcular distancia y desplazamiento en una recta. | 03
+autoeval: Calcular el desplazamiento en dos dimensiones. | 04
+autoeval: Convertir entre metros y kilómetros. | 01
+-->
+<section>
+  <h2>Posición y sistema de referencia</h2>
+  <p>Decir “la tienda está a 300 metros” no basta: ¿a 300 metros de dónde y hacia dónde? Para describir una posición necesitas un <strong>sistema de referencia</strong>: un punto de origen, una dirección positiva y una unidad de medida.</p>
+  <figure class="figura">
+    <svg viewBox="0 0 560 90" width="150mm">
+      <line x1="20" y1="55" x2="545" y2="55" stroke="#2b241e" stroke-width="1.5"/>
+      <path d="M545 55 l-9 -4.5 v9 z" fill="#2b241e"/>
+      <g font-family="Nunito" font-size="12" text-anchor="middle" fill="#2b241e">
+        <line x1="60" y1="49" x2="60" y2="61" stroke="#2b241e"/><text x="60" y="78">−4</text>
+        <line x1="120" y1="49" x2="120" y2="61" stroke="#2b241e"/><text x="120" y="78">−2</text>
+        <line x1="180" y1="46" x2="180" y2="64" stroke="#2b241e" stroke-width="2"/><text x="180" y="78" font-weight="800">0</text>
+        <line x1="240" y1="49" x2="240" y2="61" stroke="#2b241e"/><text x="240" y="78">2</text>
+        <line x1="300" y1="49" x2="300" y2="61" stroke="#2b241e"/><text x="300" y="78">4</text>
+        <line x1="360" y1="49" x2="360" y2="61" stroke="#2b241e"/><text x="360" y="78">6</text>
+        <line x1="420" y1="49" x2="420" y2="61" stroke="#2b241e"/><text x="420" y="78">8</text>
+        <line x1="480" y1="49" x2="480" y2="61" stroke="#2b241e"/><text x="480" y="78">10</text>
+        <text x="535" y="78" fill="#5f5448">x (m)</text>
+      </g>
+      <circle cx="90" cy="55" r="6" fill="#4b5d6b"/><text x="90" y="36" font-family="Nunito" font-size="11" text-anchor="middle" fill="#4b5d6b">B: −3 m</text>
+      <circle cx="330" cy="55" r="6" fill="#a8492a"/><text x="330" y="36" font-family="Nunito" font-size="11" text-anchor="middle" fill="#a8492a">A: 5 m</text>
+      <text x="180" y="22" font-family="Nunito" font-size="11" text-anchor="middle" fill="#5f5448">origen</text>
+    </svg>
+    <figcaption>El objeto A está en $x = 5$ m y el B en $x = -3$ m. El signo indica de qué lado del origen están.</figcaption>
+  </figure>
+  <p>Las unidades de longitud más usadas son el metro (m), el kilómetro (km) y el centímetro (cm): $1 \text{ km} = 1000 \text{ m}$ y $1 \text{ m} = 100 \text{ cm}$. Así, $2.5$ km son $2500$ m y $3400$ m son $3.4$ km.</p>
+</section>
+
+<section>
+  <h2>Escalares y vectores</h2>
+  <p>Algunas cantidades quedan completamente descritas con un número y su unidad: son <strong>escalares</strong>. Otras necesitan además una dirección: son <strong>vectores</strong>.</p>
+  <table class="leyes">
+    <thead><tr><th>Escalares</th><th>Vectores</th></tr></thead>
+    <tbody>
+      <tr><td>Masa: 60 kg</td><td>Desplazamiento: 4 m hacia el norte</td></tr>
+      <tr><td>Tiempo: 15 s</td><td>Velocidad: 80 km/h hacia el sur</td></tr>
+      <tr><td>Temperatura: $35\,^\circ$C</td><td>Fuerza: 20 N hacia abajo</td></tr>
+      <tr><td>Distancia: 12 m</td><td>Aceleración: 9.8 m/s² hacia abajo</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">En una recta, la dirección de un vector se indica con el signo: positivo hacia un lado, negativo hacia el otro.</p>
+</section>
+
+<section>
+  <h2>Distancia y desplazamiento</h2>
+  <div class="definicion">
+    <span class="etq">Dos cantidades distintas</span>
+    <p>La <strong>distancia</strong> es la longitud total del camino recorrido. Es escalar y nunca es negativa.</p>
+    <p>El <strong>desplazamiento</strong> es el cambio de posición: dónde terminaste menos dónde empezaste. Es vectorial.</p>
+    $$\Delta x = x_f - x_i$$
+  </div>
+  <p>El símbolo $\Delta$ (delta) significa “cambio en”. Si $\Delta x$ es positivo, el desplazamiento fue en la dirección positiva; si es negativo, en la contraria.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una persona camina desde $x = 2$ m hasta $x = 10$ m y luego regresa hasta $x = 6$ m. Calcula la distancia recorrida y el desplazamiento.</p>
+      <p class="paso">Distancia: suma de los tramos, sin signo: $8 + 4 = 12$ m.</p>
+      <p class="paso">Desplazamiento: solo importan el inicio y el final:</p>
+      $$\Delta x = 6 - 2 = 4 \text{ m (en dirección positiva)}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Viaje redondo</span>
+    <p>Si sales de tu casa, das vueltas por la colonia y regresas, tu desplazamiento es <strong>cero</strong> aunque hayas caminado kilómetros. Por eso la distancia siempre es mayor o igual que el tamaño del desplazamiento; solo son iguales si te mueves en línea recta sin regresarte.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Desplazamiento en dos direcciones</h2>
+  <p>Si te mueves en dos direcciones perpendiculares (por ejemplo, norte y este), el desplazamiento es la línea recta que une el inicio con el final. Su tamaño se calcula con el teorema de Pitágoras.</p>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">2</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>Un ciclista avanza 3 km hacia el este y luego 4 km hacia el norte. ¿Qué distancia recorrió y cuál fue su desplazamiento?</p>
+        <p class="paso">Distancia: $3 + 4 = 7$ km.</p>
+        $$|\Delta \vec{r}\,| = \sqrt{3^2 + 4^2} = \sqrt{25} = 5 \text{ km}$$
+        <p class="paso">El desplazamiento es de 5 km en dirección noreste (entre el este y el norte).</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 170 160" width="44mm">
+        <defs><marker id="fl" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#2b241e"/></marker>
+        <marker id="fr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#a8492a"/></marker></defs>
+        <line x1="20" y1="140" x2="110" y2="140" stroke="#2b241e" stroke-width="2" marker-end="url(#fl)"/>
+        <line x1="110" y1="140" x2="110" y2="22" stroke="#2b241e" stroke-width="2" marker-end="url(#fl)"/>
+        <line x1="20" y1="140" x2="107" y2="24" stroke="#a8492a" stroke-width="2.4" stroke-dasharray="6 3" marker-end="url(#fr)"/>
+        <g font-family="Nunito" font-size="12" fill="#2b241e">
+          <text x="52" y="156">3 km E</text><text x="116" y="85">4 km N</text>
+          <text x="30" y="74" fill="#a8492a" font-weight="800">5 km</text>
+        </g>
+        <circle cx="20" cy="140" r="3.5" fill="#2b241e"/>
+      </svg>
+      <figcaption>La flecha punteada es el desplazamiento.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Distancia = desplazamiento</td><td class="bien">Solo si no hay regreso ni vuelta</td><td>La distancia cuenta todo el camino.</td></tr>
+        <tr><td class="mal">$\Delta x = x_i - x_f$</td><td class="bien">$\Delta x = x_f - x_i$</td><td>Final menos inicial; si no, el signo sale al revés.</td></tr>
+        <tr><td class="mal">3 km E + 4 km N = 7 km de desplazamiento</td><td class="bien">5 km</td><td>Los vectores perpendiculares no se suman como números.</td></tr>
+        <tr><td class="mal">Distancia negativa</td><td class="bien">Siempre $\ge 0$</td><td>El signo solo lo lleva el desplazamiento.</td></tr>
+        <tr><td class="mal">Dar el desplazamiento sin dirección</td><td class="bien">“5 km al noreste”</td><td>Es un vector: necesita dirección.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Referencia: origen + dirección + unidad</div><div>Escalar: número y unidad</div><div>Vector: número, unidad y dirección</div>
+      <div>Distancia: todo el camino</div><div>$\Delta x = x_f - x_i$</div><div>Viaje redondo: $\Delta x = 0$</div>
+      <div>Perpendiculares: $\sqrt{a^2 + b^2}$</div><div>$1 \text{ km} = 1000 \text{ m}$</div><div>distancia $\ge |\text{desplazamiento}|$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Haz un dibujo de cada situación antes de calcular. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. En una recta</h3>
+    <ol class="largo">
+      <li>Un objeto pasa de $x_i = -3$ m a $x_f = 5$ m. ¿Cuál es su desplazamiento?</li>
+      <li>Un objeto pasa de $x_i = 7$ m a $x_f = 1$ m. ¿Cuál es su desplazamiento? ¿Qué indica el signo?</li>
+      <li>Vas de tu casa ($x = 0$) a la tienda ($x = 300$ m) y regresas hasta $x = 100$ m. Calcula la distancia y el desplazamiento.</li>
+      <li>Una atleta da una vuelta completa a una pista de 400 m y termina donde empezó. ¿Distancia y desplazamiento?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Dos direcciones y conceptos</h3>
+    <ol class="largo">
+      <li>Un camión avanza 12 km al este y luego 5 km al oeste. ¿Distancia recorrida y desplazamiento?</li>
+      <li>Caminas 6 km al norte y luego 8 km al este. ¿Distancia recorrida y tamaño del desplazamiento?</li>
+      <li>¿Puede el desplazamiento ser más grande que la distancia recorrida? Explica.</li>
+      <li>Clasifica como escalar o vector: masa, velocidad, temperatura, fuerza, tiempo, desplazamiento.</li>
+      <li>Convierte 2.5 km a metros y 3400 m a kilómetros.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$\Delta x = 8$ m</span></li>
+    <li><span>$\Delta x = -6$ m</span></li>
+    <li><span>Distancia 500 m; desplazamiento 100 m</span></li>
+    <li><span>400 m; 0 m</span></li>
+    <li><span>17 km; 7 km al este</span></li>
+    <li><span>14 km; 10 km</span></li>
+    <li><span>No</span></li>
+    <li><span>Escalares: masa, temperatura, tiempo. Vectores: velocidad, fuerza, desplazamiento</span></li>
+    <li><span>2500 m; 3.4 km</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\Delta x = 5 - (-3) = 8$ m, en dirección positiva.</div></div>
+    <div class="sol"><span>2</span><div>$\Delta x = 1 - 7 = -6$ m. El signo negativo indica que se movió en la dirección negativa de la recta (hacia la izquierda en el dibujo).</div></div>
+    <div class="sol"><span>3</span><div>Ida: 300 m; regreso: $300 - 100 = 200$ m. Distancia: 500 m. Desplazamiento: $100 - 0 = 100$ m.</div></div>
+    <div class="sol"><span>4</span><div>Recorrió 400 m, pero terminó en el mismo lugar: desplazamiento cero.</div></div>
+    <div class="sol"><span>5</span><div>Distancia: $12 + 5 = 17$ km. Tomando el este como positivo: $\Delta x = 12 - 5 = 7$ km hacia el este.</div></div>
+    <div class="sol"><span>6</span><div>Distancia: $6 + 8 = 14$ km. Desplazamiento: $\sqrt{36 + 64} = \sqrt{100} = 10$ km (hacia el noreste).</div></div>
+    <div class="sol"><span>7</span><div>No. El camino más corto entre dos puntos es la línea recta, y el desplazamiento mide justo esa recta. A lo mucho son iguales.</div></div>
+  </div>
+</section>

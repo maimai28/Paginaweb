@@ -1,0 +1,183 @@
+<!-- guia
+titulo: Leyes de Newton
+nivel: Secundaria
+materia: Física
+rama: Fuerzas
+numero: 05
+entrada: ¿Por qué te vas hacia adelante cuando el camión frena? ¿Por qué cuesta más empujar un carrito lleno que uno vacío? Las tres leyes de Newton explican casi todo el movimiento que ves a tu alrededor.
+objetivo: Entender la fuerza como una interacción con dirección.
+objetivo: Calcular la fuerza neta.
+objetivo: Explicar la inercia con la primera ley.
+objetivo: Usar $F = m\,a$ para calcular fuerza, masa o aceleración.
+objetivo: Identificar pares de acción y reacción.
+objetivo: Dibujar un diagrama de cuerpo libre sencillo.
+autoeval: Calcular la fuerza neta con fuerzas en la misma dirección y en direcciones opuestas. | 01
+autoeval: Explicar situaciones cotidianas con la primera ley. | 02
+autoeval: Usar $F = ma$ para despejar cualquier variable. | 03
+autoeval: Identificar pares de acción y reacción. | 04
+autoeval: Dibujar las fuerzas sobre un objeto. | 01
+-->
+<section>
+  <h2>Fuerza y fuerza neta</h2>
+  <p>Una <strong>fuerza</strong> es un empujón o un jalón: una interacción entre dos cuerpos. Es un vector, así que importa su dirección. En el Sistema Internacional se mide en <strong>newtons</strong> (N).</p>
+  <p>Sobre un objeto casi siempre actúan varias fuerzas. La <strong>fuerza neta</strong> (o resultante) es la suma de todas, tomando en cuenta la dirección:</p>
+  <ul>
+    <li>Si van en la misma dirección, se suman: 30 N + 45 N hacia la derecha = 75 N hacia la derecha.</li>
+    <li>Si van en direcciones opuestas, se restan y gana la mayor: 45 N a la derecha y 30 N a la izquierda dan 15 N a la derecha.</li>
+  </ul>
+  <div class="figura-lado">
+    <div class="definicion">
+      <span class="etq">Diagrama de cuerpo libre</span>
+      <p>Para analizar un objeto, dibújalo como una caja y pon una flecha por cada fuerza que actúa <em>sobre él</em>. Las más comunes: el <strong>peso</strong> (hacia abajo), la <strong>normal</strong> (la del piso, hacia arriba), la fuerza <strong>aplicada</strong> y la <strong>fricción</strong> (en contra del movimiento).</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 200 170" width="54mm">
+        <defs><marker id="n5" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#2b241e"/></marker></defs>
+        <line x1="10" y1="120" x2="190" y2="120" stroke="#5f5448" stroke-width="1.5"/>
+        <rect x="70" y="75" width="60" height="45" fill="#efe3cf" stroke="#2b241e" stroke-width="1.5"/>
+        <g stroke="#2b241e" stroke-width="2" marker-end="url(#n5)">
+          <line x1="100" y1="97" x2="100" y2="160"/><line x1="100" y1="97" x2="100" y2="34"/>
+          <line x1="100" y1="97" x2="180" y2="97"/><line x1="100" y1="97" x2="35" y2="97"/>
+        </g>
+        <g font-family="Nunito" font-size="11" fill="#2b241e">
+          <text x="106" y="165">Peso</text><text x="106" y="38">Normal</text><text x="150" y="90">Aplicada</text><text x="20" y="90">Fricción</text>
+        </g>
+      </svg>
+      <figcaption>Fuerzas sobre una caja que se empuja.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Primera ley: inercia</h2>
+  <div class="definicion">
+    <span class="etq">Primera ley de Newton</span>
+    <p>Si la fuerza neta sobre un objeto es cero, el objeto mantiene su estado: si está quieto sigue quieto, y si se mueve sigue moviéndose en línea recta con velocidad constante.</p>
+  </div>
+  <p>A esa tendencia a mantener su estado de movimiento se le llama <strong>inercia</strong>, y es mayor mientras más masa tenga el objeto.</p>
+  <ul>
+    <li>Cuando el camión frena de golpe, tu cuerpo “quiere” seguir avanzando: por eso te vas hacia adelante. El cinturón de seguridad aplica la fuerza que te detiene.</li>
+    <li>Si jalas rápido el mantel, los platos se quedan casi en su lugar por su inercia.</li>
+    <li>Una nave en el espacio, lejos de todo, sigue moviéndose sin necesidad de motor.</li>
+  </ul>
+  <div class="nota">
+    <span class="etq">Fuerza neta cero no significa “quieto”</span>
+    <p>Un auto que va a 80 km/h constantes en línea recta también tiene fuerza neta cero: el empuje del motor se equilibra con la fricción y el aire. Moverse no requiere fuerza neta; <strong>cambiar</strong> la velocidad, sí.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Segunda ley: $F = m\,a$</h2>
+  <div class="definicion">
+    <span class="etq">Segunda ley de Newton</span>
+    <p>La aceleración de un objeto es proporcional a la fuerza neta y va en su misma dirección; y es inversamente proporcional a su masa:</p>
+    $$F_{\text{neta}} = m\,a \qquad\qquad a = \frac{F_{\text{neta}}}{m} \qquad\qquad m = \frac{F_{\text{neta}}}{a}$$
+    <p>Con $m$ en kg y $a$ en m/s², la fuerza sale en newtons: $1 \text{ N} = 1 \text{ kg}\cdot\text{m/s}^2$.</p>
+  </div>
+  <p>Por eso un carrito lleno (más masa) acelera menos que uno vacío con el mismo empujón.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Qué fuerza neta necesita un auto de 1200 kg para acelerar a 2 m/s²?</p>
+      $$F = m\,a = 1200\cdot 2 = 2400 \text{ N}$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Empujas una caja de 10 kg con 80 N y la fricción con el piso es de 30 N. ¿Cuál es su aceleración?</p>
+      <p class="paso">Primero la fuerza neta (van en direcciones opuestas), después la segunda ley:</p>
+      $$F_{\text{neta}} = 80 - 30 = 50 \text{ N} \qquad\Rightarrow\qquad a = \frac{50}{10} = 5 \text{ m/s}^2$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tercera ley: acción y reacción</h2>
+  <div class="definicion">
+    <span class="etq">Tercera ley de Newton</span>
+    <p>Si un cuerpo A ejerce una fuerza sobre un cuerpo B, entonces B ejerce sobre A una fuerza del mismo tamaño y en dirección contraria.</p>
+  </div>
+  <ul>
+    <li>Al caminar, empujas el piso hacia atrás y el piso te empuja hacia adelante.</li>
+    <li>Un cohete empuja los gases hacia abajo y los gases empujan al cohete hacia arriba.</li>
+    <li>Al remar, empujas el agua hacia atrás y el agua empuja la lancha hacia adelante.</li>
+  </ul>
+  <div class="nota">
+    <span class="etq">¿Por qué no se cancelan?</span>
+    <p>Porque actúan sobre <strong>cuerpos distintos</strong>. La fuerza del piso actúa sobre ti y la tuya actúa sobre el piso. Solo se suman (y se pueden cancelar) las fuerzas que actúan sobre el mismo objeto.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Para moverse se necesita una fuerza</td><td class="bien">Para <em>cambiar</em> la velocidad</td><td>Primera ley: sin fuerza neta, la velocidad no cambia.</td></tr>
+        <tr><td class="mal">Usar $F = ma$ con una sola fuerza</td><td class="bien">Usar la fuerza <em>neta</em></td><td>Hay que restar la fricción y otras fuerzas.</td></tr>
+        <tr><td class="mal">Acción y reacción se cancelan</td><td class="bien">Actúan en cuerpos distintos</td><td>Solo se suman fuerzas sobre el mismo cuerpo.</td></tr>
+        <tr><td class="mal">Masa en gramos en $F = ma$</td><td class="bien">Masa en kilogramos</td><td>El newton usa kg, m y s.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Fuerza: vector, en newtons</div><div>Misma dirección: se suman</div><div>Opuestas: se restan</div>
+      <div>1.ª ley: $F_{\text{neta}} = 0$ → $v$ constante</div><div>2.ª ley: $F_{\text{neta}} = ma$</div><div>3.ª ley: acción = −reacción</div>
+      <div>$1 \text{ N} = 1 \text{ kg·m/s}^2$</div><div>Inercia: depende de la masa</div><div>Pares en cuerpos distintos</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Dibuja las fuerzas antes de calcular. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Fuerza neta y segunda ley</h3>
+    <ol class="largo">
+      <li>Sobre un objeto actúan 30 N y 45 N. ¿Cuál es la fuerza neta si van en la misma dirección? ¿Y si van en direcciones opuestas?</li>
+      <li>Una fuerza neta de 20 N actúa sobre una masa de 4 kg. ¿Qué aceleración produce?</li>
+      <li>¿Qué fuerza neta se necesita para acelerar a una persona de 60 kg a 1.5 m/s²?</li>
+      <li>Empujas un mueble de 40 kg con 120 N y la fricción es de 80 N. ¿Cuál es su aceleración?</li>
+      <li>Una fuerza neta de 300 N le da a un objeto una aceleración de 2.5 m/s². ¿Cuál es su masa?</li>
+      <li>Un auto de 1000 kg frena de 20 m/s a 0 en 5 s. ¿Qué fuerza neta actuó sobre él?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. ¿Qué ley explica…?</h3>
+    <ol class="largo">
+      <li>a) Que los pasajeros se vayan hacia adelante cuando frena el camión. b) Que un patinador que empuja la pared salga hacia atrás. c) Que un carrito vacío acelere más que uno lleno con el mismo empujón.</li>
+      <li>Si la fuerza neta sobre un objeto es cero, ¿el objeto tiene que estar quieto?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>75 N; 15 N (en dirección de la de 45 N)</span></li>
+    <li><span>5 m/s²</span></li>
+    <li><span>90 N</span></li>
+    <li><span>1 m/s²</span></li>
+    <li><span>120 kg</span></li>
+    <li><span>4000 N, en contra del movimiento</span></li>
+    <li><span>a) primera, b) tercera, c) segunda</span></li>
+    <li><span>No</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$a = \dfrac{20}{4} = 5$ m/s².</div></div>
+    <div class="sol"><span>4</span><div>$F_{\text{neta}} = 120 - 80 = 40$ N. $a = \dfrac{40}{40} = 1$ m/s².</div></div>
+    <div class="sol"><span>5</span><div>$m = \dfrac{300}{2.5} = 120$ kg.</div></div>
+    <div class="sol"><span>6</span><div>$a = \dfrac{0 - 20}{5} = -4$ m/s². $F = 1000(-4) = -4000$ N: 4000 N en contra del movimiento.</div></div>
+    <div class="sol"><span>7</span><div>a) Inercia: el cuerpo tiende a seguir moviéndose. b) El patinador empuja la pared y la pared lo empuja a él. c) Con la misma fuerza, menos masa da más aceleración.</div></div>
+    <div class="sol"><span>8</span><div>No. Puede moverse en línea recta con velocidad constante (primera ley).</div></div>
+  </div>
+</section>

@@ -1,0 +1,172 @@
+<!-- guia
+titulo: Calor y temperatura
+nivel: Secundaria
+materia: Física
+rama: Energía
+numero: 10
+entrada: En el desierto aprendes rápido la diferencia entre calor y temperatura: la arena quema al mediodía y en la noche se enfría en pocas horas. En esta guía vas a entender qué mide un termómetro, cómo viaja el calor y cuánta energía hace falta para calentar algo.
+objetivo: Distinguir calor de temperatura.
+objetivo: Convertir entre grados Celsius, Fahrenheit y kelvin.
+objetivo: Identificar conducción, convección y radiación.
+objetivo: Calcular el calor con $Q = m\,c\,\Delta T$.
+objetivo: Explicar por qué unos materiales se calientan más rápido que otros.
+autoeval: Explicar la diferencia entre calor y temperatura. | 01
+autoeval: Convertir entre °C, °F y K. | 02
+autoeval: Reconocer las tres formas de transferencia de calor. | 03
+autoeval: Calcular calor, masa o cambio de temperatura. | 04
+autoeval: Explicar el papel del calor específico. | 04
+-->
+<section>
+  <h2>Calor y temperatura no son lo mismo</h2>
+  <p>Toda la materia está hecha de partículas en movimiento. Mientras más rápido se agitan, más caliente está el objeto.</p>
+  <div class="definicion">
+    <span class="etq">Definiciones</span>
+    <p>La <strong>temperatura</strong> mide qué tan agitadas están, en promedio, las partículas de un cuerpo. Se mide con un termómetro.</p>
+    <p>El <strong>calor</strong> es energía que pasa de un cuerpo a otro porque tienen distinta temperatura. Siempre fluye del más caliente al más frío. Se mide en joules (J) o en calorías.</p>
+  </div>
+  <p>Cuando dos cuerpos en contacto llegan a la misma temperatura, deja de pasar calor: están en <strong>equilibrio térmico</strong>. Por eso un termómetro necesita unos segundos para dar la lectura.</p>
+  <div class="nota">
+    <span class="etq">Un objeto no “tiene” calor</span>
+    <p>Decir “este café tiene mucho calor” no es correcto en física. El café tiene alta temperatura (y mucha energía térmica); el calor es lo que pasa del café a tu mano cuando lo tocas.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Escalas de temperatura</h2>
+  <table class="leyes">
+    <thead><tr><th>Escala</th><th>Congela el agua</th><th>Hierve el agua (nivel del mar)</th></tr></thead>
+    <tbody>
+      <tr><td>Celsius (°C)</td><td>0 °C</td><td>100 °C</td></tr>
+      <tr><td>Fahrenheit (°F)</td><td>32 °F</td><td>212 °F</td></tr>
+      <tr><td>Kelvin (K)</td><td>273 K</td><td>373 K</td></tr>
+    </tbody>
+  </table>
+  $$T_K = T_C + 273 \qquad\qquad T_F = 1.8\,T_C + 32 \qquad\qquad T_C = \frac{T_F - 32}{1.8}$$
+  <p class="leyenda">El valor exacto es 273.15, pero en secundaria se usa 273. La escala Kelvin empieza en el <strong>cero absoluto</strong> ($0$ K $= -273.15\,^\circ$C), la temperatura más baja posible; por eso no tiene números negativos ni se escribe con el símbolo de grado.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un día de verano en Ciudad Juárez llega a $40\,^\circ$C. ¿Cuánto es en °F y en K? Del otro lado, en El Paso, el pronóstico dice $23\,^\circ$F para una noche de invierno. ¿Cuánto es en °C?</p>
+      $$T_F = 1.8(40) + 32 = 104\,^\circ\text{F} \qquad\qquad T_K = 40 + 273 = 313 \text{ K}$$
+      $$T_C = \frac{23 - 32}{1.8} = -5\,^\circ\text{C}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cómo viaja el calor</h2>
+  <table class="leyes">
+    <thead><tr><th>Forma</th><th>Cómo ocurre</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Conducción</strong></td><td>Por contacto directo: las partículas agitadas empujan a sus vecinas. Sobre todo en sólidos.</td><td>El mango de una cuchara metida en sopa caliente</td></tr>
+      <tr><td><strong>Convección</strong></td><td>Por el movimiento de un fluido (líquido o gas): lo caliente sube y lo frío baja.</td><td>El aire caliente que se acumula cerca del techo</td></tr>
+      <tr><td><strong>Radiación</strong></td><td>Por ondas electromagnéticas; no necesita materia y viaja por el vacío.</td><td>El calor del Sol en tu cara</td></tr>
+    </tbody>
+  </table>
+  <p>Los metales son buenos <strong>conductores</strong> del calor; la madera, el plástico, la lana y el aire quieto son <strong>aislantes</strong>. Por eso los sartenes tienen mango de plástico y los termos tienen doble pared.</p>
+</section>
+
+<section>
+  <h2>¿Cuánto calor hace falta?</h2>
+  <p>Para calentar algo, el calor necesario depende de su masa, de cuánto quieres subirle la temperatura y del material:</p>
+  $$Q = m\,c\,\Delta T$$
+  <p class="leyenda">$Q$ es el calor en joules, $m$ la masa en kg, $\Delta T = T_f - T_i$ el cambio de temperatura y $c$ el <strong>calor específico</strong>: el calor que necesita 1 kg del material para subir $1\,^\circ$C.</p>
+  <table class="leyes">
+    <thead><tr><th>Material</th><th>$c$ en J/(kg·°C)</th><th></th></tr></thead>
+    <tbody>
+      <tr><td>Agua</td><td>4186</td><td>Muy alto: tarda en calentarse y en enfriarse</td></tr>
+      <tr><td>Aluminio</td><td>900</td><td></td></tr>
+      <tr><td>Arena seca (aprox.)</td><td>830</td><td>Se calienta y se enfría rápido</td></tr>
+      <tr><td>Hierro</td><td>450</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Cuánto calor se necesita para calentar 2 kg de agua de $20\,^\circ$C a $80\,^\circ$C?</p>
+      $$Q = 2\cdot 4186\cdot(80 - 20) = 502\,320 \text{ J} \approx 502 \text{ kJ}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Por qué el desierto se enfría tanto de noche</span>
+    <p>La arena tiene un calor específico bajo: con poco calor sube mucho su temperatura, y al perder poco calor baja mucho. Además, el aire seco deja escapar fácilmente la radiación hacia el cielo. Por eso en la región puede haber más de $15\,^\circ$C de diferencia entre el día y la noche, mientras que junto al mar el agua mantiene la temperatura más pareja.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Calor = temperatura</td><td class="bien">El calor es energía en tránsito</td><td>La temperatura mide la agitación de las partículas.</td></tr>
+        <tr><td class="mal">El frío pasa de la ventana a la casa</td><td class="bien">El calor sale de la casa</td><td>Solo fluye calor, de lo caliente a lo frío.</td></tr>
+        <tr><td class="mal">$T_F = 1.8(T_C + 32)$</td><td class="bien">$T_F = 1.8\,T_C + 32$</td><td>Primero se multiplica, después se suma.</td></tr>
+        <tr><td class="mal">$-10$ K</td><td class="bien">No existe</td><td>El kelvin empieza en el cero absoluto.</td></tr>
+        <tr><td class="mal">$\Delta T = T_i - T_f$</td><td class="bien">$\Delta T = T_f - T_i$</td><td>Si se calienta, $\Delta T$ y $Q$ son positivos.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Temperatura: agitación</div><div>Calor: energía que pasa</div><div>De caliente a frío</div>
+      <div>$T_K = T_C + 273$</div><div>$T_F = 1.8\,T_C + 32$</div><div>$T_C = \dfrac{T_F - 32}{1.8}$</div>
+      <div>Conducción · convección · radiación</div><div>$Q = mc\Delta T$</div><div>$c_{\text{agua}} = 4186$ J/(kg·°C)</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $T_K = T_C + 273$ y los calores específicos de la tabla de la sección 04. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Escalas</h3>
+    <ol>
+      <li>$25\,^\circ$C a K y a °F</li><li>$98.6\,^\circ$F a °C</li><li>300 K a °C</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Calor</h3>
+    <ol class="largo">
+      <li>¿Cuánto calor se necesita para calentar 0.5 kg de agua de $25\,^\circ$C a $100\,^\circ$C?</li>
+      <li>¿Cuánto calor necesita una olla de aluminio de 3 kg para pasar de $20\,^\circ$C a $70\,^\circ$C?</li>
+      <li>Si le das 10 000 J a 1 kg de agua, ¿cuántos grados sube su temperatura?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Explica</h3>
+    <ol class="largo">
+      <li>¿Qué forma de transferencia de calor hay en cada caso? a) Una tortilla en el comal. b) El aire caliente que sube en un cuarto. c) Sentir el Sol en la cara. d) El mango de una cuchara en la sopa.</li>
+      <li>Al mediodía, la arena de los Médanos de Samalayuca quema los pies, pero el agua de una alberca cercana está fresca, aunque les da el mismo Sol. ¿Por qué?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>298 K; 77 °F</span></li>
+    <li><span>37 °C</span></li>
+    <li><span>27 °C</span></li>
+    <li><span>156 975 J (≈ 157 kJ)</span></li>
+    <li><span>135 000 J</span></li>
+    <li><span>≈ 2.39 °C</span></li>
+    <li><span>a) conducción, b) convección, c) radiación, d) conducción</span></li>
+    <li><span>El agua tiene un calor específico mucho mayor</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$25 + 273 = 298$ K. $1.8(25) + 32 = 45 + 32 = 77\,^\circ$F.</div></div>
+    <div class="sol"><span>2</span><div>$\dfrac{98.6 - 32}{1.8} = \dfrac{66.6}{1.8} = 37\,^\circ$C (la temperatura normal del cuerpo).</div></div>
+    <div class="sol"><span>3</span><div>$300 - 273 = 27\,^\circ$C.</div></div>
+    <div class="sol"><span>4</span><div>$Q = 0.5\cdot 4186\cdot 75 = 156\,975$ J.</div></div>
+    <div class="sol"><span>5</span><div>$Q = 3\cdot 900\cdot 50 = 135\,000$ J.</div></div>
+    <div class="sol"><span>6</span><div>$\Delta T = \dfrac{Q}{mc} = \dfrac{10\,000}{1\cdot 4186} \approx 2.39\,^\circ$C.</div></div>
+    <div class="sol"><span>8</span><div>Reciben energía parecida, pero el agua necesita unas cinco veces más calor que la arena para subir cada grado ($4186$ contra unos $830$). Además, el agua de la alberca se mezcla y reparte el calor.</div></div>
+  </div>
+</section>

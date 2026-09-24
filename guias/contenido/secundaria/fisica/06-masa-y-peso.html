@@ -1,0 +1,156 @@
+<!-- guia
+titulo: Masa y peso
+nivel: Secundaria
+materia: Física
+rama: Fuerzas
+numero: 06
+entrada: En la vida diaria decimos “peso 60 kilos”, pero en física masa y peso son cosas distintas. En esta guía vas a entender la diferencia, a calcular el peso en otros planetas y a saber qué mide realmente una báscula.
+objetivo: Distinguir masa de peso.
+objetivo: Calcular el peso con $W = m\,g$.
+objetivo: Despejar la masa a partir del peso.
+objetivo: Comparar el peso en distintos planetas.
+objetivo: Explicar qué miden una balanza y un dinamómetro.
+autoeval: Explicar la diferencia entre masa y peso. | 01
+autoeval: Calcular el peso a partir de la masa. | 02
+autoeval: Calcular la masa a partir del peso. | 02
+autoeval: Calcular el peso en otros planetas. | 03
+autoeval: Explicar qué mide cada instrumento. | 01
+-->
+<section>
+  <h2>Dos conceptos distintos</h2>
+  <table class="leyes">
+    <thead><tr><th></th><th>Masa</th><th>Peso</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Qué es</strong></td><td>La cantidad de materia de un cuerpo y su inercia</td><td>La fuerza con que un planeta atrae al cuerpo</td></tr>
+      <tr><td><strong>Tipo</strong></td><td>Escalar</td><td>Vector (apunta hacia el centro del planeta)</td></tr>
+      <tr><td><strong>Unidad</strong></td><td>Kilogramo (kg)</td><td>Newton (N)</td></tr>
+      <tr><td><strong>¿Cambia de lugar a lugar?</strong></td><td>No</td><td>Sí, depende de la gravedad</td></tr>
+      <tr><td><strong>Se mide con</strong></td><td>Balanza (compara masas)</td><td>Dinamómetro (mide una fuerza)</td></tr>
+    </tbody>
+  </table>
+  <div class="nota">
+    <span class="etq">¿Y la báscula del baño?</span>
+    <p>La báscula mide la fuerza con la que la empujas (tu peso), pero viene calibrada para mostrar kilogramos suponiendo que estás en la Tierra. En la Luna, la misma báscula marcaría como si tuvieras una sexta parte de tu masa, aunque tu masa sería exactamente la misma.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Calcular el peso</h2>
+  <p>El peso es la fuerza de gravedad sobre un objeto. Por la segunda ley de Newton, es la masa por la aceleración de la gravedad:</p>
+  $$W = m\,g \qquad\qquad m = \frac{W}{g}$$
+  <p class="leyenda">En la Tierra, $g \approx 9.8$ m/s², así que cada kilogramo pesa unos 9.8 N.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Cuánto pesa en la Tierra una persona de 50 kg? ¿Y cuál es la masa de un costal que pesa 245 N?</p>
+      $$W = 50\cdot 9.8 = 490 \text{ N} \qquad\qquad m = \frac{245}{9.8} = 25 \text{ kg}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>El peso en otros lugares</h2>
+  <p>La gravedad depende de la masa y el tamaño de cada planeta o luna. Estos son los valores aproximados en la superficie:</p>
+  <table class="leyes">
+    <thead><tr><th>Lugar</th><th>$g$ (m/s²)</th><th>Peso de una persona de 50 kg</th></tr></thead>
+    <tbody>
+      <tr><td>Tierra</td><td>9.8</td><td>490 N</td></tr>
+      <tr><td>Luna</td><td>1.62</td><td>81 N</td></tr>
+      <tr><td>Marte</td><td>3.71</td><td>185.5 N</td></tr>
+      <tr><td>Júpiter (nivel de las nubes)</td><td>24.79</td><td>1239.5 N</td></tr>
+    </tbody>
+  </table>
+  <p>La masa (50 kg) es la misma en todos lados; lo que cambia es el peso. En la Luna pesarías unas seis veces menos que en la Tierra ($9.8\div 1.62 \approx 6$).</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un robot pesa 37.1 N en Marte. ¿Cuál es su masa? ¿Cuánto pesaría en la Tierra?</p>
+      $$m = \frac{37.1}{3.71} = 10 \text{ kg} \qquad\qquad W_{\text{Tierra}} = 10\cdot 9.8 = 98 \text{ N}$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Gravitación universal</span>
+    <p>Newton descubrió que <em>todos</em> los cuerpos con masa se atraen. La atracción es mayor mientras más masa tengan y se debilita rápidamente con la distancia (con el cuadrado de la distancia). Por eso sientes la atracción de la Tierra y no la de un edificio: la masa de la Tierra es enorme.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se piensa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">“Peso 60 kg”</td><td class="bien">Masa de 60 kg; peso de 588 N</td><td>El kilogramo es unidad de masa.</td></tr>
+        <tr><td class="mal">En la Luna tengo menos masa</td><td class="bien">Misma masa, menos peso</td><td>La materia no cambia al viajar.</td></tr>
+        <tr><td class="mal">En el espacio no hay masa</td><td class="bien">La masa se conserva</td><td>Lo que puede ser casi cero es el peso aparente.</td></tr>
+        <tr><td class="mal">$m = W\cdot g$</td><td class="bien">$m = \dfrac{W}{g}$</td><td>Se despeja dividiendo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Masa: materia, kg</div><div>Peso: fuerza, N</div><div>$W = mg$</div>
+      <div>$m = \dfrac{W}{g}$</div><div>$g_{\text{Tierra}} \approx 9.8$ m/s²</div><div>$g_{\text{Luna}} \approx 1.62$ m/s²</div>
+      <div>La masa no cambia</div><div>Balanza: masa</div><div>Dinamómetro: fuerza</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa los valores de $g$ de la tabla de la sección 03. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. En la Tierra</h3>
+    <ol class="largo">
+      <li>¿Cuánto pesa una persona de 70 kg?</li>
+      <li>¿Cuánto pesa una mochila de 5 kg?</li>
+      <li>Un bulto pesa 245 N. ¿Cuál es su masa?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. En otros lugares</h3>
+    <ol class="largo">
+      <li>Un astronauta de 80 kg (con su traje) llega a la Luna. ¿Cuál es su masa allá? ¿Cuánto pesa?</li>
+      <li>¿Cuánto pesaría en Júpiter una persona de 60 kg?</li>
+      <li>¿Cuántas veces es mayor tu peso en la Tierra que en Marte?</li>
+      <li>Una roca pesa 16.2 N en la Luna. ¿Cuál es su masa? ¿Cuánto pesaría en la Tierra?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Conceptos</h3>
+    <ol class="largo">
+      <li>¿Qué mide en realidad la báscula de tu baño? ¿Por qué muestra kilogramos?</li>
+      <li>Si un objeto está en una nave lejos de cualquier planeta, ¿sigue teniendo masa? ¿Cuesta trabajo empujarlo?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>686 N</span></li>
+    <li><span>49 N</span></li>
+    <li><span>25 kg</span></li>
+    <li><span>80 kg; 129.6 N</span></li>
+    <li><span>1487.4 N</span></li>
+    <li><span>Unas 2.6 veces</span></li>
+    <li><span>10 kg; 98 N</span></li>
+    <li><span>Mide una fuerza (el peso)</span></li>
+    <li><span>Sí tiene masa; sí cuesta empujarlo</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$W = 70\cdot 9.8 = 686$ N.</div></div>
+    <div class="sol"><span>4</span><div>La masa no cambia: 80 kg. $W = 80\cdot 1.62 = 129.6$ N.</div></div>
+    <div class="sol"><span>5</span><div>$W = 60\cdot 24.79 = 1487.4$ N, más de dos veces y media lo que pesaría en la Tierra (588 N).</div></div>
+    <div class="sol"><span>6</span><div>$\dfrac{9.8}{3.71} \approx 2.64$: en la Tierra pesas unas 2.6 veces más que en Marte.</div></div>
+    <div class="sol"><span>7</span><div>$m = \dfrac{16.2}{1.62} = 10$ kg. En la Tierra: $10\cdot 9.8 = 98$ N.</div></div>
+    <div class="sol"><span>8</span><div>Mide la fuerza con que la aplastas, que es tu peso. Divide esa fuerza entre 9.8 y te muestra el resultado en kg, suponiendo que estás en la Tierra.</div></div>
+    <div class="sol"><span>9</span><div>Sí: su masa es la misma, y por su inercia hace falta una fuerza para acelerarlo ($F = ma$), aunque no pese.</div></div>
+  </div>
+</section>

@@ -1,0 +1,230 @@
+<!-- guia
+titulo: Aceleración (MRUA)
+nivel: Secundaria
+materia: Física
+rama: Movimiento
+numero: 03
+entrada: Cuando un auto arranca en un semáforo o frena ante un tope, su velocidad cambia. La aceleración mide qué tan rápido ocurre ese cambio. En esta guía vas a trabajar con el movimiento rectilíneo uniformemente acelerado.
+objetivo: Calcular la aceleración a partir del cambio de velocidad.
+objetivo: Interpretar el signo de la aceleración.
+objetivo: Usar las ecuaciones del MRUA.
+objetivo: Calcular distancias de frenado.
+objetivo: Leer aceleración y desplazamiento en una gráfica velocidad-tiempo.
+autoeval: Calcular la aceleración con $a = \dfrac{\Delta v}{\Delta t}$. | 01
+autoeval: Interpretar una aceleración negativa. | 01
+autoeval: Elegir la ecuación del MRUA según los datos. | 02
+autoeval: Calcular tiempo y distancia de frenado. | 02
+autoeval: Obtener aceleración y distancia de una gráfica $v$-$t$. | 03
+-->
+<section>
+  <h2>Qué es la aceleración</h2>
+  <div class="definicion">
+    <span class="etq">Aceleración</span>
+    <p>Es el cambio de velocidad entre el tiempo en que ocurre:</p>
+    $$a = \frac{\Delta v}{\Delta t} = \frac{v_f - v_i}{t}$$
+    <p>Se mide en m/s² (metros por segundo, cada segundo). Una aceleración de 3 m/s² significa que la velocidad aumenta 3 m/s en cada segundo.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un auto pasa de 0 a 100 km/h en 10 s. ¿Cuál es su aceleración?</p>
+      <p class="paso">Primero convierte a m/s: $100\div 3.6 \approx 27.8$ m/s.</p>
+      $$a = \frac{27.8 - 0}{10} \approx 2.78 \text{ m/s}^2$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">¿Y si la aceleración es negativa?</span>
+    <p>Si tomas como positiva la dirección del movimiento, una aceleración negativa significa que el objeto está <strong>frenando</strong>. Un auto que pasa de 20 m/s a 0 en 4 s tiene $a = \dfrac{0 - 20}{4} = -5$ m/s².</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ecuaciones del MRUA</h2>
+  <p>En el movimiento rectilíneo uniformemente acelerado (MRUA), la aceleración es constante. Con $v_0$ velocidad inicial, $v$ velocidad final, $a$ aceleración, $t$ tiempo y $d$ distancia:</p>
+  <table class="leyes">
+    <thead><tr><th>Ecuación</th><th>Úsala si no conoces…</th></tr></thead>
+    <tbody>
+      <tr><td>$v = v_0 + a\,t$</td><td>la distancia</td></tr>
+      <tr><td>$d = v_0\,t + \tfrac{1}{2}\,a\,t^2$</td><td>la velocidad final</td></tr>
+      <tr><td>$v^2 = v_0^2 + 2\,a\,d$</td><td>el tiempo</td></tr>
+      <tr><td>$d = \dfrac{v_0 + v}{2}\,t$</td><td>la aceleración</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Estrategia: escribe los datos que tienes y el que buscas, y elige la ecuación que no incluye la cantidad que ni tienes ni necesitas. “Parte del reposo” significa $v_0 = 0$; “se detiene” significa $v = 0$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una moto parte del reposo con aceleración de 3 m/s². ¿Qué velocidad tiene y cuánto ha avanzado a los 6 s?</p>
+      $$v = 0 + 3(6) = 18 \text{ m/s} \qquad\qquad d = 0 + \tfrac{1}{2}(3)(6)^2 = 54 \text{ m}$$
+    </div>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un auto va a 20 m/s y frena con $a = -5$ m/s². ¿Cuánto tarda en detenerse y qué distancia recorre mientras frena?</p>
+      $$0 = 20 - 5t \;\Rightarrow\; t = 4 \text{ s} \qquad\qquad d = \frac{20 + 0}{2}\cdot 4 = 40 \text{ m}$$
+      <p class="paso">Si fuera al doble de velocidad (40 m/s), con $v^2 = v_0^2 + 2ad$: $0 = 1600 - 10d$, así que $d = 160$ m. ¡Cuatro veces más! La distancia de frenado crece con el cuadrado de la velocidad.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Gráficas del MRUA</h2>
+  <div class="figura-lado">
+    <div>
+      <p>En una gráfica <strong>velocidad-tiempo</strong>, el MRUA es una línea recta inclinada:</p>
+      <ul>
+        <li>La <strong>pendiente</strong> es la aceleración. En la gráfica del auto que frena: $a = \dfrac{0 - 20}{4 - 0} = -5$ m/s².</li>
+        <li>El <strong>área bajo la recta</strong> es la distancia recorrida. Aquí es un triángulo: $\dfrac{4\cdot 20}{2} = 40$ m.</li>
+      </ul>
+      <p>En una gráfica posición-tiempo, el MRUA no es recta sino una curva (una parábola), porque cada segundo se avanza una distancia distinta.</p>
+    </div>
+    <figure class="figura">
+<svg viewBox="0 0 300 170" width="78mm">
+<line x1="36" y1="145.0" x2="288" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">0</text>
+<line x1="36" y1="118.4" x2="288" y2="118.4" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="121.9" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">5</text>
+<line x1="36" y1="91.8" x2="288" y2="91.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="95.3" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">10</text>
+<line x1="36" y1="65.2" x2="288" y2="65.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="68.7" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">15</text>
+<line x1="36" y1="38.6" x2="288" y2="38.6" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="42.1" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">20</text>
+<line x1="36" y1="12.0" x2="288" y2="12.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="15.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">25</text>
+<text x="36.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">0 s</text>
+<text x="99.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">1 s</text>
+<text x="162.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">2 s</text>
+<text x="225.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">3 s</text>
+<text x="288.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">4 s</text>
+<line x1="36" y1="145" x2="288" y2="145" stroke="#2b241e"/>
+<polyline points="36.0,38.6 99.0,65.2 162.0,91.8 225.0,118.4 288.0,145.0" fill="none" stroke="#a8492a" stroke-width="2.2"/>
+<circle cx="36.0" cy="38.6" r="3.2" fill="#a8492a"/>
+<circle cx="99.0" cy="65.2" r="3.2" fill="#a8492a"/>
+<circle cx="162.0" cy="91.8" r="3.2" fill="#a8492a"/>
+<circle cx="225.0" cy="118.4" r="3.2" fill="#a8492a"/>
+<circle cx="288.0" cy="145.0" r="3.2" fill="#a8492a"/>
+</svg>
+      <figcaption>Velocidad (m/s) contra tiempo del auto que frena.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que pasa</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Usar $d = v\,t$ con aceleración</td><td class="bien">Usar las ecuaciones del MRUA</td><td>$d = vt$ solo vale si $v$ es constante.</td></tr>
+        <tr><td class="mal">Olvidar el $\tfrac{1}{2}$ en $\tfrac{1}{2}at^2$</td><td class="bien">$d = v_0 t + \tfrac{1}{2}at^2$</td><td>Sin él, la distancia sale al doble.</td></tr>
+        <tr><td class="mal">Frenar con $a$ positiva</td><td class="bien">$a$ negativa</td><td>La aceleración va en contra del movimiento.</td></tr>
+        <tr><td class="mal">Usar km/h con m/s²</td><td class="bien">Convertir a m/s</td><td>Las unidades deben ser compatibles.</td></tr>
+        <tr><td class="mal">$\tfrac{1}{2}a t^2$ con $t$ sin elevar</td><td class="bien">Elevar $t$ al cuadrado primero</td><td>$\tfrac{1}{2}(3)(6)^2 = 54$, no 9.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$a = \dfrac{v - v_0}{t}$</div><div>$v = v_0 + at$</div><div>$d = v_0 t + \tfrac{1}{2}at^2$</div>
+      <div>$v^2 = v_0^2 + 2ad$</div><div>$d = \dfrac{v_0 + v}{2}\,t$</div><div>Reposo: $v_0 = 0$ · Se detiene: $v = 0$</div>
+      <div>Frenar: $a$ negativa</div><div>Pendiente $v$-$t$ = $a$</div><div>Área $v$-$t$ = distancia</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Anota los datos ($v_0$, $v$, $a$, $t$, $d$) antes de elegir ecuación. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Aceleración</h3>
+    <ol class="largo">
+      <li>Un ciclista pasa de 5 m/s a 25 m/s en 4 s. ¿Cuál es su aceleración?</li>
+      <li>Un camión pasa de 30 m/s a 12 m/s en 6 s. ¿Cuál es su aceleración? ¿Qué significa el signo?</li>
+      <li>Un auto pasa de 0 a 108 km/h en 12 s. ¿Cuál es su aceleración en m/s²?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Ecuaciones del MRUA</h3>
+    <ol class="largo">
+      <li>Un carrito parte del reposo con $a = 2$ m/s². ¿Qué velocidad tiene y qué distancia lleva a los 8 s?</li>
+      <li>Un auto va a 10 m/s y acelera a 1.5 m/s² durante 6 s. ¿Velocidad final y distancia recorrida?</li>
+      <li>Un auto a 25 m/s frena con $a = -5$ m/s² hasta detenerse. ¿Cuánto tarda y qué distancia recorre?</li>
+      <li>Un objeto parte del reposo y acelera a 4 m/s² a lo largo de 50 m. ¿Con qué velocidad termina?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Gráfica</h3>
+    <div class="figura-lado">
+      <ol class="largo">
+        <li>La gráfica muestra la velocidad de un corredor que arranca. ¿Cuál es su aceleración?</li>
+        <li>¿Qué distancia recorrió en los 5 segundos?</li>
+      </ol>
+      <figure class="figura">
+<svg viewBox="0 0 300 170" width="78mm">
+<line x1="36" y1="145.0" x2="288" y2="145.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="148.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">0</text>
+<line x1="36" y1="118.4" x2="288" y2="118.4" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="121.9" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">5</text>
+<line x1="36" y1="91.8" x2="288" y2="91.8" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="95.3" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">10</text>
+<line x1="36" y1="65.2" x2="288" y2="65.2" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="68.7" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">15</text>
+<line x1="36" y1="38.6" x2="288" y2="38.6" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="42.1" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">20</text>
+<line x1="36" y1="12.0" x2="288" y2="12.0" stroke="#e4d2b4" stroke-width="0.8"/>
+<text x="31" y="15.5" font-family="Nunito" font-size="10" text-anchor="end" fill="#5f5448">25</text>
+<text x="36.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">0 s</text>
+<text x="86.4" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">1 s</text>
+<text x="136.8" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">2 s</text>
+<text x="187.2" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">3 s</text>
+<text x="237.6" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">4 s</text>
+<text x="288.0" y="159" font-family="Nunito" font-size="10" text-anchor="middle" fill="#2b241e">5 s</text>
+<line x1="36" y1="145" x2="288" y2="145" stroke="#2b241e"/>
+<polyline points="36.0,145.0 86.4,123.7 136.8,102.4 187.2,81.2 237.6,59.9 288.0,38.6" fill="none" stroke="#4b5d6b" stroke-width="2.2"/>
+<circle cx="36.0" cy="145.0" r="3.2" fill="#4b5d6b"/>
+<circle cx="86.4" cy="123.7" r="3.2" fill="#4b5d6b"/>
+<circle cx="136.8" cy="102.4" r="3.2" fill="#4b5d6b"/>
+<circle cx="187.2" cy="81.2" r="3.2" fill="#4b5d6b"/>
+<circle cx="237.6" cy="59.9" r="3.2" fill="#4b5d6b"/>
+<circle cx="288.0" cy="38.6" r="3.2" fill="#4b5d6b"/>
+</svg>
+        <figcaption>Velocidad (m/s) contra tiempo.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>5 m/s²</span></li>
+    <li><span>$-3$ m/s² (está frenando)</span></li>
+    <li><span>2.5 m/s²</span></li>
+    <li><span>16 m/s; 64 m</span></li>
+    <li><span>19 m/s; 87 m</span></li>
+    <li><span>5 s; 62.5 m</span></li>
+    <li><span>20 m/s</span></li>
+    <li><span>4 m/s²</span></li>
+    <li><span>50 m</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$a = \dfrac{25 - 5}{4} = 5$ m/s².</div></div>
+    <div class="sol"><span>2</span><div>$a = \dfrac{12 - 30}{6} = -3$ m/s². Negativa: la velocidad disminuye.</div></div>
+    <div class="sol"><span>3</span><div>$108\div 3.6 = 30$ m/s. $a = \dfrac{30}{12} = 2.5$ m/s².</div></div>
+    <div class="sol"><span>4</span><div>$v = 2(8) = 16$ m/s. $d = \tfrac{1}{2}(2)(64) = 64$ m.</div></div>
+    <div class="sol"><span>5</span><div>$v = 10 + 1.5(6) = 19$ m/s. $d = 10(6) + \tfrac{1}{2}(1.5)(36) = 60 + 27 = 87$ m.</div></div>
+    <div class="sol"><span>6</span><div>$0 = 25 - 5t \Rightarrow t = 5$ s. $d = \dfrac{25 + 0}{2}\cdot 5 = 62.5$ m.</div></div>
+    <div class="sol"><span>7</span><div>No te dan el tiempo: $v^2 = 0 + 2(4)(50) = 400$, así que $v = 20$ m/s.</div></div>
+    <div class="sol"><span>8</span><div>Pendiente: $\dfrac{20 - 0}{5 - 0} = 4$ m/s².</div></div>
+    <div class="sol"><span>9</span><div>Área del triángulo: $\dfrac{5\cdot 20}{2} = 50$ m.</div></div>
+  </div>
+</section>
