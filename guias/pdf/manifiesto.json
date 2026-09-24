@@ -48,6 +48,36 @@
     "pdf": "preparatoria-matematicas-08-identidades-trigonometricas.pdf"
   },
   {
+    "tema": "preparatoria-matematicas-la-recta",
+    "titulo": "La recta",
+    "descripcion": "Distancia y punto medio, pendiente y ángulo de inclinación, las formas de la ecuación de la recta, rectas paralelas y perpendiculares, intersecciones y distancia de un punto a una recta.",
+    "pdf": "preparatoria-matematicas-09-la-recta.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-la-circunferencia",
+    "titulo": "La circunferencia",
+    "descripcion": "Ecuación ordinaria y general de la circunferencia, cómo completar cuadrados para encontrar centro y radio, circunferencias dadas por un diámetro o tangentes a una recta, y rectas tangentes en un punto.",
+    "pdf": "preparatoria-matematicas-10-la-circunferencia.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-la-parabola",
+    "titulo": "La parábola",
+    "descripcion": "Definición con foco y directriz, ecuaciones con vértice en el origen y fuera de él, elementos (foco, directriz, lado recto, eje), paso de la forma general a la ordinaria y aplicaciones como antenas y arcos.",
+    "pdf": "preparatoria-matematicas-11-la-parabola.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-la-elipse",
+    "titulo": "La elipse",
+    "descripcion": "Definición con dos focos, ecuación con centro en el origen y fuera de él, vértices, focos, ejes, excentricidad y lado recto, paso desde la forma general y aplicaciones como órbitas planetarias y arcos de túneles.",
+    "pdf": "preparatoria-matematicas-12-la-elipse.pdf"
+  },
+  {
+    "tema": "preparatoria-matematicas-la-hiperbola",
+    "titulo": "La hipérbola",
+    "descripcion": "Definición con la diferencia de distancias, ecuaciones horizontal y vertical, vértices, focos, asíntotas y excentricidad, paso desde la forma general y cómo reconocer cualquier cónica por su ecuación.",
+    "pdf": "preparatoria-matematicas-13-la-hiperbola.pdf"
+  },
+  {
     "tema": "secundaria-fisica-posicion-distancia-y-desplazamiento",
     "titulo": "Posición, distancia y desplazamiento",
     "descripcion": "Sistema de referencia, escalares y vectores, distancia recorrida contra desplazamiento, y desplazamientos en dos direcciones con Pitágoras.",

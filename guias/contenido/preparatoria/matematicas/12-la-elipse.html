@@ -1,0 +1,224 @@
+<!-- guia
+titulo: La elipse
+nivel: Preparatoria
+materia: Matemáticas
+rama: Geometría analítica
+numero: 12
+descripcion: Definición con dos focos, ecuación con centro en el origen y fuera de él, vértices, focos, ejes, excentricidad y lado recto, paso desde la forma general y aplicaciones como órbitas planetarias y arcos de túneles.
+entrada: Los planetas no giran en círculos sino en elipses, con el Sol en uno de los focos. En esta guía aprendes a leer una elipse desde su ecuación: qué tan larga es, qué tan achatada y dónde están sus focos.
+objetivo: Entender la definición de elipse con dos focos.
+objetivo: Obtener vértices, focos, ejes y excentricidad de la ecuación.
+objetivo: Distinguir una elipse horizontal de una vertical.
+objetivo: Escribir la ecuación a partir de sus elementos.
+objetivo: Pasar de la forma general a la ordinaria.
+objetivo: Resolver problemas de órbitas y arcos.
+autoeval: Explicar la definición con la suma de distancias. | 01
+autoeval: Identificar $a$, $b$ y $c$ y la orientación. | 02
+autoeval: Calcular focos y excentricidad. | 02
+autoeval: Escribir la ecuación dados focos y vértices. | 03
+autoeval: Completar cuadrados cuando hay coeficientes distintos de 1. | 04
+-->
+<section>
+  <h2>Definición</h2>
+  <div class="figura-lado">
+    <div>
+      <div class="definicion">
+        <span class="etq">Elipse</span>
+        <p>Es el conjunto de puntos cuya <strong>suma de distancias</strong> a dos puntos fijos, los <strong>focos</strong>, es constante. Esa constante se llama $2a$.</p>
+      </div>
+      <p>Puedes dibujar una con dos clavos, un hilo y un lápiz: el hilo mantiene constante la suma $d_1 + d_2$.</p>
+      <p>El <strong>eje mayor</strong> (largo $2a$) pasa por los focos y termina en los <strong>vértices</strong>. El <strong>eje menor</strong> (largo $2b$) es perpendicular. Los focos están a distancia $c$ del centro.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 190 150" width="50mm">
+        <ellipse cx="95" cy="75" rx="80" ry="48" fill="#faf3e6" stroke="#b5562c" stroke-width="2"/>
+        <line x1="10" y1="75" x2="180" y2="75" stroke="#2b241e" stroke-width="0.8"/>
+        <line x1="95" y1="20" x2="95" y2="130" stroke="#2b241e" stroke-width="0.8"/>
+        <line x1="31" y1="75" x2="135" y2="33.4" stroke="#5c7a5a" stroke-width="1.4"/>
+        <line x1="159" y1="75" x2="135" y2="33.4" stroke="#5c7a5a" stroke-width="1.4"/>
+        <circle cx="31" cy="75" r="3" fill="#c28a2e"/><circle cx="159" cy="75" r="3" fill="#c28a2e"/><circle cx="135" cy="33.4" r="3" fill="#b5562c"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="24" y="90">F₁</text><text x="154" y="90">F₂</text><text x="138" y="24">P</text>
+          <text x="72" y="48" fill="#5c7a5a">d₁</text><text x="152" y="54" fill="#5c7a5a">d₂</text>
+          <text x="98" y="140">b</text><text x="60" y="88">c</text>
+        </g>
+      </svg>
+      <figcaption>$d_1 + d_2 = 2a$ para cualquier punto $P$.</figcaption>
+    </figure>
+  </div>
+  <div class="definicion">
+    <span class="etq">Relación entre $a$, $b$ y $c$</span>
+    $$a^2 = b^2 + c^2 \qquad (a \gt b)$$
+    <p>Sale de tomar $P$ en un extremo del eje menor: sus distancias a los dos focos son iguales, cada una vale $a$, y forman un triángulo rectángulo con catetos $b$ y $c$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Centro en el origen</h2>
+  <table class="leyes">
+    <thead><tr><th>Ecuación ($a \gt b$)</th><th>Eje mayor</th><th>Vértices</th><th>Focos</th></tr></thead>
+    <tbody>
+      <tr><td>$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$</td><td>Horizontal</td><td>$(\pm a, 0)$</td><td>$(\pm c, 0)$</td></tr>
+      <tr><td>$\dfrac{x^2}{b^2} + \dfrac{y^2}{a^2} = 1$</td><td>Vertical</td><td>$(0, \pm a)$</td><td>$(0, \pm c)$</td></tr>
+    </tbody>
+  </table>
+  <p>Regla práctica: <strong>el denominador mayor es $a^2$</strong>, y la variable que lo tiene indica la dirección del eje mayor.</p>
+  <table class="leyes">
+    <thead><tr><th>Otros elementos</th><th>Fórmula</th></tr></thead>
+    <tbody>
+      <tr><td>Excentricidad (qué tan alargada)</td><td>$e = \dfrac{c}{a}$, entre 0 (círculo) y 1 (muy alargada)</td></tr>
+      <tr><td>Lado recto</td><td>$\dfrac{2b^2}{a}$</td></tr>
+    </tbody>
+  </table>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Da los elementos de $\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$.</p>
+      <p class="paso">$a^2 = 25$ (bajo la $x$): horizontal, $a = 5$, $b = 3$, $c = \sqrt{25 - 9} = 4$.</p>
+      <p class="paso">Vértices $(\pm 5, 0)$, extremos del eje menor $(0, \pm 3)$, focos $(\pm 4, 0)$, $e = \tfrac{4}{5} = 0.8$, lado recto $\tfrac{2(9)}{5} = \tfrac{18}{5}$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Encontrar la ecuación</h2>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una elipse tiene focos $(0, \pm 6)$ y vértices $(0, \pm 10)$. Encuentra su ecuación.</p>
+      <p class="paso">Eje vertical, $a = 10$, $c = 6$, así que $b^2 = 100 - 36 = 64$:</p>
+      $$\frac{x^2}{64} + \frac{y^2}{100} = 1$$
+    </div>
+  </div>
+  <p>Con centro $(h, k)$ se recorre como siempre: $\dfrac{(x - h)^2}{a^2} + \dfrac{(y - k)^2}{b^2} = 1$ (horizontal), y los vértices y focos se mueven con el centro.</p>
+</section>
+
+<section>
+  <h2>Desde la forma general</h2>
+  <p>La forma general tiene $x^2$ y $y^2$ con coeficientes <strong>del mismo signo pero distintos</strong>: $Ax^2 + Cy^2 + Dx + Ey + F = 0$. Factoriza el coeficiente de cada grupo antes de completar el cuadrado.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra el centro, $a$, $b$ y $c$ de $4x^2 + 9y^2 - 16x + 18y - 11 = 0$.</p>
+      $$4(x^2 - 4x + 4) + 9(y^2 + 2y + 1) = 11 + 16 + 9$$
+      <p class="paso">Ojo: al completar dentro del paréntesis sumaste $4\cdot 4 = 16$ y $9\cdot 1 = 9$, no 4 y 1.</p>
+      $$4(x - 2)^2 + 9(y + 1)^2 = 36 \;\Rightarrow\; \frac{(x - 2)^2}{9} + \frac{(y + 1)^2}{4} = 1$$
+      <p class="paso">Centro $(2, -1)$, horizontal, $a = 3$, $b = 2$, $c = \sqrt{5}$. Focos $(2 \pm \sqrt{5}, -1)$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Órbitas</h2>
+  <p>Kepler descubrió que los planetas describen elipses con el Sol en un foco. El punto más cercano (perihelio) está a $a - c$ del Sol y el más lejano (afelio) a $a + c$.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>La Tierra está a 147.1 millones de km del Sol en el perihelio y a 152.1 millones en el afelio. Encuentra $a$, $c$ y la excentricidad.</p>
+      $$a = \frac{147.1 + 152.1}{2} = 149.6 \qquad c = 152.1 - 149.6 = 2.5 \qquad e = \frac{2.5}{149.6} \approx 0.0167$$
+      <p class="paso">Una excentricidad tan pequeña significa que la órbita es casi un círculo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$c^2 = a^2 + b^2$</td><td class="bien">$c^2 = a^2 - b^2$</td><td>En la elipse los focos están dentro: $c \lt a$.</td></tr>
+        <tr><td class="mal">$a^2$ siempre bajo la $x$</td><td class="bien">$a^2$ es el denominador mayor</td><td>Puede estar bajo la $y$ (vertical).</td></tr>
+        <tr><td class="mal">$\dfrac{x^2}{25}$: $a = 25$</td><td class="bien">$a = 5$</td><td>El denominador es $a^2$.</td></tr>
+        <tr><td class="mal">$4(x^2 - 4x + 4)$: sumar 4 al otro lado</td><td class="bien">Sumar 16</td><td>El 4 de adentro va multiplicado por 4.</td></tr>
+        <tr><td class="mal">$e \gt 1$ en una elipse</td><td class="bien">$0 \lt e \lt 1$</td><td>Porque $c \lt a$.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$d_1 + d_2 = 2a$</div><div>$a^2 = b^2 + c^2$</div><div>$a^2$: denominador mayor</div>
+      <div>$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$: horizontal</div><div>Vértices $(\pm a, 0)$</div><div>Focos $(\pm c, 0)$</div>
+      <div>$e = \dfrac{c}{a} \lt 1$</div><div>Lado recto $\dfrac{2b^2}{a}$</div><div>Perihelio $a - c$, afelio $a + c$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Elementos</h3>
+    <ol class="largo">
+      <li>Vértices, focos y excentricidad de $\dfrac{x^2}{100} + \dfrac{y^2}{36} = 1$.</li>
+      <li>Vértices, focos y excentricidad de $\dfrac{x^2}{16} + \dfrac{y^2}{25} = 1$.</li>
+      <li>Vértices y focos de $9x^2 + 4y^2 = 36$.</li>
+      <li>Lado recto de la elipse del ejercicio 1.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Encuentra la ecuación</h3>
+    <ol class="largo">
+      <li>Vértices $(\pm 13, 0)$ y focos $(\pm 12, 0)$.</li>
+      <li>Centro en el origen, eje mayor vertical de 20 y eje menor de 12.</li>
+      <li>Centro $(1, -2)$, eje mayor horizontal con $a = 5$ y $b = 3$.</li>
+      <li>Focos $(\pm 3, 0)$ y excentricidad $\tfrac{1}{2}$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Forma general</h3>
+    <ol class="largo">
+      <li>Centro, $a$, $b$, $c$ y focos de $9x^2 + 25y^2 - 36x + 50y - 164 = 0$.</li>
+      <li>Centro, $a$, $b$ y $c$ de $4x^2 + y^2 + 8x - 6y + 9 = 0$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Aplicaciones</h3>
+    <ol class="largo">
+      <li>La entrada de un túnel es media elipse de 20 m de ancho y 6 m de alto. ¿Qué altura tiene a 4 m del centro?</li>
+      <li>Una «galería de los susurros» tiene forma de elipse de 30 m de largo y 20 m de ancho. ¿A qué distancia del centro están los focos?</li>
+      <li>La órbita de Marte tiene $a = 1.524$ UA y $e = 0.0934$. Calcula su perihelio y su afelio.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>V$(\pm 10, 0)$, F$(\pm 8, 0)$, $e = 0.8$</span></li>
+    <li><span>V$(0, \pm 5)$, F$(0, \pm 3)$, $e = 0.6$</span></li>
+    <li><span>V$(0, \pm 3)$, F$(0, \pm\sqrt{5})$</span></li>
+    <li><span>$7.2$</span></li>
+    <li><span>$\dfrac{x^2}{169} + \dfrac{y^2}{25} = 1$</span></li>
+    <li><span>$\dfrac{x^2}{36} + \dfrac{y^2}{100} = 1$</span></li>
+    <li><span>$\dfrac{(x - 1)^2}{25} + \dfrac{(y + 2)^2}{9} = 1$</span></li>
+    <li><span>$\dfrac{x^2}{36} + \dfrac{y^2}{27} = 1$</span></li>
+    <li><span>C$(2, -1)$, 5, 3, 4; F$(6, -1)$ y $(-2, -1)$</span></li>
+    <li><span>C$(-1, 3)$, $a = 2$, $b = 1$, $c = \sqrt{3}$</span></li>
+    <li><span>$\approx 5.50$ m</span></li>
+    <li><span>$\approx 11.18$ m</span></li>
+    <li><span>$\approx 1.382$ UA y $\approx 1.666$ UA</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$a = 10$, $b = 6$, $c = \sqrt{100 - 36} = 8$.</div></div>
+    <div class="sol"><span>2</span><div>El 25 está bajo la $y$: vertical, $a = 5$, $b = 4$, $c = 3$.</div></div>
+    <div class="sol"><span>3</span><div>Divide entre 36: $\dfrac{x^2}{4} + \dfrac{y^2}{9} = 1$. Vertical, $a = 3$, $b = 2$, $c = \sqrt{5}$.</div></div>
+    <div class="sol"><span>4</span><div>$\dfrac{2(36)}{10} = 7.2$.</div></div>
+    <div class="sol"><span>5</span><div>$b^2 = 169 - 144 = 25$.</div></div>
+    <div class="sol"><span>6</span><div>$2a = 20 \Rightarrow a = 10$ (bajo la $y$); $2b = 12 \Rightarrow b = 6$.</div></div>
+    <div class="sol"><span>8</span><div>$c = 3$ y $e = \tfrac{c}{a} = \tfrac{1}{2} \Rightarrow a = 6$. $b^2 = 36 - 9 = 27$.</div></div>
+    <div class="sol"><span>9</span><div>$9(x - 2)^2 + 25(y + 1)^2 = 164 + 36 + 25 = 225$; divide entre 225. $c = \sqrt{25 - 9} = 4$, focos en $2 \pm 4$.</div></div>
+    <div class="sol"><span>10</span><div>$4(x + 1)^2 + (y - 3)^2 = -9 + 4 + 9 = 4$; divide entre 4: $(x + 1)^2 + \dfrac{(y - 3)^2}{4} = 1$. Vertical.</div></div>
+    <div class="sol"><span>11</span><div>$\dfrac{x^2}{100} + \dfrac{y^2}{36} = 1$ con $x = 4$: $y = 6\sqrt{1 - 0.16} = 6\sqrt{0.84}$.</div></div>
+    <div class="sol"><span>12</span><div>$a = 15$, $b = 10$, $c = \sqrt{225 - 100} = \sqrt{125}$. Quien susurra en un foco se oye claro en el otro.</div></div>
+    <div class="sol"><span>13</span><div>$c = ae$. Perihelio $a(1 - e) = 1.524(0.9066)$ y afelio $a(1 + e) = 1.524(1.0934)$.</div></div>
+  </div>
+</section>

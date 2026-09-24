@@ -1,0 +1,220 @@
+<!-- guia
+titulo: La recta
+nivel: Preparatoria
+materia: Matemáticas
+rama: Geometría analítica
+numero: 09
+descripcion: Distancia y punto medio, pendiente y ángulo de inclinación, las formas de la ecuación de la recta, rectas paralelas y perpendiculares, intersecciones y distancia de un punto a una recta.
+entrada: La geometría analítica traduce figuras a ecuaciones y ecuaciones a figuras. La recta es el punto de partida: con ella vas a calcular distancias, encontrar dónde se cruzan dos caminos y, en cálculo, construir rectas tangentes.
+objetivo: Calcular distancia y punto medio entre dos puntos.
+objetivo: Calcular la pendiente y el ángulo de inclinación.
+objetivo: Escribir la ecuación de una recta en sus distintas formas.
+objetivo: Reconocer rectas paralelas y perpendiculares por sus pendientes.
+objetivo: Encontrar la intersección de dos rectas.
+objetivo: Calcular la distancia de un punto a una recta.
+autoeval: Calcular distancia, punto medio y pendiente. | 01
+autoeval: Escribir la recta que pasa por dos puntos. | 02
+autoeval: Pasar de la forma general a la pendiente-ordenada. | 02
+autoeval: Encontrar una perpendicular por un punto dado. | 03
+autoeval: Usar la fórmula de distancia punto-recta. | 04
+-->
+<section>
+  <h2>Distancia, punto medio y pendiente</h2>
+  <p>Para dos puntos $A(x_1, y_1)$ y $B(x_2, y_2)$:</p>
+  <table class="leyes">
+    <thead><tr><th>Concepto</th><th>Fórmula</th><th>De dónde sale</th></tr></thead>
+    <tbody>
+      <tr><td>Distancia</td><td>$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$</td><td>Pitágoras</td></tr>
+      <tr><td>Punto medio</td><td>$M = \left(\dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2}\right)$</td><td>Promedio de coordenadas</td></tr>
+      <tr><td>Pendiente</td><td>$m = \dfrac{y_2 - y_1}{x_2 - x_1}$</td><td>Lo que sube entre lo que avanza</td></tr>
+    </tbody>
+  </table>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">1</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>Con $A(-2, 3)$ y $B(4, -5)$:</p>
+        $$d = \sqrt{6^2 + (-8)^2} = \sqrt{100} = 10$$
+        $$M = \left(\tfrac{-2 + 4}{2}, \tfrac{3 - 5}{2}\right) = (1, -1) \qquad m = \frac{-8}{6} = -\frac{4}{3}$$
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 170 170" width="44mm">
+        <line x1="5" y1="75" x2="165" y2="75" stroke="#2b241e" stroke-width="1"/>
+        <line x1="55" y1="5" x2="55" y2="165" stroke="#2b241e" stroke-width="1"/>
+        <line x1="15" y1="17.7" x2="125.5" y2="165" stroke="#b5562c" stroke-width="2"/>
+        <path d="M31 39 H103 V135" fill="none" stroke="#5c7a5a" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <circle cx="31" cy="39" r="3" fill="#2b241e"/><circle cx="103" cy="135" r="3" fill="#2b241e"/><circle cx="67" cy="87" r="3" fill="#c28a2e"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="36" y="28">A(−2, 3)</text><text x="110" y="140">B(4, −5)</text><text x="72" y="96" fill="#c28a2e">M</text>
+          <text x="62" y="52" fill="#5c7a5a">avanza 6</text><text x="108" y="100" fill="#5c7a5a">baja 8</text>
+        </g>
+      </svg>
+      <figcaption>La pendiente compara lo que baja con lo que avanza.</figcaption>
+    </figure>
+  </div>
+  <p>El <strong>ángulo de inclinación</strong> $\alpha$ se mide desde el eje $x$ positivo en sentido contrario a las manecillas, entre $0^\circ$ y $180^\circ$, y cumple $m = \tan\alpha$. Para $m = -\tfrac{4}{3}$: la calculadora da $\tan^{-1}(-\tfrac{4}{3}) \approx -53.13^\circ$; se le suman $180^\circ$ y queda $\alpha \approx 126.87^\circ$.</p>
+</section>
+
+<section>
+  <h2>Formas de la ecuación</h2>
+  <table class="leyes">
+    <thead><tr><th>Forma</th><th>Ecuación</th><th>Úsala cuando…</th></tr></thead>
+    <tbody>
+      <tr><td>Punto-pendiente</td><td>$y - y_1 = m(x - x_1)$</td><td>Tienes un punto y la pendiente</td></tr>
+      <tr><td>Pendiente-ordenada</td><td>$y = mx + b$</td><td>Quieres leer $m$ y el corte $b$ con el eje $y$</td></tr>
+      <tr><td>General</td><td>$Ax + By + C = 0$</td><td>Te la piden «en forma general»; $m = -\dfrac{A}{B}$</td></tr>
+      <tr><td>Simétrica</td><td>$\dfrac{x}{a} + \dfrac{y}{b} = 1$</td><td>Conoces los cortes $a$ (eje $x$) y $b$ (eje $y$)</td></tr>
+    </tbody>
+  </table>
+  <p>Las rectas verticales, $x = k$, no tienen pendiente (dividirías entre cero); las horizontales, $y = k$, tienen pendiente 0.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra la recta que pasa por $A(-2, 3)$ y $B(4, -5)$ en forma general.</p>
+      <p class="paso">Ya tienes $m = -\tfrac{4}{3}$. Usa punto-pendiente con $A$ y quita denominadores multiplicando por 3:</p>
+      $$y - 3 = -\tfrac{4}{3}(x + 2) \;\Rightarrow\; 3y - 9 = -4x - 8 \;\Rightarrow\; 4x + 3y - 1 = 0$$
+      <p class="paso">Comprueba con $B$: $4(4) + 3(-5) - 1 = 0$ ✔</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Paralelas, perpendiculares e intersección</h2>
+  <div class="definicion">
+    <span class="etq">Criterios</span>
+    <p><strong>Paralelas:</strong> misma pendiente, $m_1 = m_2$.</p>
+    <p><strong>Perpendiculares:</strong> $m_1\cdot m_2 = -1$, o sea, $m_2 = -\dfrac{1}{m_1}$ (recíproca con signo cambiado).</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra la perpendicular a $2x - 3y + 6 = 0$ que pasa por $(1, 4)$.</p>
+      <p class="paso">Pendiente de la dada: $m = -\tfrac{2}{-3} = \tfrac{2}{3}$. La perpendicular tiene $m = -\tfrac{3}{2}$:</p>
+      $$y - 4 = -\tfrac{3}{2}(x - 1) \;\Rightarrow\; 2y - 8 = -3x + 3 \;\Rightarrow\; 3x + 2y - 11 = 0$$
+    </div>
+  </div>
+  <p>La <strong>intersección</strong> de dos rectas es la solución del sistema formado por sus ecuaciones. Si son paralelas distintas, el sistema no tiene solución.</p>
+</section>
+
+<section>
+  <h2>Distancia de un punto a una recta</h2>
+  <div class="definicion">
+    <span class="etq">Distancia punto-recta</span>
+    <p>La distancia (la más corta, en perpendicular) del punto $(x_0, y_0)$ a la recta $Ax + By + C = 0$ es</p>
+    $$d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}$$
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿A qué distancia está $(3, 1)$ de la recta $4x + 3y - 5 = 0$?</p>
+      $$d = \frac{|4(3) + 3(1) - 5|}{\sqrt{16 + 9}} = \frac{10}{5} = 2$$
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">Primero, forma general</span>
+    <p>La fórmula solo funciona con la recta igualada a cero. Si te dan $y = 2x + 1$, escríbela como $2x - y + 1 = 0$ antes de sustituir.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$m = \dfrac{x_2 - x_1}{y_2 - y_1}$</td><td class="bien">$\dfrac{y_2 - y_1}{x_2 - x_1}$</td><td>Lo que sube va arriba.</td></tr>
+        <tr><td class="mal">$\dfrac{y_2 - y_1}{x_1 - x_2}$</td><td class="bien">Mismo orden arriba y abajo</td><td>Si mezclas el orden, el signo sale al revés.</td></tr>
+        <tr><td class="mal">Perpendicular a $m = 2$: $m = -2$</td><td class="bien">$m = -\tfrac{1}{2}$</td><td>Es la recíproca con signo cambiado.</td></tr>
+        <tr><td class="mal">$2x - 3y + 6 = 0$: $m = 2$</td><td class="bien">$m = -\tfrac{A}{B} = \tfrac{2}{3}$</td><td>Hay que despejar $y$.</td></tr>
+        <tr><td class="mal">Distancia sin valor absoluto</td><td class="bien">Con $|\ \ |$</td><td>Una distancia no es negativa.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$d = \sqrt{\Delta x^2 + \Delta y^2}$</div><div>$M$: promedio de coordenadas</div><div>$m = \dfrac{\Delta y}{\Delta x} = \tan\alpha$</div>
+      <div>$y - y_1 = m(x - x_1)$</div><div>$Ax + By + C = 0$: $m = -\tfrac{A}{B}$</div><div>$\dfrac{x}{a} + \dfrac{y}{b} = 1$</div>
+      <div>Paralelas: $m_1 = m_2$</div><div>Perpendiculares: $m_1 m_2 = -1$</div><div>$d = \dfrac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Da las rectas en la forma que se pida. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Con $P(1, 2)$ y $Q(7, 10)$</h3>
+    <ol>
+      <li>Distancia $PQ$</li><li>Punto medio</li><li>Pendiente</li><li>Ángulo de inclinación</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Ecuaciones</h3>
+    <ol class="largo">
+      <li>Pendiente $-2$ y pasa por $(3, 1)$. Forma $y = mx + b$.</li>
+      <li>Pasa por $(-1, 4)$ y $(3, -4)$. Forma $y = mx + b$.</li>
+      <li>Corta al eje $x$ en 5 y al eje $y$ en $-3$. Forma general.</li>
+      <li>Da la pendiente y la ordenada al origen de $6x - 2y + 8 = 0$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Paralelas, perpendiculares e intersección</h3>
+    <ol class="largo">
+      <li>Paralela a $y = 4x - 1$ que pasa por $(2, 3)$.</li>
+      <li>Perpendicular a $3x + 4y = 12$ que pasa por el origen. Forma general.</li>
+      <li>¿Son perpendiculares $2x + 5y = 1$ y $5x - 2y = 3$?</li>
+      <li>Punto de intersección de $x + y = 5$ y $2x - y = 1$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Distancias y áreas</h3>
+    <ol class="largo">
+      <li>Distancia de $(2, -3)$ a $3x - 4y + 2 = 0$.</li>
+      <li>Distancia entre las paralelas $3x + 4y - 10 = 0$ y $3x + 4y + 5 = 0$.</li>
+      <li>Área del triángulo con vértices $A(1, 1)$, $B(5, 2)$ y $C(2, 6)$, usando $AB$ como base.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$10$</span></li>
+    <li><span>$(4, 6)$</span></li>
+    <li><span>$\tfrac{4}{3}$</span></li>
+    <li><span>$\approx 53.13^\circ$</span></li>
+    <li><span>$y = -2x + 7$</span></li>
+    <li><span>$y = -2x + 2$</span></li>
+    <li><span>$3x - 5y - 15 = 0$</span></li>
+    <li><span>$m = 3$, $b = 4$</span></li>
+    <li><span>$y = 4x - 5$</span></li>
+    <li><span>$4x - 3y = 0$</span></li>
+    <li><span>Sí</span></li>
+    <li><span>$(2, 3)$</span></li>
+    <li><span>$4$</span></li>
+    <li><span>$3$</span></li>
+    <li><span>$9.5$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$\sqrt{6^2 + 8^2} = \sqrt{100}$.</div></div>
+    <div class="sol"><span>4</span><div>$\tan^{-1}\tfrac{4}{3} \approx 53.13^\circ$ (pendiente positiva: ángulo agudo).</div></div>
+    <div class="sol"><span>6</span><div>$m = \dfrac{-4 - 4}{3 - (-1)} = -2$. $y - 4 = -2(x + 1)$.</div></div>
+    <div class="sol"><span>7</span><div>$\dfrac{x}{5} + \dfrac{y}{-3} = 1$; multiplica por 15: $3x - 5y = 15$.</div></div>
+    <div class="sol"><span>8</span><div>Despeja: $2y = 6x + 8 \Rightarrow y = 3x + 4$.</div></div>
+    <div class="sol"><span>10</span><div>La dada tiene $m = -\tfrac{3}{4}$; la perpendicular, $\tfrac{4}{3}$: $y = \tfrac{4}{3}x$, o sea $4x - 3y = 0$.</div></div>
+    <div class="sol"><span>11</span><div>$m_1 = -\tfrac{2}{5}$ y $m_2 = \tfrac{5}{2}$; su producto es $-1$.</div></div>
+    <div class="sol"><span>12</span><div>Suma las ecuaciones: $3x = 6$, así que $x = 2$ y $y = 3$.</div></div>
+    <div class="sol"><span>13</span><div>$\dfrac{|6 + 12 + 2|}{\sqrt{9 + 16}} = \dfrac{20}{5}$.</div></div>
+    <div class="sol"><span>14</span><div>Toma un punto de la primera, por ejemplo $(2, 1)$, y mide su distancia a la segunda: $\dfrac{|6 + 4 + 5|}{5} = 3$.</div></div>
+    <div class="sol"><span>15</span><div>Base: $AB = \sqrt{16 + 1} = \sqrt{17}$. Recta $AB$: $x - 4y + 3 = 0$. Altura: distancia de $C$, $\dfrac{|2 - 24 + 3|}{\sqrt{17}} = \dfrac{19}{\sqrt{17}}$. Área: $\tfrac{1}{2}\cdot\sqrt{17}\cdot\dfrac{19}{\sqrt{17}} = 9.5$.</div></div>
+  </div>
+</section>

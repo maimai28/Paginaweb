@@ -1,0 +1,204 @@
+<!-- guia
+titulo: La parábola
+nivel: Preparatoria
+materia: Matemáticas
+rama: Geometría analítica
+numero: 11
+descripcion: Definición con foco y directriz, ecuaciones con vértice en el origen y fuera de él, elementos (foco, directriz, lado recto, eje), paso de la forma general a la ordinaria y aplicaciones como antenas y arcos.
+entrada: Las antenas satelitales, los faros de los coches y los hornos solares tienen forma de parábola por una razón: todo lo que llega paralelo a su eje rebota hacia un mismo punto, el foco. En esta guía aprendes a encontrar ese punto a partir de la ecuación.
+objetivo: Entender la definición de parábola con foco y directriz.
+objetivo: Obtener foco, directriz y lado recto a partir de la ecuación.
+objetivo: Escribir la ecuación a partir de sus elementos.
+objetivo: Pasar de la forma general a la ordinaria completando el cuadrado.
+objetivo: Resolver problemas de antenas y arcos.
+autoeval: Explicar qué tienen de especial los puntos de una parábola. | 01
+autoeval: Leer $p$, el foco y la directriz de $x^2 = 4py$ o $y^2 = 4px$. | 02
+autoeval: Escribir la ecuación con vértice fuera del origen. | 03
+autoeval: Completar el cuadrado en la forma general. | 04
+autoeval: Plantear un problema de antena o arco. | 05
+-->
+<section>
+  <h2>Definición</h2>
+  <div class="figura-lado">
+    <div>
+      <div class="definicion">
+        <span class="etq">Parábola</span>
+        <p>Es el conjunto de puntos que están a la <strong>misma distancia</strong> de un punto fijo, el <strong>foco</strong>, y de una recta fija, la <strong>directriz</strong>.</p>
+      </div>
+      <p>El <strong>vértice</strong> queda exactamente a la mitad entre foco y directriz. Llamamos $p$ a la distancia (con signo) del vértice al foco.</p>
+      <p>La recta que pasa por el foco y el vértice es el <strong>eje</strong> de simetría. El <strong>lado recto</strong> es la cuerda que pasa por el foco perpendicular al eje; mide $|4p|$.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 180 160" width="46mm">
+        <line x1="5" y1="148" x2="175" y2="148" stroke="#5c7a5a" stroke-width="1.6" stroke-dasharray="5 3"/>
+        <path d="M14.4 50.6 L18.2 58.4 L22.0 65.7 L25.7 72.6 L29.5 79.2 L33.3 85.3 L37.1 91.1 L40.9 96.5 L44.6 101.4 L48.4 106.0 L52.2 110.2 L56.0 113.9 L59.8 117.3 L63.5 120.3 L67.3 122.9 L71.1 125.0 L74.9 126.8 L78.7 128.2 L82.4 129.2 L86.2 129.8 L90.0 130.0 L93.8 129.8 L97.6 129.2 L101.3 128.2 L105.1 126.8 L108.9 125.0 L112.7 122.9 L116.5 120.3 L120.2 117.3 L124.0 113.9 L127.8 110.2 L131.6 106.0 L135.4 101.4 L139.1 96.5 L142.9 91.1 L146.7 85.3 L150.5 79.2 L154.3 72.6 L158.0 65.7 L161.8 58.4 L165.6 50.6" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <line x1="90" y1="112" x2="144" y2="89.5" stroke="#2b241e" stroke-width="1.2"/>
+        <line x1="144" y1="89.5" x2="144" y2="148" stroke="#2b241e" stroke-width="1.2"/>
+        <circle cx="90" cy="112" r="3" fill="#c28a2e"/><circle cx="90" cy="130" r="2.4" fill="#2b241e"/><circle cx="144" cy="89.5" r="3" fill="#b5562c"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="70" y="108" fill="#c28a2e">F</text><text x="94" y="142">V</text><text x="150" y="88">P</text>
+          <text x="8" y="160" fill="#5c7a5a">directriz</text><text x="110" y="96">d</text><text x="148" y="124">d</text>
+        </g>
+      </svg>
+      <figcaption>$P$ está a la misma distancia $d$ del foco y de la directriz.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Vértice en el origen</h2>
+  <table class="leyes">
+    <thead><tr><th>Ecuación</th><th>Abre hacia</th><th>Foco</th><th>Directriz</th></tr></thead>
+    <tbody>
+      <tr><td>$x^2 = 4py$</td><td>Arriba si $p \gt 0$, abajo si $p \lt 0$</td><td>$(0, p)$</td><td>$y = -p$</td></tr>
+      <tr><td>$y^2 = 4px$</td><td>Derecha si $p \gt 0$, izquierda si $p \lt 0$</td><td>$(p, 0)$</td><td>$x = -p$</td></tr>
+    </tbody>
+  </table>
+  <p>La variable que está <strong>al cuadrado</strong> es la del eje perpendicular: en $x^2 = 4py$ la parábola es vertical, simétrica respecto al eje $y$.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Da los elementos de $x^2 = 12y$ y de $y^2 = -8x$.</p>
+      <p class="paso">$x^2 = 12y$: $4p = 12$, así que $p = 3$. Abre hacia arriba, foco $(0, 3)$, directriz $y = -3$, lado recto 12.</p>
+      <p class="paso">$y^2 = -8x$: $4p = -8$, $p = -2$. Abre a la izquierda, foco $(-2, 0)$, directriz $x = 2$, lado recto 8.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Vértice fuera del origen</h2>
+  <p>Si el vértice es $(h, k)$, se recorre todo igual que con la circunferencia:</p>
+  $$(x - h)^2 = 4p(y - k) \qquad\qquad (y - k)^2 = 4p(x - h)$$
+  <p>El foco y la directriz se recorren con el vértice: en la vertical, foco $(h, k + p)$ y directriz $y = k - p$.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra la parábola con vértice $(2, -1)$ y foco $(2, 3)$.</p>
+      <p class="paso">Foco arriba del vértice: parábola vertical que abre hacia arriba, con $p = 3 - (-1) = 4$:</p>
+      $$(x - 2)^2 = 16(y + 1)$$
+      <p class="paso">Directriz: $y = -1 - 4 = -5$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>De la forma general a la ordinaria</h2>
+  <p>La forma general tiene solo una variable al cuadrado, por ejemplo $y^2 + Dx + Ey + F = 0$. Deja del lado izquierdo los términos de la variable al cuadrado, completa el cuadrado y factoriza el lado derecho.</p>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra vértice, foco y directriz de $y^2 - 6y - 8x + 1 = 0$.</p>
+      $$y^2 - 6y = 8x - 1 \;\Rightarrow\; y^2 - 6y + 9 = 8x + 8 \;\Rightarrow\; (y - 3)^2 = 8(x + 1)$$
+      <p class="paso">Vértice $(-1, 3)$, $4p = 8$ así que $p = 2$, abre a la derecha. Foco $(-1 + 2, 3) = (1, 3)$, directriz $x = -3$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Aplicaciones</h2>
+  <p>Coloca el vértice en el origen, escribe $x^2 = 4py$ y usa un punto conocido del borde para encontrar $p$.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una antena parabólica mide 60 cm de diámetro y 10 cm de profundidad. ¿A qué distancia del fondo debe ir el receptor?</p>
+      <p class="paso">El borde pasa por $(30, 10)$: $30^2 = 4p(10) \Rightarrow p = \dfrac{900}{40} = 22.5$.</p>
+      <p class="paso">El receptor va en el foco, a 22.5 cm del vértice, es decir, 12.5 cm por encima del borde de la antena.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$x^2 = 12y$: foco $(0, 12)$</td><td class="bien">$(0, 3)$</td><td>El 12 es $4p$, no $p$.</td></tr>
+        <tr><td class="mal">$y^2 = 4px$ abre hacia arriba</td><td class="bien">Abre a la derecha o izquierda</td><td>Si $y$ está al cuadrado, el eje es horizontal.</td></tr>
+        <tr><td class="mal">Directriz $y = p$</td><td class="bien">$y = -p$</td><td>Está del lado opuesto al foco.</td></tr>
+        <tr><td class="mal">$(y - 3)^2 = 8x + 8$: vértice $(8, 3)$</td><td class="bien">Factoriza: $8(x + 1)$</td><td>El vértice es $(-1, 3)$.</td></tr>
+        <tr><td class="mal">Foco a $p$ del borde en la antena</td><td class="bien">A $p$ del vértice</td><td>$p$ se mide desde el fondo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$d(P, F) = d(P, \text{directriz})$</div><div>$x^2 = 4py$: vertical</div><div>$y^2 = 4px$: horizontal</div>
+      <div>Foco $(0, p)$, directriz $y = -p$</div><div>Lado recto $|4p|$</div><div>$p \lt 0$: abre al lado negativo</div>
+      <div>$(x - h)^2 = 4p(y - k)$</div><div>Completa el cuadrado y factoriza</div><div>Vértice entre foco y directriz</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Foco, directriz y lado recto</h3>
+    <ol>
+      <li>$x^2 = 8y$</li><li>$y^2 = 20x$</li><li>$x^2 = -6y$</li><li>$y^2 = -12x$</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Encuentra la ecuación</h3>
+    <ol class="largo">
+      <li>Foco $(0, -4)$ y directriz $y = 4$.</li>
+      <li>Vértice en el origen y foco $(3, 0)$.</li>
+      <li>Vértice $(3, 2)$ y foco $(3, 5)$.</li>
+      <li>Vértice $(-1, 4)$ y directriz $x = -3$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Forma general</h3>
+    <ol class="largo">
+      <li>Vértice, foco y directriz de $x^2 - 4x - 8y + 12 = 0$.</li>
+      <li>Vértice, foco y directriz de $y^2 + 2y + 4x - 7 = 0$.</li>
+      <li>Escribe en forma general la parábola del ejercicio 7.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. Aplicaciones</h3>
+    <ol class="largo">
+      <li>Una antena parabólica mide 2 m de diámetro y 0.25 m de profundidad. ¿A qué distancia del vértice va el receptor?</li>
+      <li>Un arco parabólico mide 40 m de ancho en la base y 10 m de alto en el centro. ¿Qué altura tiene a 5 m del centro?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>Foco $(0, 2)$, directriz $y = -2$, LR 8</span></li>
+    <li><span>Foco $(5, 0)$, directriz $x = -5$, LR 20</span></li>
+    <li><span>Foco $\left(0, -\tfrac{3}{2}\right)$, directriz $y = \tfrac{3}{2}$, LR 6</span></li>
+    <li><span>Foco $(-3, 0)$, directriz $x = 3$, LR 12</span></li>
+    <li><span>$x^2 = -16y$</span></li>
+    <li><span>$y^2 = 12x$</span></li>
+    <li><span>$(x - 3)^2 = 12(y - 2)$</span></li>
+    <li><span>$(y - 4)^2 = 8(x + 1)$</span></li>
+    <li><span>V$(2, 1)$, F$(2, 3)$, $y = -1$</span></li>
+    <li><span>V$(2, -1)$, F$(1, -1)$, $x = 3$</span></li>
+    <li><span>$x^2 - 6x - 12y + 33 = 0$</span></li>
+    <li><span>1 m</span></li>
+    <li><span>9.375 m</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>3</span><div>$4p = -6 \Rightarrow p = -\tfrac{3}{2}$: abre hacia abajo.</div></div>
+    <div class="sol"><span>5</span><div>El vértice está a la mitad: $(0, 0)$. Foco abajo: $p = -4$ y $4p = -16$.</div></div>
+    <div class="sol"><span>7</span><div>Foco arriba del vértice, $p = 5 - 2 = 3$.</div></div>
+    <div class="sol"><span>8</span><div>La directriz vertical indica parábola horizontal. La directriz está 2 a la izquierda del vértice, así que el foco está 2 a la derecha: $p = 2$.</div></div>
+    <div class="sol"><span>9</span><div>$x^2 - 4x + 4 = 8y - 12 + 4 \Rightarrow (x - 2)^2 = 8(y - 1)$. $p = 2$.</div></div>
+    <div class="sol"><span>10</span><div>$y^2 + 2y + 1 = -4x + 7 + 1 \Rightarrow (y + 1)^2 = -4(x - 2)$. $p = -1$: abre a la izquierda.</div></div>
+    <div class="sol"><span>11</span><div>$x^2 - 6x + 9 = 12y - 24 \Rightarrow x^2 - 6x - 12y + 33 = 0$.</div></div>
+    <div class="sol"><span>12</span><div>El borde pasa por $(1, 0.25)$: $1 = 4p(0.25) \Rightarrow p = 1$.</div></div>
+    <div class="sol"><span>13</span><div>Vértice en $(0, 10)$ y base en $(\pm 20, 0)$: $x^2 = 4p(y - 10)$ con $400 = 4p(-10)$, $p = -10$. En $x = 5$: $25 = -40(y - 10) \Rightarrow y = 10 - 0.625$.</div></div>
+  </div>
+</section>

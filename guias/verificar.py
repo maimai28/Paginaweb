@@ -720,6 +720,125 @@ def _():
         ('ej15', trig_sol(sp.sin(2*x) - s_), [0, pi/3, pi, 5*pi/3]), ('ej16', trig_sol(2*s_**2 + 3*c_ - 3), [0, pi/3, 5*pi/3]),
     ]
 
+def recta_por(p1, p2):
+    """Coeficientes (A, B, C) enteros y primitivos de la recta por dos puntos, con A > 0."""
+    (x1, y1), (x2, y2) = p1, p2
+    A, B = sp.Integer(y2 - y1), sp.Integer(x1 - x2)
+    C = -(A*x1 + B*y1)
+    g = sp.gcd_list([A, B, C]) or 1
+    A, B, C = A/g, B/g, C/g
+    if A < 0 or (A == 0 and B < 0): A, B, C = -A, -B, -C
+    return (A, B, C)
+
+def misma_recta(e1, e2):
+    return sp.simplify(sp.solve(e1, y)[0] - sp.solve(e2, y)[0]) == 0 if e1.has(y) else sp.solve(e1, x) == sp.solve(e2, x)
+
+def dist_pr(P, A, B, C):
+    return sp.Abs(A*P[0] + B*P[1] + C) / sp.sqrt(A**2 + B**2)
+
+def completar(expr):
+    """Centro y lado derecho de una cónica sin término xy: devuelve (h, k, coef_x2, coef_y2, derecho)."""
+    P = sp.Poly(sp.expand(expr), x, y)
+    A_, C_ = P.coeff_monomial(x**2), P.coeff_monomial(y**2)
+    D_, E_, F_ = P.coeff_monomial(x), P.coeff_monomial(y), P.coeff_monomial(1)
+    h = -D_/(2*A_) if A_ else None
+    k = -E_/(2*C_) if C_ else None
+    der = -F_ + (A_*h**2 if A_ else 0) + (C_*k**2 if C_ else 0)
+    return (h, k, A_, C_, der)
+
+@guia('PM09 La recta')
+def _():
+    X, Y = sp.symbols('X Y')
+    return [
+        ('ejemplo1', (sp.sqrt(6**2 + 8**2), (F(-2 + 4, 2), F(3 - 5, 2)), F(-8, 6)), (10, (1, -1), F(-4, 3))),
+        ('inclinacion', (round(math.degrees(math.atan(-4/3)), 2), round(math.degrees(math.atan(-4/3)) + 180, 2)), (-53.13, 126.87)),
+        ('ejemplo2', recta_por((-2, 3), (4, -5)), (4, 3, -1)), ('ejemplo2b', 4*4 + 3*(-5) - 1, 0),
+        ('ejemplo3', misma_recta(sp.Eq(y - 4, -sp.Rational(3, 2)*(x - 1)), sp.Eq(3*x + 2*y - 11, 0)), True),
+        ('ejemplo3b', sp.Rational(2, 3) * -sp.Rational(3, 2), -1),
+        ('ejemplo4', dist_pr((3, 1), 4, 3, -5), 2),
+        ('ej1', sp.sqrt(6**2 + 8**2), 10), ('ej2', (F(1 + 7, 2), F(2 + 10, 2)), (4, 6)), ('ej3', F(8, 6), F(4, 3)),
+        ('ej4', round(math.degrees(math.atan(4/3)), 2), 53.13),
+        ('ej5', sp.expand(-2*(x - 3) + 1), -2*x + 7), ('ej6', sp.expand(4 - 2*(x + 1)), -2*x + 2),
+        ('ej7', recta_por((5, 0), (0, -3)), (3, -5, -15)), ('ej8', sp.solve(6*x - 2*y + 8, y)[0], 3*x + 4),
+        ('ej9', sp.expand(4*(x - 2) + 3), 4*x - 5),
+        ('ej10', misma_recta(sp.Eq(y, sp.Rational(4, 3)*x), sp.Eq(4*x - 3*y, 0)), True), ('ej10b', -sp.Rational(3, 4) * sp.Rational(4, 3), -1),
+        ('ej11', -sp.Rational(2, 5) * sp.Rational(5, 2), -1), ('ej12', sp.solve([x + y - 5, 2*x - y - 1], [x, y]), {x: 2, y: 3}),
+        ('ej13', dist_pr((2, -3), 3, -4, 2), 4), ('ej14', dist_pr((2, 1), 3, 4, 5), 3), ('ej14b', 3*2 + 4*1 - 10, 0),
+        ('ej15', recta_por((1, 1), (5, 2)), (1, -4, 3)),
+        ('ej15b', sp.Rational(1, 2) * sp.sqrt(17) * dist_pr((2, 6), 1, -4, 3), sp.Rational(19, 2)),
+        ('ej15c', sp.Rational(1, 2) * abs(1*(2 - 6) + 5*(6 - 1) + 2*(1 - 2)), sp.Rational(19, 2)),
+    ]
+
+@guia('PM10 La circunferencia')
+def _():
+    return [
+        ('ejemplo1', sp.expand((x - 2)**2 + (y + 3)**2 - 16), x**2 + y**2 - 4*x + 6*y - 3),
+        ('ejemplo2', completar(x**2 + y**2 + 6*x - 4*y - 12)[::4], (-3, 25)), ('ejemplo2k', completar(x**2 + y**2 + 6*x - 4*y - 12)[1], 2),
+        ('ejemplo3', ((F(-1 + 5, 2), F(2 + 10, 2)), sp.sqrt(36 + 64) / 2), ((2, 6), 5)),
+        ('ejemplo4', dist_pr((1, -2), 3, -4, 4), 3),
+        ('ejemplo5', recta_por((3, 4), (7, 1)), (3, 4, -25)), ('ejemplo5b', F(4, 3) * F(-3, 4), -1),
+        ('ej3', sp.sqrt(3**2 + 4**2), 5), ('ej4', sp.expand((x + 4)**2 + (y - 1)**2 - 9), x**2 + y**2 + 8*x - 2*y + 8),
+        ('ej5', completar(x**2 + y**2 - 10*x + 4*y + 13), (5, -2, 1, 1, 16)),
+        ('ej6', completar(x**2 + y**2 + 8*y), (0, -4, 1, 1, 16)),
+        ('ej7', completar(x**2 + y**2 - 6*x + 4*y - 12), (3, -2, 1, 1, 25)),
+        ('ej8', completar(x**2 + y**2 - 2*x + 4*y + 10)[4], -5),
+        ('ej9', ((F(-3 + 5, 2), F(4 - 2, 2)), sp.sqrt(64 + 36) / 2), ((1, 1), 5)),
+        ('ej11', dist_pr((4, -1), 5, 12, 18), 2), ('ej12', (4 - 1)**2 + (1 + 3)**2, 25),
+        ('ej13', ((2*2 + 3*3), 2**2 + 3**2), (13, 13)),
+        ('ej14', misma_recta(sp.Eq(y - 6, -sp.Rational(3, 4)*(x - 4)), sp.Eq(3*x + 4*y - 36, 0)), True),
+        ('ej14b', (4 - 1)**2 + (6 - 2)**2, 25),
+    ]
+
+@guia('PM11 La parábola')
+def _():
+    return [
+        ('ejemplo1', (F(12, 4), F(-8, 4)), (3, -2)),
+        ('ejemplo2', (3 - (-1), 4*4, -1 - 4), (4, 16, -5)),
+        ('ejemplo3', sp.expand((y - 3)**2 - 8*(x + 1)), y**2 - 6*y - 8*x + 1),
+        ('ejemplo4', (F(900, 40), 22.5 - 10), (22.5, 12.5)),
+        ('ej1', F(8, 4), 2), ('ej2', F(20, 4), 5), ('ej3', F(-6, 4), F(-3, 2)), ('ej4', F(-12, 4), -3),
+        ('ej5', 4*(-4), -16), ('ej6', 4*3, 12), ('ej7', (5 - 2, 4*3), (3, 12)), ('ej8', (-1 - (-3), 4*2), (2, 8)),
+        ('ej9', sp.expand((x - 2)**2 - 8*(y - 1)), x**2 - 4*x - 8*y + 12),
+        ('ej10', sp.expand((y + 1)**2 + 4*(x - 2)), y**2 + 2*y + 4*x - 7), ('ej10b', (2 + (-1), 2 - (-1)), (1, 3)),
+        ('ej11', sp.expand((x - 3)**2 - 12*(y - 2)), x**2 - 6*x - 12*y + 33),
+        ('ej12', sp.solve(sp.Eq(1, 4*a*sp.Rational(1, 4)), a), [1]),
+        ('ej13', (sp.solve(sp.Eq(400, 4*a*(0 - 10)), a), 10 - sp.Rational(25, 40)), ([-10], sp.Rational(75, 8))),
+        ('ej13b', 75/8, 9.375),
+    ]
+
+@guia('PM12 La elipse')
+def _():
+    return [
+        ('figura', round(math.hypot(5*math.cos(math.pi/3) - 4, 3*math.sin(math.pi/3)) + math.hypot(5*math.cos(math.pi/3) + 4, 3*math.sin(math.pi/3)), 9), 10.0),
+        ('ejemplo1', (math.sqrt(25 - 9), F(4, 5), F(2*9, 5)), (4.0, F(4, 5), F(18, 5))),
+        ('ejemplo2', 100 - 36, 64),
+        ('ejemplo3', completar(4*x**2 + 9*y**2 - 16*x + 18*y - 11), (2, -1, 4, 9, 36)), ('ejemplo3c', 9 - 4, 5),
+        ('ejemplo4', (round((147.1 + 152.1) / 2, 1), round(152.1 - 149.6, 1), round(2.5 / 149.6, 4)), (149.6, 2.5, 0.0167)),
+        ('ej1', (math.sqrt(100 - 36), 8/10), (8.0, 0.8)), ('ej2', (math.sqrt(25 - 16), 3/5), (3.0, 0.6)),
+        ('ej3', 9 - 4, 5), ('ej4', 2*36/10, 7.2), ('ej5', 169 - 144, 25), ('ej6', (10**2, 6**2), (100, 36)),
+        ('ej8', (3 / F(1, 2), 36 - 9), (6, 27)),
+        ('ej9', completar(9*x**2 + 25*y**2 - 36*x + 50*y - 164), (2, -1, 9, 25, 225)), ('ej9c', (math.sqrt(25 - 9), 2 + 4, 2 - 4), (4.0, 6, -2)),
+        ('ej10', completar(4*x**2 + y**2 + 8*x - 6*y + 9), (-1, 3, 4, 1, 4)), ('ej10c', 4 - 1, 3),
+        ('ej11', round(6*math.sqrt(1 - 16/100), 2), 5.50), ('ej12', round(math.sqrt(15**2 - 10**2), 2), 11.18),
+        ('ej13', (round(1.524*(1 - 0.0934), 3), round(1.524*(1 + 0.0934), 3)), (1.382, 1.666)),
+    ]
+
+@guia('PM13 La hipérbola')
+def _():
+    return [
+        ('ejemplo1', (math.sqrt(16 + 9), F(3, 4), F(5, 4)), (5.0, F(3, 4), F(5, 4))),
+        ('ejemplo2', (math.sqrt(25 + 144), F(5, 12)), (13.0, F(5, 12))), ('ejemplo3', 25 - 9, 16),
+        ('ejemplo4', completar(9*x**2 - 4*y**2 - 36*x - 8*y - 4), (2, -1, 9, -4, 36)), ('ejemplo4c', 4 + 9, 13),
+        ('degenerada', sp.factor(4*x**2 - 9*y**2), (2*x - 3*y)*(2*x + 3*y)),
+        ('ej1', (math.sqrt(36 + 64), F(8, 6), F(10, 6)), (10.0, F(4, 3), F(5, 3))), ('ej2', (math.sqrt(9 + 16), F(3, 4)), (5.0, F(3, 4))),
+        ('ej3', (sp.sqrt(4 + 16), F(4, 2)), (2*sp.sqrt(5), 2)), ('ej4', 169 - 25, 144), ('ej5', 4 / 2, 2.0),
+        ('ej6', (10 / 2, 100 - 25), (5.0, 75)), ('ej7', 25 - 9, 16),
+        ('ej8', completar(x**2 - 4*y**2 - 2*x - 16*y - 19), (1, -2, 1, -4, 4)), ('ej8c', 4 + 1, 5),
+        ('ej9', completar(16*y**2 - 9*x**2 + 54*x + 64*y - 161), (3, -2, -9, 16, 144)), ('ej9c', (math.sqrt(9 + 16), -2 + 5, -2 - 5), (5.0, 3, -7)),
+        ('ej10', completar(3*x**2 + 3*y**2 - 6*x + 12*y), (1, -2, 3, 3, 15)),
+        ('ej12', completar(x**2 - y**2 + 4*x), (-2, 0, 1, -1, 4)),
+    ]
+
 if __name__ == '__main__':
     fallas = 0
     for nombre, fn in GUIAS.items():

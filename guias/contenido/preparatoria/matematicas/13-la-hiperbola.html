@@ -1,0 +1,223 @@
+<!-- guia
+titulo: La hipérbola
+nivel: Preparatoria
+materia: Matemáticas
+rama: Geometría analítica
+numero: 13
+descripcion: Definición con la diferencia de distancias, ecuaciones horizontal y vertical, vértices, focos, asíntotas y excentricidad, paso desde la forma general y cómo reconocer cualquier cónica por su ecuación.
+entrada: La hipérbola se parece a dos parábolas espalda con espalda, pero se comporta distinto: sus ramas se acercan cada vez más a dos rectas, las asíntotas, sin tocarlas nunca. Con esta guía cierras las cónicas y aprendes a reconocerlas todas con solo ver la ecuación.
+objetivo: Entender la definición con la diferencia de distancias.
+objetivo: Obtener vértices, focos, asíntotas y excentricidad.
+objetivo: Distinguir una hipérbola horizontal de una vertical.
+objetivo: Escribir la ecuación a partir de sus elementos.
+objetivo: Pasar de la forma general a la ordinaria.
+objetivo: Identificar una cónica por su ecuación general.
+autoeval: Decir cómo cambia $c^2$ respecto a la elipse. | 01
+autoeval: Leer $a$ y la orientación: el término positivo manda. | 02
+autoeval: Escribir las asíntotas con el rectángulo auxiliar. | 02
+autoeval: Completar cuadrados con signos opuestos. | 04
+autoeval: Reconocer circunferencia, elipse, parábola o hipérbola. | 05
+-->
+<section>
+  <h2>Definición</h2>
+  <div class="definicion">
+    <span class="etq">Hipérbola</span>
+    <p>Es el conjunto de puntos donde la <strong>diferencia</strong> (en valor absoluto) de las distancias a dos focos es constante: $|d_1 - d_2| = 2a$.</p>
+  </div>
+  <p>Comparada con la elipse, los focos quedan <strong>afuera</strong> de los vértices, así que $c \gt a$, y ahora la relación es:</p>
+  $$c^2 = a^2 + b^2$$
+  <p>La excentricidad $e = \dfrac{c}{a}$ es mayor que 1: mientras más grande, más abiertas las ramas.</p>
+</section>
+
+<section>
+  <h2>Ecuación con centro en el origen</h2>
+  <table class="leyes">
+    <thead><tr><th>Ecuación</th><th>Abre</th><th>Vértices</th><th>Focos</th><th>Asíntotas</th></tr></thead>
+    <tbody>
+      <tr><td>$\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1$</td><td>Izquierda y derecha</td><td>$(\pm a, 0)$</td><td>$(\pm c, 0)$</td><td>$y = \pm\dfrac{b}{a}x$</td></tr>
+      <tr><td>$\dfrac{y^2}{a^2} - \dfrac{x^2}{b^2} = 1$</td><td>Arriba y abajo</td><td>$(0, \pm a)$</td><td>$(0, \pm c)$</td><td>$y = \pm\dfrac{a}{b}x$</td></tr>
+    </tbody>
+  </table>
+  <p>Aquí $a$ <strong>no</strong> es necesariamente el mayor: $a^2$ es el denominador del término <strong>positivo</strong>, y ese término indica hacia dónde abre.</p>
+  <div class="figura-lado">
+    <div class="ejemplo">
+      <div class="n">1</div>
+      <div>
+        <span class="etq">Ejemplo resuelto</span>
+        <p>Da los elementos de $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$.</p>
+        <p class="paso">Positivo el de $x$: horizontal, $a = 4$, $b = 3$, $c = \sqrt{16 + 9} = 5$.</p>
+        <p class="paso">Vértices $(\pm 4, 0)$, focos $(\pm 5, 0)$, asíntotas $y = \pm\tfrac{3}{4}x$, $e = \tfrac{5}{4}$.</p>
+      </div>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 220 170" width="54mm">
+        <line x1="0" y1="85" x2="220" y2="85" stroke="#2b241e" stroke-width="0.8"/>
+        <line x1="110" y1="0" x2="110" y2="170" stroke="#2b241e" stroke-width="0.8"/>
+        <rect x="62" y="49" width="96" height="72" fill="none" stroke="#8a7a66" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="2" y1="166" x2="218" y2="4" stroke="#5c7a5a" stroke-width="1.2" stroke-dasharray="6 4"/>
+        <line x1="2" y1="4" x2="218" y2="166" stroke="#5c7a5a" stroke-width="1.2" stroke-dasharray="6 4"/>
+        <path d="M200.6 142.7 L196.0 138.5 L191.7 134.6 L187.7 130.9 L184.1 127.3 L180.7 123.9 L177.6 120.7 L174.7 117.6 L172.1 114.6 L169.8 111.7 L167.7 109.0 L165.8 106.3 L164.1 103.8 L162.7 101.3 L161.4 98.8 L160.4 96.4 L159.5 94.1 L158.8 91.8 L158.4 89.5 L158.1 87.3 L158.0 85.0 L158.1 82.7 L158.4 80.5 L158.8 78.2 L159.5 75.9 L160.4 73.6 L161.4 71.2 L162.7 68.7 L164.1 66.2 L165.8 63.7 L167.7 61.0 L169.8 58.3 L172.1 55.4 L174.7 52.4 L177.6 49.3 L180.7 46.1 L184.1 42.7 L187.7 39.1 L191.7 35.4 L196.0 31.5 L200.6 27.3" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <path d="M19.4 142.7 L24.0 138.5 L28.3 134.6 L32.3 130.9 L35.9 127.3 L39.3 123.9 L42.4 120.7 L45.3 117.6 L47.9 114.6 L50.2 111.7 L52.3 109.0 L54.2 106.3 L55.9 103.8 L57.3 101.3 L58.6 98.8 L59.6 96.4 L60.5 94.1 L61.2 91.8 L61.6 89.5 L61.9 87.3 L62.0 85.0 L61.9 82.7 L61.6 80.5 L61.2 78.2 L60.5 75.9 L59.6 73.6 L58.6 71.2 L57.3 68.7 L55.9 66.2 L54.2 63.7 L52.3 61.0 L50.2 58.3 L47.9 55.4 L45.3 52.4 L42.4 49.3 L39.3 46.1 L35.9 42.7 L32.3 39.1 L28.3 35.4 L24.0 31.5 L19.4 27.3" fill="none" stroke="#b5562c" stroke-width="2.2"/>
+        <circle cx="50" cy="85" r="3" fill="#c28a2e"/><circle cx="170" cy="85" r="3" fill="#c28a2e"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e">
+          <text x="44" y="100">F₁</text><text x="166" y="100">F₂</text><text x="64" y="80">−a</text><text x="144" y="80">a</text><text x="113" y="46">b</text>
+        </g>
+      </svg>
+      <figcaption>Las asíntotas son las diagonales del rectángulo $2a \times 2b$.</figcaption>
+    </figure>
+  </div>
+  <div class="nota">
+    <span class="etq">Cómo dibujarla rápido</span>
+    <p>Dibuja el rectángulo auxiliar de lados $2a$ y $2b$ centrado en el centro, traza sus diagonales (las asíntotas) y dibuja las ramas saliendo de los vértices y pegándose a ellas.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Da los elementos de $\dfrac{y^2}{25} - \dfrac{x^2}{144} = 1$.</p>
+      <p class="paso">Positivo el de $y$: vertical, $a = 5$, $b = 12$ (aquí $b \gt a$ y no importa), $c = \sqrt{25 + 144} = 13$.</p>
+      <p class="paso">Vértices $(0, \pm 5)$, focos $(0, \pm 13)$, asíntotas $y = \pm\tfrac{5}{12}x$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Encontrar la ecuación</h2>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una hipérbola tiene vértices $(\pm 3, 0)$ y focos $(\pm 5, 0)$. Encuentra su ecuación.</p>
+      <p class="paso">Horizontal, $a = 3$, $c = 5$, $b^2 = 25 - 9 = 16$:</p>
+      $$\frac{x^2}{9} - \frac{y^2}{16} = 1$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Desde la forma general</h2>
+  <p>En la forma general, $x^2$ y $y^2$ tienen coeficientes de <strong>signos opuestos</strong>. Se completan cuadrados igual que en la elipse, cuidando que el factor negativo afecta lo que sumas.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Encuentra centro, $a$, $b$, $c$ y asíntotas de $9x^2 - 4y^2 - 36x - 8y - 4 = 0$.</p>
+      $$9(x^2 - 4x + 4) - 4(y^2 + 2y + 1) = 4 + 36 - 4$$
+      <p class="paso">Del lado derecho sumas $9\cdot 4 = 36$ y $-4\cdot 1 = -4$.</p>
+      $$9(x - 2)^2 - 4(y + 1)^2 = 36 \;\Rightarrow\; \frac{(x - 2)^2}{4} - \frac{(y + 1)^2}{9} = 1$$
+      <p class="paso">Centro $(2, -1)$, horizontal, $a = 2$, $b = 3$, $c = \sqrt{13}$. Asíntotas: $y + 1 = \pm\tfrac{3}{2}(x - 2)$.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Reconocer cualquier cónica</h2>
+  <p>En $Ax^2 + Cy^2 + Dx + Ey + F = 0$ (sin término $xy$), los coeficientes de los cuadrados te dicen qué es, casi siempre sin hacer cuentas:</p>
+  <table class="leyes">
+    <thead><tr><th>Si $A$ y $C$…</th><th>Es</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Son iguales</td><td>Circunferencia</td><td>$2x^2 + 2y^2 - 8 = 0$</td></tr>
+      <tr><td>Mismo signo, distintos</td><td>Elipse</td><td>$4x^2 + 9y^2 - 36 = 0$</td></tr>
+      <tr><td>Signos opuestos</td><td>Hipérbola</td><td>$4x^2 - 9y^2 - 36 = 0$</td></tr>
+      <tr><td>Uno de los dos es cero</td><td>Parábola</td><td>$x^2 - 4y = 0$</td></tr>
+    </tbody>
+  </table>
+  <p class="leyenda">Excepciones («cónicas degeneradas»): al completar cuadrados puede quedar un punto, nada, o un par de rectas. Por ejemplo, $4x^2 - 9y^2 = 0$ son las rectas $y = \pm\tfrac{2}{3}x$.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$c^2 = a^2 - b^2$</td><td class="bien">$c^2 = a^2 + b^2$</td><td>En la hipérbola los focos están afuera.</td></tr>
+        <tr><td class="mal">$a^2$ es el denominador mayor</td><td class="bien">Es el del término positivo</td><td>Eso es en la elipse.</td></tr>
+        <tr><td class="mal">$\dfrac{y^2}{a^2} - \dfrac{x^2}{b^2} = 1$: asíntotas $\pm\tfrac{b}{a}x$</td><td class="bien">$\pm\tfrac{a}{b}x$</td><td>Despeja con el rectángulo, no memorices a ciegas.</td></tr>
+        <tr><td class="mal">$-4(y^2 + 2y + 1)$: sumar $+4$</td><td class="bien">Sumar $-4$</td><td>El factor negativo multiplica lo que agregas.</td></tr>
+        <tr><td class="mal">Las ramas cruzan las asíntotas</td><td class="bien">Se acercan sin tocarlas</td><td>Lejos del centro, la curva se pega a ellas.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$|d_1 - d_2| = 2a$</div><div>$c^2 = a^2 + b^2$</div><div>$e = \dfrac{c}{a} \gt 1$</div>
+      <div>$\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1$: horizontal</div><div>$a^2$: bajo el positivo</div><div>Asíntotas: diagonales del rectángulo</div>
+      <div>$A = C$: circunferencia</div><div>$A, C$ mismo signo: elipse</div><div>Opuestos: hipérbola; uno cero: parábola</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Resuélvelos en orden. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Elementos</h3>
+    <ol class="largo">
+      <li>Vértices, focos, asíntotas y excentricidad de $\dfrac{x^2}{36} - \dfrac{y^2}{64} = 1$.</li>
+      <li>Vértices, focos y asíntotas de $\dfrac{y^2}{9} - \dfrac{x^2}{16} = 1$.</li>
+      <li>Vértices, focos y asíntotas de $4x^2 - y^2 = 16$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Encuentra la ecuación</h3>
+    <ol class="largo">
+      <li>Vértices $(\pm 5, 0)$ y focos $(\pm 13, 0)$.</li>
+      <li>Vértices $(0, \pm 4)$ y asíntotas $y = \pm 2x$.</li>
+      <li>Focos $(0, \pm 10)$ y excentricidad 2.</li>
+      <li>Centro $(-1, 2)$, horizontal, $a = 3$ y $c = 5$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Forma general</h3>
+    <ol class="largo">
+      <li>Centro, $a$, $b$, $c$ y asíntotas de $x^2 - 4y^2 - 2x - 16y - 19 = 0$.</li>
+      <li>Centro, orientación y focos de $16y^2 - 9x^2 + 54x + 64y - 161 = 0$.</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>D. ¿Qué cónica es?</h3>
+    <ol>
+      <li>$3x^2 + 3y^2 - 6x + 12y = 0$</li><li>$2x^2 + 5y^2 - 10 = 0$</li><li>$x^2 - y^2 + 4x = 0$</li>
+      <li>$y^2 - 8x + 2y = 0$</li><li>$4x^2 - 9y^2 = 0$</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>V$(\pm 6, 0)$, F$(\pm 10, 0)$, $y = \pm\tfrac{4}{3}x$, $e = \tfrac{5}{3}$</span></li>
+    <li><span>V$(0, \pm 3)$, F$(0, \pm 5)$, $y = \pm\tfrac{3}{4}x$</span></li>
+    <li><span>V$(\pm 2, 0)$, F$(\pm 2\sqrt{5}, 0)$, $y = \pm 2x$</span></li>
+    <li><span>$\dfrac{x^2}{25} - \dfrac{y^2}{144} = 1$</span></li>
+    <li><span>$\dfrac{y^2}{16} - \dfrac{x^2}{4} = 1$</span></li>
+    <li><span>$\dfrac{y^2}{25} - \dfrac{x^2}{75} = 1$</span></li>
+    <li><span>$\dfrac{(x + 1)^2}{9} - \dfrac{(y - 2)^2}{16} = 1$</span></li>
+    <li><span>C$(1, -2)$, 2, 1, $\sqrt{5}$; $y + 2 = \pm\tfrac{1}{2}(x - 1)$</span></li>
+    <li><span>C$(3, -2)$, vertical, F$(3, 3)$ y $(3, -7)$</span></li>
+    <li><span>Circunferencia</span></li>
+    <li><span>Elipse</span></li>
+    <li><span>Hipérbola</span></li>
+    <li><span>Parábola</span></li>
+    <li><span>Dos rectas: $y = \pm\tfrac{2}{3}x$</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$a = 6$, $b = 8$, $c = \sqrt{36 + 64} = 10$. Pendientes $\pm\tfrac{8}{6}$.</div></div>
+    <div class="sol"><span>2</span><div>Vertical, $a = 3$, $b = 4$, $c = 5$. Pendientes $\pm\tfrac{a}{b} = \pm\tfrac{3}{4}$.</div></div>
+    <div class="sol"><span>3</span><div>Divide entre 16: $\dfrac{x^2}{4} - \dfrac{y^2}{16} = 1$. $a = 2$, $b = 4$, $c = \sqrt{20} = 2\sqrt{5}$.</div></div>
+    <div class="sol"><span>4</span><div>$b^2 = 169 - 25 = 144$.</div></div>
+    <div class="sol"><span>5</span><div>Vertical con $a = 4$; la pendiente de la asíntota es $\tfrac{a}{b} = 2$, así que $b = 2$.</div></div>
+    <div class="sol"><span>6</span><div>$c = 10$ y $e = \tfrac{c}{a} = 2 \Rightarrow a = 5$. $b^2 = 100 - 25 = 75$.</div></div>
+    <div class="sol"><span>7</span><div>$b^2 = 25 - 9 = 16$.</div></div>
+    <div class="sol"><span>8</span><div>$(x - 1)^2 - 4(y + 2)^2 = 19 + 1 - 16 = 4$; divide entre 4. Pendientes $\pm\tfrac{b}{a} = \pm\tfrac{1}{2}$.</div></div>
+    <div class="sol"><span>9</span><div>$16(y + 2)^2 - 9(x - 3)^2 = 161 + 64 - 81 = 144$; divide: $\dfrac{(y + 2)^2}{9} - \dfrac{(x - 3)^2}{16} = 1$. $c = 5$, focos en $-2 \pm 5$.</div></div>
+    <div class="sol"><span>10</span><div>$A = C = 3$. Al completar: $(x - 1)^2 + (y + 2)^2 = 5$, sí es real.</div></div>
+    <div class="sol"><span>12</span><div>$A = 1$ y $C = -1$: signos opuestos. Completando: $(x + 2)^2 - y^2 = 4$.</div></div>
+    <div class="sol"><span>14</span><div>Signos opuestos, pero igualada a cero: $(2x - 3y)(2x + 3y) = 0$. Es una hipérbola degenerada en sus asíntotas.</div></div>
+  </div>
+</section>
