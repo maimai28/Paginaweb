@@ -5,7 +5,10 @@ pensadas para que el alumno estudie solo y te contacte si tiene dudas.
 
 ## Guías incluidas
 
-`pdf/` tiene 35 guías de secundaria listas para subir a la plataforma:
+`pdf/` tiene 92 guías listas; la plataforma las sube sola a su tema al arrancar (ver
+`pdf/manifiesto.json`).
+
+**Secundaria (35)**
 
 - **Matemáticas (16):** enteros, fracciones y decimales, potencias y raíces, proporcionalidad y
   porcentajes, expresiones algebraicas, ecuaciones lineales, sistemas 2×2, productos notables y
@@ -15,6 +18,20 @@ pensadas para que el alumno estudie solo y te contacte si tiene dudas.
   presión, tipos de energía, conservación de la energía, calor y temperatura, carga eléctrica,
   circuitos, magnetismo, ondas, sonido, luz y colores, modelo cinético, estados de agregación,
   Sistema Solar y universo.
+
+**Preparatoria (57)**
+
+- **Matemáticas (32):** funciones, polinomios, desigualdades, exponentes y logaritmos; razones
+  trigonométricas, leyes de senos y cosenos, círculo unitario, identidades; recta, circunferencia,
+  parábola, elipse, hipérbola; límites, continuidad, definición de derivada, reglas de derivación,
+  regla de la cadena, derivación implícita, máximos y mínimos, razones relacionadas; antiderivadas,
+  integral definida y TFC, sustitución, partes, fracciones parciales, áreas entre curvas, volúmenes
+  de revolución; estadística descriptiva, conteo, probabilidad condicional, binomial y normal.
+- **Física (25):** vectores, cinemática 1D, tiro parabólico, movimiento circular, Newton y DCL,
+  trabajo y energía, cantidad de movimiento, gravitación; densidad y presión, Pascal y Arquímedes,
+  continuidad y Bernoulli; dilatación, calorimetría, leyes de la termodinámica; MAS, ondas
+  mecánicas, reflexión y refracción, espejos y lentes; Coulomb, campo eléctrico, potencial, Ohm y
+  circuitos, Kirchhoff, campo magnético, inducción.
 
 Cada guía trae: objetivos, cómo usar la guía, teoría con ejemplos resueltos, errores comunes, hoja de
 repaso recortable, ejercicios, respuestas, soluciones paso a paso, autoevaluación con la sección a

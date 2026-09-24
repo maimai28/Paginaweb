@@ -1,0 +1,200 @@
+<!-- guia
+titulo: Inducción electromagnética
+nivel: Preparatoria
+materia: Física
+rama: Electricidad y magnetismo
+numero: 25
+descripcion: Flujo magnético, ley de Faraday, ley de Lenz para el sentido de la corriente inducida, fem de movimiento en una barra, generadores y corriente alterna, transformadores y por qué la electricidad se transmite a alto voltaje.
+entrada: Si una corriente crea un campo magnético, ¿un campo magnético puede crear una corriente? Sí, pero solo si cambia. Ese descubrimiento de Faraday está detrás de casi toda la electricidad que usas: las plantas generadoras, los transformadores de los postes y el cargador de tu celular.
+objetivo: Calcular el flujo magnético.
+objetivo: Aplicar la ley de Faraday.
+objetivo: Determinar el sentido de la corriente inducida con Lenz.
+objetivo: Calcular la fem de una barra en movimiento.
+objetivo: Resolver transformadores ideales.
+objetivo: Explicar la transmisión a alto voltaje.
+autoeval: Calcular el flujo con el ángulo correcto. | 01
+autoeval: Calcular la fem inducida en una bobina. | 02
+autoeval: Usar la ley de Lenz para el sentido de la corriente. | 03
+autoeval: Calcular la fem de movimiento $BLv$. | 04
+autoeval: Relacionar voltajes, vueltas y corrientes en un transformador. | 05
+-->
+<section>
+  <h2>Flujo magnético</h2>
+  <div class="definicion">
+    <span class="etq">Flujo magnético</span>
+    $$\Phi = B\,A\cos\theta$$
+    <p>Mide cuántas líneas de campo atraviesan una superficie de área $A$; $\theta$ es el ángulo entre $\vec{B}$ y la <strong>normal</strong> a la superficie. Se mide en webers: $1 \text{ Wb} = 1 \text{ T·m}^2$.</p>
+  </div>
+  <p>El flujo cambia si cambia $B$, si cambia el área o si la espira gira.</p>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una espira de 0.05 m² está perpendicular a un campo de 0.2 T. ¿Qué flujo la atraviesa?</p>
+      $$\Phi = 0.2(0.05)\cos 0^\circ = 0.01 \text{ Wb}$$
+      <p class="paso">«Perpendicular a la espira» significa paralelo a su normal: $\theta = 0^\circ$, flujo máximo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ley de Faraday</h2>
+  <div class="definicion">
+    <span class="etq">Ley de Faraday</span>
+    $$\varepsilon = -N\,\frac{\Delta\Phi}{\Delta t}$$
+    <p>Un flujo que <strong>cambia</strong> induce una fuerza electromotriz en una bobina de $N$ vueltas. Un flujo constante, por grande que sea, no induce nada.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una bobina de 200 vueltas y 0.01 m² está en un campo que pasa de 0 a 0.5 T en 0.1 s. ¿Qué fem se induce?</p>
+      $$|\varepsilon| = 200\cdot\frac{0.01(0.5) - 0}{0.1} = 10 \text{ V}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ley de Lenz</h2>
+  <div class="definicion">
+    <span class="etq">Ley de Lenz</span>
+    <p>La corriente inducida circula en el sentido que produce un campo magnético que <strong>se opone al cambio</strong> de flujo que la causó. Es el signo menos de la ley de Faraday.</p>
+  </div>
+  <p>Si acercas el polo norte de un imán a una espira, el flujo hacia la espira aumenta; la corriente inducida crea un polo norte del lado del imán para repelerlo. Si lo alejas, crea un polo sur para atraerlo. Siempre cuesta trabajo mover el imán: de ahí sale la energía eléctrica.</p>
+  <div class="nota">
+    <span class="etq">Si no fuera así…</span>
+    <p>Si la corriente inducida ayudara al cambio, el imán se aceleraría solo y generaría energía de la nada. La ley de Lenz es la conservación de la energía aplicada a la inducción.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Fem de movimiento</h2>
+  <div class="figura-lado">
+    <div>
+      <p>Una barra conductora de largo $L$ que se desliza con rapidez $v$ sobre rieles, dentro de un campo $B$ perpendicular, barre área y cambia el flujo del circuito:</p>
+      $$\varepsilon = B\,L\,v$$
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 180 115" width="46mm">
+        <defs><marker id="mv1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#b5562c"/></marker></defs>
+        <g fill="#5c7a5a" font-family="Nunito" font-size="10">
+          <text x="30" y="40">×</text><text x="60" y="40">×</text><text x="90" y="40">×</text><text x="120" y="40">×</text><text x="150" y="40">×</text>
+          <text x="30" y="80">×</text><text x="60" y="80">×</text><text x="90" y="80">×</text><text x="120" y="80">×</text><text x="150" y="80">×</text>
+        </g>
+        <path d="M170 20 H15 V100 H170" fill="none" stroke="#2b241e" stroke-width="2"/>
+        <rect x="8" y="48" width="14" height="24" fill="#d9b98c" stroke="#2b241e"/>
+        <line x1="110" y1="14" x2="110" y2="106" stroke="#b5562c" stroke-width="4"/>
+        <line x1="116" y1="60" x2="150" y2="60" stroke="#b5562c" stroke-width="2" marker-end="url(#mv1)"/>
+        <g font-family="Nunito" font-size="10" fill="#2b241e"><text x="2" y="112">R</text><text x="140" y="56" fill="#b5562c">v</text><text x="96" y="112">L</text><text x="162" y="112" fill="#5c7a5a">B ⊗</text></g>
+      </svg>
+      <figcaption>La barra que se mueve funciona como una pila.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una barra de 0.5 m se mueve a 4 m/s en un campo de 0.2 T, sobre rieles unidos por una resistencia de 2 Ω. ¿Qué fem y corriente se inducen, y qué fuerza hay que hacer para mantenerla a rapidez constante?</p>
+      $$\varepsilon = 0.2(0.5)(4) = 0.4 \text{ V} \qquad I = \frac{0.4}{2} = 0.2 \text{ A} \qquad F = BIL = 0.2(0.2)(0.5) = 0.02 \text{ N}$$
+      <p class="paso">Esa fuerza la exige Lenz: el campo frena a la barra. La potencia que pones, $Fv = 0.08$ W, es la que disipa la resistencia, $I^2R = 0.08$ W.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Generadores y transformadores</h2>
+  <p>Un <strong>generador</strong> hace girar una bobina dentro de un imán: el flujo cambia de forma senoidal y produce <strong>corriente alterna</strong>. En México la red es de 60 Hz, y en las casas el voltaje eficaz es de unos 127 V.</p>
+  <div class="definicion">
+    <span class="etq">Transformador ideal</span>
+    $$\frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad\qquad V_pI_p = V_sI_s$$
+    <p>Dos bobinas en un mismo núcleo de hierro. Solo funciona con corriente alterna (necesita flujo que cambie). Si sube el voltaje, baja la corriente en la misma proporción: la potencia se conserva.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un transformador baja de 120 V a 12 V y su primario tiene 1000 vueltas. ¿Cuántas tiene el secundario? ¿Cómo se comparan las corrientes?</p>
+      $$N_s = 1000\cdot\frac{12}{120} = 100 \qquad \frac{I_s}{I_p} = \frac{V_p}{V_s} = 10$$
+    </div>
+  </div>
+  <p>La electricidad viaja por las líneas a cientos de miles de volts porque, para la misma potencia, un voltaje 10 veces mayor significa una corriente 10 veces menor y pérdidas en los cables ($I^2R$) <strong>100 veces menores</strong>.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$\theta$ entre $\vec{B}$ y la superficie</td><td class="bien">Entre $\vec{B}$ y la normal</td><td>Así está definido el flujo.</td></tr>
+        <tr><td class="mal">Mucho flujo, mucha fem</td><td class="bien">Lo que importa es el cambio</td><td>$\varepsilon \propto \dfrac{\Delta\Phi}{\Delta t}$.</td></tr>
+        <tr><td class="mal">Olvidar $N$</td><td class="bien">Multiplicar por las vueltas</td><td>Cada vuelta suma su fem.</td></tr>
+        <tr><td class="mal">Transformador con corriente directa</td><td class="bien">Solo con alterna</td><td>Con CD el flujo no cambia.</td></tr>
+        <tr><td class="mal">Subir el voltaje sube la potencia</td><td class="bien">Baja la corriente</td><td>$V_pI_p = V_sI_s$.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$\Phi = BA\cos\theta$ (Wb)</div><div>$\varepsilon = -N\dfrac{\Delta\Phi}{\Delta t}$</div><div>Lenz: se opone al cambio</div>
+      <div>$\varepsilon = BLv$</div><div>$F = BIL$ frena la barra</div><div>Generador: CA</div>
+      <div>$\dfrac{V_s}{V_p} = \dfrac{N_s}{N_p}$</div><div>$V_pI_p = V_sI_s$</div><div>Pérdidas $\propto I^2$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Flujo y Faraday</h3>
+    <ol class="largo">
+      <li>Un campo de 0.4 T forma $60^\circ$ con la normal de una espira de 0.02 m². ¿Qué flujo la atraviesa?</li>
+      <li>El flujo en una bobina de 50 vueltas baja de 0.02 Wb a 0.005 Wb en 0.05 s. ¿Qué fem se induce?</li>
+      <li>Una espira de 0.1 m² en un campo de 0.3 T gira de estar perpendicular al campo a estar paralela en 0.02 s. ¿Qué fem media se induce?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Fem de movimiento</h3>
+    <ol class="largo">
+      <li>Una barra de 0.3 m se mueve a 5 m/s en un campo de 0.6 T sobre rieles unidos por 3 Ω. ¿Qué fem y qué corriente se inducen?</li>
+      <li>Un avión con alas de 30 m vuela a 250 m/s donde la componente vertical del campo terrestre es $4\times 10^{-5}$ T. ¿Qué fem aparece entre las puntas de las alas?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>C. Transformadores</h3>
+    <ol class="largo">
+      <li>Un transformador baja de 10 000 V a 220 V y su primario tiene 5000 vueltas. ¿Cuántas tiene el secundario?</li>
+      <li>El cargador de un celular baja de 127 V a 5 V con 1270 vueltas en el primario. ¿Cuántas tiene el secundario? Si entrega 10 W, ¿qué corriente toma del contacto?</li>
+      <li>Si una línea transmite la misma potencia con 10 veces más voltaje, ¿cuánto cambian las pérdidas en los cables?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>0.004 Wb</span></li>
+    <li><span>15 V</span></li>
+    <li><span>1.5 V</span></li>
+    <li><span>0.9 V; 0.3 A</span></li>
+    <li><span>0.3 V</span></li>
+    <li><span>110</span></li>
+    <li><span>50; $\approx 0.079$ A</span></li>
+    <li><span>Se dividen entre 100</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$0.4(0.02)\cos 60^\circ = 0.008(0.5)$.</div></div>
+    <div class="sol"><span>2</span><div>$50\cdot\tfrac{0.015}{0.05}$.</div></div>
+    <div class="sol"><span>3</span><div>El flujo pasa de $0.3(0.1) = 0.03$ Wb a 0: $\tfrac{0.03}{0.02}$.</div></div>
+    <div class="sol"><span>4</span><div>$0.6(0.3)(5)$; $\tfrac{0.9}{3}$.</div></div>
+    <div class="sol"><span>5</span><div>$(4\times 10^{-5})(30)(250)$: muy poco, no afecta al avión.</div></div>
+    <div class="sol"><span>6</span><div>$5000\cdot\tfrac{220}{10\,000}$.</div></div>
+    <div class="sol"><span>7</span><div>$1270\cdot\tfrac{5}{127}$; $I_p = \tfrac{10}{127}$ (ideal).</div></div>
+    <div class="sol"><span>8</span><div>La corriente baja a $\tfrac{1}{10}$ y las pérdidas van con $I^2$.</div></div>
+  </div>
+</section>

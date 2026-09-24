@@ -1,0 +1,173 @@
+<!-- guia
+titulo: Leyes de Kirchhoff
+nivel: Preparatoria
+materia: Física
+rama: Electricidad y magnetismo
+numero: 23
+descripcion: Ley de los nodos y ley de las mallas, convención de signos al recorrer resistencias y fuentes, fuerza electromotriz y resistencia interna, y cómo resolver paso a paso circuitos con dos fuentes que no se reducen a serie y paralelo.
+entrada: Hay circuitos que no se pueden reducir a una sola resistencia, por ejemplo cuando tienen dos baterías en ramas distintas. Kirchhoff resolvió el problema con dos reglas que son conservación de la carga y de la energía, y que convierten cualquier circuito en un sistema de ecuaciones.
+objetivo: Aplicar la ley de los nodos.
+objetivo: Aplicar la ley de las mallas con los signos correctos.
+objetivo: Incluir la resistencia interna de una fuente.
+objetivo: Resolver circuitos de dos mallas.
+objetivo: Interpretar corrientes negativas.
+autoeval: Plantear la ley de los nodos. | 01
+autoeval: Recorrer una malla sumando subidas y caídas de voltaje. | 02
+autoeval: Calcular el voltaje en las terminales de una pila real. | 03
+autoeval: Plantear y resolver un sistema de tres ecuaciones. | 04
+autoeval: Interpretar una corriente que sale negativa. | 04
+-->
+<section>
+  <h2>Ley de los nodos</h2>
+  <div class="definicion">
+    <span class="etq">Primera ley de Kirchhoff (nodos)</span>
+    $$\sum I_{\text{entran}} = \sum I_{\text{salen}}$$
+    <p>En un nodo (punto donde se unen tres o más cables) la carga no se acumula: lo que entra, sale. Es la conservación de la carga.</p>
+  </div>
+  <p>Por ejemplo, si a un nodo llegan 5 A y 3 A, y por un cable salen 2 A, por el otro salen 6 A.</p>
+</section>
+
+<section>
+  <h2>Ley de las mallas</h2>
+  <div class="definicion">
+    <span class="etq">Segunda ley de Kirchhoff (mallas)</span>
+    $$\sum \Delta V = 0 \quad\text{alrededor de cualquier camino cerrado}$$
+    <p>Al dar una vuelta completa y regresar al mismo punto, el potencial vuelve a su valor inicial. Es la conservación de la energía.</p>
+  </div>
+  <table class="leyes">
+    <thead><tr><th>Al recorrer…</th><th>Cambio de potencial</th></tr></thead>
+    <tbody>
+      <tr><td>Una resistencia en el sentido de la corriente supuesta</td><td>$-IR$ (caída)</td></tr>
+      <tr><td>Una resistencia en contra de la corriente supuesta</td><td>$+IR$</td></tr>
+      <tr><td>Una fuente de $-$ a $+$</td><td>$+\varepsilon$ (subida)</td></tr>
+      <tr><td>Una fuente de $+$ a $-$</td><td>$-\varepsilon$</td></tr>
+    </tbody>
+  </table>
+  <p>El sentido de cada corriente se <strong>supone</strong> al principio. Si al resolver sale negativa, la corriente real va al revés; los números siguen siendo correctos.</p>
+</section>
+
+<section>
+  <h2>Fuerza electromotriz y resistencia interna</h2>
+  <p>Una pila real tiene una fuerza electromotriz $\varepsilon$ (el voltaje «ideal») y una resistencia interna $r$. Cuando entrega corriente, el voltaje en sus terminales baja:</p>
+  $$V_{\text{terminal}} = \varepsilon - Ir \qquad\qquad I = \frac{\varepsilon}{R + r}$$
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una batería de 9 V con resistencia interna de 0.5 Ω alimenta una resistencia de 4 Ω. ¿Qué corriente pasa y qué voltaje marcan sus terminales?</p>
+      $$I = \frac{9}{4 + 0.5} = 2 \text{ A} \qquad V = 9 - 2(0.5) = 8 \text{ V}$$
+      <p class="paso">Por eso una pila gastada (con $r$ grande) marca bien sin carga pero no puede prender nada.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Circuitos de dos mallas</h2>
+  <div class="figura-lado">
+    <div>
+      <p><strong>Método:</strong></p>
+      <ol>
+        <li>Nombra y dibuja una corriente en cada rama, con un sentido supuesto.</li>
+        <li>Escribe la ley de nodos en un nodo.</li>
+        <li>Escribe la ley de mallas en dos mallas distintas.</li>
+        <li>Resuelve el sistema de tres ecuaciones.</li>
+      </ol>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 190 125" width="48mm">
+        <g stroke="#2b241e" stroke-width="1.6" fill="none">
+          <path d="M20 60 V15 H55 l3 -5 l6 10 l6 -10 l6 10 l3 -5 H95 H115 l3 -5 l6 10 l6 -10 l6 10 l3 -5 H170 V60"/>
+          <path d="M20 72 V110 H170 V72"/>
+          <path d="M95 15 V40 l-5 3 l10 6 l-10 6 l10 6 l-5 3 V110"/>
+        </g>
+        <line x1="10" y1="60" x2="30" y2="60" stroke="#2b241e" stroke-width="2.6"/><line x1="14" y1="72" x2="26" y2="72" stroke="#2b241e" stroke-width="1.6"/>
+        <line x1="160" y1="60" x2="180" y2="60" stroke="#2b241e" stroke-width="2.6"/><line x1="164" y1="72" x2="176" y2="72" stroke="#2b241e" stroke-width="1.6"/>
+        <g font-family="Nunito" font-size="9" fill="#2b241e">
+          <text x="32" y="64">ε₁</text><text x="150" y="64">ε₂</text><text x="60" y="34">R₁</text><text x="120" y="34">R₂</text><text x="102" y="70">R₃</text>
+          <text x="40" y="12" fill="#b5562c">I₁ →</text><text x="128" y="12" fill="#b5562c">← I₂</text><text x="78" y="92" fill="#b5562c">I₃ ↓</text>
+        </g>
+      </svg>
+      <figcaption>Dos fuentes en ramas distintas.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>En el circuito de la figura, $\varepsilon_1 = 10$ V, $\varepsilon_2 = 5$ V, $R_1 = 1$ Ω, $R_2 = 1$ Ω y $R_3 = 2$ Ω (el lado largo de cada pila es el $+$). Encuentra las tres corrientes.</p>
+      <p class="paso">Nodo de arriba: $I_1 + I_2 = I_3$.</p>
+      <p class="paso">Malla izquierda (sube por $\varepsilon_1$, baja por $R_1$ y $R_3$): $10 - 1\,I_1 - 2\,I_3 = 0$.</p>
+      <p class="paso">Malla derecha: $5 - 1\,I_2 - 2\,I_3 = 0$.</p>
+      <p class="paso">Sustituyendo $I_1 = 10 - 2I_3$ e $I_2 = 5 - 2I_3$ en el nodo: $15 - 4I_3 = I_3$, así que $I_3 = 3$ A, $I_1 = 4$ A e $I_2 = -1$ A.</p>
+      <p class="paso">$I_2$ negativa: en realidad circula 1 A <em>hacia</em> la pila de 5 V, que se está cargando.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Cambiar los sentidos a media solución</td><td class="bien">Mantener los supuestos</td><td>El signo del resultado ya corrige.</td></tr>
+        <tr><td class="mal">$+IR$ al recorrer a favor de $I$</td><td class="bien">$-IR$</td><td>La corriente pierde potencial en la resistencia.</td></tr>
+        <tr><td class="mal">Corriente negativa: error</td><td class="bien">Va al revés</td><td>Es información útil.</td></tr>
+        <tr><td class="mal">Usar tres mallas en un circuito de dos</td><td class="bien">Mallas independientes</td><td>La tercera es combinación de las otras.</td></tr>
+        <tr><td class="mal">Olvidar la resistencia interna</td><td class="bien">Sumarla a la externa</td><td>La corriente también pasa por dentro de la pila.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>Nodos: entra = sale</div><div>Mallas: $\sum\Delta V = 0$</div><div>A favor de $I$: $-IR$</div>
+      <div>De $-$ a $+$: $+\varepsilon$</div><div>$V_t = \varepsilon - Ir$</div><div>$I = \dfrac{\varepsilon}{R + r}$</div>
+      <div>Supón sentidos</div><div>1 nodo + 2 mallas</div><div>Negativa: va al revés</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Nodos, mallas simples y pilas reales</h3>
+    <ol class="largo">
+      <li>A un nodo llegan 5 A y 3 A, y sale 2 A por un cable. ¿Cuánto sale por el cuarto cable?</li>
+      <li>Una batería de 12 V alimenta tres resistencias en serie de 1, 2 y 3 Ω. Plantea la malla y encuentra la corriente.</li>
+      <li>Una pila de 1.5 V con 0.2 Ω de resistencia interna alimenta un foco de 2.8 Ω. ¿Qué corriente pasa y qué voltaje hay en las terminales?</li>
+      <li>Una fuente de 14 V carga una batería de 12 V a través de una resistencia de 0.5 Ω (el $+$ de una hacia el $+$ de la otra). ¿Qué corriente circula?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Dos mallas</h3>
+    <ol class="largo">
+      <li>Mismo circuito de la figura con $\varepsilon_1 = 16$ V, $\varepsilon_2 = 10$ V, $R_1 = 2$ Ω, $R_2 = 1$ Ω y $R_3 = 2$ Ω. Encuentra $I_1$, $I_2$ e $I_3$.</li>
+      <li>En el ejemplo 2, ¿qué potencia disipa $R_3$ y qué potencia entrega la pila de 10 V?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>6 A</span></li>
+    <li><span>2 A</span></li>
+    <li><span>0.5 A; 1.4 V</span></li>
+    <li><span>4 A</span></li>
+    <li><span>$I_1 = 3.5$ A, $I_2 = 1$ A, $I_3 = 4.5$ A</span></li>
+    <li><span>18 W; 40 W</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$5 + 3 = 2 + I$.</div></div>
+    <div class="sol"><span>2</span><div>$12 - 1I - 2I - 3I = 0$.</div></div>
+    <div class="sol"><span>3</span><div>$I = \tfrac{1.5}{2.8 + 0.2}$; $V = 1.5 - 0.5(0.2)$.</div></div>
+    <div class="sol"><span>4</span><div>Las fuentes se oponen: $14 - 12 - 0.5I = 0$.</div></div>
+    <div class="sol"><span>5</span><div>$16 - 2I_1 - 2I_3 = 0 \Rightarrow I_1 = 8 - I_3$. $10 - I_2 - 2I_3 = 0 \Rightarrow I_2 = 10 - 2I_3$. Nodo: $18 - 3I_3 = I_3 \Rightarrow I_3 = 4.5$.</div></div>
+    <div class="sol"><span>6</span><div>$P_{R_3} = 3^2(2)$. La pila de 10 V entrega $10(4)$. El resto: $R_1$ disipa $16$ W y la pila de 5 V absorbe $5(1) = 5$ W, más 1 W en $R_2$: $18 + 16 + 5 + 1 = 40$ ✔.</div></div>
+  </div>
+</section>

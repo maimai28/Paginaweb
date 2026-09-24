@@ -70,7 +70,7 @@ Todo vive en `DATA_DIR`: `cursos.db` (alumnos, temas, recursos) y `archivos/` (P
 
 ## Guías PDF
 
-La carpeta `guias/` tiene el generador de guías de estudio con el diseño de la marca y 35 guías de secundaria (matemáticas y física) listas en `guias/pdf/`. Ver `guias/README.md`.
+La carpeta `guias/` tiene el generador de guías de estudio con el diseño de la marca y 92 guías (35 de secundaria y 57 de preparatoria, matemáticas y física) listas en `guias/pdf/`. Ver `guias/README.md`.
 
 **Se cargan solas.** Al arrancar, el servidor lee `guias/pdf/manifiesto.json` y, para cada guía:
 

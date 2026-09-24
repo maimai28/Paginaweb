@@ -1,0 +1,199 @@
+<!-- guia
+titulo: Ley de Ohm y circuitos
+nivel: Preparatoria
+materia: Física
+rama: Electricidad y magnetismo
+numero: 22
+descripcion: Corriente eléctrica, resistencia y resistividad, ley de Ohm, potencia eléctrica y consumo en kWh, resistencias en serie y en paralelo, circuitos mixtos paso a paso y cómo se conectan amperímetros y voltímetros.
+entrada: Cada aparato de tu casa es una resistencia conectada a 127 V. Con la ley de Ohm y dos reglas para combinar resistencias puedes calcular cuánta corriente pasa por cada foco, por qué los contactos de tu casa están en paralelo y cuánto cuesta dejar la luz prendida.
+objetivo: Relacionar corriente, carga y tiempo.
+objetivo: Calcular resistencias con la resistividad.
+objetivo: Aplicar la ley de Ohm.
+objetivo: Calcular potencia y consumo de energía.
+objetivo: Reducir circuitos en serie, en paralelo y mixtos.
+objetivo: Conectar correctamente amperímetros y voltímetros.
+autoeval: Calcular corriente, voltaje o resistencia con $V = IR$. | 02
+autoeval: Calcular la potencia de un aparato con la fórmula adecuada. | 03
+autoeval: Reducir resistencias en serie y en paralelo. | 04
+autoeval: Resolver un circuito mixto encontrando cada corriente. | 05
+autoeval: Explicar dónde va el amperímetro y dónde el voltímetro. | 05
+-->
+<section>
+  <h2>Corriente y resistencia</h2>
+  <div class="definicion">
+    <span class="etq">Corriente eléctrica</span>
+    $$I = \frac{Q}{t}$$
+    <p>Es la carga que atraviesa una sección del conductor por segundo, en amperes: $1 \text{ A} = 1 \text{ C/s}$. Por convención, su sentido es el que seguirían las cargas positivas (del polo $+$ al $-$ por fuera de la pila), aunque en los metales se mueven los electrones al revés.</p>
+  </div>
+  <p>La <strong>resistencia</strong> mide qué tanto se opone un objeto al paso de la corriente (ohms, Ω). Para un alambre depende del material, del largo y del grosor:</p>
+  $$R = \rho\,\frac{L}{A}$$
+  <p>$\rho$ es la resistividad: cobre $1.72\times 10^{-8}$ Ω·m, un conductor excelente; el vidrio, unos $10^{12}$ Ω·m.</p>
+</section>
+
+<section>
+  <h2>Ley de Ohm</h2>
+  <div class="definicion">
+    <span class="etq">Ley de Ohm</span>
+    $$V = I\,R$$
+    <p>En muchos materiales (óhmicos) la corriente es proporcional al voltaje aplicado.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un alambre de cobre de 100 m y 1 mm de diámetro. ¿Qué resistencia tiene?</p>
+      $$A = \pi(0.5\times 10^{-3})^2 \approx 7.85\times 10^{-7} \text{ m}^2 \qquad R = \frac{(1.72\times 10^{-8})(100)}{7.85\times 10^{-7}} \approx 2.19 \ \Omega$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Potencia y consumo</h2>
+  $$P = VI = I^2R = \frac{V^2}{R}$$
+  <p>La potencia (W) es la energía que el aparato convierte por segundo. La energía consumida es $E = Pt$, y el recibo de luz la cobra en kilowatts-hora.</p>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una secadora de pelo de 1500 W funciona a 120 V. ¿Qué corriente toma y cuál es su resistencia? Si se usa 20 minutos diarios durante 30 días, ¿cuántos kWh consume?</p>
+      $$I = \frac{1500}{120} = 12.5 \text{ A} \qquad R = \frac{120^2}{1500} = 9.6 \ \Omega \qquad E = 1.5 \text{ kW}\times 10 \text{ h} = 15 \text{ kWh}$$
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Serie y paralelo</h2>
+  <div class="figura-lado">
+    <div>
+      <table class="leyes">
+        <thead><tr><th></th><th>Serie</th><th>Paralelo</th></tr></thead>
+        <tbody>
+          <tr><td>Conexión</td><td>Una tras otra, un solo camino</td><td>Entre los mismos dos puntos</td></tr>
+          <tr><td>Corriente</td><td>La misma en todas</td><td>Se reparte</td></tr>
+          <tr><td>Voltaje</td><td>Se reparte</td><td>El mismo en todas</td></tr>
+          <tr><td>Equivalente</td><td>$R = R_1 + R_2 + \cdots$</td><td>$\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \cdots$</td></tr>
+        </tbody>
+      </table>
+      <p>En paralelo el equivalente siempre es <strong>menor</strong> que la resistencia más chica. Para dos: $R = \dfrac{R_1R_2}{R_1 + R_2}$.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 170 150" width="42mm">
+        <g stroke="#2b241e" stroke-width="1.6" fill="none">
+          <path d="M20 20 H45 l4 -6 l8 12 l8 -12 l8 12 l4 -6 M77 20 H100 l4 -6 l8 12 l8 -12 l8 12 l4 -6 M132 20 H150 V55 H20 V38"/>
+          <line x1="12" y1="38" x2="28" y2="38" stroke-width="2.4"/><line x1="16" y1="32" x2="24" y2="32"/><path d="M20 32 V20"/>
+          <path d="M20 95 H50 M50 80 V110 M50 80 H70 l4 -6 l8 12 l8 -12 l8 12 l4 -6 H125 M50 110 H70 l4 -6 l8 12 l8 -12 l8 12 l4 -6 H125 M125 80 V110 M125 95 H150 V135 H20 V118"/>
+          <line x1="12" y1="118" x2="28" y2="118" stroke-width="2.4"/><line x1="16" y1="112" x2="24" y2="112"/><path d="M20 112 V95"/>
+        </g>
+        <g font-family="Nunito" font-size="10" fill="#2b241e"><text x="60" y="48">serie</text><text x="72" y="130">paralelo</text></g>
+      </svg>
+      <figcaption>Arriba, en serie; abajo, en paralelo.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Con una pila de 12 V: (a) 4 Ω y 2 Ω en serie; (b) 6 Ω y 3 Ω en paralelo. Encuentra corrientes y voltajes.</p>
+      <p class="paso">(a) $R = 6$ Ω, $I = 2$ A en ambas; $V_1 = 8$ V y $V_2 = 4$ V (suman 12).</p>
+      <p class="paso">(b) $R = \tfrac{6(3)}{9} = 2$ Ω, $I = 6$ A en total; cada una tiene 12 V: $I_1 = 2$ A, $I_2 = 4$ A (suman 6).</p>
+    </div>
+  </div>
+  <div class="nota">
+    <span class="etq">¿Por qué la casa está en paralelo?</span>
+    <p>Así cada aparato recibe los 127 V completos y puede encenderse o apagarse sin afectar a los demás. Pero cada aparato agregado sube la corriente total: por eso existen los fusibles.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Circuitos mixtos y medidores</h2>
+  <p>Reduce por partes: junta los paralelos o series más internos, luego los siguientes, hasta tener una sola resistencia. Encuentra la corriente total y regresa paso a paso para encontrar cada voltaje y corriente.</p>
+  <div class="ejemplo">
+    <div class="n">4</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Una resistencia de 5 Ω en serie con un paralelo de 10 Ω y 15 Ω, conectados a 12 V. Encuentra la corriente en cada una.</p>
+      <p class="paso">Paralelo: $\tfrac{10(15)}{25} = 6$ Ω. Total: $5 + 6 = 11$ Ω. $I = \tfrac{12}{11} \approx 1.09$ A (pasa por la de 5 Ω).</p>
+      <p class="paso">Voltaje en el paralelo: $1.09(6) \approx 6.55$ V. Entonces $I_{10} \approx 0.65$ A e $I_{15} \approx 0.44$ A.</p>
+    </div>
+  </div>
+  <p>El <strong>amperímetro</strong> se conecta en <strong>serie</strong> (la corriente debe pasar por él) y tiene resistencia casi nula. El <strong>voltímetro</strong> se conecta en <strong>paralelo</strong> con el elemento y tiene resistencia muy grande.</p>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">Paralelo: $R = R_1 + R_2$</td><td class="bien">Sumar recíprocos</td><td>Hay más caminos: menos resistencia.</td></tr>
+        <tr><td class="mal">Olvidar invertir al final</td><td class="bien">$R = \dfrac{1}{\sum 1/R_i}$</td><td>La suma da $\tfrac{1}{R}$.</td></tr>
+        <tr><td class="mal">Misma corriente en paralelo</td><td class="bien">Mismo voltaje</td><td>La corriente se reparte.</td></tr>
+        <tr><td class="mal">Diámetro en lugar de radio en el área</td><td class="bien">$A = \pi r^2$</td><td>$r = d/2$.</td></tr>
+        <tr><td class="mal">Amperímetro en paralelo</td><td class="bien">En serie</td><td>Si no, haría un cortocircuito.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$I = \dfrac{Q}{t}$</div><div>$V = IR$</div><div>$R = \rho\dfrac{L}{A}$</div>
+      <div>$P = VI = I^2R = \dfrac{V^2}{R}$</div><div>$E = Pt$ (kWh)</div><div>Serie: $R = \sum R_i$</div>
+      <div>Paralelo: $\dfrac{1}{R} = \sum\dfrac{1}{R_i}$</div><div>Serie: misma $I$</div><div>Paralelo: mismo $V$</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Ohm y potencia</h3>
+    <ol class="largo">
+      <li>Por un alambre pasan 3 C en 0.5 s. ¿Qué corriente es?</li>
+      <li>Una plancha toma 10 A a 120 V. ¿Qué resistencia y qué potencia tiene?</li>
+      <li>Un foco de 60 W funciona a 120 V. ¿Qué corriente pasa y qué resistencia tiene?</li>
+      <li>Por una resistencia de 100 Ω pasan 0.2 A. ¿Qué voltaje tiene y cuánta potencia disipa?</li>
+      <li>Si un alambre se cambia por otro del mismo material con el doble de largo y el doble de diámetro, ¿cómo cambia su resistencia?</li>
+      <li>Un refrigerador de 150 W funciona las 24 h durante 30 días. ¿Cuántos kWh consume? A 2.50 pesos el kWh, ¿cuánto cuesta?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Serie y paralelo</h3>
+    <ol class="largo">
+      <li>Resistencias de 2, 3 y 5 Ω en serie con 20 V. Encuentra la corriente y el voltaje en cada una.</li>
+      <li>Resistencias de 4 Ω y 12 Ω en paralelo con 24 V. Encuentra la resistencia equivalente y cada corriente.</li>
+      <li>¿Cuál es el equivalente de tres resistencias de 6 Ω en paralelo?</li>
+      <li>Una de 2 Ω en serie con un paralelo de 6 Ω y 3 Ω, todo a 8 V. Encuentra la corriente en cada resistencia.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>6 A</span></li>
+    <li><span>12 Ω; 1200 W</span></li>
+    <li><span>0.5 A; 240 Ω</span></li>
+    <li><span>20 V; 4 W</span></li>
+    <li><span>Se reduce a la mitad</span></li>
+    <li><span>108 kWh; 270 pesos</span></li>
+    <li><span>2 A; 4, 6 y 10 V</span></li>
+    <li><span>3 Ω; 6 A y 2 A</span></li>
+    <li><span>2 Ω</span></li>
+    <li><span>2 A; $\approx 0.67$ A y $\approx 1.33$ A</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>2</span><div>$R = \tfrac{120}{10}$, $P = 120(10)$.</div></div>
+    <div class="sol"><span>3</span><div>$I = \tfrac{60}{120}$; $R = \tfrac{120^2}{60}$.</div></div>
+    <div class="sol"><span>4</span><div>$V = 0.2(100)$; $P = 0.2^2(100)$.</div></div>
+    <div class="sol"><span>5</span><div>Largo $\times 2$; área $\times 4$ (el diámetro va al cuadrado). $R \times \tfrac{2}{4}$.</div></div>
+    <div class="sol"><span>6</span><div>$0.15$ kW $\times 720$ h; $108(2.50)$.</div></div>
+    <div class="sol"><span>7</span><div>$R = 10$, $I = 2$; $V = IR$ en cada una. Suman 20 V.</div></div>
+    <div class="sol"><span>8</span><div>$\tfrac{4(12)}{16} = 3$; $\tfrac{24}{4}$ y $\tfrac{24}{12}$.</div></div>
+    <div class="sol"><span>9</span><div>$\tfrac{1}{R} = \tfrac{3}{6}$. En general, $n$ iguales en paralelo dan $\tfrac{R}{n}$.</div></div>
+    <div class="sol"><span>10</span><div>Paralelo: 2 Ω; total 4 Ω; $I = 2$ A. Voltaje en el paralelo: $2(2) = 4$ V; $\tfrac{4}{6}$ y $\tfrac{4}{3}$.</div></div>
+  </div>
+</section>

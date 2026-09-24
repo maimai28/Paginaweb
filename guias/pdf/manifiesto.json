@@ -126,6 +126,30 @@
     "pdf": "preparatoria-fisica-21-potencial-electrico.pdf"
   },
   {
+    "tema": "preparatoria-fisica-ley-de-ohm-y-circuitos",
+    "titulo": "Ley de Ohm y circuitos",
+    "descripcion": "Corriente eléctrica, resistencia y resistividad, ley de Ohm, potencia eléctrica y consumo en kWh, resistencias en serie y en paralelo, circuitos mixtos paso a paso y cómo se conectan amperímetros y voltímetros.",
+    "pdf": "preparatoria-fisica-22-ley-de-ohm-y-circuitos.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-leyes-de-kirchhoff",
+    "titulo": "Leyes de Kirchhoff",
+    "descripcion": "Ley de los nodos y ley de las mallas, convención de signos al recorrer resistencias y fuentes, fuerza electromotriz y resistencia interna, y cómo resolver paso a paso circuitos con dos fuentes que no se reducen a serie y paralelo.",
+    "pdf": "preparatoria-fisica-23-leyes-de-kirchhoff.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-campo-magnetico",
+    "titulo": "Campo magnético",
+    "descripcion": "Imanes, polos y líneas de campo, campo magnético terrestre, fuerza sobre una carga en movimiento y regla de la mano derecha, órbitas circulares de partículas, fuerza sobre un cable con corriente y campo producido por alambres, espiras y solenoides.",
+    "pdf": "preparatoria-fisica-24-campo-magnetico.pdf"
+  },
+  {
+    "tema": "preparatoria-fisica-induccion-electromagnetica",
+    "titulo": "Inducción electromagnética",
+    "descripcion": "Flujo magnético, ley de Faraday, ley de Lenz para el sentido de la corriente inducida, fem de movimiento en una barra, generadores y corriente alterna, transformadores y por qué la electricidad se transmite a alto voltaje.",
+    "pdf": "preparatoria-fisica-25-induccion-electromagnetica.pdf"
+  },
+  {
     "tema": "preparatoria-matematicas-funciones-y-sus-graficas",
     "titulo": "Funciones y sus gráficas",
     "descripcion": "Qué es una función, notación f(x), dominio y rango, las gráficas básicas que debes reconocer, desplazamientos y reflexiones, composición y función inversa.",

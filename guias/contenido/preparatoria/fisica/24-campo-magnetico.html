@@ -1,0 +1,183 @@
+<!-- guia
+titulo: Campo magnético
+nivel: Preparatoria
+materia: Física
+rama: Electricidad y magnetismo
+numero: 24
+descripcion: Imanes, polos y líneas de campo, campo magnético terrestre, fuerza sobre una carga en movimiento y regla de la mano derecha, órbitas circulares de partículas, fuerza sobre un cable con corriente y campo producido por alambres, espiras y solenoides.
+entrada: Los imanes y la electricidad parecían fenómenos separados hasta que en 1820 Ørsted vio que una corriente movía la aguja de una brújula. Las corrientes crean campos magnéticos y los campos magnéticos empujan corrientes: así funcionan motores, bocinas y resonancias magnéticas.
+objetivo: Describir imanes, polos y líneas de campo.
+objetivo: Calcular la fuerza magnética sobre una carga en movimiento.
+objetivo: Usar la regla de la mano derecha.
+objetivo: Calcular el radio de la órbita de una partícula.
+objetivo: Calcular la fuerza sobre un conductor con corriente.
+objetivo: Calcular el campo de un alambre, una espira y un solenoide.
+autoeval: Explicar por qué no hay monopolos magnéticos. | 01
+autoeval: Calcular $F = qvB\sin\theta$ y su dirección. | 02
+autoeval: Calcular el radio de una órbita en un campo magnético. | 02
+autoeval: Calcular la fuerza sobre un cable con corriente. | 03
+autoeval: Calcular el campo de un alambre o un solenoide. | 04
+-->
+<section>
+  <h2>Imanes y líneas de campo</h2>
+  <ul>
+    <li>Todo imán tiene polo <strong>norte</strong> y polo <strong>sur</strong>; polos iguales se repelen y opuestos se atraen.</li>
+    <li>Si partes un imán, obtienes dos imanes completos: no existen polos aislados (monopolos).</li>
+    <li>Las líneas de campo salen del norte y entran al sur por fuera del imán, y son <strong>cerradas</strong>: por dentro regresan del sur al norte.</li>
+  </ul>
+  <p>El campo magnético $\vec{B}$ se mide en teslas (T). La Tierra se comporta como un imán enorme (unos $5\times 10^{-5}$ T en la superficie), con su polo sur magnético cerca del polo norte geográfico: por eso ahí apunta el norte de la brújula.</p>
+</section>
+
+<section>
+  <h2>Fuerza sobre una carga en movimiento</h2>
+  <div class="definicion">
+    <span class="etq">Fuerza magnética</span>
+    $$F = |q|\,v\,B\sin\theta$$
+    <p>$\theta$ es el ángulo entre $\vec{v}$ y $\vec{B}$. Si la carga está quieta o se mueve paralela al campo, no hay fuerza.</p>
+  </div>
+  <p><strong>Regla de la mano derecha:</strong> dedos extendidos en dirección de $\vec{v}$, dóblalos hacia $\vec{B}$; el pulgar apunta a la fuerza sobre una carga <strong>positiva</strong>. Para una negativa, la fuerza va al revés.</p>
+  <p>Como la fuerza siempre es perpendicular a la velocidad, no cambia la rapidez: solo curva la trayectoria. Si $\vec{v} \perp \vec{B}$, la partícula gira en un círculo:</p>
+  $$qvB = \frac{mv^2}{r} \;\Rightarrow\; r = \frac{mv}{|q|B} \qquad T = \frac{2\pi m}{|q|B}$$
+  <div class="ejemplo">
+    <div class="n">1</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un protón a $2\times 10^6$ m/s entra perpendicular a un campo de 0.5 T. ¿Qué fuerza siente y qué radio tiene su órbita?</p>
+      $$F = (1.6\times 10^{-19})(2\times 10^6)(0.5) = 1.6\times 10^{-13} \text{ N} \qquad r = \frac{(1.67\times 10^{-27})(2\times 10^6)}{(1.6\times 10^{-19})(0.5)} \approx 4.2 \text{ cm}$$
+      <p class="paso">Así se separan isótopos en un espectrómetro de masas: a masa distinta, radio distinto.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Fuerza sobre un cable</h2>
+  <div class="definicion">
+    <span class="etq">Fuerza sobre un conductor</span>
+    $$F = B\,I\,L\sin\theta$$
+    <p>Un cable de largo $L$ con corriente $I$ dentro de un campo $B$ siente una fuerza. Su dirección sale con la misma regla de la mano derecha, usando el sentido de la corriente en lugar de $\vec{v}$.</p>
+  </div>
+  <div class="ejemplo">
+    <div class="n">2</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>Un cable de 20 cm lleva 5 A perpendicular a un campo de 0.3 T. ¿Qué fuerza siente?</p>
+      $$F = 0.3(5)(0.2) = 0.3 \text{ N}$$
+      <p class="paso">En un motor, una espira en un campo recibe fuerzas opuestas en sus lados, que la hacen girar.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Campos producidos por corrientes</h2>
+  <div class="figura-lado">
+    <div>
+      <table class="leyes">
+        <thead><tr><th>Fuente</th><th>Campo</th></tr></thead>
+        <tbody>
+          <tr><td>Alambre recto largo, a distancia $r$</td><td>$B = \dfrac{\mu_0 I}{2\pi r}$</td></tr>
+          <tr><td>Centro de una espira de radio $R$</td><td>$B = \dfrac{\mu_0 I}{2R}$</td></tr>
+          <tr><td>Dentro de un solenoide ($n$ vueltas por metro)</td><td>$B = \mu_0 n I$</td></tr>
+        </tbody>
+      </table>
+      <p>$\mu_0 = 4\pi\times 10^{-7}$ T·m/A. Alrededor de un alambre las líneas son círculos; con el pulgar derecho en el sentido de la corriente, los dedos doblados indican su dirección.</p>
+    </div>
+    <figure class="figura">
+      <svg viewBox="0 0 150 130" width="38mm">
+        <defs><marker id="mb1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#5c7a5a"/></marker>
+        <marker id="mb2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#b5562c"/></marker></defs>
+        <ellipse cx="75" cy="70" rx="55" ry="18" fill="none" stroke="#5c7a5a" stroke-width="1.4"/>
+        <ellipse cx="75" cy="70" rx="32" ry="10" fill="none" stroke="#5c7a5a" stroke-width="1.4"/>
+        <path d="M130 70 A55 18 0 0 1 120 80" fill="none" stroke="#5c7a5a" stroke-width="1.4" marker-end="url(#mb1)"/>
+        <line x1="75" y1="122" x2="75" y2="12" stroke="#b5562c" stroke-width="3" marker-end="url(#mb2)"/>
+        <g font-family="Nunito" font-size="10"><text x="82" y="20" fill="#b5562c">I</text><text x="126" y="98" fill="#5c7a5a">B</text></g>
+      </svg>
+      <figcaption>Líneas circulares alrededor de un alambre.</figcaption>
+    </figure>
+  </div>
+  <div class="ejemplo">
+    <div class="n">3</div>
+    <div>
+      <span class="etq">Ejemplo resuelto</span>
+      <p>¿Qué campo produce un alambre con 10 A a 5 cm? ¿Y un solenoide de 1000 vueltas en 50 cm con 2 A?</p>
+      $$B = \frac{(4\pi\times 10^{-7})(10)}{2\pi(0.05)} = 4\times 10^{-5} \text{ T} \qquad B = (4\pi\times 10^{-7})(2000)(2) \approx 5.0\times 10^{-3} \text{ T}$$
+      <p class="paso">El del alambre es casi como el de la Tierra: por eso una corriente mueve la brújula. El solenoide concentra el campo: es un electroimán.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Errores comunes</h2>
+  <div class="cuidado">
+    <span class="etq">Revisa tu trabajo contra esta lista</span>
+    <table>
+      <thead><tr><th>Lo que se escribe</th><th>Lo correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="mal">$F = qvB$ siempre</td><td class="bien">$qvB\sin\theta$</td><td>Paralelo al campo, $F = 0$.</td></tr>
+        <tr><td class="mal">La fuerza magnética acelera la partícula</td><td class="bien">Solo la desvía</td><td>Es perpendicular a $\vec{v}$: no hace trabajo.</td></tr>
+        <tr><td class="mal">Mano derecha para electrones sin cambiar</td><td class="bien">Invertir la dirección</td><td>La regla es para cargas positivas.</td></tr>
+        <tr><td class="mal">Solenoide con el número total de vueltas</td><td class="bien">$n$ = vueltas por metro</td><td>$n = \tfrac{N}{L}$.</td></tr>
+        <tr><td class="mal">Campo magnético de una carga quieta</td><td class="bien">Solo cargas en movimiento</td><td>Las cargas quietas solo hacen campo eléctrico.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="repaso">
+    <span class="recorta">Recorta y pega en tu cuaderno</span>
+    <h3>Repaso en una mirada</h3>
+    <div class="rejilla">
+      <div>$F = qvB\sin\theta$</div><div>$r = \dfrac{mv}{qB}$</div><div>$F = BIL\sin\theta$</div>
+      <div>Alambre: $B = \dfrac{\mu_0 I}{2\pi r}$</div><div>Espira: $B = \dfrac{\mu_0 I}{2R}$</div><div>Solenoide: $B = \mu_0 nI$</div>
+      <div>$\mu_0 = 4\pi\times 10^{-7}$</div><div>Mano derecha: $+$</div><div>No hay monopolos</div>
+    </div>
+  </div>
+</section>
+
+<section class="ejercicios">
+  <h2>Ejercicios</h2>
+  <p>Usa $e = 1.6\times 10^{-19}$ C, $m_e = 9.11\times 10^{-31}$ kg, $m_p = 1.67\times 10^{-27}$ kg y $\mu_0 = 4\pi\times 10^{-7}$ T·m/A. Al final encontrarás las respuestas y las soluciones paso a paso.</p>
+  <div class="bloque-ej">
+    <h3>A. Cargas en movimiento</h3>
+    <ol class="largo">
+      <li>Un electrón a $3\times 10^6$ m/s entra perpendicular a un campo de 0.02 T. ¿Qué fuerza siente y qué radio tiene su órbita?</li>
+      <li>¿Qué fuerza siente una carga que se mueve paralela al campo?</li>
+      <li>Un protón a $10^5$ m/s forma $30^\circ$ con un campo de 0.4 T. ¿Qué fuerza siente?</li>
+      <li>¿Qué periodo tiene la órbita de un protón en un campo de 0.5 T?</li>
+    </ol>
+  </div>
+  <div class="bloque-ej">
+    <h3>B. Cables</h3>
+    <ol class="largo">
+      <li>Un cable de 0.5 m con 8 A está en un campo de 0.2 T. ¿Qué fuerza siente si es perpendicular? ¿Y si forma $30^\circ$?</li>
+      <li>¿Qué campo hay a 2 cm de un alambre con 20 A?</li>
+      <li>¿A qué distancia de un alambre con 15 A el campo vale $5\times 10^{-5}$ T?</li>
+      <li>¿Qué campo hay en el centro de una espira de 5 cm de radio con 3 A?</li>
+      <li>Un solenoide de 25 cm tiene 500 vueltas y lleva 4 A. ¿Qué campo hay adentro?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="respuestas">
+  <h2>Respuestas y soluciones</h2>
+  <ol>
+    <li><span>$9.6\times 10^{-15}$ N; $\approx 0.85$ mm</span></li>
+    <li><span>Cero</span></li>
+    <li><span>$3.2\times 10^{-15}$ N</span></li>
+    <li><span>$\approx 1.31\times 10^{-7}$ s</span></li>
+    <li><span>0.8 N; 0.4 N</span></li>
+    <li><span>$2\times 10^{-4}$ T</span></li>
+    <li><span>6 cm</span></li>
+    <li><span>$\approx 3.77\times 10^{-5}$ T</span></li>
+    <li><span>$\approx 1.0\times 10^{-2}$ T</span></li>
+  </ol>
+  <div class="soluciones">
+    <h3>Soluciones paso a paso</h3>
+    <div class="sol"><span>1</span><div>$(1.6\times 10^{-19})(3\times 10^6)(0.02)$; $r = \tfrac{(9.11\times 10^{-31})(3\times 10^6)}{(1.6\times 10^{-19})(0.02)} \approx 8.5\times 10^{-4}$ m.</div></div>
+    <div class="sol"><span>2</span><div>$\sin 0^\circ = 0$.</div></div>
+    <div class="sol"><span>3</span><div>$(1.6\times 10^{-19})(10^5)(0.4)(0.5)$.</div></div>
+    <div class="sol"><span>4</span><div>$\tfrac{2\pi(1.67\times 10^{-27})}{(1.6\times 10^{-19})(0.5)}$. No depende de la rapidez: la base del ciclotrón.</div></div>
+    <div class="sol"><span>5</span><div>$0.2(8)(0.5) = 0.8$; con $\sin 30^\circ = 0.5$, la mitad.</div></div>
+    <div class="sol"><span>6</span><div>$\tfrac{\mu_0(20)}{2\pi(0.02)} = \tfrac{2\times 10^{-7}(20)}{0.02}$.</div></div>
+    <div class="sol"><span>7</span><div>$r = \tfrac{2\times 10^{-7}(15)}{5\times 10^{-5}}$.</div></div>
+    <div class="sol"><span>8</span><div>$\tfrac{(4\pi\times 10^{-7})(3)}{2(0.05)}$.</div></div>
+    <div class="sol"><span>9</span><div>$n = \tfrac{500}{0.25} = 2000$ vueltas/m; $B = (4\pi\times 10^{-7})(2000)(4)$.</div></div>
+  </div>
+</section>
