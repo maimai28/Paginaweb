@@ -2,3 +2,6 @@ node_modules/
 data/
 .env
 __pycache__/
+
+# Datos de prospectos reales: no se publican (repo público)
+servicios/privado/

@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fisio Ocotillo · Ejemplo (negocio ficticio)</title>
+<meta name="description" content="Página de ejemplo con agenda en línea para un consultorio de fisioterapia. El negocio es ficticio.">
+<!-- Demo de un negocio que no existe: que no aparezca en buscadores. Quita esta línea solo en la página de un cliente real. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#A8452A">
+<link rel="preconnect" href="https://images.unsplash.com">
+<style>
+  :root {
+    color-scheme: light;
+    --fondo: #F7F1E8;
+    --papel: #FFFDF9;
+    --tinta: #2B2420;
+    --tinta-suave: #5E5550;
+    --linea: #E6DACB;
+    --terracota: #A8452A;   /* flor de ocotillo */
+    --terracota-osc: #8A3820;
+    --salvia: #4F6652;
+    --whatsapp: #0E6B4E;    /* verde oscuro: contraste 6.5:1 con blanco */
+    --aviso: #F2C94C;
+    --radio: 14px;
+    --sombra: 0 1px 2px rgb(43 36 32 / .06), 0 8px 24px rgb(43 36 32 / .08);
+    --ancho: 1080px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--tinta);
+    font: 400 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--terracota); }
+  :focus-visible { outline: 3px solid var(--terracota); outline-offset: 3px; border-radius: 6px; }
+  .contenedor { width: min(100% - 32px, var(--ancho)); margin-inline: auto; }
+
+  /* ---------- Aviso de demo (siempre visible) ---------- */
+  .aviso {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--aviso); color: #1B1714;
+    font-size: .875rem; line-height: 1.35; text-align: center;
+    padding: 8px 16px; border-bottom: 1px solid rgb(0 0 0 / .12);
+  }
+  .aviso strong { letter-spacing: .02em; }
+
+  /* ---------- Portada ---------- */
+  .portada { padding: 32px 0 40px; }
+  .portada .contenedor { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 860px) {
+    .portada { padding: 56px 0 64px; }
+    .portada .contenedor { grid-template-columns: 1.05fr 1fr; gap: 48px; }
+  }
+  .marca { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .01em; }
+  .marca svg { flex: none; }
+  .etiqueta-demo {
+    display: inline-block; margin-left: 4px; padding: 2px 8px; border-radius: 999px;
+    background: #1B1714; color: var(--aviso); font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+  }
+  h1 {
+    font-size: clamp(2rem, 5.2vw, 3.1rem); line-height: 1.08; letter-spacing: -.02em;
+    margin: 18px 0 14px; text-wrap: balance;
+  }
+  .bajada { font-size: 1.125rem; color: var(--tinta-suave); margin: 0 0 22px; max-width: 34ch; }
+  .acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 48px; padding: 12px 20px; border-radius: 999px;
+    font-weight: 650; font-size: 1rem; text-decoration: none; cursor: pointer;
+    border: 2px solid transparent; transition: background-color .15s, transform .15s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-principal { background: var(--terracota); color: #fff; }
+  .btn-principal:hover { background: var(--terracota-osc); }
+  .btn-wa { background: var(--whatsapp); color: #fff; }
+  .btn-wa:hover { background: #0A563F; }
+  .btn-borde { background: transparent; color: var(--tinta); border-color: var(--linea); }
+  .btn-borde:hover { border-color: var(--tinta-suave); }
+  .datos-rapidos { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 22px 0 0; padding: 0; list-style: none; color: var(--tinta-suave); font-size: .95rem; }
+  .datos-rapidos li { display: flex; align-items: center; gap: 6px; }
+  .datos-rapidos svg { color: var(--salvia); }
+  .foto-portada { position: relative; border-radius: 22px; overflow: hidden; box-shadow: var(--sombra); aspect-ratio: 4 / 3; background: var(--linea); }
+  .foto-portada img { width: 100%; height: 100%; object-fit: cover; }
+  .foto-portada .sello {
+    position: absolute; left: 12px; bottom: 12px; padding: 6px 10px; border-radius: 8px;
+    background: rgb(27 23 20 / .78); color: #fff; font-size: .75rem;
+  }
+
+  /* ---------- Secciones ---------- */
+  section.bloque { padding: 44px 0; border-top: 1px solid var(--linea); }
+  @media (min-width: 860px) { section.bloque { padding: 64px 0; } }
+  h2 { font-size: clamp(1.5rem, 3.4vw, 2rem); line-height: 1.15; letter-spacing: -.01em; margin: 0 0 8px; }
+  .intro { color: var(--tinta-suave); margin: 0 0 26px; max-width: 60ch; }
+
+  /* Servicios */
+  .servicios { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin: 0; padding: 0; list-style: none; }
+  .servicio {
+    background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio);
+    padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .servicio h3 { margin: 0; font-size: 1.08rem; }
+  .servicio p { margin: 0; color: var(--tinta-suave); font-size: .95rem; }
+  .servicio .pie { margin-top: auto; padding-top: 10px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .precio { font-size: 1.35rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .duracion { color: var(--tinta-suave); font-size: .9rem; }
+  .servicio.destacado { border-color: var(--terracota); box-shadow: inset 0 0 0 1px var(--terracota); }
+  .nota { font-size: .875rem; color: var(--tinta-suave); margin: 14px 0 0; }
+
+  /* Pasos */
+  .pasos { counter-reset: paso; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); padding: 0; margin: 0 0 24px; list-style: none; }
+  .pasos li { counter-increment: paso; background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 18px; }
+  .pasos li::before {
+    content: counter(paso); display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+    background: var(--salvia); color: #fff; font-weight: 700; margin-bottom: 10px;
+  }
+  .pasos h3 { margin: 0 0 4px; font-size: 1.02rem; }
+  .pasos p { margin: 0; color: var(--tinta-suave); font-size: .95rem; }
+
+  /* Galería */
+  .galeria { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); margin: 0; padding: 0; list-style: none; }
+  @media (min-width: 860px) { .galeria { grid-template-columns: repeat(3, 1fr); } }
+  .galeria li:first-child { grid-column: span 2; }
+  @media (min-width: 860px) { .galeria li:first-child { grid-column: auto; } }
+  .galeria img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radio); background: var(--linea); }
+
+  /* Ubicación */
+  .ubicacion { display: grid; gap: 20px; }
+  @media (min-width: 860px) { .ubicacion { grid-template-columns: 1fr 1.3fr; gap: 32px; } }
+  .ficha { background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 20px; }
+  .ficha h3 { margin: 0 0 6px; font-size: 1rem; }
+  .ficha p { margin: 0 0 16px; }
+  .horario { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-variant-numeric: tabular-nums; }
+  .horario th, .horario td { text-align: left; padding: 6px 0; border-bottom: 1px solid var(--linea); font-weight: 400; }
+  .horario th { color: var(--tinta-suave); padding-right: 12px; }
+  .mapa { border-radius: var(--radio); overflow: hidden; border: 1px solid var(--linea); background: var(--linea); min-height: 300px; display: flex; flex-direction: column; }
+  .mapa iframe { width: 100%; flex: 1; min-height: 300px; border: 0; display: block; }
+  .mapa figcaption { background: var(--papel); font-size: .8rem; color: var(--tinta-suave); padding: 8px 12px; }
+
+  /* Pie */
+  footer { border-top: 1px solid var(--linea); padding: 32px 0 110px; color: var(--tinta-suave); font-size: .9rem; }
+  footer p { margin: 0 0 8px; }
+  footer strong { color: var(--tinta); }
+
+  /* Botón flotante de WhatsApp */
+  .wa-flotante {
+    position: fixed; right: 16px; bottom: 16px; z-index: 15;
+    width: 60px; height: 60px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--whatsapp); color: #fff; box-shadow: 0 6px 18px rgb(0 0 0 / .25);
+  }
+  .wa-flotante:hover { background: #0A563F; }
+
+  /* Diálogo de modo demo */
+  dialog { border: 0; border-radius: 18px; padding: 0; max-width: min(92vw, 440px); box-shadow: 0 20px 60px rgb(0 0 0 / .3); color: var(--tinta); }
+  dialog::backdrop { background: rgb(27 23 20 / .55); }
+  .dlg { padding: 22px 22px 18px; }
+  .dlg h2 { font-size: 1.2rem; margin: 0 0 8px; }
+  .dlg p { margin: 0 0 12px; color: var(--tinta-suave); }
+  .dlg .acciones { justify-content: flex-end; margin-top: 6px; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body>
+
+<div class="aviso" role="note">
+  <strong>EJEMPLO — NEGOCIO FICTICIO.</strong>
+  “Fisio Ocotillo” no existe. Nombre, precios, horario y ubicación son inventados. Fotos: Unsplash.
+</div>
+
+<!-- =========================================================
+     PORTADA
+     ========================================================= -->
+<header class="portada">
+  <div class="contenedor">
+    <div>
+      <div class="marca">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+          <circle cx="17" cy="17" r="17" fill="#A8452A"/>
+          <path d="M17 27V12M17 18l-5-6M17 15l5-6M17 21l4-3" stroke="#FFF7EC" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span>Fisio Ocotillo</span>
+        <span class="etiqueta-demo">DEMO</span>
+      </div>
+
+      <h1>Fisioterapia y rehabilitación, con cita en línea</h1>
+      <p class="bajada">Consultorio de una fisioterapeuta en Ciudad Juárez. Elige tu horario sin esperar respuesta por mensaje.</p>
+
+      <div class="acciones">
+        <a class="btn btn-principal" href="#como-agendar" data-accion="agenda">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+          Agendar cita
+        </a>
+        <a class="btn btn-wa" href="#ubicacion" data-accion="whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+
+      <ul class="datos-rapidos" aria-label="Datos rápidos">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Solo con cita
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Zona ejemplo, Cd. Juárez
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>
+          Lun a sáb
+        </li>
+      </ul>
+    </div>
+
+    <figure class="foto-portada" style="margin:0">
+      <img
+        src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=900&q=70"
+        srcset="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=600&q=70 600w,
+                https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=900&q=70 900w,
+                https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=1400&q=70 1400w"
+        sizes="(min-width: 860px) 520px, 100vw"
+        width="900" height="600"
+        alt="Manos de una fisioterapeuta trabajando la zona del cuello y hombro de una paciente">
+      <figcaption class="sello">Foto de stock (Unsplash), no del negocio</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<!-- =========================================================
+     SERVICIOS Y PRECIOS
+     ========================================================= -->
+<section class="bloque" id="servicios" aria-labelledby="t-servicios">
+  <div class="contenedor">
+    <h2 id="t-servicios">Servicios y precios</h2>
+    <p class="intro">Cada sesión es individual. En la valoración se revisa tu caso y se propone cuántas sesiones podrías necesitar.</p>
+
+    <ul class="servicios">
+      <li class="servicio destacado">
+        <h3>Valoración inicial</h3>
+        <p>Primera visita: historia clínica, exploración y plan de tratamiento.</p>
+        <div class="pie"><span class="precio">$350</span><span class="duracion">45 min</span></div>
+      </li>
+      <li class="servicio">
+        <h3>Sesión de fisioterapia</h3>
+        <p>Dolor de espalda, cuello u hombro; terapia manual y ejercicio.</p>
+        <div class="pie"><span class="precio">$500</span><span class="duracion">50 min</span></div>
+      </li>
+      <li class="servicio">
+        <h3>Rehabilitación deportiva</h3>
+        <p>Esguinces, tendinitis y regreso gradual a la actividad.</p>
+        <div class="pie"><span class="precio">$550</span><span class="duracion">50 min</span></div>
+      </li>
+      <li class="servicio">
+        <h3>Masaje terapéutico</h3>
+        <p>Descarga muscular enfocada en zonas con tensión.</p>
+        <div class="pie"><span class="precio">$450</span><span class="duracion">50 min</span></div>
+      </li>
+      <li class="servicio">
+        <h3>Paquete de 5 sesiones</h3>
+        <p>Sesiones de fisioterapia; vigencia de 2 meses.</p>
+        <div class="pie"><span class="precio">$2,250</span><span class="duracion">5 × 50 min</span></div>
+      </li>
+    </ul>
+    <p class="nota">Precios de ejemplo en pesos mexicanos. Pago en el consultorio: efectivo o transferencia.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     CÓMO AGENDAR
+     ========================================================= -->
+<section class="bloque" id="como-agendar" aria-labelledby="t-agendar">
+  <div class="contenedor">
+    <h2 id="t-agendar">Cómo agendar</h2>
+    <p class="intro">La agenda muestra solo los horarios libres, así que no hay que esperar a que te contesten para saber si hay lugar.</p>
+
+    <ol class="pasos">
+      <li>
+        <h3>Elige día y hora</h3>
+        <p>Toca “Agendar cita” y escoge un horario libre.</p>
+      </li>
+      <li>
+        <h3>Deja tus datos</h3>
+        <p>Nombre, apellido, correo y teléfono.</p>
+      </li>
+      <li>
+        <h3>Recibe la confirmación</h3>
+        <p>Te llega por correo con la fecha y la dirección.</p>
+      </li>
+    </ol>
+
+    <div class="acciones">
+      <a class="btn btn-principal" href="#como-agendar" data-accion="agenda">Agendar cita</a>
+      <a class="btn btn-borde" href="#ubicacion" data-accion="whatsapp">¿Dudas? Escribe por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOTOS
+     ========================================================= -->
+<section class="bloque" id="fotos" aria-labelledby="t-fotos">
+  <div class="contenedor">
+    <h2 id="t-fotos">Fotos</h2>
+    <p class="intro">En la página de un cliente real aquí van fotos del consultorio, tomadas por el negocio.</p>
+    <ul class="galeria">
+      <li>
+        <img loading="lazy" width="900" height="600"
+          src="https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&w=900&q=70"
+          srcset="https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&w=500&q=70 500w,
+                  https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&w=900&q=70 900w"
+          sizes="(min-width: 860px) 340px, 100vw"
+          alt="Profesional de la salud revisando una férula de muñeca en el brazo de una paciente">
+      </li>
+      <li>
+        <img loading="lazy" width="900" height="600"
+          src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=70"
+          srcset="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=70 500w,
+                  https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=70 900w"
+          sizes="(min-width: 860px) 340px, 50vw"
+          alt="Silueta de una persona haciendo un estiramiento al atardecer">
+      </li>
+      <li>
+        <img loading="lazy" width="900" height="600"
+          src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=70"
+          srcset="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=500&q=70 500w,
+                  https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=70 900w"
+          sizes="(min-width: 860px) 340px, 50vw"
+          alt="Dos manos sostenidas con cuidado">
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================
+     UBICACIÓN Y HORARIO
+     ========================================================= -->
+<section class="bloque" id="ubicacion" aria-labelledby="t-ubicacion">
+  <div class="contenedor ubicacion">
+    <div>
+      <h2 id="t-ubicacion">Ubicación y horario</h2>
+      <div class="ficha">
+        <h3>Dirección</h3>
+        <p>Av. Ejemplo 123, Col. Ficticia, Ciudad Juárez, Chih.<br><small>(No existe: dirección inventada para la demo.)</small></p>
+
+        <h3>Horario (solo con cita)</h3>
+        <table class="horario">
+          <tbody>
+            <tr><th scope="row">Lunes a viernes</th><td>9:00–14:00 y 16:00–20:00</td></tr>
+            <tr><th scope="row">Sábado</th><td>9:00–13:00</td></tr>
+            <tr><th scope="row">Domingo</th><td>Cerrado</td></tr>
+          </tbody>
+        </table>
+
+        <div class="acciones">
+          <a class="btn btn-wa" href="#ubicacion" data-accion="whatsapp">Escribir por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- En la página real: Google Maps → menú → Compartir o incorporar mapa → Incorporar un mapa → Copiar HTML,
+         y reemplaza este <iframe>. -->
+    <figure class="mapa" style="margin:0">
+      <iframe
+        title="Mapa ilustrativo del centro de Ciudad Juárez (sin marcador: el negocio es ficticio)"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-106.5000%2C31.6650%2C-106.4000%2C31.7400&amp;layer=mapnik"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <figcaption>Mapa ilustrativo sin marcador: el negocio no tiene ubicación real. © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">colaboradores de OpenStreetMap</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="contenedor">
+    <p><strong>Esta es una página de demostración</strong> del servicio “Página + agenda en línea”. Fisio Ocotillo no existe; no hay reseñas ni testimonios porque no hay clientes reales.</p>
+    <p>Hecha por Mai, estudiante de Ingeniería Física (UACJ).</p>
+    <p>Fotos: <a href="https://unsplash.com/license" target="_blank" rel="noopener">Unsplash</a> (licencia Unsplash). Mapa: © OpenStreetMap.</p>
+  </div>
+</footer>
+
+<a class="wa-flotante" href="#ubicacion" data-accion="whatsapp" aria-label="Escribir por WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+</a>
+
+<dialog id="dlg-demo" aria-labelledby="dlg-titulo">
+  <form method="dialog" class="dlg">
+    <h2 id="dlg-titulo">Esto es una demo</h2>
+    <p id="dlg-texto"></p>
+    <div class="acciones">
+      <button class="btn btn-principal" value="ok">Entendido</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+  /* =========================================================
+     CONFIGURACIÓN — lo único que se cambia para un cliente real
+     (con su permiso). Vacío = modo demo: los botones explican
+     qué harían en lugar de abrir algo.
+     ========================================================= */
+  const CONFIG = {
+    // WhatsApp del negocio: 10 dígitos, sin espacios. Ej. "6561234567".
+    whatsapp: "",
+    // Mensaje que aparece escrito al abrir WhatsApp.
+    mensaje: "Hola, vi su página y quiero información para agendar una cita.",
+    // Link de la página de reservas de Google Calendar
+    // (Calendar en computadora → Páginas de reservas → Copiar vínculo).
+    agendaUrl: ""
+  };
+
+  const TEXTO_DEMO = {
+    agenda: "En la página real, este botón abre la página de reservas de Google Calendar del negocio: el cliente ve los horarios libres y aparta su cita. Aquí no abre nada porque el negocio es ficticio.",
+    whatsapp: "En la página real, este botón abre un chat de WhatsApp con el negocio y el mensaje ya escrito. Aquí no abre nada porque el negocio es ficticio."
+  };
+
+  const dlg = document.getElementById("dlg-demo");
+  const dlgTexto = document.getElementById("dlg-texto");
+
+  function urlPara(accion) {
+    if (accion === "whatsapp" && /^\d{10}$/.test(CONFIG.whatsapp)) {
+      return "https://wa.me/52" + CONFIG.whatsapp + "?text=" + encodeURIComponent(CONFIG.mensaje);
+    }
+    if (accion === "agenda" && /^https:\/\//.test(CONFIG.agendaUrl)) {
+      return CONFIG.agendaUrl;
+    }
+    return "";
+  }
+
+  document.querySelectorAll("[data-accion]").forEach(function (el) {
+    const accion = el.dataset.accion;
+    const url = urlPara(accion);
+    if (url) {
+      el.href = url;
+      el.target = "_blank";
+      el.rel = "noopener";
+      return;
+    }
+    el.addEventListener("click", function (e) {
+      if (!dlg || typeof dlg.showModal !== "function") return; // sin <dialog>: sigue el ancla
+      e.preventDefault();
+      dlgTexto.textContent = TEXTO_DEMO[accion];
+      dlg.showModal();
+    });
+  });
+</script>
+</body>
+</html>

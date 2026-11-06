@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agenda en línea y página · Oferta</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  /* Para editar: cambia el texto de <span class="dato-editable"> (tu WhatsApp) y vuelve a generar el PDF
+     (Chrome → Imprimir → Guardar como PDF → Tamaño Carta → Márgenes: predeterminados → sin encabezados). */
+  :root {
+    --tinta: #241F1C; --suave: #5A524D; --linea: #E3D7C8; --fondo: #FBF7F1;
+    --a: #4F6652; --b: #A8452A; --aviso: #F2C94C;
+  }
+  @page { size: Letter; margin: 11mm 12mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0; color: var(--tinta); background: #fff;
+    font: 400 10.6pt/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  .hoja { max-width: 8.5in; margin: 0 auto; padding: 0; }
+  @media screen {
+    body { background: #ECE6DD; padding: 16px; }
+    .hoja { background: #fff; padding: 11mm 12mm; box-shadow: 0 4px 24px rgb(0 0 0 / .12); }
+  }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; border-bottom: 2px solid var(--tinta); padding-bottom: 8px; margin-bottom: 10px; }
+  h1 { font-size: 19pt; line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+  .sub { color: var(--suave); margin: 3px 0 0; }
+  .contacto { text-align: right; font-size: 9.5pt; line-height: 1.4; white-space: nowrap; flex: none; }
+  .contacto strong { font-size: 10.5pt; }
+  .dato-editable { background: #FFF3C4; padding: 0 3px; border-radius: 3px; }
+
+  .productos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .producto { border: 1.5px solid var(--linea); border-radius: 10px; padding: 10px 12px; background: var(--fondo); }
+  .producto.a { border-top: 5px solid var(--a); }
+  .producto.b { border-top: 5px solid var(--b); }
+  .producto h2 { font-size: 13pt; margin: 0; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .producto .precio { font-size: 15pt; font-weight: 800; white-space: nowrap; }
+  .a .precio { color: var(--a); } .b .precio { color: var(--b); }
+  .producto .pago { margin: 2px 0 6px; font-weight: 600; font-size: 9.5pt; }
+  .producto h3 { font-size: 9pt; text-transform: uppercase; letter-spacing: .06em; color: var(--suave); margin: 8px 0 3px; }
+  ul { margin: 0; padding-left: 16px; }
+  li { margin: 1.5px 0; }
+  li::marker { color: var(--suave); }
+
+  .fila { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px; margin-top: 10px; }
+  .caja { border: 1.5px solid var(--linea); border-radius: 10px; padding: 9px 12px; }
+  .caja h2 { font-size: 11pt; margin: 0 0 4px; }
+  .no li::marker { content: "✕  "; color: var(--b); font-size: 8pt; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+  th, td { text-align: left; padding: 3px 0; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  th { font-weight: 600; padding-right: 8px; white-space: nowrap; }
+  .nota { font-size: 8pt; color: var(--suave); margin: 8px 0 0; line-height: 1.35; }
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header>
+    <div>
+      <h1>Agenda en línea y página para tu negocio</h1>
+      <p class="sub">Para consultorios y estudios que agendan por WhatsApp o mensaje: fisioterapia, uñas, pestañas, nutrición, psicología, masajes, dentistas.</p>
+    </div>
+    <div class="contacto">
+      <strong>Mai</strong><br>
+      Estudiante de Ingeniería Física, UACJ<br>
+      WhatsApp: <span class="dato-editable">656&nbsp;___&nbsp;____</span>
+    </div>
+  </header>
+
+  <section class="productos" aria-label="Productos">
+    <article class="producto a">
+      <h2><span>A · Agenda en línea</span><span class="precio">$900</span></h2>
+      <p class="pago">Pagas al terminar, cuando ya funcionó una cita de prueba.</p>
+      <h3>Incluye</h3>
+      <ul>
+        <li>Página de reservas gratis de Google Calendar: tus servicios, duración, horario, descanso entre citas y anticipación mínima.</li>
+        <li>Formulario para el cliente: nombre, apellido, correo y teléfono.</li>
+        <li>Link de reservas en tu WhatsApp Business y en tu Instagram.</li>
+        <li>Mensaje de bienvenida y mensaje de ausencia en WhatsApp Business.</li>
+        <li>5 respuestas rápidas: agenda, precios, ubicación, horario y formas de pago.</li>
+        <li>Te enseño a ver, mover y cancelar citas.</li>
+      </ul>
+      <h3>Entrega</h3>
+      <ul>
+        <li>1 a 2 horas, en persona, contigo.</li>
+      </ul>
+    </article>
+
+    <article class="producto b">
+      <h2><span>B · Página + agenda</span><span class="precio">$3,000</span></h2>
+      <p class="pago">50 % de anticipo ($1,500) y 50 % al publicar ($1,500).</p>
+      <h3>Incluye todo A, más</h3>
+      <ul>
+        <li>Página de una sección: servicios, precios, fotos, ubicación con mapa, botón de WhatsApp y botón para agendar.</li>
+        <li>Se ve bien en celular y en computadora.</li>
+        <li>Hosting gratis en Cloudflare (dirección tipo <em>tunegocio.pages.dev</em>).</li>
+        <li>Dominio propio (.com o .mx) opcional: lo compras y pagas tú, a tu nombre.</li>
+        <li>1 ronda de cambios antes de publicar.</li>
+      </ul>
+      <h3>Entrega</h3>
+      <ul>
+        <li>Después del 21 de noviembre de 2026. La agenda (A) puede quedar antes.</li>
+        <li>Textos, precios y fotos los das tú.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="fila">
+    <div class="caja">
+      <h2>Qué NO incluye</h2>
+      <ul class="no">
+        <li>Cambios ilimitados: después de entregar, cada cambio se cotiza aparte.</li>
+        <li>Mantenimiento mensual ni soporte permanente.</li>
+        <li>Anuncios pagados (Facebook, Instagram, Google), manejo de redes, logo o sesión de fotos.</li>
+        <li>Funciones de pago de Google: cobrar anticipos en línea, recordatorios automáticos por correo, más de una página de reservas.</li>
+        <li>Dominio y cualquier otro costo de terceros.</li>
+        <li>Garantía de más clientes o ventas.</li>
+      </ul>
+    </div>
+
+    <div class="caja">
+      <h2>Forma de pago</h2>
+      <table>
+        <tr><th>Medio</th><td>Efectivo o transferencia.</td></tr>
+        <tr><th>A</th><td>$900 al terminar la entrega.</td></tr>
+        <tr><th>B</th><td>$1,500 al empezar · $1,500 al publicar.</td></tr>
+        <tr><th>Comprobante</th><td>Recibo simple por WhatsApp.</td></tr>
+      </table>
+      <h2 style="margin-top:8px">Qué necesito de ti</h2>
+      <ul>
+        <li>Cuenta de Google del negocio (o la creamos).</li>
+        <li>WhatsApp Business en tu celular e Instagram a la mano.</li>
+        <li>Lista de servicios con duración y tu horario.</li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="nota">
+    Funciones verificadas el 6 nov 2026 en la ayuda oficial de Google: con una cuenta personal de Google se crea <strong>una sola</strong> página de reservas; Google no publica límite de citas. Recordatorios automáticos por correo, cobros en línea y varias páginas de reservas requieren una suscripción de Google (Google One Premium, Workspace u otras). Si atienden varias personas con agendas separadas, este servicio no les conviene: te lo digo antes de cobrar. Precios en pesos mexicanos, vigentes en noviembre de 2026.
+  </p>
+
+</div>
+</body>
+</html>
