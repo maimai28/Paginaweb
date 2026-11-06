@@ -13,7 +13,7 @@ Meta: ~$2,500 MXN antes del 21 nov 2026.
 2. [x] Demo de B (negocio ficticio) → `servicios/demo/index.html` (cómo publicarla: `servicios/demo/README.md`)
 3. [x] Guion en persona + primer WhatsApp → `servicios/03-guion-y-whatsapp.md`
 4. [x] Hoja de oferta (1 página) → `servicios/04-hoja-de-oferta.html` / `.pdf` (antes de usarla, pon tu WhatsApp en el HTML y vuelve a guardar el PDF)
-5. [ ] Checklist de entrega de A → `servicios/05-checklist-entrega-A.md`
+5. [x] Checklist de entrega de A → `servicios/05-checklist-entrega-A.md`
 
 Datos de Google, WhatsApp, Cloudflare, GitHub y Unsplash verificados con fuente y fecha: [`FUENTES.md`](FUENTES.md).
 
